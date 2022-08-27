@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Print dependency details for the current file.
+status_dependencies_current_file() {
+  printf 'chezmoi: Resolve dependencies for %s\n' "$0"
+}
