@@ -8,6 +8,7 @@ _cleanup() {
   unset -f _cleanup
   unset -f _is_running_interactively
   unset -f _main
+  unset -f _set_system_defaults
 }
 
 # Returns true if the current shell is running interactively, and false
@@ -16,7 +17,18 @@ _is_running_interactively() {
   [[ $- != *i* ]]
 }
 
+# Set system defaults.
+_set_system_defaults() {
+  # Set default terminal.
+  export TERM="alacritty"
+
+  # Set default text editor.
+  export EDITOR="nvim"
+  export VISUAL="nvim"
+}
+
 _main() {
+  _set_system_defaults
   _is_running_interactively && return
 }
 
