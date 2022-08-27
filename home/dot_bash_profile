@@ -3,16 +3,34 @@
 # `bash_profile` is the personal initialization file, executed for login
 # shells.
 
+# Potentially replace the current shell with a graphical user interface.
+_exec_graphical_user_interface() {
+  # Replace `-eq` comparision with `-le` to use graphical logins on multiple
+  # virtual machines. The `exec` command assures that the user is logged out
+  # when the X Server exits, crashed or is killed by an attacker. If you want
+  # to take the risk and remain logged in when the X session ends, remove
+  # `exec`.
+  if [[ -z "$DISPLAY" && "$XDG_VTNR" == 1 ]]; then
+    _status "starting graphical user interface"
+    exec startx
+  fi
+}
+
 # Potentially source the user's bashrc.
 _source_bashrc() {
   declare -r user_bashrc="$HOME/.bashrc"
   [[ -f "$user_bashrc" ]] && source "$user_bashrc"
 }
 
+# Print arguments to stdout preceded by a prompt.
+_status() {
+  printf 'bash_profile: %s\n' "$@"
+}
 # Make sure the `exec` command is the last one executed in this script. No
 # further statements will be executed.
 _main() {
   _source_bashrc
+  _exec_graphical_user_interface
 }
 
 _main
