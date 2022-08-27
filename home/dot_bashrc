@@ -10,6 +10,7 @@ _cleanup() {
   unset -f _is_running_interactively
   unset -f _main
   unset -f _set_bash_history
+  unset -f _set_shopt
   unset -f _set_system_defaults
 }
 
@@ -43,6 +44,44 @@ _set_bash_history() {
   export HISTSIZE=500
 }
 
+# Set and unset shell options.
+_set_shopt() {
+  # If set, a command name that is a directory name is executed as if it were
+  # the cd command's argument. This option is only used by interactive shells.
+  shopt -s autocd
+
+  # If set, minor errors in the spelling of a directory component in a cd
+  # command are corrected. The errors checked for are transposed characters, a
+  # missing character, and one character too many. If a correction is found,
+  # the corrected file name is printed, and the command proceeds. This option
+  # is only used by interactive shells.
+  shopt -s cdspell
+  
+  # If set, bash lists the status of any stopped and running jobs before
+  # exiting an interactive shell. If any jobs are running, this causes the exit
+  # to be deferred until a second exit is attempted without an intervening
+  # command. The shell always postpones exiting if any jobs are stopped.
+  shopt -s checkjobs
+
+  # When resizing a terminal emulator, Bash may not receive the resize signal.
+  # This will cause typed text to not wrap correctly and overlap the prompt.
+  # The checkwinsize shell option checks the window size after each command
+  # and, if necessary, updates the values of LINES and COLUMNS.
+  shopt -s checkwinsize
+
+  # If set, bash attempts to save all lines of a multiple-line command in the
+  # same history entry.
+  shopt -s cmdhist
+
+  # If set, the history list is appended to the file named by the HISTFILE
+  # variable's value when the shell exits, rather than overwriting the file.
+  shopt -s histappend
+
+  # If set, aliases are expanded as described in bash aliases. This option is
+  # enabled by default for interactive shells.
+  shopt -s expand_aliases
+}
+
 # Set system defaults.
 _set_system_defaults() {
   # Set default terminal.
@@ -58,6 +97,7 @@ _main() {
   _is_running_interactively && return
   _set_bash_history
   _extend_path
+  _set_shopt
 }
 
 _main
