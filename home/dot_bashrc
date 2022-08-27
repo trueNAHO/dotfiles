@@ -47,7 +47,11 @@ _set_bash_history() {
 
 # Set configurations for various tools.
 _set_configs() {
-  :
+  # Causes searches to ignore case; that is, uppercase and lowercase are
+  # considered identical. This option is ignored if any uppercase letters
+  # appear in the search pattern; in other words, if a pattern contains
+  # uppercase letters, then that search does not ignore case.
+  export LESS="-Ri"
 }
 
 # Set and unset shell options.
