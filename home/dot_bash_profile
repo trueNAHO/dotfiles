@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# `bash_profile` is the personal initialization file, executed for login
+# shells.
+
+# Make sure the `exec` command is the last one executed in this script. No
+# further statements will be executed.
+_main() {
+  :
+}
+
+_main
