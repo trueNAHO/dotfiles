@@ -2,11 +2,23 @@
 
 # `xinitrc` configures the initialisation of xinit.
 
+declare -r sysmodmap="/etc/X11/xinit/.Xmodmap"
 declare -r sysprograms="/etc/X11/xinit/xinitrc.d"
+declare -r sysresources="/etc/X11/xinit/.Xresources"
+declare -r usermodmap="$HOME/.Xmodmap"
+declare -r userresources="$HOME/.Xresources"
 
 # Replace current shell with a graphical user interface.
 _exec_graphical_user_interface() {
   exec awesome
+}
+
+# Set configurations for various tools.
+_set_configs() {
+  [[ -f "$usermodmap" ]]    && xmodmap "$usermodmap"
+  [[ -f "$userresources" ]] && xrdb -merge "$userresources"
+  [[ -f "$sysmodmap" ]]     && xmodmap "$sysmodmap"
+  [[ -f "$sysresources" ]]  && xrdb -merge "$sysresources"
 }
 
 # Source bash scripts located in `sysprograms`.
@@ -22,6 +34,7 @@ _source_sysprograms() {
 # Make sure the `exec` command is the last one executed in this script. No
 # further statements will be executed.
 _main() {
+  _set_configs
   _source_sysprograms
   _exec_graphical_user_interface
 }
