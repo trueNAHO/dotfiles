@@ -44,6 +44,7 @@ _set_aliases() {
 
   # Confirm before overwriting something.
   alias cp="cp --interactive"
+  alias mv="mv --interactive"
 }
 
 # Set bash history related variables.
