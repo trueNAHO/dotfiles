@@ -6,10 +6,24 @@
 # Delete functions that should not exceed this bashrc's scope.
 _cleanup() {
   unset -f _cleanup
+  unset -f _extend_path
   unset -f _is_running_interactively
   unset -f _main
   unset -f _set_bash_history
   unset -f _set_system_defaults
+}
+
+# Potentially extend the `PATH` variable.
+_extend_path() {
+  declare -r -a paths=(
+    "$HOME/.bin"         
+    "$HOME/.local/bin"
+    "$HOME/p/applications"
+  )
+
+  for path in "${paths[@]}"; do
+    [[ -d "$path" ]] && PATH="$path:$PATH"
+  done 
 }
 
 # Returns true if the current shell is running interactively, and false
@@ -43,6 +57,7 @@ _main() {
   _set_system_defaults
   _is_running_interactively && return
   _set_bash_history
+  _extend_path
 }
 
 _main
