@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# shellcheck disable=all
+
+{{ template "lib/utilities/install_yay" }}
+
+# Download packages with yay. If yay is not installed, ask if it should be
+# installed. Packages are provided as arguments.
+dependencies_yay() {
+  # If yay is not installed, install it or return.
+  if ! command -v yay &>/dev/null; then
+    printf 'chezmoi: %s\n' "yay is not installed"
+
+    read -er -p "chezmoi: Install yay? [Y/n]" is_install_yay
+    case "${is_install_yay,,}" in
+      "" | y | yes) 
+        install_yay
+        ;;
+      *) 
+        printf 'chezmoi: skip yay packages: %s\n' "$*"
+        return
+        ;;
+    esac
+  fi
+  
+  # Download provided packages.
+  for package in "$@"; do
+    printf 'chezmoi: %s\n' "yay -S --needed $package"
+    if sudo -v; then
+      yay -S --needed "$package" || true
+    fi
+  done
+}
