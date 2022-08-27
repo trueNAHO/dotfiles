@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# `xinitrc` configures the initialisation of xinit.
+
+_main() {
+  :
+}
+
+_main
