@@ -1,0 +1,55 @@
+---
+name: General Issue Template
+description: Use this template to report any issue
+body:
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue Type
+      description: What type of issue would you like to report?
+      multiple: false
+      options:
+        - Bug
+        - Build/Install
+        - Performance
+        - Support
+        - Feature Request
+        - Documentation Feature Request
+        - Documentation Bug
+        - Others
+    validations:
+      required: true
+  - type: input
+    id: OS
+    attributes:
+      label: OS Platform and Distribution
+      description: 
+      placeholder: e.g., Linux Ubuntu 16.04
+    validations:
+      required: false
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Current Behaviour
+      description: What did you expect to happen?
+      placeholder: Tell us what you see!
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: Reproduce
+    attributes:
+      label: Reproduce the issue
+      description: Provide a reproducible scenario.
+      placeholder: Tell us what you did!
+      value: 
+      render: shell
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: >-
+        Please copy and paste any relevant log output. This will be
+        automatically formatted into code, so no need for backticks.
+      placeholder: Tell us what it says!
+      render: shell
