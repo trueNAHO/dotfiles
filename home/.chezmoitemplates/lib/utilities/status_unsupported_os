@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# @url https://www.chezmoi.io/user-guide/templating/#using-chezmoitemplates-for-creating-similar-files
+# Print details about unsupported operating system. Operating system must be
+# passed as template argument.
+status_unsupported_os() {
+  printf 'chezmoi: %s\n' "unsupported operating system: {{ . }}"
+}
