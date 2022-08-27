@@ -13,7 +13,8 @@ declare -r userresources="$HOME/.Xresources"
 # further statements will be executed. For consistancy load every process in
 # the background.
 _async_load() { {
-  :
+  # Start X11 compositor.
+  picom &
 } & }
 
 # Replace current shell with a graphical user interface.
