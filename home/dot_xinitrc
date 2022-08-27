@@ -15,6 +15,9 @@ declare -r userresources="$HOME/.Xresources"
 _async_load() { {
   # Start X11 compositor.
   picom &
+
+  # Set color temperature of display according to time of day.
+  redshift &
 } & }
 
 # Replace current shell with a graphical user interface.
