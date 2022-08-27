@@ -93,8 +93,13 @@
 </p>
 
 <p align="center">
+  <a href="#contrbuting">Contributing</a> •
   <a href="#license">License</a>
 </p>
+
+# Contributing
+
+Please read [CONTRIBUTING.md](docs/CONTRIBUTING.md) for details on contributing.
 
 # License
 
