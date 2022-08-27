@@ -6,11 +6,18 @@
 # Delete functions that should not exceed this bashrc's scope.
 _cleanup() {
   unset -f _cleanup
+  unset -f _is_running_interactively
   unset -f _main
 }
 
+# Returns true if the current shell is running interactively, and false
+# otherwise.
+_is_running_interactively() {
+  [[ $- != *i* ]]
+}
+
 _main() {
-  :
+  _is_running_interactively && return
 }
 
 _main
