@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Check if the user has sudo access. Sudo arguments are provided as function
+# arguments. This function prevents non-sudo users from entering their sudo
+# password on every invocation.
+safe_sudo() {
+  if sudo -v; then
+    sudo "$@"
+  fi
+}
