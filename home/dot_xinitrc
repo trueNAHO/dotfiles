@@ -2,8 +2,15 @@
 
 # `xinitrc` configures the initialisation of xinit.
 
+# Replace current shell with a graphical user interface.
+_exec_graphical_user_interface() {
+  exec awesome
+}
+
+# Make sure the `exec` command is the last one executed in this script. No
+# further statements will be executed.
 _main() {
-  :
+  _exec_graphical_user_interface
 }
 
 _main
