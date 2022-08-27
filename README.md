@@ -93,9 +93,17 @@
 </p>
 
 <p align="center">
+  <a href="#related">Related</a> •
   <a href="#contrbuting">Contributing</a> •
   <a href="#license">License</a>
 </p>
+
+# Related
+
+- [Commitizen](http://commitizen.github.io/cz-cli/) - Simple commit conventions
+  for internet citizens.
+- [chezmoi](https://chezmoi.io/) - Manage your dotfiles across multiple diverse
+  machines, securely.
 
 # Contributing
 
