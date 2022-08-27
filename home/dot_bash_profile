@@ -3,10 +3,16 @@
 # `bash_profile` is the personal initialization file, executed for login
 # shells.
 
+# Potentially source the user's bashrc.
+_source_bashrc() {
+  declare -r user_bashrc="$HOME/.bashrc"
+  [[ -f "$user_bashrc" ]] && source "$user_bashrc"
+}
+
 # Make sure the `exec` command is the last one executed in this script. No
 # further statements will be executed.
 _main() {
-  :
+  _source_bashrc
 }
 
 _main
