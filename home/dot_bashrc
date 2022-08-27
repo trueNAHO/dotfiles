@@ -39,6 +39,7 @@ _is_running_interactively() {
 _set_aliases() {
   # Colorise output.
   alias grep="grep --color=auto"
+  alias ls="ls --color=auto"
 }
 
 # Set bash history related variables.
