@@ -93,10 +93,39 @@
 </p>
 
 <p align="center">
+  <a href="#how-to-use">How to use</a> •  
   <a href="#related">Related</a> •
   <a href="#contrbuting">Contributing</a> •
   <a href="#license">License</a>
 </p>
+
+# How to use
+
+## [chezmoi](https://chezmoi.io/) is not installed on the system
+
+Install all dotfiles from this GitHub repository on a new, empty machine with a
+single command:
+
+    sh -c "$(curl -fsLS https://chezmoi.io/get)" -- init --apply --one-shot https://github.com/trueNAHO/dotfiles.git
+
+Install all dotfiles **AND [chezmoi](https://chezmoi.io/)** from this GitHub
+repository on a new, empty machine with a single command:
+
+    sh -c "$(curl -fsLS https://chezmoi.io/get)" -- init --apply https://github.com/trueNAHO/dotfiles.git
+
+## [chezmoi](https://chezmoi.io/) is installed on the system
+
+If [chezmoi](https://chezmoi.io/) is already installed on the system and you
+want to install all dotfiles from this GitHub repository, then run:
+
+    chezmoi init https://github.com/trueNAHO/dotfiles.git
+
+If [chezmoi](https://chezmoi.io/) is already installed on the system and you
+want to install all dotfiles from this GitHub repository **AND remove
+[chezmoi](https://chezmoi.io/)'s source and config directories after
+applying**, then run:
+
+    chezmoi init --purge --force https://github.com/trueNAHO/dotfiles.git
 
 # Related
 
