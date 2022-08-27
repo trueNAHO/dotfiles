@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# `bash_logout` is the individual login shell cleanup file, executed when a
+# login shell exits.
+
+# Clear the screen after logging out on a virtual terminal.
+clear
+reset
