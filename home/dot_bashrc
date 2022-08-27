@@ -10,6 +10,7 @@ _cleanup() {
   unset -f _is_running_interactively
   unset -f _main
   unset -f _set_bash_history
+  unset -f _set_configs
   unset -f _set_shopt
   unset -f _set_system_defaults
 }
@@ -42,6 +43,11 @@ _set_bash_history() {
   # Expand the bash history size.
   export HISTFILESIZE=10000
   export HISTSIZE=500
+}
+
+# Set configurations for various tools.
+_set_configs() {
+  :
 }
 
 # Set and unset shell options.
@@ -98,6 +104,7 @@ _main() {
   _set_bash_history
   _extend_path
   _set_shopt
+  _set_configs
 }
 
 _main
