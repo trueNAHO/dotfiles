@@ -9,6 +9,7 @@ _cleanup() {
   unset -f _extend_path
   unset -f _is_running_interactively
   unset -f _main
+  unset -f _set_aliases
   unset -f _set_bash_history
   unset -f _set_configs
   unset -f _set_shopt
@@ -32,6 +33,11 @@ _extend_path() {
 # otherwise.
 _is_running_interactively() {
   [[ $- != *i* ]]
+}
+
+# Set aliases.
+_set_aliases() {
+  :
 }
 
 # Set bash history related variables.
@@ -112,6 +118,7 @@ _main() {
   _extend_path
   _set_shopt
   _set_configs
+  _set_aliases
 }
 
 _main
