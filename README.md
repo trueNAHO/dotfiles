@@ -91,3 +91,11 @@
     >
   </a>
 </p>
+
+<p align="center">
+  <a href="#license">License</a>
+</p>
+
+# License
+
+This project is licensed under [GNU GENERAL PUBLIC LICENSE Version 3](LICENSE).
