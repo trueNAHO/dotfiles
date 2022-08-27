@@ -2,14 +2,27 @@
 
 # `xinitrc` configures the initialisation of xinit.
 
+declare -r sysprograms="/etc/X11/xinit/xinitrc.d"
+
 # Replace current shell with a graphical user interface.
 _exec_graphical_user_interface() {
   exec awesome
 }
 
+# Source bash scripts located in `sysprograms`.
+_source_sysprograms() {
+  declare file
+  if [[ -d "$sysprograms" ]]; then
+   for file in "$sysprograms"/?*.sh; do
+    [[ -x "$file" ]] && source "$file"
+   done
+  fi
+}
+
 # Make sure the `exec` command is the last one executed in this script. No
 # further statements will be executed.
 _main() {
+  _source_sysprograms
   _exec_graphical_user_interface
 }
 
