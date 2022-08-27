@@ -41,6 +41,9 @@ _set_aliases() {
   alias grep="grep --color=auto"
   alias ls="ls --color=auto"
   alias tree="tree -C"
+
+  # Confirm before overwriting something.
+  alias cp="cp --interactive"
 }
 
 # Set bash history related variables.
