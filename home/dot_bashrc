@@ -8,6 +8,7 @@ _cleanup() {
   unset -f _cleanup
   unset -f _is_running_interactively
   unset -f _main
+  unset -f _set_bash_history
   unset -f _set_system_defaults
 }
 
@@ -15,6 +16,17 @@ _cleanup() {
 # otherwise.
 _is_running_interactively() {
   [[ $- != *i* ]]
+}
+
+# Set bash history related variables.
+_set_bash_history() {
+  # Bash history does not contain duplicate lines or lines beginning with a
+  # space.
+  export HISTCONTROL=erasedups:ignoredups:ignorespace
+
+  # Expand the bash history size.
+  export HISTFILESIZE=10000
+  export HISTSIZE=500
 }
 
 # Set system defaults.
@@ -30,6 +42,7 @@ _set_system_defaults() {
 _main() {
   _set_system_defaults
   _is_running_interactively && return
+  _set_bash_history
 }
 
 _main
