@@ -8,6 +8,14 @@ declare -r sysresources="/etc/X11/xinit/.Xresources"
 declare -r usermodmap="$HOME/.Xmodmap"
 declare -r userresources="$HOME/.Xresources"
 
+# Load entire closure in background to yield control back to the runtime as
+# soon as possible. Make sure no processes lock the closure. Otherwise no
+# further statements will be executed. For consistancy load every process in
+# the background.
+_async_load() { {
+  :
+} & }
+
 # Replace current shell with a graphical user interface.
 _exec_graphical_user_interface() {
   exec awesome
@@ -31,11 +39,13 @@ _source_sysprograms() {
   fi
 }
 
-# Make sure the `exec` command is the last one executed in this script. No
-# further statements will be executed.
+# Asynchronous function should be called after synchronous one to assure
+# correct processing order. Make sure the `exec` command is the last one
+# executed in this script. No further statements will be executed.
 _main() {
   _set_configs
   _source_sysprograms
+  _async_load 
   _exec_graphical_user_interface
 }
 
