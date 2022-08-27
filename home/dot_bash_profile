@@ -26,10 +26,20 @@ _source_bashrc() {
 _status() {
   printf 'bash_profile: %s\n' "$@"
 }
+
+# @url https://ryanlue.com/posts/2017-06-29-gpg-for-ssh-auth
+# Using GPG key for SSH authentication.
+_use_ssh_socket() {
+  # @url https://wiki.archlinux.org/title/SSH_keys#SSH_agents
+  # Set UNIX-domain socket for `ssh-agent`.
+  export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"             
+}
+
 # Make sure the `exec` command is the last one executed in this script. No
 # further statements will be executed.
 _main() {
   _source_bashrc
+  _use_ssh_socket
   _exec_graphical_user_interface
 }
 
