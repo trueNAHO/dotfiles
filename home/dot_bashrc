@@ -52,6 +52,9 @@ _set_configs() {
   # appear in the search pattern; in other words, if a pattern contains
   # uppercase letters, then that search does not ignore case.
   export LESS="-Ri"
+
+  # Set `bat` as manpager.
+  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 }
 
 # Set and unset shell options.
