@@ -125,7 +125,13 @@ _set_system_defaults() {
 
 # Source external programs to enrich bash's capabilities.
 _source_programs() {
-  :
+  declare -r bash_completion="/usr/share/bash-completion/bash_completion"
+
+  # By default, Bash only tab-completes commands, filenames, and variables. The
+  # package `bash-completion` extends this by adding more specialized tab
+  # completions for common commands and their options, which can be enabled by
+  # sourcing `/usr/share/bash-completion/bash_completion`.
+  [[ -r "$bash_completion" ]] && source "$bash_completion"
 }
 
 _main() {
