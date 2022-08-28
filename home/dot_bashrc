@@ -2,6 +2,11 @@
 
 # `bashrc` is the individual per-interactive-shell startup file.
 
+# @url https://gist.github.com/zachbrowne/8bc414c9f30192067831fafebd14255c
+# @url https://gitlab.com/dwt1/dotfiles/-/raw/master/.bashrc
+# @url https://wiki.archlinux.org/title/Bash
+# This configuration file is heavily inspired by these sources.
+
 # @url https://unix.stackexchange.com/questions/104755/how-can-i-create-a-local-function-in-my-bashrc
 # Delete functions that should not exceed this bashrc's scope.
 _cleanup() {
