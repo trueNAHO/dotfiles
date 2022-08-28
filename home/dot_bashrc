@@ -14,6 +14,7 @@ _cleanup() {
   unset -f _set_configs
   unset -f _set_shopt
   unset -f _set_system_defaults
+  unset -f _source_programs
 }
 
 # Potentially extend the `PATH` variable.
@@ -122,6 +123,11 @@ _set_system_defaults() {
   export VISUAL="nvim"
 }
 
+# Source external programs to enrich bash's capabilities.
+_source_programs() {
+  :
+}
+
 _main() {
   _set_system_defaults
   _is_running_interactively && return
@@ -130,6 +136,7 @@ _main() {
   _set_shopt
   _set_configs
   _set_aliases
+  _source_programs
 }
 
 _main
