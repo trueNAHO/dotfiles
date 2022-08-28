@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# shellcheck disable=all
+
+{{ template "lib/utilities/status_dependencies_current_file" }}
+{{ template "lib/utilities/status_unsupported_os" .chezmoi.osRelease.name }}
+
+status_dependencies_current_file
+
+{{- if eq .chezmoi.os "linux" }}
+
+{{ template "lib/deps/dependencies_pacman" }}
+{{ template "lib/deps/dependencies_yay" }}
+{{ template "lib/utilities/safe_sudo" }}
+
+dependencies_pacman bash bash-completion bat neovim pkgfile
+dependencies_yay alacritty-ligatures-git
+
+# @url https://wiki.archlinux.org/title/Pkgfile
+# Update the pkgfile database and start the systemd timer for automatically
+# synchronizing the pkgfile database.
+if command -v pkgfile 1>/dev/null; then
+  printf 'chezmoi: %s\n' "update pkgfile database"
+  safe_sudo pkgfile -u
+  if command -v systemctl 1>/dev/null; then
+    printf 'chezmoi: %s\n' \
+        "start systemd service for automatically synchronizing the pkgfile database"
+    safe_sudo systemctl enable pkgfile-update.timer --now
+  fi
+fi
+
+{{- else }}
+
+status_unsupported_os
+
+{{- end }}
