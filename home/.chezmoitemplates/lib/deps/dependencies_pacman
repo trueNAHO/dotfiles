@@ -16,7 +16,7 @@ dependencies_pacman() {
   # Download provided packages.
   for package in "$@"; do
     printf 'chezmoi: %s\n' "sudo pacman -S --needed $package"
-    check_sudo pacman -S --needed "$package" || true
+    safe_sudo pacman -S --needed "$package" || true
   done
 }
 
