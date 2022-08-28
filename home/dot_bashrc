@@ -126,12 +126,18 @@ _set_system_defaults() {
 # Source external programs to enrich bash's capabilities.
 _source_programs() {
   declare -r bash_completion="/usr/share/bash-completion/bash_completion"
+  declare -r command_not_found="/usr/share/doc/pkgfile/command-not-found.bash"
 
   # By default, Bash only tab-completes commands, filenames, and variables. The
   # package `bash-completion` extends this by adding more specialized tab
   # completions for common commands and their options, which can be enabled by
   # sourcing `/usr/share/bash-completion/bash_completion`.
   [[ -r "$bash_completion" ]] && source "$bash_completion"
+  
+  # `pkgfile` includes a "command not found" hook that will automatically
+  # search the official repositories, when entering an unrecognized command.
+  # You need to source the hook to enable it.
+  [[ -r "$command_not_found" ]] && source "$command_not_found"
 }
 
 _main() {
