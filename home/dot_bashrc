@@ -140,6 +140,12 @@ _source_programs() {
   [[ -r "$command_not_found" ]] && source "$command_not_found"
 }
 
+# Make directories and change the shell working directory to the first
+# directory specified.
+mkcd () {
+  mkdir -p -- "$@" && cd -- "$1" || exit
+}
+
 _main() {
   _set_system_defaults
   _is_running_interactively && return
