@@ -49,7 +49,7 @@ _source_sysprograms() {
 _main() {
   _set_configs
   _source_sysprograms
-  _async_load 
+  _async_load
   _exec_graphical_user_interface
 }
 

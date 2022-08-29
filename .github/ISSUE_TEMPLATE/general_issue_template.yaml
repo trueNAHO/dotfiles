@@ -23,7 +23,7 @@ body:
     id: OS
     attributes:
       label: OS Platform and Distribution
-      description: 
+      description:
       placeholder: e.g., Linux Ubuntu 16.04
     validations:
       required: false
@@ -42,7 +42,7 @@ body:
       label: Reproduce the issue
       description: Provide a reproducible scenario.
       placeholder: Tell us what you did!
-      value: 
+      value:
       render: shell
   - type: textarea
     id: logs

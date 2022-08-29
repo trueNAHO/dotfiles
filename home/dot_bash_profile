@@ -18,8 +18,8 @@ exec_graphical_user_interface() {
 
 # Link user specifiy directory in `/tmp` to `$HOME`.
 link_tmp_to_home() {
-  declare -r destination="$HOME/tmp" 
-  
+  declare -r destination="$HOME/tmp"
+
   if [[ ! -d "$destination" ]]; then
     declare -r target="$(mktemp -d -p "/tmp" "$USER"'_XXXXXXXXXX')"
     status "link $target to $destination"
@@ -43,7 +43,7 @@ status() {
 use_ssh_socket() {
   # @url https://wiki.archlinux.org/title/SSH_keys#SSH_agents
   # Set UNIX-domain socket for `ssh-agent`.
-  export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"             
+  export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 }
 
 # Make sure the `exec` command is the last one executed in this script. No

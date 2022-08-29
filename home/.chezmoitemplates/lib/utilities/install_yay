@@ -17,8 +17,8 @@ install_yay() {
   done
 
   # Install yay inside a temporary directory.
-  declare -r current_dir="$PWD" 
-  declare -r tmp_dir="$(mktemp -d)" 
+  declare -r current_dir="$PWD"
+  declare -r tmp_dir="$(mktemp -d)"
   cd "$tmp_dir" \
       && git clone https://aur.archlinux.org/yay.git \
       && cd yay \

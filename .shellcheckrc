@@ -3,7 +3,7 @@
 # @url https://github.com/github/super-linter/issues/1633
 # `.shellcheckrc` is not picked up by `super-linter` if placed in
 # `.github/linters/`. Placing `.shellcheckrc` into the repository root seems to
-# work. 
+# work.
 
 # ShellCheck can't follow non-constant source. Use a directive to specify
 # location.
