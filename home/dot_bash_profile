@@ -5,7 +5,7 @@
 
 # Potentially replace the current shell with a graphical user interface.
 exec_graphical_user_interface() {
-  # Replace `-eq` comparision with `-le` to use graphical logins on multiple
+  # Replace `-eq` comparison with `-le` to use graphical logins on multiple
   # virtual machines. The `exec` command assures that the user is logged out
   # when the X Server exits, crashed or is killed by an attacker. If you want
   # to take the risk and remain logged in when the X session ends, remove
@@ -16,7 +16,7 @@ exec_graphical_user_interface() {
   fi
 }
 
-# Link user specifiy directory in `/tmp` to `$HOME`.
+# Link user specify directory in `/tmp` to `$HOME`.
 link_tmp_to_home() {
   declare -r destination="$HOME/tmp"
 
