@@ -1,6 +1,6 @@
 [user]
-	name = NAHO
-	email = 90870942+trueNAHO@users.noreply.github.com
-	signingKey = 5FC6088AFB1A609D4532F9190C1C177B3B6468E0
+    name = NAHO
+    email = 90870942+trueNAHO@users.noreply.github.com
+    signingKey = 5FC6088AFB1A609D4532F9190C1C177B3B6468E0
 [commit]
-	gpgSign = true
+    gpgSign = true
