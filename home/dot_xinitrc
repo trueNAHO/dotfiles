@@ -10,7 +10,7 @@ declare -r userresources="$HOME/.Xresources"
 
 # Load entire closure in background to yield control back to the runtime as
 # soon as possible. Make sure no processes lock the closure. Otherwise no
-# further statements will be executed. For consistancy load every process in
+# further statements will be executed. For consistency load every process in
 # the background.
 _async_load() { {
   # Start X11 compositor.
