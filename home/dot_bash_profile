@@ -16,6 +16,17 @@ _exec_graphical_user_interface() {
   fi
 }
 
+# Link user specifiy directory in `/tmp` to `$HOME`.
+_link_tmp_to_home() {
+  declare -r destination="$HOME/tmp" 
+  
+  if [[ ! -d "$destination" ]]; then
+    declare -r target="$(mktemp -d -p "/tmp" "$USER"'_XXXXXXXXXX')"
+    _status "link $target to $destination"
+    ln -s "$target" "$destination"
+  fi
+}
+
 # Potentially source the user's bashrc.
 _source_bashrc() {
   declare -r user_bashrc="$HOME/.bashrc"
@@ -38,6 +49,7 @@ _use_ssh_socket() {
 # Make sure the `exec` command is the last one executed in this script. No
 # further statements will be executed.
 _main() {
+  _link_tmp_to_home
   _source_bashrc
   _use_ssh_socket
   _exec_graphical_user_interface
