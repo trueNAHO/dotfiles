@@ -4,43 +4,43 @@
 # shells.
 
 # Potentially replace the current shell with a graphical user interface.
-_exec_graphical_user_interface() {
+exec_graphical_user_interface() {
   # Replace `-eq` comparision with `-le` to use graphical logins on multiple
   # virtual machines. The `exec` command assures that the user is logged out
   # when the X Server exits, crashed or is killed by an attacker. If you want
   # to take the risk and remain logged in when the X session ends, remove
   # `exec`.
   if [[ -z "$DISPLAY" && "$XDG_VTNR" == 1 ]]; then
-    _status "starting graphical user interface"
+    status "starting graphical user interface"
     exec startx
   fi
 }
 
 # Link user specifiy directory in `/tmp` to `$HOME`.
-_link_tmp_to_home() {
+link_tmp_to_home() {
   declare -r destination="$HOME/tmp" 
   
   if [[ ! -d "$destination" ]]; then
     declare -r target="$(mktemp -d -p "/tmp" "$USER"'_XXXXXXXXXX')"
-    _status "link $target to $destination"
+    status "link $target to $destination"
     ln -s "$target" "$destination"
   fi
 }
 
 # Potentially source the user's bashrc.
-_source_bashrc() {
+source_bashrc() {
   declare -r user_bashrc="$HOME/.bashrc"
   [[ -f "$user_bashrc" ]] && source "$user_bashrc"
 }
 
 # Print arguments to stdout preceded by a prompt.
-_status() {
+status() {
   printf 'bash_profile: %s\n' "$@"
 }
 
 # @url https://ryanlue.com/posts/2017-06-29-gpg-for-ssh-auth
 # Using GPG key for SSH authentication.
-_use_ssh_socket() {
+use_ssh_socket() {
   # @url https://wiki.archlinux.org/title/SSH_keys#SSH_agents
   # Set UNIX-domain socket for `ssh-agent`.
   export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"             
@@ -48,11 +48,11 @@ _use_ssh_socket() {
 
 # Make sure the `exec` command is the last one executed in this script. No
 # further statements will be executed.
-_main() {
-  _link_tmp_to_home
-  _source_bashrc
-  _use_ssh_socket
-  _exec_graphical_user_interface
+main() {
+  link_tmp_to_home
+  source_bashrc
+  use_ssh_socket
+  exec_graphical_user_interface
 }
 
-_main
+main
