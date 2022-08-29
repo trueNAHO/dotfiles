@@ -12,7 +12,7 @@ dependencies_pacman() {
     printf 'chezmoi: skip pacman packages: %s\n' "$*"
     return
   fi
-  
+
   # Download provided packages.
   for package in "$@"; do
     printf 'chezmoi: %s\n' "sudo pacman -S --needed $package"
