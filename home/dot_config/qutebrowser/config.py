@@ -870,21 +870,21 @@ c.content.headers.custom = {}
 # Type: Bool
 c.content.headers.do_not_track = True
 
-# When to send the Referer header. The Referer header tells websites from which
-# website you were coming from when visiting them. Note that with QtWebEngine,
-# websites can override this preference by setting the `Referrer-Policy:`
-# header, so that any websites visited from them get the full referer. No
-# restart is needed with QtWebKit.
+# When to send the Referrer header. The Referrer header tells websites from
+# which website you were coming from when visiting them. Note that with
+# QtWebEngine, websites can override this preference by setting the
+# `Referrer-Policy:` header, so that any websites visited from them get the
+# full referrer. No restart is needed with QtWebKit.
 # Type: String
 # Valid values:
-#   - always: Always send the Referer.
-#   - never: Never send the Referer. This is not recommended, as some sites may
+#   - always: Always send the Referrer.
+#   - never: Never send the Referrer. This is not recommended, as some sites may
 #     break.
-#   - same-domain: Only send the Referer for the same domain. This will still
+#   - same-domain: Only send the Referrer for the same domain. This will still
 #     protect your privacy, but shouldn't break any sites. With QtWebEngine, the
-#     referer will still be sent for other domains, but with stripped path
+#     referrer will still be sent for other domains, but with stripped path
 #     information.
-c.content.headers.referer = "same-domain"
+c.content.headers.referrer = "same-domain"
 
 # User agent to send.  The following placeholders are defined:  * `{os_info}`:
 # Something like "X11; Linux x86_64". * `{webkit_version}`: The underlying
