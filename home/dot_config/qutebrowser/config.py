@@ -884,7 +884,7 @@ c.content.headers.do_not_track = True
 #     protect your privacy, but shouldn't break any sites. With QtWebEngine, the
 #     referrer will still be sent for other domains, but with stripped path
 #     information.
-c.content.headers.referrer = "same-domain"
+c.content.headers.referer = "same-domain"
 
 # User agent to send.  The following placeholders are defined:  * `{os_info}`:
 # Something like "X11; Linux x86_64". * `{webkit_version}`: The underlying
