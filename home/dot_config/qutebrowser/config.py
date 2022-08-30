@@ -2574,28 +2574,28 @@ config.bind("}}", "navigate next -t")
 config.bind(
     key_leader + "mA",
     (
-        "spawn -d -v mpv --player-operation-mode=pseudo-gui "
+        "spawn -dv mpv --player-operation-mode=pseudo-gui "
         "--ytdl-format=bestaudio {url}"
     ),
 )
 config.bind(
     key_leader + "ma",
     (
-        "hint links spawn -d -v mpv --player-operation-mode=pseudo-gui "
+        "hint links spawn -dv mpv --player-operation-mode=pseudo-gui "
         "--ytdl-format=bestaudio {hint-url}"
     ),
 )
 config.bind(
     key_leader + "mlA",
     (
-        "spawn -d -v mpv --loop-playlist --player-operation-mode=pseudo-gui "
+        "spawn -dv mpv --loop-playlist --player-operation-mode=pseudo-gui "
         "--ytdl-format=bestaudio {url}"
     ),
 )
 config.bind(
     key_leader + "mla",
     (
-        "hint links spawn -d -v mpv --loop-playlist "
+        "hint links spawn -dv mpv --loop-playlist "
         "--player-operation-mode=pseudo-gui --ytdl-format=bestaudio {hint-url}"
     ),
 )
