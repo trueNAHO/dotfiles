@@ -141,6 +141,8 @@ chezmoi init --purge --force https://github.com/trueNAHO/dotfiles.git
   for internet citizens.
 - [chezmoi](https://chezmoi.io/) - Manage your dotfiles across multiple diverse
   machines, securely.
+- [pre-commit](https://pre-commit.com/) - A framework for managing and
+  maintaining multi-language pre-commit hooks.
 
 # Contributing
 
