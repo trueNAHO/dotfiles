@@ -2571,11 +2571,76 @@ config.bind("yt", "yank title")
 config.bind("yy", "yank")
 config.bind("{{", "navigate prev -t")
 config.bind("}}", "navigate next -t")
+
 config.bind(
     key_leader + "mA",
     (
         "spawn -dv mpv --player-operation-mode=pseudo-gui "
         "--ytdl-format=bestaudio {url}"
+    ),
+)
+config.bind(
+    key_leader + "mV1",
+    (
+        'spawn -dv mpv --ytdl-format="'
+        'bestvideo[height<=?144][fps<=?30]+bestaudio/'
+        'best[height<=?144][fps<=?30]/best" {url}'
+    ),
+)
+config.bind(
+    key_leader + "mV2",
+    (
+        'spawn -dv mpv --ytdl-format="'
+        'bestvideo[height<=?240][fps<=?30]+bestaudio/'
+        'best[height<=?240][fps<=?30]/best" {url}'
+    ),
+)
+config.bind(
+    key_leader + "mV3",
+    (
+        'spawn -dv mpv --ytdl-format="'
+        'bestvideo[height<=?360][fps<=?30]+bestaudio/'
+        'best[height<=?360][fps<=?30]/best" {url}'
+    ),
+)
+config.bind(
+    key_leader + "mV4",
+    (
+        'spawn -dv mpv --ytdl-format="'
+        'bestvideo[height<=?480][fps<=?30]+bestaudio/'
+        'best[height<=?480][fps<=?30]/best" {url}'
+    ),
+)
+config.bind(
+    key_leader + "mV5p3",
+    (
+        'spawn -dv mpv --ytdl-format="'
+        'bestvideo[height<=?720][fps<=?30]+bestaudio/'
+        'best[height<=?720][fps<=?30]/best" {url}'
+    ),
+)
+config.bind(
+    key_leader + "mV5p6",
+    (
+        'spawn -dv mpv --ytdl-format="'
+        'bestvideo[height<=?720][fps<=?60]+bestaudio/'
+        'best[height<=?720][fps<=?60]/best" {url}'
+    ),
+)
+config.bind(
+    key_leader + "mV6p3",
+    (
+        'spawn -dv mpv --ytdl-format="'
+        'bestvideo[height<=?1080][fps<=?30]+bestaudio/'
+        'best[height<=?1080][fps<=?30]/best" {url}'
+    ),
+)
+config.bind(
+    key_leader + "mV6p6",
+    (
+        'spawn -dv mpv --ytdl-format="'
+        'bestvideo[height<=?1080][fps<=?60]+bestaudio/'
+        'best[height<=?1080][fps<=?60]/best" {url}'
     ),
 )
 config.bind(
@@ -2600,27 +2665,11 @@ config.bind(
     ),
 )
 config.bind(
-    key_leader + "mV1",
-    (
-        'spawn -dv mpv --ytdl-format="'
-        'bestvideo[height<=?144][fps<=?30]+bestaudio/'
-        'best[height<=?144][fps<=?30]/best" {url}'
-    ),
-)
-config.bind(
     key_leader + "mv1",
     (
         'hint links spawn -dv mpv --ytdl-format="'
         'bestvideo[height<=?144][fps<=?30]+bestaudio/'
         'best[height<=?144][fps<=?30]/best" {hint-url}'
-    ),
-)
-config.bind(
-    key_leader + "mV2",
-    (
-        'spawn -dv mpv --ytdl-format="'
-        'bestvideo[height<=?240][fps<=?30]+bestaudio/'
-        'best[height<=?240][fps<=?30]/best" {url}'
     ),
 )
 config.bind(
@@ -2632,27 +2681,11 @@ config.bind(
     ),
 )
 config.bind(
-    key_leader + "mV3",
-    (
-        'spawn -dv mpv --ytdl-format="'
-        'bestvideo[height<=?360][fps<=?30]+bestaudio/'
-        'best[height<=?360][fps<=?30]/best" {url}'
-    ),
-)
-config.bind(
     key_leader + "mv3",
     (
         'hint links spawn -dv mpv --ytdl-format="'
         'bestvideo[height<=?360][fps<=?30]+bestaudio/'
         'best[height<=?360][fps<=?30]/best" {hint-url}'
-    ),
-)
-config.bind(
-    key_leader + "mV4",
-    (
-        'spawn -dv mpv --ytdl-format="'
-        'bestvideo[height<=?480][fps<=?30]+bestaudio/'
-        'best[height<=?480][fps<=?30]/best" {url}'
     ),
 )
 config.bind(
@@ -2664,27 +2697,11 @@ config.bind(
     ),
 )
 config.bind(
-    key_leader + "mV5p3",
-    (
-        'spawn -dv mpv --ytdl-format="'
-        'bestvideo[height<=?720][fps<=?30]+bestaudio/'
-        'best[height<=?720][fps<=?30]/best" {url}'
-    ),
-)
-config.bind(
     key_leader + "mv5p3",
     (
         'hint links spawn -dv mpv --ytdl-format="'
         'bestvideo[height<=?720][fps<=?30]+bestaudio/'
         'best[height<=?720][fps<=?30]/best" {hint-url}'
-    ),
-)
-config.bind(
-    key_leader + "mV5p6",
-    (
-        'spawn -dv mpv --ytdl-format="'
-        'bestvideo[height<=?720][fps<=?60]+bestaudio/'
-        'best[height<=?720][fps<=?60]/best" {url}'
     ),
 )
 config.bind(
@@ -2696,27 +2713,11 @@ config.bind(
     ),
 )
 config.bind(
-    key_leader + "mV6p3",
-    (
-        'spawn -dv mpv --ytdl-format="'
-        'bestvideo[height<=?1080][fps<=?30]+bestaudio/'
-        'best[height<=?1080][fps<=?30]/best" {url}'
-    ),
-)
-config.bind(
     key_leader + "mv6p3",
     (
         'hint links spawn -dv mpv --ytdl-format="'
         'bestvideo[height<=?1080][fps<=?30]+bestaudio/'
         'best[height<=?1080][fps<=?30]/best" {hint-url}'
-    ),
-)
-config.bind(
-    key_leader + "mV6p6",
-    (
-        'spawn -dv mpv --ytdl-format="'
-        'bestvideo[height<=?1080][fps<=?60]+bestaudio/'
-        'best[height<=?1080][fps<=?60]/best" {url}'
     ),
 )
 config.bind(
