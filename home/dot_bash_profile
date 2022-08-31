@@ -22,7 +22,7 @@ link_tmp_to_home() {
 
   if [[ ! -d "$destination" ]]; then
     declare -r target="$(mktemp -d -p "/tmp" "$USER"'_XXXXXXXXXX')"
-    status "link $target to $destination"
+    status "symlink $target to $destination"
     ln -fs "$target" "$destination"
   fi
 }
