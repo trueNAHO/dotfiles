@@ -210,23 +210,23 @@ c.colors.downloads.error.bg = color_theme["red"]["normal"]
 
 # Foreground color for downloads with errors.
 # Type: QtColor
-c.colors.downloads.error.fg = color_theme["white"]["normal"]
+c.colors.downloads.error.fg = color_theme["black"]["normal"]
 
 # Color gradient start for download backgrounds.
 # Type: QtColor
-c.colors.downloads.start.bg = color_theme["black"]["normal"]
+c.colors.downloads.start.bg = color_theme["blue"]["normal"]
 
 # Color gradient start for download text.
 # Type: QtColor
-c.colors.downloads.start.fg = color_theme["white"]["normal"]
+c.colors.downloads.start.fg = color_theme["black"]["normal"]
 
 # Color gradient stop for download backgrounds.
 # Type: QtColor
-c.colors.downloads.stop.bg = color_theme["black"]["bright"]
+c.colors.downloads.stop.bg = color_theme["green"]["normal"]
 
 # Color gradient end for download text.
 # Type: QtColor
-c.colors.downloads.stop.fg = color_theme["white"]["normal"]
+c.colors.downloads.stop.fg = color_theme["black"]["normal"]
 
 # Color gradient interpolation system for download backgrounds.
 # Type: ColorSystem
