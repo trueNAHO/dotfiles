@@ -41,6 +41,7 @@ _extend_path() {
 # otherwise.
 _is_running_interactively() {
   [[ $- != *i* ]]
+  return $?
 }
 
 # Set aliases.
