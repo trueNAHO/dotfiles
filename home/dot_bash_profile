@@ -11,7 +11,7 @@ exec_graphical_user_interface() {
   # to take the risk and remain logged in when the X session ends, remove
   # `exec`.
   if [[ -z "$DISPLAY" && "$XDG_VTNR" == 1 ]]; then
-    status "starting graphical user interface"
+    status "start graphical user interface"
     exec startx
   fi
 }
