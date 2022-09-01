@@ -33,6 +33,8 @@ _extend_path() {
   for path in "${paths[@]}"; do
     [[ -d "$path" ]] && PATH="$path:$PATH"
   done
+
+  export PATH
 }
 
 # Returns true if the current shell is running interactively, and false
