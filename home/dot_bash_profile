@@ -30,7 +30,11 @@ link_tmp_to_home() {
 # Potentially source the user's bashrc.
 source_bashrc() {
   declare -r user_bashrc="$HOME/.bashrc"
-  [[ -f "$user_bashrc" ]] && source "$user_bashrc"
+
+  if [[ -f "$user_bashrc" ]]; then
+    status "source $user_bashrc"
+    source "$user_bashrc"
+  fi
 }
 
 # Print arguments to stdout preceded by a prompt.
