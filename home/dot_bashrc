@@ -46,6 +46,8 @@ _is_running_interactively() {
 
 # Set aliases.
 _set_aliases() {
+  # Change output format.
+  alias df="df -h"
   # Colorise output.
   alias grep="grep --color=auto"
   alias ls="ls --color=auto"
