@@ -44,8 +44,12 @@
 #   HostName      github.com
 #   IdentityFile ~/.ssh/client_id_rsa
 
+Host aur.archlinux.org
+    IdentityFile   ~/.ssh/AUR/id_rsa
+
 Host *
     IdentityFile   ~/.ssh/id_rsa
-    AddKeysToAgent 30m
+
+AddKeysToAgent 30m
 
 # @url: https://stackoverflow.com/questions/7548158/having-trouble-switching-github-accounts-on-terminal/7550935#7550935
