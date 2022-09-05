@@ -39,9 +39,9 @@ _set_configs() {
 _source_system_programs() {
   declare file
   if [[ -d "$system_programs" ]]; then
-   for file in "$system_programs"/?*.sh; do
-    [[ -x "$file" ]] && source "$file"
-   done
+    for file in "$system_programs"/?*.sh; do
+      [[ -x "$file" ]] && source "$file"
+    done
   fi
 }
 
