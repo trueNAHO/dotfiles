@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# shellcheck disable=SC2024
 
 # `bash_profile` is the personal initialization file, executed for login
 # shells.
