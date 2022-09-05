@@ -50,6 +50,11 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
 
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.8.0.4
+    hooks:
+      - id: shellcheck
+
   - repo: https://github.com/shssoichiro/oxipng
     rev: v5.0.1
     hooks:
