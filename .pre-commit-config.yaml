@@ -54,6 +54,6 @@ repos:
       - id: optimize-png
 
   - repo: https://github.com/zricethezav/gitleaks
-    rev: v8.11.2
+    rev: v8.12.0
     hooks:
       - id: gitleaks
