@@ -2,11 +2,11 @@
 
 # `xinitrc` configures the initialisation of xinit.
 
-declare -r sysmodmap="/etc/X11/xinit/.Xmodmap"
-declare -r sysprograms="/etc/X11/xinit/xinitrc.d"
-declare -r sysresources="/etc/X11/xinit/.Xresources"
-declare -r usermodmap="$HOME/.Xmodmap"
-declare -r userresources="$HOME/.Xresources"
+declare -r system_modmap="/etc/X11/xinit/.Xmodmap"
+declare -r system_programs="/etc/X11/xinit/xinitrc.d"
+declare -r system_resources="/etc/X11/xinit/.Xresources"
+declare -r user_modmap="$HOME/.Xmodmap"
+declare -r user_resources="$HOME/.Xresources"
 
 # Load entire closure in background to yield control back to the runtime as
 # soon as possible. Make sure no processes lock the closure. Otherwise no
@@ -27,18 +27,19 @@ _exec_graphical_user_interface() {
 
 # Set configurations for various tools.
 _set_configs() {
-  [[ -f "$sysresources" ]]  && xrdb -merge "$sysresources"
-  [[ -f "$sysmodmap" ]]     && xmodmap "$sysmodmap"
+  [[ -f "$system_resources" ]]  && xrdb -merge "$system_resources"
+  [[ -f "$system_modmap" ]]     && xmodmap "$system_modmap"
 
-  [[ -f "$userresources" ]] && xrdb -merge "$userresources"
-  [[ -f "$usermodmap" ]]    && xmodmap "$usermodmap"
+  [[ -f "$user_resources" ]] && xrdb -merge "$user_resources"
+  [[ -f "$user_modmap" ]]    && xmodmap "$user_modmap"
+
 }
 
-# Source bash scripts located in `sysprograms`.
-_source_sysprograms() {
+# Source bash scripts located in `system_programs`.
+_source_system_programs() {
   declare file
-  if [[ -d "$sysprograms" ]]; then
-   for file in "$sysprograms"/?*.sh; do
+  if [[ -d "$system_programs" ]]; then
+   for file in "$system_programs"/?*.sh; do
     [[ -x "$file" ]] && source "$file"
    done
   fi
@@ -49,7 +50,7 @@ _source_sysprograms() {
 # executed in this script. No further statements will be executed.
 _main() {
   _set_configs
-  _source_sysprograms
+  _source_system_programs
   _async_load
   _exec_graphical_user_interface
 }
