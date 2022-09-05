@@ -48,10 +48,10 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
 
-  - repo: https://github.com/redwarp/optimize-png-hooks
-    rev: v1.2.0
+  - repo: https://github.com/shssoichiro/oxipng
+    rev: v5.0.1
     hooks:
-      - id: optimize-png
+      - id: oxipng
 
   - repo: https://github.com/zricethezav/gitleaks
     rev: v8.12.0
