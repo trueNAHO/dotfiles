@@ -27,10 +27,11 @@ _exec_graphical_user_interface() {
 
 # Set configurations for various tools.
 _set_configs() {
-  [[ -f "$usermodmap" ]]    && xmodmap "$usermodmap"
-  [[ -f "$userresources" ]] && xrdb -merge "$userresources"
-  [[ -f "$sysmodmap" ]]     && xmodmap "$sysmodmap"
   [[ -f "$sysresources" ]]  && xrdb -merge "$sysresources"
+  [[ -f "$sysmodmap" ]]     && xmodmap "$sysmodmap"
+
+  [[ -f "$userresources" ]] && xrdb -merge "$userresources"
+  [[ -f "$usermodmap" ]]    && xmodmap "$usermodmap"
 }
 
 # Source bash scripts located in `sysprograms`.
