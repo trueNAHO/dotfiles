@@ -27,6 +27,12 @@ link_tmp_to_home() {
   fi
 }
 
+# Set configurations for various tools.
+set_configs() {
+  # Set keyboard layout to US.
+  sudo loadkeys us
+}
+
 # Potentially source the user's bashrc.
 source_bashrc() {
   declare -r user_bashrc="$HOME/.bashrc"
@@ -54,6 +60,7 @@ use_ssh_socket() {
 # further statements will be executed.
 main() {
   link_tmp_to_home
+  set_configs
   source_bashrc
   use_ssh_socket
   exec_graphical_user_interface
