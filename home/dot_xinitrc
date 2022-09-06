@@ -13,7 +13,7 @@ declare -r user_resources="$HOME/.Xresources"
 # soon as possible. Make sure no processes lock the closure. Otherwise no
 # further statements will be executed. For consistency load every process in
 # the background.
-_async_load() { {
+async_load() { {
   # Start X11 compositor.
   picom &
 
@@ -22,12 +22,12 @@ _async_load() { {
 } & }
 
 # Replace current shell with a graphical user interface.
-_exec_graphical_user_interface() {
+exec_graphical_user_interface() {
   exec awesome
 }
 
 # Set configurations for various tools.
-_set_configs() {
+set_configs() {
   # Load system settings for X.
   [[ -f "$system_resources" ]] && xrdb -merge "$system_resources"
   [[ -f "$system_modmap" ]]    && xmodmap "$system_modmap"
@@ -55,7 +55,7 @@ _set_configs() {
 }
 
 # Source bash scripts located in `system_programs`.
-_source_system_programs() {
+source_system_programs() {
   declare file
   if [[ -d "$system_programs" ]]; then
     for file in "$system_programs"/?*.sh; do
@@ -67,11 +67,11 @@ _source_system_programs() {
 # Asynchronous function should be called after synchronous one to assure
 # correct processing order. Make sure the `exec` command is the last one
 # executed in this script. No further statements will be executed.
-_main() {
-  _set_configs
-  _source_system_programs
-  _async_load
-  _exec_graphical_user_interface
+main() {
+  set_configs
+  source_system_programs
+  async_load
+  exec_graphical_user_interface
 }
 
-_main
+main
