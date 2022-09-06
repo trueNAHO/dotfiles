@@ -61,6 +61,8 @@ status() {
 # @url https://ryanlue.com/posts/2017-06-29-gpg-for-ssh-auth
 # Use GPG key for SSH authentication.
 use_ssh_socket() {
+  status "export 'SSH_AUTH_SOCK' variable to use GPG key for SSH authentication"
+
   # @url https://wiki.archlinux.org/title/SSH_keys#SSH_agents
   # Set UNIX-domain socket for `ssh-agent`.
   export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
