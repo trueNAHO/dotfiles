@@ -30,6 +30,8 @@ link_tmp_to_home() {
 
 # Set configurations for various tools.
 set_configs() {
+  status "set configurations for various tools"
+
   # Set keyboard layout to US.
   sudo loadkeys us
 
