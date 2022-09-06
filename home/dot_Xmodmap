@@ -1,3 +1,10 @@
+! `~/.Xmodmap` serves as a keymap.
+
+! @url https://wiki.archlinux.org/title/Xmodmap
+
+! `setxkbmap` equivalent:
+!     setxkbmap -option 'ctrl:swapcaps_hyper'
+
 clear      lock
 clear   control
 clear      mod1
