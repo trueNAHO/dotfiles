@@ -57,7 +57,7 @@ status() {
 }
 
 # @url https://ryanlue.com/posts/2017-06-29-gpg-for-ssh-auth
-# Using GPG key for SSH authentication.
+# Use GPG key for SSH authentication.
 use_ssh_socket() {
   # @url https://wiki.archlinux.org/title/SSH_keys#SSH_agents
   # Set UNIX-domain socket for `ssh-agent`.
