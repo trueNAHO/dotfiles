@@ -28,9 +28,11 @@ _exec_graphical_user_interface() {
 
 # Set configurations for various tools.
 _set_configs() {
+  # Load system settings for X.
   [[ -f "$system_resources" ]] && xrdb -merge "$system_resources"
   [[ -f "$system_modmap" ]]    && xmodmap "$system_modmap"
 
+  # Load user settings for X.
   [[ -f "$user_resources" ]] && xrdb -merge "$user_resources"
   [[ -f "$user_modmap" ]]    && xmodmap "$user_modmap"
 
