@@ -12,17 +12,26 @@ import os
 global c
 global config
 
+# @url https://github.com/8-uh/base16-nord-scheme
 # Set color scheme.
-color_theme = {
-    "black": {"dim": "#131415", "normal": "#1a1b29", "bright": "#666666"},
-    "red": {"dim": "#864343", "normal": "#e06c75", "bright": "#d54e53"},
-    "green": {"dim": "#777c44", "normal": "#b5bd68", "bright": "#b9ca4a"},
-    "yellow": {"dim": "#9e824c", "normal": "#f0c674", "bright": "#e7c547"},
-    "blue": {"dim": "#6b6e94", "normal": "#81a2be", "bright": "#61afef"},
-    "magenta": {"dim": "#817494", "normal": "#b294bb", "bright": "#c397d8"},
-    "cyan": {"dim": "#5b7d78", "normal": "#8abeb7", "bright": "#70c0b1"},
-    "white": {"dim": "#828482", "normal": "#c5c5c5", "bright": "#eaeaea"},
-}
+base16_scheme = [
+    "#2E3440",
+    "#3B4252",
+    "#434C5E",
+    "#4C566A",
+    "#D8DEE9",
+    "#E5E9F0",
+    "#ECEFF4",
+    "#8FBCBB",
+    "#88C0D0",
+    "#81A1C1",
+    "#5E81AC",
+    "#BF616A",
+    "#D08770",
+    "#EBCB8B",
+    "#A3BE8C",
+    "#B48EAD",
+]
 
 # Set leader key.
 key_leader = "<Space>"
@@ -113,64 +122,64 @@ c.changelog_after_upgrade = "minor"
 
 # Background color of the completion widget category headers.
 # Type: QssColor
-c.colors.completion.category.bg = color_theme["black"]["normal"]
+c.colors.completion.category.bg = base16_scheme[0]
 
 # Bottom border color of the completion widget category headers.
 # Type: QssColor
-c.colors.completion.category.border.bottom = color_theme["white"]["normal"]
+c.colors.completion.category.border.bottom = base16_scheme[4]
 
 # Top border color of the completion widget category headers.
 # Type: QssColor
-c.colors.completion.category.border.top = color_theme["white"]["normal"]
+c.colors.completion.category.border.top = base16_scheme[4]
 
 # Foreground color of completion widget category headers.
 # Type: QtColor
-c.colors.completion.category.fg = color_theme["white"]["normal"]
+c.colors.completion.category.fg = base16_scheme[4]
 
 # Background color of the completion widget for even rows.
 # Type: QssColor
-c.colors.completion.even.bg = color_theme["black"]["normal"]
+c.colors.completion.even.bg = base16_scheme[0]
 
 # Text color of the completion widget. May be a single color to use for all
 # columns or a list of three colors, one for each column.
 # Type: List of QtColor, or QtColor
-c.colors.completion.fg = color_theme["white"]["normal"]
+c.colors.completion.fg = base16_scheme[4]
 
 # Background color of the selected completion item.
 # Type: QssColor
-c.colors.completion.item.selected.bg = color_theme["white"]["normal"]
+c.colors.completion.item.selected.bg = base16_scheme[4]
 
 # Bottom border color of the selected completion item.
 # Type: QssColor
-c.colors.completion.item.selected.border.bottom = color_theme["white"]["normal"]
+c.colors.completion.item.selected.border.bottom = base16_scheme[4]
 
 # Top border color of the selected completion item.
 # Type: QssColor
-c.colors.completion.item.selected.border.top = color_theme["white"]["normal"]
+c.colors.completion.item.selected.border.top = base16_scheme[4]
 
 # Foreground color of the selected completion item.
 # Type: QtColor
-c.colors.completion.item.selected.fg = color_theme["black"]["normal"]
+c.colors.completion.item.selected.fg = base16_scheme[0]
 
 # Foreground color of the matched text in the selected completion item.
 # Type: QtColor
-c.colors.completion.item.selected.match.fg = color_theme["red"]["normal"]
+c.colors.completion.item.selected.match.fg = base16_scheme[11]
 
 # Foreground color of the matched text in the completion.
 # Type: QtColor
-c.colors.completion.match.fg = color_theme["red"]["normal"]
+c.colors.completion.match.fg = base16_scheme[11]
 
 # Background color of the completion widget for odd rows.
 # Type: QssColor
-c.colors.completion.odd.bg = color_theme["black"]["normal"]
+c.colors.completion.odd.bg = base16_scheme[0]
 
 # Color of the scrollbar in the completion view.
 # Type: QssColor
-c.colors.completion.scrollbar.bg = color_theme["white"]["normal"]
+c.colors.completion.scrollbar.bg = base16_scheme[4]
 
 # Color of the scrollbar handle in the completion view.
 # Type: QssColor
-c.colors.completion.scrollbar.fg = color_theme["black"]["normal"]
+c.colors.completion.scrollbar.fg = base16_scheme[0]
 
 # Background color of disabled items in the context menu. If set to null, the Qt
 # default is used.
@@ -202,31 +211,31 @@ c.colors.contextmenu.selected.fg = None
 
 # Background color for the download bar.
 # Type: QssColor
-c.colors.downloads.bar.bg = color_theme["black"]["normal"]
+c.colors.downloads.bar.bg = base16_scheme[1]
 
 # Background color for downloads with errors.
 # Type: QtColor
-c.colors.downloads.error.bg = color_theme["red"]["normal"]
+c.colors.downloads.error.bg = base16_scheme[11]
 
 # Foreground color for downloads with errors.
 # Type: QtColor
-c.colors.downloads.error.fg = color_theme["black"]["normal"]
+c.colors.downloads.error.fg = base16_scheme[0]
 
 # Color gradient start for download backgrounds.
 # Type: QtColor
-c.colors.downloads.start.bg = color_theme["blue"]["normal"]
+c.colors.downloads.start.bg = base16_scheme[9]
 
 # Color gradient start for download text.
 # Type: QtColor
-c.colors.downloads.start.fg = color_theme["black"]["normal"]
+c.colors.downloads.start.fg = base16_scheme[0]
 
 # Color gradient stop for download backgrounds.
 # Type: QtColor
-c.colors.downloads.stop.bg = color_theme["green"]["normal"]
+c.colors.downloads.stop.bg = base16_scheme[14]
 
 # Color gradient end for download text.
 # Type: QtColor
-c.colors.downloads.stop.fg = color_theme["black"]["normal"]
+c.colors.downloads.stop.fg = base16_scheme[0]
 
 # Color gradient interpolation system for download backgrounds.
 # Type: ColorSystem
@@ -249,201 +258,201 @@ c.colors.downloads.system.fg = "rgb"
 # Background color for hints. Note that you can use a `rgba(...)` value
 # for transparency.
 # Type: QssColor
-c.colors.hints.bg = color_theme["red"]["normal"]
+c.colors.hints.bg = base16_scheme[11]
 
 # Font color for hints.
 # Type: QssColor
-c.colors.hints.fg = color_theme["black"]["dim"]
+c.colors.hints.fg = base16_scheme[0]
 
 # Font color for the matched part of hints.
 # Type: QtColor
-c.colors.hints.match.fg = color_theme["white"]["normal"]
+c.colors.hints.match.fg = base16_scheme[4]
 
 # Background color of the keyhint widget.
 # Type: QssColor
-c.colors.keyhint.bg = color_theme["black"]["normal"]
+c.colors.keyhint.bg = base16_scheme[0]
 
 # Text color for the keyhint widget.
 # Type: QssColor
-c.colors.keyhint.fg = color_theme["white"]["normal"]
+c.colors.keyhint.fg = base16_scheme[4]
 
 # Highlight color for keys to complete the current keychain.
 # Type: QssColor
-c.colors.keyhint.suffix.fg = color_theme["red"]["normal"]
+c.colors.keyhint.suffix.fg = base16_scheme[11]
 
 # Background color of an error message.
 # Type: QssColor
-c.colors.messages.error.bg = color_theme["red"]["normal"]
+c.colors.messages.error.bg = base16_scheme[11]
 
 # Border color of an error message.
 # Type: QssColor
-c.colors.messages.error.border = color_theme["black"]["normal"]
+c.colors.messages.error.border = base16_scheme[0]
 
 # Foreground color of an error message.
 # Type: QssColor
-c.colors.messages.error.fg = color_theme["black"]["normal"]
+c.colors.messages.error.fg = base16_scheme[0]
 
 # Background color of an info message.
 # Type: QssColor
-c.colors.messages.info.bg = color_theme["blue"]["normal"]
+c.colors.messages.info.bg = base16_scheme[9]
 
 # Border color of an info message.
 # Type: QssColor
-c.colors.messages.info.border = color_theme["black"]["normal"]
+c.colors.messages.info.border = base16_scheme[0]
 
 # Foreground color of an info message.
 # Type: QssColor
-c.colors.messages.info.fg = color_theme["black"]["normal"]
+c.colors.messages.info.fg = base16_scheme[0]
 
 # Background color of a warning message.
 # Type: QssColor
-c.colors.messages.warning.bg = color_theme["yellow"]["normal"]
+c.colors.messages.warning.bg = base16_scheme[13]
 
 # Border color of a warning message.
 # Type: QssColor
-c.colors.messages.warning.border = color_theme["black"]["normal"]
+c.colors.messages.warning.border = base16_scheme[0]
 
 # Foreground color of a warning message.
 # Type: QssColor
-c.colors.messages.warning.fg = color_theme["black"]["normal"]
+c.colors.messages.warning.fg = base16_scheme[0]
 
 # Background color for prompts.
 # Type: QssColor
-c.colors.prompts.bg = color_theme["black"]["normal"]
+c.colors.prompts.bg = base16_scheme[0]
 
 # Border used around UI elements in prompts.
 # Type: String
-c.colors.prompts.border = color_theme["black"]["normal"]
+c.colors.prompts.border = base16_scheme[0]
 
 # Foreground color for prompts.
 # Type: QssColor
-c.colors.prompts.fg = color_theme["white"]["normal"]
+c.colors.prompts.fg = base16_scheme[4]
 
 # Background color for the selected item in filename prompts.
 # Type: QssColor
-c.colors.prompts.selected.bg = color_theme["white"]["normal"]
+c.colors.prompts.selected.bg = base16_scheme[4]
 
 # Foreground color for the selected item in filename prompts.
 # Type: QssColor
-c.colors.prompts.selected.fg = color_theme["black"]["normal"]
+c.colors.prompts.selected.fg = base16_scheme[0]
 
 # Background color of the statusbar in caret mode.
 # Type: QssColor
-c.colors.statusbar.caret.bg = color_theme["magenta"]["normal"]
+c.colors.statusbar.caret.bg = base16_scheme[15]
 
 # Foreground color of the statusbar in caret mode.
 # Type: QssColor
-c.colors.statusbar.caret.fg = color_theme["black"]["normal"]
+c.colors.statusbar.caret.fg = base16_scheme[0]
 
 # Background color of the statusbar in caret mode with a selection.
 # Type: QssColor
-c.colors.statusbar.caret.selection.bg = color_theme["magenta"]["normal"]
+c.colors.statusbar.caret.selection.bg = base16_scheme[15]
 
 # Foreground color of the statusbar in caret mode with a selection.
 # Type: QssColor
-c.colors.statusbar.caret.selection.fg = color_theme["black"]["normal"]
+c.colors.statusbar.caret.selection.fg = base16_scheme[0]
 
 # Background color of the statusbar in command mode.
 # Type: QssColor
-c.colors.statusbar.command.bg = color_theme["black"]["normal"]
+c.colors.statusbar.command.bg = base16_scheme[0]
 
 # Foreground color of the statusbar in command mode.
 # Type: QssColor
-c.colors.statusbar.command.fg = color_theme["white"]["normal"]
+c.colors.statusbar.command.fg = base16_scheme[4]
 
 # Background color of the statusbar in private browsing + command mode.
 # Type: QssColor
-c.colors.statusbar.command.private.bg = color_theme["red"]["normal"]
+c.colors.statusbar.command.private.bg = base16_scheme[11]
 
 # Foreground color of the statusbar in private browsing + command mode.
 # Type: QssColor
-c.colors.statusbar.command.private.fg = color_theme["black"]["normal"]
+c.colors.statusbar.command.private.fg = base16_scheme[0]
 
 # Background color of the statusbar in insert mode.
 # Type: QssColor
-c.colors.statusbar.insert.bg = color_theme["green"]["normal"]
+c.colors.statusbar.insert.bg = base16_scheme[14]
 
 # Foreground color of the statusbar in insert mode.
 # Type: QssColor
-c.colors.statusbar.insert.fg = color_theme["black"]["normal"]
+c.colors.statusbar.insert.fg = base16_scheme[0]
 
 # Background color of the statusbar.
 # Type: QssColor
-c.colors.statusbar.normal.bg = color_theme["black"]["normal"]
+c.colors.statusbar.normal.bg = base16_scheme[0]
 
 # Foreground color of the statusbar.
 # Type: QssColor
-c.colors.statusbar.normal.fg = color_theme["white"]["normal"]
+c.colors.statusbar.normal.fg = base16_scheme[4]
 
 # Background color of the statusbar in passthrough mode.
 # Type: QssColor
-c.colors.statusbar.passthrough.bg = color_theme["blue"]["normal"]
+c.colors.statusbar.passthrough.bg = base16_scheme[9]
 
 # Foreground color of the statusbar in passthrough mode.
 # Type: QssColor
-c.colors.statusbar.passthrough.fg = color_theme["black"]["normal"]
+c.colors.statusbar.passthrough.fg = base16_scheme[0]
 
 # Background color of the statusbar in private browsing mode.
 # Type: QssColor
-c.colors.statusbar.private.bg = color_theme["red"]["normal"]
+c.colors.statusbar.private.bg = base16_scheme[11]
 
 # Foreground color of the statusbar in private browsing mode.
 # Type: QssColor
-c.colors.statusbar.private.fg = color_theme["black"]["normal"]
+c.colors.statusbar.private.fg = base16_scheme[0]
 
 # Background color of the progress bar.
 # Type: QssColor
-c.colors.statusbar.progress.bg = color_theme["white"]["normal"]
+c.colors.statusbar.progress.bg = base16_scheme[4]
 
 # Foreground color of the URL in the statusbar on error.
 # Type: QssColor
-c.colors.statusbar.url.error.fg = color_theme["red"]["normal"]
+c.colors.statusbar.url.error.fg = base16_scheme[11]
 
 # Default foreground color of the URL in the statusbar.
 # Type: QssColor
-c.colors.statusbar.url.fg = color_theme["white"]["normal"]
+c.colors.statusbar.url.fg = base16_scheme[4]
 
 # Foreground color of the URL in the statusbar for hovered links.
 # Type: QssColor
-c.colors.statusbar.url.hover.fg = color_theme["blue"]["bright"]
+c.colors.statusbar.url.hover.fg = base16_scheme[8]
 
 # Foreground color of the URL in the statusbar on successful load
 # (http).
 # Type: QssColor
-c.colors.statusbar.url.success.http.fg = color_theme["white"]["normal"]
+c.colors.statusbar.url.success.http.fg = base16_scheme[4]
 
 # Foreground color of the URL in the statusbar on successful load
 # (https).
 # Type: QssColor
-c.colors.statusbar.url.success.https.fg = color_theme["white"]["normal"]
+c.colors.statusbar.url.success.https.fg = base16_scheme[4]
 
 # Foreground color of the URL in the statusbar when there's a warning.
 # Type: QssColor
-c.colors.statusbar.url.warn.fg = color_theme["red"]["normal"]
+c.colors.statusbar.url.warn.fg = base16_scheme[11]
 
 # Background color of the tab bar.
 # Type: QssColor
-c.colors.tabs.bar.bg = color_theme["black"]["normal"]
+c.colors.tabs.bar.bg = base16_scheme[1]
 
 # Background color of unselected even tabs.
 # Type: QtColor
-c.colors.tabs.even.bg = color_theme["magenta"]["normal"]
+c.colors.tabs.even.bg = base16_scheme[10]
 
 # Foreground color of unselected even tabs.
 # Type: QtColor
-c.colors.tabs.even.fg = color_theme["black"]["normal"]
+c.colors.tabs.even.fg = base16_scheme[0]
 
 # Color for the tab indicator on errors.
 # Type: QtColor
-c.colors.tabs.indicator.error = color_theme["red"]["normal"]
+c.colors.tabs.indicator.error = base16_scheme[11]
 
 # Color gradient start for the tab indicator.
 # Type: QtColor
-c.colors.tabs.indicator.start = color_theme["white"]["normal"]
+c.colors.tabs.indicator.start = base16_scheme[4]
 
 # Color gradient end for the tab indicator.
 # Type: QtColor
-c.colors.tabs.indicator.stop = color_theme["black"]["normal"]
+c.colors.tabs.indicator.stop = base16_scheme[0]
 
 # Color gradient interpolation system for the tab indicator.
 # Type: ColorSystem
@@ -456,59 +465,59 @@ c.colors.tabs.indicator.system = "rgb"
 
 # Background color of unselected odd tabs.
 # Type: QtColor
-c.colors.tabs.odd.bg = color_theme["magenta"]["dim"]
+c.colors.tabs.odd.bg = base16_scheme[9]
 
 # Foreground color of unselected odd tabs.
 # Type: QtColor
-c.colors.tabs.odd.fg = color_theme["black"]["normal"]
+c.colors.tabs.odd.fg = base16_scheme[0]
 
 # Background color of pinned unselected even tabs.
 # Type: QtColor
-c.colors.tabs.pinned.even.bg = color_theme["yellow"]["normal"]
+c.colors.tabs.pinned.even.bg = base16_scheme[13]
 
 # Foreground color of pinned unselected even tabs.
 # Type: QtColor
-c.colors.tabs.pinned.even.fg = color_theme["black"]["normal"]
+c.colors.tabs.pinned.even.fg = base16_scheme[0]
 
 # Background color of pinned unselected odd tabs.
 # Type: QtColor
-c.colors.tabs.pinned.odd.bg = color_theme["yellow"]["dim"]
+c.colors.tabs.pinned.odd.bg = base16_scheme[12]
 
 # Foreground color of pinned unselected odd tabs.
 # Type: QtColor
-c.colors.tabs.pinned.odd.fg = color_theme["black"]["normal"]
+c.colors.tabs.pinned.odd.fg = base16_scheme[0]
 
 # Background color of pinned selected even tabs.
 # Type: QtColor
-c.colors.tabs.pinned.selected.even.bg = color_theme["black"]["normal"]
+c.colors.tabs.pinned.selected.even.bg = base16_scheme[0]
 
 # Foreground color of pinned selected even tabs.
 # Type: QtColor
-c.colors.tabs.pinned.selected.even.fg = color_theme["white"]["normal"]
+c.colors.tabs.pinned.selected.even.fg = base16_scheme[4]
 
 # Background color of pinned selected odd tabs.
 # Type: QtColor
-c.colors.tabs.pinned.selected.odd.bg = color_theme["black"]["normal"]
+c.colors.tabs.pinned.selected.odd.bg = base16_scheme[0]
 
 # Foreground color of pinned selected odd tabs.
 # Type: QtColor
-c.colors.tabs.pinned.selected.odd.fg = color_theme["white"]["normal"]
+c.colors.tabs.pinned.selected.odd.fg = base16_scheme[4]
 
 # Background color of selected even tabs.
 # Type: QtColor
-c.colors.tabs.selected.even.bg = color_theme["black"]["normal"]
+c.colors.tabs.selected.even.bg = base16_scheme[0]
 
 # Foreground color of selected even tabs.
 # Type: QtColor
-c.colors.tabs.selected.even.fg = color_theme["white"]["normal"]
+c.colors.tabs.selected.even.fg = base16_scheme[4]
 
 # Background color of selected odd tabs.
 # Type: QtColor
-c.colors.tabs.selected.odd.bg = color_theme["black"]["normal"]
+c.colors.tabs.selected.odd.bg = base16_scheme[0]
 
 # Foreground color of selected odd tabs.
 # Type: QtColor
-c.colors.tabs.selected.odd.fg = color_theme["white"]["normal"]
+c.colors.tabs.selected.odd.fg = base16_scheme[4]
 
 # Background color for webpages if unset (or empty to use the theme's color).
 # Type: QtColor
@@ -1427,7 +1436,7 @@ c.hints.auto_follow_timeout = 0
 
 # CSS border value for hints.
 # Type: String
-c.hints.border = "1px solid " + color_theme["black"]["normal"]
+c.hints.border = "1px solid " + base16_scheme[0]
 
 # Characters used for hint strings.
 # Type: UniqueCharString
