@@ -19,6 +19,8 @@ exec_graphical_user_interface() {
 
 # Potentially extend the `$PATH` variable.
 extend_path() {
+  status "extend PATH environment variable"
+
   declare -r -a paths=(
     "$HOME/.bin"
     "$HOME/.local/bin"
@@ -46,6 +48,8 @@ link_tmp_to_home() {
 
 # Set aliases.
 set_aliases() {
+  status "set aliases"
+
   # Change output format.
   alias df="df -h"
   alias free="free -h"
@@ -90,6 +94,8 @@ set_configs() {
 
 # Set system defaults.
 set_system_defaults() {
+  status "set system defaults"
+
   # Set default terminal.
   export TERM="alacritty"
 
