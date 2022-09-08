@@ -28,6 +28,10 @@
 "${TERM:-xterm}"
     Mod4 + Return
 
+# Spawn `dmenu_run`, which pipes programs in `$PATH` into `dmenu`.
+"dmenu_run"
+    Mod4 + r
+
 # Suspend the system.
 "systemctl suspend"
     Mod4 + s
