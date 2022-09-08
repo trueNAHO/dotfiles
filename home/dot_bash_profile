@@ -17,7 +17,7 @@ exec_graphical_user_interface() {
   fi
 }
 
-# Potentially extend the `PATH` variable.
+# Potentially extend the `$PATH` variable.
 extend_path() {
   declare -r -a paths=(
     "$HOME/.bin"
