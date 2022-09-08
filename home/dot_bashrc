@@ -100,7 +100,7 @@ cl() {
 # Make directories and change the shell working directory to the first
 # argument specified.
 mkcd () {
-  mkdir -p -- "$@" && cd -- "$1"
+  mkdir -p -- "$@" && cd -- "$1" || return
 }
 
 _main() {
