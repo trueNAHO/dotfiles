@@ -152,6 +152,12 @@ _source_programs() {
   [[ -r "$command_not_found" ]] && source "$command_not_found"
 }
 
+# Change the shell working directory to the provided argument and list its
+# contents. Only one argument is accepted.
+cl() {
+  cd -- "$@" && ls
+}
+
 # Make directories and change the shell working directory to the first
 # argument specified.
 mkcd () {
