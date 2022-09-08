@@ -135,10 +135,10 @@ main() {
   extend_path
   link_tmp_to_home
   set_system_defaults
-  set_aliases
   set_configs
-  source_bashrc
+  set_aliases
   use_ssh_socket
+  source_bashrc
   exec_graphical_user_interface
 }
 
