@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+dmenu_config_file="${XDG_CONFIG_DIR:-$HOME/.config}/dmenu/dmenu.conf"
+
+# Parse `$dmenu_config_file` and store the result in `$dmenu_flags`. Comments
+# match the following regex: `^\s*#`. Any line optionally beginning with any
+# amount of whitespace followed by a `#` (pound) is considered a commented line
+# and is skipped entirely. Note that inline comments are therefore not possible
+# with the current implementation. All fields in non-commented lines are output
+# in a single line seperated by a space.
+if [[ -f "$dmenu_config_file" ]]; then
+  dmenu_flags="$(awk -v ORS=" " '! /^\s*#/' "$dmenu_config_file")"
+fi
+
+# Temporarily remove this script from `$PATH` to avoid infinite recursion when
+# calling `dmenu`. Note that it will not be removed if it is the first element
+# (on the right). In that case any onther path in `$PATH` has precedence. If
+# `dmenu` is still not found then this script is the only `dmenu`. In that case
+# the problem is not this script, but the system.
+(
+  PATH="${PATH//$(cd "$(dirname "$0")" && pwd):}" \
+      && bash -c "dmenu $dmenu_flags $*"
+)
