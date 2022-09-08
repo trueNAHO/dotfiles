@@ -8,9 +8,9 @@ status_dependencies_current_file
 
 {{- if eq .chezmoi.os "linux" }}
 
-{{ template "lib/deps/dependencies_pacman" }}
+{{ template "lib/deps/dependencies_yay" }}
 
-dependencies_pacman dmenu
+dependencies_yay dmenu2
 
 {{- else }}
 
