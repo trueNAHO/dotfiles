@@ -155,7 +155,7 @@ _source_programs() {
 # Make directories and change the shell working directory to the first
 # directory specified.
 mkcd () {
-  mkdir -p -- "$@" && cd -- "$1" || exit
+  mkdir -p -- "$@" && cd -- "$1"
 }
 
 _main() {
