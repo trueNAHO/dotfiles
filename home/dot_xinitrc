@@ -14,6 +14,23 @@ declare -r user_resources="$HOME/.Xresources"
 # further statements will be executed. For consistency load every process in
 # the background.
 async_load() { {
+  # @url https://unix.stackexchange.com/questions/253489/
+  # Source `$user_modmap` when plugging in a keyboard. Unplugging and plugging
+  # the keyboard back in resets the `xmodmap` settings.
+  if [[ -f "$user_modmap" ]]; then
+    inputplug -c /bin/echo -d \
+        | while read -r event_type device_id device_type device_name; do
+          if [[ "$event_type" == "XIDeviceEnabled"
+              && "$device_type" == "XISlaveKeyboard" ]]; then
+            xmodmap "$user_modmap"
+          fi
+        done &
+  fi
+
+  # Clone all connected outputs with the largest resolution (scaled down if
+  # necessary).
+  autorandr clone-largest &
+
   # Start X11 compositor.
   picom &
 
@@ -36,22 +53,6 @@ set_configs() {
   [[ -f "$user_resources" ]] && xrdb -merge "$user_resources"
   [[ -f "$user_modmap" ]]    && xmodmap "$user_modmap"
 
-  # @url https://unix.stackexchange.com/questions/253489/
-  # Source `$user_modmap` when plugging in a keyboard. Unplugging and plugging
-  # the keyboard back in resets the `xmodmap` settings.
-  if [[ -f "$user_modmap" ]]; then
-    inputplug -c /bin/echo -d \
-        | while read -r event_type device_id device_type device_name; do
-          if [[ "$event_type" == "XIDeviceEnabled"
-              && "$device_type" == "XISlaveKeyboard" ]]; then
-            xmodmap "$user_modmap"
-          fi
-        done &
-  fi
-
-  # Clone all connected outputs with the largest resolution (scaled down if
-  # necessary).
-  autorandr clone-largest
 }
 
 # Source bash scripts located in `system_programs`.
