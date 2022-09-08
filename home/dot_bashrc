@@ -108,7 +108,7 @@ _main() {
   _set_bash_history
   _set_shopt
   _source_programs
+  _cleanup
 }
 
 _main
-_cleanup
