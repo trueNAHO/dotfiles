@@ -102,6 +102,9 @@ set_system_defaults() {
   # Set default text editor.
   export EDITOR="nvim"
   export VISUAL="nvim"
+
+  # Set XDG user directories.
+  source "$HOME/.config/user-dirs.dirs"
 }
 
 # Potentially source the user's bashrc.
