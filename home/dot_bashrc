@@ -11,30 +11,11 @@
 # Delete functions that should not exceed this bashrc's scope.
 _cleanup() {
   unset -f _cleanup
-  unset -f _extend_path
   unset -f _is_running_interactively
   unset -f _main
-  unset -f _set_aliases
   unset -f _set_bash_history
-  unset -f _set_configs
   unset -f _set_shopt
-  unset -f _set_system_defaults
   unset -f _source_programs
-}
-
-# Potentially extend the `PATH` variable.
-_extend_path() {
-  declare -r -a paths=(
-    "$HOME/.bin"
-    "$HOME/.local/bin"
-    "$HOME/p/applications"
-  )
-
-  for path in "${paths[@]}"; do
-    [[ -d "$path" ]] && PATH="$path:$PATH"
-  done
-
-  export PATH
 }
 
 # Returns true if the current shell is running interactively, and false
@@ -42,26 +23,6 @@ _extend_path() {
 _is_running_interactively() {
   [[ $- != *i* ]]
   return $?
-}
-
-# Set aliases.
-_set_aliases() {
-  # Change output format.
-  alias df="df -h"
-  alias free="free -h"
-
-  # Colorise output.
-  alias grep="grep --color=auto"
-  alias ls="ls --color=auto"
-  alias tree="tree -C"
-
-  # Confirm before overwriting something.
-  alias cp="cp --interactive"
-  alias mv="mv --interactive"
-
-  # Make parent directories as needed, with their file modes unaffected by any
-  # `--mode` option.
-  alias mkdir="mkdir -p"
 }
 
 # Set bash history related variables.
@@ -73,18 +34,6 @@ _set_bash_history() {
   # Expand the bash history size.
   export HISTFILESIZE=10000
   export HISTSIZE=500
-}
-
-# Set configurations for various tools.
-_set_configs() {
-  # Causes searches to ignore case; that is, uppercase and lowercase are
-  # considered identical. This option is ignored if any uppercase letters
-  # appear in the search pattern; in other words, if a pattern contains
-  # uppercase letters, then that search does not ignore case.
-  export LESS="-Ri"
-
-  # Set `bat` as manpager.
-  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 }
 
 # Set and unset shell options.
@@ -125,16 +74,6 @@ _set_shopt() {
   shopt -s expand_aliases
 }
 
-# Set system defaults.
-_set_system_defaults() {
-  # Set default terminal.
-  export TERM="alacritty"
-
-  # Set default text editor.
-  export EDITOR="nvim"
-  export VISUAL="nvim"
-}
-
 # Source external programs to enrich bash's capabilities.
 _source_programs() {
   declare -r bash_completion="/usr/share/bash-completion/bash_completion"
@@ -165,13 +104,9 @@ mkcd () {
 }
 
 _main() {
-  _set_system_defaults
   _is_running_interactively && return
   _set_bash_history
-  _extend_path
   _set_shopt
-  _set_configs
-  _set_aliases
   _source_programs
 }
 
