@@ -27,3 +27,7 @@
 # Spawn `$TERM` terminal if `$TERM` is set. Otherwise try to spawn `xterm`.
 "${TERM:-xterm}"
     Mod4 + Return
+
+# Suspend the system.
+"systemctl suspend"
+    Mod4 + s
