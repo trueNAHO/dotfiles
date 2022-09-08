@@ -23,3 +23,7 @@
 #keystate_numlock = enable
 #keystate_capslock = enable
 #keystate_scrolllock= enable
+
+# Spawn `$TERM` terminal if `$TERM` is set. Otherwise try to spawn `xterm`.
+"${TERM:-xterm}"
+    Mod4 + Return
