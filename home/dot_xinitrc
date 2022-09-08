@@ -51,7 +51,7 @@ set_configs() {
 
   # Clone all connected outputs with the largest resolution (scaled down if
   # necessary).
-  autorandr clone-larges
+  autorandr clone-largest
 }
 
 # Source bash scripts located in `system_programs`.
