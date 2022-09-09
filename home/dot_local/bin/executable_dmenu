@@ -20,7 +20,8 @@ fi
 # calling `dmenu`. Note that it will not be removed if it is the first element
 # (on the right). In that case any onther path in `$PATH` has precedence. If
 # `dmenu` is still not found then this script is the only `dmenu`. In that case
-# the problem is not this script, but the system.
+# the problem is not this script, but the system. Note that arguments provided
+# to this script overwrite the config file settings.
 (
   PATH="${PATH//$(cd "$(dirname "$0")" && pwd):}" \
       && bash -c "dmenu $dmenu_flags $*"
