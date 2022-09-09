@@ -5,5 +5,5 @@
 
 # Print dependency details for the current file.
 status_dependencies_current_file() {
-  status "Resolve dependencies for $0"
+  status "resolve dependencies for $0"
 }
