@@ -7,7 +7,11 @@ dmenu_config_file="${XDG_CONFIG_DIR:-$HOME/.config}/dmenu/dmenu.conf"
 # amount of whitespace followed by a `#` (pound) is considered a commented line
 # and is skipped entirely. Note that inline comments are therefore not possible
 # with the current implementation. All fields in non-commented lines are output
-# in a single line seperated by a space.
+# in a single line seperated by a space. Since the final command of this script
+# is called with `bash`, this causes  inline comments in the config file to be
+# seen as a inline comment for that `bash` command. Therefore any fields after
+# the first inline comment will be ignored. The use of inline comments in the
+# config file is strongly discouraged.
 if [[ -f "$dmenu_config_file" ]]; then
   dmenu_flags="$(awk -v ORS=" " '! /^\s*#/' "$dmenu_config_file")"
 fi
