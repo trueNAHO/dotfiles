@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Workaround to make a config file for `dmenu` possible. Every non-commented
+# line from the config file is used to build the final `dmenu` command. Note
+# that arguments provided to this script overwrite the config file settings.
+
 dmenu_config_file="${XDG_CONFIG_DIR:-$HOME/.config}/dmenu/dmenu.conf"
 
 # Parse `$dmenu_config_file` and store the result in `$dmenu_flags`. Comments
