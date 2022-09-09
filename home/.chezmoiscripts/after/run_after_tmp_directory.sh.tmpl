@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# shellcheck disable=all
+
+{{ template "variables/tmp_directory" }}
+
+# Clear `$tmp_directory` directory, which is always created by the
+# corresponding `run_before_tmp_directory.sh.tmpl` script.
+rm -fr "$tmp_directory"
