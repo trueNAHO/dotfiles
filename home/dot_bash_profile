@@ -119,7 +119,7 @@ source_bashrc() {
 
 # Print arguments to stdout preceded by a prompt.
 status() {
-  printf 'bash_profile: %s\n' "$@"
+  printf 'bash_profile: %s\n' "$*"
 }
 
 # @url https://ryanlue.com/posts/2017-06-29-gpg-for-ssh-auth
