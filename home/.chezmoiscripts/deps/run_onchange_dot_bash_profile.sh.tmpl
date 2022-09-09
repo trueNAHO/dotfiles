@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck disable=all
 
+{{ template "lib/utilities/status" }}
 {{ template "lib/utilities/status_dependencies_current_file" }}
 {{ template "lib/utilities/status_unsupported_os" .chezmoi.osRelease.name }}
 
@@ -13,7 +14,7 @@ status_dependencies_current_file
 dependencies_pacman bash xorg-xinit
 
 if command -v systemctl 1>/dev/null; then
-  printf 'chezmoi: %s\n' "start systemd service for ssh-agent"
+  status "start systemd service for ssh-agent"
   systemctl enable ssh-agent --user --now
 fi
 

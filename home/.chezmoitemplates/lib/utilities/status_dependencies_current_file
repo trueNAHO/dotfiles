@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
+# shellcheck disable=all
+
+{{ template "lib/utilities/status" }}
 
 # Print dependency details for the current file.
 status_dependencies_current_file() {
-  printf 'chezmoi: Resolve dependencies for %s\n' "$0"
+  status "Resolve dependencies for $0"
 }

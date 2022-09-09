@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# shellcheck disable=all
+
+{{ template "lib/utilities/status" }}
+{{ template "lib/utilities/status_error" }}
 
 # @url https://github.com/Jguer/yay
 # Install yay.
@@ -6,12 +10,11 @@ install_yay() {
   declare -r -a yay_build_dependencies=( base-devel git )
 
   # Resolve build dependencies.
-  printf 'chezmoi: %s\n' "resolve build dependencies for yay"
+  status "resolve build dependencies for yay"
   pacman_dependencies "${yay_build_dependencies[@]}"
   for dependency in "${yay_build_dependencies[@]}"; do
     if ! command -v "$dependency" &>/dev/null; then
-      printf 'chezmoi: failed to install build dependency for yay: %s\n' \
-          "$dependency"
+      status_error "failed to install build dependency for yay: $dependency"
       return 1
     fi
   done

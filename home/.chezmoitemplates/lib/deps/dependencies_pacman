@@ -2,20 +2,21 @@
 # shellcheck disable=all
 
 {{ template "lib/utilities/safe_sudo" }}
+{{ template "lib/utilities/status" }}
 
 # Download packages with pacman, if it is installed. Packages are provided as
 # arguments.
 dependencies_pacman() {
   # Make sure pacman is installed.
   if ! command -v pacman &>/dev/null; then
-    printf 'chezmoi: %s\n' "pacman is not installed"
-    printf 'chezmoi: skip pacman packages: %s\n' "$*"
+    status "pacman is not installed"
+    status "skip pacman packages: $*"
     return
   fi
 
   # Download provided packages.
   for package in "$@"; do
-    printf 'chezmoi: %s\n' "sudo pacman -S --needed $package"
+    status "sudo pacman -S --needed $package"
     safe_sudo pacman -S --needed "$package" || true
   done
 }
