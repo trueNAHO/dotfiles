@@ -117,7 +117,7 @@ source_bashrc() {
   fi
 }
 
-# Print arguments to stdout preceded by a prompt.
+# Print status messages. All arguments form one status message.
 status() {
   printf 'bash_profile: %s\n' "$*"
 }
