@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-# shellcheck disable=all
-
-{{ template "lib/utilities/status" }}
-
-# Print dependency details for the current file.
-status_dependencies_current_file() {
-  status "resolve dependencies for $0"
-}
