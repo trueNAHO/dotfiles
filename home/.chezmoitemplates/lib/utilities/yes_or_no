@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 # shellcheck disable=all
 
+{{ template "lib/utilities/status" }}
+
 # Prompt for yes or no. Return true if a valid entry was entered. Otherwise
 # return false. Valid entries are "yes", "y" or "" (an empty answer). Entries
 # are checked case insensitive. All arguments are combined and used as prompt.
 yes_or_no() {
-  read -er -p "$* [y/n]: " reply
+  read -er -p "$(status)$* [y/n]: " reply
   case "${reply,,}" in
     "" | y | yes) return 0 ;;
     *) return 1 ;;
