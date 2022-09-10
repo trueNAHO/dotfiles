@@ -8,9 +8,9 @@ yes_or_no_execute_current_file
 
 {{- if eq .chezmoi.os "linux" }}
 
-{{ template "lib/deps/dependencies_yay" }}
+{{ template "lib/deps/select_deps_yay" }}
 
-dependencies_yay dmenu2
+select_deps_yay dmenu2
 
 {{- else }}
 

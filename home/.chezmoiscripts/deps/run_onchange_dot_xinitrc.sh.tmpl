@@ -8,11 +8,11 @@ yes_or_no_execute_current_file
 
 {{- if eq .chezmoi.os "linux" }}
 
-{{ template "lib/deps/dependencies_pacman" }}
-{{ template "lib/deps/dependencies_yay" }}
+{{ template "lib/deps/select_deps_pacman" }}
+{{ template "lib/deps/select_deps_yay" }}
 
-dependencies_pacman awesome picom redshift xorg-xinit
-dependencies_yay inputplug
+select_deps_pacman awesome picom redshift xorg-xinit
+select_deps_yay inputplug
 
 {{- else }}
 

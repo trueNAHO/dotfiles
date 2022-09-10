@@ -10,9 +10,9 @@ yes_or_no_execute_current_file
 
 {{- if eq .chezmoi.os "linux" }}
 
-{{ template "lib/deps/dependencies_pacman" }}
+{{ template "lib/deps/select_deps_pacman" }}
 
-dependencies_pacman bash xorg-xinit
+select_deps_pacman bash xorg-xinit
 
 if is_command_available systemctl; then
   status "start systemd service for ssh-agent"

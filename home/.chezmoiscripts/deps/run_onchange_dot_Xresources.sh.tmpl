@@ -8,12 +8,12 @@ yes_or_no_execute_current_file
 
 {{- if eq .chezmoi.os "linux" }}
 
-{{ template "lib/deps/dependencies_pacman" }}
-{{ template "lib/deps/dependencies_yay" }}
+{{ template "lib/deps/select_deps_pacman" }}
+{{ template "lib/deps/select_deps_yay" }}
 
-dependencies_pacman xorg-xrdb
+select_deps_pacman xorg-xrdb
 
-dependencies_yay \
+select_deps_yay \
     bibata-cursor-theme \
     bibata-cursor-translucent \
     bibata-extra-cursor-theme \

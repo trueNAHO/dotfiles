@@ -9,7 +9,7 @@
 
 # Select what packages to install with pacman, if it is installed. Packages are
 # provided as arguments.
-dependencies_pacman() {
+select_deps_pacman() {
   is_command_available pacman || return 0
 
   # Prompt what packages to install. The selected packages are added to the

@@ -8,9 +8,9 @@ yes_or_no_execute_current_file
 
 {{- if eq .chezmoi.os "linux" }}
 
-{{ template "lib/deps/dependencies_pacman" }}
+{{ template "lib/deps/select_deps_pacman" }}
 
-dependencies_pacman redshift
+select_deps_pacman redshift
 
 {{- else }}
 

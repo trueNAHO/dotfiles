@@ -9,7 +9,7 @@
 
 # Select what packages to install with yay, if it is installed. Packages are
 # provided as arguments.
-dependencies_yay() {
+select_deps_yay() {
   # If yay is not installed, install it or return.
   if ! is_command_available yay; then
     if yes_or_no "Install yay?"; then
