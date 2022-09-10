@@ -2,10 +2,10 @@
 # shellcheck disable=all
 
 {{ template "lib/utilities/status" }}
-{{ template "lib/utilities/status_dependencies_current_file" }}
 {{ template "lib/utilities/status_unsupported_os" .chezmoi.osRelease.name }}
+{{ template "lib/utilities/yes_or_no_execute_current_file" }}
 
-status_dependencies_current_file
+yes_or_no_execute_current_file
 
 {{- if eq .chezmoi.os "linux" }}
 
