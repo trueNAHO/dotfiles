@@ -5,9 +5,10 @@
 {{ template "lib/utilities/is_command_available" }}
 {{ template "lib/utilities/status" }}
 {{ template "lib/utilities/yes_or_no" }}
+{{ template "variables/tmp_directory_deps_yay" }}
 
-# Download packages with yay. If yay is not installed, ask if it should be
-# installed. Packages are provided as arguments.
+# Select what packages to install with yay, if it is installed. Packages are
+# provided as arguments.
 dependencies_yay() {
   # If yay is not installed, install it or return.
   if ! is_command_available yay; then
@@ -18,11 +19,11 @@ dependencies_yay() {
     fi
   fi
 
-  # Download provided packages.
+  # Prompt what packages to install. The selected packages are added to the
+  # `$tmp_directory_deps_yay` file.
   for package in "$@"; do
-    status "yay -S --needed $package"
-    if sudo -v; then
-      yay -S --needed "$package" || true
+    if yes_or_no "yay: Install $package?"; then
+      printf '%s\n' "$package" >> "$tmp_directory_deps_yay"
     fi
   done
 }

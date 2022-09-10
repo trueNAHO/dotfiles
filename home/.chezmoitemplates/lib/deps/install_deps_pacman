@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# shellcheck disable=all
+
+{{ template "lib/utilities/is_command_available" }}
+{{ template "variables/tmp_directory_deps_pacman" }}
+
+# Download packages with pacman, if it is installed. Packages are read from the
+# `$tmp_directory_deps_pacman` file.
+install_deps_pacman() {
+  is_command_available pacman || return 0
+  cat "$tmp_directory_deps_pacman" | xargs sudo pacman --needed --noconfirm -S
+}

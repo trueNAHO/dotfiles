@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 # shellcheck disable=all
 
+{{ template "lib/deps/install_deps_pacman" }}
+{{ template "lib/deps/install_deps_yay" }}
 {{ template "variables/tmp_directory" }}
+
+install_deps_pacman
+install_deps_yay
 
 # Clear `$tmp_directory` directory, which is always created by the
 # corresponding `run_before_tmp_directory.sh.tmpl` script.

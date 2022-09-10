@@ -4,15 +4,19 @@
 {{ template "lib/utilities/is_command_available" }}
 {{ template "lib/utilities/safe_sudo" }}
 {{ template "lib/utilities/status" }}
+{{ template "lib/utilities/yes_or_no" }}
+{{ template "variables/tmp_directory_deps_pacman" }}
 
-# Download packages with pacman, if it is installed. Packages are provided as
-# arguments.
+# Select what packages to install with pacman, if it is installed. Packages are
+# provided as arguments.
 dependencies_pacman() {
   is_command_available pacman || return 0
 
-  # Download provided packages.
+  # Prompt what packages to install. The selected packages are added to the
+  # `$tmp_directory_deps_pacman` file.
   for package in "$@"; do
-    status "sudo pacman -S --needed $package"
-    safe_sudo pacman -S --needed "$package" || true
+    if yes_or_no "pacman: Install $package?"; then
+      printf '%s\n' "$package" >> "$tmp_directory_deps_pacman"
+    fi
   done
 }

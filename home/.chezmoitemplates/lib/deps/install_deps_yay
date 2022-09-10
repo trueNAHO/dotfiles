@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# shellcheck disable=all
+
+{{ template "lib/utilities/is_command_available" }}
+{{ template "variables/tmp_directory_deps_yay" }}
+
+# Download packages with yay, if it is installed. Packages are read from the
+# `$tmp_directory_deps_yay` file.
+install_deps_yay() {
+  is_command_available yay || return 0
+  cat "$tmp_directory_deps_yay" | xargs yay --needed --noconfirm -S
+}
