@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck disable=all
 
+{{ template "lib/utilities/is_command_available" }}
 {{ template "lib/utilities/status" }}
 {{ template "lib/utilities/status_unsupported_os" .chezmoi.osRelease.name }}
 {{ template "lib/utilities/yes_or_no_execute_current_file" }}
@@ -19,10 +20,10 @@ dependencies_yay alacritty-ligatures-git
 # @url https://wiki.archlinux.org/title/Pkgfile
 # Update the pkgfile database and start the systemd timer for automatically
 # synchronizing the pkgfile database.
-if command -v pkgfile 1>/dev/null; then
+if is_command_available pkgfile; then
   status "update pkgfile database"
   safe_sudo pkgfile -u
-  if command -v systemctl 1>/dev/null; then
+  if is_command_available systemctl; then
     status \
         "start systemd service for automatically synchronizing the pkgfile"
         "database"

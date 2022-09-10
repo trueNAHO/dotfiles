@@ -1,18 +1,14 @@
 #!/usr/bin/env bash
 # shellcheck disable=all
 
+{{ template "lib/utilities/is_command_available" }}
 {{ template "lib/utilities/safe_sudo" }}
 {{ template "lib/utilities/status" }}
 
 # Download packages with pacman, if it is installed. Packages are provided as
 # arguments.
 dependencies_pacman() {
-  # Make sure pacman is installed.
-  if ! command -v pacman &>/dev/null; then
-    status "pacman is not installed"
-    status "skip pacman packages: $*"
-    return
-  fi
+  is_command_available pacman || return 0
 
   # Download provided packages.
   for package in "$@"; do

@@ -2,6 +2,7 @@
 # shellcheck disable=all
 
 {{ template "lib/utilities/install_yay" }}
+{{ template "lib/utilities/is_command_available" }}
 {{ template "lib/utilities/status" }}
 {{ template "lib/utilities/yes_or_no" }}
 
@@ -9,14 +10,11 @@
 # installed. Packages are provided as arguments.
 dependencies_yay() {
   # If yay is not installed, install it or return.
-  if ! command -v yay &>/dev/null; then
-    status "yay is not installed"
-
+  if ! is_command_available yay; then
     if yes_or_no "Install yay?"; then
       install_yay
     else
-      status "skip yay packages: $*"
-      return
+      return 0
     fi
   fi
 
