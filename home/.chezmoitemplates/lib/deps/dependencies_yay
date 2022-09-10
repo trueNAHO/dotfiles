@@ -3,6 +3,7 @@
 
 {{ template "lib/utilities/install_yay" }}
 {{ template "lib/utilities/status" }}
+{{ template "lib/utilities/yes_or_no" }}
 
 # Download packages with yay. If yay is not installed, ask if it should be
 # installed. Packages are provided as arguments.
@@ -11,16 +12,12 @@ dependencies_yay() {
   if ! command -v yay &>/dev/null; then
     status "yay is not installed"
 
-    read -er -p "chezmoi: Install yay? [Y/n]" is_install_yay
-    case "${is_install_yay,,}" in
-      "" | y | yes)
-        install_yay
-        ;;
-      *)
-        status "skip yay packages: $*"
-        return
-        ;;
-    esac
+    if yes_or_no "Install yay?"; then
+      install_yay
+    else
+      status "skip yay packages: $*"
+      return
+    fi
   fi
 
   # Download provided packages.
