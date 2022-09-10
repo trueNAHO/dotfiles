@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# shellcheck disable=all
+
+{{ template "lib/utilities/yes_or_no" }}
+
+# Prompt whether to execute the current file. Exit if answer declines.
+yes_or_no_execute_current_file() {
+  yes_or_no "Execute $0?" || exit 0
+}
