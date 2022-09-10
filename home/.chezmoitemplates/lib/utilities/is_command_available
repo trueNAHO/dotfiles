@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Check if the command given as first argument is available. Return true if
+# command is available. Otherwise return false.
+is_command_available() {
+  if command -v "$1" &>/dev/null; then
+    return 0
+  else
+    return 1
+  fi
+}
