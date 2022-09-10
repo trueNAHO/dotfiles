@@ -2,11 +2,24 @@
 # shellcheck disable=all
 
 {{ template "lib/utilities/is_command_available" }}
+{{ template "lib/utilities/yes_or_no" }}
 {{ template "variables/tmp_directory_deps_pacman" }}
 
 # Download packages with pacman, if it is installed. Packages are read from the
 # `$tmp_directory_deps_pacman` file.
 install_deps_pacman() {
   is_command_available pacman || return 0
+  yes_or_no "Install pacman dependencies?" || return 0
+
+  if ! yes_or_no \
+      "Continue without listing pacman packages to be installed" \
+      "($tmp_directory_deps_pacman)?"; then
+    less "$tmp_directory_deps_pacman"
+    if ! yes_or_no "Still install pacman packages" \
+        "($tmp_directory_deps_pacman)?"; then
+      return 0
+    fi
+  fi
+
   cat "$tmp_directory_deps_pacman" | xargs sudo pacman --needed --noconfirm -S
 }

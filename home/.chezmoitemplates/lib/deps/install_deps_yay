@@ -2,11 +2,23 @@
 # shellcheck disable=all
 
 {{ template "lib/utilities/is_command_available" }}
+{{ template "lib/utilities/yes_or_no" }}
 {{ template "variables/tmp_directory_deps_yay" }}
 
 # Download packages with yay, if it is installed. Packages are read from the
 # `$tmp_directory_deps_yay` file.
 install_deps_yay() {
   is_command_available yay || return 0
+  yes_or_no "Install yay dependencies?" || return 0
+
+  if ! yes_or_no \
+      "Continue without listing yay packages to be installed" \
+      "($tmp_directory_deps_yay)?"; then
+    less "$tmp_directory_deps_yay"
+    if ! yes_or_no "Still install yay packages ($tmp_directory_deps_yay)?"; then
+      return 0
+    fi
+  fi
+
   cat "$tmp_directory_deps_yay" | xargs yay --needed --noconfirm -S
 }
