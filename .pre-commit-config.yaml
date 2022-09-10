@@ -29,6 +29,11 @@ repos:
       - id: commitizen
         stages: [commit-msg]
 
+  - repo: https://github.com/jumanjihouse/pre-commit-hooks
+    rev: 3.0.0
+    hooks:
+      - id: shellcheck
+
   - repo: https://github.com/markdownlint/markdownlint
     rev: v0.11.0
     hooks:
@@ -49,11 +54,6 @@ repos:
       - id: end-of-file-fixer
       - id: mixed-line-ending
       - id: trailing-whitespace
-
-  - repo: https://github.com/shellcheck-py/shellcheck-py
-    rev: v0.8.0.4
-    hooks:
-      - id: shellcheck
 
   - repo: https://github.com/shssoichiro/oxipng
     rev: v5.0.1
