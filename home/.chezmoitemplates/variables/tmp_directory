@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-declare -r tmp_directory="/tmp/chezmoi"
+tmp_directory="/tmp/chezmoi"
