@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# shellcheck disable=all
+
+{{ template "variables/tmp_directory" }}
+
+tmp_directory_deps_yay="$tmp_directory/dependencies_yay.txt"
