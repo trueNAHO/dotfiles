@@ -7,7 +7,8 @@
 {{ template "lib/utilities/yes_or_no" }}
 {{ template "variables/tmp_directory_deps_yay" }}
 
-# Select what packages to install with yay, if it is installed. Packages are
+# Select which packages to install with yay, if it is installed. Selected
+# packages are added to the `$tmp_directory_deps_yay` file. Packages are
 # provided as arguments.
 select_deps_yay() {
   # If yay is not installed, install it or return.
@@ -19,7 +20,7 @@ select_deps_yay() {
     fi
   fi
 
-  # Prompt what packages to install. The selected packages are added to the
+  # Prompt which packages to install. The selected packages are added to the
   # `$tmp_directory_deps_yay` file.
   for package in "$@"; do
     if yes_or_no "yay: Install $package?"; then
