@@ -21,5 +21,7 @@ install_deps_pacman() {
     fi
   fi
 
-  cat "$tmp_directory_deps_pacman" | xargs sudo pacman --needed --noconfirm -S
+  if [[ -f "$tmp_directory_deps_pacman" ]]; then
+    cat "$tmp_directory_deps_pacman" | xargs sudo pacman --needed --noconfirm -S
+  fi
 }

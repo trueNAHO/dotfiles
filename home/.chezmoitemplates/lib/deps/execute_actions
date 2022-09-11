@@ -18,5 +18,5 @@ execute_actions() {
     fi
   fi
 
-  bash "$tmp_directory_actions"
+  [[ -f "$tmp_directory_actions" ]] && bash "$tmp_directory_actions"
 }

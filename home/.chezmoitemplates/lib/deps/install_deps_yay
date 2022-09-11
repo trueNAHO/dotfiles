@@ -20,5 +20,7 @@ install_deps_yay() {
     fi
   fi
 
-  cat "$tmp_directory_deps_yay" | xargs yay --needed --noconfirm -S
+  if [[ -f "$tmp_directory_deps_yay" ]]; then
+    cat "$tmp_directory_deps_yay" | xargs yay --needed --noconfirm -S
+  fi
 }
