@@ -10,14 +10,23 @@ yes_or_no_execute_current_file
 
 {{- if eq .chezmoi.os "linux" }}
 
+{{ template "lib/deps/select_actions" }}
+{{ template "lib/deps/select_actions_deps" }}
 {{ template "lib/deps/select_deps_pacman" }}
+
+# @url https://wiki.archlinux.org/title/SSH_keys#SSH_agents
+# Use GPG key for SSH authentication.
+use_gpg_key_for_ssh_authentication() {
+  if is_command_available systemctl; then
+    status "start systemd service for ssh-agent"
+    systemctl enable ssh-agent --user --now
+  fi
+}
 
 select_deps_pacman bash xorg-xinit
 
-if is_command_available systemctl; then
-  status "start systemd service for ssh-agent"
-  systemctl enable ssh-agent --user --now
-fi
+select_actions_deps is_command_available status
+select_actions use_gpg_key_for_ssh_authentication
 
 {{- else }}
 
