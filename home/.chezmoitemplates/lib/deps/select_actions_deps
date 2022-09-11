@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# shellcheck disable=all
+
+{{ template "variables/tmp_directory_actions" }}
+
+# Unconditionally add functions to the `$tmp_directory_actions` file to assure
+# dependencies are covered. Functions are provided as arguments.
+select_actions_deps() {
+  for func in "$@"; do
+    printf '%s\n' "$(declare -f "$func")" >> "$tmp_directory_actions"
+  done
+}
