@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# shellcheck disable=all
+
+{{ template "lib/utilities/is_install_deps" }}
+{{ template "lib/variables/tmp_directory_deps_pacman" }}
+
+# Return true if pacman packages should be installed. Otherwise return false.
+is_install_deps_pacman() {
+  is_install_deps "pacman" "$tmp_directory_deps_pacman"
+  return "$?"
+}
