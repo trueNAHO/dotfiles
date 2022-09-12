@@ -16,6 +16,14 @@ select_deps_pacman() {
   # Prompt which packages to install. The selected packages are added to the
   # `$tmp_directory_deps_pacman` file.
   for package in "$@"; do
+    if [[ -f "$tmp_directory_deps_pacman" ]] \
+        && grep -E "^$package$" "$tmp_directory_deps_pacman" 1>/dev/null; then
+      status \
+          "pacman: package already added to $tmp_directory_deps_pacman:" \
+          "$package"
+      continue
+    fi
+
     if yes_or_no "pacman: Install $package?"; then
       printf '%s\n' "$package" >> "$tmp_directory_deps_pacman"
     fi
