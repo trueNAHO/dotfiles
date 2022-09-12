@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# shellcheck disable=all
+
+{{ template "lib/utilities/is_install_deps" }}
+{{ template "lib/variables/tmp_directory_deps_yay" }}
+
+# Return true if yay packages should be installed. Otherwise return false.
+is_install_deps_yay() {
+  is_install_deps "yay" "$tmp_directory_deps_yay"
+  return "$?"
+}
