@@ -25,6 +25,26 @@ _is_running_interactively() {
   return $?
 }
 
+# Set aliases.
+_set_aliases() {
+  # Change output format.
+  alias df="df -h"
+  alias free="free -h"
+
+  # Colorise output.
+  alias grep="grep --color=auto"
+  alias ls="ls --color=auto"
+  alias tree="tree -C"
+
+  # Confirm before overwriting something.
+  alias cp="cp --interactive"
+  alias mv="mv --interactive"
+
+  # Make parent directories as needed, with their file modes unaffected by any
+  # `--mode` option.
+  alias mkdir="mkdir -p"
+}
+
 # Set bash history related variables.
 _set_bash_history() {
   # Bash history does not contain duplicate lines or lines beginning with a
@@ -108,6 +128,7 @@ _main() {
   _set_bash_history
   _set_shopt
   _source_programs
+  _set_aliases
   _cleanup
 }
 

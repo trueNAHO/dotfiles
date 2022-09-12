@@ -46,28 +46,6 @@ link_tmp_to_home() {
   fi
 }
 
-# Set aliases.
-set_aliases() {
-  status "set aliases"
-
-  # Change output format.
-  alias df="df -h"
-  alias free="free -h"
-
-  # Colorise output.
-  alias grep="grep --color=auto"
-  alias ls="ls --color=auto"
-  alias tree="tree -C"
-
-  # Confirm before overwriting something.
-  alias cp="cp --interactive"
-  alias mv="mv --interactive"
-
-  # Make parent directories as needed, with their file modes unaffected by any
-  # `--mode` option.
-  alias mkdir="mkdir -p"
-}
-
 # Set configurations for various tools.
 set_configs() {
   status "set configurations for various tools"
@@ -139,7 +117,6 @@ main() {
   link_tmp_to_home
   set_system_defaults
   set_configs
-  set_aliases
   use_ssh_socket
   source_bashrc
   exec_graphical_user_interface
