@@ -2,7 +2,6 @@
 # shellcheck disable=all
 
 {{ template "lib/utilities/is_command_available" }}
-{{ template "lib/utilities/safe_sudo" }}
 {{ template "lib/utilities/status" }}
 {{ template "lib/utilities/yes_or_no" }}
 {{ template "lib/variables/tmp_directory_deps_pacman" }}
