@@ -2,7 +2,7 @@
 # shellcheck disable=all
 
 {{ template "lib/utilities/yes_or_no" }}
-{{ template "variables/tmp_directory_actions" }}
+{{ template "lib/variables/tmp_directory_actions" }}
 
 # Select which functions to execute. Selected function bodies are added to the
 # `$tmp_directory_actions` file. Functions are provided as arguments.

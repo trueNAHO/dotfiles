@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck disable=all
 
-{{ template "variables/tmp_directory_actions" }}
+{{ template "lib/variables/tmp_directory_actions" }}
 
 # Unconditionally add functions to the `$tmp_directory_actions` file to assure
 # dependencies are covered. Functions are provided as arguments.

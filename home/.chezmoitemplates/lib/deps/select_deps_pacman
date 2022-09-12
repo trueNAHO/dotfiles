@@ -5,7 +5,7 @@
 {{ template "lib/utilities/safe_sudo" }}
 {{ template "lib/utilities/status" }}
 {{ template "lib/utilities/yes_or_no" }}
-{{ template "variables/tmp_directory_deps_pacman" }}
+{{ template "lib/variables/tmp_directory_deps_pacman" }}
 
 # Select which packages to install with pacman, if it is installed. Selected
 # packages are added to the `$tmp_directory_deps_pacman` file. Packages are

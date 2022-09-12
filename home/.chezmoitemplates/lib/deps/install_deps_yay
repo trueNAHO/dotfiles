@@ -3,7 +3,7 @@
 
 {{ template "lib/utilities/is_command_available" }}
 {{ template "lib/utilities/yes_or_no" }}
-{{ template "variables/tmp_directory_deps_yay" }}
+{{ template "lib/variables/tmp_directory_deps_yay" }}
 
 # Download packages with yay, if it is installed. Packages are read from the
 # `$tmp_directory_deps_yay` file.

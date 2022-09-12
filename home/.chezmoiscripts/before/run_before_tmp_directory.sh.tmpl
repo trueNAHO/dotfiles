@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck disable=all
 
-{{ template "variables/tmp_directory" }}
+{{ template "lib/variables/tmp_directory" }}
 
 # Create a clean `$tmp_directory` directory.
 [[ -d "$tmp_directory" ]] && rm -fr "$tmp_directory"

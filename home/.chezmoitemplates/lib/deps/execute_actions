@@ -3,8 +3,8 @@
 
 {{ template "lib/utilities/is_command_available" }}
 {{ template "lib/utilities/yes_or_no" }}
-{{ template "variables/tmp_directory_deps_yay" }}
-{{ template "variables/tmp_directory_actions" }}
+{{ template "lib/variables/tmp_directory_actions" }}
+{{ template "lib/variables/tmp_directory_deps_yay" }}
 
 # Execute actions. Actions are read from the `$tmp_directory_actions` file.
 execute_actions() {
