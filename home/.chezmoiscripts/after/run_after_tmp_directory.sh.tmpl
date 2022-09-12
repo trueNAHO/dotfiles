@@ -4,12 +4,15 @@
 {{ template "lib/deps/execute_actions" }}
 {{ template "lib/deps/install_deps_pacman" }}
 {{ template "lib/deps/install_deps_yay" }}
+{{ template "lib/deps/is_execute_actions" }}
+{{ template "lib/deps/is_install_deps_pacman" }}
+{{ template "lib/deps/is_install_deps_yay" }}
 {{ template "lib/variables/tmp_directory" }}
 
-install_deps_pacman
-install_deps_yay
+is_install_deps_pacman && install_deps_pacman
+is_install_deps_yay && install_deps_yay
 
-execute_actions
+is_execute_actions && execute_actions
 
 # Clear `$tmp_directory` directory, which is always created by the
 # corresponding `run_before_tmp_directory.sh.tmpl` script.
