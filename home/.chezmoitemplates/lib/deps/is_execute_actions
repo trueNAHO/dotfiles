@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# shellcheck disable=all
+
+{{ template "lib/utilities/yes_or_no" }}
+{{ template "lib/variables/tmp_directory_actions" }}
+
+# Return true if actions should be executed. Otherwise return false. Actions
+# are read from the `$tmp_directory_actions` file.
+is_execute_actions() {
+  if ! [[ -f "$tmp_directory_actions" ]] \
+      || ! yes_or_no "Execute actions ($tmp_directory_actions)?"; then
+    return 1
+  fi
+
+  if yes_or_no \
+       "Continue without listing actions ($tmp_directory_actions)?"; then
+    return 0
+  fi
+
+  less "$tmp_directory_actions"
+  if yes_or_no "Still execute actions ($tmp_directory_actions)?"; then
+    return 0
+  else
+    return 1
+  fi
+}
