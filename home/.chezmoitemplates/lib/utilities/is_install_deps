@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# shellcheck disable=all
+
+#{{ template "lib/utilities/is_command_available" }}
+#{{ template "lib/utilities/yes_or_no" }}
+
+# Return true if packages from a package manager should be installed. Otherwise
+# return false. The first argument is the name of the package manager. The
+# second name is the file where selected packages are added to.
+is_install_deps() {
+  if ! is_command_available "$1" \
+      || ! [[ -f "$2" ]] \
+      || ! yes_or_no "Install "$1" packages?"; then
+    return 1
+  fi
+
+  if yes_or_no \
+       "Continue without listing "$1" packages to be installed ($2)?"; then
+    return 0
+  fi
+
+  less "$2"
+  if yes_or_no "Still install "$1" packages ($2)?"; then
+    return 0
+  else
+    return 1
+  fi
+}
