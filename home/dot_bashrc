@@ -28,6 +28,7 @@ _is_running_interactively() {
 # Set aliases.
 _set_aliases() {
   # Change output format.
+  alias cal="cal -m"
   alias df="df -h"
   alias free="free -h"
 
