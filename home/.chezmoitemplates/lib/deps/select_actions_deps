@@ -3,10 +3,16 @@
 
 {{ template "lib/variables/tmp_directory_actions" }}
 
-# Unconditionally add functions to the `$tmp_directory_actions` file to assure
-# dependencies are covered. Functions are provided as arguments.
+# Add functions to the `$tmp_directory_actions` file to assure dependencies are
+# covered. Functions are provided as arguments.
 select_actions_deps() {
   for func in "$@"; do
-    printf '%s\n' "$(declare -f "$func")" >> "$tmp_directory_actions"
+    if ! [[ -f "$tmp_directory_actions" ]] \
+        || ! grep -E \
+            "^$(declare -f "$func" | awk '{print $1; exit}')" 1>/dev/null \
+            "$tmp_directory_actions";
+        then
+      printf '%s\n' "$(declare -f "$func")" >> "$tmp_directory_actions"
+    fi
   done
 }
