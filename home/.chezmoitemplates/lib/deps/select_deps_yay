@@ -23,6 +23,11 @@ select_deps_yay() {
   # Prompt which packages to install. The selected packages are added to the
   # `$tmp_directory_deps_yay` file.
   for package in "$@"; do
+    if pacman -Qqe "$package" | grep -E "^$package$" 1>/dev/null; then
+      status "yay: package already installed: $package"
+      continue
+    fi
+
     if [[ -f "$tmp_directory_deps_yay" ]] \
         && grep -E "^$package$" "$tmp_directory_deps_yay" 1>/dev/null; then
       status "yay: package already added to $tmp_directory_deps_yay: $package"
