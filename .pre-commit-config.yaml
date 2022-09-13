@@ -56,7 +56,7 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/shssoichiro/oxipng
-    rev: v5.0.1
+    rev: v6.0.1
     hooks:
       - id: oxipng
 
