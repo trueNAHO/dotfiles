@@ -30,9 +30,11 @@ for key in "${!dependencies_after[@]}"; do
 done
 
 # Execute value functions from the `dependencies` and `dependencies_after`
-# array, if the user makes the final choice. Note that `dependencies_after` is
-# the last array being parsed to ensure correct execution order.
-if yes_or_no "All data has been gathered. Continue with installation?"; then
+# array. The user makes the final choice, if any operations are available. Note
+# that `dependencies_after` is the last array being parsed to ensure correct
+# execution order.
+if (( ${#dependencies[@]} + ${#dependencies_after[@]} )) \
+    && yes_or_no "All data has been gathered. Continue with installation?"; then
   for value in "${dependencies[@]}"; do "$value"; done
   for value in "${dependencies_after[@]}"; do "$value"; done
 fi
