@@ -33,7 +33,7 @@
     Mod4 + p
 
 # Spawn `dmenu_run`, which pipes programs in `$PATH` into `dmenu`.
-"dmenu_run"
+"dmenu_run -p 'Run'"
     Mod4 + r
 
 # Suspend the system.
