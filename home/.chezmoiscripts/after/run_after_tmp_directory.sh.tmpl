@@ -7,12 +7,35 @@
 {{ template "lib/deps/is_execute_actions" }}
 {{ template "lib/deps/is_install_deps_pacman" }}
 {{ template "lib/deps/is_install_deps_yay" }}
+{{ template "lib/utilities/yes_or_no" }}
 {{ template "lib/variables/tmp_directory" }}
 
-is_install_deps_pacman && install_deps_pacman
-is_install_deps_yay && install_deps_yay
+declare -A dependencies=(
+    [is_install_deps_pacman]=install_deps_pacman
+    [is_install_deps_yay]=install_deps_yay
+)
 
-is_execute_actions && execute_actions
+declare -A dependencies_after=(
+    [is_execute_actions]=execute_actions
+)
+
+# Remove key-value pairs from the array, if the key function returns false.
+for key in "${!dependencies[@]}"; do
+  "$key" || unset "dependencies[$key]"
+done
+
+# Remove key-value pairs from the array, if the key function returns false.
+for key in "${!dependencies_after[@]}"; do
+  "$key" || unset "dependencies_after[$key]"
+done
+
+# Execute value functions from the `dependencies` and `dependencies_after`
+# array, if the user makes the final choice. Note that `dependencies_after` is
+# the last array being parsed to ensure correct execution order.
+if yes_or_no "All data has been gathered. Continue with installation?"; then
+  for value in "${dependencies[@]}"; do "$value"; done
+  for value in "${dependencies_after[@]}"; do "$value"; done
+fi
 
 # Clear `$tmp_directory` directory, which is always created by the
 # corresponding `run_before_tmp_directory.sh.tmpl` script.
