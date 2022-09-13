@@ -29,7 +29,7 @@
     Mod4 + Return
 
 # Spawn `passmenu`, which pipes `$PASSWORD_STORE_DIR` into `dmenu`.
-"passmenu"
+"passmenu -p 'Pass'"
     Mod4 + p
 
 # Spawn `dmenu_run`, which pipes programs in `$PATH` into `dmenu`.
