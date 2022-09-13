@@ -25,17 +25,20 @@
 #keystate_scrolllock= enable
 
 # Spawn `$TERM` terminal if `$TERM` is set. Otherwise try to spawn `xterm`.
-"${TERM:-xterm}"
-    Mod4 + Return
+# Send desktop notifications about errors.
+"command="${TERM:-xterm}"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+   Mod4 + Return
 
-# Spawn `passmenu`, which pipes `$PASSWORD_STORE_DIR` into `dmenu`.
-"passmenu -p 'Pass'"
-    Mod4 + p
+# Spawn `passmenu`, which pipes `$PASSWORD_STORE_DIR` into `dmenu`. Send
+# desktop notifications about errors.
+"command="passmenu -p 'Pass'"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+   Mod4 + p
 
-# Spawn `dmenu_run`, which pipes programs in `$PATH` into `dmenu`.
-"dmenu_run -p 'Run'"
-    Mod4 + r
+# Spawn `dmenu_run`, which pipes programs in `$PATH` into `dmenu`. Send desktop
+# notifications about errors.
+"command="dmenu_run -p 'Run'"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+   Mod4 + r
 
-# Suspend the system.
-"systemctl suspend"
-    Mod4 + s
+# Suspend the system. Send desktop notifications about errors.
+"command="systemctl suspend"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+   Mod4 + s
