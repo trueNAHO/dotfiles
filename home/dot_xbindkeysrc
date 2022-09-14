@@ -38,6 +38,10 @@
 "command="light -A 5"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
     Mod4 + Up
 
+# Decrease brightness by 5 percent.
+"command="light -U 5"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+    Mod4 + Down
+
 # Toggle the mute status of the default sink.
 "command="pactl set-sink-mute @DEFAULT_SINK@ toggle"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
     Mod4+Shift + Left
