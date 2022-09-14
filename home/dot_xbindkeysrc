@@ -34,6 +34,10 @@
 "command="dmenu_run -p 'Run'"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
     Mod4 + r
 
+# Increase brightness by 5 percent.
+"command="light -A 5"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+    Mod4 + Up
+
 # Toggle the mute status of the default sink.
 "command="pactl set-sink-mute @DEFAULT_SINK@ toggle"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
     Mod4+Shift + Left
