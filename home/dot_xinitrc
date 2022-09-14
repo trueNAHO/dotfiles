@@ -36,6 +36,11 @@ async_load() { {
 
   # Set color temperature of display according to time of day.
   redshift &
+
+  # Audio effects for Pipewire applications. This application requires a
+  # display, even when running as service. Therefore it must be started from
+  # a graphical user interface.
+  easyeffects --gapplication-service &
 } & }
 
 # Replace current shell with a graphical user interface.
