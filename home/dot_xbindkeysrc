@@ -27,18 +27,18 @@
 # Spawn `$TERM` terminal if `$TERM` is set. Otherwise try to spawn `xterm`.
 # Send desktop notifications about errors.
 "command="${TERM:-xterm}"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
-   Mod4 + Return
+    Mod4 + Return
 
 # Spawn `dmenu_run`, which pipes programs in `$PATH` into `dmenu`. Send desktop
 # notifications about errors.
 "command="dmenu_run -p 'Run'"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
-   Mod4 + r
+    Mod4 + r
 
 # Spawn `passmenu`, which pipes `$PASSWORD_STORE_DIR` into `dmenu`. Send
 # desktop notifications about errors.
 "command="passmenu -p 'Pass'"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
-   Mod4 + p
+    Mod4 + p
 
 # Suspend the system. Send desktop notifications about errors.
 "command="systemctl suspend"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
-   Mod4 + s
+    Mod4 + s
