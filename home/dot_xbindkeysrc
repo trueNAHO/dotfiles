@@ -38,6 +38,10 @@
 "command="pactl set-sink-mute @DEFAULT_SINK@ toggle"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
     Mod4+Shift + Left
 
+# Set the volume level of the default sink to 100 percent.
+"command="pactl set-sink-volume @DEFAULT_SINK@ 100%"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+    Mod4+Shift + Right
+
 # Spawn `passmenu`, which pipes `$PASSWORD_STORE_DIR` into `dmenu`. Send
 # desktop notifications about errors.
 "command="passmenu -p 'Pass'"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
