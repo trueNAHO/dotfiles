@@ -81,6 +81,9 @@ set_system_defaults() {
   export EDITOR="nvim"
   export VISUAL="nvim"
 
+  # Set environment variable for the `qt5ct` tool.
+  export QT_QPA_PLATFORMTHEME="qt5ct"
+
   # Set XDG user directories.
   source "$HOME/.config/user-dirs.dirs"
 }
