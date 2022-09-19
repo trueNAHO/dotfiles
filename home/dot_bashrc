@@ -107,6 +107,7 @@ _set_shopt() {
 _source_programs() {
   declare -r bash_completion="/usr/share/bash-completion/bash_completion"
   declare -r command_not_found="/usr/share/doc/pkgfile/command-not-found.bash"
+  declare -r z_jump_around="/usr/share/z/z.sh"
 
   # By default, Bash only tab-completes commands, filenames, and variables. The
   # package `bash-completion` extends this by adding more specialized tab
@@ -118,6 +119,12 @@ _source_programs() {
   # search the official repositories, when entering an unrecognized command.
   # You need to source the hook to enable it.
   [[ -r "$command_not_found" ]] && source "$command_not_found"
+
+  # "Tracks your most used directories, based on 'frecency'. After  a  short
+  # learning  phase, z will take you to the most 'frecent' directory that
+  # matches ALL of the regexes given on the command line, in order."
+  # (https://github.com/rupa/z/)
+  [[ -r "$z_jump_around" ]] && source "$z_jump_around"
 }
 
 # Change the shell working directory to the provided argument and list its
