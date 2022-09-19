@@ -1708,7 +1708,7 @@ c.messages.timeout = 5000
 #     activating the window.
 #   - window: Open in a new window.
 #   - private-window: Open in a new private window.
-c.new_instance_open_target = "window"
+c.new_instance_open_target = "tab-silent"
 
 # Which window to choose when opening links as new tabs. When
 # `new_instance_open_target` is set to `window`, this is ignored.
