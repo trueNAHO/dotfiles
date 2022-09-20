@@ -3,3 +3,15 @@
 set hidden
 #set icons
 set relativenumber
+
+# @url https://github.com/gokcehan/lf/blob/master/etc/lfrc.example
+# Define a custom `open` command. This command is called when current file is
+# not a directory. You may want to use either file extensions and/or mime types
+# here. Below uses an editor for text files and a file opener for the rest.
+cmd open ${{
+  test -L $f && f=$(readlink -f $f)
+  case $(file --mime-type $f -b) in
+    text/*) $EDITOR $fx;;
+    *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
+  esac
+}}
