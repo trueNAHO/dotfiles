@@ -39,6 +39,13 @@
 "command() { folder="$HOME/tmp"; extension="png"; filename="img"; if [ ! -d "$folder" ]; then folder="/tmp"; filename="${USER}_maim"; mkdir -p "$folder"; fi; filepath="$folder/$filename.$extension"; maim "$filepath" && xclip -selection clipboard -t "image/$extension" -i "$filepath";  }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
    Mod4+Shift + c
 
+# Select region to screenshot. File is saved as `$HOME/tmp/img.png` or as
+# `/tmp/${USER}_maim.png` and then stored to clipboard. Send desktop
+# notifications about errors. WARNING: The command string cannot go over 420
+# characters. Otherwise `xbindkeys` segmentation faults!!!
+"command() { folder="$HOME/tmp"; extension="png"; filename="img"; if [ ! -d "$folder" ]; then folder="/tmp"; filename="${USER}_maim"; mkdir -p "$folder"; fi; filepath="$folder/$filename.$extension"; maim -us "$filepath" && xclip -selection clipboard -t "image/$extension" -i "$filepath";  }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+   Mod4 + c
+
 # Spawn `dmenu_run`, which pipes programs in `$PATH` into `dmenu`. Send desktop
 # notifications about errors.
 "command() { dmenu_run -p 'Run'; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
