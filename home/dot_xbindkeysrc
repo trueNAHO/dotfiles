@@ -24,6 +24,9 @@
 #keystate_capslock = enable
 #keystate_scrolllock= enable
 
+# WARNING: The command string cannot go over 420 characters. Otherwise
+# `xbindkeys` segmentation faults!!!
+
 # Spawn `$TERM` terminal if `$TERM` is set. Otherwise try to spawn `xterm`.
 # Send desktop notifications about errors.
 "command() { "${TERM:-xterm}"; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
