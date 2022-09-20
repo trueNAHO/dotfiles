@@ -1,4 +1,5 @@
 # Options to customize the behavior. The `:` character is used as the separator
 # for list options `[]int` and `[]string`.
 set hidden
+set icons
 set relativenumber
