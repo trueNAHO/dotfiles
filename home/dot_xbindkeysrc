@@ -26,43 +26,43 @@
 
 # Spawn `$TERM` terminal if `$TERM` is set. Otherwise try to spawn `xterm`.
 # Send desktop notifications about errors.
-"command="${TERM:-xterm}"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+"command() { "${TERM:-xterm}"; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
     Mod4 + Return
 
 # Spawn `dmenu_run`, which pipes programs in `$PATH` into `dmenu`. Send desktop
 # notifications about errors.
-"command="dmenu_run -p 'Run'"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+"command() { dmenu_run -p 'Run'; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
     Mod4 + r
 
 # Increase brightness by 5 percent.
-"command="light -A 5"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+"command() { light -A 5; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
     Mod4 + Up
 
 # Decrease brightness by 5 percent.
-"command="light -U 5"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+"command() { light -U 5; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
     Mod4 + Down
 
 # Toggle the mute status of the default sink.
-"command="pactl set-sink-mute @DEFAULT_SINK@ toggle"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+"command() { pactl set-sink-mute @DEFAULT_SINK@ toggle; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
     Mod4+Shift + Left
 
 # Increase the volume level of the default sink by 5 percent.
-"command="pactl set-sink-volume @DEFAULT_SINK@ +5%"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+"command() { pactl set-sink-volume @DEFAULT_SINK@ +5%; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
     Mod4 + Right
 
 # Decrease the volume level of the default sink by 5 percent.
-"command="pactl set-sink-volume @DEFAULT_SINK@ -5%"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+"command() { pactl set-sink-volume @DEFAULT_SINK@ -5%; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
     Mod4 + Left
 
 # Set the volume level of the default sink to 100 percent.
-"command="pactl set-sink-volume @DEFAULT_SINK@ 100%"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+"command() { pactl set-sink-volume @DEFAULT_SINK@ 100%; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
     Mod4+Shift + Right
 
 # Spawn `passmenu`, which pipes `$PASSWORD_STORE_DIR` into `dmenu`. Send
 # desktop notifications about errors.
-"command="passmenu -p 'Pass'"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+"command() { passmenu -p 'Pass'; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
     Mod4 + p
 
 # Suspend the system. Send desktop notifications about errors.
-"command="systemctl suspend"; summary="xbindkeys: $command"; body="$($command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+"command() { systemctl suspend; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
     Mod4 + s
