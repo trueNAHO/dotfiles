@@ -1,0 +1,4 @@
+rules:
+    comments:
+        ignore: |
+            home/dot_config/alacritty/alacritty.yml
