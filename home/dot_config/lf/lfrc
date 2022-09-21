@@ -4,6 +4,10 @@ set hidden
 #set icons
 set relativenumber
 
+# Bind a key to a command which can be builtin command, custom command, or
+# shell command.
+map gd %dragon-drop -a -x $fx
+
 # @url https://github.com/gokcehan/lf/blob/master/etc/lfrc.example
 # Define a custom `open` command. This command is called when current file is
 # not a directory. You may want to use either file extensions and/or mime types
