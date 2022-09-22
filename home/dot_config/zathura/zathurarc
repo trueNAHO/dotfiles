@@ -1,0 +1,87 @@
+# Color scheme inspired by `Nord` (https://github.com/arcticicestudio/nord).
+
+# girara
+#set n-completion-items 15
+set completion-bg "#1a1b29"
+set completion-fg "#D8DEE9"
+set completion-group-bg "#1a1b29"
+set completion-group-fg "#D8DEE9"
+set completion-highlight-bg "#81A1C1"
+set completion-highlight-fg "#D8DEE9"
+set default-bg "#1a1b29"
+set default-fg "#D8DEE9"
+#set exec-command ""
+#set font "monospace normal 9"
+#set guioptions "c"
+set inputbar-bg "#1a1b29"
+set inputbar-fg "#D8DEE9"
+set notification-fg "#BF616A"
+set notification-fg "#3B4252"
+set notification-error-fg "#BF616A"
+set notification-error-fg "#3B4252"
+set notification-warning-fg "#BF616A"
+set notification-warning-fg "#3B4252"
+set statusbar-bg "#1a1b29"
+set statusbar-fg "#D8DEE9"
+#statusbat-h-padding 8
+#statusbat-v-padding 2
+#set window-icon ""
+#set window-height 600
+#set window-width 800
+
+# zathura
+#set abort-clear-search true
+#set adjust-opne "best-fit"
+#set advance-pages-per-row false
+#set continuous-hist-save false
+#set database "plain"
+#set dbus-service true
+#set filemonitor "glib"
+#set incremental-search true
+set highlight-color "#EBCB8B"
+set highlight-fg "#3B4252"
+set highlight-active-color "#EBCB8B"
+set highlight-transparency 0.75
+set page-padding 3
+#set page-default-size 4194304
+#set pages-per-row 1
+set first-page-column "1:2"
+set recolor true
+set recolor-keephue true
+set recolor-darkcolor "#D8DEE9"
+set recolor-lightcolor "#1a1b29"
+set recolor-reverse-video true
+#set render-loading true
+set render-loading-bg "#D8DEE9"
+set render-loading-fg "#1a1b29"
+#set scroll-hstep -1
+#set scroll-step 40
+#set scroll-full-overlap 0
+#set scroll-wrap false
+#set show-directories true
+#set show-hidden false
+#set show-recent 10
+#set scroll-page-aware false
+#set link-zoom true
+#set link-hadjust true
+#set search-hadjust true
+#set window-title-basname false
+#set window-title-home-tilde false
+#set window-title-page false
+#set statusbar-basename false
+#set zoom-center false
+#set vertical-center false
+#set zoom-max 1000
+#set zoom-min 10
+#set zoom-step 10
+#set selection-clipboard "primary"
+#set selection-notification true
+#set synctex true
+#set synctex-editor-command ""
+set index-fg "#D8DEE9"
+set index-bg "#1a1b29"
+set index-active-fg "#D8DEE9"
+set index-active-bg "#81A1C1"
+#set sandbox "normal"
+#set window-icon-document false
+#set page-right-lo-left false
