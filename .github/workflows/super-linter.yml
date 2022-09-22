@@ -27,5 +27,6 @@ jobs:
         env:
           FILTER_REGEX_EXCLUDE: LICENSE|docs/CODE_OF_CONDUCT.md
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_JSCPD: false
           VALIDATE_PYTHON_BLACK: false
           VALIDATE_PYTHON_MYPY: false
