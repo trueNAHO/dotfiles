@@ -19,7 +19,7 @@ exec_graphical_user_interface() {
 
 # Potentially extend the `$PATH` variable.
 extend_path() {
-  status "extend PATH environment variable"
+  status "export PATH=$PATH"
 
   declare -r -a paths=(
     "$HOME/.bin"
