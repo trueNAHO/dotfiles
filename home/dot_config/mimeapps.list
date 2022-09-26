@@ -236,3 +236,4 @@ x-scheme-handler/info=yelp.desktop;
 x-scheme-handler/man=yelp.desktop;
 x-scheme-handler/obsidian=obsidian.desktop;
 x-scheme-handler/qute=org.qutebrowser.qutebrowser.desktop;
+x-scheme-handler/about=org.qutebrowser.qutebrowser.desktop
