@@ -20,7 +20,7 @@ vim.opt.et = true
 -- autoindent. Automatically set the indent of a new line. (local to buffer)
 --     set ai    noai
 -- smartindent. Do clever autoindenting. (local to buffer)
---     set nosi    si
+vim.opt.si = true
 -- cindent. Enable specific indenting for C code. (local to buffer)
 --     set nocin    cin
 -- cinoptions. Options for C-indenting. (local to buffer)
