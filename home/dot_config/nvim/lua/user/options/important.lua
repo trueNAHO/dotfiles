@@ -1,16 +1,16 @@
--- compatible	behave very Vi compatible (not advisable)
+-- compatible. Behave very Vi compatible (not advisable).
 --  	set nocp	cp
--- cpoptions	list of flags to specify Vi compatibility
+-- cpoptions. List of flags to specify Vi compatibility.
 --  	set cpo=aABceFs_
--- insertmode	use Insert mode as the default mode
+-- insertmode. Use Insert mode as the default mode.
 --  	set noim	im
--- paste	paste mode, insert typed text literally
+-- paste. Paste mode, insert typed text literally.
 --  	set nopaste	paste
--- pastetoggle	key sequence to toggle paste mode
+-- pastetoggle. Key sequence to toggle paste mode.
 --  	set pt=
--- runtimepath	list of directories used for runtime files and plugins
+-- runtimepath. List of directories used for runtime files and plugins.
 --  	set rtp=/home/noah/.config/nvim,/etc/xdg/nvim,/home/noah/.local/share/nvim/site,/usr/local/share/nvim/site,/usr/share/nvim/site,/usr/share/nvim/runtime,/usr/share/nvim/runtime/pack/dist/opt/matchit,/usr/lib/nvim,/usr/share/nvim/site/after,/usr/local/share/nvim/site/after,/home/noah/.local/share/nvim/site/after,/etc/xdg/nvim/after,/home/noah/.config/nvim/after,/usr/share/vim/vimfiles
--- packpath	list of directories used for plugin packages
+-- packpath. List of directories used for plugin packages.
 --  	set pp=/home/noah/.config/nvim,/etc/xdg/nvim,/home/noah/.local/share/nvim/site,/usr/local/share/nvim/site,/usr/share/nvim/site,/usr/share/nvim/runtime,/usr/lib/nvim,/usr/share/nvim/site/after,/usr/local/share/nvim/site/after,/home/noah/.local/share/nvim/site/after,/etc/xdg/nvim/after,/home/noah/.config/nvim/after
--- helpfile	name of the main help file
+-- helpfile. Name of the main help file.
 --  	set hf=/usr/share/nvim/runtime/doc/help.txt

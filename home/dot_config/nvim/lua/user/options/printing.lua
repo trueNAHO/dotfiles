@@ -1,16 +1,17 @@
--- printoptions	list of items that control the format of :hardcopy output
+-- printoptions. List of items that control the format of :hardcopy output.
 --  	set popt=
--- printdevice	name of the printer to be used for :hardcopy
+-- printdevice. Name of the printer to be used for :hardcopy.
 --  	set pdev=
--- printexpr	expression used to print the PostScript file for :hardcopy
+-- printexpr. Expression used to print the PostScript file for :hardcopy.
 --  	set pexpr=system(['lpr']\ +\ (empty(&printdevice)?[]:['-P',\ &printdevice])\ +\ [v:fname_in]).\ delete(v:fname_in)+\ v:shell_error
--- printfont	name of the font to be used for :hardcopy
+-- printfont. Name of the font to be used for :hardcopy.
 --  	set pfn=courier
--- printheader	format of the header used for :hardcopy
+-- printheader. Format of the header used for :hardcopy.
 --  	set pheader=%<%f%h%m%=Page\ %N
--- printencoding	encoding used to print the PostScript file for :hardcopy
+-- printencoding. Encoding used to print the PostScript file for :hardcopy.
 --  	set penc=
--- printmbcharset	the CJK character set to be used for CJK output from :hardcopy
+-- printmbcharset. The CJK character set to be used for CJK output from
+-- :hardcopy.
 --  	set pmbcs=
--- printmbfont	list of font names to be used for CJK output from :hardcopy
+-- printmbfont. List of font names to be used for CJK output from :hardcopy.
 --  	set pmbfn=

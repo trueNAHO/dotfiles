@@ -1,9 +1,8 @@
--- diff	use diff mode for the current window
--- 	(local to window)
+-- diff. Use diff mode for the current window. (local to window)
 --  	set nodiff	diff
--- diffopt	options for using diff mode
+-- diffopt. Options for using diff mode.
 --  	set dip=internal,filler,closeoff
--- diffexpr	expression used to obtain a diff file
+-- diffexpr. Expression used to obtain a diff file.
 --  	set dex=
--- patchexpr	expression used to patch a file
+-- patchexpr. Expression used to patch a file.
 --  	set pex=

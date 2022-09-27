@@ -1,20 +1,17 @@
--- errorfile	name of the file that contains error messages
+-- errorfile. Name of the file that contains error messages.
 --  	set ef=errors.err
--- errorformat	list of formats for error messages
--- 	(global or local to buffer)
+-- errorformat. List of formats for error messages. (global or local to buffer)
 --  	set efm=%*[^\"]\"%f\"%*\\D%l:\ %m,\"%f\"%*\\D%l:\ %m,%-G%f:%l:\ (Each\ undeclared\ identifier\ is\ reported\ only\ once,%-G%f:%l:\ for\ each\ function\ it\ appears\ in.),%-GIn\ file\ included\ from\ %f:%l:%c:,%-GIn\ file\ included\ from\ %f:%l:%c\\,,%-GIn\ file\ included\ from\ %f:%l:%c,%-GIn\ file\ included\ from\ %f:%l,%-G%*[\ ]from\ %f:%l:%c,%-G%*[\ ]from\ %f:%l:,%-G%*[\ ]from\ %f:%l\\,,%-G%*[\ ]from\ %f:%l,%f:%l:%c:%m,%f(%l):%m,%f:%l:%m,\"%f\"\\,\ line\ %l%*\\D%c%*[^\ ]\ %m,%D%*\\a[%*\\d]:\ Entering\ directory\ %*[`']%f',%X%*\\a[%*\\d]:\ Leaving\ directory\ %*[`']%f',%D%*\\a:\ Entering\ directory\ %*[`']%f',%X%*\\a:\ Leaving\ directory\ %*[`']%f',%DMaking\ %*\\a\ in\ %f,%f\|%l\|\ %m
--- makeprg	program used for the ":make" command
--- 	(global or local to buffer)
+-- makeprg. Program used for the ":make" command. (global or local to buffer)
 --  	set mp=make
--- shellpipe	string used to put the output of ":make" in the error file
+-- shellpipe. String used to put the output of ":make" in the error file.
 --  	set sp=2>&1\|\ tee
--- makeef	name of the errorfile for the 'makeprg' command
+-- makeef. Name of the errorfile for the 'makeprg' command.
 --  	set mef=
--- grepprg	program used for the ":grep" command
--- 	(global or local to buffer)
+-- grepprg. Program used for the ":grep" command. (global or local to buffer)
 --  	set gp=grep\ -n\ $*\ /dev/null
--- grepformat	list of formats for output of 'grepprg'
+-- grepformat. List of formats for output of 'grepprg'.
 --  	set gfm=%f:%l:%m,%f:%l%m,%f\ \ %l%m
--- makeencoding	encoding of the ":make" and ":grep" output
--- 	(global or local to buffer)
+-- makeencoding. Encoding of the ":make" and ":grep" output. (global or local
+-- to buffer)
 --  	set menc=

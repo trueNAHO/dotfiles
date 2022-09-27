@@ -1,53 +1,48 @@
--- modeline	enable using settings from modelines when reading a file
--- 	(local to buffer)
+-- modeline. Enable using settings from modelines when reading a file. (local
+-- to buffer)
 --  	set ml	noml
--- modelineexpr	allow setting expression options from a modeline
+-- modelineexpr. Allow setting expression options from a modeline.
 --  	set nomle	mle
--- modelines	number of lines to check for modelines
+-- modelines. Number of lines to check for modelines.
 --  	set mls=5
--- binary	binary file editing
--- 	(local to buffer)
+-- binary. Binary file editing. (local to buffer)
 --  	set nobin	bin
--- endofline	last line in the file has an end-of-line
--- 	(local to buffer)
+-- endofline. Last line in the file has an end-of-line. (local to buffer)
 --  	set eol	noeol
--- fixendofline	fixes missing end-of-line at end of text file
--- 	(local to buffer)
+-- fixendofline. Fixes missing end-of-line at end of text file. (local to
+-- buffer)
 --  	set fixeol	nofixeol
--- bomb	prepend a Byte Order Mark to the file
--- 	(local to buffer)
+-- bomb. Prepend a Byte Order Mark to the file. (local to buffer)
 --  	set nobomb	bomb
--- fileformat	end-of-line format: "dos", "unix" or "mac"
--- 	(local to buffer)
+-- fileformat. End-of-line format: "dos", "unix" or "mac". (local to buffer)
 --  	set ff=unix
--- fileformats	list of file formats to look for when editing a file
---  	set ffs=unix,dos
--- 	(local to buffer)
--- write	writing files is allowed
+-- fileformats. List of file formats to look for when editing a file.
+--  	set ffs=unix,dos (local to buffer)
+-- write. Writing files is allowed.
 --  	set write	nowrite
--- writebackup	write a backup file before overwriting a file
+-- writebackup. Write a backup file before overwriting a file.
 --  	set wb	nowb
--- backup	keep a backup after overwriting a file
+-- backup. Keep a backup after overwriting a file.
 --  	set nobk	bk
--- backupskip	patterns that specify for which files a backup is not made
+-- backupskip. Patterns that specify for which files a backup is not made.
 --  	set bsk=/tmp/*
--- backupcopy	whether to make the backup as a copy or rename the existing file
--- 	(global or local to buffer)
+-- backupcopy. Whether to make the backup as a copy or rename the existing
+-- file. (global or local to buffer)
 --  	set bkc=auto
--- backupdir	list of directories to put backup files in
+-- backupdir. List of directories to put backup files in.
 --  	set bdir=.,/home/noah/.local/share/nvim/backup//
--- backupext	file name extension for the backup file
+-- backupext. File name extension for the backup file.
 --  	set bex=~
--- autowrite	automatically write a file when leaving a modified buffer
+-- autowrite. Automatically write a file when leaving a modified buffer.
 --  	set noaw	aw
--- autowriteall	as 'autowrite', but works with more commands
+-- autowriteall. As 'autowrite', but works with more commands.
 --  	set noawa	awa
--- writeany	always write without asking for confirmation
+-- writeany. Always write without asking for confirmation.
 --  	set nowa	wa
--- autoread	automatically read a file when it was modified outside of Vim
--- 	(global or local to buffer)
+-- autoread. Automatically read a file when it was modified outside of Vim.
+-- (global or local to buffer)
 --  	set ar	noar
--- patchmode	keep oldest version of a file; specifies file name extension
+-- patchmode. Keep oldest version of a file; specifies file name extension.
 --  	set pm=
--- fsync	forcibly sync the file to disk after writing it
+-- fsync. Forcibly sync the file to disk after writing it.
 --  	set nofs	fs

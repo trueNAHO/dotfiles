@@ -1,17 +1,16 @@
--- encoding	character encoding used in Nvim: "utf-8"
+-- encoding. Character encoding used in Nvim: "utf-8".
 --  	set enc=utf-8
--- fileencoding	character encoding for the current file
--- 	(local to buffer)
+-- fileencoding. Character encoding for the current file. (local to buffer)
 --  	set fenc=utf-8
--- fileencodings	automatically detected character encodings
+-- fileencodings. Automatically detected character encodings.
 --  	set fencs=ucs-bom,utf-8,default,latin1
--- charconvert	expression used for character encoding conversion
+-- charconvert. Expression used for character encoding conversion.
 --  	set ccv=
--- delcombine	delete combining (composing) characters on their own
+-- delcombine. Delete combining (composing) characters on their own.
 --  	set nodeco	deco
--- maxcombine	maximum number of combining (composing) characters displayed
+-- maxcombine. Maximum number of combining (composing) characters displayed.
 --  	set mco=6
--- ambiwidth	width of ambiguous width characters
+-- ambiwidth. Width of ambiguous width characters.
 --  	set ambw=single
--- emoji	emoji characters are full width
+-- emoji. Emoji characters are full width.
 --  	set emo	noemo

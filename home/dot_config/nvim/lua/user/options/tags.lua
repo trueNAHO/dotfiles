@@ -1,34 +1,31 @@
--- tagbsearch	use binary searching in tags files
+-- tagbsearch. Use binary searching in tags files.
 --  	set tbs	notbs
--- taglength	number of significant characters in a tag name or zero
+-- taglength. Number of significant characters in a tag name or zero.
 --  	set tl=0
--- tags	list of file names to search for tags
--- 	(global or local to buffer)
+-- tags. List of file names to search for tags. (global or local to buffer)
 --  	set tag=./tags;,tags
--- tagcase	how to handle case when searching in tags files:
--- 	"followic" to follow 'ignorecase', "ignore" or "match"
--- 	(global or local to buffer)
+-- tagcase. How to handle case when searching in tags files:. "followic" to
+-- follow 'ignorecase', "ignore" or "match" (global or local to buffer)
 --  	set tc=followic
--- tagrelative	file names in a tags file are relative to the tags file
+-- tagrelative. File names in a tags file are relative to the tags file.
 --  	set tr	notr
--- tagstack	a :tag command will use the tagstack
+-- tagstack. A :tag command will use the tagstack.
 --  	set tgst	notgst
--- showfulltag	when completing tags in Insert mode show more info
+-- showfulltag. When completing tags in Insert mode show more info.
 --  	set nosft	sft
--- tagfunc	a function to be used to perform tag searches
--- 	(local to buffer)
+-- tagfunc. A function to be used to perform tag searches. (local to buffer)
 --  	set tfu=
--- cscopeprg	command for executing cscope
+-- cscopeprg. Command for executing cscope.
 --  	set csprg=cscope
--- cscopetag	use cscope for tag commands
+-- cscopetag. Use cscope for tag commands.
 --  	set nocst	cst
--- cscopetagorder	0 or 1; the order in which ":cstag" performs a search
+-- cscopetagorder. 0 or 1; the order in which ":cstag" performs a search.
 --  	set csto=0
--- cscopeverbose	give messages when adding a cscope database
+-- cscopeverbose. Give messages when adding a cscope database.
 --  	set csverb	nocsverb
--- cscopepathcomp	how many components of the path to show
+-- cscopepathcomp. How many components of the path to show.
 --  	set cspc=0
--- cscopequickfix	when to open a quickfix window for cscope
+-- cscopequickfix. When to open a quickfix window for cscope.
 --  	set csqf=
--- cscoperelative	file names in a cscope file are relative to that file
+-- cscoperelative. File names in a cscope file are relative to that file.
 --  	set nocsre	csre

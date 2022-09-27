@@ -1,46 +1,43 @@
--- laststatus	0, 1 or 2; when to use a status line for the last window
+-- laststatus. 0, 1 or 2; when to use a status line for the last window.
 --  	set ls=2
--- statusline	alternate format to be used for a status line
+-- statusline. Alternate format to be used for a status line.
 --  	set stl=
--- equalalways	make all windows the same size when adding/removing windows
+-- equalalways. Make all windows the same size when adding/removing windows.
 --  	set ea	noea
--- eadirection	in which direction 'equalalways' works: "ver", "hor" or "both"
+-- eadirection. In which direction 'equalalways' works: "ver", "hor" or "both".
 --  	set ead=both
--- winheight	minimal number of lines used for the current window
+-- winheight. Minimal number of lines used for the current window.
 --  	set wh=1
--- winminheight	minimal number of lines used for any window
+-- winminheight. Minimal number of lines used for any window.
 --  	set wmh=1
--- winfixheight	keep the height of the window
--- 	(local to window)
+-- winfixheight. Keep the height of the window. (local to window)
 --  	set nowfh	wfh
--- winfixwidth	keep the width of the window
--- 	(local to window)
+-- winfixwidth. Keep the width of the window. (local to window)
 --  	set nowfw	wfw
--- winwidth	minimal number of columns used for the current window
+-- winwidth. Minimal number of columns used for the current window.
 --  	set wiw=20
--- winminwidth	minimal number of columns used for any window
+-- winminwidth. Minimal number of columns used for any window.
 --  	set wmw=1
--- helpheight	initial height of the help window
+-- helpheight. Initial height of the help window.
 --  	set hh=20
--- previewheight	default height for the preview window
+-- previewheight. Default height for the preview window.
 --  	set pvh=12
--- previewwindow	identifies the preview window
--- 	(local to window)
+-- previewwindow. Identifies the preview window. (local to window)
 --  	set nopvw	pvw
--- hidden	don't unload a buffer when no longer shown in a window
+-- hidden. Don't unload a buffer when no longer shown in a window.
 --  	set hid	nohid
--- switchbuf	"useopen" and/or "split"; which window to use when jumping
+-- switchbuf. "useopen" and/or "split"; which window to use when jumping.
 -- 	to a buffer
 --  	set swb=uselast
--- splitbelow	a new window is put below the current one
+-- splitbelow. A new window is put below the current one.
 --  	set nosb	sb
--- splitright	a new window is put right of the current one
+-- splitright. A new window is put right of the current one.
 --  	set nospr	spr
--- scrollbind	this window scrolls together with other bound windows
--- 	(local to window)
+-- scrollbind. This window scrolls together with other bound windows. (local to
+-- window)
 --  	set noscb	scb
--- scrollopt	"ver", "hor" and/or "jump"; list of options for 'scrollbind'
+-- scrollopt. "ver", "hor" and/or "jump"; list of options for 'scrollbind'.
 --  	set sbo=ver,jump
--- cursorbind	this window's cursor moves together with other bound windows
--- 	(local to window)
+-- cursorbind. This window's cursor moves together with other bound windows.
+-- (local to window)
 --  	set nocrb	crb

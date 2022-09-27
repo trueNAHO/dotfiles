@@ -1,39 +1,34 @@
--- foldenable	unset to display all folds open
--- 	(local to window)
+-- foldenable. Unset to display all folds open. (local to window)
 --  	set fen	nofen
--- foldlevel	folds with a level higher than this number will be closed
--- 	(local to window)
+-- foldlevel. Folds with a level higher than this number will be closed. (local
+-- to window)
 --  	set fdl=0
--- foldlevelstart	value for 'foldlevel' when starting to edit a file
+-- foldlevelstart. Value for 'foldlevel' when starting to edit a file.
 --  	set fdls=-1
--- foldcolumn	width of the column used to indicate folds
--- 	(local to window)
+-- foldcolumn. Width of the column used to indicate folds. (local to window)
 --  	set fdc=0
--- foldtext	expression used to display the text of a closed fold
--- 	(local to window)
+-- foldtext. Expression used to display the text of a closed fold. (local to
+-- window)
 --  	set fdt=foldtext()
--- foldclose	set to "all" to close a fold when the cursor leaves it
+-- foldclose. Set to "all" to close a fold when the cursor leaves it.
 --  	set fcl=
--- foldopen	specifies for which commands a fold will be opened
+-- foldopen. Specifies for which commands a fold will be opened.
 --  	set fdo=block,hor,mark,percent,quickfix,search,tag,undo
--- foldminlines	minimum number of screen lines for a fold to be closed
--- 	(local to window)
+-- foldminlines. Minimum number of screen lines for a fold to be closed. (local
+-- to window)
 --  	set fml=1
--- commentstring	template for comments; used to put the marker in
+-- commentstring. Template for comments; used to put the marker in.
 --  	set cms=\"%s
--- foldmethod	folding type: "manual", "indent", "expr", "marker",
--- 	"syntax" or "diff"
--- 	(local to window)
+-- foldmethod. Folding type: "manual", "indent", "expr", "marker",.
+-- 	"syntax" or "diff" (local to window)
 --  	set fdm=manual
--- foldexpr	expression used when 'foldmethod' is "expr"
--- 	(local to window)
+-- foldexpr. Expression used when 'foldmethod' is "expr". (local to window)
 --  	set fde=0
--- foldignore	used to ignore lines when 'foldmethod' is "indent"
--- 	(local to window)
+-- foldignore. Used to ignore lines when 'foldmethod' is "indent". (local to
+-- window)
 --  	set fdi=#
--- foldmarker	markers used when 'foldmethod' is "marker"
--- 	(local to window)
+-- foldmarker. Markers used when 'foldmethod' is "marker". (local to window)
 --  	set fmr={{{,}}}
--- foldnestmax	maximum fold depth for when 'foldmethod' is "indent" or "syntax"
--- 	(local to window)
+-- foldnestmax. Maximum fold depth for when 'foldmethod' is "indent" or
+-- "syntax". (local to window)
 --  	set fdn=20

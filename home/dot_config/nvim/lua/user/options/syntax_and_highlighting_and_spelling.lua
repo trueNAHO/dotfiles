@@ -1,48 +1,38 @@
--- background	"dark" or "light"; the background color brightness
+-- background. "dark" or "light"; the background color brightness.
 --  	set bg=dark
--- filetype	type of file; triggers the FileType event when set
--- 	(local to buffer)
+-- filetype. Type of file; triggers the FileType event when set. (local to
+-- buffer)
 --  	set ft=vim
--- syntax	name of syntax highlighting used
--- 	(local to buffer)
+-- syntax. Name of syntax highlighting used. (local to buffer)
 --  	set syn=vim
--- synmaxcol	maximum column to look for syntax items
--- 	(local to buffer)
+-- synmaxcol. Maximum column to look for syntax items. (local to buffer)
 --  	set smc=3000
--- highlight	which highlighting to use for various occasions
+-- highlight. Which highlighting to use for various occasions.
 --  	set hl=8:SpecialKey,~:EndOfBuffer,z:TermCursor,Z:TermCursorNC,@:NonText,d:Directory,e:ErrorMsg,i:IncSearch,l:Search,m:MoreMsg,M:ModeMsg,n:LineNr,a:LineNrAbove,b:LineNrBelow,N:CursorLineNr,G:CursorLineSign,O:CursorLineFoldr:Question,s:StatusLine,S:StatusLineNC,c:VertSplit,t:Title,v:Visual,V:VisualNOS,w:WarningMsg,W:WildMenu,f:Folded,F:FoldColumn,A:DiffAdd,C:DiffChange,D:DiffDelete,T:DiffText,>:SignColumn,-:Conceal,B:SpellBad,P:SpellCap,R:SpellRare,L:SpellLocal,+:Pmenu,=:PmenuSel,x:PmenuSbar,X:PmenuThumb,*:TabLine,#:TabLineSel,_:TabLineFill,!:CursorColumn,.:CursorLine,o:ColorColumn,q:QuickFixLine,0:Whitespace,I:NormalNC
--- hlsearch	highlight all matches for the last used search pattern
+-- hlsearch. Highlight all matches for the last used search pattern.
 --  	set hls	nohls
--- termguicolors	use GUI colors for the terminal
+-- termguicolors. Use GUI colors for the terminal.
 --  	set notgc	tgc
--- cursorcolumn	highlight the screen column of the cursor
--- 	(local to window)
+-- cursorcolumn. Highlight the screen column of the cursor. (local to window)
 --  	set nocuc	cuc
--- cursorline	highlight the screen line of the cursor
--- 	(local to window)
+-- cursorline. Highlight the screen line of the cursor. (local to window)
 --  	set nocul	cul
--- cursorlineopt	specifies which area 'cursorline' highlights
--- 	(local to window)
+-- cursorlineopt. Specifies which area 'cursorline' highlights. (local to
+-- window)
 --  	set culopt=both
--- colorcolumn	columns to highlight
--- 	(local to window)
+-- colorcolumn. Columns to highlight. (local to window)
 --  	set cc=
--- spell	highlight spelling mistakes
--- 	(local to window)
+-- spell. Highlight spelling mistakes. (local to window)
 --  	set nospell	spell
--- spelllang	list of accepted languages
--- 	(local to buffer)
+-- spelllang. List of accepted languages. (local to buffer)
 --  	set spl=en
--- spellfile	file that "zg" adds good words to
--- 	(local to buffer)
+-- spellfile. File that "zg" adds good words to. (local to buffer)
 --  	set spf=
--- spellcapcheck	pattern to locate the end of a sentence
--- 	(local to buffer)
+-- spellcapcheck. Pattern to locate the end of a sentence. (local to buffer)
 --  	set spc=[.?!]\\_[\\])'\"\	\ ]\\+
--- spelloptions	flags to change how spell checking works
--- 	(local to buffer)
+-- spelloptions. Flags to change how spell checking works. (local to buffer)
 --  	set spo=
--- spellsuggest	methods used to suggest corrections
+-- spellsuggest. Methods used to suggest corrections.
 --  	set sps=best
--- mkspellmem	amount of memory used by :mkspell before compressing
+-- mkspellmem. Amount of memory used by :mkspell before compressing.
 --  	set msm=460000,2000,500

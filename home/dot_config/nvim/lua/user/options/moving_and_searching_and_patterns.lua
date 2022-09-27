@@ -1,44 +1,42 @@
--- whichwrap	list of flags specifying which commands wrap to another line
--- 	(local to window)
+-- whichwrap. List of flags specifying which commands wrap to another line.
+-- (local to window)
 --  	set ww=b,s
--- startofline	many jump commands move the cursor to the first non-blank
+-- startofline. Many jump commands move the cursor to the first non-blank.
 -- 	character of a line
 --  	set nosol	sol
--- paragraphs	nroff macro names that separate paragraphs
+-- paragraphs. Nroff macro names that separate paragraphs.
 --  	set para=IPLPPPQPP\ TPHPLIPpLpItpplpipbp
--- sections	nroff macro names that separate sections
+-- sections. Nroff macro names that separate sections.
 --  	set sect=SHNHH\ HUnhsh
--- path	list of directory names used for file searching
--- 	(global or local to buffer)
+-- path. List of directory names used for file searching. (global or local to
+-- buffer)
 --  	set pa=.,/usr/include,,
--- cdhome	:cd without argument goes to the home directory
+-- cdhome. :cd without argument goes to the home directory.
 --  	set nocdh	cdh
--- cdpath	list of directory names used for :cd
+-- cdpath. List of directory names used for :cd.
 --  	set cd=,,
--- autochdir	change to directory of file in buffer
+-- autochdir. Change to directory of file in buffer.
 --  	set noacd	acd
--- wrapscan	search commands wrap around the end of the buffer
+-- wrapscan. Search commands wrap around the end of the buffer.
 --  	set ws	nows
--- incsearch	show match for partly typed search command
+-- incsearch. Show match for partly typed search command.
 --  	set is	nois
--- magic	change the way backslashes are used in search patterns
+-- magic. Change the way backslashes are used in search patterns.
 --  	set magic	nomagic
--- regexpengine	select the default regexp engine used
+-- regexpengine. Select the default regexp engine used.
 --  	set re=0
--- ignorecase	ignore case when using a search pattern
+-- ignorecase. Ignore case when using a search pattern.
 --  	set noic	ic
--- smartcase	override 'ignorecase' when pattern has upper case characters
+-- smartcase. Override 'ignorecase' when pattern has upper case characters.
 --  	set noscs	scs
--- casemap	what method to use for changing case of letters
+-- casemap. What method to use for changing case of letters.
 --  	set cmp=internal,keepascii
--- maxmempattern	maximum amount of memory in Kbyte used for pattern matching
+-- maxmempattern. Maximum amount of memory in Kbyte used for pattern matching.
 --  	set mmp=1000
--- define	pattern for a macro definition line
--- 	(global or local to buffer)
+-- define. Pattern for a macro definition line. (global or local to buffer)
 --  	set def=^\\s*#\\s*define
--- include	pattern for an include-file line
--- 	(local to buffer)
+-- include. Pattern for an include-file line. (local to buffer)
 --  	set inc=^\\s*#\\s*include
--- includeexpr	expression used to transform an include line to a file name
--- 	(local to buffer)
+-- includeexpr. Expression used to transform an include line to a file name.
+-- (local to buffer)
 --  	set inex=

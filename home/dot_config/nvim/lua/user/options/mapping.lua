@@ -1,12 +1,12 @@
 -- maxmapdepth	maximum depth of mapping
 --  	set mmd=1000
--- remap	recognize mappings in mapped keys
+-- remap. Recognize mappings in mapped keys.
 --  	set remap	noremap
--- timeout	allow timing out halfway into a mapping
+-- timeout. Allow timing out halfway into a mapping.
 --  	set to	noto
--- ttimeout	allow timing out halfway into a key code
+-- ttimeout. Allow timing out halfway into a key code.
 --  	set ttimeout	nottimeout
--- timeoutlen	time in msec for 'timeout'
+-- timeoutlen. Time in msec for 'timeout'.
 --  	set tm=1000
--- ttimeoutlen	time in msec for 'ttimeout'
+-- ttimeoutlen. Time in msec for 'ttimeout'.
 --  	set ttm=50
