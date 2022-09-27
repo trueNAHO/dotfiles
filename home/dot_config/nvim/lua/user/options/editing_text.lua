@@ -23,7 +23,7 @@ vim.opt.tw = 80
 --     set com=sO:\"\ -,mO:\"\ \ ,eO:\"\",:\"
 -- formatoptions. List of flags that tell how automatic formatting works.
 -- (local to buffer)
---     set fo=jcroql
+vim.opt.fo:append("1ap")
 -- formatlistpat. Pattern to recognize a numbered list. (local to buffer)
 --     set flp=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 -- formatexpr. Expression used for "gq" to format lines. (local to buffer)
