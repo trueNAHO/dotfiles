@@ -26,7 +26,7 @@
 -- regexpengine. Select the default regexp engine used.
 --     set re=0
 -- ignorecase. Ignore case when using a search pattern.
---     set noic    ic
+vim.opt.ic = true
 -- smartcase. Override 'ignorecase' when pattern has upper case characters.
 --     set noscs    scs
 -- casemap. What method to use for changing case of letters.
