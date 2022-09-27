@@ -7,7 +7,7 @@ vim.opt.so = 8
 -- linebreak. Wrap long lines at a character in 'breakat'. (local to window)
 --     set nolbr    lbr
 -- breakindent. Preserve indentation in wrapped text. (local to window)
---     set nobri    bri
+vim.opt.bri = true
 -- breakindentopt. Adjust breakindent behaviour. (local to window)
 --     set briopt=
 -- breakat. Which characters might cause a line break.
