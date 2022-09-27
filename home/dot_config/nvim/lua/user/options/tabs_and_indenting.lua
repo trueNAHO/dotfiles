@@ -16,7 +16,7 @@ vim.opt.sts = 4
 -- shiftround. Round to 'shiftwidth' for "<<" and ">>".
 --     set nosr    sr
 -- expandtab. Expand <Tab> to spaces in Insert mode. (local to buffer)
---     set noet    et
+vim.opt.et = true
 -- autoindent. Automatically set the indent of a new line. (local to buffer)
 --     set ai    noai
 -- smartindent. Do clever autoindenting. (local to buffer)
