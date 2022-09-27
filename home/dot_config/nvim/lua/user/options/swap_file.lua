@@ -1,0 +1,11 @@
+-- 19 the swap file
+
+-- directory	list of directories for the swap file
+--  	set dir=/home/noah/.local/share/nvim/swap//
+-- swapfile	use a swap file for this buffer
+-- 	(local to buffer)
+--  	set swf	noswf
+-- updatecount	number of characters typed to cause a swap file update
+--  	set uc=200
+-- updatetime	time in msec after which the swap file will be updated
+--  	set ut=4000

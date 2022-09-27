@@ -1,0 +1,32 @@
+-- 11 messages and info
+
+-- terse	add 's' flag in 'shortmess' (don't show search message)
+--  	set noterse	terse
+-- shortmess	list of flags to make messages shorter
+--  	set shm=filnxtToOF
+-- showcmd	show (partial) command keys in the status line
+--  	set sc	nosc
+-- showmode	display the current mode in the status line
+--  	set smd	nosmd
+-- ruler	show cursor position below each window
+--  	set ru	noru
+-- rulerformat	alternate format to be used for the ruler
+--  	set ruf=
+-- report	threshold for reporting number of changed lines
+--  	set report=2
+-- verbose	the higher the more messages are given
+--  	set vbs=0
+-- verbosefile	file to write messages in
+--  	set vfile=
+-- more	pause listings when the screen is full
+--  	set more	nomore
+-- confirm	start a dialog when a command fails
+--  	set nocf	cf
+-- errorbells	ring the bell for error messages
+--  	set noeb	eb
+-- visualbell	use a visual bell instead of beeping
+--  	set novb	vb
+-- belloff	do not ring the bell for these reasons
+--  	set belloff=all
+-- helplang	list of preferred languages for finding help
+--  	set hlg=

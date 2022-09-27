@@ -1,0 +1,62 @@
+-- 14 tabs and indenting
+
+-- tabstop	number of spaces a <Tab> in the text stands for
+-- 	(local to buffer)
+--  	set ts=8
+-- shiftwidth	number of spaces used for each step of (auto)indent
+-- 	(local to buffer)
+--  	set sw=8
+-- vartabstop	list of number of spaces a tab counts for
+-- 	(local to buffer)
+--  	set vts=
+-- varsofttabstop	list of number of spaces a soft tabsstop counts for
+-- 	(local to buffer)
+--  	set vsts=
+-- smarttab	a <Tab> in an indent inserts 'shiftwidth' spaces
+--  	set sta	nosta
+-- softtabstop	if non-zero, number of spaces to insert for a <Tab>
+-- 	(local to buffer)
+--  	set sts=0
+-- shiftround	round to 'shiftwidth' for "<<" and ">>"
+--  	set nosr	sr
+-- expandtab	expand <Tab> to spaces in Insert mode
+-- 	(local to buffer)
+--  	set noet	et
+-- autoindent	automatically set the indent of a new line
+-- 	(local to buffer)
+--  	set ai	noai
+-- smartindent	do clever autoindenting
+-- 	(local to buffer)
+--  	set nosi	si
+-- cindent	enable specific indenting for C code
+-- 	(local to buffer)
+--  	set nocin	cin
+-- cinoptions	options for C-indenting
+-- 	(local to buffer)
+--  	set cino=
+-- cinkeys	keys that trigger C-indenting in Insert mode
+-- 	(local to buffer)
+--  	set cink=0{,0},0),0],:,0#,!^F,o,O,e
+-- cinwords	list of words that cause more C-indent
+-- 	(local to buffer)
+--  	set cinw=if,else,while,do,for,switch
+-- cinscopedecls	list of scope declaration names used by cino-g
+-- 	(local to buffer)
+--  	set cinsd=public,protected,private
+-- indentexpr	expression used to obtain the indent of a line
+-- 	(local to buffer)
+--  	set inde=GetVimIndent()
+-- indentkeys	keys that trigger indenting with 'indentexpr' in Insert mode
+-- 	(local to buffer)
+--  	set indk=0{,0},0),0],!^F,o,O,e,=endif,=enddef,=endfu,=endfor,=endwh,=endtry,=},=else,=cat,=finall,=END,0\\,0=\"\\\
+-- copyindent	copy whitespace for indenting from previous line
+-- 	(local to buffer)
+--  	set noci	ci
+-- preserveindent	preserve kind of whitespace when changing indent
+-- 	(local to buffer)
+--  	set nopi	pi
+-- lisp	enable lisp mode
+-- 	(local to buffer)
+--  	set nolisp	lisp
+-- lispwords	words that change how lisp indenting works
+--  	set lw=defun,define,defmacro,set!,lambda,if,case,let,flet,let*,letrec,do,do*,define-syntax,let-syntax,letrec-syntax,destructuring-bind,defpackage,defparameter,defstruct,deftype,defvar,do-all-symbols,do-external-symbols,do-symbols,dolist,dotimes,ecase,etypecase,eval-when,labels,macrolet,multiple-value-bind,multiple-value-call,multiple-value-prog1,multiple-value-setq,prog1,progv,typecase,unless,unwind-protect,when,with-input-from-string,with-open-file,with-open-stream,with-output-to-string,with-package-iterator,define-condition,handler-bind,handler-case,restart-bind,restart-case,with-simple-restart,store-value,use-value,muffle-warning,abort,continue,with-slots,with-slots*,with-accessors,with-accessors*,defclass,defmethod,print-unreadable-object

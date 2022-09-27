@@ -1,0 +1,27 @@
+-- 20 command line editing
+
+-- history	how many command lines are remembered
+--  	set hi=10000
+-- wildchar	key that triggers command-line expansion
+--  	set wc=9
+-- wildcharm	like 'wildchar' but can also be used in a mapping
+--  	set wcm=0
+-- wildmode	specifies how command line completion works
+--  	set wim=full
+-- suffixes	list of file name extensions that have a lower priority
+--  	set su=.bak,~,.o,.h,.info,.swp,.obj
+-- suffixesadd	list of file name extensions added when searching for a file
+-- 	(local to buffer)
+--  	set sua=
+-- wildignore	list of patterns to ignore files for file name completion
+--  	set wig=
+-- fileignorecase	ignore case when using file names
+--  	set nofic	fic
+-- wildignorecase	ignore case when completing file names
+--  	set nowic	wic
+-- wildmenu	command-line completion shows a list of matches
+--  	set wmnu	nowmnu
+-- cedit	key used to open the command-line window
+--  	set cedit=
+-- cmdwinheight	height of the command-line window
+--  	set cwh=7

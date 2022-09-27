@@ -1,0 +1,67 @@
+--  4 displaying text
+
+-- scroll	number of lines to scroll for CTRL-U and CTRL-D
+-- 	(local to window)
+--  	set scr=14
+-- scrolloff	number of screen lines to show around the cursor
+--  	set so=0
+-- wrap	long lines wrap
+-- 	(local to window)
+--  	set wrap	nowrap
+-- linebreak	wrap long lines at a character in 'breakat'
+-- 	(local to window)
+--  	set nolbr	lbr
+-- breakindent	preserve indentation in wrapped text
+-- 	(local to window)
+--  	set nobri	bri
+-- breakindentopt	adjust breakindent behaviour
+-- 	(local to window)
+--  	set briopt=
+-- breakat	which characters might cause a line break
+--  	set brk=\ \	!@*-+;:,./?
+-- showbreak	string to put before wrapped screen lines
+--  	set sbr=
+-- sidescroll	minimal number of columns to scroll horizontally
+--  	set ss=1
+-- sidescrolloff	minimal number of columns to keep left and right of the cursor
+--  	set siso=0
+-- display	include "lastline" to show the last line even if it doesn't fit
+-- 	include "uhex" to show unprintable characters as a hex number
+--  	set dy=lastline,msgsep
+-- fillchars	characters to use for the status line, folds and filler lines
+--  	set fcs=
+-- cmdheight	number of lines used for the command-line
+--  	set ch=1
+-- columns	width of the display
+--  	set co=111
+-- lines	number of lines in the display
+--  	set lines=60
+-- window	number of lines to scroll for CTRL-F and CTRL-B
+--  	set window=59
+-- lazyredraw	don't redraw while executing macros
+--  	set nolz	lz
+-- redrawtime	timeout for 'hlsearch' and :match highlighting in msec
+--  	set rdt=2000
+-- writedelay	delay in msec for each char written to the display
+-- 	(for debugging)
+--  	set wd=0
+-- list	show <Tab> as ^I and end-of-line as $
+-- 	(local to window)
+--  	set nolist	list
+-- listchars	list of strings used for list mode
+--  	set lcs=tab:>\ ,trail:-,nbsp:+
+-- number	show the line number for each line
+-- 	(local to window)
+--  	set nonu	nu
+-- relativenumber	show the relative line number for each line
+-- 	(local to window)
+--  	set nornu	rnu
+-- numberwidth	number of columns to use for the line number
+-- 	(local to window)
+--  	set nuw=4
+-- conceallevel	controls whether concealable text is hidden
+-- 	(local to window)
+--  	set cole=0
+-- concealcursor	modes in which text in the cursor line can be concealed
+-- 	(local to window)
+--  	set cocu=
