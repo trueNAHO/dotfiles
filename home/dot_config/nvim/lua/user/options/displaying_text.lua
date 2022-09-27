@@ -47,7 +47,7 @@ vim.opt.bri = true
 --     set nonu    nu
 -- relativenumber. Show the relative line number for each line. (local to
 -- window)
---     set nornu    rnu
+vim.opt.rnu = true
 -- numberwidth. Number of columns to use for the line number. (local to window)
 --     set nuw=4
 -- conceallevel. Controls whether concealable text is hidden. (local to window)
