@@ -28,7 +28,7 @@
 -- ignorecase. Ignore case when using a search pattern.
 vim.opt.ic = true
 -- smartcase. Override 'ignorecase' when pattern has upper case characters.
---     set noscs    scs
+vim.opt.scs = true
 -- casemap. What method to use for changing case of letters.
 --     set cmp=internal,keepascii
 -- maxmempattern. Maximum amount of memory in Kbyte used for pattern matching.
