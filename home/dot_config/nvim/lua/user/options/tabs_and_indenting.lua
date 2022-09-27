@@ -1,5 +1,5 @@
 -- tabstop. Number of spaces a <Tab> in the text stands for. (local to buffer)
---     set ts=8
+vim.opt.ts = 4
 -- shiftwidth. Number of spaces used for each step of (auto)indent. (local to
 -- buffer)
 --     set sw=8
