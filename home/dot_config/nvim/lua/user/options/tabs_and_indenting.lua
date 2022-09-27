@@ -2,7 +2,7 @@
 vim.opt.ts = 4
 -- shiftwidth. Number of spaces used for each step of (auto)indent. (local to
 -- buffer)
---     set sw=8
+vim.opt.sw = 4
 -- vartabstop. List of number of spaces a tab counts for. (local to buffer)
 --     set vts=
 -- varsofttabstop. List of number of spaces a soft tabsstop counts for. (local
