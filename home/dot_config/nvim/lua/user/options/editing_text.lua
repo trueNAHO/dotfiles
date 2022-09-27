@@ -14,7 +14,7 @@ vim.opt.udf = true
 -- modifiable. Changes to the text are possible. (local to buffer)
 --     set ma    noma
 -- textwidth. Line length above which to break a line. (local to buffer)
---     set tw=78
+vim.opt.tw = 80
 -- wrapmargin. Margin from the right in which to break a line. (local to buffer)
 --     set wm=0
 -- backspace. Specifies what <BS>, CTRL-W, etc. can do in Insert mode.
