@@ -2,7 +2,7 @@
 -- (local to window)
 --     set ww=b,s
 -- startofline. Many jump commands move the cursor to the first non-blank.
---     character of a line
+-- character of a line
 --     set nosol    sol
 -- paragraphs. Nroff macro names that separate paragraphs.
 --     set para=IPLPPPQPP\ TPHPLIPpLpItpplpipbp
