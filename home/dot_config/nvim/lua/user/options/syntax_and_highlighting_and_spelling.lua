@@ -16,7 +16,7 @@
 -- cursorcolumn. Highlight the screen column of the cursor. (local to window)
 --     set nocuc    cuc
 -- cursorline. Highlight the screen line of the cursor. (local to window)
---     set nocul    cul
+vim.opt.cul = true
 -- cursorlineopt. Specifies which area 'cursorline' highlights. (local to
 -- window)
 --     set culopt=both
