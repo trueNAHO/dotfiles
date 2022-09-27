@@ -1,5 +1,3 @@
--- 21 executing external commands
-
 -- shell	name of the shell program used for external commands
 --  	set sh=/bin/bash
 -- shellquote	character(s) to enclose a shell command in

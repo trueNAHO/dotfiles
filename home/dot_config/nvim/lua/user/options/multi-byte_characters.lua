@@ -1,5 +1,3 @@
--- 24 multi-byte characters
-
 -- encoding	character encoding used in Nvim: "utf-8"
 --  	set enc=utf-8
 -- fileencoding	character encoding for the current file

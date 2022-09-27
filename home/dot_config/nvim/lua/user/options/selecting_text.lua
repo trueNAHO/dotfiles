@@ -1,5 +1,3 @@
--- 12 selecting text
-
 -- selection	"old", "inclusive" or "exclusive"; how selecting text behaves
 --  	set sel=inclusive
 -- selectmode	"mouse", "key" and/or "cmd"; when to start Select mode

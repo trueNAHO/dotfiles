@@ -1,5 +1,3 @@
---  4 displaying text
-
 -- scroll	number of lines to scroll for CTRL-U and CTRL-D
 -- 	(local to window)
 --  	set scr=14

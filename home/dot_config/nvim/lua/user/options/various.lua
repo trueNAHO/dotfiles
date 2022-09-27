@@ -1,5 +1,3 @@
--- 25 various
-
 -- virtualedit	when to use virtual editing: "block", "insert", "all"
 -- 	and/or "onemore"
 --  	set ve=

@@ -1,5 +1,3 @@
--- 23 language specific
-
 -- isfname	specifies the characters in a file name
 --  	set isf=@,48-57,/,.,-,_,+,,,#,$,%,~,=
 -- isident	specifies the characters in an identifier

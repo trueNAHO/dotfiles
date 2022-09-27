@@ -1,5 +1,3 @@
--- 20 command line editing
-
 -- history	how many command lines are remembered
 --  	set hi=10000
 -- wildchar	key that triggers command-line expansion

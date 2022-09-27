@@ -1,5 +1,3 @@
--- 17 mapping
-
 -- maxmapdepth	maximum depth of mapping
 --  	set mmd=1000
 -- remap	recognize mappings in mapped keys

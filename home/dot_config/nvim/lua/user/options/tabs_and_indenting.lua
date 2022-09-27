@@ -1,5 +1,3 @@
--- 14 tabs and indenting
-
 -- tabstop	number of spaces a <Tab> in the text stands for
 -- 	(local to buffer)
 --  	set ts=8

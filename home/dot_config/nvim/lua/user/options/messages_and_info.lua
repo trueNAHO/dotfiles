@@ -1,5 +1,3 @@
--- 11 messages and info
-
 -- terse	add 's' flag in 'shortmess' (don't show search message)
 --  	set noterse	terse
 -- shortmess	list of flags to make messages shorter

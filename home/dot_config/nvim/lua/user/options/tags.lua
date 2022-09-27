@@ -1,5 +1,3 @@
---  3 tags
-
 -- tagbsearch	use binary searching in tags files
 --  	set tbs	notbs
 -- taglength	number of significant characters in a tag name or zero

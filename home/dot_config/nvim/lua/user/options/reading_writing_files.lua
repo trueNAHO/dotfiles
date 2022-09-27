@@ -1,5 +1,3 @@
--- 18 reading and writing files
-
 -- modeline	enable using settings from modelines when reading a file
 -- 	(local to buffer)
 --  	set ml	noml

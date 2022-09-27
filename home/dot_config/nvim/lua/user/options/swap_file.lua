@@ -1,5 +1,3 @@
--- 19 the swap file
-
 -- directory	list of directories for the swap file
 --  	set dir=/home/noah/.local/share/nvim/swap//
 -- swapfile	use a swap file for this buffer

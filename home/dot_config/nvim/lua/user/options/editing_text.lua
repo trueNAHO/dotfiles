@@ -1,5 +1,3 @@
--- 13 editing text
-
 -- undolevels	maximum number of changes that can be undone
 -- 	(global or local to buffer)
 --  	set ul=1000

@@ -1,5 +1,3 @@
--- 15 folding
-
 -- foldenable	unset to display all folds open
 -- 	(local to window)
 --  	set fen	nofen

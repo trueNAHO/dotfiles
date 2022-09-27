@@ -1,5 +1,3 @@
---  5 syntax, highlighting and spelling
-
 -- background	"dark" or "light"; the background color brightness
 --  	set bg=dark
 -- filetype	type of file; triggers the FileType event when set

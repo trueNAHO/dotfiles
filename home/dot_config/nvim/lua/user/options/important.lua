@@ -1,5 +1,3 @@
---  1 important
-
 -- compatible	behave very Vi compatible (not advisable)
 --  	set nocp	cp
 -- cpoptions	list of flags to specify Vi compatibility

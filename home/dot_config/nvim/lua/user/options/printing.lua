@@ -1,5 +1,3 @@
--- 10 printing
-
 -- printoptions	list of items that control the format of :hardcopy output
 --  	set popt=
 -- printdevice	name of the printer to be used for :hardcopy

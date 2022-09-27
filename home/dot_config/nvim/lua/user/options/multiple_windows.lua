@@ -1,5 +1,3 @@
---  6 multiple windows
-
 -- laststatus	0, 1 or 2; when to use a status line for the last window
 --  	set ls=2
 -- statusline	alternate format to be used for a status line

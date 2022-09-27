@@ -1,5 +1,3 @@
---  8 terminal
-
 -- scrolljump	minimal number of lines to scroll at a time
 --  	set sj=1
 -- title	show info in the window title

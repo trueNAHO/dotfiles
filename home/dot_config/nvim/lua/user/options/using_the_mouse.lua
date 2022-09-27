@@ -1,5 +1,3 @@
---  9 using the mouse
-
 -- mouse	list of flags for using the mouse
 --  	set mouse=
 -- mousemodel	"extend", "popup" or "popup_setpos"; what the right

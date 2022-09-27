@@ -1,5 +1,3 @@
--- 16 diff mode
-
 -- diff	use diff mode for the current window
 -- 	(local to window)
 --  	set nodiff	diff

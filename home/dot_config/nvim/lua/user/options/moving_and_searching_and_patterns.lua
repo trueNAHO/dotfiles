@@ -1,5 +1,3 @@
---  2 moving around, searching and patterns
-
 -- whichwrap	list of flags specifying which commands wrap to another line
 -- 	(local to window)
 --  	set ww=b,s

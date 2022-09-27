@@ -1,5 +1,3 @@
--- 22 running make and jumping to errors (quickfix)
-
 -- errorfile	name of the file that contains error messages
 --  	set ef=errors.err
 -- errorformat	list of formats for error messages
