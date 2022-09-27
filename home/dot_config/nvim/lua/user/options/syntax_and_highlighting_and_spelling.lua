@@ -21,7 +21,7 @@ vim.opt.cul = true
 -- window)
 --     set culopt=both
 -- colorcolumn. Columns to highlight. (local to window)
---     set cc=
+vim.opt.cc = "+1"
 -- spell. Highlight spelling mistakes. (local to window)
 --     set nospell    spell
 -- spelllang. List of accepted languages. (local to buffer)
