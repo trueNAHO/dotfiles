@@ -12,7 +12,7 @@ vim.opt.sw = 4
 --     set sta    nosta
 -- softtabstop. If non-zero, number of spaces to insert for a <Tab>. (local to
 -- buffer)
---     set sts=0
+vim.opt.sts = 4
 -- shiftround. Round to 'shiftwidth' for "<<" and ">>".
 --     set nosr    sr
 -- expandtab. Expand <Tab> to spaces in Insert mode. (local to buffer)
