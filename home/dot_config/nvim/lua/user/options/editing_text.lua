@@ -62,7 +62,7 @@ vim.opt.top = true
 -- matchtime. Tenth of a second to show a match for 'showmatch'.
 --     set mat=5
 -- matchpairs. List of pairs that match for the "%" command. (local to buffer)
---     set mps=(:),{:},[:]
+vim.opt.mps:append{["<"] = ">"}
 -- joinspaces. Use two spaces after '.' when joining a line.
 --     set nojs    js
 -- nrformats. "alpha", "octal", "hex", "bin" and/or "unsigned"; number formats.
