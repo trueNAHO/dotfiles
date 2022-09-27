@@ -1,37 +1,37 @@
 -- virtualedit. When to use virtual editing: "block", "insert", "all". and/or
 -- "onemore"
---      set ve=
+--     set ve=
 -- eventignore. List of autocommand events which are to be ignored.
---      set ei=
+--     set ei=
 -- loadplugins. Load plugin scripts when starting up.
---      set lpl    nolpl
+--     set lpl    nolpl
 -- exrc. Enable reading .vimrc/.exrc/.gvimrc in the current directory.
---      set noex    ex
+--     set noex    ex
 -- secure. Safer working with script files in the current directory.
---      set nosecure    secure
+--     set nosecure    secure
 -- gdefault. Use the 'g' flag for ":substitute".
---      set nogd    gd
+--     set nogd    gd
 -- maxfuncdepth. Maximum depth of function calls.
---      set mfd=100
+--     set mfd=100
 -- sessionoptions. List of words that specifies what to put in a session file.
---      set ssop=blank,buffers,curdir,folds,help,tabpages,winsize
+--     set ssop=blank,buffers,curdir,folds,help,tabpages,winsize
 -- viewoptions. List of words that specifies what to save for :mkview.
---      set vop=folds,cursor,curdir
+--     set vop=folds,cursor,curdir
 -- viewdir. Directory where to store files with :mkview.
---      set vdir=/home/noah/.local/share/nvim/view//
+--     set vdir=/home/noah/.local/share/nvim/view//
 -- viminfo. List that specifies what to write in the ShaDa file.
---      set vi=!,'100,<50,s10,h
+--     set vi=!,'100,<50,s10,h
 -- bufhidden. What happens with a buffer when it's no longer in a window.
 -- (local to buffer)
---      set bh=
+--     set bh=
 -- buftype. Empty, "nofile", "nowrite", "quickfix", etc.: type of buffer.
 -- (local to buffer)
---      set bt=
+--     set bt=
 -- buflisted. Whether the buffer shows up in the buffer list. (local to buffer)
---      set bl    nobl
+--     set bl    nobl
 -- debug. Set to "msg" to see all error messages.
---      set debug=
+--     set debug=
 -- signcolumn. Whether to show the signcolumn. (local to window)
---      set scl=auto
+--     set scl=auto
 -- pyxversion. Whether to use Python 2 or 3.
---      set pyx=0
+--     set pyx=0

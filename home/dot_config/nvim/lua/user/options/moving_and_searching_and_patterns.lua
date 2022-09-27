@@ -1,42 +1,42 @@
 -- whichwrap. List of flags specifying which commands wrap to another line.
 -- (local to window)
---      set ww=b,s
+--     set ww=b,s
 -- startofline. Many jump commands move the cursor to the first non-blank.
 --     character of a line
---      set nosol    sol
+--     set nosol    sol
 -- paragraphs. Nroff macro names that separate paragraphs.
---      set para=IPLPPPQPP\ TPHPLIPpLpItpplpipbp
+--     set para=IPLPPPQPP\ TPHPLIPpLpItpplpipbp
 -- sections. Nroff macro names that separate sections.
---      set sect=SHNHH\ HUnhsh
+--     set sect=SHNHH\ HUnhsh
 -- path. List of directory names used for file searching. (global or local to
 -- buffer)
---      set pa=.,/usr/include,,
+--     set pa=.,/usr/include,,
 -- cdhome. :cd without argument goes to the home directory.
---      set nocdh    cdh
+--     set nocdh    cdh
 -- cdpath. List of directory names used for :cd.
---      set cd=,,
+--     set cd=,,
 -- autochdir. Change to directory of file in buffer.
---      set noacd    acd
+--     set noacd    acd
 -- wrapscan. Search commands wrap around the end of the buffer.
---      set ws    nows
+--     set ws    nows
 -- incsearch. Show match for partly typed search command.
---      set is    nois
+--     set is    nois
 -- magic. Change the way backslashes are used in search patterns.
---      set magic    nomagic
+--     set magic    nomagic
 -- regexpengine. Select the default regexp engine used.
---      set re=0
+--     set re=0
 -- ignorecase. Ignore case when using a search pattern.
---      set noic    ic
+--     set noic    ic
 -- smartcase. Override 'ignorecase' when pattern has upper case characters.
---      set noscs    scs
+--     set noscs    scs
 -- casemap. What method to use for changing case of letters.
---      set cmp=internal,keepascii
+--     set cmp=internal,keepascii
 -- maxmempattern. Maximum amount of memory in Kbyte used for pattern matching.
---      set mmp=1000
+--     set mmp=1000
 -- define. Pattern for a macro definition line. (global or local to buffer)
---      set def=^\\s*#\\s*define
+--     set def=^\\s*#\\s*define
 -- include. Pattern for an include-file line. (local to buffer)
---      set inc=^\\s*#\\s*include
+--     set inc=^\\s*#\\s*include
 -- includeexpr. Expression used to transform an include line to a file name.
 -- (local to buffer)
---      set inex=
+--     set inex=

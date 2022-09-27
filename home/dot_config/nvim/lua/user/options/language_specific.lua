@@ -1,43 +1,43 @@
 -- isfname. Specifies the characters in a file name.
---      set isf=@,48-57,/,.,-,_,+,,,#,$,%,~,=
+--     set isf=@,48-57,/,.,-,_,+,,,#,$,%,~,=
 -- isident. Specifies the characters in an identifier.
---      set isi=@,48-57,_,192-255
+--     set isi=@,48-57,_,192-255
 -- iskeyword. Specifies the characters in a keyword. (local to buffer)
---      set isk=@,48-57,_,192-255,#
+--     set isk=@,48-57,_,192-255,#
 -- isprint. Specifies printable characters.
---      set isp=@,161-255
+--     set isp=@,161-255
 -- quoteescape. Specifies escape characters in a string. (local to buffer)
---      set qe=\\
+--     set qe=\\
 -- rightleft. Display the buffer right-to-left. (local to window)
---      set norl    rl
+--     set norl    rl
 -- rightleftcmd. When to edit the command-line right-to-left. (local to window)
---      set rlc=search
+--     set rlc=search
 -- revins. Insert characters backwards.
---      set nori    ri
+--     set nori    ri
 -- allowrevins. Allow CTRL-_ in Insert and Command-line mode to toggle
 -- 'revins'.
---      set noari    ari
+--     set noari    ari
 -- aleph. The ASCII code for the first letter of the Hebrew alphabet.
---      set al=224
+--     set al=224
 -- hkmap. Use Hebrew keyboard mapping.
---      set nohk    hk
+--     set nohk    hk
 -- hkmapp. Use phonetic Hebrew keyboard mapping.
---      set nohkp    hkp
+--     set nohkp    hkp
 -- arabic. Prepare for editing Arabic text. (local to window)
---      set noarab    arab
+--     set noarab    arab
 -- arabicshape. Perform shaping of Arabic characters.
---      set arshape    noarshape
+--     set arshape    noarshape
 -- termbidi. Terminal will perform bidi handling.
---      set notbidi    tbidi
+--     set notbidi    tbidi
 -- keymap. Name of a keyboard mapping.
---      set kmp=
+--     set kmp=
 -- langmap. List of characters that are translated in Normal mode.
---      set lmap=
+--     set lmap=
 -- langremap. Apply 'langmap' to mapped characters.
---      set nolrm    lrm
+--     set nolrm    lrm
 -- iminsert. In Insert mode: 1: use :lmap; 2: use IM; 0: neither. (local to
 -- window)
---      set imi=0
+--     set imi=0
 -- imsearch. Entering a search pattern: 1: use :lmap; 2: use IM; 0: neither.
 -- (local to window)
---      set ims=-1
+--     set ims=-1
