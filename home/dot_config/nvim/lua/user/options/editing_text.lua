@@ -2,7 +2,7 @@
 -- to buffer)
 --     set ul=1000
 -- undofile. Automatically save and restore undo history.
---     set noudf    udf
+vim.opt.udf = true
 -- undodir. List of directories for undo files.
 --     set udir=/home/noah/.local/share/nvim/undo//
 -- undoreload. Maximum number lines to save for undo on a buffer reload.
