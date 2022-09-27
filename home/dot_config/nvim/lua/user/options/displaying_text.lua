@@ -1,7 +1,7 @@
 -- scroll. Number of lines to scroll for CTRL-U and CTRL-D. (local to window)
 --     set scr=14
 -- scrolloff. Number of screen lines to show around the cursor.
---     set so=0
+vim.opt.so = 8
 -- wrap. Long lines wrap. (local to window)
 --     set wrap    nowrap
 -- linebreak. Wrap long lines at a character in 'breakat'. (local to window)
