@@ -1,43 +1,43 @@
 -- laststatus. 0, 1 or 2; when to use a status line for the last window.
---  	set ls=2
+--      set ls=2
 -- statusline. Alternate format to be used for a status line.
---  	set stl=
+--      set stl=
 -- equalalways. Make all windows the same size when adding/removing windows.
---  	set ea	noea
+--      set ea    noea
 -- eadirection. In which direction 'equalalways' works: "ver", "hor" or "both".
---  	set ead=both
+--      set ead=both
 -- winheight. Minimal number of lines used for the current window.
---  	set wh=1
+--      set wh=1
 -- winminheight. Minimal number of lines used for any window.
---  	set wmh=1
+--      set wmh=1
 -- winfixheight. Keep the height of the window. (local to window)
---  	set nowfh	wfh
+--      set nowfh    wfh
 -- winfixwidth. Keep the width of the window. (local to window)
---  	set nowfw	wfw
+--      set nowfw    wfw
 -- winwidth. Minimal number of columns used for the current window.
---  	set wiw=20
+--      set wiw=20
 -- winminwidth. Minimal number of columns used for any window.
---  	set wmw=1
+--      set wmw=1
 -- helpheight. Initial height of the help window.
---  	set hh=20
+--      set hh=20
 -- previewheight. Default height for the preview window.
---  	set pvh=12
+--      set pvh=12
 -- previewwindow. Identifies the preview window. (local to window)
---  	set nopvw	pvw
+--      set nopvw    pvw
 -- hidden. Don't unload a buffer when no longer shown in a window.
---  	set hid	nohid
+--      set hid    nohid
 -- switchbuf. "useopen" and/or "split"; which window to use when jumping.
--- 	to a buffer
---  	set swb=uselast
+--     to a buffer
+--      set swb=uselast
 -- splitbelow. A new window is put below the current one.
---  	set nosb	sb
+--      set nosb    sb
 -- splitright. A new window is put right of the current one.
---  	set nospr	spr
+--      set nospr    spr
 -- scrollbind. This window scrolls together with other bound windows. (local to
 -- window)
---  	set noscb	scb
+--      set noscb    scb
 -- scrollopt. "ver", "hor" and/or "jump"; list of options for 'scrollbind'.
---  	set sbo=ver,jump
+--      set sbo=ver,jump
 -- cursorbind. This window's cursor moves together with other bound windows.
 -- (local to window)
---  	set nocrb	crb
+--      set nocrb    crb

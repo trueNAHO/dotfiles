@@ -2,48 +2,48 @@
 --      set ts=8
 -- shiftwidth. Number of spaces used for each step of (auto)indent. (local to
 -- buffer)
---  	set sw=8
+--      set sw=8
 -- vartabstop. List of number of spaces a tab counts for. (local to buffer)
---  	set vts=
+--      set vts=
 -- varsofttabstop. List of number of spaces a soft tabsstop counts for. (local
 -- to buffer)
---  	set vsts=
+--      set vsts=
 -- smarttab. A <Tab> in an indent inserts 'shiftwidth' spaces.
---  	set sta	nosta
+--      set sta    nosta
 -- softtabstop. If non-zero, number of spaces to insert for a <Tab>. (local to
 -- buffer)
---  	set sts=0
+--      set sts=0
 -- shiftround. Round to 'shiftwidth' for "<<" and ">>".
---  	set nosr	sr
+--      set nosr    sr
 -- expandtab. Expand <Tab> to spaces in Insert mode. (local to buffer)
---  	set noet	et
+--      set noet    et
 -- autoindent. Automatically set the indent of a new line. (local to buffer)
---  	set ai	noai
+--      set ai    noai
 -- smartindent. Do clever autoindenting. (local to buffer)
---  	set nosi	si
+--      set nosi    si
 -- cindent. Enable specific indenting for C code. (local to buffer)
---  	set nocin	cin
+--      set nocin    cin
 -- cinoptions. Options for C-indenting. (local to buffer)
---  	set cino=
+--      set cino=
 -- cinkeys. Keys that trigger C-indenting in Insert mode. (local to buffer)
---  	set cink=0{,0},0),0],:,0#,!^F,o,O,e
+--      set cink=0{,0},0),0],:,0#,!^F,o,O,e
 -- cinwords. List of words that cause more C-indent. (local to buffer)
---  	set cinw=if,else,while,do,for,switch
+--      set cinw=if,else,while,do,for,switch
 -- cinscopedecls. List of scope declaration names used by cino-g. (local to
 -- buffer)
---  	set cinsd=public,protected,private
+--      set cinsd=public,protected,private
 -- indentexpr. Expression used to obtain the indent of a line. (local to buffer)
---  	set inde=GetVimIndent()
+--      set inde=GetVimIndent()
 -- indentkeys. Keys that trigger indenting with 'indentexpr' in Insert mode.
 -- (local to buffer)
---  	set indk=0{,0},0),0],!^F,o,O,e,=endif,=enddef,=endfu,=endfor,=endwh,=endtry,=},=else,=cat,=finall,=END,0\\,0=\"\\\
+--      set indk=0{,0},0),0],!^F,o,O,e,=endif,=enddef,=endfu,=endfor,=endwh,=endtry,=},=else,=cat,=finall,=END,0\\,0=\"\\\
 -- copyindent. Copy whitespace for indenting from previous line. (local to
 -- buffer)
---  	set noci	ci
+--      set noci    ci
 -- preserveindent. Preserve kind of whitespace when changing indent. (local to
 -- buffer)
---  	set nopi	pi
+--      set nopi    pi
 -- lisp. Enable lisp mode. (local to buffer)
---  	set nolisp	lisp
+--      set nolisp    lisp
 -- lispwords. Words that change how lisp indenting works.
---  	set lw=defun,define,defmacro,set!,lambda,if,case,let,flet,let*,letrec,do,do*,define-syntax,let-syntax,letrec-syntax,destructuring-bind,defpackage,defparameter,defstruct,deftype,defvar,do-all-symbols,do-external-symbols,do-symbols,dolist,dotimes,ecase,etypecase,eval-when,labels,macrolet,multiple-value-bind,multiple-value-call,multiple-value-prog1,multiple-value-setq,prog1,progv,typecase,unless,unwind-protect,when,with-input-from-string,with-open-file,with-open-stream,with-output-to-string,with-package-iterator,define-condition,handler-bind,handler-case,restart-bind,restart-case,with-simple-restart,store-value,use-value,muffle-warning,abort,continue,with-slots,with-slots*,with-accessors,with-accessors*,defclass,defmethod,print-unreadable-object
+--      set lw=defun,define,defmacro,set!,lambda,if,case,let,flet,let*,letrec,do,do*,define-syntax,let-syntax,letrec-syntax,destructuring-bind,defpackage,defparameter,defstruct,deftype,defvar,do-all-symbols,do-external-symbols,do-symbols,dolist,dotimes,ecase,etypecase,eval-when,labels,macrolet,multiple-value-bind,multiple-value-call,multiple-value-prog1,multiple-value-setq,prog1,progv,typecase,unless,unwind-protect,when,with-input-from-string,with-open-file,with-open-stream,with-output-to-string,with-package-iterator,define-condition,handler-bind,handler-case,restart-bind,restart-case,with-simple-restart,store-value,use-value,muffle-warning,abort,continue,with-slots,with-slots*,with-accessors,with-accessors*,defclass,defmethod,print-unreadable-object

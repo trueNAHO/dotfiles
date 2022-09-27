@@ -1,22 +1,22 @@
 -- shell. Name of the shell program used for external commands.
---  	set sh=/bin/bash
+--      set sh=/bin/bash
 -- shellquote. Character(s) to enclose a shell command in.
---  	set shq=
+--      set shq=
 -- shellxquote. Like 'shellquote' but include the redirection.
---  	set sxq=
+--      set sxq=
 -- shellxescape. Characters to escape when 'shellxquote' is (.
---  	set sxe=
+--      set sxe=
 -- shellcmdflag. Argument for 'shell' to execute a command.
---  	set shcf=-c
+--      set shcf=-c
 -- shellredir. Used to redirect command output to a file.
---  	set srr=>%s\ 2>&1
+--      set srr=>%s\ 2>&1
 -- shelltemp. Use a temp file for shell commands instead of using a pipe.
---  	set stmp	nostmp
+--      set stmp    nostmp
 -- equalprg. Program used for "=" command. (global or local to buffer)
---  	set ep=
+--      set ep=
 -- formatprg. Program used to format lines with "gq" command.
---  	set fp=
+--      set fp=
 -- keywordprg. Program used for the "K" command.
---  	set kp=:Man
+--      set kp=:Man
 -- warn. Warn when using a shell command and a buffer has changes.
---  	set warn	nowarn
+--      set warn    nowarn

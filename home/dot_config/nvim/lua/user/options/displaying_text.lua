@@ -1,57 +1,57 @@
 -- scroll. Number of lines to scroll for CTRL-U and CTRL-D. (local to window)
---  	set scr=14
+--      set scr=14
 -- scrolloff. Number of screen lines to show around the cursor.
---  	set so=0
+--      set so=0
 -- wrap. Long lines wrap. (local to window)
---  	set wrap	nowrap
+--      set wrap    nowrap
 -- linebreak. Wrap long lines at a character in 'breakat'. (local to window)
---  	set nolbr	lbr
+--      set nolbr    lbr
 -- breakindent. Preserve indentation in wrapped text. (local to window)
---  	set nobri	bri
+--      set nobri    bri
 -- breakindentopt. Adjust breakindent behaviour. (local to window)
---  	set briopt=
+--      set briopt=
 -- breakat. Which characters might cause a line break.
---  	set brk=\ \	!@*-+;:,./?
+--      set brk=\ \    !@*-+;:,./?
 -- showbreak. String to put before wrapped screen lines.
---  	set sbr=
+--      set sbr=
 -- sidescroll. Minimal number of columns to scroll horizontally.
---  	set ss=1
+--      set ss=1
 -- sidescrolloff. Minimal number of columns to keep left and right of the
 -- cursor.
---  	set siso=0
+--      set siso=0
 -- display. Include "lastline" to show the last line even if it doesn't fit.
 -- include "uhex" to show unprintable characters as a hex number
---  	set dy=lastline,msgsep
+--      set dy=lastline,msgsep
 -- fillchars. Characters to use for the status line, folds and filler lines.
---  	set fcs=
+--      set fcs=
 -- cmdheight. Number of lines used for the command-line.
---  	set ch=1
+--      set ch=1
 -- columns. Width of the display.
---  	set co=111
+--      set co=111
 -- lines. Number of lines in the display.
---  	set lines=60
+--      set lines=60
 -- window. Number of lines to scroll for CTRL-F and CTRL-B.
---  	set window=59
+--      set window=59
 -- lazyredraw. Don't redraw while executing macros.
---  	set nolz	lz
+--      set nolz    lz
 -- redrawtime. Timeout for 'hlsearch' and :match highlighting in msec.
---  	set rdt=2000
+--      set rdt=2000
 -- writedelay. Delay in msec for each char written to the display. (for
 -- debugging)
---  	set wd=0
+--      set wd=0
 -- list. Show <Tab> as ^I and end-of-line as $. (local to window)
---  	set nolist	list
+--      set nolist    list
 -- listchars. List of strings used for list mode.
---  	set lcs=tab:>\ ,trail:-,nbsp:+
+--      set lcs=tab:>\ ,trail:-,nbsp:+
 -- number. Show the line number for each line. (local to window)
---  	set nonu	nu
+--      set nonu    nu
 -- relativenumber. Show the relative line number for each line. (local to
 -- window)
---  	set nornu	rnu
+--      set nornu    rnu
 -- numberwidth. Number of columns to use for the line number. (local to window)
---  	set nuw=4
+--      set nuw=4
 -- conceallevel. Controls whether concealable text is hidden. (local to window)
---  	set cole=0
+--      set cole=0
 -- concealcursor. Modes in which text in the cursor line can be concealed.
 -- (local to window)
---  	set cocu=
+--      set cocu=

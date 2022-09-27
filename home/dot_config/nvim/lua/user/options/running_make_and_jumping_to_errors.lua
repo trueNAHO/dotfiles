@@ -1,17 +1,17 @@
 -- errorfile. Name of the file that contains error messages.
---  	set ef=errors.err
+--      set ef=errors.err
 -- errorformat. List of formats for error messages. (global or local to buffer)
---  	set efm=%*[^\"]\"%f\"%*\\D%l:\ %m,\"%f\"%*\\D%l:\ %m,%-G%f:%l:\ (Each\ undeclared\ identifier\ is\ reported\ only\ once,%-G%f:%l:\ for\ each\ function\ it\ appears\ in.),%-GIn\ file\ included\ from\ %f:%l:%c:,%-GIn\ file\ included\ from\ %f:%l:%c\\,,%-GIn\ file\ included\ from\ %f:%l:%c,%-GIn\ file\ included\ from\ %f:%l,%-G%*[\ ]from\ %f:%l:%c,%-G%*[\ ]from\ %f:%l:,%-G%*[\ ]from\ %f:%l\\,,%-G%*[\ ]from\ %f:%l,%f:%l:%c:%m,%f(%l):%m,%f:%l:%m,\"%f\"\\,\ line\ %l%*\\D%c%*[^\ ]\ %m,%D%*\\a[%*\\d]:\ Entering\ directory\ %*[`']%f',%X%*\\a[%*\\d]:\ Leaving\ directory\ %*[`']%f',%D%*\\a:\ Entering\ directory\ %*[`']%f',%X%*\\a:\ Leaving\ directory\ %*[`']%f',%DMaking\ %*\\a\ in\ %f,%f\|%l\|\ %m
+--      set efm=%*[^\"]\"%f\"%*\\D%l:\ %m,\"%f\"%*\\D%l:\ %m,%-G%f:%l:\ (Each\ undeclared\ identifier\ is\ reported\ only\ once,%-G%f:%l:\ for\ each\ function\ it\ appears\ in.),%-GIn\ file\ included\ from\ %f:%l:%c:,%-GIn\ file\ included\ from\ %f:%l:%c\\,,%-GIn\ file\ included\ from\ %f:%l:%c,%-GIn\ file\ included\ from\ %f:%l,%-G%*[\ ]from\ %f:%l:%c,%-G%*[\ ]from\ %f:%l:,%-G%*[\ ]from\ %f:%l\\,,%-G%*[\ ]from\ %f:%l,%f:%l:%c:%m,%f(%l):%m,%f:%l:%m,\"%f\"\\,\ line\ %l%*\\D%c%*[^\ ]\ %m,%D%*\\a[%*\\d]:\ Entering\ directory\ %*[`']%f',%X%*\\a[%*\\d]:\ Leaving\ directory\ %*[`']%f',%D%*\\a:\ Entering\ directory\ %*[`']%f',%X%*\\a:\ Leaving\ directory\ %*[`']%f',%DMaking\ %*\\a\ in\ %f,%f\|%l\|\ %m
 -- makeprg. Program used for the ":make" command. (global or local to buffer)
---  	set mp=make
+--      set mp=make
 -- shellpipe. String used to put the output of ":make" in the error file.
---  	set sp=2>&1\|\ tee
+--      set sp=2>&1\|\ tee
 -- makeef. Name of the errorfile for the 'makeprg' command.
---  	set mef=
+--      set mef=
 -- grepprg. Program used for the ":grep" command. (global or local to buffer)
---  	set gp=grep\ -n\ $*\ /dev/null
+--      set gp=grep\ -n\ $*\ /dev/null
 -- grepformat. List of formats for output of 'grepprg'.
---  	set gfm=%f:%l:%m,%f:%l%m,%f\ \ %l%m
+--      set gfm=%f:%l:%m,%f:%l%m,%f\ \ %l%m
 -- makeencoding. Encoding of the ":make" and ":grep" output. (global or local
 -- to buffer)
---  	set menc=
+--      set menc=
