@@ -21,7 +21,7 @@
 --     set cms=\"%s
 -- foldmethod. Folding type: "manual", "indent", "expr", "marker",.
 --     "syntax" or "diff" (local to window)
---     set fdm=manual
+vim.opt.fdm = "marker"
 -- foldexpr. Expression used when 'foldmethod' is "expr". (local to window)
 --     set fde=0
 -- foldignore. Used to ignore lines when 'foldmethod' is "indent". (local to
