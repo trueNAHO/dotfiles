@@ -5,6 +5,9 @@
 -- Set autocommands.
 require("user.autocommands")
 
+-- Set keymaps.
+require("user.keymaps")
+
 -- Set options.
 require("user.options.command_line_editing")
 require("user.options.diff_mode")
