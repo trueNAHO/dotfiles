@@ -1,6 +1,6 @@
 -- File containing initialization commands is generically called a "vimrc" or
--- config file.  It can be either Vimscript ("init.vim") or Lua ("init.lua"),
--- but not both.
+-- config file. It can be either Vimscript ("init.vim") or Lua ("init.lua"), but
+-- not both.
 
 -- Set options.
 require("user.options.command_line_editing")
