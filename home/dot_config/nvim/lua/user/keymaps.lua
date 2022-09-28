@@ -28,7 +28,7 @@ vim.keymap.set({"n", "v"}, "<leader>D", '"_D')
 vim.keymap.set({"n", "v"}, "<leader>d", '"_d')
 
 -- Paste without altering the unnamed register.
-vim.keymap.set({"x"}, "<leader>p", '"_dP')
+vim.keymap.set("x", "<leader>p", '"_dP')
 
 -- Yank into selection register.
 vim.keymap.set({"n", "v"}, "<leader>Y", '"+Y', {remap = true})
