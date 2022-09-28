@@ -2,6 +2,9 @@
 -- config file. It can be either Vimscript ("init.vim") or Lua ("init.lua"), but
 -- not both.
 
+-- Set autocommands.
+require("user.autocommands")
+
 -- Set options.
 require("user.options.command_line_editing")
 require("user.options.diff_mode")
