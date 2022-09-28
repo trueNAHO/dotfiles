@@ -23,5 +23,9 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "n", "nzzzv")
 
+-- Delete without altering the unnamed register.
+vim.keymap.set({"n", "v"}, "<leader>D", '"_D')
+vim.keymap.set({"n", "v"}, "<leader>d", '"_d')
+
 -- Paste without altering the unnamed register.
 vim.keymap.set({"x"}, "<leader>p", '"_dP')
