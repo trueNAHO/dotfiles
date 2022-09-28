@@ -34,6 +34,11 @@ repos:
     hooks:
       - id: shellcheck
 
+  - repo: https://github.com/lunarmodules/luacheck
+    rev: v1.0.0
+    hooks:
+      - id: luacheck
+
   - repo: https://github.com/markdownlint/markdownlint
     rev: v0.11.0
     hooks:
