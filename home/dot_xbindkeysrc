@@ -55,6 +55,10 @@
 "command() { light -A 5; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
     Mod4 + Up
 
+# Set the brightness level to 0 percent.
+"command() { light -S 0; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+    Mod4+Shift + Down
+
 # Decrease brightness by 5 percent.
 "command() { light -U 5; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
     Mod4 + Down
