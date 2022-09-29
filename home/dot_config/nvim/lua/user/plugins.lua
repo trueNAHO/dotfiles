@@ -24,6 +24,7 @@ return require("packer").startup(function()
     require("user.plugins.wbthomason_packer_nvim")
 
     -- Color scheme.
+    --require("user.plugins.catppuccin_nvim")
     require("user.plugins.joshdick_onedark_vim")
     --require("user.plugins.tokyonight_nvim_day")
     --require("user.plugins.tokyonight_nvim_moon")
