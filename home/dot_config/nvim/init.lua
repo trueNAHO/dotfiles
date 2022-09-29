@@ -34,3 +34,6 @@ require("user.options.tags")
 require("user.options.terminal")
 require("user.options.using_the_mouse")
 require("user.options.various")
+
+-- Set plugins.
+require("user.plugins")
