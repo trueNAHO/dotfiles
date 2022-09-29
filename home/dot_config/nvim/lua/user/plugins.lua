@@ -25,11 +25,11 @@ return require("packer").startup(function()
 
     -- Color scheme.
     --require("user.plugins.catppuccin_nvim")
-    require("user.plugins.joshdick_onedark_vim")
+    --require("user.plugins.joshdick_onedark_vim")
     --require("user.plugins.tokyonight_nvim_day")
     --require("user.plugins.tokyonight_nvim_moon")
     --require("user.plugins.tokyonight_nvim_night")
-    --require("user.plugins.tokyonight_nvim_storm")
+    require("user.plugins.tokyonight_nvim_storm")
 
     -- Automatically set up your configuration after cloning `packer.nvim`. Put
     -- this at the end after all plugins
