@@ -28,6 +28,9 @@ return require("packer").startup(function()
     -- formatters.
     require("user.plugins.williamboman_mason_nvim")
 
+    -- Language Server Protocol (LSP).
+    require("user.plugins.neovim_nvim_lspconfig")
+
     -- Color scheme.
     --require("user.plugins.catppuccin_nvim")
     --require("user.plugins.joshdick_onedark_vim")
