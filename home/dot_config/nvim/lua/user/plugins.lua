@@ -23,6 +23,11 @@ return require("packer").startup(function()
     -- Packer can manage itself.
     require("user.plugins.wbthomason_packer_nvim")
 
+    -- Portable package manager for Neovim that runs everywhere Neovim runs.
+    -- Easily install and manage LSP servers, DAP servers, linters, and
+    -- formatters.
+    require("user.plugins.williamboman_mason_nvim")
+
     -- Color scheme.
     --require("user.plugins.catppuccin_nvim")
     --require("user.plugins.joshdick_onedark_vim")
