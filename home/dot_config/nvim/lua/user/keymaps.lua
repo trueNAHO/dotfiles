@@ -1,8 +1,5 @@
 -- Heavily inspired by: https://github.com/ThePrimeagen/.dotfiles
 
--- Set mapleader.
-vim.g.mapleader = " "
-
 -- Modes when using an arrow keys to navigate is not beneficial.
 local arrow_key_modes = {"i", "n", "o", "t", "v"}
 

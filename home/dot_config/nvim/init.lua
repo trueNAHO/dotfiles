@@ -2,6 +2,7 @@
 -- config file. It can be either Vimscript ("init.vim") or Lua ("init.lua"), but
 -- not both.
 
+require("user.g")
 require("user.options")
 require("user.diagnostic")
 require("user.keymaps")
