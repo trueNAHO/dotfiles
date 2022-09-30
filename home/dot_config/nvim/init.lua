@@ -3,6 +3,7 @@
 -- not both.
 
 require("user.options")
+require("user.diagnostic")
 require("user.keymaps")
 require("user.autocommands")
 require("user.plugins")
