@@ -61,11 +61,14 @@ local function lsp_config()
             "force",
             lspconfig.util.default_config,
             {
-                on_attach = function()
+                on_attach = function(_, bufnr)
                     vim.api.nvim_exec_autocmds(
                         lsp_autocommand_event,
                         {pattern = lsp_autocommand_pattern}
                     )
+                    -- Enable completion triggered by <c-x><c-o>.
+                    vim.api.nvim_buf_set_option(bufnr, 'omnifunc',
+                                                'v:lua.vim.lsp.omnifunc')
                 end
             }
         )
