@@ -44,7 +44,6 @@ local function lsp_config()
         keymap_buffer("n", "<F4>", function() vim.lsp.buf.code_action() end)
         keymap_buffer("x", "<F4>",
                       function() vim.lsp.buf.range_code_action() end)
-
         -- Show diagnostics in a floating window.
         keymap_buffer("n", "gl", function() vim.diagnostic.open_float() end)
 
@@ -87,6 +86,22 @@ local function lsp_config()
     local function main()
         lspconfig_util_default_config()
         nvim_create_autocmd_LspAttached()
+
+        lspconfig.sumneko_lua.setup{
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        -- Get the language server to recognize the `vim`
+                        -- global.
+                        globals = {"vim"}
+                    },
+                    workspace = {
+                        -- Make the server aware of Neovim runtime files.
+                        library = vim.api.nvim_get_runtime_file("", true)
+                    }
+                }
+            }
+        }
     end
 
     main()
