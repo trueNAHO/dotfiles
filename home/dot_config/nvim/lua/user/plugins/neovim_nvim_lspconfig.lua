@@ -9,6 +9,8 @@ local function lsp_config()
     local lsp_autocommand_event = "User"
     local lsp_autocommand_pattern = "LspAttached"
 
+    local leader_prefix = "<leader>l"
+
     -- Add a new mapping to local buffer.
     local function keymap_buffer(mode, lhs, rhs)
         vim.keymap.set(mode, lhs, rhs, {buffer = true})
@@ -26,25 +28,31 @@ local function lsp_config()
         keymap_buffer("n", "gD", function() vim.lsp.buf.declaration() end)
 
         -- List all the implementations for the symbol under the cursor.
-        keymap_buffer("n", "gi", function() vim.lsp.buf.implementation() end)
+        keymap_buffer("n", leader_prefix .. "i",
+                      function() vim.lsp.buf.implementation() end)
 
         -- Jump to the definition of the type symbol.
-        keymap_buffer("n", "go", function() vim.lsp.buf.type_definition() end)
+        keymap_buffer("n", leader_prefix .. "t",
+                      function() vim.lsp.buf.type_definition() end)
 
         -- List all the references .
-        keymap_buffer("n", "gr", function() vim.lsp.buf.references() end)
+        keymap_buffer("n", leader_prefix .. "r",
+                      function() vim.lsp.buf.references() end)
 
         -- Display a function"s signature information.
-        keymap_buffer("n", "<C-k>", function() vim.lsp.buf.signature_help() end)
+        keymap_buffer("n", leader_prefix .. "s",
+                      function() vim.lsp.buf.signature_help() end)
 
         -- Rename all references to the symbol under the cursor.
-        keymap_buffer("n", "<F2>", function() vim.lsp.buf.rename() end)
+        keymap_buffer("n", leader_prefix .. "n",
+                      function() vim.lsp.buf.rename() end)
 
         -- Select a code action available at the current cursor position.
-        keymap_buffer({"n", "x"}, "<F4>",
+        keymap_buffer({"n", "x"}, leader_prefix .. "a",
                       function() vim.lsp.buf.code_action() end)
         -- Show diagnostics in a floating window.
-        keymap_buffer("n", "gl", function() vim.diagnostic.open_float() end)
+        keymap_buffer("n", leader_prefix .. "d",
+                      function() vim.diagnostic.open_float() end)
 
         -- Move to the previous diagnostic.
         keymap_buffer("n", "[d", function() vim.diagnostic.goto_prev() end)
