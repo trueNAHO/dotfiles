@@ -21,19 +21,29 @@ local function lsp_config()
         -- Display hover information about the symbol under the cursor.
         keymap_buffer("n", "K", function() vim.lsp.buf.hover() end)
 
-        -- Jump to the definition.
-        keymap_buffer("n", "gd", function() vim.lsp.buf.definition() end)
+        -- Move to the previous diagnostic.
+        keymap_buffer("n", "[d", function() vim.diagnostic.goto_prev() end)
+
+        -- Move to the next diagnostic.
+        keymap_buffer("n", "]d", function() vim.diagnostic.goto_next() end)
 
         -- Jump to declaration.
         keymap_buffer("n", "gD", function() vim.lsp.buf.declaration() end)
+
+        -- Jump to the definition.
+        keymap_buffer("n", "gd", function() vim.lsp.buf.definition() end)
+
+        -- Show diagnostics in a floating window.
+        keymap_buffer("n", leader_prefix .. "d",
+                      function() vim.diagnostic.open_float() end)
 
         -- List all the implementations for the symbol under the cursor.
         keymap_buffer("n", leader_prefix .. "i",
                       function() vim.lsp.buf.implementation() end)
 
-        -- Jump to the definition of the type symbol.
-        keymap_buffer("n", leader_prefix .. "t",
-                      function() vim.lsp.buf.type_definition() end)
+        -- Rename all references to the symbol under the cursor.
+        keymap_buffer("n", leader_prefix .. "n",
+                      function() vim.lsp.buf.rename() end)
 
         -- List all the references .
         keymap_buffer("n", leader_prefix .. "r",
@@ -43,22 +53,13 @@ local function lsp_config()
         keymap_buffer("n", leader_prefix .. "s",
                       function() vim.lsp.buf.signature_help() end)
 
-        -- Rename all references to the symbol under the cursor.
-        keymap_buffer("n", leader_prefix .. "n",
-                      function() vim.lsp.buf.rename() end)
+        -- Jump to the definition of the type symbol.
+        keymap_buffer("n", leader_prefix .. "t",
+                      function() vim.lsp.buf.type_definition() end)
 
         -- Select a code action available at the current cursor position.
         keymap_buffer({"n", "x"}, leader_prefix .. "a",
                       function() vim.lsp.buf.code_action() end)
-        -- Show diagnostics in a floating window.
-        keymap_buffer("n", leader_prefix .. "d",
-                      function() vim.diagnostic.open_float() end)
-
-        -- Move to the previous diagnostic.
-        keymap_buffer("n", "[d", function() vim.diagnostic.goto_prev() end)
-
-        -- Move to the next diagnostic.
-        keymap_buffer("n", "]d", function() vim.diagnostic.goto_next() end)
     end
 
     -- The global defaults for all servers can be overridden by extending the
