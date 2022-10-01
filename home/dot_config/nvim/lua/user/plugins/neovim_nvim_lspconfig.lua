@@ -54,9 +54,6 @@ local function lsp_config()
         -- a floating window.
         keymap_buffer("n", leader_prefix .. "s", vim.lsp.buf.signature_help)
 
-        -- Jump to the definition of the type of the symbol under the cursor.
-        keymap_buffer("n", leader_prefix .. "t", vim.lsp.buf.type_definition)
-
         -- Select a code action available at the current cursor position.
         keymap_buffer({"n", "x"}, leader_prefix .. "a", vim.lsp.buf.code_action)
     end
