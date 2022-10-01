@@ -40,6 +40,6 @@ return require("packer").startup(function()
     require("user.plugins.tokyonight_nvim_storm")
 
     -- Automatically set up your configuration after cloning `packer.nvim`. Put
-    -- this at the end after all plugins
+    -- this at the end after all plugins.
     if packer_bootstrap then require("packer").sync() end
 end)
