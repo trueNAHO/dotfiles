@@ -41,9 +41,8 @@ local function lsp_config()
         keymap_buffer("n", "<F2>", function() vim.lsp.buf.rename() end)
 
         -- Select a code action available at the current cursor position.
-        keymap_buffer("n", "<F4>", function() vim.lsp.buf.code_action() end)
-        keymap_buffer("x", "<F4>",
-                      function() vim.lsp.buf.range_code_action() end)
+        keymap_buffer({"n", "x"}, "<F4>",
+                      function() vim.lsp.buf.code_action() end)
         -- Show diagnostics in a floating window.
         keymap_buffer("n", "gl", function() vim.diagnostic.open_float() end)
 
