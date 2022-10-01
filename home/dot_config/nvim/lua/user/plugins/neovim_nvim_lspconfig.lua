@@ -18,7 +18,9 @@ local function lsp_config()
 
     -- Set mappings for LSP.
     local function lspconfig_keymap_set()
-        -- Display hover information about the symbol under the cursor.
+        -- Display hover information about the symbol under the cursor in
+        -- a floating window. Calling the function twice will jump into the
+        -- floating window.
         keymap_buffer("n", "K", vim.lsp.buf.hover)
 
         -- Move to the previous diagnostic.
@@ -27,10 +29,12 @@ local function lsp_config()
         -- Move to the next diagnostic.
         keymap_buffer("n", "]d", vim.diagnostic.goto_next)
 
-        -- Jump to declaration.
+        -- Jump to the declaration of the symbol under the cursor. Many servers
+        -- do not implement this method. Generally, see
+        -- `vim.lsp.buf.definition()` instead.
         keymap_buffer("n", "gD", vim.lsp.buf.declaration)
 
-        -- Jump to the definition.
+        -- Jump to the definition of the symbol under the cursor.
         keymap_buffer("n", "gd", vim.lsp.buf.definition)
 
         -- Show diagnostics in a floating window.
@@ -42,13 +46,15 @@ local function lsp_config()
         -- Rename all references to the symbol under the cursor.
         keymap_buffer("n", leader_prefix .. "n", vim.lsp.buf.rename)
 
-        -- List all the references .
+        -- List all the references to the symbol under the cursor in the
+        -- quickfix window.
         keymap_buffer("n", leader_prefix .. "r", vim.lsp.buf.references)
 
-        -- Display a function"s signature information.
+        -- Display signature information about the symbol under the cursor in
+        -- a floating window.
         keymap_buffer("n", leader_prefix .. "s", vim.lsp.buf.signature_help)
 
-        -- Jump to the definition of the type symbol.
+        -- Jump to the definition of the type of the symbol under the cursor.
         keymap_buffer("n", leader_prefix .. "t", vim.lsp.buf.type_definition)
 
         -- Select a code action available at the current cursor position.
