@@ -19,47 +19,40 @@ local function lsp_config()
     -- Set mappings for LSP.
     local function lspconfig_keymap_set()
         -- Display hover information about the symbol under the cursor.
-        keymap_buffer("n", "K", function() vim.lsp.buf.hover() end)
+        keymap_buffer("n", "K", vim.lsp.buf.hover)
 
         -- Move to the previous diagnostic.
-        keymap_buffer("n", "[d", function() vim.diagnostic.goto_prev() end)
+        keymap_buffer("n", "[d", vim.diagnostic.goto_prev)
 
         -- Move to the next diagnostic.
-        keymap_buffer("n", "]d", function() vim.diagnostic.goto_next() end)
+        keymap_buffer("n", "]d", vim.diagnostic.goto_next)
 
         -- Jump to declaration.
-        keymap_buffer("n", "gD", function() vim.lsp.buf.declaration() end)
+        keymap_buffer("n", "gD", vim.lsp.buf.declaration)
 
         -- Jump to the definition.
-        keymap_buffer("n", "gd", function() vim.lsp.buf.definition() end)
+        keymap_buffer("n", "gd", vim.lsp.buf.definition)
 
         -- Show diagnostics in a floating window.
-        keymap_buffer("n", leader_prefix .. "d",
-                      function() vim.diagnostic.open_float() end)
+        keymap_buffer("n", leader_prefix .. "d", vim.diagnostic.open_float)
 
         -- List all the implementations for the symbol under the cursor.
-        keymap_buffer("n", leader_prefix .. "i",
-                      function() vim.lsp.buf.implementation() end)
+        keymap_buffer("n", leader_prefix .. "i", vim.lsp.buf.implementation)
 
         -- Rename all references to the symbol under the cursor.
-        keymap_buffer("n", leader_prefix .. "n",
-                      function() vim.lsp.buf.rename() end)
+        keymap_buffer("n", leader_prefix .. "n", vim.lsp.buf.rename)
 
         -- List all the references .
-        keymap_buffer("n", leader_prefix .. "r",
-                      function() vim.lsp.buf.references() end)
+        keymap_buffer("n", leader_prefix .. "r", vim.lsp.buf.references)
 
         -- Display a function"s signature information.
-        keymap_buffer("n", leader_prefix .. "s",
-                      function() vim.lsp.buf.signature_help() end)
+        keymap_buffer("n", leader_prefix .. "s", vim.lsp.buf.signature_help)
 
         -- Jump to the definition of the type symbol.
-        keymap_buffer("n", leader_prefix .. "t",
-                      function() vim.lsp.buf.type_definition() end)
+        keymap_buffer("n", leader_prefix .. "t", vim.lsp.buf.type_definition)
 
         -- Select a code action available at the current cursor position.
-        keymap_buffer({"n", "x"}, leader_prefix .. "a",
-                      function() vim.lsp.buf.code_action() end)
+        keymap_buffer({"n", "x"}, leader_prefix .. "a", vim.lsp.buf.code_action)
     end
 
     -- The global defaults for all servers can be overridden by extending the
