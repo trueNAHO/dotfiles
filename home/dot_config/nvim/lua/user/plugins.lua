@@ -31,6 +31,9 @@ return require("packer").startup(function()
     -- Language Server Protocol (LSP).
     require("user.plugins.neovim_nvim_lspconfig")
 
+    -- Autocompletion.
+    require("user.plugins.hrsh7th_nvim_cmp")
+
     -- Color scheme.
     --require("user.plugins.catppuccin_nvim")
     --require("user.plugins.joshdick_onedark_vim")
