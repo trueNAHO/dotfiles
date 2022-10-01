@@ -43,12 +43,12 @@ local function lsp_config()
         -- List all the implementations for the symbol under the cursor.
         keymap_buffer("n", leader_prefix .. "i", vim.lsp.buf.implementation)
 
-        -- Rename all references to the symbol under the cursor.
-        keymap_buffer("n", leader_prefix .. "n", vim.lsp.buf.rename)
-
         -- List all the references to the symbol under the cursor in the
         -- quickfix window.
-        keymap_buffer("n", leader_prefix .. "r", vim.lsp.buf.references)
+        keymap_buffer("n", leader_prefix .. "l", vim.lsp.buf.references)
+
+        -- Rename all references to the symbol under the cursor.
+        keymap_buffer("n", leader_prefix .. "r", vim.lsp.buf.rename)
 
         -- Display signature information about the symbol under the cursor in
         -- a floating window.
