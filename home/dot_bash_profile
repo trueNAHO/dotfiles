@@ -68,6 +68,9 @@ set_configs() {
 
   # Set `bat` as manpager.
   export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+  # Set `nvim` as pager.
+  export PAGER="nvim -R"
 }
 
 # Set system defaults.
