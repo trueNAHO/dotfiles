@@ -23,12 +23,6 @@ local function lsp_config()
         -- floating window.
         keymap_buffer("n", "K", vim.lsp.buf.hover)
 
-        -- Move to the previous diagnostic.
-        keymap_buffer("n", "[d", vim.diagnostic.goto_prev)
-
-        -- Move to the next diagnostic.
-        keymap_buffer("n", "]d", vim.diagnostic.goto_next)
-
         -- Jump to the declaration of the symbol under the cursor. Many servers
         -- do not implement this method. Generally, see
         -- `vim.lsp.buf.definition()` instead.
@@ -46,6 +40,12 @@ local function lsp_config()
         -- List all the references to the symbol under the cursor in the
         -- quickfix window.
         keymap_buffer("n", leader_prefix .. "l", vim.lsp.buf.references)
+
+        -- Move to the next diagnostic.
+        keymap_buffer("n", leader_prefix .. "n", vim.diagnostic.goto_next)
+
+        -- Move to the previous diagnostic.
+        keymap_buffer("n", leader_prefix .. "p", vim.diagnostic.goto_prev)
 
         -- Rename all references to the symbol under the cursor.
         keymap_buffer("n", leader_prefix .. "r", vim.lsp.buf.rename)
