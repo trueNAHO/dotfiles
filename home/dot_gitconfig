@@ -4,3 +4,5 @@
     signingKey = 5FC6088AFB1A609D4532F9190C1C177B3B6468E0
 [commit]
     gpgSign = true
+[color]
+	pager = no
