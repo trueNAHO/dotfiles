@@ -68,7 +68,7 @@ set_configs() {
 
   # @url https://vi.stackexchange.com/questions/
   # Set `nvim` as manpager.
-  export MANPAGER="/bin/sh -c \"col -bx | nvim -c 'set ft=man nomod noma' -\""
+  export MANPAGER="sh -c \"col -bx | nvim -c 'set ft=man nomod noma' -\""
 }
 
 # Set system defaults.
