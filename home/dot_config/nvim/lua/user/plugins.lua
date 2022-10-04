@@ -34,6 +34,9 @@ return require("packer").startup(function()
     -- Autocompletion.
     require("user.plugins.hrsh7th_nvim_cmp")
 
+    -- Find, Filter, Preview, Pick. All lua, all the time.
+    require("user.plugins.nvim_telescope_telescope_nvim")
+
     -- Color scheme.
     --require("user.plugins.catppuccin_nvim")
     --require("user.plugins.joshdick_onedark_vim")
