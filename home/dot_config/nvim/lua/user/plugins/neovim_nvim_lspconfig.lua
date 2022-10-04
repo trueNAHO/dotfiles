@@ -34,6 +34,10 @@ local function lsp_config()
         -- Show diagnostics in a floating window.
         keymap_buffer("n", leader_prefix .. "d", vim.diagnostic.open_float)
 
+        -- Formats a buffer using the attached (and optionally filtered)
+        -- language server clients.
+        keymap_buffer("n", leader_prefix .. "f", vim.lsp.buf.format)
+
         -- List all the implementations for the symbol under the cursor.
         keymap_buffer("n", leader_prefix .. "i", vim.lsp.buf.implementation)
 
