@@ -1,7 +1,10 @@
 local table_merge = require("user.lib.table.merge")
 
 local requires_mandatory = {"L3MON4D3/LuaSnip", "hrsh7th/cmp-nvim-lsp"}
-local requires_optional = {"hrsh7th/cmp-buffer"}
+local requires_optional = {
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-cmdline"
+}
 
 -- A completion plugin for neovim coded in Lua.
 require("packer").use{
