@@ -3,7 +3,7 @@ local function telescope_config()
     local telescope_actions = require('telescope.actions')
     local telescope_builtin = require("telescope.builtin")
 
-    local leader_prefix = "<leader>f"
+    local leader_prefix = "<leader>t"
 
     local telescope_setup = {
         defaults = {
