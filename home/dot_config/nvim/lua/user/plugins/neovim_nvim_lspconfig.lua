@@ -98,6 +98,8 @@ local function lsp_config()
         lspconfig_util_default_config()
         nvim_create_autocmd_LspAttached()
 
+        lspconfig.bashls.setup{}
+
         lspconfig.pyright.setup{}
 
         lspconfig.sumneko_lua.setup{
