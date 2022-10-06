@@ -37,6 +37,9 @@ return require("packer").startup(function()
     -- Find, Filter, Preview, Pick. All lua, all the time.
     require("user.plugins.nvim_telescope_telescope_nvim")
 
+    -- The undo history visualizer for VIM.
+    require("user.plugins.bbill_undotree")
+
     -- Color scheme.
     --require("user.plugins.catppuccin_nvim")
     --require("user.plugins.joshdick_onedark_vim")
