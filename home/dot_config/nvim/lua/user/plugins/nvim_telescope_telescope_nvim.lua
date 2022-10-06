@@ -1,7 +1,19 @@
 local function telescope_config()
+    local telescope = require("telescope")
+    local telescope_actions = require('telescope.actions')
     local telescope_builtin = require("telescope.builtin")
 
     local leader_prefix = "<leader>f"
+
+    local telescope_setup = {
+        defaults = {
+            mappings = {
+                i = {
+                    ["<C-j>"] = telescope_actions.select_default
+                }
+            }
+        }
+    }
 
     local function file_pickers()
         -- Search for files (respecting .gitignore).
@@ -57,6 +69,8 @@ local function telescope_config()
         file_pickers()
         vim_pickers()
         lsp_pickers()
+
+        telescope.setup(telescope_setup)
     end
 
     main()
