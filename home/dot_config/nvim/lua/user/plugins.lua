@@ -34,6 +34,10 @@ return require("packer").startup(function()
     -- Autocompletion.
     require("user.plugins.hrsh7th_nvim_cmp")
 
+    -- Neovim's answer to the mouse: a "clairvoyant" interface that makes
+    -- on-screen jumps quicker and more natural than ever.
+    require("user.plugins.ggandor_leap_nvim")
+
     -- Find, Filter, Preview, Pick. All lua, all the time.
     require("user.plugins.nvim_telescope_telescope_nvim")
 
