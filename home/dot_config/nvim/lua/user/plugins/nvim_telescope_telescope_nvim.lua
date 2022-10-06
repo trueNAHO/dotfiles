@@ -50,9 +50,34 @@ local function telescope_config()
                        telescope_builtin.current_buffer_fuzzy_find)
     end
 
+    local function lsp_pickers()
+        -- Lists LSP references for word under the cursor, jumps to reference on
+        -- `<cr>`.
+        vim.keymap.set("n", leader_prefix .. "lr",
+                       telescope_builtin.lsp_references)
+
+        -- Lists LSP document symbols in the current buffer.
+        vim.keymap.set("n", leader_prefix .. "fs",
+                       telescope_builtin.lsp_document_symbols)
+
+        -- Lists LSP document symbols in the current buffer.
+        vim.keymap.set("n", leader_prefix .. "lS",
+                       telescope_builtin.lsp_workspace_symbols)
+
+        -- Goto the definition of the word under the cursor, if there's only
+        -- one, otherwise show all options in Telescope.
+        vim.keymap.set("n", leader_prefix .. "ld",
+                       telescope_builtin.lsp_definitions)
+
+        -- Lists diagnostics.
+        vim.keymap.set("n", leader_prefix .. "dg",
+                       telescope_builtin.diagnostics)
+    end
+
     local function main()
         file_pickers()
         vim_pickers()
+        lsp_pickers()
     end
 
     main()
