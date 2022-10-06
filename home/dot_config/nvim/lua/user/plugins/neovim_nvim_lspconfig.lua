@@ -66,6 +66,8 @@ local function lsp_config()
     local function lspconfig_setup()
         lspconfig.bashls.setup{}
 
+        lspconfig.marksman.setup{}
+
         lspconfig.pyright.setup{}
 
         lspconfig.sumneko_lua.setup{
