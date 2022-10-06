@@ -7,11 +7,6 @@ local function telescope_config()
         -- Search for files (respecting .gitignore).
         vim.keymap.set("n", leader_prefix .. "ff", telescope_builtin.find_files)
 
-        -- Fuzzy search for files tracked by Git. This command lists the output
-        -- of the `git ls-files` command, respects .gitignore, and optionally
-        -- ignores untracked files.
-        vim.keymap.set("n", leader_prefix .. "gf", telescope_builtin.git_files)
-
         -- Searches for the string under your cursor in your current working
         -- directory.
         vim.keymap.set("n", leader_prefix .. "gs",
@@ -23,9 +18,6 @@ local function telescope_config()
     end
 
     local function vim_pickers()
-        -- Lists available plugin/user commands and runs them on `<cr>`.
-        vim.keymap.set("n", leader_prefix .. "ca", telescope_builtin.commands)
-
         -- Lists commands that were executed recently, and reruns them on
         -- `<cr>`.
         vim.keymap.set("n", leader_prefix .. "ch",
@@ -51,11 +43,6 @@ local function telescope_config()
     end
 
     local function lsp_pickers()
-        -- Lists LSP references for word under the cursor, jumps to reference on
-        -- `<cr>`.
-        vim.keymap.set("n", leader_prefix .. "lr",
-                       telescope_builtin.lsp_references)
-
         -- Lists LSP document symbols in the current buffer.
         vim.keymap.set("n", leader_prefix .. "fs",
                        telescope_builtin.lsp_document_symbols)
@@ -63,11 +50,6 @@ local function telescope_config()
         -- Lists LSP document symbols in the current buffer.
         vim.keymap.set("n", leader_prefix .. "lS",
                        telescope_builtin.lsp_workspace_symbols)
-
-        -- Goto the definition of the word under the cursor, if there's only
-        -- one, otherwise show all options in Telescope.
-        vim.keymap.set("n", leader_prefix .. "ld",
-                       telescope_builtin.lsp_definitions)
 
         -- Lists diagnostics.
         vim.keymap.set("n", leader_prefix .. "dg",
