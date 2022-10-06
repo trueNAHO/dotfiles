@@ -62,6 +62,29 @@ local function lsp_config()
         keymap_buffer({"n", "x"}, leader_prefix .. "a", vim.lsp.buf.code_action)
     end
 
+    -- Setup LSPs.
+    local function lspconfig_setup()
+        lspconfig.bashls.setup{}
+
+        lspconfig.pyright.setup{}
+
+        lspconfig.sumneko_lua.setup{
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        -- Get the language server to recognize the `vim`
+                        -- global.
+                        globals = {"vim"}
+                    },
+                    workspace = {
+                        -- Make the server aware of Neovim runtime files.
+                        library = vim.api.nvim_get_runtime_file("", true)
+                    }
+                }
+            }
+        }
+    end
+
     -- The global defaults for all servers can be overridden by extending the
     -- `default_config` table.
     local function lspconfig_util_default_config()
@@ -97,26 +120,7 @@ local function lsp_config()
     local function main()
         lspconfig_util_default_config()
         nvim_create_autocmd_LspAttached()
-
-        lspconfig.bashls.setup{}
-
-        lspconfig.pyright.setup{}
-
-        lspconfig.sumneko_lua.setup{
-            settings = {
-                Lua = {
-                    diagnostics = {
-                        -- Get the language server to recognize the `vim`
-                        -- global.
-                        globals = {"vim"}
-                    },
-                    workspace = {
-                        -- Make the server aware of Neovim runtime files.
-                        library = vim.api.nvim_get_runtime_file("", true)
-                    }
-                }
-            }
-        }
+        lspconfig_setup()
     end
 
     main()
