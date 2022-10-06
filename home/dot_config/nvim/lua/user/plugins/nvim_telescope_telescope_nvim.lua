@@ -1,16 +1,9 @@
--- Find, Filter, Preview, Pick. All lua, all the time.
-require("packer").use{
-    "nvim-telescope/telescope.nvim",
-    tag = "0.1.0",
-    requires = {
-        "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope-fzf-native.nvim"
-    },
-    config = function()
-        local telescope_builtin = require("telescope.builtin")
+local function telescope_config()
+    local telescope_builtin = require("telescope.builtin")
 
-        local leader_prefix = "<leader>f"
+    local leader_prefix = "<leader>f"
 
+    local function file_pickers()
         -- Search for files (respecting .gitignore).
         vim.keymap.set("n", leader_prefix .. "ff", telescope_builtin.find_files)
 
@@ -28,4 +21,21 @@ require("packer").use{
         -- .gitignore).
         vim.keymap.set("n", leader_prefix .. "fs", telescope_builtin.live_grep)
     end
+
+    local function main()
+        file_pickers()
+    end
+
+    main()
+end
+
+-- Find, Filter, Preview, Pick. All lua, all the time.
+require("packer").use{
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.0",
+    requires = {
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope-fzf-native.nvim"
+    },
+    config = telescope_config
 }
