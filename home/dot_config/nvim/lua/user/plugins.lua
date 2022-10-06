@@ -40,6 +40,9 @@ return require("packer").startup(function()
     -- The undo history visualizer for VIM.
     require("user.plugins.bbill_undotree")
 
+    -- The fastest Neovim colorizer.
+    require("user.plugins.norcalli_nvim_colorizer")
+
     -- Color scheme.
     --require("user.plugins.catppuccin_nvim")
     --require("user.plugins.joshdick_onedark_vim")
