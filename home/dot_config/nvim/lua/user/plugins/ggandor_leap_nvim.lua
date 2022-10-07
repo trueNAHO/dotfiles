@@ -5,7 +5,7 @@ require("packer").use({
     config = function()
         local leap = require("leap")
 
-        local leader_prefix = "<leader>f"
+        local leader_prefix = "<leader>"
 
         leap.opts = {
             -- Disable auto-jumping to the first match.
@@ -19,7 +19,7 @@ require("packer").use({
         end)
 
         -- Search in all windows.
-        vim.keymap.set({ "n", "v" }, leader_prefix .. "w", function()
+        vim.keymap.set({ "n", "v" }, leader_prefix .. "F", function()
             leap.leap({ target_windows = vim.tbl_filter(
                 function(win)
                     return vim.api.nvim_win_get_config(win).focusable
