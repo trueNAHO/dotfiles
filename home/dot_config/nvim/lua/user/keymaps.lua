@@ -33,10 +33,10 @@ vim.keymap.set({ "n", "v" }, "<leader>y", '"+y')
 
 -- Toggle virtual text.
 vim.keymap.set("n", "<leader>tv", function()
-    vim.diagnostic.config { virtual_text = true }
+    vim.diagnostic.config({ virtual_text = true })
     print(":lua vim.diagnostic.config{virtual_text = true}")
 end)
 vim.keymap.set("n", "<leader>tV", function()
-    vim.diagnostic.config { virtual_text = false }
+    vim.diagnostic.config({ virtual_text = false })
     print(":lua vim.diagnostic.config{virtual_text = false}")
 end)

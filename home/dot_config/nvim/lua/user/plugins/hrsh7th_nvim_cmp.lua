@@ -8,7 +8,7 @@ local requires_optional = {
 }
 
 -- A completion plugin for neovim coded in Lua.
-require("packer").use {
+require("packer").use({
     "hrsh7th/nvim-cmp",
     -- REQUIRED: Must sepcify a snipped engine.
     requires = table_merge(requires_mandatory, requires_optional),
@@ -46,7 +46,7 @@ require("packer").use {
             --TypeParameter = "",
         }
 
-        cmp.setup {
+        cmp.setup({
             formatting = {
                 fields = { "kind", "abbr", "menu" },
                 format = function(entry, vim_item)
@@ -61,14 +61,14 @@ require("packer").use {
                 end
             },
 
-            mapping = cmp.mapping.preset.insert {
+            mapping = cmp.mapping.preset.insert({
                 ["<C-b>"] = cmp.mapping.scroll_docs(-1),
                 ["<C-e>"] = cmp.mapping.abort(),
                 ["<C-f>"] = cmp.mapping.scroll_docs(1),
                 ["<C-n>"] = cmp.mapping.select_next_item(),
                 ["<C-p>"] = cmp.mapping.select_prev_item(),
-                ["<C-y>"] = cmp.mapping.confirm { select = true }
-            },
+                ["<C-y>"] = cmp.mapping.confirm({ select = true })
+            }),
 
             -- REQUIRED: Must sepcify a snipped engine.
             snippet = {
@@ -86,6 +86,6 @@ require("packer").use {
             --    completion = cmp.config.window.bordered(),
             --    documentation = cmp.config.window.bordered()
             --}
-        }
+        })
     end
-}
+})

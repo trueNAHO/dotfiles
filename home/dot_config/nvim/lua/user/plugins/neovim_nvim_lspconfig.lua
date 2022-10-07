@@ -64,13 +64,13 @@ local function lsp_config()
 
     -- Setup LSPs.
     local function lspconfig_setup()
-        lspconfig.bashls.setup {}
+        lspconfig.bashls.setup({})
 
-        lspconfig.marksman.setup {}
+        lspconfig.marksman.setup({})
 
-        lspconfig.pyright.setup {}
+        lspconfig.pyright.setup({})
 
-        lspconfig.sumneko_lua.setup {
+        lspconfig.sumneko_lua.setup({
             settings = {
                 Lua = {
                     diagnostics = {
@@ -84,7 +84,7 @@ local function lsp_config()
                     }
                 }
             }
-        }
+        })
     end
 
     -- The global defaults for all servers can be overridden by extending the
@@ -128,7 +128,7 @@ local function lsp_config()
     main()
 end
 
-require("packer").use {
+require("packer").use({
     "neovim/nvim-lspconfig",
     config = lsp_config
-}
+})
