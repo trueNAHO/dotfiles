@@ -85,6 +85,8 @@ local function lsp_config()
                 }
             }
         })
+
+        lspconfig.yamlls.setup({})
     end
 
     -- The global defaults for all servers can be overridden by extending the
