@@ -32,7 +32,7 @@ local function telescope_config()
         -- Lists commands that were executed recently, and reruns them on
         -- `<cr>`.
         vim.keymap.set("n", leader_prefix .. "c",
-                       telescope_builtin.command_history)
+            telescope_builtin.command_history)
 
         -- Lists available help tags and opens a new window with the relevant
         -- help info on `<cr>`.
@@ -49,17 +49,17 @@ local function telescope_config()
 
         -- Live fuzzy search inside of the currently open buffer.
         vim.keymap.set("n", leader_prefix .. "G",
-                       telescope_builtin.current_buffer_fuzzy_find)
+            telescope_builtin.current_buffer_fuzzy_find)
     end
 
     local function lsp_pickers()
         -- Lists LSP document symbols in the current buffer.
         vim.keymap.set("n", leader_prefix .. "S",
-                       telescope_builtin.lsp_document_symbols)
+            telescope_builtin.lsp_document_symbols)
 
         -- Lists LSP document symbols in the current buffer.
         vim.keymap.set("n", leader_prefix .. "s",
-                       telescope_builtin.lsp_workspace_symbols)
+            telescope_builtin.lsp_workspace_symbols)
 
         -- Lists diagnostics.
         vim.keymap.set("n", leader_prefix .. "d", telescope_builtin.diagnostics)
@@ -77,7 +77,7 @@ local function telescope_config()
 end
 
 -- Find, Filter, Preview, Pick. All lua, all the time.
-require("packer").use{
+require("packer").use {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.0",
     requires = {

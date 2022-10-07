@@ -6,7 +6,7 @@ local function ensure_packer()
         "/site/pack/packer/start/packer.nvim"
 
     if vim_fn.empty(vim_fn.glob(install_path)) > 0 then
-        vim_fn.system{
+        vim_fn.system {
             "git", "clone", "--depth", "1",
             "https://github.com/wbthomason/packer.nvim", install_path
         }

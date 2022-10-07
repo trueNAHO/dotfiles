@@ -1,6 +1,6 @@
 local table_merge = require("user.lib.table.merge")
 
-local requires_mandatory = {"L3MON4D3/LuaSnip", "hrsh7th/cmp-nvim-lsp"}
+local requires_mandatory = { "L3MON4D3/LuaSnip", "hrsh7th/cmp-nvim-lsp" }
 local requires_optional = {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-cmdline",
@@ -8,12 +8,12 @@ local requires_optional = {
 }
 
 -- A completion plugin for neovim coded in Lua.
-require("packer").use{
+require("packer").use {
     "hrsh7th/nvim-cmp",
     -- REQUIRED: Must sepcify a snipped engine.
     requires = table_merge(requires_mandatory, requires_optional),
     config = function()
-        vim.opt.cot = {"menu", "menuone", "noselect"}
+        vim.opt.cot = { "menu", "menuone", "noselect" }
 
         local cmp = require("cmp")
         local luasnip = require("luasnip")
@@ -48,7 +48,7 @@ require("packer").use{
 
         cmp.setup {
             formatting = {
-                fields = {"kind", "abbr", "menu"},
+                fields = { "kind", "abbr", "menu" },
                 format = function(entry, vim_item)
                     vim_item.kind = kind_icons[vim_item.kind]
                     vim_item.menu = ({
@@ -61,13 +61,13 @@ require("packer").use{
                 end
             },
 
-            mapping = cmp.mapping.preset.insert{
+            mapping = cmp.mapping.preset.insert {
                 ["<C-b>"] = cmp.mapping.scroll_docs(-1),
                 ["<C-e>"] = cmp.mapping.abort(),
                 ["<C-f>"] = cmp.mapping.scroll_docs(1),
                 ["<C-n>"] = cmp.mapping.select_next_item(),
                 ["<C-p>"] = cmp.mapping.select_prev_item(),
-                ["<C-y>"] = cmp.mapping.confirm{select = true}
+                ["<C-y>"] = cmp.mapping.confirm { select = true }
             },
 
             -- REQUIRED: Must sepcify a snipped engine.
@@ -76,10 +76,10 @@ require("packer").use{
             },
 
             sources = {
-                {name = "nvim_lsp"},
-                {name = "luasnip"},
-                {name = "buffer"},
-                {name = "path"}
+                { name = "nvim_lsp" },
+                { name = "luasnip" },
+                { name = "buffer" },
+                { name = "path" }
             },
 
             --window = {

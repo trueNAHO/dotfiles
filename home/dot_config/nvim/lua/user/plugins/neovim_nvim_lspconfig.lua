@@ -13,7 +13,7 @@ local function lsp_config()
 
     -- Add a new mapping to local buffer.
     local function keymap_buffer(mode, lhs, rhs)
-        vim.keymap.set(mode, lhs, rhs, {buffer = true})
+        vim.keymap.set(mode, lhs, rhs, { buffer = true })
     end
 
     -- Set mappings for LSP.
@@ -59,24 +59,24 @@ local function lsp_config()
         keymap_buffer("n", leader_prefix .. "s", vim.lsp.buf.signature_help)
 
         -- Select a code action available at the current cursor position.
-        keymap_buffer({"n", "x"}, leader_prefix .. "a", vim.lsp.buf.code_action)
+        keymap_buffer({ "n", "x" }, leader_prefix .. "a", vim.lsp.buf.code_action)
     end
 
     -- Setup LSPs.
     local function lspconfig_setup()
-        lspconfig.bashls.setup{}
+        lspconfig.bashls.setup {}
 
-        lspconfig.marksman.setup{}
+        lspconfig.marksman.setup {}
 
-        lspconfig.pyright.setup{}
+        lspconfig.pyright.setup {}
 
-        lspconfig.sumneko_lua.setup{
+        lspconfig.sumneko_lua.setup {
             settings = {
                 Lua = {
                     diagnostics = {
                         -- Get the language server to recognize the `vim`
                         -- global.
-                        globals = {"vim"}
+                        globals = { "vim" }
                     },
                     workspace = {
                         -- Make the server aware of Neovim runtime files.
@@ -97,11 +97,11 @@ local function lsp_config()
                 on_attach = function(_, bufnr)
                     vim.api.nvim_exec_autocmds(
                         lsp_autocommand_event,
-                        {pattern = lsp_autocommand_pattern}
+                        { pattern = lsp_autocommand_pattern }
                     )
                     -- Enable completion triggered by <c-x><c-o>.
                     vim.api.nvim_buf_set_option(bufnr, 'omnifunc',
-                                                'v:lua.vim.lsp.omnifunc')
+                        'v:lua.vim.lsp.omnifunc')
                 end
             }
         )
@@ -128,7 +128,7 @@ local function lsp_config()
     main()
 end
 
-require("packer").use{
+require("packer").use {
     "neovim/nvim-lspconfig",
     config = lsp_config
 }

@@ -1,7 +1,7 @@
 -- Heavily inspired by: https://github.com/ThePrimeagen/.dotfiles
 
 -- Modes when using an arrow keys to navigate is not beneficial.
-local arrow_key_modes = {"i", "n", "o", "t", "v"}
+local arrow_key_modes = { "i", "n", "o", "t", "v" }
 
 -- Call this function when using an arrow key to navigate.
 local function arrow_key()
@@ -21,22 +21,22 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "n", "nzzzv")
 
 -- Delete without altering the unnamed register.
-vim.keymap.set({"n", "v"}, "<leader>D", '"_D')
-vim.keymap.set({"n", "v"}, "<leader>d", '"_d')
+vim.keymap.set({ "n", "v" }, "<leader>D", '"_D')
+vim.keymap.set({ "n", "v" }, "<leader>d", '"_d')
 
 -- Paste without altering the unnamed register.
 vim.keymap.set("x", "<leader>p", '"_dP')
 
 -- Yank into selection register.
-vim.keymap.set({"n", "v"}, "<leader>Y", '"+Y', {remap = true})
-vim.keymap.set({"n", "v"}, "<leader>y", '"+y')
+vim.keymap.set({ "n", "v" }, "<leader>Y", '"+Y', { remap = true })
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y')
 
 -- Toggle virtual text.
 vim.keymap.set("n", "<leader>tv", function()
-    vim.diagnostic.config{virtual_text = true}
+    vim.diagnostic.config { virtual_text = true }
     print(":lua vim.diagnostic.config{virtual_text = true}")
 end)
 vim.keymap.set("n", "<leader>tV", function()
-    vim.diagnostic.config{virtual_text = false}
+    vim.diagnostic.config { virtual_text = false }
     print(":lua vim.diagnostic.config{virtual_text = false}")
 end)
