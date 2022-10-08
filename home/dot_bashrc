@@ -133,6 +133,22 @@ cl() {
   cd -- "$@" && ls
 }
 
+# @url https://github.com/gokcehan/lf/blob/master/etc/lfcd.sh
+# Change working dir in shell to last dir in `lf` on exit.
+lfcd() {
+    declare -r tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+
+    [[ -f "$tmp" ]] || return
+
+    declare -r dir="$(cat "$tmp")"
+    rm -f -- "$tmp"
+
+    if [[ -d "$dir" && "$dir" != "$(pwd)" ]]; then
+        cd -- "$dir" || return
+    fi
+}
+
 # Make directories and change the shell working directory to the first
 # argument specified.
 mkcd () {
