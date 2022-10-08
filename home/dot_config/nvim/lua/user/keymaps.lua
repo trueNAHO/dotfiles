@@ -1,7 +1,7 @@
 -- Heavily inspired by: https://github.com/ThePrimeagen/.dotfiles
 
 local status_prefix = ":lua "
-local toggle_prefix = "<leader>t"
+local toggle_prefix = "<leader>s"
 
 -- Modes when using an arrow keys to navigate is not beneficial.
 local arrow_key_modes = { "i", "n", "o", "t", "v" }
