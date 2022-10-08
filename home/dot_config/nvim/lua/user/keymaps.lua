@@ -1,5 +1,8 @@
 -- Heavily inspired by: https://github.com/ThePrimeagen/.dotfiles
 
+local status_prefix = ":lua "
+local toggle_prefix = "<leader>t"
+
 -- Modes when using an arrow keys to navigate is not beneficial.
 local arrow_key_modes = { "i", "n", "o", "t", "v" }
 
@@ -30,6 +33,13 @@ vim.keymap.set("x", "<leader>p", '"_dP')
 -- Yank into selection register.
 vim.keymap.set({ "n", "v" }, "<leader>Y", '"+Y', { remap = true })
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y')
+
+-- Toggle spell checking.
+vim.keymap.set("n", toggle_prefix .. "s", function()
+    local new_value = not vim.o.spell
+    vim.o.spell = new_value
+    print(("%svim.o.spell = %s"):format(status_prefix, new_value))
+end)
 
 -- Toggle virtual text.
 vim.keymap.set("n", "<leader>tv", function()
