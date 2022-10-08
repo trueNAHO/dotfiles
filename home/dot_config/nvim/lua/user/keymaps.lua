@@ -42,11 +42,11 @@ vim.keymap.set("n", toggle_prefix .. "s", function()
 end)
 
 -- Toggle virtual text.
-vim.keymap.set("n", "<leader>tv", function()
+vim.keymap.set("n", toggle_prefix .. "v", function()
     vim.diagnostic.config({ virtual_text = true })
     print(":lua vim.diagnostic.config{virtual_text = true}")
 end)
-vim.keymap.set("n", "<leader>tV", function()
+vim.keymap.set("n", toggle_prefix .. "V", function()
     vim.diagnostic.config({ virtual_text = false })
     print(":lua vim.diagnostic.config{virtual_text = false}")
 end)
