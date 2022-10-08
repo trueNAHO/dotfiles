@@ -11,14 +11,6 @@ local function arrow_key()
     print("No gamer uses arrow keys. Neither should you.")
 end
 
--- Set the value of `virtual_text` to `new_value` and give a status report.
-local function set_virtual_text(new_value)
-    vim.diagnostic.config({ virtual_text = new_value })
-    print(("%svim.diagnostic.config{virtual_text = %s}"):format(
-        status_prefix, new_value)
-    )
-end
-
 -- Set arrow keys.
 vim.keymap.set(arrow_key_modes, "<down>", arrow_key)
 vim.keymap.set(arrow_key_modes, "<left>", arrow_key)
@@ -50,7 +42,10 @@ vim.keymap.set("n", toggle_prefix .. "s", function()
 end)
 
 -- Toggle virtual text.
-vim.keymap.set("n", toggle_prefix .. "v", function() set_virtual_text(true) end)
-vim.keymap.set("n", toggle_prefix .. "V", function()
-    set_virtual_text(false)
+vim.keymap.set("n", toggle_prefix .. "v", function()
+    local new_value = not vim.diagnostic.config().virtual_text
+    vim.diagnostic.config({ virtual_text = new_value })
+    print(("%svim.diagnostic.config({ virtual_text = %s })"):format(
+        status_prefix, new_value)
+    )
 end)
