@@ -44,9 +44,13 @@ end)
 -- Toggle virtual text.
 vim.keymap.set("n", toggle_prefix .. "v", function()
     vim.diagnostic.config({ virtual_text = true })
-    print(":lua vim.diagnostic.config{virtual_text = true}")
+    print(("%svim.diagnostic.config{virtual_text = true}"):format(
+        status_prefix)
+    )
 end)
 vim.keymap.set("n", toggle_prefix .. "V", function()
     vim.diagnostic.config({ virtual_text = false })
-    print(":lua vim.diagnostic.config{virtual_text = false}")
+    print(("%svim.diagnostic.config{virtual_text = false}"):format(
+        status_prefix)
+    )
 end)
