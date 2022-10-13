@@ -136,8 +136,10 @@ cl() {
 # @url https://github.com/gokcehan/lf/blob/master/etc/lfcd.sh
 # Change working dir in shell to last dir in `lf` on exit.
 lfcd() {
+    declare -r command="/usr/bin/lf"
+
     declare -r tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
+    "$command" -last-dir-path="$tmp" "$@"
 
     [[ -f "$tmp" ]] || return
 
