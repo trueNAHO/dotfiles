@@ -86,6 +86,8 @@ local function lsp_config()
             }
         })
 
+        lspconfig.texlab.setup({})
+
         lspconfig.tsserver.setup({})
 
         lspconfig.yamlls.setup({})
