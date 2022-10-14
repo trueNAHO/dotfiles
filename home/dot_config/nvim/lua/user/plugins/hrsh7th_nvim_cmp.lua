@@ -65,6 +65,7 @@ require("packer").use({
                 ["<C-b>"] = cmp.mapping.scroll_docs(-1),
                 ["<C-e>"] = cmp.mapping.abort(),
                 ["<C-f>"] = cmp.mapping.scroll_docs(1),
+                ["<C-i>"] = cmp.mapping.confirm({ select = true }),
                 ["<C-n>"] = cmp.mapping.select_next_item(),
                 ["<C-p>"] = cmp.mapping.select_prev_item(),
                 ["<C-y>"] = cmp.mapping.confirm({ select = true })
