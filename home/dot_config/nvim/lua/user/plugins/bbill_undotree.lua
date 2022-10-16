@@ -7,7 +7,9 @@ require("packer").use({
         vim.g.undotree_CustomDiffpanelCmd = "botright 10 new"
 
         -- Toggle the undo-tree panel.
-        vim.keymap.set("n", leader_prefix,
-            function() vim.cmd("UndotreeToggle") end)
+        vim.keymap.set(
+            "n", leader_prefix, function() vim.cmd("UndotreeToggle") end,
+            { desc = "Toggle the undo-tree panel" }
+        )
     end
 })

@@ -14,18 +14,31 @@ require("packer").use({
 
         -- Bidirectional search. Initiate multi-window mode with the current
         -- window as the only target.
-        vim.keymap.set({ "n", "v" }, leader_prefix .. "f", function()
-            leap.leap({ target_windows = { vim.fn.win_getid() } })
-        end)
+        vim.keymap.set(
+            { "n", "v" }, leader_prefix .. "f",
+            function()
+                leap.leap({ target_windows = { vim.fn.win_getid() } })
+            end,
+            {
+                desc = "Bidirectional search. Initiate multi-window mode " ..
+                    "with the current window as the only target"
+            }
+        )
 
         -- Search in all windows.
-        vim.keymap.set({ "n", "v" }, leader_prefix .. "F", function()
-            leap.leap({ target_windows = vim.tbl_filter(
-                function(win)
-                    return vim.api.nvim_win_get_config(win).focusable
-                end,
-                vim.api.nvim_tabpage_list_wins(0)
-            ) })
-        end)
+        vim.keymap.set(
+            { "n", "v" }, leader_prefix .. "F",
+            function()
+                leap.leap({
+                    target_windows = vim.tbl_filter(
+                        function(win)
+                            return vim.api.nvim_win_get_config(win).focusable
+                        end,
+                        vim.api.nvim_tabpage_list_wins(0)
+                    )
+                })
+            end,
+            { desc = "Search in all windows" }
+        )
     end
 })
