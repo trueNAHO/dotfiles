@@ -18,6 +18,7 @@ local function telescope_config()
 
     local telescope_setup = {
         defaults = {
+            layout_strategy = "vertical",
             mappings = {
                 i = {
                     ["<C-j>"] = telescope_actions.select_default
