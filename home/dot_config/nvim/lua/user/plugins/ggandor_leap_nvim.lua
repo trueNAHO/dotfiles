@@ -5,7 +5,7 @@ require("packer").use({
     config = function()
         local leap = require("leap")
 
-        local leader_prefix = "<leader>"
+        local leader = "<leader>"
 
         leap.opts = {
             -- Disable auto-jumping to the first match.
@@ -15,7 +15,7 @@ require("packer").use({
         -- Bidirectional search. Initiate multi-window mode with the current
         -- window as the only target.
         vim.keymap.set(
-            { "n", "v" }, leader_prefix .. "f",
+            { "n", "v" }, leader .. "f",
             function()
                 leap.leap({ target_windows = { vim.fn.win_getid() } })
             end,
@@ -27,7 +27,7 @@ require("packer").use({
 
         -- Search in all windows.
         vim.keymap.set(
-            { "n", "v" }, leader_prefix .. "F",
+            { "n", "v" }, leader .. "F",
             function()
                 leap.leap({
                     target_windows = vim.tbl_filter(

@@ -9,7 +9,7 @@ local function lsp_config()
     local lsp_autocommand_event = "User"
     local lsp_autocommand_pattern = "LspAttached"
 
-    local leader_prefix = "<leader>l"
+    local leader = "<leader>l"
 
     -- Add a new mapping to local buffer.
     local function keymap_buffer(mode, lhs, rhs, opts)
@@ -53,14 +53,14 @@ local function lsp_config()
 
         -- Show diagnostics in a floating window.
         keymap_buffer(
-            "n", leader_prefix .. "d", vim.diagnostic.open_float,
+            "n", leader .. "d", vim.diagnostic.open_float,
             { desc = "Show diagnostics in a floating window" }
         )
 
         -- Formats a buffer using the attached (and optionally filtered)
         -- language server clients.
         keymap_buffer(
-            "n", leader_prefix .. "f", vim.lsp.buf.format,
+            "n", leader .. "f", vim.lsp.buf.format,
             {
                 desc = "Formats a buffer using the attached (and optionally " ..
                     "filtered) language server clients"
@@ -69,7 +69,7 @@ local function lsp_config()
 
         -- List all the implementations for the symbol under the cursor.
         keymap_buffer(
-            "n", leader_prefix .. "i", vim.lsp.buf.implementation,
+            "n", leader .. "i", vim.lsp.buf.implementation,
             {
                 desc = "List all the implementations for the symbol under " ..
                     "the cursor"
@@ -79,7 +79,7 @@ local function lsp_config()
         -- List all the references to the symbol under the cursor in the
         -- quickfix window.
         keymap_buffer(
-            "n", leader_prefix .. "l", vim.lsp.buf.references,
+            "n", leader .. "l", vim.lsp.buf.references,
             {
                 desc = "List all the references to the symbol under the " ..
                     "cursor in the quickfix window"
@@ -88,26 +88,26 @@ local function lsp_config()
 
         -- Move to the next diagnostic.
         keymap_buffer(
-            "n", leader_prefix .. "n", vim.diagnostic.goto_next,
+            "n", leader .. "n", vim.diagnostic.goto_next,
             { desc = "Move to the next diagnostic" }
         )
 
         -- Move to the previous diagnostic.
         keymap_buffer(
-            "n", leader_prefix .. "p", vim.diagnostic.goto_prev,
+            "n", leader .. "p", vim.diagnostic.goto_prev,
             { desc = "Move to the previous diagnostic" }
         )
 
         -- Rename all references to the symbol under the cursor.
         keymap_buffer(
-            "n", leader_prefix .. "r", vim.lsp.buf.rename,
+            "n", leader .. "r", vim.lsp.buf.rename,
             { desc = "Rename all references to the symbol under the cursor" }
         )
 
         -- Display signature information about the symbol under the cursor in
         -- a floating window.
         keymap_buffer(
-            "n", leader_prefix .. "s", vim.lsp.buf.signature_help,
+            "n", leader .. "s", vim.lsp.buf.signature_help,
             {
                 desc = "Display signature information about the symbol " ..
                     "under the cursor in a floating window"
@@ -116,7 +116,7 @@ local function lsp_config()
 
         -- Select a code action available at the current cursor position.
         keymap_buffer(
-            { "n", "x" }, leader_prefix .. "a", vim.lsp.buf.code_action,
+            { "n", "x" }, leader .. "a", vim.lsp.buf.code_action,
             {
                 desc = "Select a code action available at the current " ..
                     "cursor position"
