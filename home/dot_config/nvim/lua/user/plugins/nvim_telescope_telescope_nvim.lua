@@ -102,10 +102,10 @@ local function telescope_config()
             { desc = "List LSP document symbols in the current buffer" }
         )
 
-        -- List LSP document symbols in the current buffer.
+        -- List LSP document symbols in the current workspace.
         vim.keymap.set(
             "n", leader .. "s", telescope_builtin.lsp_workspace_symbols,
-            { desc = "List LSP document symbols in the current buffer" }
+            { desc = "List LSP document symbols in the current workspace" }
         )
 
         -- List diagnostics.
