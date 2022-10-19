@@ -1,7 +1,7 @@
 -- Heavily inspired by: https://github.com/ThePrimeagen/.dotfiles
 
-local status_prefix = ":lua "
-local toggle_prefix = "<leader>s"
+local prefix_status = ":lua "
+local prefix_toggle = "<leader>s"
 
 -- Modes when using an arrow keys to navigate is not beneficial.
 local arrow_key_modes = { "i", "n", "o", "t", "v" }
@@ -71,22 +71,22 @@ vim.keymap.set(
 
 -- Toggle spell checking.
 vim.keymap.set(
-    "n", toggle_prefix .. "s",
+    "n", prefix_toggle .. "s",
     function()
         local new_value = not vim.o.spell
         vim.o.spell = new_value
-        print(("%svim.o.spell = %s"):format(status_prefix, new_value))
+        print(("%svim.o.spell = %s"):format(prefix_status, new_value))
     end,
     { desc = "Toggle spell checking" }
 )
 
 -- Toggle virtual text.
-vim.keymap.set("n", toggle_prefix .. "v",
+vim.keymap.set("n", prefix_toggle .. "v",
     function()
         local new_value = not vim.diagnostic.config().virtual_text
         vim.diagnostic.config({ virtual_text = new_value })
         print(("%svim.diagnostic.config({ virtual_text = %s })"):format(
-            status_prefix, new_value)
+            prefix_status, new_value)
         )
     end,
     { desc = "Toggle virtual text" }
