@@ -7,6 +7,8 @@ require("packer").use({
 
         local leader = "<leader>"
 
+        local prefix_desc_f = "Find. "
+
         leap.opts = {
             -- Disable auto-jumping to the first match.
             safe_labels = {},
@@ -20,8 +22,9 @@ require("packer").use({
                 leap.leap({ target_windows = { vim.fn.win_getid() } })
             end,
             {
-                desc = "Bidirectional search. Initiate multi-window mode " ..
-                    "with the current window as the only target"
+                desc = prefix_desc_f .. "Bidirectional search. Initiate " ..
+                    "multi-window mode with the current window as the only " ..
+                    "target"
             }
         )
 
@@ -38,7 +41,7 @@ require("packer").use({
                     )
                 })
             end,
-            { desc = "Search in all windows" }
+            { desc = prefix_desc_f .. "Search in all windows" }
         )
     end
 })

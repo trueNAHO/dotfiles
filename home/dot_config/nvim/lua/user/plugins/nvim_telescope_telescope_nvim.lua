@@ -5,6 +5,17 @@ local function telescope_config()
 
     local leader = "<leader>t"
 
+    local prefix_desc_c = "Command. "
+    local prefix_desc_d = "Diagnostics. "
+    local prefix_desc_f = "Find. "
+    local prefix_desc_g = "Grep. "
+    local prefix_desc_h = "Help. "
+    local prefix_desc_k = "Keymappings. "
+    local prefix_desc_l = "List. "
+    local prefix_desc_o = "Options. "
+    local prefix_desc_q = "Quickfix. "
+    local prefix_desc_s = "Search. "
+
     local telescope_setup = {
         defaults = {
             mappings = {
@@ -19,7 +30,10 @@ local function telescope_config()
         -- Search for files (respecting .gitignore).
         vim.keymap.set(
             "n", leader .. "f", telescope_builtin.find_files,
-            { desc = "Search for files (respecting .gitignore)" }
+            {
+                desc = prefix_desc_f .. "Search for files (respecting " ..
+                    ".gitignore)"
+            }
         )
 
         -- Search for the string under the cursor in the current working
@@ -27,8 +41,8 @@ local function telescope_config()
         vim.keymap.set(
             "n", leader .. "l", telescope_builtin.grep_string,
             {
-                desc = "Search for the string under the cursor in the " ..
-                    "current working directory"
+                desc = prefix_desc_l .. "Search for the string under the " ..
+                    "cursor in the current working directory"
             }
         )
 
@@ -37,8 +51,8 @@ local function telescope_config()
         vim.keymap.set(
             "n", leader .. "g", telescope_builtin.live_grep,
             {
-                desc = "Search for a string and get results live while " ..
-                    "typing (respecting .gitignore)"
+                desc = prefix_desc_g .. "Search for a string and get " ..
+                    "results live while typing (respecting .gitignore)"
             }
         )
     end
@@ -48,8 +62,8 @@ local function telescope_config()
         vim.keymap.set(
             "n", leader .. "c", telescope_builtin.command_history,
             {
-                desc = "List recently executed commands and rerun them on " ..
-                    "`<cr>`"
+                desc = prefix_desc_c .. "List recently executed commands " ..
+                    "and rerun them on `<cr>`"
             }
         )
 
@@ -58,8 +72,8 @@ local function telescope_config()
         vim.keymap.set(
             "n", leader .. "h", telescope_builtin.help_tags,
             {
-                desc = "List vailable help tags and open a new window with " ..
-                    "the relevant help info on `<cr>`"
+                desc = prefix_desc_h .. "List vailable help tags and open a " ..
+                    "new window with the relevant help info on `<cr>`"
             }
         )
 
@@ -67,23 +81,26 @@ local function telescope_config()
         vim.keymap.set(
             "n", leader .. "q", telescope_builtin.quickfix,
             {
-                desc = "List items in the quickfix list and jump to " ..
-                    "location on `<cr>`"
+                desc = prefix_desc_q .. "List items in the quickfix list " ..
+                    "and jump to location on `<cr>`"
             }
         )
 
         -- List vim options and edit the current value on `<cr>`.
         vim.keymap.set(
             "n", leader .. "o", telescope_builtin.vim_options,
-            { desc = "List vim options and edit the current value on `<cr>`" }
+            {
+                desc = prefix_desc_o .. "List vim options and edit the " ..
+                    "current value on `<cr>`"
+            }
         )
 
         -- List normal mode keymappings and run the selected keymap on `<cr>`.
         vim.keymap.set(
             "n", leader .. "k", telescope_builtin.keymaps,
             {
-                desc = "List normal mode keymappings and run the selected " ..
-                    "keymap on `<cr>`"
+                desc = prefix_desc_k .. "List normal mode keymappings and " ..
+                    "run the selected keymap on `<cr>`"
             }
         )
 
@@ -91,7 +108,10 @@ local function telescope_config()
         vim.keymap.set(
             "n", leader .. "G",
             telescope_builtin.current_buffer_fuzzy_find,
-            { desc = "Live fuzzy search inside of the currently open buffer" }
+            {
+                desc = prefix_desc_g .. "Live fuzzy search inside of the " ..
+                    "currently open buffer"
+            }
         )
     end
 
@@ -99,19 +119,25 @@ local function telescope_config()
         -- List LSP document symbols in the current buffer.
         vim.keymap.set(
             "n", leader .. "S", telescope_builtin.lsp_document_symbols,
-            { desc = "List LSP document symbols in the current buffer" }
+            {
+                desc = prefix_desc_s .. "List LSP document symbols in the " ..
+                    "current buffer"
+            }
         )
 
         -- List LSP document symbols in the current workspace.
         vim.keymap.set(
             "n", leader .. "s", telescope_builtin.lsp_workspace_symbols,
-            { desc = "List LSP document symbols in the current workspace" }
+            {
+                desc = prefix_desc_s .. "List LSP document symbols in the " ..
+                    "current workspace"
+            }
         )
 
         -- List diagnostics.
         vim.keymap.set(
             "n", leader .. "d", telescope_builtin.diagnostics,
-            { desc = "List diagnostics" }
+            { desc = prefix_desc_d .. "List diagnostics" }
         )
     end
 
