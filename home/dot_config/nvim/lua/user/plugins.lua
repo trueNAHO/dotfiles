@@ -44,6 +44,10 @@ return require("packer").startup(function()
     -- The undo history visualizer for VIM.
     require("user.plugins.bbill_undotree")
 
+    -- Single tabpage interface for easily cycling through diffs for all
+    -- modified files for any git rev.
+    require("user.plugins.sindrets_diffview_nvim")
+
     -- The fastest Neovim colorizer.
     require("user.plugins.norcalli_nvim_colorizer")
 
