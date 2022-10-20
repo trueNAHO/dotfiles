@@ -16,6 +16,7 @@ local function telescope_config()
     local prefix_desc_o = "Options. "
     local prefix_desc_q = "Quickfix. "
     local prefix_desc_s = "Search. "
+    local prefix_desc_x = "Oldfiles. "
 
     local telescope_setup = {
         defaults = {
@@ -67,6 +68,16 @@ local function telescope_config()
                     "cursor in the current working directory"
             }
         )
+
+        -- Lists previously open files, opens on `<cr>`.
+        vim.keymap.set(
+            "n", leader .. "x", telescope_builtin.oldfiles,
+            {
+                desc = prefix_desc_x .. "Lists previously open files, opens " ..
+                    "on `<cr>`"
+            }
+        )
+
     end
 
     local function vim_pickers()
