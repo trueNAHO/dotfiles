@@ -46,6 +46,32 @@ local function lsp_config()
             }
         )
 
+        -- Select a code action available at the current cursor position.
+        keymap_buffer(
+            { "n", "x" }, leader .. "a", vim.lsp.buf.code_action,
+            {
+                desc = prefix_desc_a .. "Select a code action available at " ..
+                    "the current cursor position"
+            }
+        )
+
+        -- Show diagnostics in a floating window.
+        keymap_buffer(
+            "n", leader .. "d", vim.diagnostic.open_float,
+            { desc = prefix_desc_d .. "Show diagnostics in a floating window" }
+        )
+
+        -- Formats a buffer using the attached (and optionally filtered)
+        -- language server clients.
+        keymap_buffer(
+            "n", leader .. "f", vim.lsp.buf.format,
+            {
+                desc = prefix_desc_f ..
+                    "Formats a buffer using the attached (and optionally " ..
+                    "filtered) language server clients"
+            }
+        )
+
         -- Jump to the declaration of the symbol under the cursor. Many servers
         -- do not implement this method. Generally, see
         -- `vim.lsp.buf.definition()` instead.
@@ -65,23 +91,6 @@ local function lsp_config()
             {
                 desc = prefix_desc_gd .. "Jump to the definition of the " ..
                     "symbol under the cursor"
-            }
-        )
-
-        -- Show diagnostics in a floating window.
-        keymap_buffer(
-            "n", leader .. "d", vim.diagnostic.open_float,
-            { desc = prefix_desc_d .. "Show diagnostics in a floating window" }
-        )
-
-        -- Formats a buffer using the attached (and optionally filtered)
-        -- language server clients.
-        keymap_buffer(
-            "n", leader .. "f", vim.lsp.buf.format,
-            {
-                desc = prefix_desc_f ..
-                    "Formats a buffer using the attached (and optionally " ..
-                    "filtered) language server clients"
             }
         )
 
@@ -131,15 +140,6 @@ local function lsp_config()
                 desc = prefix_desc_s ..
                     "Display signature information about the symbol under " ..
                     "the cursor in a floating window"
-            }
-        )
-
-        -- Select a code action available at the current cursor position.
-        keymap_buffer(
-            { "n", "x" }, leader .. "a", vim.lsp.buf.code_action,
-            {
-                desc = prefix_desc_a .. "Select a code action available at " ..
-                    "the current cursor position"
             }
         )
     end

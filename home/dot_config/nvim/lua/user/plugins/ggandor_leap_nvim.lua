@@ -14,20 +14,6 @@ require("packer").use({
             safe_labels = {},
         }
 
-        -- Bidirectional search. Initiate multi-window mode with the current
-        -- window as the only target.
-        vim.keymap.set(
-            { "n", "v" }, leader .. "f",
-            function()
-                leap.leap({ target_windows = { vim.fn.win_getid() } })
-            end,
-            {
-                desc = prefix_desc_f .. "Bidirectional search. Initiate " ..
-                    "multi-window mode with the current window as the only " ..
-                    "target"
-            }
-        )
-
         -- Search in all windows.
         vim.keymap.set(
             { "n", "v" }, leader .. "F",
@@ -42,6 +28,20 @@ require("packer").use({
                 })
             end,
             { desc = prefix_desc_f .. "Search in all windows" }
+        )
+
+        -- Bidirectional search. Initiate multi-window mode with the current
+        -- window as the only target.
+        vim.keymap.set(
+            { "n", "v" }, leader .. "f",
+            function()
+                leap.leap({ target_windows = { vim.fn.win_getid() } })
+            end,
+            {
+                desc = prefix_desc_f .. "Bidirectional search. Initiate " ..
+                    "multi-window mode with the current window as the only " ..
+                    "target"
+            }
         )
     end
 })

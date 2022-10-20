@@ -37,16 +37,6 @@ local function telescope_config()
             }
         )
 
-        -- Search for the string under the cursor in the current working
-        -- directory.
-        vim.keymap.set(
-            "n", leader .. "l", telescope_builtin.grep_string,
-            {
-                desc = prefix_desc_l .. "Search for the string under the " ..
-                    "cursor in the current working directory"
-            }
-        )
-
         -- Search for a string and get results live while typing (respecting
         -- .gitignore).
         vim.keymap.set(
@@ -56,9 +46,29 @@ local function telescope_config()
                     "results live while typing (respecting .gitignore)"
             }
         )
+
+        -- Search for the string under the cursor in the current working
+        -- directory.
+        vim.keymap.set(
+            "n", leader .. "l", telescope_builtin.grep_string,
+            {
+                desc = prefix_desc_l .. "Search for the string under the " ..
+                    "cursor in the current working directory"
+            }
+        )
     end
 
     local function vim_pickers()
+        -- Live fuzzy search inside of the currently open buffer.
+        vim.keymap.set(
+            "n", leader .. "G",
+            telescope_builtin.current_buffer_fuzzy_find,
+            {
+                desc = prefix_desc_g .. "Live fuzzy search inside of the " ..
+                    "currently open buffer"
+            }
+        )
+
         -- List recently executed commands and rerun them on `<cr>`.
         vim.keymap.set(
             "n", leader .. "c", telescope_builtin.command_history,
@@ -78,12 +88,12 @@ local function telescope_config()
             }
         )
 
-        -- List items in the quickfix list and jump to location on `<cr>`.
+        -- List normal mode keymappings and run the selected keymap on `<cr>`.
         vim.keymap.set(
-            "n", leader .. "q", telescope_builtin.quickfix,
+            "n", leader .. "k", telescope_builtin.keymaps,
             {
-                desc = prefix_desc_q .. "List items in the quickfix list " ..
-                    "and jump to location on `<cr>`"
+                desc = prefix_desc_k .. "List normal mode keymappings and " ..
+                    "run the selected keymap on `<cr>`"
             }
         )
 
@@ -96,22 +106,12 @@ local function telescope_config()
             }
         )
 
-        -- List normal mode keymappings and run the selected keymap on `<cr>`.
+        -- List items in the quickfix list and jump to location on `<cr>`.
         vim.keymap.set(
-            "n", leader .. "k", telescope_builtin.keymaps,
+            "n", leader .. "q", telescope_builtin.quickfix,
             {
-                desc = prefix_desc_k .. "List normal mode keymappings and " ..
-                    "run the selected keymap on `<cr>`"
-            }
-        )
-
-        -- Live fuzzy search inside of the currently open buffer.
-        vim.keymap.set(
-            "n", leader .. "G",
-            telescope_builtin.current_buffer_fuzzy_find,
-            {
-                desc = prefix_desc_g .. "Live fuzzy search inside of the " ..
-                    "currently open buffer"
+                desc = prefix_desc_q .. "List items in the quickfix list " ..
+                    "and jump to location on `<cr>`"
             }
         )
     end
@@ -126,6 +126,12 @@ local function telescope_config()
             }
         )
 
+        -- List diagnostics.
+        vim.keymap.set(
+            "n", leader .. "d", telescope_builtin.diagnostics,
+            { desc = prefix_desc_d .. "List diagnostics" }
+        )
+
         -- List LSP document symbols in the current workspace.
         vim.keymap.set(
             "n", leader .. "s", telescope_builtin.lsp_workspace_symbols,
@@ -133,12 +139,6 @@ local function telescope_config()
                 desc = prefix_desc_s .. "List LSP document symbols in the " ..
                     "current workspace"
             }
-        )
-
-        -- List diagnostics.
-        vim.keymap.set(
-            "n", leader .. "d", telescope_builtin.diagnostics,
-            { desc = prefix_desc_d .. "List diagnostics" }
         )
     end
 
