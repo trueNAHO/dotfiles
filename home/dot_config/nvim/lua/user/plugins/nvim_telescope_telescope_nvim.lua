@@ -5,6 +5,7 @@ local function telescope_config()
 
     local leader = "<leader>t"
 
+    local prefix_desc_b = "Buffers. "
     local prefix_desc_c = "Command. "
     local prefix_desc_d = "Diagnostics. "
     local prefix_desc_f = "Find. "
@@ -28,6 +29,16 @@ local function telescope_config()
     }
 
     local function file_pickers()
+        -- Lists open buffers in current neovim instance, opens selected buffer
+        -- on <cr>.
+        vim.keymap.set(
+            "n", leader .. "b", telescope_builtin.buffers,
+            {
+                desc = prefix_desc_b .. "Lists open buffers in current " ..
+                    "neovim instance, opens selected buffer on <cr>."
+            }
+        )
+
         -- Search for files (respecting .gitignore).
         vim.keymap.set(
             "n", leader .. "f", telescope_builtin.find_files,
