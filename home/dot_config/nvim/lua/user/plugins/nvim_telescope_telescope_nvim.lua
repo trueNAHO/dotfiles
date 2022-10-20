@@ -30,12 +30,12 @@ local function telescope_config()
     }
 
     local function file_pickers()
-        -- Lists open buffers in current neovim instance, opens selected buffer
+        -- List open buffers in current neovim instance, opens selected buffer
         -- on <cr>.
         vim.keymap.set(
             "n", leader .. "b", telescope_builtin.buffers,
             {
-                desc = prefix_desc_b .. "Lists open buffers in current " ..
+                desc = prefix_desc_b .. "List open buffers in current " ..
                     "neovim instance, opens selected buffer on <cr>."
             }
         )
@@ -69,11 +69,11 @@ local function telescope_config()
             }
         )
 
-        -- Lists previously open files, opens on `<cr>`.
+        -- List previously open files, opens on `<cr>`.
         vim.keymap.set(
             "n", leader .. "o", telescope_builtin.oldfiles,
             {
-                desc = prefix_desc_o .. "Lists previously open files, opens " ..
+                desc = prefix_desc_o .. "List previously open files, opens " ..
                     "on `<cr>`"
             }
         )
