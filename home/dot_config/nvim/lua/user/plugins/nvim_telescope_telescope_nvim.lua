@@ -13,10 +13,10 @@ local function telescope_config()
     local prefix_desc_h = "Help. "
     local prefix_desc_k = "Keymappings. "
     local prefix_desc_l = "List. "
-    local prefix_desc_o = "Options. "
+    local prefix_desc_o = "Oldfiles. "
     local prefix_desc_q = "Quickfix. "
     local prefix_desc_s = "Search. "
-    local prefix_desc_x = "Oldfiles. "
+    local prefix_desc_v = "Vim options. "
 
     local telescope_setup = {
         defaults = {
@@ -71,9 +71,9 @@ local function telescope_config()
 
         -- Lists previously open files, opens on `<cr>`.
         vim.keymap.set(
-            "n", leader .. "x", telescope_builtin.oldfiles,
+            "n", leader .. "o", telescope_builtin.oldfiles,
             {
-                desc = prefix_desc_x .. "Lists previously open files, opens " ..
+                desc = prefix_desc_o .. "Lists previously open files, opens " ..
                     "on `<cr>`"
             }
         )
@@ -119,21 +119,21 @@ local function telescope_config()
             }
         )
 
-        -- List vim options and edit the current value on `<cr>`.
-        vim.keymap.set(
-            "n", leader .. "o", telescope_builtin.vim_options,
-            {
-                desc = prefix_desc_o .. "List vim options and edit the " ..
-                    "current value on `<cr>`"
-            }
-        )
-
         -- List items in the quickfix list and jump to location on `<cr>`.
         vim.keymap.set(
             "n", leader .. "q", telescope_builtin.quickfix,
             {
                 desc = prefix_desc_q .. "List items in the quickfix list " ..
                     "and jump to location on `<cr>`"
+            }
+        )
+
+        -- List vim options and edit the current value on `<cr>`.
+        vim.keymap.set(
+            "n", leader .. "v", telescope_builtin.vim_options,
+            {
+                desc = prefix_desc_v .. "List vim options and edit the " ..
+                    "current value on `<cr>`"
             }
         )
     end
