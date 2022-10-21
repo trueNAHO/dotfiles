@@ -8,6 +8,10 @@ local prefix_desc_ctrl_u = "<C-u>. "
 local prefix_desc_d = "Delete. "
 local prefix_desc_down = "<down>. "
 local prefix_desc_left = "<left>. "
+local prefix_desc_m_c_h = "<M-C-h>. "
+local prefix_desc_m_c_j = "<M-C-j>. "
+local prefix_desc_m_c_k = "<M-C-k>. "
+local prefix_desc_m_c_l = "<M-C-l>. "
 local prefix_desc_n = "Next. "
 local prefix_desc_p = "Paste. "
 local prefix_desc_right = "<right>. "
@@ -69,6 +73,33 @@ vim.keymap.set(
     {
         desc = prefix_desc_n .. "Place the cursor at the center of the " ..
             "window after `n`"
+    }
+)
+
+
+-- Resize windows.
+vim.keymap.set(
+    "n", "<M-C-h>", "<C-w><",
+    {
+        desc = prefix_desc_m_c_h .. "Decrease current window width by 1"
+    }
+)
+vim.keymap.set(
+    "n", "<M-C-j>", "<C-w>+",
+    {
+        desc = prefix_desc_m_c_j .. "Increase current window height by 1"
+    }
+)
+vim.keymap.set(
+    "n", "<M-C-k>", "<C-w>-",
+    {
+        desc = prefix_desc_m_c_k .. "Decrease current window height by 1"
+    }
+)
+vim.keymap.set(
+    "n", "<M-C-l>", "<C-w>>",
+    {
+        desc = prefix_desc_m_c_l .. "Increase current window width by 1"
     }
 )
 
