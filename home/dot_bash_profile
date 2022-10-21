@@ -4,6 +4,13 @@
 # `bash_profile` is the personal initialization file, executed for login
 # shells.
 
+# Greet the user.
+greet() {
+    printf '\n'
+    fortune
+    printf '\n'
+}
+
 # Potentially replace the current shell with a graphical user interface.
 exec_graphical_user_interface() {
   # Replace `-eq` comparison with `-le` to use graphical logins on multiple
@@ -117,6 +124,7 @@ use_ssh_socket() {
 # Make sure the `exec` command is the last one executed in this script. No
 # further statements will be executed.
 main() {
+  greet
   extend_path
   link_tmp_to_home
   set_system_defaults

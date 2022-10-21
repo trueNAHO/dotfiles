@@ -23,7 +23,7 @@ use_gpg_key_for_ssh_authentication() {
   fi
 }
 
-select_deps_pacman bash neovim xorg-xinit
+select_deps_pacman bash fortune-mod neovim xorg-xinit
 
 select_actions_deps is_command_available status
 select_actions use_gpg_key_for_ssh_authentication
