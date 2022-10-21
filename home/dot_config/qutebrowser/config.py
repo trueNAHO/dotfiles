@@ -2663,14 +2663,15 @@ config.bind(
     key_leader + "mlA",
     (
         "spawn -dv mpv --loop-playlist --player-operation-mode=pseudo-gui "
-        "--ytdl-format=bestaudio {url}"
+        "--shuffle --ytdl-format=bestaudio {url}"
     ),
 )
 config.bind(
     key_leader + "mla",
     (
         "hint links spawn -dv mpv --loop-playlist "
-        "--player-operation-mode=pseudo-gui --ytdl-format=bestaudio {hint-url}"
+        "--player-operation-mode=pseudo-gui --shuffle "
+        "--ytdl-format=bestaudio {hint-url}"
     ),
 )
 config.bind(
