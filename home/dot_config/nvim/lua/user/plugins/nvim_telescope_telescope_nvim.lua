@@ -181,7 +181,8 @@ require("packer").use({
     tag = "0.1.0",
     requires = {
         "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope-fzf-native.nvim"
+        "nvim-telescope/telescope-fzf-native.nvim",
+        "nvim-treesitter/nvim-treesitter"
     },
     config = telescope_config
 })
