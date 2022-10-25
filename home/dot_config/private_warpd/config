@@ -68,7 +68,7 @@ scroll_up: y
 # The color of the pointer in normal mode (rgba hex value).
 cursor_color: #EBCB8B
 # The height of the pointer in normal mode.
-#cursor_size: 7
+cursor_size: 17
 # The number of milliseconds before repeating a movement event.
 #repeat_interval: 20
 # Pointer speed in pixels/second.
