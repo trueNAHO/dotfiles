@@ -1,0 +1,165 @@
+# A modal keyboard driven pointer manipulation program.
+
+# Activates hint mode.
+#hint_activation_key: A-M-x
+# Activate two pass hint mode.
+#hint2_activation_key: A-M-X
+# Activates grid mode and allows for further manipulation of the pointer using
+# the mapped keys.
+#grid_activation_key: A-M-g
+# Activate history mode.
+#history_activation_key: A-M-h
+# Activate (s)creen selection mode.
+#screen_activation_key: A-M-s
+# Activate normal movement mode (manual (c)ursor movement).
+#activation_key: A-M-c
+# Activate hint mode and exit upon selection.
+#hint_oneshot_key: A-M-l
+# Activate two pass hint mode and exit upon selection.
+#hint2_oneshot_key: A-M-L
+# Exit the currently active warpd session.
+#exit: esc
+# Toggle drag mode (mnemonic (v)isual mode).
+#drag: v
+# Send the copy key and exit (useful in combination with v).
+#copy_and_exit: c
+# Increase the acceleration of the pointer while held.
+#accelerator: a
+# Decrease the speed of the pointer while held.
+#decelerator: d
+# A space separated list of mouse buttons (2 is middle click).
+#buttons: m , .
+# Oneshot mouse buttons (deactivate on click).
+#oneshot_buttons: n - /
+# Print the current mouse coordinates to stdout (useful for scripts).
+#print: p
+# Activate hint history mode while in normal mode.
+#history: ;
+# Activate hint mode while in normal mode (mnemonic: x marks the spot?).
+#hint: x
+# Activate two pass hint mode.
+#hint2: X
+# Activate (g)rid mode while in normal mode.
+#grid: g
+# Activate (s)creen selection while in normal mode.
+#screen: s
+# Move the cursor left in normal mode.
+#left: h
+# Move the cursor down in normal mode.
+#down: j
+# Move the cursor up in normal mode.
+#up: k
+# Move the cursor right in normal mode.
+#right: l
+# Moves the cursor to the top of the screen in normal mode.
+#top: H
+# Moves the cursor to the middle of the screen in normal mode.
+#middle: M
+# Moves the cursor to the bottom of the screen in normal mode.
+#bottom: L
+# Moves the cursor to the leftmost corner of the screen in normal mode.
+#start: 0
+# Moves the cursor to the rightmost corner of the screen in normal mode.
+#end: $
+# Scroll down key.
+#scroll_down: e
+# Scroll up key.
+#scroll_up: r
+# The color of the pointer in normal mode (rgba hex value).
+#cursor_color: #FF4500
+# The height of the pointer in normal mode.
+#cursor_size: 7
+# The number of milliseconds before repeating a movement event.
+#repeat_interval: 20
+# Pointer speed in pixels/second.
+#speed: 220
+# The maximum pointer speed.
+#max_speed: 1600
+# Pointer speed while decelerator is depressed.
+#decelerator_speed: 50
+# Pointer acceleration in pixels/second^2.
+#acceleration: 700
+# Pointer acceleration while the accelerator is depressed.
+#accelerator_acceleration: 2900
+# The length of time in milliseconds to wait for a second click after a oneshot
+# key has been pressed.
+#oneshot_timeout: 300
+# History hint size as a percentage of screen height.
+#hist_hint_size: 2
+# The number of rows in the grid.
+#grid_nr: 2
+# The number of columns in the grid.
+#grid_nc: 2
+# Move to the last position in the history stack.
+#hist_back: C-o
+# Move to the next position in the history stack.
+#hist_forward: C-i
+# Move the grid up.
+#grid_up: w
+# Move the grid left.
+#grid_left: a
+# Move the grid down.
+#grid_down: s
+# Move the grid right.
+#grid_right: d
+# A sequence of comma delimited keybindings which are ordered bookwise with
+# respect to grid position.
+#grid_keys: u i j k
+# Exit grid mode and return to normal mode.
+#grid_exit: c
+# The thickness of grid lines in pixels.
+#grid_size: 4
+# The thickness of the grid border in pixels.
+#grid_border_size: 0
+# The color of the grid.
+#grid_color: #1c1c1e
+# The color of the grid border.
+#grid_border_color: #ffffff
+# The background hint color.
+#hint_bgcolor: #1c1c1e
+# The foreground hint color.
+#hint_fgcolor: #a1aba7
+# The character set from which hints are generated. The total number of hints is
+# the square of the size of this string. It may be desirable to increase this
+# for larger screens or trim it to increase gaps between hints.
+#hint_chars: abcdefghijklmnopqrstuvwxyz
+# The font name used by hints. Note: This is platform specific, in X it
+# corresponds to a valid xft font name, on macos it corresponds to a postscript
+# name.
+#hint_font: Arial
+# Hint size (range: 1-1000)
+#hint_size: 20
+# Border radius.
+#hint_border_radius: 3
+# The exit key used for hint mode.
+#hint_exit: esc
+# undo last selection step in one of the hint based modes.
+#hint_undo: backspace
+# undo all selection steps in one of the hint based modes.
+#hint_undo_all: C-u
+# The character set used for the second hint selection, should consist of at
+# least hint_grid_size^2 characters.
+#hint2_chars: hjkl;asdfgqwertyuiopzxcvb
+# The size of hints in the secondary grid (range: 1-1000).
+#hint2_size: 20
+# The spacing between hints in the secondary grid. (range: 1-1000)
+#hint2_gap_size: 1
+# The size of the secondary grid.
+#hint2_grid_size: 3
+# The characters used for screen selection.
+#screen_chars: jkl;asdfg
+# Initial scroll speed in units/second (unit varies by platform).
+#scroll_speed: 300
+# Maximum scroll speed.
+#scroll_max_speed: 9000
+# Scroll acceleration in units/second^2.
+#scroll_acceleration: 1600
+# Scroll deceleration.
+#scroll_deceleration: -3400
+# Specifies an optional visual indicator to be displayed while normal mode is
+# active, must be one of: topright, topleft, bottomright, bottomleft, none
+#indicator: none
+# The color of the visual indicator color.
+#indicator_color: #00ff00
+# The size of the visual indicator in pixels.
+#indicator_size: 12
