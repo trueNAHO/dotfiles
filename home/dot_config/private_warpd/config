@@ -130,7 +130,7 @@ hint_font: Mono
 # Hint size (range: 1-1000)
 #hint_size: 20
 # Border radius.
-#hint_border_radius: 3
+hint_border_radius: 0
 # The exit key used for hint mode.
 #hint_exit: esc
 # undo last selection step in one of the hint based modes.
