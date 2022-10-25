@@ -66,7 +66,7 @@
 # Scroll up key.
 #scroll_up: r
 # The color of the pointer in normal mode (rgba hex value).
-#cursor_color: #FF4500
+cursor_color: #BF616A
 # The height of the pointer in normal mode.
 #cursor_size: 7
 # The number of milliseconds before repeating a movement event.
@@ -112,13 +112,13 @@
 # The thickness of the grid border in pixels.
 #grid_border_size: 0
 # The color of the grid.
-#grid_color: #1c1c1e
+grid_color: #BF616A
 # The color of the grid border.
-#grid_border_color: #ffffff
+grid_border_color: #BF616A
 # The background hint color.
-#hint_bgcolor: #1c1c1e
+hint_bgcolor: #BF616A
 # The foreground hint color.
-#hint_fgcolor: #a1aba7
+hint_fgcolor: #2E3440
 # The character set from which hints are generated. The total number of hints is
 # the square of the size of this string. It may be desirable to increase this
 # for larger screens or trim it to increase gaps between hints.
@@ -160,6 +160,6 @@
 # active, must be one of: topright, topleft, bottomright, bottomleft, none
 #indicator: none
 # The color of the visual indicator color.
-#indicator_color: #00ff00
+indicator_color: #BF616A
 # The size of the visual indicator in pixels.
 #indicator_size: 12
