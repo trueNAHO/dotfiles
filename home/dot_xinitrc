@@ -27,6 +27,9 @@ async_load() { {
         done &
   fi
 
+  # Start a modal keyboard driven pointer manipulation program.
+  warpd &
+
   # Clone all connected outputs with the largest resolution (scaled down if
   # necessary).
   autorandr clone-largest &
