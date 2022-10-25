@@ -1,18 +1,18 @@
 # A modal keyboard driven pointer manipulation program.
 
 # Activates hint mode.
-hint_activation_key: A-M-f
+hint_activation_key: M-f
 # Activate two pass hint mode.
-hint2_activation_key: A-M-F
+hint2_activation_key: M-F
 # Activates grid mode and allows for further manipulation of the pointer using
 # the mapped keys.
 #grid_activation_key: A-M-g
 # Activate history mode.
 #history_activation_key: A-M-h
 # Activate (s)creen selection mode.
-#screen_activation_key: A-M-s
+screen_activation_key: M-s
 # Activate normal movement mode (manual (c)ursor movement).
-#activation_key: A-M-c
+activation_key: M-v
 # Activate hint mode and exit upon selection.
 #hint_oneshot_key: A-M-l
 # Activate two pass hint mode and exit upon selection.
