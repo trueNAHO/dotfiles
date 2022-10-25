@@ -16,7 +16,7 @@ require("packer").use({
 
         -- Search in all windows.
         vim.keymap.set(
-            { "n", "v" }, leader .. "F",
+            { "n", "v" }, leader .. "f",
             function()
                 leap.leap({
                     target_windows = vim.tbl_filter(
@@ -33,7 +33,7 @@ require("packer").use({
         -- Bidirectional search. Initiate multi-window mode with the current
         -- window as the only target.
         vim.keymap.set(
-            { "n", "v" }, leader .. "f",
+            { "n", "v" }, leader .. "F",
             function()
                 leap.leap({ target_windows = { vim.fn.win_getid() } })
             end,
