@@ -1,9 +1,9 @@
 # A modal keyboard driven pointer manipulation program.
 
 # Activates hint mode.
-#hint_activation_key: A-M-x
+hint_activation_key: A-M-f
 # Activate two pass hint mode.
-#hint2_activation_key: A-M-X
+hint2_activation_key: A-M-F
 # Activates grid mode and allows for further manipulation of the pointer using
 # the mapped keys.
 #grid_activation_key: A-M-g
@@ -36,9 +36,9 @@ exit: esc C-c
 # Activate hint history mode while in normal mode.
 #history: ;
 # Activate hint mode while in normal mode (mnemonic: x marks the spot?).
-#hint: x
+hint: f
 # Activate two pass hint mode.
-#hint2: X
+hint2: F
 # Activate (g)rid mode while in normal mode.
 #grid: g
 # Activate (s)creen selection while in normal mode.
