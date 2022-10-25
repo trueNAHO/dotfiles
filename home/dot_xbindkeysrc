@@ -90,4 +90,4 @@
 
 # Suspend the system. Send desktop notifications about errors.
 "command() { systemctl suspend; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
-    Mod4 + s
+    Mod4+Shift + s
