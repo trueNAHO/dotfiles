@@ -18,7 +18,7 @@
 # Activate two pass hint mode and exit upon selection.
 #hint2_oneshot_key: A-M-L
 # Exit the currently active warpd session.
-#exit: esc
+exit: esc C-c
 # Toggle drag mode (mnemonic (v)isual mode).
 #drag: v
 # Send the copy key and exit (useful in combination with v).
@@ -132,7 +132,7 @@ hint_font: Mono
 # Border radius.
 hint_border_radius: 0
 # The exit key used for hint mode.
-#hint_exit: esc
+hint_exit: esc C-c
 # undo last selection step in one of the hint based modes.
 #hint_undo: backspace
 # undo all selection steps in one of the hint based modes.
