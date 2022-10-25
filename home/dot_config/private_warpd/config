@@ -126,7 +126,7 @@ hint_fgcolor: #2E3440
 # The font name used by hints. Note: This is platform specific, in X it
 # corresponds to a valid xft font name, on macos it corresponds to a postscript
 # name.
-#hint_font: Arial
+hint_font: Mono
 # Hint size (range: 1-1000)
 #hint_size: 20
 # Border radius.
