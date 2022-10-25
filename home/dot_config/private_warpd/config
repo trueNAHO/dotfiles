@@ -64,7 +64,7 @@ hint2: F
 # Scroll down key.
 #scroll_down: e
 # Scroll up key.
-#scroll_up: r
+scroll_up: y
 # The color of the pointer in normal mode (rgba hex value).
 cursor_color: #BF616A
 # The height of the pointer in normal mode.
