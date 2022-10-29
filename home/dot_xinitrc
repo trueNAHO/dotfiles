@@ -27,12 +27,16 @@ async_load() { {
         done &
   fi
 
-  # Start a modal keyboard driven pointer manipulation program.
-  warpd &
+  # Run `warpd` after `autorandr` has finished. `warpd` (v1.3.4) does not
+  # properly recognise the screen dimensions when running `autorandr` before.
+  {
+    # Clone all connected outputs with the largest resolution (scaled down if
+    # necessary).
+    autorandr clone-largest
 
-  # Clone all connected outputs with the largest resolution (scaled down if
-  # necessary).
-  autorandr clone-largest &
+    # Start a modal keyboard driven pointer manipulation program.
+    warpd &
+  } &
 
   # Start X11 compositor.
   picom &
