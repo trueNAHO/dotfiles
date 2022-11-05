@@ -157,6 +157,8 @@ mkcd () {
   mkdir -p -- "$@" && cd -- "$1" || return
 }
 
+# Make sure the `exec` command is the last one executed in this script. No
+# further statements will be executed.
 _main() {
   _is_running_interactively && return
   _set_bash_history
@@ -165,6 +167,12 @@ _main() {
   _set_configs
   _set_aliases
   _cleanup
+
+  # @url https://wiki.archlinux.org/title/Tmux#Start_tmux_on_every_shell_login
+  # Potentially replace the current shell with a terminal session. This does not
+  # start a terminal session in a login shell as it would interfere with
+  # auto starting X at login.
+  [[ -x "$(command -v tmux)" && -n "$DISPLAY" && -z "$TMUX" ]] && exec tmux
 }
 
 _main
