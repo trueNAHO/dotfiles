@@ -7,7 +7,7 @@
 # @url https://wiki.archlinux.org/title/Bash
 # This configuration file is heavily inspired by these sources.
 
-# @url https://unix.stackexchange.com/questions/104755/how-can-i-create-a-local-function-in-my-bashrc
+# @url https://unix.stackexchange.com/questions/104755
 # Delete functions that should not exceed this bashrc's scope.
 _cleanup() {
   unset -f _cleanup
