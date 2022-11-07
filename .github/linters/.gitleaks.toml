@@ -1,0 +1,4 @@
+[rules.allowlist]
+paths = [
+    '''home/dot_gitconfig'''
+]
