@@ -148,6 +148,8 @@ local function lsp_config()
     local function lspconfig_setup()
         lspconfig.bashls.setup({})
 
+        lspconfig.html.setup({})
+
         lspconfig.marksman.setup({})
 
         lspconfig.pyright.setup({})
