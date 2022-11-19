@@ -42,7 +42,7 @@ return require("packer").startup(function()
     require("user.plugins.nvim_telescope_telescope_nvim")
 
     -- The undo history visualizer for VIM.
-    require("user.plugins.bbill_undotree")
+    require("user.plugins.mbbill_undotree")
 
     -- Magit for neovim.
     require("user.plugins.TimUntersberger_neogit")
