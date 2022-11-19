@@ -2423,6 +2423,7 @@ config.bind("sf", "save")
 config.bind("sk", "set-cmd-text -s :bind")
 config.bind("sl", "set-cmd-text -s :set -t")
 config.bind("ss", "set-cmd-text -s :set")
+
 config.bind(
     "tCH",
     (
@@ -2430,6 +2431,7 @@ config.bind(
         "all no-3rdparty never ;; reload"
     ),
 )
+
 config.bind(
     "tCh",
     (
@@ -2437,6 +2439,7 @@ config.bind(
         "all no-3rdparty never ;; reload"
     ),
 )
+
 config.bind(
     "tCu",
     (
@@ -2444,21 +2447,26 @@ config.bind(
         "all no-3rdparty never ;; reload"
     ),
 )
+
 config.bind(
     "tIH",
     "config-cycle -p -u *://*.{url:host}/* content.images ;; reload"
 )
 
 config.bind("tIu", "config-cycle -p -u {url} content.images ;; reload")
+
 config.bind(
     "tPH",
     "config-cycle -p -u *://*.{url:host}/* content.plugins ;; reload",
 )
+
 config.bind(
     "tPh",
     "config-cycle -p -u *://{url:host}/* content.plugins ;; reload",
 )
+
 config.bind("tPu", "config-cycle -p -u {url} content.plugins ;; reload")
+
 config.bind(
     "tSH",
     (
@@ -2466,18 +2474,22 @@ config.bind(
         ";; reload"
     )
 )
+
 config.bind(
     "tSh",
     "config-cycle -p -u *://{url:host}/* content.javascript.enabled ;; reload",
 )
+
 config.bind(
     "tSu",
     "config-cycle -p -u {url} content.javascript.enabled ;; reload",
 )
+
 config.bind(
     "ta",
     "config-cycle -p -t content.blocking.enabled false true ;; reload",
 )
+
 config.bind(
     "tcH",
     (
@@ -2485,6 +2497,7 @@ config.bind(
         "all no-3rdparty never ;; reload"
     ),
 )
+
 config.bind(
     "tch",
     (
@@ -2492,6 +2505,7 @@ config.bind(
         "all no-3rdparty never ;; reload"
     ),
 )
+
 config.bind(
     "tcu",
     (
@@ -2499,37 +2513,48 @@ config.bind(
         "all no-3rdparty never ;; reload"
     ),
 )
+
 config.bind(
     "td",
     "config-cycle -p colors.webpage.darkmode.enabled true false ;; restart",
 )
+
 config.bind("th", "back -t")
+
 config.bind(
     "tiH",
     "config-cycle -p -t -u *://*.{url:host}/* content.images ;; reload",
 )
+
 config.bind(
     "tih",
     "config-cycle -p -t -u *://{url:host}/* content.images ;; reload",
 )
+
 config.bind("tiu", "config-cycle -p -t -u {url} content.images ;; reload")
+
 config.bind("tl", "forward -t")
+
 config.bind(
     "tn",
     "config-cycle -p -t input.spatial_navigation true false ;; reload",
 )
+
 config.bind(
     "tpH",
     "config-cycle -p -t -u *://*.{url:host}/* content.plugins ;; reload",
 )
+
 config.bind(
     "tph",
     "config-cycle -p -t -u *://{url:host}/* content.plugins ;; reload",
 )
+
 config.bind(
     "tpu",
     "config-cycle -p -t -u {url} content.plugins ;; reload",
 )
+
 config.bind(
     "tsH",
     (
@@ -2537,6 +2562,7 @@ config.bind(
         ";; reload"
     ),
 )
+
 config.bind(
     "tsh",
     (
@@ -2544,10 +2570,12 @@ config.bind(
         ";; reload"
     )
 )
+
 config.bind(
     "tsu",
     "config-cycle -p -t -u {url} content.javascript.enabled ;; reload",
 )
+
 config.bind("u", "undo")
 config.bind("v", "mode-enter caret")
 config.bind("wB", "set-cmd-text -s :bookmark-load -w")
@@ -2588,6 +2616,7 @@ config.bind(
         "--ytdl-format=bestaudio {url}"
     ),
 )
+
 config.bind(
     key_leader + "mV1",
     (
@@ -2596,6 +2625,7 @@ config.bind(
         'best[height<=?144][fps<=?30]/best" {url}'
     ),
 )
+
 config.bind(
     key_leader + "mV2",
     (
@@ -2604,6 +2634,7 @@ config.bind(
         'best[height<=?240][fps<=?30]/best" {url}'
     ),
 )
+
 config.bind(
     key_leader + "mV3",
     (
@@ -2612,6 +2643,7 @@ config.bind(
         'best[height<=?360][fps<=?30]/best" {url}'
     ),
 )
+
 config.bind(
     key_leader + "mV4",
     (
@@ -2620,6 +2652,7 @@ config.bind(
         'best[height<=?480][fps<=?30]/best" {url}'
     ),
 )
+
 config.bind(
     key_leader + "mV5p3",
     (
@@ -2628,6 +2661,7 @@ config.bind(
         'best[height<=?720][fps<=?30]/best" {url}'
     ),
 )
+
 config.bind(
     key_leader + "mV5p6",
     (
@@ -2636,6 +2670,7 @@ config.bind(
         'best[height<=?720][fps<=?60]/best" {url}'
     ),
 )
+
 config.bind(
     key_leader + "mV6p3",
     (
@@ -2644,6 +2679,7 @@ config.bind(
         'best[height<=?1080][fps<=?30]/best" {url}'
     ),
 )
+
 config.bind(
     key_leader + "mV6p6",
     (
@@ -2652,6 +2688,7 @@ config.bind(
         'best[height<=?1080][fps<=?60]/best" {url}'
     ),
 )
+
 config.bind(
     key_leader + "ma",
     (
@@ -2659,6 +2696,7 @@ config.bind(
         "--ytdl-format=bestaudio {hint-url}"
     ),
 )
+
 config.bind(
     key_leader + "mlA",
     (
@@ -2666,6 +2704,7 @@ config.bind(
         "--shuffle --ytdl-format=bestaudio {url}"
     ),
 )
+
 config.bind(
     key_leader + "mla",
     (
@@ -2674,6 +2713,7 @@ config.bind(
         "--ytdl-format=bestaudio {hint-url}"
     ),
 )
+
 config.bind(
     key_leader + "mv1",
     (
@@ -2682,6 +2722,7 @@ config.bind(
         'best[height<=?144][fps<=?30]/best" {hint-url}'
     ),
 )
+
 config.bind(
     key_leader + "mv2",
     (
@@ -2690,6 +2731,7 @@ config.bind(
         'best[height<=?240][fps<=?30]/best" {hint-url}'
     ),
 )
+
 config.bind(
     key_leader + "mv3",
     (
@@ -2698,6 +2740,7 @@ config.bind(
         'best[height<=?360][fps<=?30]/best" {hint-url}'
     ),
 )
+
 config.bind(
     key_leader + "mv4",
     (
@@ -2706,6 +2749,7 @@ config.bind(
         'best[height<=?480][fps<=?30]/best" {hint-url}'
     ),
 )
+
 config.bind(
     key_leader + "mv5p3",
     (
@@ -2714,6 +2758,7 @@ config.bind(
         'best[height<=?720][fps<=?30]/best" {hint-url}'
     ),
 )
+
 config.bind(
     key_leader + "mv5p6",
     (
@@ -2722,6 +2767,7 @@ config.bind(
         'best[height<=?720][fps<=?60]/best" {hint-url}'
     ),
 )
+
 config.bind(
     key_leader + "mv6p3",
     (
@@ -2730,6 +2776,7 @@ config.bind(
         'best[height<=?1080][fps<=?30]/best" {hint-url}'
     ),
 )
+
 config.bind(
     key_leader + "mv6p6",
     (
