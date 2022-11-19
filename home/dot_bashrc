@@ -107,6 +107,8 @@ _set_shopt() {
 _source_programs() {
   declare -r bash_completion="/usr/share/bash-completion/bash_completion"
   declare -r command_not_found="/usr/share/doc/pkgfile/command-not-found.bash"
+  declare -r fzf_completion="/usr/share/fzf/completion.bash"
+  declare -r fzf_key_bindings="/usr/share/fzf/key-bindings.bash"
   declare -r z_jump_around="/usr/share/z/z.sh"
 
   # By default, Bash only tab-completes commands, filenames, and variables. The
@@ -125,6 +127,11 @@ _source_programs() {
   # matches ALL of the regexes given on the command line, in order."
   # (https://github.com/rupa/z/)
   [[ -r "$z_jump_around" ]] && source "$z_jump_around"
+
+  # @url https://wiki.archlinux.org/title/Fzf
+  # Optional `fzf` keybindings and completion are available for various shells.
+  [[ -r "$fzf_completion" ]] && source "$fzf_completion"
+  [[ -r "$fzf_key_bindings" ]] && source "$fzf_key_bindings"
 }
 
 # Change the shell working directory to the provided argument and list its
