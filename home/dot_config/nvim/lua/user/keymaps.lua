@@ -76,7 +76,6 @@ vim.keymap.set(
     }
 )
 
-
 -- Resize windows.
 vim.keymap.set(
     "n", "<M-C-h>", "<C-w><",
