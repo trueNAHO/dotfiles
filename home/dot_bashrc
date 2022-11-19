@@ -63,6 +63,9 @@ _set_configs() {
   # Customise default prompt.
   export PROMPT_DIRTRIM=2
   export PS1="\[\e[1;36m\][\[\e[0;36m\]\u\[\e[0;35m\] \w\[\e[1;36m\]]\$\[\e[m\] "
+
+  # Remap the default `fzf` `CTRL-j` keybinding.
+  export FZF_DEFAULT_OPTS+=" --bind ctrl-j:accept "
 }
 
 # Set and unset shell options.
