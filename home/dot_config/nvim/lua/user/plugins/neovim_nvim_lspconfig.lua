@@ -5,7 +5,7 @@ local function lsp_config()
     local lspconfig = require("lspconfig")
 
     -- Set autocommand properties.
-    local lsp_autocommand_decs = "LSP actions"
+    local lsp_autocommand_desc = "LSP actions"
     local lsp_autocommand_event = "User"
     local lsp_autocommand_pattern = "LspAttached"
 
@@ -203,7 +203,7 @@ local function lsp_config()
             lsp_autocommand_event,
             {
                 pattern = lsp_autocommand_pattern,
-                desc = lsp_autocommand_decs,
+                desc = lsp_autocommand_desc,
                 callback = lspconfig_keymap_set
             }
         )
