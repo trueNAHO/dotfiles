@@ -4,24 +4,28 @@
 local function lsp_config()
     local lspconfig = require("lspconfig")
 
-    -- Set autocommand properties.
-    local lsp_autocommand_desc = "LSP actions"
-    local lsp_autocommand_event = "User"
-    local lsp_autocommand_pattern = "LspAttached"
-
     local leader = "<leader>l"
 
-    local prefix_desc_a = "Action. "
-    local prefix_desc_d = "Diagnostics. "
-    local prefix_desc_f = "Format. "
-    local prefix_desc_gd = "Goto Declaration. "
-    local prefix_desc_i = "Implementations. "
-    local prefix_desc_k = "Keyword program. "
-    local prefix_desc_l = "List. "
-    local prefix_desc_n = "Next. "
-    local prefix_desc_p = "Previous. "
-    local prefix_desc_r = "Rename. "
-    local prefix_desc_s = "Signature. "
+    -- Set autocommand properties.
+    local lsp_autocommand = {
+        desc = "LSP actions",
+        event = "User",
+        pattern = "LspAttached"
+    }
+
+    local prefix = {
+        desc_a = "Action. ",
+        desc_d = "Diagnostics. ",
+        desc_f = "Format. ",
+        desc_gd = "Goto Declaration. ",
+        desc_i = "Implementations. ",
+        desc_k = "Keyword program. ",
+        desc_l = "List. ",
+        desc_n = "Next. ",
+        desc_p = "Previous. ",
+        desc_r = "Rename. ",
+        desc_s = "Signature. "
+    }
 
     -- Add a new mapping to local buffer.
     local function keymap_buffer(mode, lhs, rhs, opts)
@@ -39,7 +43,7 @@ local function lsp_config()
         keymap_buffer(
             "n", "K", vim.lsp.buf.hover,
             {
-                desc = prefix_desc_k .. "Display hover information about " ..
+                desc = prefix.desc_k .. "Display hover information about " ..
                     "the symbol under the cursor in a floating window. " ..
                     "Calling the function twice will jump into the floating " ..
                     "window"
@@ -50,7 +54,7 @@ local function lsp_config()
         keymap_buffer(
             { "n", "x" }, leader .. "a", vim.lsp.buf.code_action,
             {
-                desc = prefix_desc_a .. "Select a code action available at " ..
+                desc = prefix.desc_a .. "Select a code action available at " ..
                     "the current cursor position"
             }
         )
@@ -58,7 +62,7 @@ local function lsp_config()
         -- Show diagnostics in a floating window.
         keymap_buffer(
             "n", leader .. "d", vim.diagnostic.open_float,
-            { desc = prefix_desc_d .. "Show diagnostics in a floating window" }
+            { desc = prefix.desc_d .. "Show diagnostics in a floating window" }
         )
 
         -- Formats a buffer using the attached (and optionally filtered)
@@ -66,7 +70,7 @@ local function lsp_config()
         keymap_buffer(
             "n", leader .. "f", vim.lsp.buf.format,
             {
-                desc = prefix_desc_f ..
+                desc = prefix.desc_f ..
                     "Formats a buffer using the attached (and optionally " ..
                     "filtered) language server clients"
             }
@@ -78,7 +82,7 @@ local function lsp_config()
         keymap_buffer(
             "n", "gD", vim.lsp.buf.declaration,
             {
-                desc = prefix_desc_gd .. "Jump to the declaration of the " ..
+                desc = prefix.desc_gd .. "Jump to the declaration of the " ..
                     "symbol under the cursor. Many servers do not implement " ..
                     "this method. Generally, see " ..
                     "`vim.lsp.buf.definition()` instead"
@@ -89,7 +93,7 @@ local function lsp_config()
         keymap_buffer(
             "n", "gd", vim.lsp.buf.definition,
             {
-                desc = prefix_desc_gd .. "Jump to the definition of the " ..
+                desc = prefix.desc_gd .. "Jump to the definition of the " ..
                     "symbol under the cursor"
             }
         )
@@ -98,7 +102,7 @@ local function lsp_config()
         keymap_buffer(
             "n", leader .. "i", vim.lsp.buf.implementation,
             {
-                desc = prefix_desc_i .. "List all the implementations for " ..
+                desc = prefix.desc_i .. "List all the implementations for " ..
                     "the symbol under the cursor"
             }
         )
@@ -108,7 +112,7 @@ local function lsp_config()
         keymap_buffer(
             "n", leader .. "l", vim.lsp.buf.references,
             {
-                desc = prefix_desc_l .. "List all the references to the " ..
+                desc = prefix.desc_l .. "List all the references to the " ..
                     "symbol under the cursor in the quickfix window"
             }
         )
@@ -116,19 +120,19 @@ local function lsp_config()
         -- Move to the next diagnostic.
         keymap_buffer(
             "n", leader .. "n", vim.diagnostic.goto_next,
-            { desc = prefix_desc_n .. "Move to the next diagnostic" }
+            { desc = prefix.desc_n .. "Move to the next diagnostic" }
         )
 
         -- Move to the previous diagnostic.
         keymap_buffer(
             "n", leader .. "p", vim.diagnostic.goto_prev,
-            { desc = prefix_desc_p .. "Move to the previous diagnostic" }
+            { desc = prefix.desc_p .. "Move to the previous diagnostic" }
         )
 
         -- Rename all references to the symbol under the cursor.
         keymap_buffer(
             "n", leader .. "r", vim.lsp.buf.rename,
-            { desc = prefix_desc_r .. "Rename all references to the symbol " ..
+            { desc = prefix.desc_r .. "Rename all references to the symbol " ..
                 "under the cursor" }
         )
 
@@ -137,7 +141,7 @@ local function lsp_config()
         keymap_buffer(
             "n", leader .. "s", vim.lsp.buf.signature_help,
             {
-                desc = prefix_desc_s ..
+                desc = prefix.desc_s ..
                     "Display signature information about the symbol under " ..
                     "the cursor in a floating window"
             }
@@ -186,8 +190,8 @@ local function lsp_config()
             {
                 on_attach = function(_, bufnr)
                     vim.api.nvim_exec_autocmds(
-                        lsp_autocommand_event,
-                        { pattern = lsp_autocommand_pattern }
+                        lsp_autocommand.event,
+                        { pattern = lsp_autocommand.pattern }
                     )
                     -- Enable completion triggered by <c-x><c-o>.
                     vim.api.nvim_buf_set_option(bufnr, 'omnifunc',
@@ -200,10 +204,10 @@ local function lsp_config()
     -- Create the `LspAttached` autocommand.
     local function nvim_create_autocmd_LspAttached()
         vim.api.nvim_create_autocmd(
-            lsp_autocommand_event,
+            lsp_autocommand.event,
             {
-                pattern = lsp_autocommand_pattern,
-                desc = lsp_autocommand_desc,
+                pattern = lsp_autocommand.pattern,
+                desc = lsp_autocommand.desc,
                 callback = lspconfig_keymap_set
             }
         )

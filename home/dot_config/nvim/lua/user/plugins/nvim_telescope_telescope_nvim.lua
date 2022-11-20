@@ -5,19 +5,6 @@ local function telescope_config()
 
     local leader = "<leader>t"
 
-    local prefix_desc_b = "Buffers. "
-    local prefix_desc_c = "Command. "
-    local prefix_desc_d = "Diagnostics. "
-    local prefix_desc_f = "Find. "
-    local prefix_desc_g = "Grep. "
-    local prefix_desc_h = "Help. "
-    local prefix_desc_k = "Keymappings. "
-    local prefix_desc_l = "List. "
-    local prefix_desc_o = "Oldfiles. "
-    local prefix_desc_q = "Quickfix. "
-    local prefix_desc_s = "Search. "
-    local prefix_desc_v = "Vim options. "
-
     local telescope_setup = {
         defaults = {
             layout_strategy = "vertical",
@@ -29,13 +16,28 @@ local function telescope_config()
         }
     }
 
+    local prefix_desc = {
+        b = "Buffers. ",
+        c = "Command. ",
+        d = "Diagnostics. ",
+        f = "Find. ",
+        g = "Grep. ",
+        h = "Help. ",
+        k = "Keymappings. ",
+        l = "List. ",
+        o = "Oldfiles. ",
+        q = "Quickfix. ",
+        s = "Search. ",
+        v = "Vim options. "
+    }
+
     local function file_pickers()
         -- List open buffers in current neovim instance, opens selected buffer
         -- on <cr>.
         vim.keymap.set(
             "n", leader .. "b", telescope_builtin.buffers,
             {
-                desc = prefix_desc_b .. "List open buffers in current " ..
+                desc = prefix_desc.b .. "List open buffers in current " ..
                     "neovim instance, opens selected buffer on <cr>."
             }
         )
@@ -44,7 +46,7 @@ local function telescope_config()
         vim.keymap.set(
             "n", leader .. "f", telescope_builtin.find_files,
             {
-                desc = prefix_desc_f .. "Search for files (respecting " ..
+                desc = prefix_desc.f .. "Search for files (respecting " ..
                     ".gitignore)"
             }
         )
@@ -54,7 +56,7 @@ local function telescope_config()
         vim.keymap.set(
             "n", leader .. "g", telescope_builtin.live_grep,
             {
-                desc = prefix_desc_g .. "Search for a string and get " ..
+                desc = prefix_desc.g .. "Search for a string and get " ..
                     "results live while typing (respecting .gitignore)"
             }
         )
@@ -64,7 +66,7 @@ local function telescope_config()
         vim.keymap.set(
             "n", leader .. "l", telescope_builtin.grep_string,
             {
-                desc = prefix_desc_l .. "Search for the string under the " ..
+                desc = prefix_desc.l .. "Search for the string under the " ..
                     "cursor in the current working directory"
             }
         )
@@ -73,7 +75,7 @@ local function telescope_config()
         vim.keymap.set(
             "n", leader .. "o", telescope_builtin.oldfiles,
             {
-                desc = prefix_desc_o .. "List previously open files, opens " ..
+                desc = prefix_desc.o .. "List previously open files, opens " ..
                     "on `<cr>`"
             }
         )
@@ -86,7 +88,7 @@ local function telescope_config()
             "n", leader .. "G",
             telescope_builtin.current_buffer_fuzzy_find,
             {
-                desc = prefix_desc_g .. "Live fuzzy search inside of the " ..
+                desc = prefix_desc.g .. "Live fuzzy search inside of the " ..
                     "currently open buffer"
             }
         )
@@ -95,7 +97,7 @@ local function telescope_config()
         vim.keymap.set(
             "n", leader .. "c", telescope_builtin.command_history,
             {
-                desc = prefix_desc_c .. "List recently executed commands " ..
+                desc = prefix_desc.c .. "List recently executed commands " ..
                     "and rerun them on `<cr>`"
             }
         )
@@ -105,7 +107,7 @@ local function telescope_config()
         vim.keymap.set(
             "n", leader .. "h", telescope_builtin.help_tags,
             {
-                desc = prefix_desc_h .. "List vailable help tags and open a " ..
+                desc = prefix_desc.h .. "List vailable help tags and open a " ..
                     "new window with the relevant help info on `<cr>`"
             }
         )
@@ -114,7 +116,7 @@ local function telescope_config()
         vim.keymap.set(
             "n", leader .. "k", telescope_builtin.keymaps,
             {
-                desc = prefix_desc_k .. "List normal mode keymappings and " ..
+                desc = prefix_desc.k .. "List normal mode keymappings and " ..
                     "run the selected keymap on `<cr>`"
             }
         )
@@ -123,7 +125,7 @@ local function telescope_config()
         vim.keymap.set(
             "n", leader .. "q", telescope_builtin.quickfix,
             {
-                desc = prefix_desc_q .. "List items in the quickfix list " ..
+                desc = prefix_desc.q .. "List items in the quickfix list " ..
                     "and jump to location on `<cr>`"
             }
         )
@@ -132,7 +134,7 @@ local function telescope_config()
         vim.keymap.set(
             "n", leader .. "v", telescope_builtin.vim_options,
             {
-                desc = prefix_desc_v .. "List vim options and edit the " ..
+                desc = prefix_desc.v .. "List vim options and edit the " ..
                     "current value on `<cr>`"
             }
         )
@@ -143,7 +145,7 @@ local function telescope_config()
         vim.keymap.set(
             "n", leader .. "S", telescope_builtin.lsp_document_symbols,
             {
-                desc = prefix_desc_s .. "List LSP document symbols in the " ..
+                desc = prefix_desc.s .. "List LSP document symbols in the " ..
                     "current buffer"
             }
         )
@@ -151,14 +153,14 @@ local function telescope_config()
         -- List diagnostics.
         vim.keymap.set(
             "n", leader .. "d", telescope_builtin.diagnostics,
-            { desc = prefix_desc_d .. "List diagnostics" }
+            { desc = prefix_desc.d .. "List diagnostics" }
         )
 
         -- List LSP document symbols in the current workspace.
         vim.keymap.set(
             "n", leader .. "s", telescope_builtin.lsp_workspace_symbols,
             {
-                desc = prefix_desc_s .. "List LSP document symbols in the " ..
+                desc = prefix_desc.s .. "List LSP document symbols in the " ..
                     "current workspace"
             }
         )

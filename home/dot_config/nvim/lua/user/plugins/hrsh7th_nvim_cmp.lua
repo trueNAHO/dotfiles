@@ -1,17 +1,19 @@
 local table_merge = require("user.lib.table.merge")
 
-local requires_mandatory = { "L3MON4D3/LuaSnip", "hrsh7th/cmp-nvim-lsp" }
-local requires_optional = {
-    "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-cmdline",
-    "hrsh7th/cmp-path"
+local requires = {
+    mandatory = { "L3MON4D3/LuaSnip", "hrsh7th/cmp-nvim-lsp" },
+    optional = {
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-cmdline",
+        "hrsh7th/cmp-path"
+    }
 }
 
 -- A completion plugin for neovim coded in Lua.
 require("packer").use({
     "hrsh7th/nvim-cmp",
     -- REQUIRED: Must sepcify a snipped engine.
-    requires = table_merge(requires_mandatory, requires_optional),
+    requires = table_merge(requires.mandatory, requires.optional),
     config = function()
         vim.opt.cot = { "menu", "menuone", "noselect" }
 
