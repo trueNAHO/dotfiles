@@ -1,7 +1,11 @@
 local table_merge = require("user.lib.table.merge")
 
 local requires = {
-    mandatory = { "L3MON4D3/LuaSnip", "hrsh7th/cmp-nvim-lsp" },
+    mandatory = {
+        "L3MON4D3/LuaSnip",
+        "saadparwaiz1/cmp_luasnip",
+        "hrsh7th/cmp-nvim-lsp"
+    },
     optional = {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-cmdline",
