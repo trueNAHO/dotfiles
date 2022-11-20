@@ -5,17 +5,6 @@ local function telescope_config()
 
     local leader = "<leader>t"
 
-    local telescope_setup = {
-        defaults = {
-            layout_strategy = "vertical",
-            mappings = {
-                i = {
-                    ["<C-j>"] = telescope_actions.select_default
-                }
-            }
-        }
-    }
-
     local prefix_desc = {
         b = "Buffers. ",
         c = "Command. ",
@@ -80,6 +69,17 @@ local function telescope_config()
             }
         )
 
+    end
+
+    local function telescope_setup()
+        telescope.setup({
+            layout_strategy = "vertical",
+            mappings = {
+                i = {
+                    ["<C-j>"] = telescope_actions.select_default
+                }
+            }
+        })
     end
 
     local function vim_pickers()
@@ -170,8 +170,7 @@ local function telescope_config()
         file_pickers()
         vim_pickers()
         lsp_pickers()
-
-        telescope.setup(telescope_setup)
+        telescope_setup()
     end
 
     main()
