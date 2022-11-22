@@ -3,11 +3,15 @@
 
 # `xinitrc` configures the initialisation of xinit.
 
+xdg_user_dir_pictures="$(xdg-user-dir PICTURES)"
+
+declare -r -i wallpapers_interval_minutes=15
 declare -r system_modmap="/etc/X11/xinit/.Xmodmap"
 declare -r system_programs="/etc/X11/xinit/xinitrc.d"
 declare -r system_resources="/etc/X11/xinit/.Xresources"
 declare -r user_modmap="$HOME/.Xmodmap"
 declare -r user_resources="$HOME/.Xresources"
+declare -r wallpapers_dir="$xdg_user_dir_pictures"
 
 # Load entire closure in background to yield control back to the runtime as
 # soon as possible. Make sure no processes lock the closure. Otherwise no
@@ -26,6 +30,8 @@ async_load() { {
     # Start a modal keyboard driven pointer manipulation program.
     warpd &
   } &
+
+  set_wallpaper &
 
   # Start X11 compositor.
   picom &
@@ -84,6 +90,18 @@ source_system_programs() {
       [[ -x "$file" ]] && source "$file"
     done
   fi
+}
+
+# @url https://bbs.archlinux.org/viewtopic.php?id=212470
+# Periodically set the background image. Select the random background image from
+# the `wallpapers_dir` directory, and update them every
+# `wallpapers_interval_minutes` minutes. If the wallpapers cannot be updated,
+# then retry without waiting.
+set_wallpaper() {
+  while true; do
+    feh --randomize --recursive --bg-fill "$wallpapers_dir/*" \
+      && sleep "${wallpapers_interval_minutes}m"
+  done
 }
 
 # Asynchronous function should be called after synchronous one to assure
