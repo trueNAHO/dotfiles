@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+# Set a random wallpaper.
+
+xdg_user_dir_pictures="$(xdg-user-dir PICTURES)"
+
+# @url https://bbs.archlinux.org/viewtopic.php?id=212470
+# Select a random background image from the `xdg_user_dir_pictures` directory.
+feh --randomize --recursive --bg-fill "$xdg_user_dir_pictures"
