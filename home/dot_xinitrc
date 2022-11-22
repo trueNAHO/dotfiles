@@ -17,15 +17,17 @@ async_load() { {
   # @url https://unix.stackexchange.com/questions/253489/
   # Source `$user_modmap` when plugging in a keyboard. Unplugging and plugging
   # the keyboard back in resets the `xmodmap` settings.
-  if [[ -f "$user_modmap" ]]; then
-    inputplug -c /bin/echo -d \
-        | while read -r event_type device_id device_type device_name; do
-          if [[ "$event_type" == "XIDeviceEnabled"
-              && "$device_type" == "XISlaveKeyboard" ]]; then
-            xmodmap "$user_modmap"
-          fi
-        done &
-  fi
+  {
+    if [[ -f "$user_modmap" ]]; then
+      inputplug -c /bin/echo -d \
+          | while read -r event_type device_id device_type device_name; do
+            if [[ "$event_type" == "XIDeviceEnabled"
+                && "$device_type" == "XISlaveKeyboard" ]]; then
+              xmodmap "$user_modmap"
+            fi
+          done
+    fi
+  } &
 
   # Run `warpd` after `autorandr` has finished. `warpd` (v1.3.4) does not
   # properly recognise the screen dimensions when running `autorandr` before.
