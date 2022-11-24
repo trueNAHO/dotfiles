@@ -27,6 +27,5 @@ fi
 # only `feh`. In that case the problem is not this script, but the system. Note
 # that arguments provided to this script overwrite the config file settings.
 (
-  PATH="${PATH//$(cd "$(dirname "$0")" && pwd):}" \
-      && bash -c "feh $feh_flags $*"
+  PATH="${PATH//$(cd "$(dirname "$0")" && pwd):}" && bash -c "feh $feh_flags $*"
 )
