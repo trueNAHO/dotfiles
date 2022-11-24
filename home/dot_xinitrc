@@ -24,6 +24,8 @@ async_load() { {
     # necessary).
     autorandr clone-largest
 
+    # Periodically set the background image every `wallpapers_interval_minutes`
+    # minutes. If the wallpaper cannot be updated, then retry without waiting.
     set_periodically_wallpaper &
 
     # Start a modal keyboard driven pointer manipulation program.
