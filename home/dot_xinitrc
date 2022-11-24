@@ -24,11 +24,12 @@ async_load() { {
     # necessary).
     autorandr clone-largest
 
+    set_periodically_wallpaper &
+
     # Start a modal keyboard driven pointer manipulation program.
     warpd &
-  } &
 
-  set_periodically_wallpaper &
+  } &
 
   # Start X11 compositor.
   picom &
