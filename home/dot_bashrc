@@ -7,6 +7,42 @@
 # @url https://wiki.archlinux.org/title/Bash
 # This configuration file is heavily inspired by these sources.
 
+# Change the shell working directory to the provided argument and list its
+# contents. Only one argument is accepted.
+cl() {
+  cd -- "$@" && ls
+}
+
+# @url https://stackoverflow.com/questions/957928
+# Change the shell working directory to the git root directory.
+gitroot() {
+  cd -- "$(git rev-parse --show-toplevel)" || return
+}
+
+# @url https://github.com/gokcehan/lf/blob/master/etc/lfcd.sh
+# Change working dir in shell to last dir in `lf` on exit.
+lf() {
+    declare -r command="/usr/bin/lf"
+
+    declare -r tmp="$(mktemp)"
+    "$command" -last-dir-path="$tmp" "$@"
+
+    [[ -f "$tmp" ]] || return
+
+    declare -r dir="$(cat "$tmp")"
+    rm -f -- "$tmp"
+
+    if [[ -d "$dir" && "$dir" != "$(pwd)" ]]; then
+        cd -- "$dir" || return
+    fi
+}
+
+# Make directories and change the shell working directory to the first
+# argument specified.
+mkcd () {
+  mkdir -p -- "$@" && cd -- "$1" || return
+}
+
 # @url https://unix.stackexchange.com/questions/104755
 # Delete functions that should not exceed this bashrc's scope.
 _cleanup() {
@@ -143,42 +179,6 @@ _source_programs() {
   # Optional `fzf` keybindings and completion are available for various shells.
   [[ -r "$fzf_completion" ]] && source "$fzf_completion"
   [[ -r "$fzf_key_bindings" ]] && source "$fzf_key_bindings"
-}
-
-# Change the shell working directory to the provided argument and list its
-# contents. Only one argument is accepted.
-cl() {
-  cd -- "$@" && ls
-}
-
-# @url https://stackoverflow.com/questions/957928
-# Change the shell working directory to the git root directory.
-gitroot() {
-  cd -- "$(git rev-parse --show-toplevel)" || return
-}
-
-# @url https://github.com/gokcehan/lf/blob/master/etc/lfcd.sh
-# Change working dir in shell to last dir in `lf` on exit.
-lf() {
-    declare -r command="/usr/bin/lf"
-
-    declare -r tmp="$(mktemp)"
-    "$command" -last-dir-path="$tmp" "$@"
-
-    [[ -f "$tmp" ]] || return
-
-    declare -r dir="$(cat "$tmp")"
-    rm -f -- "$tmp"
-
-    if [[ -d "$dir" && "$dir" != "$(pwd)" ]]; then
-        cd -- "$dir" || return
-    fi
-}
-
-# Make directories and change the shell working directory to the first
-# argument specified.
-mkcd () {
-  mkdir -p -- "$@" && cd -- "$1" || return
 }
 
 # Make sure the `exec` command is the last one executed in this script. No
