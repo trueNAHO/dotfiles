@@ -151,6 +151,12 @@ cl() {
   cd -- "$@" && ls
 }
 
+# @url https://stackoverflow.com/questions/957928
+# Change the shell working directory to the git root directory.
+gitroot() {
+  cd -- "$(git rev-parse --show-toplevel)" || return
+}
+
 # @url https://github.com/gokcehan/lf/blob/master/etc/lfcd.sh
 # Change working dir in shell to last dir in `lf` on exit.
 lf() {
