@@ -54,7 +54,7 @@ vim.opt.fo:append("1p")
 -- digraph. Enable entering digraphs with c1 <BS> c2.
 --     set nodg    dg
 -- tildeop. The "~" command behaves like an operator.
-vim.opt.top = true
+--     set notop    top
 -- operatorfunc. Function called for the "g@" operator.
 --     set opfunc=
 -- showmatch. When inserting a bracket, briefly jump to its match.
