@@ -3,11 +3,8 @@ local plugin = {}
 
 -- Modify the default behaviour.
 function plugin.behaviour()
-    -- Autocompletion.
-    require("user.plugins.hrsh7th_nvim_cmp")
-
-    -- Language Server Protocol (LSP).
-    require("user.plugins.neovim_nvim_lspconfig")
+    -- A starting point to setup some LSP related features in neovim.
+    require("user.plugins.VonHeikemen_lsp-zero_nvim")
 end
 
 -- Set a color scheme.
