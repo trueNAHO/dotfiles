@@ -1,7 +1,7 @@
 -- terse. Add 's' flag in 'shortmess' (don't show search message).
 --     set noterse    terse
 -- shortmess. List of flags to make messages shorter.
---     set shm=filnxtToOF
+vim.opt.shm:append("I")
 -- showcmd. Show (partial) command keys in the status line.
 --     set sc    nosc
 -- showmode. Display the current mode in the status line.
