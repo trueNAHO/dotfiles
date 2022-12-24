@@ -124,7 +124,14 @@ require("packer").use({
                 formatting.stylelint,
                 formatting.styler,
                 formatting.stylish_haskell,
-                formatting.stylua,
+                formatting.stylua.with({
+                    extra_args = {
+                        "--column-width",
+                        column_width,
+                        "--indent-type",
+                        "Spaces",
+                    },
+                }),
                 formatting.surface,
                 formatting.swiftformat,
                 formatting.swiftlint,
