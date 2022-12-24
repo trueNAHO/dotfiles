@@ -157,7 +157,9 @@ require("packer").use({
                 )
 
                 keymap_buffer(
-                    { "n", "v" }, leader .. "f", vim.lsp.buf.format, bufnr,
+                    { "n", "v" }, leader .. "f",
+                    function() vim.lsp.buf.format({ timeout_ms = 5000 }) end,
+                    bufnr,
                     {
                         desc = "LSP Format. Formats a buffer using the attached (and optionally filtered) language server clients."
                     }
