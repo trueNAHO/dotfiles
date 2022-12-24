@@ -5,6 +5,11 @@ local plugin = {}
 function plugin.behaviour()
     -- A starting point to setup some LSP related features in neovim.
     require("user.plugins.VonHeikemen_lsp-zero_nvim")
+
+    -- Use Neovim as a language server to inject LSP diagnostics, code actions,
+    -- and more via Lua. IMPORTANT: This pluging must be loaded after the
+    -- `lsp-zero` plugin.
+    require("user.plugins.jose-elias-alvarez_null-ls_nvim")
 end
 
 -- Set a color scheme.
