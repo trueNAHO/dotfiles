@@ -85,6 +85,9 @@ function plugin.visuals()
     -- Nvim Treesitter configurations and abstraction layer.
     require("user.plugins.nvim-treesitter_nvim-treesitter")
 
+    -- Show code context.
+    require("user.plugins.nvim-treesitter_nvim-treesitter-context")
+
     -- The fastest Neovim colorizer.
     require("user.plugins.norcalli_nvim_colorizer")
 end
