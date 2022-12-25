@@ -165,9 +165,16 @@ require("packer").use({
             lsp.setup()
         end
 
+
+        -- Set the vim diagnostics up.
+        local function vim_diagnostic_setup()
+            vim.diagnostic.config({ severity_sort = true })
+        end
+
         local function main()
             cmp_setup()
             lsp_setup()
+            vim_diagnostic_setup()
         end
 
         main()
