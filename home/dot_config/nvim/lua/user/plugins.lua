@@ -82,6 +82,9 @@ end
 
 -- Enhance the default visual effects.
 function plugin.visuals()
+    -- Nvim Treesitter configurations and abstraction layer.
+    require("user.plugins.nvim-treesitter_nvim-treesitter")
+
     -- The fastest Neovim colorizer.
     require("user.plugins.norcalli_nvim_colorizer")
 end
