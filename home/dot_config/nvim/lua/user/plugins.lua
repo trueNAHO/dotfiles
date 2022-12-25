@@ -75,6 +75,10 @@ function plugin.utilities()
     -- Find, Filter, Preview, Pick. All lua, all the time.
     require("user.plugins.nvim_telescope_telescope_nvim")
 
+    -- Smart and powerful comment plugin for neovim. Supports treesitter, dot
+    -- repeat, left-right/up-down motions, hooks, and more.
+    require("user.plugins.numToStr_Comment_nvim")
+
     -- Single tabpage interface for easily cycling through diffs for all
     -- modified files for any git rev.
     require("user.plugins.sindrets_diffview_nvim")
