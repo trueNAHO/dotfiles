@@ -22,6 +22,8 @@ require("packer").use({
             automatic_setup = true,
         })
 
+        null_ls.setup()
+
         mason_null_ls.setup_handlers({
             function(source_name, methods)
                 mason_null_ls_setup(source_name, methods)
