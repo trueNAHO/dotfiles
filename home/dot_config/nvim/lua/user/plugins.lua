@@ -99,6 +99,9 @@ function plugin.visuals()
     -- Show code context.
     require("user.plugins.nvim-treesitter_nvim-treesitter-context")
 
+    -- Rainbow parentheses for neovim using tree-sitter.
+    require("user.plugins.p00f_nvim-ts-rainbow")
+
     -- The fastest Neovim colorizer.
     require("user.plugins.norcalli_nvim_colorizer")
 end
