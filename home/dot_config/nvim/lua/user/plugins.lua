@@ -10,6 +10,9 @@ function plugin.behaviour()
     -- and more via Lua. IMPORTANT: This pluging must be loaded after the
     -- `lsp-zero` plugin.
     require("user.plugins.jay-babu_mason-null-ls_nvim")
+
+    -- Syntax aware text-objects, select, move, swap, and peek support.
+    require("user.plugins.nvim-treesitter_nvim-treesitter-textobjects")
 end
 
 -- Set a color scheme.
