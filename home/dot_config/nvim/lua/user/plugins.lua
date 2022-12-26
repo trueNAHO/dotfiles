@@ -79,6 +79,10 @@ function plugin.utilities()
     -- repeat, left-right/up-down motions, hooks, and more.
     require("user.plugins.numToStr_Comment_nvim")
 
+    -- A neovim plugin to run lines/blocs of code (independently of the rest of
+    -- the file), supporting multiples languages.
+    require("user.plugins.michaelb_sniprun")
+
     -- Single tabpage interface for easily cycling through diffs for all
     -- modified files for any git rev.
     require("user.plugins.sindrets_diffview_nvim")
