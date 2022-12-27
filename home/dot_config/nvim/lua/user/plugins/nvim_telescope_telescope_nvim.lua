@@ -185,6 +185,7 @@ require("packer").use({
     requires = {
         "nvim-lua/plenary.nvim",
         "nvim-telescope/telescope-fzf-native.nvim",
+        "nvim-tree/nvim-web-devicons",
         "nvim-treesitter/nvim-treesitter"
     },
     config = telescope_config
