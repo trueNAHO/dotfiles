@@ -65,6 +65,9 @@ end
 
 -- Add new utilities.
 function plugin.utilities()
+    -- A file explorer tree for neovim written in lua.
+    require("user.plugins.nvim-tree_nvim-tree_lua")
+
     -- Magit for neovim.
     require("user.plugins.TimUntersberger_neogit")
 
