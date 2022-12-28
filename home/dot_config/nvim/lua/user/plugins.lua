@@ -88,10 +88,6 @@ function plugin.utilities()
     -- A neovim plugin to run lines/blocs of code (independently of the rest of
     -- the file), supporting multiples languages.
     require("user.plugins.michaelb_sniprun")
-
-    -- Single tabpage interface for easily cycling through diffs for all
-    -- modified files for any git rev.
-    require("user.plugins.sindrets_diffview_nvim")
 end
 
 -- Enhance the default visual effects.
