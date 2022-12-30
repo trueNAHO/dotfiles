@@ -6,4 +6,5 @@ set relativenumber
 
 # Bind a key to a command which can be builtin command, custom command, or
 # shell command.
+map D delete
 map gd %dragon-drop -a -x $fx
