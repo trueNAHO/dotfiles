@@ -67,6 +67,7 @@ _set_aliases() {
   # Change output format.
   alias cal="cal -m"
   alias df="df -h"
+  alias du="du -h"
   alias free="free -h"
 
   # Colorise output.
