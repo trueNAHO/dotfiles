@@ -3,6 +3,7 @@
 
 # `xinitrc` configures the initialisation of xinit.
 
+declare -r -i wallpaper_nice=19
 declare -r -i wallpapers_interval_minutes=15
 declare -r system_modmap="/etc/X11/xinit/.Xmodmap"
 declare -r system_programs="/etc/X11/xinit/xinitrc.d"
@@ -97,7 +98,8 @@ source_system_programs() {
 # minutes. If the wallpaper cannot be updated, then retry without waiting.
 set_periodically_wallpaper() {
   while true; do
-    set_wallpaper && sleep "${wallpapers_interval_minutes}m"
+    nice -n "$wallpaper_nice" set_wallpaper &&
+      sleep "${wallpapers_interval_minutes}m"
   done
 }
 
