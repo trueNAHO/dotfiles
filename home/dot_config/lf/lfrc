@@ -4,8 +4,7 @@ set hidden
 #set icons
 set relativenumber
 
-# Bind a key to a command which can be builtin command, custom command, or
-# shell command.
+# Remove the current file or selected file(s).
 map D delete
 
 # Open a drag and drop source for X.
