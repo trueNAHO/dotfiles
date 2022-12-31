@@ -1,8 +1,16 @@
+################################################################################
+#                                     set
+################################################################################
+
 # Options to customize the behavior. The `:` character is used as the separator
 # for list options `[]int` and `[]string`.
 set hidden
 #set icons
 set relativenumber
+
+################################################################################
+#                                     map
+################################################################################
 
 # Remove the current file or selected file(s).
 map D delete
