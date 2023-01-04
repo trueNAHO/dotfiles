@@ -49,6 +49,7 @@ _cleanup() {
   unset -f _cleanup
   unset -f _is_running_interactively
   unset -f _main
+  unset -f _set_aliases
   unset -f _set_bash_history
   unset -f _set_configs
   unset -f _set_shopt
