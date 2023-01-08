@@ -25,8 +25,10 @@ async_load() { {
     # necessary).
     autorandr clone-largest
 
-    # Periodically set the background image every `wallpaper_interval_minutes`
-    # minutes. If the wallpaper cannot be updated, then retry without waiting.
+    # Periodically set the wallpaper. Retry without waiting if the wallpaper
+    # cannot be set. The actual wallpaper setter is not extremly fast. To
+    # shorten the time before any wallpaper is set, the first iteration sets it
+    # in a less sophisticated and much faster way.
     set_periodically_wallpaper &
 
     # Start a modal keyboard driven pointer manipulation program.
@@ -94,9 +96,18 @@ source_system_programs() {
 }
 
 # @url https://bbs.archlinux.org/viewtopic.php?id=212470
-# Periodically set the background image every `wallpaper_interval_minutes`
-# minutes. If the wallpaper cannot be updated, then retry without waiting.
+# Periodically set the wallpaper. Retry without waiting if the wallpaper cannot
+# be set. The actual wallpaper setter is not extremly fast. To shorten the time
+# before any wallpaper is set, the first iteration sets it in a less
+# sophisticated and much faster way.
 set_periodically_wallpaper() {
+  # Setting the image with feh's --bg-tile flag is much faster than with
+  # the --bg-max flag. Nevertheless we use the --bg-max flag because the user
+  # experience is more important in this case. Switching from the --bg-max to
+  # the --bg-tile flag would improve performace by a few percent but heavily
+  # decrease the user experience.
+  feh --bg-max --no-fehbg --randomize --recursive "$(xdg-user-dir PICTURES)"
+
   while true; do
     nice -n "$wallpaper_nice" set_wallpaper &&
       sleep "${wallpaper_interval_minutes}m"
