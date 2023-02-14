@@ -7,16 +7,16 @@
 # @url https://wiki.archlinux.org/title/Bash
 # This configuration file is heavily inspired by these sources.
 
+# @url https://stackoverflow.com/questions/957928
+# Change the shell working directory to the git root directory.
+cdroot() {
+  cd -- "$(git rev-parse --show-toplevel)" || return
+}
+
 # Change the shell working directory to the provided argument and list its
 # contents. Only one argument is accepted.
 cl() {
   cd -- "$@" && ls
-}
-
-# @url https://stackoverflow.com/questions/957928
-# Change the shell working directory to the git root directory.
-gitroot() {
-  cd -- "$(git rev-parse --show-toplevel)" || return
 }
 
 # @url https://github.com/gokcehan/lf/blob/master/etc/lfcd.sh
@@ -42,6 +42,7 @@ lf() {
 makeroot() {
   local git_root
   git_root="$(git rev-parse --show-toplevel)" || return
+
   printf '%s\n' "make -C $git_root $*"
   make -C "$git_root" "$@"
 }
