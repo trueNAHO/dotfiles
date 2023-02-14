@@ -37,6 +37,15 @@ lf() {
     fi
 }
 
+# Run `make` from the git root directory and print the executed command.
+# Arguments are passed to the `make` command.
+makeroot() {
+  local git_root
+  git_root="$(git rev-parse --show-toplevel)" || return
+  printf '%s\n' "make -C $git_root $*"
+  make -C "$git_root" "$@"
+}
+
 # Make directories and change the shell working directory to the first
 # argument specified.
 mkcd () {
