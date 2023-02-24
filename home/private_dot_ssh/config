@@ -44,9 +44,9 @@
 # https://www.section.io/engineering-education/using-multiple-ssh-keys-for-multiple-github-accounts
 
 Host aur.archlinux.org
-    IdentityFile   ~/.ssh/AUR/id_rsa
+    IdentityFile ~/.ssh/id_rsa_aur
 
-    IdentityFile   ~/.ssh/id_rsa
 Host github.com
+    IdentityFile ~/.ssh/id_rsa_github
 
 AddKeysToAgent 30m
