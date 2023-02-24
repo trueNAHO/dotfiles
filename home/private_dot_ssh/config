@@ -48,6 +48,12 @@ Host aur.archlinux.org
     IdentityFile ~/.ssh/id_rsa_aur
     User aur
 
+Host github.com.university
+    HostName github.com
+    IdentitiesOnly yes
+    IdentityFile ~/.ssh/id_rsa_github_university
+    User git
+
 Host github.com
     IdentitiesOnly yes
     IdentityFile ~/.ssh/id_rsa_github
