@@ -43,6 +43,7 @@
 # Host clientname.github.com
 #   HostName      github.com
 #   IdentityFile ~/.ssh/client_id_rsa
+# https://www.section.io/engineering-education/using-multiple-ssh-keys-for-multiple-github-accounts
 
 Host aur.archlinux.org
     IdentityFile   ~/.ssh/AUR/id_rsa
