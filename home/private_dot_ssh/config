@@ -46,7 +46,7 @@
 Host aur.archlinux.org
     IdentityFile   ~/.ssh/AUR/id_rsa
 
-Host *
     IdentityFile   ~/.ssh/id_rsa
+Host github.com
 
 AddKeysToAgent 30m
