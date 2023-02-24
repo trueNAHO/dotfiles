@@ -40,6 +40,7 @@
 #   RekeyLimit 1G 1h
 #   UserKnownHostsFile ~/.ssh/known_hosts.d/%k
 
+# https://stackoverflow.com/questions/7548158
 # https://www.section.io/engineering-education/using-multiple-ssh-keys-for-multiple-github-accounts
 
 Host aur.archlinux.org
@@ -49,5 +50,3 @@ Host *
     IdentityFile   ~/.ssh/id_rsa
 
 AddKeysToAgent 30m
-
-# https://stackoverflow.com/questions/7548158
