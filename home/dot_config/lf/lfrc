@@ -16,7 +16,7 @@ set relativenumber
 map D delete
 
 # Open a drag and drop source for X.
-map gd %dragon-drop --all --and-exit $fx
+map gd &dragon-drop --all --and-exit $fx
 
 # Elaborate `dragon-drop --all --and-exit --target` command to open a drag and
 # drop target for X. Transferring data works for anything supported by the
