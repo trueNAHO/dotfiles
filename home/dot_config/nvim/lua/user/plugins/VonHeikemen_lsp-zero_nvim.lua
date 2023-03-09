@@ -41,10 +41,6 @@ require("packer").use({
             local mapping = lsp.defaults.cmp_mappings()
 
             cmp.setup(lsp.defaults.cmp_config({
-                mapping = lsp.defaults.cmp_mappings({
-                    ["<C-b>"] = mapping["<C-u>"],
-                    ["<C-u>"] = mapping["<C-b>"]
-                }),
 
                 window = {
                     completion = cmp.config.window.bordered()
