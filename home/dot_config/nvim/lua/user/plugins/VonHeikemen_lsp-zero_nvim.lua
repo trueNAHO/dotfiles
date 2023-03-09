@@ -41,6 +41,9 @@ require("packer").use({
             local mapping = lsp.defaults.cmp_mappings()
 
             cmp.setup(lsp.defaults.cmp_config({
+                sources = {
+                    name = "luasnip",
+                },
 
                 window = {
                     completion = cmp.config.window.bordered()
