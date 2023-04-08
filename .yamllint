@@ -1,7 +1,0 @@
-rules:
-    comments-indentation:
-        ignore: |
-            home/dot_config/alacritty/alacritty.yml
-    comments:
-        ignore: |
-            home/dot_config/alacritty/alacritty.yml
