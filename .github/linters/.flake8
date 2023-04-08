@@ -1,7 +1,0 @@
-# @url https://github.com/github/super-linter/blob/main/TEMPLATES/.flake8
-
-[flake8]
-extend-ignore = E203
-max-line-length = 80
-per-file-ignores =
-    home/dot_config/qutebrowser/config.py: F821
