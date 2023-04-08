@@ -1,0 +1,9 @@
+data:
+  isInstallLocally: "0"
+  isInstallPackages: "1"
+  junestBin: "$HOME/.local/share/junest/bin"
+  junestDir: "$HOME/.local/share/junest"
+  junestPackageManagerAur: "yay"
+  junestPackageManagerOfficial: "pacman"
+  junestRepoUrl: "https://github.com/fsquillace/junest.git"
+  pacmanWrappersAur: "aura pacaur pakku paru pikaur trizen yay"
