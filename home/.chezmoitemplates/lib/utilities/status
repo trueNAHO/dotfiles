@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-# Print status messages. All arguments form one status message.
-status() {
-  printf 'chezmoi: %s\n' "$*"
-}

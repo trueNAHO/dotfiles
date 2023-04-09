@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-# shellcheck disable=all
-
-{{ template "lib/variables/tmp_directory_actions" }}
-
-# Execute actions. Actions are read from the `$tmp_directory_actions` file.
-execute_actions() {
-  bash "$tmp_directory_actions"
-}

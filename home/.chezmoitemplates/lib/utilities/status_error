@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-# shellcheck disable=all
-
-{{ template "lib/utilities/status" }}
-
-# Print status messages to stdout. All arguments form one status message.
-status_error() {
-  status "$@" >&2
-}
