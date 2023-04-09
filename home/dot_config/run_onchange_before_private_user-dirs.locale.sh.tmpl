@@ -1,28 +1,11 @@
-#!/usr/bin/env bash
-# shellcheck disable=all
+#!/bin/sh
 
-{{ template "lib/utilities/status_unsupported_os" .chezmoi.osRelease.name }}
-{{ template "lib/utilities/yes_or_no_execute_current_file" }}
+{{ template "install_packages.sh.tmpl" . }}
+{{ template "status.sh.tmpl" . }}
 
-yes_or_no_execute_current_file
-
-{{- if eq .chezmoi.os "linux" }}
-
-{{ template "lib/deps/select_actions" }}
-{{ template "lib/deps/select_deps_pacman" }}
+install_packages_official xdg-user-dirs
 
 # Creating a full suite of localized default user directories within the $HOME
 # directory.
-xdg_user_dirs_update() {
-  xdg-user-dirs-update
-}
-
-select_deps_pacman xdg-user-dirs
-
-select_actions xdg_user_dirs_update
-
-{{- else }}
-
-status_unsupported_os
-
-{{- end }}
+status "xdg-user-dirs-update"
+xdg-user-dirs-update

@@ -1,19 +1,5 @@
-#!/usr/bin/env bash
-# shellcheck disable=all
+#!/bin/sh
 
-{{ template "lib/utilities/status_unsupported_os" .chezmoi.osRelease.name }}
-{{ template "lib/utilities/yes_or_no_execute_current_file" }}
+{{ template "install_packages.sh.tmpl" . }}
 
-yes_or_no_execute_current_file
-
-{{- if eq .chezmoi.os "linux" }}
-
-{{ template "lib/deps/select_deps_pacman" }}
-
-select_deps_pacman libnotify libpulse light xbindkeys
-
-{{- else }}
-
-status_unsupported_os
-
-{{- end }}
+install_packages_official libnotify libpulse light xbindkeys

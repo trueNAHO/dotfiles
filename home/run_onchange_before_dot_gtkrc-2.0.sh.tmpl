@@ -1,22 +1,6 @@
-#!/usr/bin/env bash
-# shellcheck disable=all
+#!/bin/sh
 
-{{ template "lib/utilities/status_unsupported_os" .chezmoi.osRelease.name }}
-{{ template "lib/utilities/yes_or_no_execute_current_file" }}
+{{ template "install_packages.sh.tmpl" . }}
 
-yes_or_no_execute_current_file
-
-{{- if eq .chezmoi.os "linux" }}
-
-{{ template "lib/deps/select_deps_pacman" }}
-{{ template "lib/deps/select_deps_yay" }}
-
-select_deps_pacman gnome-themes-extra ttf-ibm-plex
-select_deps_yay bibata-cursor-theme
-
-
-{{- else }}
-
-status_unsupported_os
-
-{{- end }}
+install_packages_aur bibata-cursor-theme
+install_packages_official gnome-themes-extra ttf-ibm-plex

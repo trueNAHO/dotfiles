@@ -1,35 +1,13 @@
-#!/usr/bin/env bash
-# shellcheck disable=all
+#!/bin/sh
 
-{{ template "lib/utilities/is_command_available" }}
-{{ template "lib/utilities/status" }}
-{{ template "lib/utilities/status_unsupported_os" .chezmoi.osRelease.name }}
-{{ template "lib/utilities/yes_or_no_execute_current_file" }}
+{{ template "install_packages.sh.tmpl" . }}
+{{ template "status.sh.tmpl" . }}
 
-yes_or_no_execute_current_file
-
-{{- if eq .chezmoi.os "linux" }}
-
-{{ template "lib/deps/select_actions" }}
-{{ template "lib/deps/select_actions_deps" }}
-{{ template "lib/deps/select_deps_pacman" }}
+install_packages_official bash fortune-mod neovim xorg-xinit
 
 # @url https://wiki.archlinux.org/title/SSH_keys#SSH_agents
 # Use GPG key for SSH authentication.
-use_gpg_key_for_ssh_authentication() {
-  if is_command_available systemctl; then
-    status "start systemd service for ssh-agent"
-    systemctl enable ssh-agent --user --now
-  fi
-}
-
-select_deps_pacman bash fortune-mod neovim xorg-xinit
-
-select_actions_deps is_command_available status
-select_actions use_gpg_key_for_ssh_authentication
-
-{{- else }}
-
-status_unsupported_os
-
-{{- end }}
+if command -v systemctl >/dev/null 2>&1; then
+    status "systemctl enable --now --user ssh-agent"
+    systemctl enable --now --user ssh-agent
+fi

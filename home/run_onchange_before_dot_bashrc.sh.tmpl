@@ -1,45 +1,21 @@
-#!/usr/bin/env bash
-# shellcheck disable=all
+#!/bin/sh
 
-{{ template "lib/utilities/is_command_available" }}
-{{ template "lib/utilities/status" }}
-{{ template "lib/utilities/status_unsupported_os" .chezmoi.osRelease.name }}
-{{ template "lib/utilities/yes_or_no_execute_current_file" }}
+{{ template "install_packages.sh.tmpl" . }}
+{{ template "status.sh.tmpl" . }}
 
-yes_or_no_execute_current_file
-
-{{- if eq .chezmoi.os "linux" }}
-
-{{ template "lib/deps/select_actions" }}
-{{ template "lib/deps/select_actions_deps" }}
-{{ template "lib/deps/select_deps_pacman" }}
-{{ template "lib/deps/select_deps_yay" }}
-{{ template "lib/utilities/safe_sudo" }}
+install_packages_aur alacritty-ligatures-git
+install_packages_official bash bash-completion bat neovim pkgfile
 
 # @url https://wiki.archlinux.org/title/Pkgfile
 # Update the pkgfile database and start the systemd timer for automatically
 # synchronizing the pkgfile database.
-update_pkgfile_database_and_start_systemd_timer() {
-  if is_command_available pkgfile; then
-    status "update pkgfile database"
-    safe_sudo pkgfile -u
-    if is_command_available systemctl; then
-      status \
-          "start systemd service for automatically synchronizing the pkgfile" \
-          "database"
-      safe_sudo systemctl enable pkgfile-update.timer --now
+if command -v sudo >/dev/null 2>&1 && sudo -v && \
+    command -v pkgfile >/dev/null 2>&1; then
+    status "sudo pkgfile -u"
+    sudo pkgfile -u
+
+    if command -v systemctl >/dev/null 2>&1; then
+        status "sudo systemctl enable --now pkgfile-update.timer"
+        sudo systemctl enable --now pkgfile-update.timer
     fi
-  fi
-}
-
-select_deps_pacman bash bash-completion bat neovim pkgfile
-select_deps_yay alacritty-ligatures-git
-
-select_actions_deps is_command_available safe_sudo status
-select_actions update_pkgfile_database_and_start_systemd_timer
-
-{{- else }}
-
-status_unsupported_os
-
-{{- end }}
+fi

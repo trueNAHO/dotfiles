@@ -1,27 +1,12 @@
-#!/usr/bin/env bash
-# shellcheck disable=all
+#!/bin/sh
 
-{{ template "lib/utilities/status_unsupported_os" .chezmoi.osRelease.name }}
-{{ template "lib/utilities/yes_or_no_execute_current_file" }}
+{{ template "install_packages.sh.tmpl" . }}
 
-yes_or_no_execute_current_file
-
-{{- if eq .chezmoi.os "linux" }}
-
-{{ template "lib/deps/select_deps_pacman" }}
-{{ template "lib/deps/select_deps_yay" }}
-
-select_deps_pacman xorg-xrdb
-
-select_deps_yay \
+install_packages_aur \
     bibata-cursor-theme \
     bibata-cursor-translucent \
     bibata-extra-cursor-theme \
     bibata-rainbow-cursor-theme \
     phinger-cursors
 
-{{- else }}
-
-status_unsupported_os
-
-{{- end }}
+install_packages_official xorg-xrdb
