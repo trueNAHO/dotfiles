@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Print each MESSAGE on a new line with the `chezmoi: ` prefix.
+#
+# Usage: status [MESSAGE ...]
+status() {
+    printf 'chezmoi: %s\n' "$@"
+}
