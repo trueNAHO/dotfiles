@@ -1,0 +1,10 @@
+#!/bin/sh
+
+{{ template "status.sh.tmpl" }}
+
+# Print each MESSAGE on a new line with the `chezmoi: ` prefix to stderr.
+#
+# Usage: status_error [MESSAGE ...]
+status_error() {
+    status "$@" >&2
+}
