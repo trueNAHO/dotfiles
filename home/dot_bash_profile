@@ -28,13 +28,22 @@ exec_graphical_user_interface() {
 extend_path() {
   status "export PATH=$PATH"
 
-  declare -r -a paths=(
+  declare -r -a paths_prefix=(
     "$HOME/.bin"
     "$HOME/.local/bin"
+    "$HOME/.local/share/junest/bin"
   )
 
-  for path in "${paths[@]}"; do
+  declare -r -a paths_suffix=(
+    "$HOME/.junest/usr/bin_wrappers"
+  )
+
+  for path in "${paths_prefix[@]}"; do
     [[ -d "$path" ]] && PATH="$path:$PATH"
+  done
+
+  for path in "${paths_suffix[@]}"; do
+    [[ -d "$path" ]] && PATH="$PATH:$path"
   done
 
   export PATH
