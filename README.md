@@ -1,153 +1,112 @@
 <h1 align="center">
-  <a href="https://github.com/jglovier/dotfiles-logo">
-    <img
-        src="https://raw.githubusercontent.com/jglovier/dotfiles-logo/main/dotfiles-logo.svg"
-        alt="Dotfiles"
-        width="350"
-    >
-    </a>
+  Dotfiles
+  <h3 align="center">
+    My dotfiles, managed with <a href="https://chezmoi.io">chezmoi</a>
+  </h3>
 </h1>
 
-<h4 align="center">
-  My dotfiles, managed with
-      <a href="https://chezmoi.io/" target="_blank">chezmoi</a>.
-</h4>
-
 <p align="center">
-  <a href="docs/CONTRIBUTING.md">
-    <img
-        src="https://badgen.net/badge/PRs/welcome"
-        alt="PRs are welcome"
-    >
-  </a>
-
-  <a href="http://commitizen.github.io/cz-cli/">
-    <img
-        src="https://badgen.net/badge/Commitizen/friendly"
-        alt="Commitizen friendly"
-    >
-  </a>
-
-  <a href="https://badgen.net/github/stars/trueNAHO/dotfiles?cache=0">
-    <img
-        src="https://badgen.net/github/stars/trueNAHO/dotfiles?cache=0"
-        alt="stars: N/A"
-    >
-  </a>
-
-  <a href="https://badgen.net/github/watchers/trueNAHO/dotfiles?cache=0">
-    <img
-        src="https://badgen.net/github/watchers/trueNAHO/dotfiles?cache=0"
-        alt="watchers: N/A"
-    >
-  </a>
-
-  <a href="https://badgen.net/github/contributors/trueNAHO/dotfiles?cache=0">
-    <img
-        src="https://badgen.net/github/contributors/trueNAHO/dotfiles?cache=0"
-        alt="contributors: N/A"
-    >
-  </a>
-
-  <a href="https://badgen.net/github/branches/trueNAHO/dotfiles?cache=0">
-    <img
-        src="https://badgen.net/github/branches/trueNAHO/dotfiles?cache=0"
-        alt="branches: N/A"
-    >
-  </a>
-
-  <a href="https://badgen.net/github/last-commit/trueNAHO/dotfiles/master?cache=0">
-    <img
-        src="https://badgen.net/github/last-commit/trueNAHO/dotfiles/master?cache=0"
-        alt="last commit: N/A ago"
-    >
-  </a>
-
-  <a href="https://badgen.net/github/checks/trueNAHO/dotfiles?cache=0">
-    <img
-        src="https://badgen.net/github/checks/trueNAHO/dotfiles?cache=0"
-        alt="checks: N/A"
-    >
-  </a>
-
-  <a href="https://badgen.net/github/status/trueNAHO/dotfiles?cache=0">
-    <img
-        src="https://badgen.net/github/status/trueNAHO/dotfiles?cache=0"
-        alt="status: N/A"
-    >
-  </a>
-
-  <a href="docs/CODE_OF_CONDUCT.md">
-    <img
-        src="https://badgen.net/badge/Contributor%20Convenant/2.1"
-        alt="Contributor Convenant 2.1"
-    >
-  </a>
-
-  <a href="LICENSE">
-    <img
-        src="https://badgen.net/github/license/trueNAHO/dotfiles"
-        alt="license: N/A"
-    >
-  </a>
+  <a href="https://github.com/trueNAHO/dotfiles/stargazers"
+    ><img
+      src="https://img.shields.io/github/stars/trueNAHO/dotfiles?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"
+      alt="Stars: N/A"
+  /></a>
+  <a href="https://github.com/trueNAHO/dotfiles/issues"
+    ><img
+      src="https://img.shields.io/github/issues/trueNAHO/dotfiles?colorA=363a4f&colorB=f5a97f&style=for-the-badge"
+      alt="Issues: N/A"
+  /></a>
+  <a href="https://github.com/trueNAHO/dotfiles/contributors"
+    ><img
+      src="https://img.shields.io/github/contributors/trueNAHO/dotfiles?colorA=363a4f&colorB=a6da95&style=for-the-badge"
+      alt="Issues: N/A"
+  /></a>
 </p>
 
-<p align="center">
-  <a href="#how-to-use">How to use</a> •
-  <a href="#related">Related</a> •
-  <a href="#contrbuting">Contributing</a> •
-  <a href="#license">License</a>
-</p>
+<!--toc:start-->
+- [Installation](#installation)
+  - [Installing dotfiles without an existing chezmoi installation](#installing-dotfiles-without-an-existing-chezmoi-installation)
+  - [Installing dotfiles with an existing chezmoi installation](#installing-dotfiles-with-an-existing-chezmoi-installation)
+- [Related](#related)
+- [Contributing](#contributing)
+- [License](#license)
+<!--toc:end-->
 
-# How to use
+## Installation
 
-## [chezmoi](https://chezmoi.io/) is not installed on the system
+Packages are installed either system-wide or in the home directory depending on
+the values of the `IS_INSTALL_PACKAGES` and `IS_INSTALL_LOCALLY` [chezmoi
+configurations](docs/chezmoi.yaml), and the availability of package managers and
+sudo access. If the `IS_INSTALL_PACKAGES` variable is set to true, the packages
+will be installed, otherwise, they will be skipped. If `IS_INSTALL_LOCALLY` is
+false, and a supported package manager is found with sudo access, the packages
+will be installed system-wide using that package manager. If
+`IS_INSTALL_LOCALLY` is true, the packages will be installed in the home
+directory using the [JuNest](https://github.com/fsquillace/junest) tool if it is
+available, otherwise [JuNest](https://github.com/fsquillace/junest) will be
+installed first. If `IS_INSTALL_LOCALLY` is false, no supported package manager
+is found, and sudo access is not available, an error message will be printed to
+standard error.
 
-Install all dotfiles from this GitHub repository on a new, empty machine with a
-single command:
+The internal [JuNest](https://github.com/fsquillace/junest) installation
+requires the `curl`, `git`, and `wget` utilities. For more information on
+customizing the internal installation variables, refer to the [example
+configuration file](docs/chezmoi.yaml) for [chezmoi](https://chezmoi.io), which
+includes all the default values.
 
-```bash
-sh -c "$(curl -fsLS https://chezmoi.io/get)" -- init --apply --one-shot https://github.com/trueNAHO/dotfiles.git
-```
+### Installing dotfiles without an existing [chezmoi](https://chezmoi.io) installation
 
-Install all dotfiles **AND [chezmoi](https://chezmoi.io/)** from this GitHub
-repository on a new, empty machine with a single command:
-
-```bash
-sh -c "$(curl -fsLS https://chezmoi.io/get)" -- init --apply https://github.com/trueNAHO/dotfiles.git
-```
-
-## [chezmoi](https://chezmoi.io/) is installed on the system
-
-If [chezmoi](https://chezmoi.io/) is already installed on the system and you
-want to install all dotfiles from this GitHub repository, then run:
-
-```bash
-chezmoi init https://github.com/trueNAHO/dotfiles.git
-```
-
-If [chezmoi](https://chezmoi.io/) is already installed on the system and you
-want to install all dotfiles from this GitHub repository **AND remove
-[chezmoi](https://chezmoi.io/)'s source and config directories after
-applying**, then run:
+If [chezmoi](https://chezmoi.io) is not installed on the system, use the
+following command to install [chezmoi](https://chezmoi.io) and all dotfiles from
+this repository:
 
 ```bash
-chezmoi init --purge --force https://github.com/trueNAHO/dotfiles.git
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://github.com/trueNAHO/dotfiles.git
 ```
 
-# Related
+[Alternatively](https://www.chezmoi.io/reference/commands/init/#-one-shot), use
+the following command to install all dotfiles from this repository without
+[chezmoi](https://chezmoi.io). It attempts to install the dotfiles with
+[chezmoi](https://chezmoi.io) and then remove all traces of
+[chezmoi](https://chezmoi.io) from the system, which can be useful for setting
+up temporary environments such as Docker containers:
 
-- [Commitizen](http://commitizen.github.io/cz-cli/) - Simple commit conventions
-  for internet citizens.
-- [chezmoi](https://chezmoi.io/) - Manage your dotfiles across multiple diverse
-  machines, securely.
-- [pre-commit](https://pre-commit.com/) - A framework for managing and
-  maintaining multi-language pre-commit hooks.
+```bash
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --one-shot https://github.com/trueNAHO/dotfiles.git
+```
 
-# Contributing
+### Installing dotfiles with an existing [chezmoi](https://chezmoi.io) installation
 
-Please read [CONTRIBUTING.md](docs/CONTRIBUTING.md) for details on contributing.
+If [chezmoi](https://chezmoi.io) is already installed on the system, use the
+following command to install all dotfiles from this repository:
 
-# License
+```bash
+chezmoi init --apply https://github.com/trueNAHO/dotfiles.git
+```
+
+[Alternatively](https://www.chezmoi.io/reference/commands/init/#-purge), use the
+following command to install all dotfiles from this repository, and then remove
+the source and config directories after applying:
+
+```bash
+chezmoi init --apply --purge https://github.com/trueNAHO/dotfiles.git
+```
+
+## Related
+
+- [Commitizen](http://commitizen.github.io/cz-cli)
+  - Simple commit conventions for internet citizens.
+- [JuNest](https://github.com/fsquillace/junest)
+  - The lightweight Arch Linux based distro that runs, without root privileges,
+    on top of any other Linux distro.
+- [chezmoi](https://chezmoi.io)
+  - Manage your dotfiles across multiple diverse machines, securely.
+
+## Contributing
+
+For information on contributing to this project, please refer to
+[CONTRIBUTING.md](docs/CONTRIBUTING.md).
+
+## License
 
 This project is licensed under [GNU GENERAL PUBLIC LICENSE Version 3](LICENSE).
