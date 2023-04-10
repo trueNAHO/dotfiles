@@ -31,7 +31,6 @@ extend_path() {
   declare -r -a paths=(
     "$HOME/.bin"
     "$HOME/.local/bin"
-    "$HOME/p/applications"
   )
 
   for path in "${paths[@]}"; do
