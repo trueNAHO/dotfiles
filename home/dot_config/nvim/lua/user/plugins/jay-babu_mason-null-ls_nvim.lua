@@ -20,25 +20,23 @@ require("packer").use({
         mason_null_ls.setup({
             automatic_installation = true,
             automatic_setup = true,
+            handlers = {
+                function(source_name, methods)
+                    mason_null_ls_setup(source_name, methods)
+                end,
+                stylua = function(source_name, methods)
+                    null_ls.register(null_ls.builtins.formatting.stylua.with({
+                        extra_args = {
+                            "--column-width",
+                            column_width,
+                            "--indent-type",
+                            "Spaces",
+                        },
+                    }))
+                end,
+            }
         })
 
         null_ls.setup()
-
-        mason_null_ls.setup_handlers({
-            function(source_name, methods)
-                mason_null_ls_setup(source_name, methods)
-            end,
-
-            stylua = function(source_name, methods)
-                null_ls.register(null_ls.builtins.formatting.stylua.with({
-                    extra_args = {
-                        "--column-width",
-                        column_width,
-                        "--indent-type",
-                        "Spaces",
-                    },
-                }))
-            end,
-        })
     end,
 })
