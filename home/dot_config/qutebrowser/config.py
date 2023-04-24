@@ -1266,7 +1266,7 @@ c.downloads.remove_finished = -1
 # starting from index 0. * `{column0}`: Same as `{column}`, but starting from
 # index 0.
 # Type: ShellCommand
-c.editor.command = [default["editor"], "{file}"]
+c.editor.command = [default["terminal"], "-e", default["editor"], "{file}"]
 
 # Encoding to use for the editor.
 # Type: Encoding
