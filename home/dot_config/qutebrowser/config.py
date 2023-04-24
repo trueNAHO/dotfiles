@@ -33,6 +33,11 @@ base16_scheme = [
     "#B48EAD",
 ]
 
+default = {
+    "editor": os.environ.get("EDITOR") or "vi",
+    "terminal": os.environ.get("TERM") or "xterm"
+}
+
 # Set leader key.
 key_leader = "<Space>"
 
@@ -1261,7 +1266,7 @@ c.downloads.remove_finished = -1
 # starting from index 0. * `{column0}`: Same as `{column}`, but starting from
 # index 0.
 # Type: ShellCommand
-c.editor.command = [os.environ.get("EDITOR") or "xdg-open", "{file}"]
+c.editor.command = [default["editor"], "{file}"]
 
 # Encoding to use for the editor.
 # Type: Encoding
@@ -1277,7 +1282,7 @@ c.editor.remove_file = True
 # written to. If not contained in any argument, the   standard output of the
 # command is read instead.
 # Type: ShellCommand
-c.fileselect.folder.command = [os.environ.get("TERM") or "xterm", "-e", "lf"]
+c.fileselect.folder.command = [default["terminal"], "-e", "lf"]
 
 # Handler for selecting file(s) in forms. If `external`, then the commands
 # specified by `fileselect.single_file.command` and
@@ -1295,9 +1300,7 @@ c.fileselect.handler = "default"
 # Filename of the file to be written to. If not contained in any argument, the
 # standard output of the command is read instead.
 # Type: ShellCommand
-c.fileselect.multiple_files.command = [
-    os.environ.get("TERM") or "xterm", "-e", "lf"
-]
+c.fileselect.multiple_files.command = [default["terminal"], "-e", "lf"]
 
 # Command (and arguments) to use for selecting a single file in forms. The
 # command should write the selected file path to the specified file or stdout.
@@ -1305,9 +1308,7 @@ c.fileselect.multiple_files.command = [
 # written to. If not contained in any argument, the standard output of the
 # command is read instead.
 # Type: ShellCommand
-c.fileselect.single_file.command = [
-    os.environ.get("TERM") or "xterm", "-e", "lf"
-]
+c.fileselect.single_file.command = [default["terminal"], "-e", "lf"]
 
 # Font used in the completion categories.
 # Type: Font
