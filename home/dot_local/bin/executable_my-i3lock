@@ -1,0 +1,57 @@
+#!/usr/bin/env sh
+
+# Start i3lock, and play a video on it.
+#
+# Usage: my-i3lock
+
+I3LOCK_OPTIONS="--color 1a1b29 --nofork"
+I3LOCK_TIMEOUT_SECONDS=60
+MPV_NICE="19"
+MPV_OPTIONS="--framedrop=decoder+vo --hwdec=auto-safe --loop-file=inf --no-audio --no-config --no-input-default-bindings --no-keepaspect --no-osc --profile=low-latency --start=$(shuf --input-range 0-100 --head-count 1)% --vo=gpu"
+MPV_START_DELAY_SECONDS=60
+VIDEO="$HOME/p/lockscreen/lockscreen.mp4"
+
+main() {
+    # Start i3lock in the background.
+    i3lock $I3LOCK_OPTIONS &
+
+    pid_i3lock=$!
+
+    time_start=$(date +%s)
+    window_id=""
+
+    time_end="$time_start"
+
+    # Wait until the i3lock window started and get its window ID.
+    while [ -z "$window_id" ]; do
+        if [ "$((time_end - time_start))" -ge "$I3LOCK_TIMEOUT_SECONDS" ]; then
+            printf \
+                '%s\n' \
+                "i3lock window detection timeout after ${I3LOCK_TIMEOUT_SECONDS}s." \
+                >&2
+
+            exit 0
+        fi
+
+        window_id="$(xdotool search --name "i3lock")"
+
+        time_end=$(date +%s)
+    done
+
+    # Wait before starting mpv with the i3lock window ID.
+    {
+        sleep "$MPV_START_DELAY_SECONDS"
+        nice -n "$MPV_NICE" mpv $MPV_OPTIONS "--wid=$window_id" "$VIDEO"
+    } >/dev/null 2>&1 &
+
+    # Get the PID of the mpv process.
+    pid_mpv="$!"
+
+    # Wait for i3lock to exit.
+    wait "$pid_i3lock"
+
+    # Kill the mpv process.
+    kill "$pid_mpv" 2>/dev/null
+}
+
+main || true
