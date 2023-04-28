@@ -3,6 +3,7 @@
 
 # `xinitrc` configures the initialisation of xinit.
 
+declare -r -i screensaver_timout_seconds=180
 declare -r -i wallpaper_interval_minutes=15
 declare -r -i wallpaper_nice=19
 declare -r system_modmap="/etc/X11/xinit/.Xmodmap"
@@ -68,6 +69,9 @@ set_configs() {
   # independent of the window manager and desktop environment."
   # (https://wiki.archlinux.org/title/Xbindkeys)
   xbindkeys
+
+  # Set screen saver parameters.
+  xset s "$screensaver_timout_seconds"
 }
 
 # @url https://unix.stackexchange.com/questions/253489/
