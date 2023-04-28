@@ -19,6 +19,9 @@ declare -r user_resources="$HOME/.Xresources"
 async_load() { {
   set_keyboard_layout &
 
+  # Use external locker as X screen saver.
+  xss-lock --transfer-sleep-lock -- "$HOME/.local/bin/my-i3lock" &
+
   # Run `warpd` after `autorandr` has finished. `warpd` (v1.3.4) does not
   # properly recognise the screen dimensions when running `autorandr` before.
   {
