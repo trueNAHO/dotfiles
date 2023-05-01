@@ -1,11 +1,3 @@
-[user]
-    name = NAHO
-    email = 90870942+trueNAHO@users.noreply.github.com
-    signingKey = 5FC6088AFB1A609D4532F9190C1C177B3B6468E0
-
-[commit]
-    gpgSign = true
-
 [alias]
     # https://stackoverflow.com/questions/1057564
     # "I don't do `git log` all the time, but when I do, just remember: (a dog)
@@ -14,3 +6,11 @@
     adgs = log --all --decorate --graph --stat
     adog = log --all --decorate --oneline --graph
     adogs = log --all --decorate --oneline --graph --stat
+
+[commit]
+    gpgSign = true
+
+[user]
+    name = NAHO
+    email = 90870942+trueNAHO@users.noreply.github.com
+    signingKey = 5FC6088AFB1A609D4532F9190C1C177B3B6468E0
