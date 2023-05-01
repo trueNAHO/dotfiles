@@ -10,6 +10,9 @@
 [commit]
     gpgSign = true
 
+[merge]
+    conflictstyle = diff3
+
 [user]
     name = NAHO
     email = 90870942+trueNAHO@users.noreply.github.com
