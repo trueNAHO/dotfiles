@@ -1,4 +1,10 @@
 [alias]
+    # https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases
+    br = branch
+    ci = commit
+    co = checkout
+    st = status
+
     # https://stackoverflow.com/questions/1057564
     # "I don't do `git log` all the time, but when I do, just remember: (a dog)
     # `--all --decorate --oneline --graph`"
