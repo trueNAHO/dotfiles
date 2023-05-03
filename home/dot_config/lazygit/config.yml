@@ -1,3 +1,7 @@
+# https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell
+git:
+  branchLogCmd: "git log --color=always --decorate --graph --oneline {{branchName}} --"
+
 # Use catppuccin's Mocha (https://github.com/catppuccin/lazygit) theme.
 gui:
   theme:
