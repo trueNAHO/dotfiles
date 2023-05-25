@@ -19,6 +19,9 @@
 [merge]
     conflictstyle = diff3
 
+[tag]
+	gpgsign = true
+
 [user]
     name = NAHO
     email = 90870942+trueNAHO@users.noreply.github.com
