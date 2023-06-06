@@ -28,71 +28,67 @@
 # `xbindkeys` segmentation faults!!!
 
 # Spawn `$TERM` terminal if `$TERM` is set. Otherwise try to spawn `xterm`.
-# Send desktop notifications about errors.
-"command() { "${TERM:-xterm}"; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+"if [ -n "$TERM" ]; then "$TERM"; else xterm; fi"
     Mod4 + Return
 
 # Screenshot without selecting. File is saved as `$HOME/tmp/img.png` or as
-# `/tmp/${USER}_maim.png` and then stored to clipboard. Send desktop
-# notifications about errors. WARNING: The command string cannot go over 420
-# characters. Otherwise `xbindkeys` segmentation faults!!!
-"command() { folder="$HOME/tmp"; extension="png"; filename="img"; if [ ! -d "$folder" ]; then folder="/tmp"; filename="${USER}_maim"; mkdir -p "$folder"; fi; filepath="$folder/$filename.$extension"; maim "$filepath" && xclip -selection clipboard -t "image/$extension" -i "$filepath"; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+# `/tmp/${USER}_maim.png` and then stored to clipboard. WARNING: The command
+# string cannot go over 420 characters. Otherwise `xbindkeys` segmentation
+# faults!!!
+"folder="$HOME/tmp"; extension="png"; filename="img"; if [ ! -d "$folder" ]; then folder="/tmp"; filename="${USER}_maim"; mkdir -p "$folder"; fi; filepath="$folder/$filename.$extension"; maim "$filepath" && xclip -selection clipboard -t "image/$extension" -i "$filepath""
    Mod4+Shift + c
 
 # Select region to screenshot. File is saved as `$HOME/tmp/img.png` or as
-# `/tmp/${USER}_maim.png` and then stored to clipboard. Send desktop
-# notifications about errors. WARNING: The command string cannot go over 420
-# characters. Otherwise `xbindkeys` segmentation faults!!!
-"command() { folder="$HOME/tmp"; extension="png"; filename="img"; if [ ! -d "$folder" ]; then folder="/tmp"; filename="${USER}_maim"; mkdir -p "$folder"; fi; filepath="$folder/$filename.$extension"; maim -us "$filepath" && xclip -selection clipboard -t "image/$extension" -i "$filepath"; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+# `/tmp/${USER}_maim.png` and then stored to clipboard. WARNING: The command
+# string cannot go over 420 characters. Otherwise `xbindkeys` segmentation
+# faults!!!
+"folder="$HOME/tmp"; extension="png"; filename="img"; if [ ! -d "$folder" ]; then folder="/tmp"; filename="${USER}_maim"; mkdir -p "$folder"; fi; filepath="$folder/$filename.$extension"; maim -us "$filepath" && xclip -selection clipboard -t "image/$extension" -i "$filepath""
    Mod4 + c
 
-# Spawn `dmenu_run`, which pipes programs in `$PATH` into `dmenu`. Send desktop
-# notifications about errors.
-"command() { dmenu_run -p 'Run'; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+# Spawn `dmenu_run`, which pipes programs in `$PATH` into `dmenu`.
+"dmenu_run -p 'Run'"
     Mod4 + r
 
 # Increase the brightness level by 5 percent.
-"command() { light -A 5; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+"light -A 5"
     Mod4 + Up
 
 # Set the brightness level to 0 percent.
-"command() { light -S 0; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+"light -S 0"
     Mod4+Shift + Down
 
 # Set the brightness level to 100 percent.
-"command() { light -S 100; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+"light -S 100"
     Mod4+Shift + Up
 
 # Decrease the brightness level by 5 percent.
-"command() { light -U 5; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+"light -U 5"
     Mod4 + Down
 
 # Toggle the mute status of the default sink.
-"command() { pactl set-sink-mute @DEFAULT_SINK@ toggle; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
     Mod4+Shift + Left
 
 # Increase the volume level of the default sink by 5 percent.
-"command() { pactl set-sink-volume @DEFAULT_SINK@ +5%; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+"pactl set-sink-volume @DEFAULT_SINK@ +5%"
     Mod4 + Right
 
 # Decrease the volume level of the default sink by 5 percent.
-"command() { pactl set-sink-volume @DEFAULT_SINK@ -5%; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+"pactl set-sink-volume @DEFAULT_SINK@ -5%"
     Mod4 + Left
 
 # Set the volume level of the default sink to 100 percent.
-"command() { pactl set-sink-volume @DEFAULT_SINK@ 100%; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+"pactl set-sink-volume @DEFAULT_SINK@ 100%"
     Mod4+Shift + Right
 
-# Spawn `passmenu`, which pipes `$PASSWORD_STORE_DIR` into `dmenu`. Send
-# desktop notifications about errors.
-"command() { passmenu -p 'Pass'; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+# Spawn `passmenu`, which pipes `$PASSWORD_STORE_DIR` into `dmenu`.
+"passmenu -p 'Pass'"
     Mod4 + p
 
-# Suspend the system. Send desktop notifications about errors.
-"command() { systemctl suspend; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+# Suspend the system.
+"systemctl suspend"
     Mod4+Shift + s
 
 # Activate the screen lock on one or more sessions, if the session supports it.
-# Send desktop notifications about errors.
-"command() { loginctl lock-session; }; summary="xbindkeys: $(declare -f command)"; body="$(command 2>&1 > /dev/null)" || notify-send -u critical "$summary" "$body""
+"loginctl lock-session"
     Mod4+Shift + l
