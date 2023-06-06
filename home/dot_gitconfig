@@ -5,6 +5,8 @@
     co = checkout
     st = status
 
+    cm = commit --message
+
     # https://stackoverflow.com/questions/1057564
     # "I don't do `git log` all the time, but when I do, just remember: (a dog)
     # `--all --decorate --oneline --graph`"
