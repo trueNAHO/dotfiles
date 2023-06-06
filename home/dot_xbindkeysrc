@@ -31,18 +31,14 @@
 "if [ -n "$TERM" ]; then "$TERM"; else xterm; fi"
     Mod4 + Return
 
-# Screenshot without selecting. File is saved as `$HOME/tmp/img.png` or as
-# `/tmp/${USER}_maim.png` and then stored to clipboard. WARNING: The command
-# string cannot go over 420 characters. Otherwise `xbindkeys` segmentation
-# faults!!!
-"folder="$HOME/tmp"; extension="png"; filename="img"; if [ ! -d "$folder" ]; then folder="/tmp"; filename="${USER}_maim"; mkdir -p "$folder"; fi; filepath="$folder/$filename.$extension"; maim "$filepath" && xclip -selection clipboard -t "image/$extension" -i "$filepath""
+# Capture and save full-screen screenshot to $HOME/tmp/image.png, then copy to
+# the clipboard.
+"filepath="$HOME/tmp/image.png"; maim "$filepath" && xclip -selection clipboard -target image/png -in "$filepath""
    Mod4+Shift + c
 
-# Select region to screenshot. File is saved as `$HOME/tmp/img.png` or as
-# `/tmp/${USER}_maim.png` and then stored to clipboard. WARNING: The command
-# string cannot go over 420 characters. Otherwise `xbindkeys` segmentation
-# faults!!!
-"folder="$HOME/tmp"; extension="png"; filename="img"; if [ ! -d "$folder" ]; then folder="/tmp"; filename="${USER}_maim"; mkdir -p "$folder"; fi; filepath="$folder/$filename.$extension"; maim -us "$filepath" && xclip -selection clipboard -t "image/$extension" -i "$filepath""
+# Select and save region screenshot to $HOME/tmp/image.png, then copy to the
+# clipboard.
+"filepath="$HOME/tmp/image.png"; maim --hidecursor --select "$filepath" && xclip -selection clipboard -target image/png -in "$filepath""
    Mod4 + c
 
 # Spawn `dmenu_run`, which pipes programs in `$PATH` into `dmenu`.
