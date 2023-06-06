@@ -83,8 +83,8 @@
 
 # Suspend the system.
 "systemctl suspend"
-    Mod4+Shift + s
+    Mod4+Mod3 + s
 
 # Activate the screen lock on one or more sessions, if the session supports it.
 "loginctl lock-session"
-    Mod4+Shift + l
+    Mod4+Mod3 + l
