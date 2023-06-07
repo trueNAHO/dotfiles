@@ -3,6 +3,7 @@
 
 # `xinitrc` configures the initialisation of xinit.
 
+declare -r -a graphical_user_interfaces=(leftwm awesome)
 declare -r -i screensaver_timout_seconds=180
 declare -r -i wallpaper_interval_minutes=15
 declare -r -i wallpaper_nice=19
@@ -54,7 +55,11 @@ async_load() { {
 
 # Replace current shell with a graphical user interface.
 exec_graphical_user_interface() {
-  exec awesome
+  for graphical_user_interface in "${graphical_user_interfaces[@]}"; do
+    if command -v "$graphical_user_interface" >/dev/null 2>&1; then
+      exec "$graphical_user_interface"
+    fi
+  done
 }
 
 # Set configurations for various tools.
