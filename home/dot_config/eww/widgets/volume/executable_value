@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+source config/eww-config
+
+readonly DEFAULT_ICON="󰖁"
+
+eww_update_volume_icon() {
+    icon=""
+
+    if (($1 < 0)); then
+        icon="$DEFAULT_ICON"
+    elif (($1 == 0)); then
+        icon="󰝟"
+    elif (($1 <= 33)); then
+        icon="󰕿"
+    elif (($1 <= 66)); then
+        icon="󰖀"
+    elif (($1 <= 100)); then
+        icon="󰕾"
+    else
+        icon="󱄠"
+    fi
+
+    # https://github.com/elkowar/eww/discussions/300
+    eww --config "$EWW_CONFIG" update "volume-icon=${icon}"
+}
+
+get_volume() {
+    # https://bbs.archlinux.org/viewtopic.php?id=276379
+    # https://unix.stackexchange.com/questions/101252
+    bc <<< \
+        "$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $NF}') * 100 / 1"
+}
+
+update() {
+    volume="$(get_volume)"
+    eww_update_volume_icon "$volume"
+    printf '%d\n' "$volume"
+}
+
+main() {
+    update
+
+    # https://stackoverflow.com/questions/34936783
+    pactl subscribe |
+        grep --line-buffered sink |
+        while read -r _; do update; done
+}
+
+main

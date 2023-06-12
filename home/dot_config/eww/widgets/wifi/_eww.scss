@@ -1,0 +1,8 @@
+@import "../../styles/_window-bar-widget";
+@import "../../styles/_widget-icon";
+
+.widget-wifi {
+  @include widget-icon;
+  @include window-bar-widget;
+  color: $magenta;
+}

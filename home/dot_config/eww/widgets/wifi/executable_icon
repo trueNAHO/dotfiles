@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+icon=""
+
+# https://askubuntu.com/questions/117065
+if [ -z "$(iwgetid --raw)" ]; then
+    icon="󰖪"
+else
+    icon="󰖩"
+fi
+
+printf '%s\n' "$icon"

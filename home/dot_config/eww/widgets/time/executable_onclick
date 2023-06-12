@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+"$TERM" -e sh -c "cal --year; read"

@@ -1,0 +1,19 @@
+@import "../../styles/_window-bar-box";
+
+.window-bar {
+  background-color: $background;
+  font-family: FiraCode Nerd Font Mono;
+  font-weight: Bold;
+}
+
+.window-bar-workspaces {
+  @include window-bar-box;
+}
+
+.window-bar-controls {
+  @include window-bar-box;
+}
+
+.window-bar-time {
+  @include window-bar-box;
+}

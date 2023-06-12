@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+# https://askubuntu.com/questions/69556
+upower -i $(upower -e | grep BAT)

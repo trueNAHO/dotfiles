@@ -1,0 +1,37 @@
+;; `volume-icon` is updated by `widgets/volume/value`.
+(defvar volume-hover false)
+(defvar volume-icon "󰖁")
+
+(deflisten volume-value :initial "00" "widgets/volume/value")
+
+(defwidget volume []
+ (eventbox
+  :onhover "${EWW_CMD} update volume-hover=true"
+  :onhoverlost "${EWW_CMD} update volume-hover=false"
+  (box
+   :class "widget-volume"
+   :orientation "vertical"
+   :space-evenly false
+   (revealer
+    :class "widget-volume-revealer"
+    :reveal volume-hover
+    :transition "slideup"
+    (scale
+     :flipped true
+     :max 101
+     :min 0
+     :onchange "wpctl set-volume @DEFAULT_AUDIO_SINK@ {}%"
+     :orientation "vertical"
+     :value volume-value))
+   (eventbox
+    :onclick "widgets/volume/onclick"
+    :onscroll "[ {} == up ] && wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ || wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-"
+    (box
+     :orientation "vertical"
+     :space-evenly false
+     (label
+      :class "widget-volume-icon"
+      :text volume-icon)
+     (label
+      :class "widget-volume-value"
+      :text "${volume-value}%"))))))

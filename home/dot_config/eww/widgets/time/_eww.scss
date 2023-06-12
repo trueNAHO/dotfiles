@@ -1,0 +1,8 @@
+@import "../../styles/_big-text";
+@import "../../styles/_window-bar-widget";
+
+.widget-time {
+  @include big-text;
+  @include window-bar-widget;
+  color: $white;
+}

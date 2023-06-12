@@ -1,0 +1,15 @@
+(defvar time-hover false)
+
+(defpoll time-hour :initial "00" :interval "1m" "date '+%H'")
+(defpoll time-minute :initial "00" :interval "1m" "date '+%M'")
+(defpoll time-tooltip :initial "" :interval "1s" :run-while time-hover "date")
+
+(defwidget time []
+ (eventbox
+  :onclick "widgets/time/onclick"
+  :onhover "${EWW_CMD} update time-hover=true"
+  :onhoverlost "${EWW_CMD} update time-hover=false"
+  (box
+   :class "widget-time"
+   :tooltip time-tooltip
+   "${time-hour}\\n${time-minute}")))

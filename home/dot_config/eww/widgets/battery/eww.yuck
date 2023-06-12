@@ -1,0 +1,20 @@
+(defvar battery-hover false)
+
+(defpoll battery-icon :initial "󰂑" :interval "1m" "widgets/battery/icon")
+(defpoll battery-tooltip :initial "" :interval "1m" "widgets/battery/tooltip")
+
+(defpoll battery-update
+ :initial "󰂑"
+ :interval "1s"
+ :run-while battery-hover
+ "widgets/battery/hover")
+
+(defwidget battery []
+ (eventbox
+  :onclick "widgets/battery/onclick"
+  :onhover "${EWW_CMD} update battery-hover=true"
+  :onhoverlost "${EWW_CMD} update battery-hover=false"
+  (box
+   :class "widget-battery"
+   :tooltip battery-tooltip
+   battery-icon)))

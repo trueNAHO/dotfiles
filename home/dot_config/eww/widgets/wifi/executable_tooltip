@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+connected_network="$(iwgetid --raw)"
+
+text=""
+
+# https://askubuntu.com/questions/117065
+if [ -z "$connected_network" ]; then
+    text="Not connected"
+else
+    text="Connected to: $connected_network"
+fi
+
+printf '%s\n' "$text"

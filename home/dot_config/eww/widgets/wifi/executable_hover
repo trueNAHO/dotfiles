@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+source config/eww-config
+
+eww --config "$EWW_CONFIG" update "wifi-icon=$(widgets/wifi/icon)"

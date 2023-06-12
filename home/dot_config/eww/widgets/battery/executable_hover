@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source config/eww-config
+
+eww --config "$EWW_CONFIG" update "battery-icon=$(widgets/battery/icon)"
+eww --config "$EWW_CONFIG" update "battery-tooltip=$(widgets/battery/tooltip)"
