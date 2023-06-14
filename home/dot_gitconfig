@@ -6,6 +6,7 @@
     st = status
 
     cm = commit --message
+    df = diff
 
     # https://stackoverflow.com/questions/1057564
     # "I don't do `git log` all the time, but when I do, just remember: (a dog)
