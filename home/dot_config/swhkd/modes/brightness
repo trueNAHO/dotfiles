@@ -1,0 +1,11 @@
+super + b
+    @enter brightness
+
+mode brightness
+{escape,q}
+    @escape{,}
+
+# Decrease or increase the brightness level.
+{j,k}
+    brightnessctl set {2%-,+2%}
+endmode

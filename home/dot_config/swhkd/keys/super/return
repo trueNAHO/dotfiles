@@ -1,0 +1,3 @@
+# Launch the terminal.
+super + return
+    alacritty

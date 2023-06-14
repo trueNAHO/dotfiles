@@ -1,0 +1,19 @@
+super + o
+    @enter open
+
+mode open oneoff
+{escape,q}
+    @escape{,}
+
+# Open the browser.
+b
+    qutebrowser
+
+# Open `passmenu`, which pipes `$PASSWORD_STORE_DIR` into `dmenu`.
+p
+    passmenu -p 'Pass'
+
+# Launch the application launcher.
+r
+    dmenu_run -p Run
+endmode

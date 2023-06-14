@@ -1,0 +1,19 @@
+super + c
+    @enter controls
+
+mode controls oneoff
+{escape,q}
+    @escape{,}
+
+# Kill the current session, if supported.
+k
+    loginctl kill-session "$XDG_SESSION_ID"
+
+# Lock the current session, if supported.
+l
+    loginctl lock-session
+
+# Suspend the system.
+s
+    systemctl suspend
+endmode
