@@ -67,6 +67,10 @@ set_configs() {
   [[ -f "$user_resources" ]] && xrdb -merge "$user_resources"
   [[ -f "$user_modmap" ]]    && xmodmap "$user_modmap"
 
+  # "sxhkd is an X daemon that reacts to input events by executing commands."
+  # (https://github.com/baskerville/sxhkd)
+  sxhkd &
+
   # Set screen saver parameters.
   xset s "$screensaver_timout_seconds"
 }
