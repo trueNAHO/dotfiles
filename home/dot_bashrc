@@ -96,6 +96,7 @@ _set_aliases() {
 
   # Use shorter command name for commonly used ones.
   alias lg=lazygit
+  alias n=nvim
 }
 
 # Set bash history related variables.
