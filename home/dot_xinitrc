@@ -67,12 +67,6 @@ set_configs() {
   [[ -f "$user_resources" ]] && xrdb -merge "$user_resources"
   [[ -f "$user_modmap" ]]    && xmodmap "$user_modmap"
 
-  # "Xbindkeys is a program that allows to bind commands to certain keys or key
-  # combinations on the keyboard. Xbindkeys works with multimedia keys and is
-  # independent of the window manager and desktop environment."
-  # (https://wiki.archlinux.org/title/Xbindkeys)
-  xbindkeys
-
   # Set screen saver parameters.
   xset s "$screensaver_timout_seconds"
 }
