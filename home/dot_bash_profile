@@ -74,6 +74,13 @@ set_configs() {
   # @url https://vi.stackexchange.com/questions/
   # Set `nvim` as manpager.
   export MANPAGER="sh -c \"col -bx | nvim -c 'set ft=man nomod noma' -\""
+
+   # "The commands are executed via SHELL -c COMMAND (hence you can use
+   # environment variables). SHELL will be the content of the first defined
+   # environment variable in the following list: SXHKD_SHELL, SHELL." (man
+   # 'sxhkd(1)') Use a shell with fast start-up time:
+   # https://github.com/baskerville/sxhkd/issues/161
+  export SXHKD_SHELL="sh"
 }
 
 # Set system defaults.
