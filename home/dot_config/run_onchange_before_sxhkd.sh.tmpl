@@ -1,0 +1,16 @@
+#!/bin/sh
+
+{{ template "install_packages.sh.tmpl" . }}
+
+install_packages_aur alacritty-ligatures-git dmenu2
+
+install_packages_official \
+    brightnessctl \
+    maim \
+    pass \
+    pass \
+    qutebrowser \
+    sxhkd \
+    systemd \
+    wireplumber \
+    xclip
