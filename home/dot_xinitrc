@@ -40,6 +40,10 @@ async_load() { {
     warpd &
   } &
 
+  # "Hide the mouse cursor when typing and show it again when the mouse moves."
+  # (https://github.com/jcs/xbanish)
+  xbanish &
+
   # Start X11 compositor.
   picom &
 
