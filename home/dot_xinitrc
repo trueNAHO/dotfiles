@@ -38,7 +38,6 @@ async_load() { {
 
     # Start a modal keyboard driven pointer manipulation program.
     warpd &
-
   } &
 
   # Start X11 compositor.
