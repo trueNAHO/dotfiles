@@ -74,7 +74,8 @@ set_configs() {
 
   # "sxhkd is an X daemon that reacts to input events by executing commands."
   # (https://github.com/baskerville/sxhkd)
-  sxhkd &
+  find "${XDG_CONFIG_HOME:-$HOME/.config}/sxhkd" -type f -print0 |
+      xargs -0 sxhkd &
 
   # Set screen saver parameters.
   xset s "$screensaver_timout_seconds"
