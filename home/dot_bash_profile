@@ -55,7 +55,7 @@ link_tmp_to_home() {
   declare -r destination="$HOME/tmp"
 
   if [[ ! -d "$destination" ]]; then
-    declare -r target="$(mktemp -d -p "/tmp" "$USER"'_XXXXXXXXXX')"
+    declare -r target="$(mktemp -d -p "/tmp" "$(id --user)"'_XXXXXXXXXX')"
     status "symlink $target to $destination"
     ln -fs "$target" "$destination"
   fi
