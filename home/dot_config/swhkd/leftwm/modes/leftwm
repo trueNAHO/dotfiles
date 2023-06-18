@@ -5,6 +5,30 @@ mode leftwm
 {escape,q}
     @escape{,}
 
+# Set the layout of the currently focused workspace.
+l
+    @escape; \
+
+    layout="$( \
+        printf \
+        '%s\n' \
+        CenterMain \
+        CenterMainBalanced \
+        EvenHorizontal \
+        EvenVertical \
+        Fibonacci \
+        GridHorizontal \
+        LeftWiderRightStack \
+        MainAndDeck \
+        MainAndHorizontalStack \
+        MainAndVertStack \
+        Monocle \
+        RightWiderLeftStack | \
+        dmenu \
+    )" || exit 0; \
+
+    leftwm-command "SetLayout $layout"
+
 # Close the currently focused window.
 shift + q
     @escape; leftwm-command CloseWindow
