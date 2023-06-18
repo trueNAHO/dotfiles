@@ -1,0 +1,83 @@
+super + {1-9}
+    @enter leftwm_send_workspace_{0-8}_to_tag
+
+mode leftwm_send_workspace_0_to_tag
+{escape,q}
+    @escape{,}
+
+# Move workspace 0 to a tag.
+{1-9}
+    leftwm-command 'SendWorkspaceToTag 0 {0-8}'
+endmode
+
+mode leftwm_send_workspace_1_to_tag
+{escape,q}
+    @escape{,}
+
+# Move workspace 1 to a tag.
+{1-9}
+    leftwm-command 'SendWorkspaceToTag 1 {0-8}'
+endmode
+
+mode leftwm_send_workspace_2_to_tag
+{escape,q}
+    @escape{,}
+
+# Move workspace 2 to a tag.
+{1-9}
+    leftwm-command 'SendWorkspaceToTag 2 {0-8}'
+endmode
+
+mode leftwm_send_workspace_3_to_tag
+{escape,q}
+    @escape{,}
+
+# Move workspace 3 to a tag.
+{1-9}
+    leftwm-command 'SendWorkspaceToTag 3 {0-8}'
+endmode
+
+mode leftwm_send_workspace_4_to_tag
+{escape,q}
+    @escape{,}
+
+# Move workspace 4 to a tag.
+{1-9}
+    leftwm-command 'SendWorkspaceToTag 4 {0-8}'
+endmode
+
+mode leftwm_send_workspace_5_to_tag
+{escape,q}
+    @escape{,}
+
+# Move workspace 5 to a tag.
+{1-9}
+    leftwm-command 'SendWorkspaceToTag 5 {0-8}'
+endmode
+
+mode leftwm_send_workspace_6_to_tag
+{escape,q}
+    @escape{,}
+
+# Move workspace 6 to a tag.
+{1-9}
+    leftwm-command 'SendWorkspaceToTag 6 {0-8}'
+endmode
+
+mode leftwm_send_workspace_7_to_tag
+{escape,q}
+    @escape{,}
+
+# Move workspace 7 to a tag.
+{1-9}
+    leftwm-command 'SendWorkspaceToTag 7 {0-8}'
+endmode
+
+mode leftwm_send_workspace_8_to_tag
+{escape,q}
+    @escape{,}
+
+# Move workspace 8 to a tag.
+{1-9}
+    leftwm-command 'SendWorkspaceToTag 8 {0-8}'
+endmode

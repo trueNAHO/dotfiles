@@ -52,12 +52,12 @@ extend_path() {
 
 # Link user specify directory in `/tmp` to `$HOME`.
 link_tmp_to_home() {
-  declare -r destination="$HOME/tmp"
+  export TMPDIR="$HOME/tmp"
 
-  if [[ ! -d "$destination" ]]; then
-    declare -r target="$(mktemp -d -p "/tmp" "$USER"'_XXXXXXXXXX')"
-    status "symlink $target to $destination"
-    ln -fs "$target" "$destination"
+  if [[ ! -d "$TMPDIR" ]]; then
+    declare -r target="$(mktemp -d -p "/tmp" "$(id --user)"'_XXXXXXXXXX')"
+    status "symlink $target to $TMPDIR"
+    ln -fs "$target" "$TMPDIR"
   fi
 }
 

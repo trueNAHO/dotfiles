@@ -1,0 +1,11 @@
+super + v
+    @enter volume
+
+mode volume
+{escape,q}
+    @escape{,}
+
+# Decrease or increase the volume level.
+{j,k}
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%{-,+}
+endmode

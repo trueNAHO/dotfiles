@@ -75,10 +75,12 @@ set_configs() {
   [[ -f "$user_resources" ]] && xrdb -merge "$user_resources"
   [[ -f "$user_modmap" ]]    && xmodmap "$user_modmap"
 
-  # "sxhkd is an X daemon that reacts to input events by executing commands."
-  # (https://github.com/baskerville/sxhkd)
-  find "${XDG_CONFIG_HOME:-$HOME/.config}/sxhkd" -type f -print0 |
-      xargs -0 sxhkd &
+  # "Sxhkd clone for Wayland (works on TTY and X11 too)". "Because swhkd can be
+  # used anywhere, the same swhkd config can be used across Xorg or Wayland
+  # desktops, and you can even use swhkd in a TTY."
+  # (https://github.com/waycrate/swhkd)
+  swhks &
+  pkexec swhkd --config "${XDG_CONFIG_DIR:-$HOME/.config}/swhkd/swhkdrc" &
 
   # Set screen saver parameters.
   xset s "$screensaver_timout_seconds"

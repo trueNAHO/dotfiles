@@ -1,0 +1,20 @@
+super + r
+    @enter record
+
+mode record oneoff
+{escape,q}
+    @escape{,}
+
+# Capture the entire desktop or select a region to capture, and then copy the
+#  image to the clipboard.
+{d,r}
+    if [ -d "$TMPDIR" ]; then \
+        filepath="$TMPDIR/image.png"; \
+    else \
+        umask 077; \
+        filepath="$(mktemp --suffix=.png)"; \
+    fi; \
+
+    maim {,--hidecursor --select} "$filepath" && \
+    xclip -selection clipboard -target image/png -in "$filepath"
+endmode
