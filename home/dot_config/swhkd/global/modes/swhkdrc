@@ -1,0 +1,5 @@
+include /home/noah/.config/swhkd/global/modes/brightness
+include /home/noah/.config/swhkd/global/modes/controls
+include /home/noah/.config/swhkd/global/modes/open
+include /home/noah/.config/swhkd/global/modes/record
+include /home/noah/.config/swhkd/global/modes/volume
