@@ -7,15 +7,15 @@ mode leftwm
 
 # Close the currently focused window.
 shift + q
-    leftwm-command CloseWindow
+    @escape; leftwm-command CloseWindow
 
 # Restart LeftWM and remember the state of all windows.
 shift + r
-    leftwm-command SoftReload
+    @escape; leftwm-command SoftReload
 
 # Move the currently focused window to a tag.
 {0-9}
-    leftwm-command 'SendWindowToTag {0-9}'
+    @escape; leftwm-command 'SendWindowToTag {0-9}'
 
 # Decrease or increase the width of the main window.
 {d,u}
@@ -24,7 +24,7 @@ shift + r
 # Toggle the currently focused window between the fullscreen and non-fullscreen,
 # sticky and non-sticky, and floating and tiling states.
 {f,s,t}
-    leftwm-command Toggle{FullScreen,Sticky,Floating}
+    @escape; leftwm-command Toggle{FullScreen,Sticky,Floating}
 
 # Select the previous or next layout.
 {p,n}
