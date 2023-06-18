@@ -1,1 +1,2 @@
 include /home/noah/.config/swhkd/global/swhkdrc
+include /home/noah/.config/swhkd/leftwm/swhkdrc

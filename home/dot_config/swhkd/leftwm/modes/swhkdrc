@@ -1,0 +1,2 @@
+include /home/noah/.config/swhkd/leftwm/modes/leftwm
+include /home/noah/.config/swhkd/leftwm/modes/leftwm_send_workspace_to_tag
