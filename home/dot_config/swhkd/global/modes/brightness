@@ -1,7 +1,7 @@
 super + b
     @enter brightness && \
     [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
-    printf '%s\n' "brightness" >> "${TMPDIR}/swhkd_$(id --user)"
+    printf '%s\n' "Super+b,Brightness" >> "${TMPDIR}/swhkd_$(id --user)"
 
 mode brightness
 {escape,q}

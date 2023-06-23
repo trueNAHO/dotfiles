@@ -1,7 +1,7 @@
 super + {1-9}
     @enter leftwm_send_workspace_{0-8}_to_tag && \
     [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
-    printf '%s\n' "leftwm_send_workspace_{0-8}_to_tag " >> \
+    printf '%s\n' "Super+{0-8},LeftWM Send Workspace {0-8} to Tag" >> \
     "${TMPDIR}/swhkd_$(id --user)"
 
 mode leftwm_send_workspace_0_to_tag

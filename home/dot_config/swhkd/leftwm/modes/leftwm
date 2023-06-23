@@ -1,7 +1,7 @@
 super + space
     @enter leftwm && \
     [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
-    printf '%s\n' "leftwm" >> "${TMPDIR}/swhkd_$(id --user)"
+    printf '%s\n' "Super+Space,LeftWM" >> "${TMPDIR}/swhkd_$(id --user)"
 
 mode leftwm
 {escape,q}
