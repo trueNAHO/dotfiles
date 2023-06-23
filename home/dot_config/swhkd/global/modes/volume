@@ -1,9 +1,13 @@
 super + v
-    @enter volume
+    @enter volume && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    printf '%s\n' "volume" >> "${TMPDIR}/swhkd_$(id --user)"
 
 mode volume
 {escape,q}
-    @escape{,}
+    @escape{,} && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)"
 
 # Decrease or increase the volume level.
 {j,k}

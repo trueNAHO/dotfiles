@@ -1,19 +1,35 @@
 super + c
-    @enter controls
+    @enter controls && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    printf '%s\n' "controls" >> "${TMPDIR}/swhkd_$(id --user)"
 
-mode controls oneoff
+mode controls
 {escape,q}
-    @escape{,}
+    @escape{,} && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)"
 
 # Kill the current session, if supported.
 k
+    @escape && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)" || exit 0; \
+
     loginctl kill-session "$XDG_SESSION_ID"
 
 # Lock the current session, if supported.
 l
+    @escape && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)" || exit 0; \
+
     loginctl lock-session
 
 # Suspend the system.
 s
+    @escape && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)" || exit 0; \
+
     systemctl suspend
 endmode

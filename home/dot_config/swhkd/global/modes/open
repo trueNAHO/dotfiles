@@ -1,19 +1,35 @@
 super + o
-    @enter open
+    @enter open && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    printf '%s\n' "open" >> "${TMPDIR}/swhkd_$(id --user)"
 
-mode open oneoff
+mode open
 {escape,q}
-    @escape{,}
+    @escape{,} && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)"
 
 # Open the browser.
 b
+    @escape && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)" || exit 0; \
+
     qutebrowser
 
 # Open `passmenu`, which pipes `$PASSWORD_STORE_DIR` into `dmenu`.
 p
+    @escape && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)" || exit 0; \
+
     passmenu -p 'Pass'
 
 # Launch the application launcher.
 r
+    @escape && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)" || exit 0; \
+
     dmenu_run -p Run
 endmode

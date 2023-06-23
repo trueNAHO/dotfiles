@@ -1,13 +1,21 @@
 super + r
-    @enter record
+    @enter record && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    printf '%s\n' "record" >> "${TMPDIR}/swhkd_$(id --user)"
 
-mode record oneoff
+mode record
 {escape,q}
-    @escape{,}
+    @escape{,} && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)"
 
 # Capture the entire desktop or select a region to capture, and then copy the
 #  image to the clipboard.
 {d,r}
+    @escape && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)" || exit 0; \
+
     if [ -d "$TMPDIR" ]; then \
         filepath="$TMPDIR/image.png"; \
     else \

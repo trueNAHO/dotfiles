@@ -1,13 +1,19 @@
 super + space
-    @enter leftwm
+    @enter leftwm && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    printf '%s\n' "leftwm" >> "${TMPDIR}/swhkd_$(id --user)"
 
 mode leftwm
 {escape,q}
-    @escape{,}
+    @escape{,} && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)"
 
 # Set the layout of the currently focused workspace.
 l
-    @escape; \
+    @escape && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)" || exit 0; \
 
     layout="$( \
         printf \
@@ -25,21 +31,33 @@ l
         Monocle \
         RightWiderLeftStack | \
         dmenu \
-    )" || exit 0; \
+    )" && \
 
     leftwm-command "SetLayout $layout"
 
 # Close the currently focused window.
 shift + q
-    @escape; leftwm-command CloseWindow
+    @escape && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)" || exit 0; \
+
+    leftwm-command CloseWindow
 
 # Restart LeftWM and remember the state of all windows.
 shift + r
-    @escape; leftwm-command SoftReload
+    @escape && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)" || exit 0; \
+
+    leftwm-command SoftReload
 
 # Move the currently focused window to a tag.
 {0-9}
-    @escape; leftwm-command 'SendWindowToTag {0-9}'
+    @escape && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)" || exit 0; \
+
+    leftwm-command 'SendWindowToTag {0-9}'
 
 # Decrease or increase the width of the main window.
 {d,u}
@@ -48,7 +66,11 @@ shift + r
 # Toggle the currently focused window between the fullscreen and non-fullscreen,
 # sticky and non-sticky, and floating and tiling states.
 {f,s,t}
-    @escape; leftwm-command Toggle{FullScreen,Sticky,Floating}
+    @escape && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)" || exit 0; \
+
+    leftwm-command Toggle{FullScreen,Sticky,Floating}
 
 # Select the previous or next layout.
 {p,n}
