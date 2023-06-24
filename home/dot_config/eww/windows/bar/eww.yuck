@@ -1,5 +1,6 @@
 (include "widgets/battery/eww.yuck")
 (include "widgets/brightness/eww.yuck")
+(include "widgets/swhkd/eww.yuck")
 (include "widgets/time/eww.yuck")
 (include "widgets/volume/eww.yuck")
 (include "widgets/wifi/eww.yuck")
@@ -17,7 +18,7 @@
      :side "left")
  :stacking "fg"
  :windowtype "dock"
- (box
+ (centerbox
   :class "window-bar"
   :orientation "vertical"
   (box
@@ -26,6 +27,8 @@
    :space-evenly false
    :valign "start"
    (workspaces))
+  (box
+   (swhkd))
   (box
    :orientation "vertical"
    :space-evenly false
