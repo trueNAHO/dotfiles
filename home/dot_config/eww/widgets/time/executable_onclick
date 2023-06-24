@@ -1,3 +1,3 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-"$TERM" -e sh -c "cal --year; read"
+"${TERM:=xterm}" -e sh -c "cal --year; read"
