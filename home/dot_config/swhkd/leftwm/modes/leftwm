@@ -7,13 +7,15 @@ mode leftwm
 {escape,q}
     @escape{,} && \
     [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
-    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)"
+    mode_file="${TMPDIR}/swhkd_$(id --user)" && \
+    printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file"
 
 # Set the layout of the currently focused workspace.
 l
     @escape && \
     [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
-    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)" || exit 0; \
+    mode_file="${TMPDIR}/swhkd_$(id --user)" && \
+    printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
 
     layout="$( \
         printf \
@@ -39,7 +41,8 @@ l
 shift + q
     @escape && \
     [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
-    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)" || exit 0; \
+    mode_file="${TMPDIR}/swhkd_$(id --user)" && \
+    printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
 
     leftwm-command CloseWindow
 
@@ -47,7 +50,8 @@ shift + q
 shift + r
     @escape && \
     [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
-    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)" || exit 0; \
+    mode_file="${TMPDIR}/swhkd_$(id --user)" && \
+    printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
 
     leftwm-command SoftReload
 
@@ -55,7 +59,8 @@ shift + r
 {0-9}
     @escape && \
     [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
-    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)" || exit 0; \
+    mode_file="${TMPDIR}/swhkd_$(id --user)" && \
+    printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
 
     leftwm-command 'SendWindowToTag {0-9}'
 
@@ -68,7 +73,8 @@ shift + r
 {f,s,t}
     @escape && \
     [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
-    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)" || exit 0; \
+    mode_file="${TMPDIR}/swhkd_$(id --user)" && \
+    printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
 
     leftwm-command Toggle{FullScreen,Sticky,Floating}
 

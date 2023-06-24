@@ -7,14 +7,16 @@ mode record
 {escape,q}
     @escape{,} && \
     [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
-    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)"
+    mode_file="${TMPDIR}/swhkd_$(id --user)" && \
+    printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file"
 
 # Capture the entire desktop or select a region to capture, and then copy the
 #  image to the clipboard.
 {d,r}
     @escape && \
     [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
-    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)" || exit 0; \
+    mode_file="${TMPDIR}/swhkd_$(id --user)" && \
+    printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
 
     if [ -d "$TMPDIR" ]; then \
         filepath="$TMPDIR/image.png"; \

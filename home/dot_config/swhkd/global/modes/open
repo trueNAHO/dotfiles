@@ -7,13 +7,15 @@ mode open
 {escape,q}
     @escape{,} && \
     [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
-    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)"
+    mode_file="${TMPDIR}/swhkd_$(id --user)" && \
+    printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file"
 
 # Open the browser.
 b
     @escape && \
     [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
-    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)" || exit 0; \
+    mode_file="${TMPDIR}/swhkd_$(id --user)" && \
+    printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
 
     qutebrowser
 
@@ -21,7 +23,8 @@ b
 p
     @escape && \
     [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
-    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)" || exit 0; \
+    mode_file="${TMPDIR}/swhkd_$(id --user)" && \
+    printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
 
     passmenu -p 'Pass'
 
@@ -29,7 +32,8 @@ p
 r
     @escape && \
     [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
-    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)" || exit 0; \
+    mode_file="${TMPDIR}/swhkd_$(id --user)" && \
+    printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
 
     dmenu_run -p Run
 endmode

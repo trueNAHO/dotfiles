@@ -7,7 +7,8 @@ mode brightness
 {escape,q}
     @escape{,} && \
     [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
-    sed -i '$d' "${TMPDIR}/swhkd_$(id --user)"
+    mode_file="${TMPDIR}/swhkd_$(id --user)" && \
+    printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file"
 
 # Decrease or increase the brightness level.
 {j,k}
