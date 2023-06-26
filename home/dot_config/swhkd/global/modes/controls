@@ -1,19 +1,19 @@
 super + c
     @enter controls && \
-    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp"; \
     printf '%s\n' "Super+c,Controls" >> "${TMPDIR}/swhkd_$(id --user)"
 
 mode controls
 {escape,q}
     @escape{,} && \
-    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp"; \
     mode_file="${TMPDIR}/swhkd_$(id --user)" && \
     printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file"
 
 # Kill the current session, if supported.
 k
     @escape && \
-    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp"; \
     mode_file="${TMPDIR}/swhkd_$(id --user)" && \
     printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
 
@@ -22,7 +22,7 @@ k
 # Lock the current session, if supported.
 l
     @escape && \
-    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp"; \
     mode_file="${TMPDIR}/swhkd_$(id --user)" && \
     printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
 
@@ -31,7 +31,7 @@ l
 # Suspend the system.
 s
     @escape && \
-    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp"; \
     mode_file="${TMPDIR}/swhkd_$(id --user)" && \
     printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
 

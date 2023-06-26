@@ -1,12 +1,12 @@
 super + r
     @enter record && \
-    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp"; \
     printf '%s\n' "Super+r,Record" >> "${TMPDIR}/swhkd_$(id --user)"
 
 mode record
 {escape,q}
     @escape{,} && \
-    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp"; \
     mode_file="${TMPDIR}/swhkd_$(id --user)" && \
     printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file"
 
@@ -14,7 +14,7 @@ mode record
 #  image to the clipboard.
 {d,r}
     @escape && \
-    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp"; \
     mode_file="${TMPDIR}/swhkd_$(id --user)" && \
     printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
 

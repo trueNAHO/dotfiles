@@ -1,12 +1,12 @@
 super + b
     @enter brightness && \
-    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp"; \
     printf '%s\n' "Super+b,Brightness" >> "${TMPDIR}/swhkd_$(id --user)"
 
 mode brightness
 {escape,q}
     @escape{,} && \
-    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp"; \
     mode_file="${TMPDIR}/swhkd_$(id --user)" && \
     printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file"
 

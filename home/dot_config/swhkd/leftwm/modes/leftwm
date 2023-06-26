@@ -1,19 +1,19 @@
 super + space
     @enter leftwm && \
-    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp"; \
     printf '%s\n' "Super+Space,LeftWM" >> "${TMPDIR}/swhkd_$(id --user)"
 
 mode leftwm
 {escape,q}
     @escape{,} && \
-    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp"; \
     mode_file="${TMPDIR}/swhkd_$(id --user)" && \
     printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file"
 
 # Set the layout of the currently focused workspace.
 l
     @escape && \
-    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp"; \
     mode_file="${TMPDIR}/swhkd_$(id --user)" && \
     printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
 
@@ -40,7 +40,7 @@ l
 # Close the currently focused window.
 shift + q
     @escape && \
-    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp"; \
     mode_file="${TMPDIR}/swhkd_$(id --user)" && \
     printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
 
@@ -49,7 +49,7 @@ shift + q
 # Restart LeftWM and remember the state of all windows.
 shift + r
     @escape && \
-    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp"; \
     mode_file="${TMPDIR}/swhkd_$(id --user)" && \
     printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
 
@@ -58,7 +58,7 @@ shift + r
 # Move the currently focused window to a tag.
 {0-9}
     @escape && \
-    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp"; \
     mode_file="${TMPDIR}/swhkd_$(id --user)" && \
     printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
 
@@ -72,7 +72,7 @@ shift + r
 # sticky and non-sticky, and floating and tiling states.
 {f,s,t}
     @escape && \
-    [ -z "$TMPDIR" ] && TMPDIR="/tmp" && \
+    [ -z "$TMPDIR" ] && TMPDIR="/tmp"; \
     mode_file="${TMPDIR}/swhkd_$(id --user)" && \
     printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
 
