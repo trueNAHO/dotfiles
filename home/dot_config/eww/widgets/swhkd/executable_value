@@ -9,8 +9,21 @@ readonly SWHKD_MODE_FILE
 update() {
     swhkd_mode_file_content="$(cat "$SWHKD_MODE_FILE")"
 
-    value="$(awk -F ',' '{printf "%s\\n", $1}' <<< "$swhkd_mode_file_content")"
-    tooltip="$(awk -F ',' '{printf "%s\\n", $2}' <<< "$swhkd_mode_file_content")"
+    value="$(
+        awk \
+            -F ',' \
+            '
+                {
+                    gsub("+", "", $1)
+                    gsub("Space", "␣", $1)
+                    gsub("Super", "⊞", $1)
+                    printf "%s\\n", $1
+                }
+            ' \
+            <<<"$swhkd_mode_file_content"
+    )"
+
+    tooltip="$(awk -F ',' '{print $2}' <<<"$swhkd_mode_file_content")"
 
     printf '%s\n' "$value"
 
