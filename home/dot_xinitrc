@@ -79,6 +79,7 @@ set_configs() {
   # used anywhere, the same swhkd config can be used across Xorg or Wayland
   # desktops, and you can even use swhkd in a TTY."
   # (https://github.com/waycrate/swhkd)
+  killall swhks || :
   swhks &
   pkexec swhkd --config "${XDG_CONFIG_DIR:-$HOME/.config}/swhkd/swhkdrc" &
 
