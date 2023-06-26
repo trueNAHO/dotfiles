@@ -116,13 +116,6 @@ status() {
   printf 'bash_profile: %s\n' "$*"
 }
 
-# https://serverfault.com/questions/805644
-# https://stackoverflow.com/questions/49764993
-systemd_services() {
-  systemctl --user disable swhkd.service
-  systemctl --user restart swhkd.service
-}
-
 # @url https://ryanlue.com/posts/2017-06-29-gpg-for-ssh-auth
 # @url https://wiki.archlinux.org/title/SSH_keys#SSH_agents
 # Use GPG key for SSH authentication.
@@ -143,7 +136,6 @@ main() {
   set_configs
   use_ssh_socket
   source_bashrc
-  systemd_services
   exec_graphical_user_interface
 }
 
