@@ -12,19 +12,19 @@ update() {
     value="$(awk -F ',' '{printf "%s\\n", $1}' <<< "$swhkd_mode_file_content")"
     tooltip="$(awk -F ',' '{printf "%s\\n", $2}' <<< "$swhkd_mode_file_content")"
 
-	printf '%s\n' "$value"
+    printf '%s\n' "$value"
 
-	# https://github.com/elkowar/eww/discussions/300
-	eww --config "$EWW_CONFIG" update "swhkd-tooltip=${tooltip}"
+    # https://github.com/elkowar/eww/discussions/300
+    eww --config "$EWW_CONFIG" update "swhkd-tooltip=${tooltip}"
 }
 
 main() {
-	if ! [[ -f "$SWHKD_MODE_FILE" ]]; then
-		touch "$SWHKD_MODE_FILE"
-	fi
+    if ! [[ -f "$SWHKD_MODE_FILE" ]]; then
+        touch "$SWHKD_MODE_FILE"
+    fi
 
-	inotifywait --quiet -m -e modify "$SWHKD_MODE_FILE" |
-		while read -r _; do update; done
+    inotifywait --quiet -m -e modify "$SWHKD_MODE_FILE" |
+        while read -r _; do update; done
 }
 
 main
