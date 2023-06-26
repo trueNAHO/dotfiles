@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+killall swhks || :
+
 # "Sxhkd clone for Wayland (works on TTY and X11 too)". "Because swhkd can be
 # used anywhere, the same swhkd config can be used across Xorg or Wayland
 # desktops, and you can even use swhkd in a TTY."
