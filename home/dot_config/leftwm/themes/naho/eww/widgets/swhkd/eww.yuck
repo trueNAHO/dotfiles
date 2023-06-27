@@ -1,0 +1,10 @@
+;; `swhkd-tooltip` is updated by `widgets/swhkd/value`.
+(defvar swhkd-tooltip "")
+
+(deflisten swhkd-value :initial "" "widgets/swhkd/value")
+
+(defwidget swhkd []
+ (label
+  :class "widget-swhkd"
+  :text swhkd-value
+  :tooltip swhkd-tooltip))

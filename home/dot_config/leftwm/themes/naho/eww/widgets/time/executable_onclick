@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+"${TERM:=xterm}" -e sh -c "cal --year; read"

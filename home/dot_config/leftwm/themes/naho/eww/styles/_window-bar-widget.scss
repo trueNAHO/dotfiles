@@ -1,0 +1,6 @@
+@mixin window-bar-widget {
+  $vertical-padding: .333rem;
+
+  padding-bottom: $vertical-padding;
+  padding-top: $vertical-padding;
+}

@@ -1,0 +1,51 @@
+(include "widgets/battery/eww.yuck")
+(include "widgets/brightness/eww.yuck")
+(include "widgets/swhkd/eww.yuck")
+(include "widgets/time/eww.yuck")
+(include "widgets/volume/eww.yuck")
+(include "widgets/wifi/eww.yuck")
+(include "widgets/workspaces/eww.yuck")
+
+(defwindow bar
+ :geometry (geometry
+     :height "100%"
+     :width "60px"
+     :x "0"
+     :y "0")
+ :monitor 0
+ :reserve (struts
+     :distance "60px"
+     :side "left")
+ :stacking "fg"
+ :windowtype "dock"
+ (centerbox
+  :class "window-bar"
+  :orientation "vertical"
+  (box
+   :class "window-bar-workspaces"
+   :orientation "vertical"
+   :space-evenly false
+   :valign "start"
+   (workspaces))
+  (box
+   :class "window-bar-center"
+   :orientation "vertical"
+   :space-evenly false
+   (swhkd))
+  (box
+   :orientation "vertical"
+   :space-evenly false
+   :valign "end"
+   (box
+    :class "window-bar-controls"
+    :orientation "vertical"
+    :space-evenly false
+    (wifi)
+    (battery)
+    (brightness)
+    (volume))
+   (box
+    :class "window-bar-time"
+    :orientation "vertical"
+    :space-evenly false
+    (time)))))

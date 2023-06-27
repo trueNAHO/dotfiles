@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+source config/eww-config
+
+SWHKD_MODE_FILE="${TMPDIR:=/tmp}/swhkd_$(id --user)" || exit 1
+
+readonly SWHKD_MODE_FILE
+
+update() {
+    swhkd_mode_file_content="$(cat "$SWHKD_MODE_FILE")"
+
+    value="$(
+        awk \
+            -F ',' \
+            '
+                {
+                    gsub("+", "", $1)
+                    gsub("Space", "␣", $1)
+                    gsub("Super", "⊞", $1)
+                    printf "%s\\n", $1
+                }
+            ' \
+            <<<"$swhkd_mode_file_content"
+    )"
+
+    tooltip="$(awk -F ',' '{print $2}' <<<"$swhkd_mode_file_content")"
+
+    printf '%s\n' "$value"
+
+    # https://github.com/elkowar/eww/discussions/300
+    eww --config "$EWW_CONFIG" update "swhkd-tooltip=${tooltip}"
+}
+
+main() {
+    if ! [[ -f "$SWHKD_MODE_FILE" ]]; then
+        touch "$SWHKD_MODE_FILE"
+    fi
+
+    inotifywait --quiet -m -e modify "$SWHKD_MODE_FILE" |
+        while read -r _; do update; done
+}
+
+main

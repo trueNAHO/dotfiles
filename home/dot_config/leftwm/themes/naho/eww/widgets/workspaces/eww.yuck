@@ -1,0 +1,20 @@
+(defwidget workspaces []
+ (box
+  :class "widget-workspaces"
+  :orientation "vertical"
+  :space-evenly false
+  (for tag in "${wmstate.workspaces[0].tags}"
+   (button
+    :class {
+    tag.mine ? "widget-workspaces-button-mine" :
+    tag.visible ? "widget-workspaces-button-visible" :
+    tag.urgent ? "widget-workspaces-button-urgent" :
+    tag.busy ? "widget-workspaces-button-busy" : "widget-workspaces-button"
+    }
+    :onclick "leftwm-command 'SendWorkspaceToTag 0 ${tag.index}'"
+    "${tag.name}"))))
+
+(deflisten
+ wmstate
+ :initial '{"workspaces":[{"layout":"","tags":[{"name":"","index":0,"mine":false,"busy":false,"visible":false,"urgent":false}]}]}'
+ "leftwm state")

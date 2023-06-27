@@ -1,0 +1,17 @@
+@mixin window-bar-box {
+  $horizontal: .333rem;
+  $vertical: .333rem;
+
+  padding-bottom: $vertical;
+  padding-left: $horizontal;
+  padding-right: $horizontal;
+  padding-top: $vertical;
+
+  margin-bottom: $vertical;
+  margin-left: $horizontal;
+  margin-right: $horizontal;
+  margin-top: $vertical;
+
+  background-color: $black;
+  border-radius: $border-radius;
+}
