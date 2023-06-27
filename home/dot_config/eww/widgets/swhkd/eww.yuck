@@ -4,7 +4,7 @@
 (deflisten swhkd-value :initial "" "widgets/swhkd/value")
 
 (defwidget swhkd []
- (box
+ (label
   :class "widget-swhkd"
-  :tooltip swhkd-tooltip
-  swhkd-value))
+  :text swhkd-value
+  :tooltip swhkd-tooltip))

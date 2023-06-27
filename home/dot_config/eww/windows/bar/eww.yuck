@@ -28,6 +28,9 @@
    :valign "start"
    (workspaces))
   (box
+   :class "window-bar-center"
+   :orientation "vertical"
+   :space-evenly false
    (swhkd))
   (box
    :orientation "vertical"
