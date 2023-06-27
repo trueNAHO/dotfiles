@@ -1,8 +1,0 @@
-@import "../../styles/_widget-hint";
-@import "../../styles/_window-bar-widget";
-
-.widget-swhkd {
-  @include widget-hint;
-  @include window-bar-widget;
-  color: $white;
-}

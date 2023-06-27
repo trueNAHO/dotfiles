@@ -1,8 +1,0 @@
-@import "../../styles/_widget-icon";
-@import "../../styles/_window-bar-widget";
-
-.widget-battery {
-  @include widget-icon;
-  @include window-bar-widget;
-  color: $blue;
-}
