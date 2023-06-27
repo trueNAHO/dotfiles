@@ -1,18 +1,18 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
-SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+stop_status_bar() {
+    killall --wait eww
+}
 
-#set background
-if [ -x "$(command -v feh)" ]; then
-  feh --bg-scale $SCRIPTPATH/down.jpg
-fi
+unload_theme() {
+    leftwm-command UnloadTheme
+}
 
-leftwm-command "UnloadTheme"
+main() {
+    stop_status_bar &
+    unload_theme &
 
-pkill compton
-pkill picom
-pkill polybar
-pkill conky
-if [ -x "$(command -v eww)" ]; then
-  eww kill
-fi
+    wait
+}
+
+main "$@"
