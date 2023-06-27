@@ -4,3 +4,7 @@
 
 install_packages_aur leftwm
 install_packages_official bash
+
+leftwm_themes_dir="${XDG_CONFIG_DIR:-$HOME/.config}/leftwm/themes"
+
+ln --force --symbolic "$leftwm_themes_dir/naho" "$leftwm_themes_dir/current"
