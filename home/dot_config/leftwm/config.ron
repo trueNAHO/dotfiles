@@ -42,9 +42,7 @@
     ],
     layout_mode: Tag,
     insert_behavior: Bottom,
-    scratchpad: [
-        (name: "Alacritty", value: "alacritty", x: 860, y: 390, height: 300, width: 200),
-    ],
+    scratchpad: [],
     window_rules: [],
     disable_current_tag_swap: false,
     disable_tile_drag: false,
