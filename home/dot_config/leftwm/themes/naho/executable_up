@@ -39,6 +39,6 @@ index=0
 sizes=( $(leftwm-state -q -n -t $SCRIPTPATH/sizes.liquid | sed -r '/^\s*$/d' ) )
 for size in "${sizes[@]}"
 do
-    eww open bar$index
+    eww open bar
   let index=index+1
 done
