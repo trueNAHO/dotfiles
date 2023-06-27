@@ -8,7 +8,7 @@ mode brightness
     @escape{,} && \
     [ -z "$TMPDIR" ] && TMPDIR="/tmp"; \
     mode_file="${TMPDIR}/swhkd_$(id --user)" && \
-    printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file"
+    printf '%s\n' "$(head -n -1 "$mode_file")" > "$mode_file"
 
 # Decrease or increase the brightness level.
 {j,k}

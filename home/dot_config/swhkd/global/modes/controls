@@ -8,14 +8,14 @@ mode controls
     @escape{,} && \
     [ -z "$TMPDIR" ] && TMPDIR="/tmp"; \
     mode_file="${TMPDIR}/swhkd_$(id --user)" && \
-    printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file"
+    printf '%s\n' "$(head -n -1 "$mode_file")" > "$mode_file"
 
 # Kill the current session, if supported.
 k
     @escape && \
     [ -z "$TMPDIR" ] && TMPDIR="/tmp"; \
     mode_file="${TMPDIR}/swhkd_$(id --user)" && \
-    printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
+    printf '%s\n' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
 
     loginctl kill-session "$XDG_SESSION_ID"
 
@@ -24,7 +24,7 @@ l
     @escape && \
     [ -z "$TMPDIR" ] && TMPDIR="/tmp"; \
     mode_file="${TMPDIR}/swhkd_$(id --user)" && \
-    printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
+    printf '%s\n' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
 
     loginctl lock-session
 
@@ -33,7 +33,7 @@ s
     @escape && \
     [ -z "$TMPDIR" ] && TMPDIR="/tmp"; \
     mode_file="${TMPDIR}/swhkd_$(id --user)" && \
-    printf '%s' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
+    printf '%s\n' "$(head -n -1 "$mode_file")" > "$mode_file" || exit 0; \
 
     systemctl suspend
 endmode
