@@ -6,14 +6,14 @@
   font-weight: Bold;
 }
 
-.window-bar-workspaces {
-  @include window-bar-box;
-}
-
 .window-bar-controls {
   @include window-bar-box;
 }
 
 .window-bar-time {
+  @include window-bar-box;
+}
+
+.window-bar-workspaces {
   @include window-bar-box;
 }
