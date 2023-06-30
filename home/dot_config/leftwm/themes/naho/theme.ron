@@ -1,9 +1,9 @@
 // https://github.com/folke/tokyonight.nvim
 
 (
-border_width: 2,
-default_border_color: "#1f2335",
-floating_border_color: "#9ece6a",
-focused_border_color: "#7aa2f7",
-margin: 2,
+    border_width: 2,
+    default_border_color: "#1f2335",
+    floating_border_color: "#9ece6a",
+    focused_border_color: "#7aa2f7",
+    margin: 2,
 )
