@@ -13,9 +13,6 @@
      :x "0"
      :y "0")
  :monitor 0
- :reserve (struts
-     :distance "60px"
-     :side "left")
  :stacking "fg"
  :windowtype "dock"
  (centerbox
