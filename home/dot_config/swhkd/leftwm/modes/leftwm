@@ -78,6 +78,10 @@ shift + r
 
     leftwm-command Toggle{FullScreen,Sticky,Floating}
 
+# Move the currently focused window down or up in the stack.
+{j,k}
+    leftwm-command MoveWindow{Down,Up}
+
 # Select the previous or next layout.
 {p,n}
     leftwm-command {Previous,Next}Layout
