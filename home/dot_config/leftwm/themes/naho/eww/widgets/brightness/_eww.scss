@@ -1,10 +1,10 @@
 @import "../../styles/_widget-icon";
 @import "../../styles/_widget-revealer";
 @import "../../styles/_widget-value";
-@import "../../styles/_window-bar-widget";
+@import "../../styles/_window-workspace-index-bar-widget";
 
 .widget-brightness {
-  @include window-bar-widget;
+  @include window-workspace-index-bar-widget;
   color: $yellow;
 }
 

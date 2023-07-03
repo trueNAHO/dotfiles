@@ -6,7 +6,7 @@
 (include "widgets/wifi/eww.yuck")
 (include "widgets/workspaces/eww.yuck")
 
-(defwindow bar
+(defwindow workspace-index-bar
  :geometry (geometry
      :height "100%"
      :width "60px"
@@ -16,16 +16,16 @@
  :stacking "fg"
  :windowtype "dock"
  (centerbox
-  :class "window-bar"
+  :class "window-workspace-index-bar"
   :orientation "vertical"
   (box
-   :class "window-bar-workspaces"
+   :class "window-workspace-index-bar-workspaces"
    :orientation "vertical"
    :space-evenly false
    :valign "start"
    (workspaces))
   (box
-   :class "window-bar-center"
+   :class "window-workspace-index-bar-center"
    :orientation "vertical"
    :space-evenly false
    (swhkd))
@@ -34,7 +34,7 @@
    :space-evenly false
    :valign "end"
    (box
-    :class "window-bar-controls"
+    :class "window-workspace-index-bar-controls"
     :orientation "vertical"
     :space-evenly false
     (wifi)
@@ -42,7 +42,7 @@
     (brightness)
     (volume))
    (box
-    :class "window-bar-time"
+    :class "window-workspace-index-bar-time"
     :orientation "vertical"
     :space-evenly false
     (time)))))

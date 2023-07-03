@@ -1,0 +1,22 @@
+@import "../../styles/_window-workspace-index-bar-box";
+
+.window-workspace-index-bar {
+  background-color: $background;
+  font-family: FiraCode Nerd Font Mono;
+  font-weight: Bold;
+}
+
+.window-workspace-index-bar-center {
+}
+
+.window-workspace-index-bar-controls {
+  @include window-workspace-index-bar-box;
+}
+
+.window-workspace-index-bar-time {
+  @include window-workspace-index-bar-box;
+}
+
+.window-workspace-index-bar-workspaces {
+  @include window-workspace-index-bar-box;
+}

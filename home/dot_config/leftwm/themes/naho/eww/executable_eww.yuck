@@ -1,1 +1,1 @@
-(include "windows/bar/eww.yuck")
+(include "windows/workspace-index-bar/eww.yuck")

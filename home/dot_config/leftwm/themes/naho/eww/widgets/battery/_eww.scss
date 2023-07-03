@@ -1,8 +1,8 @@
 @import "../../styles/_widget-icon";
-@import "../../styles/_window-bar-widget";
+@import "../../styles/_window-workspace-index-bar-widget";
 
 .widget-battery {
   @include widget-icon;
-  @include window-bar-widget;
+  @include window-workspace-index-bar-widget;
   color: $blue;
 }

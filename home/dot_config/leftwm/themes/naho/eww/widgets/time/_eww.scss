@@ -1,8 +1,8 @@
 @import "../../styles/_big-text";
-@import "../../styles/_window-bar-widget";
+@import "../../styles/_window-workspace-index-bar-widget";
 
 .widget-time {
   @include big-text;
-  @include window-bar-widget;
+  @include window-workspace-index-bar-widget;
   color: $white;
 }

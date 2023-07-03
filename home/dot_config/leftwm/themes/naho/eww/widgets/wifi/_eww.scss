@@ -1,8 +1,8 @@
-@import "../../styles/_window-bar-widget";
+@import "../../styles/_window-workspace-index-bar-widget";
 @import "../../styles/_widget-icon";
 
 .widget-wifi {
   @include widget-icon;
-  @include window-bar-widget;
+  @include window-workspace-index-bar-widget;
   color: $magenta;
 }

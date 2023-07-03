@@ -1,8 +1,8 @@
 @import "../../styles/_widget-hint";
-@import "../../styles/_window-bar-widget";
+@import "../../styles/_window-workspace-index-bar-widget";
 
 .widget-swhkd {
   @include widget-hint;
-  @include window-bar-widget;
+  @include window-workspace-index-bar-widget;
   color: $white;
 }

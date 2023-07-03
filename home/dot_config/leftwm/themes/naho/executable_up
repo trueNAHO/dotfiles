@@ -15,7 +15,7 @@ start_status_bars() {
     workspaces="$(leftwm-state -q | jq '.workspaces | length')"
 
     for ((i = 0; i < workspaces; i++)); do
-        eww open --config "$eww_config_dir" bar &
+        eww open --config "$eww_config_dir" workspace-index-bar &
     done
 
     wait
