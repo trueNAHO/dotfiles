@@ -1,4 +1,4 @@
-# Focus the window that is below or above the currently focused window in the
+# Focus the window that is below or above the currently focused one in the
 # stack.
 super + {j,k}
     leftwm-command FocusWindow{Down,Up}
