@@ -17,4 +17,4 @@
 (deflisten
  wmstate
  :initial '{"workspaces":[{"layout":"","tags":[{"name":"","index":0,"mine":false,"busy":false,"visible":false,"urgent":false}]}]}'
- "leftwm state")
+ "leftwm-state")
