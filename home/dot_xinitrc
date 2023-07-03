@@ -23,22 +23,14 @@ async_load() { {
   # Use external locker as X screen saver.
   xss-lock --transfer-sleep-lock -- "$HOME/.local/bin/my-i3lock" &
 
-  # Run `warpd` after `autorandr` has finished. `warpd` (v1.3.4) does not
-  # properly recognise the screen dimensions when running `autorandr` before.
-  {
-    # Clone all connected outputs with the largest resolution (scaled down if
-    # necessary).
-    autorandr clone-largest
+  # Periodically set the wallpaper. Retry without waiting if the wallpaper
+  # cannot be set. The actual wallpaper setter is not extremly fast. To shorten
+  # the time before any wallpaper is set, the first iteration sets it in a less
+  # sophisticated and much faster way.
+  set_periodically_wallpaper &
 
-    # Periodically set the wallpaper. Retry without waiting if the wallpaper
-    # cannot be set. The actual wallpaper setter is not extremly fast. To
-    # shorten the time before any wallpaper is set, the first iteration sets it
-    # in a less sophisticated and much faster way.
-    set_periodically_wallpaper &
-
-    # Start a modal keyboard driven pointer manipulation program.
-    warpd &
-  } &
+  # Start a modal keyboard driven pointer manipulation program.
+  warpd &
 
   # "Hide the mouse cursor when typing and show it again when the mouse moves."
   # (https://github.com/jcs/xbanish)
