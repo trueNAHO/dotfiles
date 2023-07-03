@@ -3,7 +3,7 @@
   :class "widget-workspaces"
   :orientation "vertical"
   :space-evenly false
-  (for tag in "${wmstate.workspaces[0].tags}"
+  (for tag in "${window-manager-state.workspaces[0].tags}"
    (button
     :class {
     tag.mine ? "widget-workspaces-button-mine" :
@@ -15,6 +15,6 @@
     "${tag.name}"))))
 
 (deflisten
- wmstate
+ window-manager-state
  :initial '{"workspaces":[{"layout":"","tags":[{"name":"","index":0,"mine":false,"busy":false,"visible":false,"urgent":false}]}]}'
  "leftwm-state")
