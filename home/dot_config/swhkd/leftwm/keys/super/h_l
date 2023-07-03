@@ -1,3 +1,4 @@
-# Move the currently focused window down or up in the stack.
+# Focus the workspace that is below or above the currently focused one in the
+# stack.
 super + {h,l}
-    leftwm-command MoveWindow{Down,Up}
+    leftwm-command FocusWorkspace{Previous,Next}
