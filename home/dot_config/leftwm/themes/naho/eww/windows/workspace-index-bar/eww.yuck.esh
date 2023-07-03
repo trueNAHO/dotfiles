@@ -14,7 +14,7 @@
 (defwindow workspace-<%= $index %>-bar
  :geometry (geometry
      :height <%= $height %>
-     :width 60
+     :width 55
      :x <%= $x %>
      :y <%= $y %>)
  :stacking "fg"
