@@ -1,9 +1,9 @@
-(defwidget workspaces []
+(defwidget workspaces [index]
  (box
   :class "widget-workspaces"
   :orientation "vertical"
   :space-evenly false
-  (for tag in "${window-manager-state.workspaces[0].tags}"
+  (for tag in "${window-manager-state.workspaces[index].tags}"
    (button
     :class {
     tag.mine ? "widget-workspaces-button-mine" :
@@ -11,7 +11,7 @@
     tag.urgent ? "widget-workspaces-button-urgent" :
     tag.busy ? "widget-workspaces-button-busy" : "widget-workspaces-button"
     }
-    :onclick "leftwm-command 'SendWorkspaceToTag 0 ${tag.index}'"
+    :onclick "leftwm-command 'SendWorkspaceToTag ${index} ${tag.index}'"
     "${tag.name}"))))
 
 (deflisten

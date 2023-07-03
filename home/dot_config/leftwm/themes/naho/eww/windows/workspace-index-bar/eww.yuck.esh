@@ -6,13 +6,17 @@
 (include "widgets/wifi/eww.yuck")
 (include "widgets/workspaces/eww.yuck")
 
-(defwindow workspace-index-bar
+<%
+    jq -r '.[] | "\(.index) \(.w) \(.h) \(.x) \(.y)"' \
+	<<<"$leftwm_state_workspaces" |
+	while read -r index width height x y; do
+-%>
+(defwindow workspace-<%= $index %>-bar
  :geometry (geometry
-     :height "100%"
+     :height <%= $height %>
      :width "60px"
-     :x "0"
-     :y "0")
- :monitor 0
+     :x <%= $x %>
+     :y <%= $y %>)
  :stacking "fg"
  :windowtype "dock"
  (centerbox
@@ -23,7 +27,8 @@
    :orientation "vertical"
    :space-evenly false
    :valign "start"
-   (workspaces))
+   (workspaces
+    :index <%= $index %>))
   (box
    :class "window-workspace-index-bar-center"
    :orientation "vertical"
@@ -46,3 +51,5 @@
     :orientation "vertical"
     :space-evenly false
     (time)))))
+
+<% done -%>

@@ -10,12 +10,24 @@ load_theme() {
 start_status_bars() {
     eww_config_dir="$SCRIPTPATH/eww"
 
+    leftwm_state_workspaces="$(leftwm-state --quit | jq '.workspaces')"
+
+    while read -r file; do
+        esh \
+            -o "${file%.esh}" \
+            "$file" \
+            "leftwm_state_workspaces=${leftwm_state_workspaces}" \
+            &
+    done < <(find "$eww_config_dir" -type f -name "*.esh")
+
+    wait
+
     eww daemon --config "$eww_config_dir"
 
-    workspaces="$(leftwm-state -q | jq '.workspaces | length')"
+    workspace_count="$(jq length <<<"$leftwm_state_workspaces")"
 
-    for ((i = 0; i < workspaces; i++)); do
-        eww open --config "$eww_config_dir" workspace-index-bar &
+    for ((i = 0; i < workspace_count; i++)); do
+        eww open --config "$eww_config_dir" "workspace-${i}-bar" &
     done
 
     wait
