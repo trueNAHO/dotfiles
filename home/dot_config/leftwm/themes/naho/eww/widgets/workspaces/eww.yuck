@@ -9,7 +9,8 @@
     tag.mine ? "widget-workspaces-button-mine" :
     tag.visible ? "widget-workspaces-button-visible" :
     tag.urgent ? "widget-workspaces-button-urgent" :
-    tag.busy ? "widget-workspaces-button-busy" : "widget-workspaces-button"
+    tag.busy ? "widget-workspaces-button-busy" :
+    "widget-workspaces-button"
     }
     :onclick "leftwm-command 'SendWorkspaceToTag ${index} ${tag.index}'"
     "${tag.name}"))))
