@@ -7,8 +7,8 @@
    (button
     :class {
     tag.mine ? "widget-workspaces-button-mine" :
-    tag.visible ? "widget-workspaces-button-visible" :
     tag.urgent ? "widget-workspaces-button-urgent" :
+    tag.visible ? "widget-workspaces-button-visible" :
     tag.busy ? "widget-workspaces-button-busy" :
     "widget-workspaces-button"
     }
