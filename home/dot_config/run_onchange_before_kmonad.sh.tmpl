@@ -3,3 +3,17 @@
 {{ template "install_packages.sh.tmpl" . }}
 
 install_packages_aur kmonad-bin
+
+# https://github.com/kmonad/kmonad/blob/2c658f6fddca39686a5448a0207a4aba215f3be5/doc/faq.md#q-how-do-i-get-uinput-permissions
+
+sudo groupadd uinput
+
+sudo usermod -aG input "$(whoami)"
+sudo usermod -aG uinput "$(whoami)"
+
+printf \
+	'%s\n' \
+	'KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"' |
+	sudo tee /lib/udev/rules.d/99-kmonad.rules
+
+sudo modprobe uinput
