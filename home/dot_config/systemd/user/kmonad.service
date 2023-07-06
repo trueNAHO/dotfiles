@@ -1,0 +1,11 @@
+[Unit]
+Description=KMonad keyboard configuration
+
+[Service]
+Restart=always
+RestartSec=3
+ExecStart=find %E/kmonad -type f -exec kmonad {} \;
+Nice=-20
+
+[Install]
+WantedBy=default.target
