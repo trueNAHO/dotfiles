@@ -10,7 +10,6 @@ declare -r -i wallpaper_nice=19
 declare -r system_modmap="/etc/X11/xinit/.Xmodmap"
 declare -r system_programs="/etc/X11/xinit/xinitrc.d"
 declare -r system_resources="/etc/X11/xinit/.Xresources"
-declare -r user_modmap="$HOME/.Xmodmap"
 declare -r user_resources="$HOME/.Xresources"
 
 # Load entire closure in background to yield control back to the runtime as
@@ -65,7 +64,6 @@ set_configs() {
 
   # Load user settings for X.
   [[ -f "$user_resources" ]] && xrdb -merge "$user_resources"
-  [[ -f "$user_modmap" ]]    && xmodmap "$user_modmap"
 
   # "Sxhkd clone for Wayland (works on TTY and X11 too)". "Because swhkd can be
   # used anywhere, the same swhkd config can be used across Xorg or Wayland
@@ -77,21 +75,6 @@ set_configs() {
 
   # Set screen saver parameters.
   xset s "$screensaver_timout_seconds"
-}
-
-# @url https://unix.stackexchange.com/questions/253489/
-# Source `$user_modmap` when plugging in a keyboard. Unplugging and plugging
-# the keyboard back in resets the `xmodmap` settings.
-set_keyboard_layout() {
-  if [[ -f "$user_modmap" ]]; then
-    inputplug -c /bin/echo -d \
-        | while read -r event_type device_id device_type device_name; do
-          if [[ "$event_type" == "XIDeviceEnabled"
-              && "$device_type" == "XISlaveKeyboard" ]]; then
-            xmodmap "$user_modmap"
-          fi
-        done
-  fi
 }
 
 # Source bash scripts located in `system_programs`.
