@@ -9,6 +9,11 @@
     df = diff
     ri = rebase --interactive
 
+    # https://book.git-scm.com/book/en/v2/Git-Tools-Submodules
+    sdiff = !git diff && git submodule foreach 'git diff'
+    spush = push --recurse-submodules=on-demand
+    supdate = submodule update --remote --merge
+
     # https://stackoverflow.com/questions/1057564
     # "I don't do `git log` all the time, but when I do, just remember: (a dog)
     # `--all --decorate --oneline --graph`"
