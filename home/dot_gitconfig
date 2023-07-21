@@ -23,6 +23,9 @@
 [merge]
     conflictstyle = diff3
 
+[submodule]
+	recurse = true
+
 [tag]
 	gpgsign = true
 
