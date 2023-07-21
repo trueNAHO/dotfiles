@@ -10,6 +10,7 @@
     ri = rebase --interactive
 
     # https://book.git-scm.com/book/en/v2/Git-Tools-Submodules
+    sdf = !git diff && git submodule foreach 'git diff'
     sdiff = !git diff && git submodule foreach 'git diff'
     spush = push --recurse-submodules=on-demand
     supdate = submodule update --remote --merge
