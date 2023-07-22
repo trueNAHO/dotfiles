@@ -8,6 +8,7 @@
     cam = commit --all --message
     cm = commit --message
     df = diff
+    fixup = !git add --all && git commit --message 'fixup!:'
     ri = rebase --interactive
 
     # https://book.git-scm.com/book/en/v2/Git-Tools-Submodules
