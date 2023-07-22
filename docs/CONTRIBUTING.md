@@ -4,7 +4,7 @@ Thank you for considering contributing to this project! We appreciate any
 contribution you can make to this project, whether it's reporting a bug,
 requesting a feature, improving the code, or polishing the documentation. To
 ensure that everything runs smoothly, please review the guidelines below before
-submitting your contribution.
+submitting your contribution:
 
 - [What We Want](#what-we-want)
 - [What We Do Not Want](#what-we-do-not-want)
