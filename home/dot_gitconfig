@@ -5,8 +5,7 @@
     co = checkout
     st = status
 
-    cam = commit --all --message
-    cm = commit --message
+    cia = commit --all
     df = diff
     fixup = !git add --all && git commit --message 'fixup!:'
     ri = rebase --interactive
