@@ -6,7 +6,6 @@ requesting a feature, improving the code, or polishing the documentation. To
 ensure that everything runs smoothly, please review the guidelines below before
 submitting your contribution.
 
-<!--toc:start-->
 - [What We Want](#what-we-want)
 - [What We Do Not Want](#what-we-do-not-want)
 - [Contribution Guidelines](#contribution-guidelines)
@@ -14,7 +13,6 @@ submitting your contribution.
   - [Commit Standards](#commit-standards)
 - [Code of Conduct](#code-of-conduct)
 - [License](#license)
-<!--toc:end-->
 
 ## What We Want
 
