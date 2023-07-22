@@ -5,6 +5,7 @@
     co = checkout
     st = status
 
+    cam = commit --all --message
     cm = commit --message
     df = diff
     ri = rebase --interactive
