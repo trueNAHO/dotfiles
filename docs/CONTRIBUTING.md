@@ -78,8 +78,8 @@ enter a commit message in the proper format.
 
 ## Code of Conduct
 
-For information on the code of conduct for this project, please refer to
-[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+To maintain a respectful community, please review [our code of
+conduct](CODE_OF_CONDUCT.md).
 
 ## License
 

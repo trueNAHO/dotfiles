@@ -104,8 +104,8 @@ chezmoi init --apply --purge https://github.com/trueNAHO/dotfiles.git
 
 ## Contributing
 
-For information on contributing to this project, please refer to
-[CONTRIBUTING.md](docs/CONTRIBUTING.md).
+To contribute, please review [our contribution
+guidelines](docs/CONTRIBUTING.md).
 
 ## License
 
