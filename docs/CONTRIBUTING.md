@@ -9,7 +9,7 @@ submitting your contribution:
 - [What We Want](#what-we-want)
 - [What We Do Not Want](#what-we-do-not-want)
 - [Contribution Guidelines](#contribution-guidelines)
-  - [How to Submit Changes](#how-to-submit-changes)
+  - [Contribution Process](#contribution-process)
   - [Commit Standards](#commit-standards)
 - [Code of Conduct](#code-of-conduct)
 - [License](#license)
@@ -49,32 +49,19 @@ free to reach out to the maintainers, if you have any questions.
 ## Contribution Guidelines
 
 Contributions to this project are welcome! To ensure consistency and quality,
-please adhere to the following guidelines when submitting changes:
+please adhere to the following guidelines when submitting changes.
 
-### How to Submit Changes
+### Contribution Process
 
-To submit changes to this repository, please follow [these
-steps](https://docs.github.com/en/get-started/quickstart/contributing-to-projects):
-
-- [Fork the
-  repository](https://docs.github.com/en/get-started/quickstart/contributing-to-projects#forking-a-repository)
-- [Create a new branch on your
-  fork](https://docs.github.com/en/get-started/quickstart/contributing-to-projects#creating-a-branch-to-work-on)
-- [Make and push your changes to the forked
-  repository](https://docs.github.com/en/get-started/quickstart/contributing-to-projects#making-and-pushing-changes)
-- [Submit a pull request to the main
-  repository](https://docs.github.com/en/get-started/quickstart/contributing-to-projects#making-a-pull-request)
-
-Please make sure to include a clear and concise description of your changes in
-your pull request.
+To contribute changes, adhere to the [GitHub
+Flow](http://scottchacon.com/2011/08/31/github-flow.html).
 
 ### Commit Standards
 
 This project uses the [Commitizen](http://commitizen.github.io/cz-cli) commit
-standards to ensure consistent commit messages. If you're unfamiliar with all
-the supported tags, it is recommended to use the [`git
-cz`](https://github.com/commitizen/cz-cli) command, which will prompt you to
-enter a commit message in the proper format.
+standards to ensure consistent commit messages. If you're unfamiliar with the
+supported tags, it is recommended to use [`git
+cz`](https://github.com/commitizen/cz-cli).
 
 ## Code of Conduct
 
