@@ -23,7 +23,7 @@
 - [Installation](#installation)
   - [Installing dotfiles without an existing chezmoi installation](#installing-dotfiles-without-an-existing-chezmoi-installation)
   - [Installing dotfiles with an existing chezmoi installation](#installing-dotfiles-with-an-existing-chezmoi-installation)
-- [Related](#related)
+- [See Also](#see-also)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -87,15 +87,11 @@ the source and config directories after applying:
 chezmoi init --apply --purge https://github.com/trueNAHO/dotfiles.git
 ```
 
-## Related
+## See Also
 
 - [Commitizen](http://commitizen.github.io/cz-cli)
-  - Simple commit conventions for internet citizens.
 - [JuNest](https://github.com/fsquillace/junest)
-  - The lightweight Arch Linux based distro that runs, without root privileges,
-    on top of any other Linux distro.
 - [chezmoi](https://chezmoi.io)
-  - Manage your dotfiles across multiple diverse machines, securely.
 
 ## Contributing
 
