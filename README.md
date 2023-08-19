@@ -1,8 +1,5 @@
 <h1 align="center">
   Dotfiles
-  <h3 align="center">
-    My dotfiles, managed with <a href="https://chezmoi.io">chezmoi</a>
-  </h3>
 </h1>
 
 <p align="center">
