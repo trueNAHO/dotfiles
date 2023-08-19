@@ -23,14 +23,12 @@
   /></a>
 </p>
 
-<!--toc:start-->
 - [Installation](#installation)
   - [Installing dotfiles without an existing chezmoi installation](#installing-dotfiles-without-an-existing-chezmoi-installation)
   - [Installing dotfiles with an existing chezmoi installation](#installing-dotfiles-with-an-existing-chezmoi-installation)
 - [Related](#related)
 - [Contributing](#contributing)
 - [License](#license)
-<!--toc:end-->
 
 ## Installation
 
