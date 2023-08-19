@@ -20,12 +20,18 @@
   /></a>
 </p>
 
+- [About](#about)
 - [Installation](#installation)
   - [Installing dotfiles without an existing chezmoi installation](#installing-dotfiles-without-an-existing-chezmoi-installation)
   - [Installing dotfiles with an existing chezmoi installation](#installing-dotfiles-with-an-existing-chezmoi-installation)
 - [See Also](#see-also)
 - [Contributing](#contributing)
 - [License](#license)
+
+## About
+
+[NAHO](https://github.com/trueNAHO)'s complete collection of [user-specific
+application configurations](https://wiki.archlinux.org/title/Dotfiles).
 
 ## Installation
 
