@@ -8,6 +8,9 @@
     cia = commit --all
     df = diff
     fixup = !git add --all && git commit --message \"fixup!: $(date)\"
+    rci = !git commit --amend --no-edit
+    rcia = !git commit --all --amend --no-edit
+    recommit = !git commit --amend --no-edit
     ri = rebase --interactive
 
     # https://book.git-scm.com/book/en/v2/Git-Tools-Submodules
