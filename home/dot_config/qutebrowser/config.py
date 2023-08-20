@@ -8,17 +8,26 @@
 ##   qute://help/configuring.html
 ##   qute://help/settings.html
 
+import os
+
 import catppuccin
 
 ## Localize global variables.
 c = c
 config = config
 
+os_environ = {
+    'EDITOR': os.environ.get('EDITOR') or 'vi',
+    'TERMINAL': os.environ.get('TERMINAL') or 'xterm',
+}
+
+leader_key = '<Space>'
+
 ## This is here so configs done via the GUI are still loaded.
 ## Remove it to not load settings done via the GUI.
-# config.load_autoconfig(True)
+config.load_autoconfig(False)
 
-catppuccin.setup(c, 'mocha', True)
+catppuccin.setup(c, 'macchiato', False)
 
 ## Aliases for commands. The keys of the given dictionary are the
 ## aliases, while the values are the commands they map to.
@@ -527,7 +536,7 @@ catppuccin.setup(c, 'mocha', True)
 ## - "With increased text contrast": Set
 ## `colors.webpage.darkmode.increase_text_contrast` (QtWebEngine 6.3+)
 ## Type: Bool
-# c.colors.webpage.darkmode.enabled = False
+c.colors.webpage.darkmode.enabled = True
 
 ## Render all colors as grayscale. This only has an effect when
 ## `colors.webpage.darkmode.algorithm` is set to `lightness-hsl` or
@@ -590,7 +599,7 @@ catppuccin.setup(c, 'mocha', True)
 ##   - auto: Use the system-wide color scheme setting.
 ##   - light: Force a light theme.
 ##   - dark: Force a dark theme.
-# c.colors.webpage.preferred_color_scheme = 'auto'
+c.colors.webpage.preferred_color_scheme = 'dark'
 
 ## Number of commands to save in the command history. 0: no history / -1:
 ## unlimited
@@ -688,7 +697,7 @@ catppuccin.setup(c, 'mocha', True)
 
 ## Automatically start playing `<video>` elements.
 ## Type: Bool
-# c.content.autoplay = True
+c.content.autoplay = False
 
 ## List of URLs to ABP-style adblocking rulesets.  Only used when Brave's
 ## ABP-style adblocker is used (see `content.blocking.method`).  You can
@@ -800,7 +809,7 @@ catppuccin.setup(c, 'mocha', True)
 
 ## Store cookies.
 ## Type: Bool
-# c.content.cookies.store = True
+c.content.cookies.store = False
 
 ## Default encoding to use for websites. The encoding must be a string
 ## describing an encoding such as _utf-8_, _iso-8859-1_, etc.
@@ -1220,7 +1229,7 @@ catppuccin.setup(c, 'mocha', True)
 ## `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
 ## Same as `{column}`, but starting from index 0.
 ## Type: ShellCommand
-# c.editor.command = ['gvim', '-f', '{file}', '-c', 'normal {line}G{column0}l']
+c.editor.command = [os_environ['TERMINAL'], '-e', os_environ['EDITOR'], '-c', 'call setpos(".", [0, {line}, {column0}, 0])', '--', '{file}']
 
 ## Encoding to use for the editor.
 ## Type: Encoding
@@ -1236,7 +1245,7 @@ catppuccin.setup(c, 'mocha', True)
 ## Filename of the file to be written to. If not contained in any
 ## argument, the   standard output of the command is read instead.
 ## Type: ShellCommand
-# c.fileselect.folder.command = ['xterm', '-e', 'ranger', '--choosedir={}']
+c.fileselect.folder.command = [os_environ['TERMINAL'], '-e', 'lf', "-command 'set dironly'", '-last-dir-path={}']
 
 ## Handler for selecting file(s) in forms. If `external`, then the
 ## commands specified by `fileselect.single_file.command`,
@@ -1247,7 +1256,7 @@ catppuccin.setup(c, 'mocha', True)
 ## Valid values:
 ##   - default: Use the default file selector.
 ##   - external: Use an external command.
-# c.fileselect.handler = 'default'
+c.fileselect.handler = 'external'
 
 ## Command (and arguments) to use for selecting multiple files in forms.
 ## The command should write the selected file paths to the specified file
@@ -1256,7 +1265,7 @@ catppuccin.setup(c, 'mocha', True)
 ## contained in any argument, the   standard output of the command is
 ## read instead.
 ## Type: ShellCommand
-# c.fileselect.multiple_files.command = ['xterm', '-e', 'ranger', '--choosefiles={}']
+c.fileselect.multiple_files.command = [os_environ['TERMINAL'], '-e', 'lf', '-selection-path={}']
 
 ## Command (and arguments) to use for selecting a single file in forms.
 ## The command should write the selected file path to the specified file
@@ -1264,7 +1273,7 @@ catppuccin.setup(c, 'mocha', True)
 ## the file to be written to. If not contained in any argument, the
 ## standard output of the command is read instead.
 ## Type: ShellCommand
-# c.fileselect.single_file.command = ['xterm', '-e', 'ranger', '--choosefile={}']
+c.fileselect.single_file.command = [os_environ['TERMINAL'], '-e', 'lf', '-selection-path={}']
 
 ## Font used in the completion categories.
 ## Type: Font
@@ -1481,7 +1490,7 @@ catppuccin.setup(c, 'mocha', True)
 ##   - all: Forward all unbound keys.
 ##   - auto: Forward unbound non-alphanumeric keys.
 ##   - none: Don't forward any keys.
-# c.input.forward_unbound_keys = 'auto'
+c.input.forward_unbound_keys = 'none'
 
 ## Enter insert mode if an editable element is clicked.
 ## Type: Bool
@@ -1564,7 +1573,7 @@ catppuccin.setup(c, 'mocha', True)
 ## Time (in milliseconds) from pressing a key to seeing the keyhint
 ## dialog.
 ## Type: Int
-# c.keyhint.delay = 500
+c.keyhint.delay = 0
 
 ## Rounding radius (in pixels) for the edges of the keyhint dialog.
 ## Type: Int
@@ -1596,7 +1605,7 @@ catppuccin.setup(c, 'mocha', True)
 ## Duration (in milliseconds) to show messages in the statusbar for. Set
 ## to 0 to never clear messages.
 ## Type: Int
-# c.messages.timeout = 3000
+c.messages.timeout = 5000
 
 ## How to open links in an existing instance if a new one is launched.
 ## This happens when e.g. opening a link from a terminal. See
@@ -1873,7 +1882,7 @@ catppuccin.setup(c, 'mocha', True)
 ##   - progress: Progress bar for the current page loading.
 ##   - text:foo: Display the static text after the colon, `foo` in the example.
 ##   - clock: Display current time. The format can be changed by adding a format string via `clock:...`. For supported format strings, see https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes[the Python datetime documentation].
-# c.statusbar.widgets = ['keypress', 'search_match', 'url', 'scroll', 'history', 'tabs', 'progress']
+c.statusbar.widgets = ['keypress', 'search_match', 'url', 'scroll', 'history', 'progress']
 
 ## Open new tabs (middleclick/ctrl+click) in the background.
 ## Type: Bool
@@ -1933,7 +1942,7 @@ catppuccin.setup(c, 'mocha', True)
 ##   - startpage: Load the start page.
 ##   - default-page: Load the default page.
 ##   - close: Close the window.
-# c.tabs.last_close = 'ignore'
+c.tabs.last_close = 'default-page'
 
 ## Maximum width (in pixels) of tabs (-1 for no maximum). This setting
 ## only applies when tabs are horizontal. This setting does not apply to
@@ -2176,7 +2185,7 @@ catppuccin.setup(c, 'mocha', True)
 
 ## Available zoom levels.
 ## Type: List of Perc
-# c.zoom.levels = ['25%', '33%', '50%', '67%', '75%', '90%', '100%', '110%', '125%', '150%', '175%', '200%', '250%', '300%', '400%', '500%']
+c.zoom.levels = ['25%', '33%', '50%', '67%', '75%', '90%', '100%', '110%', '125%', '150%', '175%', '200%', '250%', '300%', '400%', '500%', '600%', '700%', '800%', '900%', '1000%']
 
 ## Number of zoom increments to divide the mouse wheel movements to.
 ## Type: Int
@@ -2376,6 +2385,14 @@ catppuccin.setup(c, 'mocha', True)
 # config.bind('yy', 'yank')
 # config.bind('{{', 'navigate prev -t')
 # config.bind('}}', 'navigate next -t')
+config.bind(leader_key + 'mA', "spawn --detach --verbose mpv --player-operation-mode=pseudo-gui --vid=no '{url}'")
+config.bind(leader_key + 'mV', "spawn --detach --verbose mpv '{url}'")
+config.bind(leader_key + 'ma', "hint links spawn --detach --verbose mpv --player-operation-mode=pseudo-gui --vid=no '{hint-url}'")
+config.bind(leader_key + 'mlA', "spawn --detach --verbose mpv --loop-playlist --player-operation-mode=pseudo-gui --vid=no '{url}'")
+config.bind(leader_key + 'mlV', "spawn --detach --verbose mpv --loop-playlist '{url}'")
+config.bind(leader_key + 'mla', "hint links spawn --detach --verbose mpv --loop-playlist --player-operation-mode=pseudo-gui --vid=no '{hint-url}'")
+config.bind(leader_key + 'mlv', "hint links spawn --detach --verbose mpv --loop-playlist '{hint-url}'")
+config.bind(leader_key + 'mv', "hint links spawn --detach --verbose mpv '{hint-url}'")
 
 ## Bindings for caret mode
 # config.bind('$', 'move-to-end-of-line', mode='caret')
