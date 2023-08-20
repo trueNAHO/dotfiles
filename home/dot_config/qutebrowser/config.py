@@ -8,6 +8,8 @@
 ##   qute://help/configuring.html
 ##   qute://help/settings.html
 
+import catppuccin
+
 ## Localize global variables.
 c = c
 config = config
@@ -15,6 +17,8 @@ config = config
 ## This is here so configs done via the GUI are still loaded.
 ## Remove it to not load settings done via the GUI.
 # config.load_autoconfig(True)
+
+catppuccin.setup(c, 'mocha', True)
 
 ## Aliases for commands. The keys of the given dictionary are the
 ## aliases, while the values are the commands they map to.
