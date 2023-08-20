@@ -7,7 +7,7 @@
 
     cia = commit --all
     df = diff
-    fixup = !git add --all && git commit --message 'fixup!:'
+    fixup = !git add --all && git commit --message \"fixup!: $(date)\"
     ri = rebase --interactive
 
     # https://book.git-scm.com/book/en/v2/Git-Tools-Submodules
