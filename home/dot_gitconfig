@@ -1,15 +1,15 @@
 [alias]
     # https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases
     br = branch
-    ci = commit
+    cm = commit
     co = checkout
     st = status --short
 
-    cia = commit --all
+    cma = commit --all
     df = diff
     fixup = !git add --all && git commit --message \"fixup!: $(date)\"
-    rci = !git commit --amend --no-edit
-    rcia = !git commit --all --amend --no-edit
+    rcm = !git commit --amend --no-edit
+    rcma = !git commit --all --amend --no-edit
     recommit = !git commit --amend --no-edit
     ri = rebase --interactive
 
