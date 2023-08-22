@@ -35,7 +35,7 @@ base16_scheme = [
 
 default = {
     "editor": os.environ.get("EDITOR") or "vi",
-    "terminal": os.environ.get("TERM") or "xterm"
+    "terminal": os.environ.get("TERMINAL") or "xterm"
 }
 
 # Set leader key.

@@ -88,7 +88,7 @@ set_system_defaults() {
   status "set system defaults"
 
   # Set default terminal.
-  export TERM="alacritty"
+  export TERMINAL="alacritty"
 
   # Set default text editor.
   export EDITOR="nvim"
