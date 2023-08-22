@@ -9,6 +9,7 @@
     cma = commit --all
     df = diff
     fixup = !git add --all && git commit --message \"fixup!: $(date)\"
+    nuke = !git reset --hard HEAD && git clean -d --force
     reword = commit --amend
     ri = rebase --interactive
     rw = commit --amend
