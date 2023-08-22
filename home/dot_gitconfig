@@ -5,13 +5,13 @@
     co = checkout
     st = status --short
 
+    append = !git add --all && git commit --amend --no-edit
     cma = commit --all
     df = diff
     fixup = !git add --all && git commit --message \"fixup!: $(date)\"
-    rcm = !git commit --amend --no-edit
-    rcma = !git commit --all --amend --no-edit
-    recommit = !git commit --amend --no-edit
+    reword = commit --amend
     ri = rebase --interactive
+    rw = commit --amend
 
     # https://book.git-scm.com/book/en/v2/Git-Tools-Submodules
     sdf = !git diff && git submodule foreach 'git diff'
