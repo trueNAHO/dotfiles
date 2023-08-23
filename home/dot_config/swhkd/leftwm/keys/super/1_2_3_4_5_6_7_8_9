@@ -1,8 +1,0 @@
-# Move the currently focussed workspace to a tag.
-super + {1-9}
-    current_workspace_index="$( \
-        leftwm-state --quit |  \
-        jq '.workspaces[] | select(any(.tags[]; .mine and .focused)).index' \
-    )"; \
-
-    leftwm-command "SendWorkspaceToTag $current_workspace_index {0-8}"

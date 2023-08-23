@@ -1,6 +1,5 @@
 (include "widgets/battery/eww.yuck")
 (include "widgets/brightness/eww.yuck")
-(include "widgets/swhkd/eww.yuck")
 (include "widgets/time/eww.yuck")
 (include "widgets/volume/eww.yuck")
 (include "widgets/wifi/eww.yuck")
@@ -19,7 +18,7 @@
      :y <%= $y %>)
  :stacking "fg"
  :windowtype "dock"
- (centerbox
+ (box
   :class "window-workspace-index-bar"
   :orientation "vertical"
   (box
@@ -29,11 +28,6 @@
    :valign "start"
    (workspaces
     :index <%= $index %>))
-  (box
-   :class "window-workspace-index-bar-center"
-   :orientation "vertical"
-   :space-evenly false
-   (swhkd))
   (box
    :orientation "vertical"
    :space-evenly false

@@ -1,4 +1,0 @@
-# Focus the workspace that is below or above the currently focused one in the
-# stack.
-super + {h,l}
-    leftwm-command FocusWorkspace{Previous,Next}

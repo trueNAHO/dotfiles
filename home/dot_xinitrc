@@ -65,14 +65,6 @@ set_configs() {
   # Load user settings for X.
   [[ -f "$user_resources" ]] && xrdb -merge "$user_resources"
 
-  # "Sxhkd clone for Wayland (works on TTY and X11 too)". "Because swhkd can be
-  # used anywhere, the same swhkd config can be used across Xorg or Wayland
-  # desktops, and you can even use swhkd in a TTY."
-  # (https://github.com/waycrate/swhkd)
-  killall swhks || :
-  swhks &
-  pkexec swhkd --config "${XDG_CONFIG_DIR:-$HOME/.config}/swhkd/swhkdrc" &
-
   # Set screen saver parameters.
   xset s "$screensaver_timout_seconds"
 }
