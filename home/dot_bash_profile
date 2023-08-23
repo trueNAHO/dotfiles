@@ -80,6 +80,9 @@ set_configs() {
 set_system_defaults() {
   status "set system defaults"
 
+  # Set default browser.
+  export BROWSER="qutebrowser"
+
   # Set default terminal.
   export TERMINAL="alacritty"
 
