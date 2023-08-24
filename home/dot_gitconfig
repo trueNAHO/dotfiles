@@ -12,6 +12,7 @@
     nuke = !git reset --hard HEAD && git clean -d --force
     reword = commit --amend
     ri = rebase --interactive
+    rs = reset
     rw = commit --amend
 
     # https://book.git-scm.com/book/en/v2/Git-Tools-Submodules
