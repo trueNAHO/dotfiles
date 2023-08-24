@@ -17,12 +17,7 @@ end
 
 -- Set a color scheme.
 function plugin.colorscheme()
-    --require("user.plugins.catppuccin_nvim")
-    --require("user.plugins.folke_tokyonight_nvim_day")
-    --require("user.plugins.folke_tokyonight_nvim_moon")
-    --require("user.plugins.folke_tokyonight_nvim_night")
     require("user.plugins.folke_tokyonight_nvim_storm")
-    --require("user.plugins.joshdick_onedark_vim")
 end
 
 -- Install packer, if it is not already installed. Return true if packer will be
