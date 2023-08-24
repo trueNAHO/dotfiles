@@ -79,10 +79,6 @@ function plugin.utilities()
     -- Smart and powerful comment plugin for neovim. Supports treesitter, dot
     -- repeat, left-right/up-down motions, hooks, and more.
     require("user.plugins.numToStr_Comment_nvim")
-
-    -- A neovim plugin to run lines/blocs of code (independently of the rest of
-    -- the file), supporting multiples languages.
-    require("user.plugins.michaelb_sniprun")
 end
 
 -- Enhance the default visual effects.
