@@ -6,7 +6,7 @@
     st = status --short
 
     append = !git add --all && git commit --amend --no-edit
-    cma = commit --all
+    cma = !git add --all && git commit
     df = diff
     fixup = !git add --all && git commit --message \"fixup!: $(date)\"
     nuke = !git reset --hard HEAD && git clean -d --force
