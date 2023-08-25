@@ -207,6 +207,19 @@ _main() {
   _set_configs
   _set_aliases
   _cleanup
+
+  # https://zellij.dev/documentation/integration
+  if [[ -z "$ZELLIJ" ]]; then
+    if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+      exec zellij attach --config
+    else
+      exec zellij
+    fi
+
+    if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
+      exit
+    fi
+  fi
 }
 
 _main
