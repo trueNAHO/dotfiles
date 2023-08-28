@@ -55,7 +55,7 @@
         (command: MoveWindowUp, modifier: ["modkey", "Shift"], key: "k"),
         (command: NextLayout, modifier: ["modkey"], key: "d"),
         (command: PreviousLayout, modifier: ["modkey"], key: "u"),
-        (command: SoftReload, modifier: ["modkey", "Shift"], key: "r"),
+        (command: SoftReload, modifier: ["modkey", "Control"], key: "r"),
     ],
     layouts: [
         MainAndVertStack,
