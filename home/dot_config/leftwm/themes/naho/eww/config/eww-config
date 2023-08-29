@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-# http://mywiki.wooledge.org/BashFAQ/028
-# https://stackoverflow.com/questions/59895
-EWW_CONFIG="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." &>/dev/null && pwd)"
-
-readonly EWW_CONFIG
