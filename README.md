@@ -21,7 +21,6 @@
 </p>
 
 - [About](#about)
-- [See Also](#see-also)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -29,10 +28,6 @@
 
 [NAHO](https://github.com/trueNAHO)'s
 [dotfiles](https://wiki.archlinux.org/title/Dotfiles).
-
-## See Also
-
-- [Commitizen](http://commitizen.github.io/cz-cli)
 
 ## Contributing
 
