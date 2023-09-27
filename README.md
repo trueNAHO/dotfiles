@@ -30,8 +30,8 @@
 
 ## About
 
-[NAHO](https://github.com/trueNAHO)'s complete collection of [user-specific
-application configurations](https://wiki.archlinux.org/title/Dotfiles).
+[NAHO](https://github.com/trueNAHO)'s
+[dotfiles](https://wiki.archlinux.org/title/Dotfiles).
 
 ## Installation
 
