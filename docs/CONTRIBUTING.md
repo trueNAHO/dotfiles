@@ -36,7 +36,7 @@ for a fork. Here are some examples that may fall into this category:
 - Security risks
 - Major performance overheads
 - Unreliable or poorly maintained third-party dependencies
-- Exentensive super user setups
+- Exentensive superuser setups
 - Increased end-user maintenance
 
 If you are uncertain about whether your contribution aligns with the scope of
