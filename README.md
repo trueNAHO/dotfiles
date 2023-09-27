@@ -22,6 +22,7 @@
 
 - [About](#about)
 - [Contributing](#contributing)
+- [See Also](#see-also)
 - [License](#license)
 
 ## About
@@ -33,6 +34,10 @@
 
 To contribute, please review [our contribution
 guidelines](docs/CONTRIBUTING.md).
+
+## See Also
+
+- [NAHO's NixOS configurations](https://github.com/trueNAHO/os)
 
 ## License
 
