@@ -1,0 +1,24 @@
+{
+  imports = [
+    ./bash
+    ./bat
+    ./btop
+    ./direnv
+    ./eza
+    ./feh
+    ./fish
+    ./fzf
+    ./git
+    ./gpg
+    ./lazygit
+    ./mpv
+    ./nixvim
+    ./qutebrowser
+    ./ripgrep
+    ./wezterm
+    ./xplr
+    ./zathura
+    ./zellij
+    ./zoxide
+  ];
+}
