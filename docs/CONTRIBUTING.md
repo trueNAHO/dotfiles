@@ -32,7 +32,6 @@ While we appreciate all contributions that help improve this project, some may
 not align with our vision, require further discussion, or may be better suited
 for a fork. Here are some examples that may fall into this category:
 
-- Drastic end-user workflow adjustments
 - Security risks
 - Major performance overheads
 - Unreliable or poorly maintained third-party dependencies
