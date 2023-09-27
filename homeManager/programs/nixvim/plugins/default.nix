@@ -1,0 +1,24 @@
+{
+  imports = [
+    ./comment-nvim
+    ./fidget
+    ./gitmessenger
+    ./gitsigns
+    ./leap
+    ./lsp
+    ./lsp-format
+    ./multicursors
+    ./nvim-cmp
+    ./nvim-colorizer
+    ./nvim-tree
+    ./rainbow-delimiters
+    ./spider
+    ./surround
+    ./telescope
+    ./treesitter
+    ./treesitter-context
+    ./trouble
+    ./undotree
+    ./vim-illuminate
+  ];
+}
