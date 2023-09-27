@@ -1,0 +1,3 @@
+{
+  imports = [./easyeffects ./gpg-agent];
+}
