@@ -1,16 +1,13 @@
 # Contributing
 
-Thank you for considering contributing to this project! We appreciate any
-contribution you can make to this project, whether it's reporting a bug,
-requesting a feature, improving the code, or polishing the documentation. To
-ensure that everything runs smoothly, please review the guidelines below before
-submitting your contribution:
+Thank you for considering contributing to this project! To ensure that
+submissions run smoothly, please review the following guidelines:
 
 - [What We Want](#what-we-want)
 - [What We Do Not Want](#what-we-do-not-want)
 - [Contribution Guidelines](#contribution-guidelines)
   - [Contribution Process](#contribution-process)
-  - [Commit Standards](#commit-standards)
+  - [Commit Messages](#commit-messages)
 - [Code of Conduct](#code-of-conduct)
 - [License](#license)
 
@@ -48,20 +45,14 @@ free to reach out to the maintainers, if you have any questions.
 
 ## Contribution Guidelines
 
-Contributions to this project are welcome! To ensure consistency and quality,
-please adhere to the following guidelines when submitting changes.
-
 ### Contribution Process
 
 To contribute changes, adhere to the [GitHub
 Flow](http://scottchacon.com/2011/08/31/github-flow.html).
 
-### Commit Standards
+### Commit Messages
 
-This project uses the [Commitizen](http://commitizen.github.io/cz-cli) commit
-standards to ensure consistent commit messages. If you're unfamiliar with the
-supported tags, it is recommended to use [`git
-cz`](https://github.com/commitizen/cz-cli).
+Follow [Commitizen](http://commitizen.github.io/cz-cli)'s commit standards.
 
 ## Code of Conduct
 
