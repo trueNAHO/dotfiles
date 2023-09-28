@@ -21,6 +21,7 @@
 </p>
 
 - [About](#about)
+- [Usage](#usage)
 - [Contributing](#contributing)
 - [See Also](#see-also)
 - [License](#license)
@@ -29,6 +30,18 @@
 
 [NAHO](https://github.com/trueNAHO)'s
 [dotfiles](https://wiki.archlinux.org/title/Dotfiles).
+
+## Usage
+
+To install my dotfiles with
+[`home-manager`](https://github.com/nix-community/home-manager), run
+`home-manager switch --flake "github:trueNAHO/dotfiles#<BUILD_TARGET>"` with one
+of the following build targets:
+
+- aarch64-darwin
+- aarch64-linux
+- x86_64-darwin
+- x86_64-linux
 
 ## Contributing
 
