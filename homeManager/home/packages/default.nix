@@ -8,6 +8,7 @@
     ./glow
     ./gping
     ./killall
+    ./pass
     ./pipe-rename
     ./procs
     ./tldr
