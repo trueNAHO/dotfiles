@@ -8,6 +8,7 @@
     ./feh
     ./fish
     ./fzf
+    ./gh
     ./git
     ./gpg
     ./lazygit
