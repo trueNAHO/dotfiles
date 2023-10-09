@@ -7,18 +7,30 @@
     # Add 'curl' and 'xdragon' packages because the 'inputs.dragonXplr' plugin
     # depends on them.
     packages = with pkgs; [curl xdragon];
-
-    shellAliases.x = "cd -- \"$(${pkgs.xplr.pname} --print-pwd-as-result)\" 2>/dev/null || true";
   };
 
-  programs.xplr = {
-    enable = true;
+  programs = {
+    fish.functions.x = {
+      body = ''
+        set -l pwd "$(${pkgs.xplr.pname} --print-pwd-as-result $argv)"
 
-    extraConfig =
-      builtins.concatStringsSep "\n"
-      (map (plugin: "dofile('${plugin}/init.lua').setup()") [
-        inputs.dragonXplr
-        inputs.triPaneXplr
-      ]);
+        if test -n $pwd
+          cd -- $pwd
+        end
+      '';
+
+      description = "Open ${pkgs.xplr.pname} and change the working directory to the last visited one";
+    };
+
+    xplr = {
+      enable = true;
+
+      extraConfig =
+        builtins.concatStringsSep "\n"
+        (map (plugin: "dofile('${plugin}/init.lua').setup()") [
+          inputs.dragonXplr
+          inputs.triPaneXplr
+        ]);
+    };
   };
 }
