@@ -146,6 +146,17 @@ in {
           --function _repeat_parent_directory
       '';
 
+      loginShellInit = let
+        graphicalEnvironment = pkgs.hyprland.meta.mainProgram;
+      in ''
+        read -l -P "Start ${graphicalEnvironment}? [y/n] " reply
+
+        switch $(string lower $reply)
+          case "" y yes
+            exec ${graphicalEnvironment}
+        end
+      '';
+
       plugins = [
         {
           name = pkgs.fishPlugins.done.pname;
@@ -184,4 +195,6 @@ in {
       enable = true;
     };
   };
+
+  wayland.windowManager.hyprland.enable = true;
 }
