@@ -5,6 +5,7 @@
     ./programs
     ./services
     ./stylix
+    ./wayland
   ];
 
   home = {
