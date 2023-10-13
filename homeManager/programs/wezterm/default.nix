@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   home.sessionVariables.TERMINAL = pkgs.wezterm.pname;
 
   programs.wezterm = {
@@ -9,6 +13,7 @@
         adjust_window_size_when_changing_font_size = false,
         audible_bell = 'Disabled',
         check_for_updates = false,
+        default_prog = { '${config.home.sessionVariables.SHELL}' },
         detect_password_input = false,
         disable_default_key_bindings = true,
         enable_tab_bar = false,
