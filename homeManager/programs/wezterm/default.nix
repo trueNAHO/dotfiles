@@ -21,6 +21,12 @@
 
         keys = {
           {
+            action = wezterm.action.CopyTo 'Clipboard',
+            key = 'c',
+            mods = 'CTRL|SHIFT',
+          },
+
+          {
             action = wezterm.action.DecreaseFontSize,
             key = '-',
             mods = 'ALT',
@@ -30,6 +36,12 @@
             action = wezterm.action.IncreaseFontSize,
             key = '+',
             mods = 'ALT|SHIFT',
+          },
+
+          {
+            action = wezterm.action.PasteFrom 'Clipboard',
+            key = 'v',
+            mods = 'CTRL|SHIFT',
           },
 
           {
