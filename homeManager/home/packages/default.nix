@@ -13,5 +13,6 @@
     ./procs
     ./tldr
     ./tokei
+    ./wl-clipboard
   ];
 }
