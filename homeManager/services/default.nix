@@ -1,3 +1,3 @@
 {
-  imports = [./easyeffects ./gpg-agent];
+  imports = [./easyeffects ./gammastep ./gpg-agent];
 }
