@@ -16,7 +16,7 @@
 
     fish.interactiveShellInit = (
       lib.mkBefore
-      "set -q ZELLIJ; or exec ${pkgs.zellij.pname}"
+      "test -z $ZELLIJ; and exec ${pkgs.zellij.pname}"
     );
   };
 
