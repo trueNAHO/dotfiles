@@ -74,7 +74,7 @@
             body = ''
               if set -q fish_private_mode
                 printf \
-                  %s\n \
+                  '%s\n' \
                   "Private mode: fish will not access old or store new history"
               end
             '';
