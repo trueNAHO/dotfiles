@@ -18,7 +18,7 @@
     # https://github.com/nix-community/home-manager/pull/2732
     xdg.configFile."fontconfig/conf.d/52-hm-default-fonts.conf".text = let
       genDefault = fonts: name: let
-        prefer = lib.concatStringsSep "" (
+        prefer = builtins.concatStringsSep "" (
           map (font: "<family>${font}</family>") fonts
         );
       in
