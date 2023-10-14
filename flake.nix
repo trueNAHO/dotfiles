@@ -73,11 +73,8 @@
   outputs = {
     self,
     flakeUtils,
-    homeManager,
     nixpkgs,
-    nixvim,
     preCommitHooks,
-    stylix,
     ...
   } @ inputs:
     flakeUtils.lib.eachDefaultSystem (
@@ -96,17 +93,7 @@
         devShells.default = pkgs.mkShell {
           inherit (self.checks.${system}.preCommitHooks) shellHook;
         };
-
-        homeConfigurations = homeManager.lib.homeManagerConfiguration {
-          extraSpecialArgs = {inherit inputs;};
-          inherit pkgs;
-
-          modules = [
-            ./homeManager
-            nixvim.homeManagerModules.nixvim
-            stylix.homeManagerModules.stylix
-          ];
-        };
       }
-    );
+    )
+    // import ./hosts {inherit inputs;};
 }
