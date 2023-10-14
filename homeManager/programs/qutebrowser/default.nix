@@ -10,6 +10,8 @@
   terminal = config.home.sessionVariables.TERMINAL;
   xplr = "${pkgs.xplr.outPath}/bin/${pkgs.xplr.pname}";
 in {
+  home.sessionVariables.BROWSER = pkgs.qutebrowser.pname;
+
   programs = {
     mpv.enable = true;
 
