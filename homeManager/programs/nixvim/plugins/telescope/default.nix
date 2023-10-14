@@ -6,6 +6,7 @@ let
 in {
   programs.nixvim.plugins.telescope = {
     enable = true;
+    defaults.layout_strategy = "vertical";
 
     keymaps = {
       "${leader.git}C" = "git_bcommits";
