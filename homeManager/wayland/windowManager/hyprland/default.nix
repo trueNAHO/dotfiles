@@ -71,6 +71,7 @@
           "SUPER SHIFT, J, swapnext, next"
           "SUPER SHIFT, K, swapnext, prev"
           "SUPER SHIFT, Q, killactive,"
+          "SUPER, B, exec, ${config.home.sessionVariables.BROWSER}"
           "SUPER, F, fullscreen,"
           "SUPER, H, focusmonitor, -1"
           "SUPER, H, resizeactive, ${resize_1} ${resize_2}%"
