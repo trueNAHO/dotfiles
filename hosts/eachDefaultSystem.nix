@@ -37,6 +37,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/programs/gh
         ../modules/programs/git
         ../modules/programs/gpg
+        ../modules/programs/home-manager
         ../modules/programs/lazygit
         ../modules/programs/mpv
         ../modules/programs/nixvim
@@ -101,6 +102,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
               gh.enable = true;
               git.enable = true;
               gpg.enable = true;
+              home-manager.enable = true;
               lazygit.enable = true;
               mpv.enable = true;
               nixvim.enable = true;
@@ -124,7 +126,6 @@ inputs.homeManager.lib.homeManagerConfiguration {
           };
 
           nixpkgs.config.allowUnfree = true;
-          programs.home-manager.enable = true;
         }
       ];
     }
