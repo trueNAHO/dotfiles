@@ -40,7 +40,6 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/programs/home-manager
         ../modules/homeManager/programs/lazygit
         ../modules/homeManager/programs/mpv
-        ../modules/homeManager/programs/nixvim
         ../modules/homeManager/programs/qutebrowser
         ../modules/homeManager/programs/ripgrep
         ../modules/homeManager/programs/wezterm
@@ -52,8 +51,9 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/services/easyeffects
         ../modules/homeManager/services/gammastep
         ../modules/homeManager/services/gpg-agent
-        ../modules/homeManager/stylix
         ../modules/homeManager/wayland/windowManager/hyprland
+        ../modules/programs/nixvim
+        ../modules/stylix
 
         {
           home = let
@@ -64,64 +64,67 @@ inputs.homeManager.lib.homeManagerConfiguration {
             username = username;
           };
 
-          modules.homeManager = {
-            fonts.enable = true;
+          modules = {
+            homeManager = {
+              fonts.enable = true;
 
-            home = {
-              packages = {
-                du-dust.enable = true;
-                dua.enable = true;
-                duf.enable = true;
-                entr.enable = true;
-                fd.enable = true;
-                glow.enable = true;
-                gping.enable = true;
-                killall.enable = true;
-                pass.enable = true;
-                pipe-rename.enable = true;
-                procs.enable = true;
-                tldr.enable = true;
-                tokei.enable = true;
-                wl-clipboard.enable = true;
+              home = {
+                packages = {
+                  du-dust.enable = true;
+                  dua.enable = true;
+                  duf.enable = true;
+                  entr.enable = true;
+                  fd.enable = true;
+                  glow.enable = true;
+                  gping.enable = true;
+                  killall.enable = true;
+                  pass.enable = true;
+                  pipe-rename.enable = true;
+                  procs.enable = true;
+                  tldr.enable = true;
+                  tokei.enable = true;
+                  wl-clipboard.enable = true;
+                };
+
+                shellAliases.enable = true;
               };
 
-              shellAliases.enable = true;
+              programs = {
+                bash.enable = true;
+                bat.enable = true;
+                btop.enable = true;
+                direnv.enable = true;
+                eza.enable = true;
+                feh.enable = true;
+                fish.enable = true;
+                fzf.enable = true;
+                gh.enable = true;
+                git.enable = true;
+                gpg.enable = true;
+                home-manager.enable = true;
+                lazygit.enable = true;
+                mpv.enable = true;
+                qutebrowser.enable = true;
+                ripgrep.enable = true;
+                wezterm.enable = true;
+                xplr.enable = true;
+                zathura.enable = true;
+                zellij.enable = true;
+                zoxide.enable = true;
+              };
+
+              services = {
+                dunst.enable = true;
+                easyeffects.enable = true;
+                gammastep.enable = true;
+                gpg-agent.enable = true;
+              };
+
+              wayland.windowManager.hyprland.enable = true;
             };
 
-            programs = {
-              bash.enable = true;
-              bat.enable = true;
-              btop.enable = true;
-              direnv.enable = true;
-              eza.enable = true;
-              feh.enable = true;
-              fish.enable = true;
-              fzf.enable = true;
-              gh.enable = true;
-              git.enable = true;
-              gpg.enable = true;
-              home-manager.enable = true;
-              lazygit.enable = true;
-              mpv.enable = true;
-              nixvim.enable = true;
-              qutebrowser.enable = true;
-              ripgrep.enable = true;
-              wezterm.enable = true;
-              xplr.enable = true;
-              zathura.enable = true;
-              zellij.enable = true;
-              zoxide.enable = true;
-            };
-
-            services = {
-              dunst.enable = true;
-              easyeffects.enable = true;
-              gammastep.enable = true;
-              gpg-agent.enable = true;
-            };
-
+            programs.nixvim.enable = true;
             stylix.enable = true;
-            wayland.windowManager.hyprland.enable = true;
           };
 
           nixpkgs.config.allowUnfree = true;

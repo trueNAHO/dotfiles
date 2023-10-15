@@ -12,10 +12,9 @@
     inputs.nixvim.homeManagerModules.nixvim
   ];
 
-  options.modules.homeManager.programs.nixvim.enable =
-    lib.mkEnableOption "nixvim";
+  options.modules.programs.nixvim.enable = lib.mkEnableOption "nixvim";
 
-  config = lib.mkIf config.modules.homeManager.programs.nixvim.enable {
+  config = lib.mkIf config.modules.programs.nixvim.enable {
     home = let
       neovim = pkgs.neovim.meta.mainProgram;
     in {

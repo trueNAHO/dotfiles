@@ -6,9 +6,9 @@
   ...
 }: {
   imports = [inputs.stylix.homeManagerModules.stylix];
-  options.modules.homeManager.stylix.enable = lib.mkEnableOption "Stylix";
+  options.modules.stylix.enable = lib.mkEnableOption "Stylix";
 
-  config = lib.mkIf config.modules.homeManager.stylix.enable {
+  config = lib.mkIf config.modules.stylix.enable {
     stylix = {
       fonts = {
         emoji = {
