@@ -48,6 +48,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/programs/zathura
         ../modules/homeManager/programs/zellij
         ../modules/homeManager/programs/zoxide
+        ../modules/homeManager/services/dunst
         ../modules/homeManager/services/easyeffects
         ../modules/homeManager/services/gammastep
         ../modules/homeManager/services/gpg-agent
@@ -116,6 +117,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
             };
 
             services = {
+              dunst.enable = true;
               easyeffects.enable = true;
               gammastep.enable = true;
               gpg-agent.enable = true;

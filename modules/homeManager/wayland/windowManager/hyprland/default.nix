@@ -4,6 +4,8 @@
   pkgs,
   ...
 }: {
+  imports = [../../../services/dunst];
+
   options.modules.homeManager.wayland.windowManager.hyprland.enable =
     lib.mkEnableOption "hyprland";
 
@@ -11,6 +13,7 @@
     lib.mkIf
     config.modules.homeManager.wayland.windowManager.hyprland.enable {
       home.sessionVariables.NIXOS_OZONE_WL = 1;
+      modules.homeManager.services.dunst.enable = true;
 
       wayland.windowManager.hyprland = {
         enable =
