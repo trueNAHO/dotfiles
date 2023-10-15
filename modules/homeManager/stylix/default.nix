@@ -1,9 +1,11 @@
 {
   config,
+  inputs,
   lib,
   pkgs,
   ...
 }: {
+  imports = [inputs.stylix.homeManagerModules.stylix];
   options.modules.homeManager.stylix.enable = lib.mkEnableOption "Stylix";
 
   config = lib.mkIf config.modules.homeManager.stylix.enable {

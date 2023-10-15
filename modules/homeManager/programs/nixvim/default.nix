@@ -1,10 +1,16 @@
 {
   config,
+  inputs,
   lib,
   pkgs,
   ...
 }: {
-  imports = [./maps ./options ./plugins];
+  imports = [
+    ./maps
+    ./options
+    ./plugins
+    inputs.nixvim.homeManagerModules.nixvim
+  ];
 
   options.modules.homeManager.programs.nixvim.enable =
     lib.mkEnableOption "nixvim";

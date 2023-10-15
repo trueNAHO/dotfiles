@@ -55,9 +55,6 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/stylix
         ../modules/homeManager/wayland/windowManager/hyprland
 
-        inputs.nixvim.homeManagerModules.nixvim
-        inputs.stylix.homeManagerModules.stylix
-
         {
           home = let
             username = "naho";
