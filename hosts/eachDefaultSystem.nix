@@ -10,49 +10,49 @@ inputs.homeManager.lib.homeManagerConfiguration {
   modules = [
     {
       imports = [
-        ../modules/fonts
-        ../modules/home/packages/du-dust
-        ../modules/home/packages/dua
-        ../modules/home/packages/duf
-        ../modules/home/packages/entr
-        ../modules/home/packages/fd
-        ../modules/home/packages/glow
-        ../modules/home/packages/gping
-        ../modules/home/packages/killall
-        ../modules/home/packages/pass
-        ../modules/home/packages/pipe-rename
-        ../modules/home/packages/procs
-        ../modules/home/packages/tldr
-        ../modules/home/packages/tokei
-        ../modules/home/packages/wl-clipboard
-        ../modules/home/shellAliases
-        ../modules/programs/bash
-        ../modules/programs/bat
-        ../modules/programs/btop
-        ../modules/programs/direnv
-        ../modules/programs/eza
-        ../modules/programs/feh
-        ../modules/programs/fish
-        ../modules/programs/fzf
-        ../modules/programs/gh
-        ../modules/programs/git
-        ../modules/programs/gpg
-        ../modules/programs/home-manager
-        ../modules/programs/lazygit
-        ../modules/programs/mpv
-        ../modules/programs/nixvim
-        ../modules/programs/qutebrowser
-        ../modules/programs/ripgrep
-        ../modules/programs/wezterm
-        ../modules/programs/xplr
-        ../modules/programs/zathura
-        ../modules/programs/zellij
-        ../modules/programs/zoxide
-        ../modules/services/easyeffects
-        ../modules/services/gammastep
-        ../modules/services/gpg-agent
-        ../modules/stylix
-        ../modules/wayland/windowManager/hyprland
+        ../modules/homeManager/fonts
+        ../modules/homeManager/home/packages/du-dust
+        ../modules/homeManager/home/packages/dua
+        ../modules/homeManager/home/packages/duf
+        ../modules/homeManager/home/packages/entr
+        ../modules/homeManager/home/packages/fd
+        ../modules/homeManager/home/packages/glow
+        ../modules/homeManager/home/packages/gping
+        ../modules/homeManager/home/packages/killall
+        ../modules/homeManager/home/packages/pass
+        ../modules/homeManager/home/packages/pipe-rename
+        ../modules/homeManager/home/packages/procs
+        ../modules/homeManager/home/packages/tldr
+        ../modules/homeManager/home/packages/tokei
+        ../modules/homeManager/home/packages/wl-clipboard
+        ../modules/homeManager/home/shellAliases
+        ../modules/homeManager/programs/bash
+        ../modules/homeManager/programs/bat
+        ../modules/homeManager/programs/btop
+        ../modules/homeManager/programs/direnv
+        ../modules/homeManager/programs/eza
+        ../modules/homeManager/programs/feh
+        ../modules/homeManager/programs/fish
+        ../modules/homeManager/programs/fzf
+        ../modules/homeManager/programs/gh
+        ../modules/homeManager/programs/git
+        ../modules/homeManager/programs/gpg
+        ../modules/homeManager/programs/home-manager
+        ../modules/homeManager/programs/lazygit
+        ../modules/homeManager/programs/mpv
+        ../modules/homeManager/programs/nixvim
+        ../modules/homeManager/programs/qutebrowser
+        ../modules/homeManager/programs/ripgrep
+        ../modules/homeManager/programs/wezterm
+        ../modules/homeManager/programs/xplr
+        ../modules/homeManager/programs/zathura
+        ../modules/homeManager/programs/zellij
+        ../modules/homeManager/programs/zoxide
+        ../modules/homeManager/services/easyeffects
+        ../modules/homeManager/services/gammastep
+        ../modules/homeManager/services/gpg-agent
+        ../modules/homeManager/stylix
+        ../modules/homeManager/wayland/windowManager/hyprland
 
         inputs.nixvim.homeManagerModules.nixvim
         inputs.stylix.homeManagerModules.stylix
@@ -66,7 +66,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
             username = username;
           };
 
-          modules = {
+          modules.homeManager = {
             fonts.enable = true;
 
             home = {
