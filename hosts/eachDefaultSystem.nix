@@ -53,6 +53,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/services/gpg-agent
         ../modules/homeManager/wayland/windowManager/hyprland
         ../modules/programs/nixvim
+        ../modules/services/battery
         ../modules/stylix
 
         {
@@ -124,6 +125,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
             };
 
             programs.nixvim.enable = true;
+            services.battery.enable = true;
             stylix.enable = true;
           };
 
