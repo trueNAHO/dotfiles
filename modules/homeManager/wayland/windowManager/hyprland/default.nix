@@ -27,8 +27,7 @@
           animations.enabled = false;
 
           bind = let
-            resize_1 = "20";
-            resize_2 = "25";
+            resize = "10%";
 
             toggleMode = pkgs.writeShellApplication {
               name = "hyprland-toggle-mode";
@@ -68,19 +67,23 @@
                 key = toString index;
                 workspace = toString (index + 1);
               in [
-                "SUPER SHIFT, ${key}, movetoworkspace, ${workspace}"
+                "SUPER SHIFT, ${key}, movetoworkspacesilent, ${workspace}"
                 "SUPER, ${key}, workspace, ${workspace}"
               ]
             ) (lib.lists.range 0 9)
             ++ [
+              "SUPER ALT, H, resizeactive, -${resize} 0"
+              "SUPER ALT, J, resizeactive, 0 -${resize}"
+              "SUPER ALT, K, resizeactive, 0 ${resize}"
+              "SUPER ALT, L, resizeactive, ${resize} 0"
               "SUPER CTRL, F, exec, ${toggleMode}/bin/${toggleMode.meta.mainProgram}"
               "SUPER CTRL, Q, exit,"
               "SUPER CTRL, S, exec, systemctl suspend"
+              "SUPER SHIFT, C, centerwindow,"
               "SUPER SHIFT, F, fakefullscreen,"
-              "SUPER SHIFT, H, resizeactive, ${resize_1} ${resize_2}%"
               "SUPER SHIFT, J, swapnext, next"
               "SUPER SHIFT, K, swapnext, prev"
-              "SUPER SHIFT, L, resizeactive, -${resize_1} -${resize_2}%"
+              "SUPER SHIFT, P, pin,"
               "SUPER SHIFT, Q, killactive,"
               "SUPER, B, exec, ${config.home.sessionVariables.BROWSER}"
               "SUPER, F, fullscreen,"
