@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: {
-  imports = [../../../services/dunst];
+  imports = [../../../programs/rofi ../../../services/dunst];
 
   options.modules.homeManager.wayland.windowManager.hyprland.enable =
     lib.mkEnableOption "hyprland";
@@ -13,7 +13,15 @@
     lib.mkIf
     config.modules.homeManager.wayland.windowManager.hyprland.enable {
       home.sessionVariables.NIXOS_OZONE_WL = 1;
-      modules.homeManager.services.dunst.enable = true;
+
+      modules.homeManager = {
+        programs.rofi = {
+          enable = true;
+          pass.enable = true;
+        };
+
+        services.dunst.enable = true;
+      };
 
       wayland.windowManager.hyprland = {
         enable =
@@ -91,6 +99,8 @@
               "SUPER, J, cyclenext, next"
               "SUPER, K, cyclenext, prev"
               "SUPER, L, focusmonitor, +1"
+              "SUPER, P, exec, ${pkgs.rofi-pass.pname}"
+              "SUPER, R, exec, rofi -show run"
               "SUPER, T, exec, ${config.home.sessionVariables.TERMINAL}"
               "SUPER, W, togglefloating,"
               "SUPER, mouse_down, workspace, e+1"

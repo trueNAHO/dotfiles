@@ -42,6 +42,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/programs/mpv
         ../modules/homeManager/programs/qutebrowser
         ../modules/homeManager/programs/ripgrep
+        ../modules/homeManager/programs/rofi
         ../modules/homeManager/programs/wezterm
         ../modules/homeManager/programs/xplr
         ../modules/homeManager/programs/zathura
@@ -107,6 +108,12 @@ inputs.homeManager.lib.homeManagerConfiguration {
                 mpv.enable = true;
                 qutebrowser.enable = true;
                 ripgrep.enable = true;
+
+                rofi = {
+                  enable = true;
+                  pass.enable = true;
+                };
+
                 wezterm.enable = true;
                 xplr.enable = true;
                 zathura.enable = true;
