@@ -30,7 +30,7 @@
             resize = "10%";
 
             toggleMode = pkgs.writeShellApplication {
-              name = "hyprland-toggle-mode";
+              name = "${pkgs.hyprland.pname}-toggle-mode";
               runtimeInputs = [pkgs.hyprland];
 
               text = let
