@@ -46,6 +46,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/programs/qutebrowser
         ../modules/homeManager/programs/ripgrep
         ../modules/homeManager/programs/rofi
+        ../modules/homeManager/programs/swaylock
         ../modules/homeManager/programs/wezterm
         ../modules/homeManager/programs/xplr
         ../modules/homeManager/programs/zathura
@@ -55,6 +56,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/services/easyeffects
         ../modules/homeManager/services/gammastep
         ../modules/homeManager/services/gpg-agent
+        ../modules/homeManager/services/swayidle
         ../modules/homeManager/wayland/windowManager/hyprland
         ../modules/programs/nixvim
         ../modules/services/battery
@@ -120,6 +122,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
                   pass.enable = true;
                 };
 
+                swaylock.enable = true;
                 wezterm.enable = true;
                 xplr.enable = true;
                 zathura.enable = true;
@@ -132,6 +135,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
                 easyeffects.enable = true;
                 gammastep.enable = true;
                 gpg-agent.enable = true;
+                swayidle.enable = true;
               };
 
               wayland.windowManager.hyprland.enable = true;

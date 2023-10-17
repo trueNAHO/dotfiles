@@ -9,6 +9,7 @@
     ../../../programs/jq
     ../../../programs/rofi
     ../../../services/dunst
+    ../../../services/swayidle
   ];
 
   options.modules.homeManager.wayland.windowManager.hyprland.enable =
@@ -31,7 +32,10 @@
           };
         };
 
-        services.dunst.enable = true;
+        services = {
+          dunst.enable = true;
+          swayidle.enable = true;
+        };
       };
 
       wayland.windowManager.hyprland = {
