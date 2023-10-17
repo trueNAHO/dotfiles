@@ -98,6 +98,7 @@
               ]
             ) (lib.lists.range 0 9)
             ++ [
+              "SUPER ALT, C, centerwindow,"
               "SUPER ALT, H, resizeactive, -${resize} 0"
               "SUPER ALT, J, resizeactive, 0 -${resize}"
               "SUPER ALT, K, resizeactive, 0 ${resize}"
@@ -105,7 +106,6 @@
               "SUPER CTRL, F, exec, ${toggleMode}/bin/${toggleMode.meta.mainProgram}"
               "SUPER CTRL, Q, exec, ${pkgs.wlogout.pname}"
               "SUPER CTRL, S, exec, systemctl suspend"
-              "SUPER SHIFT, C, centerwindow,"
               "SUPER SHIFT, C, exec, hyprctl -j activewindow | ${pkgs.jq.pname} -r '\"\\(.at[0]),\\(.at[1]) \\(.size[0])x\\(.size[1])\"' | ${pkgs.grim.pname} -g - - | wl-copy"
               "SUPER SHIFT, F, fakefullscreen,"
               "SUPER SHIFT, J, swapnext, next"
