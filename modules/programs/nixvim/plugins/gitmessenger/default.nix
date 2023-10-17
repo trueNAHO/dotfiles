@@ -1,8 +1,14 @@
-{config, ...}: {
+{
   programs.nixvim = {
-    maps = config.nixvim.helpers.mkMaps {silent = true;} {
-      normal."<leader>gl".action = "<cmd>GitMessenger<cr>";
-    };
+    keymaps = [
+      {
+        action = "vim.cmd.GitMessenger";
+        key = "<leader>gl";
+        lua = true;
+        mode = "n";
+        options.silent = true;
+      }
+    ];
 
     plugins.gitmessenger = {
       enable = true;

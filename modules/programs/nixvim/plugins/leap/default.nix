@@ -1,8 +1,14 @@
-{config, ...}: {
+{
   programs.nixvim = {
-    maps = config.nixvim.helpers.mkMaps {silent = true;} {
-      normalVisualOp."<leader>f".action = "<cmd>lua require('leap').leap({ target_windows = vim.tbl_filter(function(win) return vim.api.nvim_win_get_config(win).focusable end, vim.api.nvim_tabpage_list_wins(0)) })<cr>";
-    };
+    keymaps = [
+      {
+        action = "function() require('leap').leap({ target_windows = vim.tbl_filter(function(win) return vim.api.nvim_win_get_config(win).focusable end, vim.api.nvim_tabpage_list_wins(0)) }) end";
+        key = "<leader>f";
+        lua = true;
+        mode = ["n" "v"];
+        options.silent = true;
+      }
+    ];
 
     plugins.leap = {
       addDefaultMappings = false;

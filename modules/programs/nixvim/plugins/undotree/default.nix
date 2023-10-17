@@ -1,8 +1,14 @@
-{config, ...}: {
+{
   programs.nixvim = {
-    maps = config.nixvim.helpers.mkMaps {silent = true;} {
-      normal."<leader>u".action = "<cmd>UndotreeToggle<cr>";
-    };
+    keymaps = [
+      {
+        action = "vim.cmd.UndotreeToggle";
+        key = "<leader>u";
+        lua = true;
+        mode = "n";
+        options.silent = true;
+      }
+    ];
 
     plugins.undotree.enable = true;
   };

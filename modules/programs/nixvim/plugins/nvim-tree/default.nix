@@ -1,8 +1,14 @@
-{config, ...}: {
+{
   programs.nixvim = {
-    maps = config.nixvim.helpers.mkMaps {silent = true;} {
-      normal."<leader>e".action = "<cmd>NvimTreeToggle<cr>";
-    };
+    keymaps = [
+      {
+        action = "require('nvim-tree.api').tree.toggle";
+        key = "<leader>e";
+        lua = true;
+        mode = "n";
+        options.silent = true;
+      }
+    ];
 
     plugins.nvim-tree.enable = true;
   };

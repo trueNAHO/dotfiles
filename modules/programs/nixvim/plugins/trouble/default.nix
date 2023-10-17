@@ -1,8 +1,14 @@
-{config, ...}: {
+{
   programs.nixvim = {
-    maps = config.nixvim.helpers.mkMaps {silent = true;} {
-      normal. "<leader>ll".action = "<cmd>TroubleToggle<cr>";
-    };
+    keymaps = [
+      {
+        action = "require('trouble').toggle";
+        key = "<leader>ll";
+        lua = true;
+        mode = "n";
+        options.silent = true;
+      }
+    ];
 
     plugins.trouble.enable = true;
   };
