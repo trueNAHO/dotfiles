@@ -15,7 +15,10 @@
 
     programs.lazygit = {
       enable = true;
-      settings.git.branchLogCmd = "${pkgs.git.pname} log --color=always --decorate --graph --oneline {{branchName}}";
+      settings.git = {
+        autoFetch = false;
+        branchLogCmd = "${pkgs.git.pname} log --color=always --decorate --graph --oneline {{branchName}}";
+      };
     };
   };
 }
