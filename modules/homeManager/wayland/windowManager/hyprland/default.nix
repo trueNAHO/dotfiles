@@ -4,7 +4,12 @@
   pkgs,
   ...
 }: {
-  imports = [../../../programs/rofi ../../../services/dunst];
+  imports = [
+    ../../../home/packages/grim
+    ../../../programs/jq
+    ../../../programs/rofi
+    ../../../services/dunst
+  ];
 
   options.modules.homeManager.wayland.windowManager.hyprland.enable =
     lib.mkEnableOption "hyprland";
@@ -15,9 +20,15 @@
       home.sessionVariables.NIXOS_OZONE_WL = 1;
 
       modules.homeManager = {
-        programs.rofi = {
-          enable = true;
-          pass.enable = true;
+        home.packages.grim.enable = true;
+
+        programs = {
+          jq.enable = true;
+
+          rofi = {
+            enable = true;
+            pass.enable = true;
+          };
         };
 
         services.dunst.enable = true;
@@ -93,6 +104,7 @@
               "SUPER SHIFT, K, swapnext, prev"
               "SUPER SHIFT, P, pin,"
               "SUPER SHIFT, Q, killactive,"
+              "SUPER SHIFT, C, exec, hyprctl -j activewindow | ${pkgs.jq.pname} -r '\"\\(.at[0]),\\(.at[1]) \\(.size[0])x\\(.size[1])\"' | ${pkgs.grim.pname} -g - - | wl-copy"
               "SUPER, B, exec, ${config.home.sessionVariables.BROWSER}"
               "SUPER, F, fullscreen,"
               "SUPER, H, focusmonitor, -1"
@@ -103,6 +115,7 @@
               "SUPER, R, exec, rofi -show run"
               "SUPER, T, exec, ${config.home.sessionVariables.TERMINAL}"
               "SUPER, W, togglefloating,"
+              "SUPER, C, exec, ${pkgs.grim.pname} - | wl-copy"
               "SUPER, mouse_down, workspace, e+1"
               "SUPER, mouse_up, workspace, e-1"
             ];
