@@ -48,6 +48,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/programs/rofi
         ../modules/homeManager/programs/swaylock
         ../modules/homeManager/programs/wezterm
+        ../modules/homeManager/programs/wlogout
         ../modules/homeManager/programs/xplr
         ../modules/homeManager/programs/zathura
         ../modules/homeManager/programs/zellij
@@ -124,6 +125,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
 
                 swaylock.enable = true;
                 wezterm.enable = true;
+                wlogout.enable = true;
                 xplr.enable = true;
                 zathura.enable = true;
                 zellij.enable = true;

@@ -8,6 +8,7 @@
     ../../../home/packages/grim
     ../../../programs/jq
     ../../../programs/rofi
+    ../../../programs/wlogout
     ../../../services/dunst
     ../../../services/swayidle
   ];
@@ -30,6 +31,8 @@
             enable = true;
             pass.enable = true;
           };
+
+          wlogout.enable = true;
         };
 
         services = {
@@ -100,7 +103,7 @@
               "SUPER ALT, K, resizeactive, 0 ${resize}"
               "SUPER ALT, L, resizeactive, ${resize} 0"
               "SUPER CTRL, F, exec, ${toggleMode}/bin/${toggleMode.meta.mainProgram}"
-              "SUPER CTRL, Q, exit,"
+              "SUPER CTRL, Q, exec, ${pkgs.wlogout.pname}"
               "SUPER CTRL, S, exec, systemctl suspend"
               "SUPER SHIFT, C, centerwindow,"
               "SUPER SHIFT, F, fakefullscreen,"
