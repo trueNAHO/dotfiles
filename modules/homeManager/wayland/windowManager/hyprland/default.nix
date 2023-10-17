@@ -104,6 +104,7 @@
               "SUPER ALT, K, resizeactive, 0 ${resize}"
               "SUPER ALT, L, resizeactive, ${resize} 0"
               "SUPER CTRL, F, exec, ${toggleMode}/bin/${toggleMode.meta.mainProgram}"
+              "SUPER CTRL, L, exec, loginctl lock-session"
               "SUPER CTRL, Q, exec, ${pkgs.wlogout.pname}"
               "SUPER CTRL, S, exec, systemctl suspend"
               "SUPER SHIFT, C, exec, hyprctl -j activewindow | ${pkgs.jq.pname} -r '\"\\(.at[0]),\\(.at[1]) \\(.size[0])x\\(.size[1])\"' | ${pkgs.grim.pname} -g - - | wl-copy"
