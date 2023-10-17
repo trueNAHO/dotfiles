@@ -102,7 +102,7 @@
           Install.WantedBy = ["timers.target"];
 
           Timer = {
-            Unit = name;
+            Unit = "${name}.service";
             OnCalendar = "*:0/5";
           };
 
