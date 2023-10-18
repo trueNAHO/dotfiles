@@ -5,110 +5,188 @@
   ...
 }: {
   imports = [../../homeManager/services/dunst];
-  options.modules.services.battery.enable = lib.mkEnableOption "battery";
 
-  config = lib.mkIf config.modules.services.battery.enable {
-    modules.homeManager.services.dunst.enable = true;
+  options.modules.services.battery = {
+    cacheFile = lib.mkOption {
+      default = "/tmp/${config.home.username}_systemd_service_battery";
 
-    systemd.user = let
-      description = "Battery notifier";
-      name = "battery";
+      description = ''
+        Cache file storing the battery percentage of the last notification.
+      '';
+
+      example = "${config.xdg.cacheHome}/systemd_service_battery";
+      type = lib.types.str;
+    };
+
+    delta = lib.mkOption {
+      default = 5;
+
+      description = ''
+        Minimum battery percentage drop since the last notification to trigger a
+        new one.
+      '';
+
+      example = 10;
+      type = lib.types.ints.between 0 100;
+    };
+
+    enable = lib.mkEnableOption "battery";
+
+    systemd.user.timers.battery.Timer.OnCalendar = lib.mkOption {
+      default = "*:0/5";
+
+      description = ''
+        Set `systemd.user.timers.battery.Timer.OnCalendar` as given by
+        [https://nix-community.github.io/home-manager/options.html#opt-systemd.user.timers][].
+      '';
+
+      example = "*:0/1";
+      type = lib.types.str;
+    };
+
+    urgency = let
+      description = urgency: ''
+        Battery percentages starting from this value trigger notifications
+        with the `${urgency}` urgency level.
+      '';
     in {
-      services = {
-        ${name} = {
-          Install.WantedBy = ["default.target"];
-
-          Service = {
-            ExecStart = let
-              application = pkgs.writeShellApplication {
-                inherit name;
-                runtimeInputs = with pkgs; [acpi coreutils gawk libnotify];
-
-                text = ''
-                  get_notification_urgency() {
-                    readonly MIN_DELTA="5"
-
-                    delta="$(printf '%s\n' "$(( $1 - $2 ))")"
-
-                    if (( delta < MIN_DELTA )); then
-                      return 0
-                    fi
-
-                    if (( $2 <= 25 )); then
-                      urgency="critical"
-                    elif (( $2 <= 50 )); then
-                      urgency="normal"
-                    elif (( $2 <= 75 )); then
-                      urgency="low"
-                    else
-                      return 0
-                    fi
-
-                    printf '%s\n' "$urgency"
-                  }
-
-                  main() {
-                    FILE="/tmp/$(id --user)_systemd_service_battery"
-                    readonly FILE
-
-                    battery="$(acpi --battery | awk '/Battery 0/')"
-
-                    battery_value_now="$(
-                      printf '%s\n' "$battery" |
-                        awk -v FPAT='[[:digit:]]+' '{ print $2 }'
-                    )"
-
-                    if [[ -f "$FILE" ]]; then
-                      battery_value_before="$(cat "$FILE")"
-                    else
-                      battery_value_before="100"
-                    fi
-
-                    notification_urgency="$(
-                      get_notification_urgency \
-                        "$battery_value_before" \
-                        "$battery_value_now"
-                    )"
-
-                    if [[ -n "$notification_urgency" ]]; then
-                      notify-send \
-                        --urgency "$notification_urgency" \
-                        "Battery: $battery_value_now%"
-
-                      printf '%s\n' "$battery_value_now" > "$FILE"
-                    fi
-
-                    return 0
-                  }
-
-                  main
-                '';
-              };
-            in "${application}/bin/${application.meta.mainProgram}";
-
-            Type = "oneshot";
-          };
-
-          Unit = {
-            After = "graphical-session-pre.target";
-            Description = description;
-            PartOf = "graphical-session.target";
-          };
-        };
+      critical = lib.mkOption {
+        default = 25;
+        description = description "critical";
+        example = 10;
+        type = lib.types.ints.between 1 100;
       };
 
-      timers = {
-        ${name} = {
-          Install.WantedBy = ["timers.target"];
+      low = lib.mkOption {
+        default = 50;
+        description = description "low";
+        example = 25;
+        type = lib.types.ints.between 1 100;
+      };
 
-          Timer = {
-            Unit = "${name}.service";
-            OnCalendar = "*:0/5";
-          };
-
-          Unit.Description = "${description} scheduler";
-        };
+      normal = lib.mkOption {
+        default = 75;
+        description = description "normal";
+        example = 50;
+        type = lib.types.ints.between 1 100;
       };
     };
   };
+
+  config = let
+    cfg = config.modules.services.battery;
+  in
+    lib.mkIf cfg.enable {
+      assertions = [
+        {
+          assertion =
+            cfg.urgency.critical
+            <= cfg.urgency.low
+            && cfg.urgency.low
+            <= cfg.urgency.normal;
+
+          message = let
+            module = "modules.services.battery.urgency";
+          in "Expected '${module}.critical <= ${module}.low <= ${module}.normal', got: '${toString cfg.urgency.critical} <= ${toString cfg.urgency.low} <= ${toString cfg.urgency.normal}'.";
+        }
+      ];
+
+      modules.homeManager.services.dunst.enable = true;
+
+      systemd.user = let
+        description = "Battery notifier";
+        name = "battery";
+      in {
+        services = {
+          ${name} = {
+            Install.WantedBy = ["default.target"];
+
+            Service = {
+              ExecStart = let
+                application = pkgs.writeShellApplication {
+                  inherit name;
+                  runtimeInputs = with pkgs; [acpi coreutils gawk libnotify];
+
+                  text = ''
+                    get_notification_urgency() {
+                      delta="$(printf '%s\n' "$(( $1 - $2 ))")"
+
+                      if (( delta < ${toString cfg.delta} )); then
+                        return 0
+                      fi
+
+                      if (( $2 <= ${toString cfg.urgency.critical} )); then
+                        urgency="critical"
+                      elif (( $2 <= ${toString cfg.urgency.normal} )); then
+                        urgency="normal"
+                      elif (( $2 <= ${toString cfg.urgency.low} )); then
+                        urgency="low"
+                      else
+                        return 0
+                      fi
+
+                      printf '%s\n' "$urgency"
+                    }
+
+                    main() {
+                      battery="$(acpi --battery | awk '/Battery 0/')"
+
+                      battery_value_now="$(
+                        printf '%s\n' "$battery" |
+                          awk -v FPAT='[[:digit:]]+' '{ print $2 }'
+                      )"
+
+                      if [[ -f "${cfg.cacheFile}}" ]]; then
+                        battery_value_before="$(cat "${cfg.cacheFile}")"
+                      else
+                        battery_value_before="100"
+                      fi
+
+                      notification_urgency="$(
+                        get_notification_urgency \
+                          "$battery_value_before" \
+                          "$battery_value_now"
+                      )"
+
+                      if [[ -n "$notification_urgency" ]]; then
+                        notify-send \
+                          --urgency "$notification_urgency" \
+                          "Battery: $battery_value_now%"
+
+                        printf '%s\n' "$battery_value_now" > "${cfg.cacheFile}"
+                      fi
+
+                      return 0
+                    }
+
+                    main
+                  '';
+                };
+              in "${application}/bin/${application.meta.mainProgram}";
+
+              Type = "oneshot";
+            };
+
+            Unit = {
+              After = "graphical-session-pre.target";
+              Description = description;
+              PartOf = "graphical-session.target";
+            };
+          };
+        };
+
+        timers = {
+          ${name} = {
+            Install.WantedBy = ["timers.target"];
+
+            Timer = {
+              Unit = "${name}.service";
+              OnCalendar = cfg.systemd.user.timers.battery.Timer.OnCalendar;
+            };
+
+            Unit.Description = "${description} scheduler";
+          };
+        };
+      };
+    };
 }
