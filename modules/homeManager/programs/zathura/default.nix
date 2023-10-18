@@ -7,6 +7,9 @@
     lib.mkEnableOption "zathura";
 
   config = lib.mkIf config.modules.homeManager.programs.zathura.enable {
-    programs.zathura.enable = true;
+    programs.zathura = {
+      enable = true;
+      options.recolor = lib.mkForce true;
+    };
   };
 }
