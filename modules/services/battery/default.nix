@@ -108,58 +108,35 @@
                   runtimeInputs = with pkgs; [acpi coreutils gawk libnotify];
 
                   text = ''
-                    get_notification_urgency() {
-                      delta="$(printf '%s\n' "$(( $1 - $2 ))")"
+                    battery_value_now="$(
+                      acpi --battery |
+                        awk '/Battery 0/' |
+                        awk -v FPAT='[[:digit:]]+' '{ print $2 }'
+                    )"
 
-                      if (( delta < ${toString cfg.delta} )); then
-                        return 0
-                      fi
+                    if [[ -f "${cfg.cacheFile}}" ]]; then
+                      battery_value_before="$(cat "${cfg.cacheFile}")"
+                    else
+                      battery_value_before="100"
+                    fi
 
-                      if (( $2 <= ${toString cfg.urgency.critical} )); then
-                        urgency="critical"
-                      elif (( $2 <= ${toString cfg.urgency.normal} )); then
-                        urgency="normal"
-                      elif (( $2 <= ${toString cfg.urgency.low} )); then
-                        urgency="low"
-                      else
-                        return 0
-                      fi
+                    if (( battery_value_before - battery_value_now < ${toString cfg.delta} )); then
+                      exit 0
+                    elif (( battery_value_now <= ${toString cfg.urgency.critical} )); then
+                      urgency="critical"
+                    elif (( battery_value_now <= ${toString cfg.urgency.normal} )); then
+                      urgency="normal"
+                    elif (( battery_value_now <= ${toString cfg.urgency.low} )); then
+                      urgency="low"
+                    else
+                      exit 0
+                    fi
 
-                      printf '%s\n' "$urgency"
-                    }
+                    notify-send \
+                      --urgency "$urgency" \
+                      "Battery: $battery_value_now%"
 
-                    main() {
-                      battery="$(acpi --battery | awk '/Battery 0/')"
-
-                      battery_value_now="$(
-                        printf '%s\n' "$battery" |
-                          awk -v FPAT='[[:digit:]]+' '{ print $2 }'
-                      )"
-
-                      if [[ -f "${cfg.cacheFile}}" ]]; then
-                        battery_value_before="$(cat "${cfg.cacheFile}")"
-                      else
-                        battery_value_before="100"
-                      fi
-
-                      notification_urgency="$(
-                        get_notification_urgency \
-                          "$battery_value_before" \
-                          "$battery_value_now"
-                      )"
-
-                      if [[ -n "$notification_urgency" ]]; then
-                        notify-send \
-                          --urgency "$notification_urgency" \
-                          "Battery: $battery_value_now%"
-
-                        printf '%s\n' "$battery_value_now" > "${cfg.cacheFile}"
-                      fi
-
-                      return 0
-                    }
-
-                    main
+                    printf '%s\n' "$battery_value_now" > "${cfg.cacheFile}"
                   '';
                 };
               in "${application}/bin/${application.meta.mainProgram}";
