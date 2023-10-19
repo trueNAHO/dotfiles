@@ -114,7 +114,7 @@
                         awk -v FPAT='[[:digit:]]+' '{ print $2 }'
                     )"
 
-                    if [[ -f "${cfg.cacheFile}}" ]]; then
+                    if [[ -f "${cfg.cacheFile}" ]]; then
                       battery_value_before="$(cat "${cfg.cacheFile}")"
                     else
                       battery_value_before="100"
