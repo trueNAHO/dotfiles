@@ -42,6 +42,11 @@
         terminal = config.home.sessionVariables.TERMINAL;
         xplr = pkgs.xplr.pname;
       in {
+        colors.webpage = {
+          darkmode.enabled = true;
+          preferred_color_scheme = "dark";
+        };
+
         content = {
           autoplay = false;
           cookies.store = false;
