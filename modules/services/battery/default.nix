@@ -110,10 +110,10 @@
                   text = let
                     maxBatteryValue = toString 100;
                   in ''
+                    battery="$(acpi --battery | awk '/Battery 0/')"
+
                     battery_value_now="$(
-                      acpi --battery |
-                        awk '/Battery 0/' |
-                        awk -v FPAT='[[:digit:]]+' '{ print $2 }'
+                        awk -v FPAT='[[:digit:]]+' '{ print $2 }' <<< "$battery"
                     )"
 
                     if [[ -f "${cfg.cacheFile}" ]]; then
@@ -143,9 +143,16 @@
                       exit 0
                     fi
 
+                    status="$(
+                      awk -v FPAT='[a-zA-Z]+' '{print $2}' <<< "$battery"
+                    )"
+
+                    time_remaining="$(awk '{ print $5 }' <<< "$battery")"
+
                     notify-send \
                       --urgency "$urgency" \
-                      "Battery: $battery_value_now%"
+                      "Battery" \
+                      "<u>Capacity:</u> $battery_value_now%\n<u>Status:</u> $status\n<u>Time remaining:</u> $time_remaining\n<u>Urgency:</u> ''${urgency^}"
 
                     printf '%s\n' "$battery_value_now" > "${cfg.cacheFile}"
                   '';
