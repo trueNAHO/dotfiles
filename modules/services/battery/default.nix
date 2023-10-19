@@ -58,16 +58,16 @@
       };
 
       low = lib.mkOption {
-        default = 50;
+        default = 75;
         description = description "low";
-        example = 25;
+        example = 50;
         type = lib.types.ints.between 1 100;
       };
 
       normal = lib.mkOption {
-        default = 75;
+        default = 50;
         description = description "normal";
-        example = 50;
+        example = 25;
         type = lib.types.ints.between 1 100;
       };
     };
@@ -81,13 +81,13 @@
         {
           assertion =
             cfg.urgency.critical
-            <= cfg.urgency.low
-            && cfg.urgency.low
-            <= cfg.urgency.normal;
+            <= cfg.urgency.normal
+            && cfg.urgency.normal
+            <= cfg.urgency.low;
 
           message = let
             module = "modules.services.battery.urgency";
-          in "Expected '${module}.critical <= ${module}.low <= ${module}.normal', got: '${toString cfg.urgency.critical} <= ${toString cfg.urgency.low} <= ${toString cfg.urgency.normal}'.";
+          in "Expected '${module}.critical <= ${module}.normal <= ${module}.low', got: '${toString cfg.urgency.critical} <= ${toString cfg.urgency.normal} <= ${toString cfg.urgency.low}'.";
         }
       ];
 
