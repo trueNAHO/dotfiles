@@ -61,7 +61,7 @@
         nixpkgs.follows = "nixpkgs";
       };
 
-      url = "github:danth/stylix";
+      url = "github:trueNAHO/stylix/qutebrowser-dark-mode";
     };
 
     triPaneXplr = {
