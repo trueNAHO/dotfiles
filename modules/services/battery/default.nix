@@ -87,7 +87,7 @@
 
           message = let
             module = "modules.services.battery.urgency";
-          in "Expected '${module}.critical <= ${module}.normal <= ${module}.low', got: '${toString cfg.urgency.critical} <= ${toString cfg.urgency.normal} <= ${toString cfg.urgency.low}'.";
+          in "Expected '${module}.critical <= ${module}.normal <= ${module}.low', got: '${toString cfg.urgency.critical} <= ${toString cfg.urgency.normal} <= ${toString cfg.urgency.low}'";
         }
       ];
 
