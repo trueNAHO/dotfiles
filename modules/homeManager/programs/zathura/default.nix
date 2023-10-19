@@ -9,7 +9,7 @@
   config = lib.mkIf config.modules.homeManager.programs.zathura.enable {
     programs.zathura = {
       enable = true;
-      options.recolor = lib.mkForce true;
+      options.recolor = true;
     };
   };
 }
