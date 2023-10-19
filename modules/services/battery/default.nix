@@ -107,7 +107,9 @@
                   inherit name;
                   runtimeInputs = with pkgs; [acpi coreutils gawk libnotify];
 
-                  text = ''
+                  text = let
+                    maxBatteryValue = toString 100;
+                  in ''
                     battery_value_now="$(
                       acpi --battery |
                         awk '/Battery 0/' |
@@ -117,17 +119,26 @@
                     if [[ -f "${cfg.cacheFile}" ]]; then
                       battery_value_before="$(cat "${cfg.cacheFile}")"
                     else
-                      battery_value_before="100"
+                      printf '%s\n' "${maxBatteryValue}" > "${cfg.cacheFile}"
+                      battery_value_before="${maxBatteryValue}"
                     fi
 
-                    if (( battery_value_before - battery_value_now < ${toString cfg.delta} )); then
+                    if (( battery_value_now > battery_value_before )); then
+                      printf '%s\n' "$battery_value_now" > "${cfg.cacheFile}"
                       exit 0
+
+                    elif (( battery_value_before - battery_value_now < ${toString cfg.delta} )); then
+                      exit 0
+
                     elif (( battery_value_now <= ${toString cfg.urgency.critical} )); then
                       urgency="critical"
+
                     elif (( battery_value_now <= ${toString cfg.urgency.normal} )); then
                       urgency="normal"
+
                     elif (( battery_value_now <= ${toString cfg.urgency.low} )); then
                       urgency="low"
+
                     else
                       exit 0
                     fi
