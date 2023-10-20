@@ -5,12 +5,11 @@
   ...
 }: {
   imports = [
+    ../../../../wayland
     ../../../home/packages/grim
     ../../../programs/jq
     ../../../programs/rofi
     ../../../programs/wlogout
-    ../../../services/dunst
-    ../../../services/swayidle
   ];
 
   options.modules.homeManager.wayland.windowManager.hyprland.enable =
@@ -19,26 +18,23 @@
   config =
     lib.mkIf
     config.modules.homeManager.wayland.windowManager.hyprland.enable {
-      home.sessionVariables.NIXOS_OZONE_WL = 1;
+      modules = {
+        homeManager = {
+          home.packages.grim.enable = true;
 
-      modules.homeManager = {
-        home.packages.grim.enable = true;
+          programs = {
+            jq.enable = true;
 
-        programs = {
-          jq.enable = true;
+            rofi = {
+              enable = true;
+              pass.enable = true;
+            };
 
-          rofi = {
-            enable = true;
-            pass.enable = true;
+            wlogout.enable = true;
           };
-
-          wlogout.enable = true;
         };
 
-        services = {
-          dunst.enable = true;
-          swayidle.enable = true;
-        };
+        wayland.enable = true;
       };
 
       wayland.windowManager.hyprland = {
