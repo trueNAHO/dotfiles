@@ -50,7 +50,18 @@
         settings = let
           gap = 5;
         in {
-          animations.enabled = false;
+          animations = {
+            animation = ["windows, 1, 7, windowsBezier"];
+
+            bezier = let
+              curve =
+                builtins.concatStringsSep
+                ","
+                (map toString [0.05 0.9 0.1 1.05]);
+            in ["windowsBezier, ${curve}"];
+
+            enabled = false;
+          };
 
           bind = let
             resize = "10%";
