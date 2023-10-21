@@ -87,6 +87,7 @@
             convco.enable = true;
           };
 
+          settings.alejandra.verbosity = "quiet";
           src = ./.;
         };
 
