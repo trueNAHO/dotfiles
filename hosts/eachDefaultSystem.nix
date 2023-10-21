@@ -62,6 +62,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/programs/nixvim
         ../modules/services/battery
         ../modules/stylix
+        ../modules/wayland
 
         {
           home = let
@@ -146,6 +147,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
             programs.nixvim.enable = true;
             services.battery.enable = true;
             stylix.enable = true;
+            wayland.enable = true;
           };
 
           nixpkgs.config.allowUnfree = true;
