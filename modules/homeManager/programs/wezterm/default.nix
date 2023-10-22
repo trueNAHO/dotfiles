@@ -23,6 +23,7 @@
           disable_default_key_bindings = true,
           enable_tab_bar = false,
           font = wezterm.font 'Monospace',
+          font_size = 7;
 
           keys = {
             {
