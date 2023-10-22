@@ -58,6 +58,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/services/gammastep
         ../modules/homeManager/services/gpg-agent
         ../modules/homeManager/services/swayidle
+        ../modules/homeManager/systemd/user/tmpfiles/rules
         ../modules/homeManager/wayland/windowManager/hyprland
         ../modules/programs/nixvim
         ../modules/services/battery
@@ -141,6 +142,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
                 swayidle.enable = true;
               };
 
+              systemd.user.tmpfiles.rules.enable = true;
               wayland.windowManager.hyprland.enable = true;
             };
 
