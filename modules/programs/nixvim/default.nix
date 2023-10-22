@@ -6,6 +6,8 @@
   ...
 }: {
   imports = [
+    ../../stylix
+    ./colorschemes
     ./keymaps
     ./options
     ./plugins
@@ -15,6 +17,8 @@
   options.modules.programs.nixvim.enable = lib.mkEnableOption "nixvim";
 
   config = lib.mkIf config.modules.programs.nixvim.enable {
+    modules.stylix.enable = true;
+
     home = let
       neovim = pkgs.neovim.meta.mainProgram;
     in {
