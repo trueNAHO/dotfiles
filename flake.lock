@@ -397,16 +397,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1697727505,
-        "narHash": "sha256-g4sD7y/rYq/gp98uYvKJJz5pOPgPBRNEHcQTJZM97zY=",
-        "owner": "trueNAHO",
+        "lastModified": 1697999074,
+        "narHash": "sha256-XOGeMMRsF8RywSiiGLkKe60vtG4b+1pGTe64XPhetmQ=",
+        "owner": "danth",
         "repo": "stylix",
-        "rev": "7be4c8db265ba17c63f09ffb594edba75b566aec",
+        "rev": "9e88d05a851d4919ad5c729fdf0993817efacb02",
         "type": "github"
       },
       "original": {
-        "owner": "trueNAHO",
-        "ref": "qutebrowser-dark-mode",
+        "owner": "danth",
         "repo": "stylix",
         "type": "github"
       }
