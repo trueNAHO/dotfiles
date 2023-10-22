@@ -29,6 +29,8 @@
         }
       ];
 
+      systemdTarget = "graphical-session-pre.target";
+
       timeouts = [
         {
           timeout = 5 * 60;
