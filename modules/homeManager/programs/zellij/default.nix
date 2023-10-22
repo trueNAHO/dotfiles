@@ -4,10 +4,18 @@
   pkgs,
   ...
 }: {
+  imports = [../../wayland/windowManager/hyprland];
+
   options.modules.homeManager.programs.zellij.enable =
     lib.mkEnableOption "zellij";
 
   config = lib.mkIf config.modules.homeManager.programs.zellij.enable {
+    modules.homeManager.wayland.windowManager.hyprland.enable = true;
+
+    home.shellAliases.${pkgs.hyprland.meta.mainProgram} = let
+      hyprland = pkgs.hyprland;
+    in ''ZELLIJ="" ${hyprland}/bin/${hyprland.meta.mainProgram}'';
+
     programs = {
       zellij = {
         enable = true;
