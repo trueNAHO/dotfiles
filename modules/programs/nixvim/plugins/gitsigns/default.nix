@@ -1,11 +1,11 @@
-let
-  leader = "<leader>g";
-in {
+{
   programs.nixvim.plugins.gitsigns = {
     enable = true;
 
     # https://github.com/lewis6991/gitsigns.nvim/blob/287fffb410ce82d19da2d503a1f1570adf7b7874/README.md
-    onAttach.function = ''
+    onAttach.function = let
+      leader = "<leader>g";
+    in ''
       function(bufnr)
         local gitsigns = package.loaded.gitsigns
 
