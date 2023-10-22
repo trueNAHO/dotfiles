@@ -4,7 +4,11 @@
   pkgs,
   ...
 }: {
-  imports = [../../home/packages/fd ../../wayland/windowManager/hyprland];
+  imports = [
+    ../../home/packages/fd
+    ../../home/packages/wl-clipboard
+    ../../wayland/windowManager/hyprland
+  ];
   options.modules.homeManager.programs.fish.enable = lib.mkEnableOption "fish";
 
   config = lib.mkIf config.modules.homeManager.programs.fish.enable {
@@ -19,6 +23,7 @@
         done ++ forgit ++ fzf-fish;
 
       sessionVariables = {
+        FORGIT_COPY_CMD = "wl-copy";
         FORGIT_FZF_DEFAULT_OPTS = "--bind=ctrl-j:preview-down --bind=ctrl-k:preview-up";
         FORGIT_NO_ALIASES = 1;
         SHELL = pkgs.fish.pname;
@@ -26,7 +31,11 @@
     };
 
     modules.homeManager = {
-      home.packages.fd.enable = true;
+      home.packages = {
+        fd.enable = true;
+        wl-clipboard.enable = true;
+      };
+
       wayland.windowManager.hyprland.enable = true;
     };
 
