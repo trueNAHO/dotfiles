@@ -13,7 +13,7 @@
     plugins.gitmessenger = {
       enable = true;
       floatingWinOps.border = "rounded";
-      includeDiff = "all";
+      includeDiff = "current";
       noDefaultMappings = true;
       popupContentMargins = false;
     };

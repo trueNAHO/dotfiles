@@ -30,7 +30,7 @@
           cm = "commit";
           cma = "!${git} add --all && ${git} commit";
           co = "checkout";
-          fixup = "!${git} add --all && ${git} commit --message \"chore!: $(date)\"";
+          fix = "!${git} add --all && ${git} commit --message \"chore!: $(date)\"";
           nuke = "!${git} reset --hard HEAD && ${git} clean -d --force";
           reword = "commit --amend";
           rs = "reset";

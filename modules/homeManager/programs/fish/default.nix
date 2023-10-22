@@ -19,6 +19,7 @@
         done ++ forgit ++ fzf-fish;
 
       sessionVariables = {
+        FORGIT_FZF_DEFAULT_OPTS = "--bind=ctrl-j:preview-down --bind=ctrl-k:preview-up";
         FORGIT_NO_ALIASES = 1;
         SHELL = pkgs.fish.pname;
       };
@@ -197,7 +198,6 @@
           cp = "forgit cherry_pick";
           d = "forgit diff";
           f = "forgit checkout_file";
-          fix = "forgit fixup";
           i = "forgit ignore";
           l = "forgit log";
           rb = "forgit rebase";
