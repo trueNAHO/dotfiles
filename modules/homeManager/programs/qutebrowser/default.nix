@@ -24,6 +24,7 @@
       keyBindings = {
         normal = let
           leaderKey = "<Space>";
+          loopPlaylist = "--loop-playlist";
           mpv = pkgs.mpv.meta.mainProgram;
           mpvAudio = "--player-operation-mode=pseudo-gui --vid=no";
           qutebrowserSpawn = "spawn --detach --verbose";
@@ -31,10 +32,10 @@
           "${leaderKey}mA" = "${qutebrowserSpawn} ${mpv} ${mpvAudio} '{url}'";
           "${leaderKey}mV" = "${qutebrowserSpawn} ${mpv} '{url}'";
           "${leaderKey}ma" = "hint links ${qutebrowserSpawn} ${mpv} ${mpvAudio} '{hint-url}'";
-          "${leaderKey}mlA" = "${qutebrowserSpawn} ${mpv} --loop-playlist ${mpvAudio} '{url}'";
-          "${leaderKey}mlV" = "${qutebrowserSpawn} ${mpv} --loop-playlist '{url}'";
-          "${leaderKey}mla" = "hint links ${qutebrowserSpawn} ${mpv} --loop-playlist ${mpvAudio} '{hint-url}'";
-          "${leaderKey}mlv" = "hint links ${qutebrowserSpawn} ${mpv} --loop-playlist '{hint-url}'";
+          "${leaderKey}mlA" = "${qutebrowserSpawn} ${mpv} ${loopPlaylist} ${mpvAudio} '{url}'";
+          "${leaderKey}mlV" = "${qutebrowserSpawn} ${mpv} ${loopPlaylist} '{url}'";
+          "${leaderKey}mla" = "hint links ${qutebrowserSpawn} ${mpv} ${loopPlaylist} ${mpvAudio} '{hint-url}'";
+          "${leaderKey}mlv" = "hint links ${qutebrowserSpawn} ${mpv} ${loopPlaylist} '{hint-url}'";
           "${leaderKey}mv" = "hint links ${qutebrowserSpawn} ${mpv} '{hint-url}'";
         };
       };
