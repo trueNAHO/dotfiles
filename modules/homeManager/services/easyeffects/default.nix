@@ -20,26 +20,23 @@
         preset = preset;
       };
 
-      xdg.configFile."easyeffects/output/${preset}.json".text = ''
-        {
-          "output": {
-            "autogain#0": {
-              "bypass": false,
-              "input-gain": 0.0,
-              "maximum-history": 15,
-              "output-gain": 0.0,
-              "reference": "Geometric Mean (MSI)",
-              "silence-threshold": -70.0,
-              "target": -23.0
-            },
+      xdg.configFile."easyeffects/output/${preset}.json".text = builtins.toJSON {
+        output = let
+          autogain = "autogain#0";
+        in {
+          ${autogain} = {
+            bypass = false;
+            input-gain = 0;
+            maximum-history = 15;
+            output-gain = 0;
+            reference = "Geometric Mean (MSI)";
+            silence-threshold = -70;
+            target = -23;
+          };
 
-            "blocklist": [],
-
-            "plugins_order": [
-              "autogain#0"
-            ]
-          }
-        }
-      '';
+          blocklist = [];
+          plugins_order = [autogain];
+        };
+      };
     };
 }
