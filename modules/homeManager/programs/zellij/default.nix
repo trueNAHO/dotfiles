@@ -34,6 +34,11 @@
     };
 
     xdg.configFile."zellij/config.kdl".text = let
+      application = pkgs.writeShellApplication {
+        name = "scrollback_editor";
+        text = ''${config.home.sessionVariables.EDITOR} -c 'set norelativenumber' "$@"'';
+      };
+
       goToTab = builtins.concatStringsSep "\n" (
         map (
           index: let
@@ -73,6 +78,8 @@
             bind "Alt w" { ToggleFloatingPanes; SwitchToMode "normal"; }
           }
         }
+
+        scrollback_editor "${application}/bin/${application.meta.mainProgram}";
       '';
   };
 }
