@@ -28,13 +28,14 @@
           mpv = pkgs.mpv.meta.mainProgram;
           mpvAudio = "--player-operation-mode=pseudo-gui --vid=no";
           qutebrowserSpawn = "spawn --detach --verbose";
+          shuffle = "--shuffle";
         in {
           "${leaderKey}mA" = "${qutebrowserSpawn} ${mpv} ${mpvAudio} '{url}'";
           "${leaderKey}mV" = "${qutebrowserSpawn} ${mpv} '{url}'";
           "${leaderKey}ma" = "hint links ${qutebrowserSpawn} ${mpv} ${mpvAudio} '{hint-url}'";
-          "${leaderKey}mlA" = "${qutebrowserSpawn} ${mpv} ${loopPlaylist} ${mpvAudio} '{url}'";
+          "${leaderKey}mlA" = "${qutebrowserSpawn} ${mpv} ${loopPlaylist} ${mpvAudio} ${shuffle} '{url}'";
           "${leaderKey}mlV" = "${qutebrowserSpawn} ${mpv} ${loopPlaylist} '{url}'";
-          "${leaderKey}mla" = "hint links ${qutebrowserSpawn} ${mpv} ${loopPlaylist} ${mpvAudio} '{hint-url}'";
+          "${leaderKey}mla" = "hint links ${qutebrowserSpawn} ${mpv} ${loopPlaylist} ${mpvAudio} ${shuffle} '{hint-url}'";
           "${leaderKey}mlv" = "hint links ${qutebrowserSpawn} ${mpv} ${loopPlaylist} '{hint-url}'";
           "${leaderKey}mv" = "hint links ${qutebrowserSpawn} ${mpv} '{hint-url}'";
         };
