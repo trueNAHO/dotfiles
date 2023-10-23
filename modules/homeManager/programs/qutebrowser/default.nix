@@ -18,6 +18,7 @@
     };
 
     programs.qutebrowser = {
+      aliases.x = "quit --save";
       enable = true;
 
       keyBindings = {
