@@ -15,7 +15,6 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/du-dust
         ../modules/homeManager/home/packages/dua
         ../modules/homeManager/home/packages/duf
-        ../modules/homeManager/home/packages/entr
         ../modules/homeManager/home/packages/fd
         ../modules/homeManager/home/packages/glow
         ../modules/homeManager/home/packages/gping
@@ -85,7 +84,6 @@ inputs.homeManager.lib.homeManagerConfiguration {
                   du-dust.enable = true;
                   dua.enable = true;
                   duf.enable = true;
-                  entr.enable = true;
                   fd.enable = true;
                   glow.enable = true;
                   gping.enable = true;
