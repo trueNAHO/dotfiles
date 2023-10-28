@@ -137,6 +137,23 @@
             body = "mkdir --parent -- $argv && cd -- $argv[1]";
             description = "Make directories, and change working directory to the first one specified";
           };
+
+          watcher = {
+            body = ''
+              ${pkgs.inotify-tools}/bin/inotifywait \
+                --event create,delete,modify,move \
+                --monitor \
+                --recursive \
+                $argv[1] |
+                while read; ${pkgs.runtimeShell} -c "$argv[2..]"; end
+            '';
+
+            description = ''
+              inotifywait wrapper for recursively watching the first CLI
+              argument, and executing the remaining ones on events. This wrapper
+              is convenient for CI workflows.
+            '';
+          };
         };
 
         interactiveShellInit = ''
