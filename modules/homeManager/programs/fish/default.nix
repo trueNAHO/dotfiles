@@ -137,11 +137,6 @@
             body = "mkdir --parent -- $argv && cd -- $argv[1]";
             description = "Make directories, and change working directory to the first one specified";
           };
-
-          t = {
-            body = "${pkgs.fd.pname} $argv | ${pkgs.as-tree.outPath}/bin/${pkgs.as-tree.pname}";
-            description = "Faster and more modular 'tree' based on 'fd'";
-          };
         };
 
         interactiveShellInit = ''
