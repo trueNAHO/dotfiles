@@ -7,6 +7,7 @@
 }: {
   imports = [
     ../../stylix
+    ./autoCmd
     ./colorschemes
     ./keymaps
     ./options
