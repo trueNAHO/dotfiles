@@ -1,0 +1,38 @@
+= Dotfiles
+
+== About
+
+https://github.com/trueNAHO[NAHO]'s
+https://wiki.archlinux.org/title/Dotfiles[dotfiles].
+
+== Usage
+
+To install https://github.com/trueNAHO[NAHO]'s dotfiles with
+https://nix-community.github.io/home-manager/index.html#ch-installation[
+`home-manager`], run
+
+[,bash]
+----
+home-manager switch --flake "github:trueNAHO/dotfiles#<BUILD_TARGET>"
+----
+
+with one of the following build targets:
+
+* `aarch64-darwin`
+* `aarch64-linux`
+* `x86_64-darwin`
+* `x86_64-linux`
+
+== See Also
+
+* https://github.com/trueNAHO/os[NAHO's NixOS configurations]
+
+== Contributing
+
+To contribute, please review link:docs/contributing.adoc[our contribution
+guidelines].
+
+== License
+
+This project is licensed under link:LICENSE[GNU GENERAL PUBLIC LICENSE Version
+3].

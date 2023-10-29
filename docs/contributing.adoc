@@ -1,0 +1,59 @@
+= Contributing
+:toc:
+
+Thank you for considering contributing to this project! To ensure that
+submissions run smoothly, please review the following guidelines:
+
+[[what-we-want]]
+== What We Want
+
+We welcome any contributions that help improve this project. Here are some
+examples of the kinds of contributions we are looking for:
+
+* Bug reports and feature requests
+* Code improvements and bug fixes
+* Design and performance improvements
+* Documentation improvements
+* Portability and reproducibility improvements
+
+If you are uncertain about whether your contribution aligns with the scope of
+this project, please review <<what-we-do-not-want, what we do not want>>. Feel
+free to reach out to the maintainers, if you have any questions.
+
+[[what-we-do-not-want]]
+== What We Do Not Want
+
+While we appreciate all contributions that help improve this project, some may
+not align with our vision, require further discussion, or may be better suited
+for a fork. Here are some examples that may fall into this category:
+
+* Security risks
+* Major performance overheads
+* Unreliable or poorly maintained third-party dependencies
+* Exentensive superuser setups
+* Increased end-user maintenance
+
+If you are uncertain about whether your contribution aligns with the scope of
+this project, please review <<what-we-want, what we want>>. Feel free to reach
+out to the maintainers, if you have any questions.
+
+== Contribution Guidelines
+
+=== Contribution Process
+
+To contribute changes, adhere to the
+http://scottchacon.com/2011/08/31/github-flow.html[GitHub Flow].
+
+=== Commit Messages
+
+Follow http://commitizen.github.io/cz-cli[Commitizen]'s commit standards.
+
+== Code of Conduct
+
+To maintain a respectful community, please review link:code_of_conduct.adoc[our
+code of conduct].
+
+== License
+
+This project is licensed under link:../LICENSE[GNU GENERAL PUBLIC LICENSE
+Version 3].
