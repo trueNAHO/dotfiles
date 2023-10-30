@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-xargs mpv --loop-playlist --shuffle=yes --vid=no < <(
-    find "${@:-$(xdg-user-dir MUSIC)}" | shuf
-)

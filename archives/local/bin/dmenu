@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-config_file="${HOME}/.config/dmenu/dmenu.conf"
-root_command="/usr/bin/dmenu"
-
-flags=$(< "$config_file")
-
-bash -c "$root_command ${flags//$'\n'/ } ${*@Q}"
