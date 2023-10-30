@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+flags="-ctf"
+message="Here we go, 'Mr. very cool'... are you ready?"
+
+for font in $(figlist); do
+  if figlet "$flags" "$font" "$message" 2>/dev/null; then
+    printf '=%0.s' {1..65}
+    printf ' %s\n' "$font"
+  fi
+done

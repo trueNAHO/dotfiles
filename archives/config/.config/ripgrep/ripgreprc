@@ -1,0 +1,9 @@
+--colors=line:fg:97,175,239
+--colors=line:style:bold
+--context-separator
+========
+--field-context-separator=\t
+--field-match-separator=\t
+--glob=!.{cache,git*}
+--hidden
+--smart-case

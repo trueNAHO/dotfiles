@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+helpMessage() {
+  printf '%b\n' \
+    "Usage: $0 [options]\n" \
+    "Options:" \
+    "\t--above, --below, --left-of, --right-of, --same-as\tpositon 'screen_other' relative to 'screen_primary'" \
+    "\t--off\t\t\t\t\t\t\tturn 'screen_other' off" \
+    "\t-h, --help\t\t\t\t\t\tprint this help message" \
+    >&2
+  exit 1
+}
+
+# @param $1  (string) 'screen_other's position relative to
+#            'screen_primary'. Posible values are: "left-of", "right-of",
+#            "above", "below" and "same-as".
+positional() {
+  if [[ "$1" == "--same-as" ]]; then
+    xrandr \
+      --output "$screen_other" --mode "$resolution" "$1" "$screen_primary" \
+      --output "$screen_primary" --scale-from "$resolution"
+  else
+    xrandr --output "$screen_other" --auto "$1" "$screen_primary"
+  fi
+}
+
+off() {
+  xrandr --output "$screen_other" --off --output "$screen_primary" --scale 1
+}
+
+resolution=1920x1080
+screen_other="HDMI1"
+screen_primary="LVDS1"
+
+case "$1" in
+  -h|--help) helpMessage;;
+  --above|--below|--left-of|--right-of|--same-as) positional "$1";;
+  --off) off;;
+  *) helpMessage;;
+esac
+
+# vim: ft=bash fdm=marker et sts=2 sw=2 ts=2 tw=80

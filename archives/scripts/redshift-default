@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+redshift -l 50:6 -t 5950:3750

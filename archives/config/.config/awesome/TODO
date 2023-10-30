@@ -1,0 +1,254 @@
+Modes widget should sources its different colors from the config rather than
+straight up from the source code of the wibar itself. Create in config a table
+which will assign every mode a color to be used.
+
+Use `collectgarbage()` without any arguments. The default argument is
+"collect". See here that memory leak is a thing in Lua during a loop. This loop
+is most likely the actual window manager running:
+  https://stackoverflow.com/questions/20139359/lua-table-memory-leak#20140330
+
+Put key binds into a config folder. File will contain the function to be executed
+(or a more user-friendly name), such as, WindowQuit and another field containing
+the key to be associated with that function/action. Then in the file
+initialising the key binds for awesome, it will read from that text config file
+and convert it so that it uses those values for setting the key binds. If
+a function has no associated key combination or is not mentioned, then reader
+function should be able to omit this function AND send an error message to the
+user. That way the window manager can run. But the function is turned off. An
+option for disabling a function should also be able. This will avoid the error
+messages and will work as if everything is fine. This is for the case a user
+doesn't want a certain feature.
+
+Every function for the keyboard, should also be available as a mouse
+button. Simplest implementation is putting every option into the menu (right
+click on wallpaper, as for the current state of the window manager).
+
+Option for turning mouse buttons on or off for all widgets (read from some user
+config file). The widgets should simply get initialised in the corresponding way,
+rather then having mouse button features and then always checking if a function
+should be executed or not.
+
+REFACTORING THE ENTIRE CODE INTO A **FAR** MORE MAINTAINABLE STATE. More of the
+code should rely on exterior tools. This could be done by writing little
+scripts and then referring to them. Although this would make the whole project
+not portable as those scripts are necessary for the window manager. This thought
+should be reconsidered.
+
+Reconsidering how files are imported. For the user config files, the variable
+file names are probably good. But for code mandatory imports maybe not?
+
+Implement function for reloading user config files without having to entirely
+restarting the window manager.
+
+Commands such as `amixer` that work with the operating system should be
+encapsulated into functions. Their implementation should go into operating
+system specific folders. For example, the `amixer` command will work on 'UNIX'
+but might not on 'Windows'. Therefore, when using such functions, on the window
+manager's startup, it should see which implementation to use. If we were on
+a 'UNIX' device it would take the implementations from the 'UNIX' directory,
+whereas on 'Windows', it would take the implementations for that operating
+system. Even if the implementation would sometimes be the same, this allows for
+even more portability.
+
+Improve all time based widget if applicable. The date widget for example updates
+(with current settings) once every minute. This is fine since we only display
+the time with the highest accuracy of minutes and not of the seconds as
+well. Due to that, this approach (especially using prime numbers as update
+intervals) has a maximal potential wrong offset of half a full minute. Which
+may not be too noticeable or pose any dramatic problems. But we can do
+better. Keep the time updated every minute, but make sure that the start point
+matches the change from one minute to another (from 12:00 to 12:01). Match it so
+that we update after the new minute has arrived. This could be one second into
+the new minute. That way the update time is minimal and efficient as well as
+maximum accurate (with an offset of a single second if we use one second into
+the new minute). Also with this approach we most likely want to hard-code like
+force update time to be *exactly* 60 seconds (not 61 for prime number). We could
+use such prime numbers, but then we would have use some sort of complicated
+algorithm that will put our offset back to the start of the minute. Using 61
+would result in the offset getting bigger every minute. After half the minute
+the offset would be equally far from both sides and as such be same off. In
+other words: doing this would *entirely* remove the reason for our timer to
+start at the same time. So if we want to put update time in the settings we
+should most likely only allow for factors of 60. We could do `60
+* config_date_update_time` for our calculations. Or just let the user enter his
+desired time and then trim it to a factor of 60, although this approach could
+lead to confusion, as the configuration setting does not actually result in what
+is being used by the program. As such we should just use factors of 60 and
+detect the start of a minute. The start can be detected by letting the timer
+first update every second and once it finds a minute change, then that sets the
+start of a new minute. From that point on we start our periodical update. Note
+that the value should get hard-coded in some way (private constant variable)
+because it is also hard-coded to display only minutes. Changing the behaviour of
+our code would mean a different application and as such we should also
+reconsider our entire design choice anyway! Keep in mind to put a short comment
+next to that code saying why we decided to use this implementation over the use
+of prime numbers. This could clarify things if we ever revisited that piece of
+code and consider a different approach. This way we save time doing all the
+thinking just to realize in the very end that the current implementation is the
+better one. This would save everyone time. Just a short comment...
+
+Add user config file. Will be of text type and simply parsed through in our
+code. Once we have created our table with all the information, we can use our
+code.
+
+Add default config file. Should be Lua type. Reading values from that will be
+faster than parsing through a text file. This file is implementation
+detail. Therefore, complexity reduction should not be our biggest objective. If
+any from the user config file arguments are not valid or would cause an error,
+simply fall back to the default config file's value. Also, send a message to the
+user saying that the given config value is invalid and was instead set to the
+default (say which that value now is)
+
+Add a `bash` script for example that allows easy access to our code
+implementation. Available options could be resetting the entire user config with
+the default config (of course translating the Lua file into plain text config
+file). All these options could also be made accessible through a GUI.
+
+Change `systemctl suspend` command. When this function is called, we have to
+make an infinite sleep loop which can end in an finite amount of time (may be
+set to a minute in user config). When the time difference between two iterations
+is bigger than the sleep (update) time, then the system was suspended or system
+time became inaccurate. Then run a function which takes a function as argument
+to do something once system is back up. This would probably we updating time
+based widgets. The more efficient approach to the infinite sleep loop is to have
+a system specific implementation for checking when system exits suspend
+mode. This would remove the need of the infinite sleep loop and make it more
+efficient, but in exchange for portability.
+
+Check every user config file, for their correctness. Not only check if every
+argument is valid but also warn about unnecessary variables. Do not load those
+variables into memory by deleting those variables and send a warning message to
+the user.
+
+Follow XDG convention for configuration files:
+https://github.com/ayntgl/discordo/actions/runs/1816767008
+I should look up what the conventions are and apply those to my project.
+
+Concerning the user config's initialisation. The settings from the
+implementation itself can be considered as static, unlike those from the user
+not. Therefore the implementation settings should be loaded in first. And once
+they are all properly loaded in, which should also not cause any errors because
+it's implementation detail, then the user settings, which could cause to errors
+when loading in. A function for reloading the user config settings would then
+simply execute that one function again and everything is properly reloaded. If
+possible only delete the user settings from the actual settings and leave the
+implementation settings untouched. Once that is done for every file, reload only
+the new functions (settings). We can have two arrays, one of the old settings
+and one of the new settings (those from the currently read file). We compare and
+delete all equal function (settings) since they are already present and keep
+those which are not present in both arrays. Once checked through every function
+(setting) then it means that all the functions from the old array are not needed
+anymore and should get deleted from the actual settings (those in memory of
+'awesome'). Those that still remain in the new array then get loaded in (into
+'awesome's memory). This optimisation reduces the amount of times the functions
+get called which change key binds or other settings, which may or may not be slow
+(better to avoid running them if we can get away with simple low-level
+comparison of unneeded work). Another optimisation is to only scan through
+changed files. This would be files that were last modified after their last read
+from 'awesome'. This however requires to store that information
+somewhere. Personally, I would prefer to not store such information (even in
+a temporary file) and to simply go through all files, and there of course
+checking for already present settings. Reloading the entire settings is not
+something that a reasonable person would do all the time anyway. Especially
+since we can have an interface that allows for easy access to the entire
+config. And whenever a settings is changed there, we know what was changed, and
+in which file the change was done. A function for every file is therefore of
+utmost importance. This would be the most efficient (although simply editing
+the file is more convenient for me). All functions are called together for
+reloading the entire config.
+
+Add status reports whenever an operation might take longer and it seems
+reasonable to give feedback to the user, such as when reloading user config. Make
+namespace for this. Probably most common would be the 'awesome' status
+notification. This function sends a notification. It takes one argument, which
+is the text. The rest is defined elsewhere (in declaration file, or directly
+inside the implementation file), such as the title of the notification:
+"awesome" or "Window manager".
+
+Battery widget should not be hard-coded to my operating system. Setting the
+battery file as a setting is already good, but depends still too much on the
+operating system. Make a operating system specific implementation for the
+battery widget instead. Then we can also base our code on other battery
+utilities supported on UNIX.
+
+Function that comes with the systemctl suspend function that will update all
+time based widget and basically anything time based if necessary.
+
+Feature to add to our config's interface we plan to add (already mentioned
+somewhere in this TODO file). Add command to check for update. Check if version
+on GitHub (or wherever it is stored) is newer and contains changes, if so
+override (obviously asking if user is sure if they want to override). Also show
+what the changes are. There should be two options one for implementation updates
+only and one for also checking if my personal config is different from the one
+the current user has.
+
+Battery widget's notification system on battery level. Behaviour should be
+reconsidered. Either notify every time battery has dropped a certain amount
+(like every 5%) or every certain amount of time (every minute or every five
+minutes) notify about the battery's critical or low level. Probably should just
+implement both behaviours and allow change in user config. Setting time setting
+to 0 would mean using the drop based system, while setting drop value to 0 would
+mean using the time based notification system. Config parser should of course
+check if those value do not correctly correspond, such as both being null or
+both being set to a value. Or else, we could allow for both settings to be set
+and then simply have another added setting for enabling or disabling either of
+the two modes. This is most likely the overall best solution.
+
+Use `acpi` (and its similar tools such as `acpid` or `acpi_listen`) for getting
+battery values from system. For iterating over all batteries' values and
+computing their average consider using `awk` directly, which is already used for
+getting the value (unless we go for another tool, which is probably not the best
+approach, since `awk` seems to be the fastest) or piping all the different
+values into `Lua`, which then handles the average computation. This decision
+should probably be based on execution speed. Don't forget to put a comment next
+to that code regarding this issue.
+
+Reconsideration of strings inside code. Should strings which are non essential
+for logic be directly included in the code or should they be read from a text
+file (or a function taking the necessary arguments and returning the necessary
+string, while that function lives in another file than where the code logic is).
+Every one of these strings or functions could live in their own file or be
+grouped together in one file, or grouped together according to their meaning and
+scope.
+
+Lua. Consider the use of `luac` (option to compile code could be inside our
+config interface, implementation should be compiled separately from operating
+system implementations, entire implementation could then be hidden inside some
+directory named after the project, such as trueNAHO or something of the like,
+find a better name if possible) and `luaJIT`. Allow users to be able to compile
+code without having source code locally downloaded on their machine, by only
+temporarily downloading the source code from GitHub only during compilation and
+then deleting source code again. Other users might not care about implementation,
+just about configuration. We should use a bash script for initialising the
+compilation of the implementation(s), but it should also be accessible inside
+our interface running inside our `awesome`.
+
+Lua. Also consider using the Lua third party libraries.
+
+Lua. We want to be able to run our code without running the assert statements
+(we do not want to remove them).
+
+Battery widget. Separate battery manager (alert critical battery value, notify
+about low battery value) from the battery widget (only supposed to display the
+battery value). In the main loop (or at least one layer above these two's
+implementation) should be the timer updating both the batter widget and running
+the battery manager with the new battery value obtained. That way the timer is
+also no more bound to the widget itself.
+
+Carefully reconsider what should all be managed by the window manager and what
+should be managed by some other tool. Should `picom` be launched by the window
+manager or by the xsession? All the extra shortcut key binds we want our user
+config to have; should that be done by the window manager? It would probably be
+better to let some other tool handle those key binds and to start that tool with
+the xsession config. That way our key binds are NOT bound to some window manager,
+which should merely manage windows... :)
+
+Set wallpapers using the `awesome` library. I'm pretty sure there is a function
+for doing this. That way we avoid using system tools directly (such as `feh`)
+and have more compatible code. Then it is up to that function's job to assure
+compatibility. KEEP IN MIND THAT THE WALLPAPER ITSELF IS MOST LIKELY NOT BOUND
+TO THE WINDOW MANAGER. THEREFORE, THE WALLPAPER SHOULD NOT BE MANAGED BY THE
+WINDOW MANAGER TO BEGIN WITH, BUT BY THE XSESSION. PROBABLY PUT THE WALLPAPER
+MANAGER (INFINITE TIMER `feh` TIMER TO SET WALLPAPER) INSIDE THE `.xinit` FILE.
+
+Implement asynchronous programming. Library most likely available using LuaRocks.

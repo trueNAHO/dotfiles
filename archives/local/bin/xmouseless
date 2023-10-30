@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+project_base_directory="${HOME}/.config/xmouseless/"
+
+make -C "$project_base_directory"
+"${project_base_directory}/xmouseless"

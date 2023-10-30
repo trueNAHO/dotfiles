@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+download_archive="downloaded.log"
+source="source.url"
+####source_log="source.log"
+
+xargs youtube-dl \
+  --audio-format "aac" \
+  --download-archive "$download_archive" \
+  --extract-audio \
+  --no-overwrites \
+  --output '%(title)s.%(ext)s' \
+  --yes-playlist \
+  -i \
+  < <(cat "$source")
+
+for file in ./*; do
+  mv -v "$file" "$(echo "$file" | tr ' ' '_')" 2>/dev/null
+done
+
+printf "==> Number of files (excluding %s): %d\n" \
+  "$download_archive and $source" \
+  "$(wc -l < <(ls -I "$download_archive" -I "$source"))"

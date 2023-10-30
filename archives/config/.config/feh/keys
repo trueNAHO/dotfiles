@@ -1,0 +1,7 @@
+scroll_left      h
+scroll_down      j
+scroll_up        k
+scroll_right     l
+zoom_out         C-H
+size_to_image    C-K
+zoom_in          C-L

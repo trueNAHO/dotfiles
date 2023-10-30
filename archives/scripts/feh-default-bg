@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+
+# Set background to random a image using 'feh'. This script uses an arguably
+# better randomizer than the '-z' or '--randomize' flag provided by 'feh'.
+# @author   NAHO (https://github.com/trueNAHO)
+# @version  1.0
+
+# Default values
+declare -i retries=1000
+declare bg_flag="--bg-fill"
+
+# Print help message to stderr and return status code 1
+# @return  (string) help message on stderr and status code 1
+help_message() {
+  printf '%b\n' \
+    "Usage: $0 [options] [directories|files]\n" \
+    "Options:" \
+    "\t-b FLAG, --bg FLAG\t'feh' background flag, such as '--bg-fill', '--bg-max', '--bg-scale' or '--bg-tile' (defaults to '--bg-fill')" \
+    "\t-e FLAG, --extra FLAG\tAdditonal flag for 'feh'" \
+    "\t-h, --help\t\tPrint this help message" \
+    "\t-r INT, --retry INT\tAmount of retries for setting loadable file using 'feh' before exiting. Integer strictly below 1 will retry for ever (defaults to 1000)." \
+    "Directories, files:" \
+    "\tDefaults to system default location for pictures, as specified by 'xdg-user-dir'" \
+    >&2
+  return 1
+}
+
+# Get a random file from all given directories or files. Directories are
+# searched recursively.
+# @param $@  (strings) all directories or files to choose from
+# @return    (string) random full file path
+random() {
+  declare -ar a=("$@")
+  find "${a[@]}" 2>/dev/null | shuf -n1
+}
+
+# Set background using 'feh'
+# @param flags  (indexed array) 'feh' supported flags
+# @param files  (indexed array) all directories or files from which one is
+#               randomly picked
+set_background() {
+  feh --no-fehbg "${flags[@]}" "$(random "${files[@]}")" &> /dev/null
+}
+
+# Main function
+# @param $@  command line arguments
+main() {
+
+  declare -a files
+  declare -a flags
+
+  while [ -n "$1" ]; do
+    case "$1" in
+      -h|--help) help_message; exit $?;;
+      -b|--bg) bg_flag="$2"; shift 2;;
+      -e|--extra) flags+=("$2"); shift 2;;
+      -r|--retry) retries="$2"; shift 2;;
+      *) files+=("$1"); shift;;
+    esac
+  done
+
+  # Fall back to system default location for pictures
+  (( ${#files[@]} )) || files+=("$(xdg-user-dir PICTURES)")
+
+  flags+=("$bg_flag")
+
+  # Consider edge case where random file is not loadable. Stop retrying after
+  # too many trials.
+  until set_background; do (( --retries )) || exit 1; done
+  exit 0
+
+}
+
+main "$@"
+
+# vim: ft=bash et sts=2 sw=2 ts=2 tw=80
