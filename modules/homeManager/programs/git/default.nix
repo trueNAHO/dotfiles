@@ -45,9 +45,9 @@
         enable = true;
 
         extraConfig = {
-          merge = {conflictstyle = "diff3";};
-          rerere = {enabled = true;};
-          submodule = {recurse = true;};
+          merge.conflictstyle = "diff3";
+          rerere.enabled = true;
+          submodule.recurse = true;
         };
 
         diff-so-fancy.enable = true;
