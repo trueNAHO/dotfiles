@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: {
-  imports = [../alacritty ../mpv ../xplr];
+  imports = [../../home/packages/wl-clipboard ../alacritty ../mpv ../xplr];
 
   options.modules.homeManager.programs.qutebrowser.enable =
     lib.mkEnableOption "qutebrowser";
@@ -12,10 +12,14 @@
   config = lib.mkIf config.modules.homeManager.programs.qutebrowser.enable {
     home.sessionVariables.BROWSER = pkgs.qutebrowser.pname;
 
-    modules.homeManager.programs = {
-      alacritty.enable = true;
-      mpv.enable = true;
-      xplr.enable = true;
+    modules.homeManager = {
+      home.packages.wl-clipboard.enable = true;
+
+      programs = {
+        alacritty.enable = true;
+        mpv.enable = true;
+        xplr.enable = true;
+      };
     };
 
     programs.qutebrowser = {
@@ -59,11 +63,9 @@
         editor.command = [
           terminal
           "-e"
-          config.home.sessionVariables.EDITOR
+          pkgs.runtimeShell
           "-c"
-          "call setpos('.', [0, {line}, {column0}, 0])"
-          "--"
-          "{file}"
+          "${config.home.sessionVariables.EDITOR} -c 'call cursor({line}, {column0})' -- {file} && wl-copy < {file}"
         ];
 
         fileselect = {
