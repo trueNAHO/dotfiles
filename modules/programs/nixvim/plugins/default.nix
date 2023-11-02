@@ -7,7 +7,6 @@
     ./leap
     ./lsp
     ./lsp-format
-    ./multicursors
     ./nvim-cmp
     ./nvim-colorizer
     ./nvim-tree
