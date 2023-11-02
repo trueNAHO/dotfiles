@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: {
-  imports = [../mpv ../xplr];
+  imports = [../alacritty ../mpv ../xplr];
 
   options.modules.homeManager.programs.qutebrowser.enable =
     lib.mkEnableOption "qutebrowser";
@@ -13,6 +13,7 @@
     home.sessionVariables.BROWSER = pkgs.qutebrowser.pname;
 
     modules.homeManager.programs = {
+      alacritty.enable = true;
       mpv.enable = true;
       xplr.enable = true;
     };
@@ -42,7 +43,7 @@
       };
 
       settings = let
-        terminal = config.home.sessionVariables.TERMINAL;
+        terminal = pkgs.alacritty.pname;
         xplr = pkgs.xplr.pname;
       in {
         colors.webpage = {

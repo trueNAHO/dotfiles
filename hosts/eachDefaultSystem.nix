@@ -28,6 +28,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/tree
         ../modules/homeManager/home/packages/wl-clipboard
         ../modules/homeManager/home/shellAliases
+        ../modules/homeManager/programs/alacritty
         ../modules/homeManager/programs/bash
         ../modules/homeManager/programs/bat
         ../modules/homeManager/programs/btop
@@ -102,6 +103,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
               };
 
               programs = {
+                alacritty.enable = true;
                 bash.enable = true;
                 bat.enable = true;
                 btop.enable = true;
