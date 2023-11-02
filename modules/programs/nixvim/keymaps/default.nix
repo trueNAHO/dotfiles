@@ -50,32 +50,32 @@
     ])
     ++ (map (keymaps: keymaps // {mode = ["n" "v"];}) [
       {
-        action = "\"+Y";
+        action = ''"+Y'';
         key = "<leader>Y";
       }
 
       {
-        action = "\"+y";
+        action = ''"+y'';
         key = "<leader>y";
       }
 
       {
-        action = "\"_D";
+        action = ''"_D'';
         key = "<leader>D";
       }
 
       {
-        action = "\"_d";
+        action = ''"_d'';
         key = "<leader>d";
       }
 
       {
-        action = "\"_dP";
+        action = ''"_dP'';
         key = "<leader>P";
       }
 
       {
-        action = "\"_dP";
+        action = ''"_dP'';
         key = "<leader>p";
       }
     ]);
