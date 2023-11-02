@@ -45,6 +45,7 @@
         enable = true;
 
         extraConfig = {
+          log.date = "iso";
           merge.conflictstyle = "diff3";
           rerere.enabled = true;
           submodule.recurse = true;
