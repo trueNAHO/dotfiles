@@ -4,10 +4,10 @@
 
     keymaps = {
       motions = {
-        w = "w";
-        e = "e";
         b = "b";
+        e = "e";
         g = "ge";
+        w = "w";
       };
 
       silent = true;
