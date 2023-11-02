@@ -160,7 +160,7 @@
           begin
             fish_vi_key_bindings
 
-            # Exclude 'paste' mode to prevent tiggering commands when pasting.
+            # Exclude 'paste' mode to prevent triggering commands when pasting.
             for mode in (bind --list-modes | string match --invert paste)
               bind --mode $mode --user \ce edit_command_buffer
               bind --mode $mode --user \cp __fish_paginate
