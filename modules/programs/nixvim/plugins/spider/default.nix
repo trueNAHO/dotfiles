@@ -6,7 +6,7 @@
       motions = {
         b = "b";
         e = "e";
-        g = "ge";
+        ge = "ge";
         w = "w";
       };
 
