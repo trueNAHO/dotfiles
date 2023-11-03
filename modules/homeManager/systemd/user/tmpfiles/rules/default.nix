@@ -9,8 +9,10 @@
   config =
     lib.mkIf
     config.modules.homeManager.systemd.user.tmpfiles.rules.enable {
+      home.sessionVariables.TMPDIR = "${config.home.homeDirectory}/tmp";
+
       systemd.user.tmpfiles.rules = [
-        "d ${config.home.homeDirectory}/tmp - - - 1w"
+        "d ${config.home.sessionVariables.TMPDIR} - - - 1w"
       ];
     };
 }

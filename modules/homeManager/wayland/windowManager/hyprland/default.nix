@@ -161,6 +161,32 @@
               increaseBrightness = setBrightnessIncrease true;
               increaseVolume = setVolumeIncrease true;
 
+              recordEntireScreen = pkgs.writeShellApplication {
+                name = "record-entire-screen";
+                runtimeInputs = [pkgs.wf-recorder];
+                text = ''
+                  ${config.home.sessionVariables.TERMINAL} \
+                    -e \
+                    wf-recorder \
+                    --audio \
+                    -f "${config.home.sessionVariables.TMPDIR}/$(date "+%Y-%m-%d-%H-%M-%S").mp4"
+                '';
+              };
+
+              recordSelection = pkgs.writeShellApplication {
+                name = "record-selection";
+                runtimeInputs = with pkgs; [wf-recorder slurp];
+
+                text = ''
+                  ${config.home.sessionVariables.TERMINAL} \
+                    -e \
+                    wf-recorder \
+                    --audio \
+                    --geometry "$(slurp)" \
+                    -f "${config.home.sessionVariables.TMPDIR}/$(date "+%Y-%m-%d-%H-%M-%S").mp4"
+                '';
+              };
+
               screenshotActiveWindow = pkgs.writeShellApplication {
                 name = "screenshot-active-window";
                 runtimeInputs = with pkgs; [grim hyprland jq wl-clipboard];
@@ -266,6 +292,7 @@
               "SUPER SHIFT, K, swapnext, prev"
               "SUPER SHIFT, P, pin,"
               "SUPER SHIFT, Q, killactive,"
+              "SUPER SHIFT, V, exec, ${applications.recordSelection}/bin/${applications.recordSelection.meta.mainProgram}"
               "SUPER, B, exec, ${config.home.sessionVariables.BROWSER}"
               "SUPER, C, exec, ${applications.screenshotActiveWindow}/bin/${applications.screenshotActiveWindow.meta.mainProgram}"
               "SUPER, F, fullscreen,"
@@ -277,6 +304,7 @@
               "SUPER, R, exec, rofi -show run"
               "SUPER, S, exec, ${applications.systemStatus}/bin/${applications.systemStatus.meta.mainProgram}"
               "SUPER, T, exec, ${config.home.sessionVariables.TERMINAL}"
+              "SUPER, V, exec, ${applications.recordEntireScreen}/bin/${applications.recordEntireScreen.meta.mainProgram}"
               "SUPER, W, togglefloating,"
               "SUPER, mouse_down, workspace, e+1"
               "SUPER, mouse_up, workspace, e-1"
