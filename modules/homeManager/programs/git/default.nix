@@ -19,13 +19,16 @@
         g = git;
       };
 
-      programs.git = {
+      programs.git = let
+        append = "!${git} add --all && ${git} commit --amend --no-edit";
+      in {
         aliases = {
           adg = "log --all --decorate --graph";
           adgs = "log --all --decorate --graph --stat";
           adog = "log --all --decorate --oneline --graph";
           adogs = "log --all --decorate --oneline --graph --stat";
-          append = "!${git} add --all && ${git} commit --amend --no-edit";
+          app = append;
+          append = append;
           br = "branch";
           cm = "commit";
           cma = "!${git} add --all && ${git} commit";
