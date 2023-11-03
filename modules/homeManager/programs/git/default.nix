@@ -31,6 +31,7 @@
           cma = "!${git} add --all && ${git} commit";
           co = "checkout";
           fix = "!${git} add --all && ${git} commit --message \"chore!: $(date)\"";
+          mgd = "!${git} merge $1 && ${git} branch --delete $1 #";
           nuke = "!${git} reset --hard HEAD && ${git} clean -d --force";
           reword = "commit --amend";
           rs = "reset";
