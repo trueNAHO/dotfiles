@@ -127,16 +127,29 @@
                       printf '%s\n' "$battery_value_now" > "${cfg.cacheFile}"
                       exit 0
 
-                    elif (( battery_value_before - battery_value_now < ${toString cfg.delta} )); then
+                    elif ((
+                      battery_value_before -
+                      battery_value_now <
+                      ${toString cfg.delta}
+                    )); then
                       exit 0
 
-                    elif (( battery_value_now <= ${toString cfg.urgency.critical} )); then
+                    elif ((
+                      battery_value_now <=
+                      ${toString cfg.urgency.critical}
+                    )); then
                       urgency="critical"
 
-                    elif (( battery_value_now <= ${toString cfg.urgency.normal} )); then
+                    elif ((
+                      battery_value_now <=
+                      ${toString cfg.urgency.normal}
+                    )); then
                       urgency="normal"
 
-                    elif (( battery_value_now <= ${toString cfg.urgency.low} )); then
+                    elif ((
+                      battery_value_now <=
+                      ${toString cfg.urgency.low}
+                    )); then
                       urgency="low"
 
                     else
