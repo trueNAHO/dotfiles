@@ -83,10 +83,12 @@
                     "misc:animate_mouse_windowdragging_resizes 1"
                   ]
                 );
+
                 fancy_gap = 20;
               in ''
                 animations_enabled="$(
-                  hyprctl getoption animations:enabled | awk 'NR == 2 { print $NF }'
+                  hyprctl getoption animations:enabled |
+                    awk 'NR == 2 { print $NF }'
                 )"
 
                 if (( animations_enabled == 0 )); then
