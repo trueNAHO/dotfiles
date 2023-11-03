@@ -173,10 +173,10 @@
                 '';
               };
 
-              screenshotEntireScreen = pkgs.writeShellApplication {
-                name = "screenshot-entire-screen";
-                runtimeInputs = with pkgs; [grim wl-clipboard];
-                text = "${pkgs.grim.pname} - | wl-copy";
+              screenshotSelection = pkgs.writeShellApplication {
+                name = "screenshot-selection";
+                runtimeInputs = with pkgs; [grim slurp wl-clipboard];
+                text = "slurp | grim -g - - | wl-copy";
               };
 
               systemStatus = pkgs.writeShellApplication {
@@ -260,14 +260,14 @@
               "SUPER CTRL, L, exec, ${applications.increaseVolume}/bin/${applications.increaseVolume.meta.mainProgram}"
               "SUPER CTRL, Q, exec, ${pkgs.wlogout.pname}"
               "SUPER CTRL, S, exec, systemctl suspend"
-              "SUPER SHIFT, C, exec, ${applications.screenshotActiveWindow}/bin/${applications.screenshotActiveWindow.meta.mainProgram}"
+              "SUPER SHIFT, C, exec, ${applications.screenshotSelection}/bin/${applications.screenshotSelection.meta.mainProgram}"
               "SUPER SHIFT, F, fakefullscreen,"
               "SUPER SHIFT, J, swapnext, next"
               "SUPER SHIFT, K, swapnext, prev"
               "SUPER SHIFT, P, pin,"
               "SUPER SHIFT, Q, killactive,"
               "SUPER, B, exec, ${config.home.sessionVariables.BROWSER}"
-              "SUPER, C, exec, ${applications.screenshotEntireScreen}/bin/${applications.screenshotEntireScreen.meta.mainProgram}"
+              "SUPER, C, exec, ${applications.screenshotActiveWindow}/bin/${applications.screenshotActiveWindow.meta.mainProgram}"
               "SUPER, F, fullscreen,"
               "SUPER, H, focusmonitor, -1"
               "SUPER, J, cyclenext, next"
