@@ -20,13 +20,14 @@
       };
 
       programs.git = let
+        adg = "log --all --decorate --graph";
         append = "!${git} add --all && ${git} commit --amend --no-edit";
       in {
         aliases = {
-          adg = "log --all --decorate --graph";
-          adgs = "log --all --decorate --graph --stat";
-          adog = "log --all --decorate --oneline --graph";
-          adogs = "log --all --decorate --oneline --graph --stat";
+          adg = adg;
+          adgs = "${adg} --stat";
+          adog = "${adg} --oneline";
+          adogs = "${adg} --oneline --stat";
           app = append;
           append = append;
           br = "branch";
