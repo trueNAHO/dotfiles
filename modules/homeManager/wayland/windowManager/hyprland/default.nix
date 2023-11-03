@@ -62,42 +62,170 @@
           };
 
           bind = let
-            resize = "10%";
+            applications = let
+              getBrightnessPercentage = pkgs.writeShellApplication {
+                name = "get-brightness-percentage";
+                runtimeInputs = with pkgs; [brightnessctl gawk];
 
-            toggleMode = pkgs.writeShellApplication {
-              name = "${pkgs.hyprland.pname}-toggle-mode";
-              runtimeInputs = [pkgs.hyprland];
+                text = ''
+                  brightnessctl --machine-readable |
+                    awk -F ',' -v FPAT='[[:digit:]]+' '{print $3}'
+                '';
+              };
 
-              text = let
-                batch = builtins.concatStringsSep ";" (
-                  map (keyword: "keyword ${keyword}") [
-                    "animations:enabled 1"
-                    "decoration:blur:enabled 1"
-                    "decoration:drop_shadow 1"
-                    "decoration:inactive_opacity 0.85"
-                    "decoration:rounding ${toString fancy_gap}"
-                    "general:border_size 1"
-                    "general:gaps_in ${toString fancy_gap}"
-                    "general:gaps_out ${toString (fancy_gap * 2)}"
-                    "misc:animate_manual_resizes 1"
-                    "misc:animate_mouse_windowdragging_resizes 1"
+              getVolumePercentage = pkgs.writeShellApplication {
+                name = "get-volume-percentage";
+                runtimeInputs = with pkgs; [gawk wireplumber];
+
+                text = ''
+                  wpctl get-volume @DEFAULT_AUDIO_SINK@ |
+                    awk '{ printf "%d\n", $NF * 100 }'
+                '';
+              };
+
+              setBrightnessIncrease = let
+                brightnessStepPercentage = 10;
+                maximumBrightnessPercentage = 100;
+                minimumBrightnessPercentage = 1;
+              in
+                increase: let
+                  increaseString =
+                    if increase
+                    then "increase"
+                    else "decrease";
+
+                  value = let
+                    percentage = "${toString brightnessStepPercentage}%";
+                  in
+                    if increase
+                    then "+${percentage}"
+                    else "${percentage}-";
+                in
+                  pkgs.writeShellApplication {
+                    name = "set-brightness-${increaseString}";
+                    runtimeInputs = with pkgs;
+                      [brightnessctl libnotify]
+                      ++ [getBrightnessPercentage];
+
+                    text = ''
+                      # https://github.com/Hummer12007/brightnessctl/issues/82
+                      brightnessctl \
+                        --min-value="${toString minimumBrightnessPercentage}" \
+                        set "${value}"
+
+                      brightness="$(
+                        ${getBrightnessPercentage.meta.mainProgram}
+                      )"
+
+                      if ((
+                        brightness <= ${toString minimumBrightnessPercentage} ||
+                        brightness >= ${toString maximumBrightnessPercentage}
+                      )); then
+                        notify-send "Brightness" "<u>Value:</u> $brightness%"
+                      fi
+                    '';
+                  };
+
+              setVolumeIncrease = let
+                volumeStepPercentage = 5;
+                maximumVolumePercentage = 100;
+                minimumVolumePercentage = 0;
+              in
+                increase: let
+                  increaseString =
+                    if increase
+                    then "increase"
+                    else "decrease";
+
+                  value = let
+                    percentage = "${toString volumeStepPercentage}%";
+                  in
+                    if increase
+                    then "${percentage}+"
+                    else "${percentage}-";
+                in
+                  pkgs.writeShellApplication {
+                    name = "set-volume-${increaseString}";
+                    runtimeInputs = with pkgs;
+                      [libnotify wireplumber]
+                      ++ [getVolumePercentage];
+
+                    text = ''
+                      wpctl set-volume @DEFAULT_AUDIO_SINK@ "${value}"
+
+                      volume="$(${getVolumePercentage.meta.mainProgram})"
+
+                      if ((
+                        volume <= ${toString minimumVolumePercentage} ||
+                        volume >= ${toString maximumVolumePercentage}
+                      )); then
+                        notify-send "Volume" "<u>Value:</u> $volume%"
+                      fi
+                    '';
+                  };
+            in {
+              decreaseBrightness = setBrightnessIncrease false;
+              decreaseVolume = setVolumeIncrease false;
+              increaseBrightness = setBrightnessIncrease true;
+              increaseVolume = setVolumeIncrease true;
+
+              systemStatus = pkgs.writeShellApplication {
+                name = "system-status";
+
+                runtimeInputs = with pkgs;
+                  [
+                    acpi
+                    brightnessctl
+                    gawk
+                    libnotify
+                    wireplumber
                   ]
-                );
+                  ++ [getBrightnessPercentage getVolumePercentage];
 
-                fancy_gap = 20;
-              in ''
-                animations_enabled="$(
-                  hyprctl getoption animations:enabled |
-                    awk 'NR == 2 { print $NF }'
-                )"
+                text = ''
+                  notify-send \
+                    "System Status" \
+                      "<u>Battery:</u> $(acpi | awk '{print substr($0, index($0,$3))}')\n<u>Brightness:</u> $(${getBrightnessPercentage.meta.mainProgram})%\n<u>Date:</u> $(date "+%Y-%m-%d %H:%M:%S")\n<u>Audio Volume:</u> $(${getVolumePercentage.meta.mainProgram})%"
+                '';
+              };
 
-                if (( animations_enabled == 0 )); then
-                  hyprctl --batch '${batch}'
-                else
-                  hyprctl reload
-                fi
-              '';
+              toggleMode = pkgs.writeShellApplication {
+                name = "${pkgs.hyprland.pname}-toggle-mode";
+                runtimeInputs = with pkgs; [gawk hyprland];
+
+                text = let
+                  batch = builtins.concatStringsSep ";" (
+                    map (keyword: "keyword ${keyword}") [
+                      "animations:enabled 1"
+                      "decoration:blur:enabled 1"
+                      "decoration:drop_shadow 1"
+                      "decoration:inactive_opacity 0.85"
+                      "decoration:rounding ${toString fancy_gap}"
+                      "general:border_size 1"
+                      "general:gaps_in ${toString fancy_gap}"
+                      "general:gaps_out ${toString (fancy_gap * 2)}"
+                      "misc:animate_manual_resizes 1"
+                      "misc:animate_mouse_windowdragging_resizes 1"
+                    ]
+                  );
+
+                  fancy_gap = 20;
+                in ''
+                  animations_enabled="$(
+                    hyprctl getoption animations:enabled |
+                      awk 'NR == 2 { print $NF }'
+                  )"
+
+                  if (( animations_enabled == 0 )); then
+                    hyprctl --batch '${batch}'
+                  else
+                    hyprctl reload
+                  fi
+                '';
+              };
             };
+
+            resize = "10%";
           in
             builtins.concatMap (
               index: let
@@ -114,8 +242,12 @@
               "SUPER ALT, J, resizeactive, 0 -${resize}"
               "SUPER ALT, K, resizeactive, 0 ${resize}"
               "SUPER ALT, L, resizeactive, ${resize} 0"
-              "SUPER CTRL, F, exec, ${toggleMode}/bin/${toggleMode.meta.mainProgram}"
-              "SUPER CTRL, L, exec, loginctl lock-session"
+              "SUPER CTRL, C, exec, loginctl lock-session"
+              "SUPER CTRL, F, exec, ${applications.toggleMode}/bin/${applications.toggleMode.meta.mainProgram}"
+              "SUPER CTRL, H, exec, ${applications.decreaseVolume}/bin/${applications.decreaseVolume.meta.mainProgram}"
+              "SUPER CTRL, J, exec, ${applications.increaseBrightness}/bin/${applications.increaseBrightness.meta.mainProgram}"
+              "SUPER CTRL, K, exec, ${applications.decreaseBrightness}/bin/${applications.decreaseBrightness.meta.mainProgram}"
+              "SUPER CTRL, L, exec, ${applications.increaseVolume}/bin/${applications.increaseVolume.meta.mainProgram}"
               "SUPER CTRL, Q, exec, ${pkgs.wlogout.pname}"
               "SUPER CTRL, S, exec, systemctl suspend"
               "SUPER SHIFT, C, exec, hyprctl -j activewindow | ${pkgs.jq.pname} -r '\"\\(.at[0]),\\(.at[1]) \\(.size[0])x\\(.size[1])\"' | ${pkgs.grim.pname} -g - - | wl-copy"
@@ -133,6 +265,7 @@
               "SUPER, L, focusmonitor, +1"
               "SUPER, P, exec, ${pkgs.rofi-pass.pname}"
               "SUPER, R, exec, rofi -show run"
+              "SUPER, S, exec, ${applications.systemStatus}/bin/${applications.systemStatus.meta.mainProgram}"
               "SUPER, T, exec, ${config.home.sessionVariables.TERMINAL}"
               "SUPER, W, togglefloating,"
               "SUPER, mouse_down, workspace, e+1"
