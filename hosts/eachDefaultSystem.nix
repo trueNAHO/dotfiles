@@ -24,6 +24,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/pipe-rename
         ../modules/homeManager/home/packages/procs
         ../modules/homeManager/home/packages/tldr
+        ../modules/homeManager/home/packages/todo
         ../modules/homeManager/home/packages/tokei
         ../modules/homeManager/home/packages/tree
         ../modules/homeManager/home/packages/wl-clipboard
@@ -94,6 +95,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
                   pipe-rename.enable = true;
                   procs.enable = true;
                   tldr.enable = true;
+                  todo.enable = true;
                   tokei.enable = true;
                   tree.enable = true;
                   wl-clipboard.enable = true;
