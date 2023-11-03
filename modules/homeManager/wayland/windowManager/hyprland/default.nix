@@ -6,8 +6,6 @@
 }: {
   imports = [
     ../../../../wayland
-    ../../../home/packages/grim
-    ../../../programs/jq
     ../../../programs/rofi
     ../../../programs/wlogout
   ];
@@ -19,19 +17,13 @@
     lib.mkIf
     config.modules.homeManager.wayland.windowManager.hyprland.enable {
       modules = {
-        homeManager = {
-          home.packages.grim.enable = true;
-
-          programs = {
-            jq.enable = true;
-
-            rofi = {
-              enable = true;
-              pass.enable = true;
-            };
-
-            wlogout.enable = true;
+        homeManager.programs = {
+          rofi = {
+            enable = true;
+            pass.enable = true;
           };
+
+          wlogout.enable = true;
         };
 
         wayland.enable = true;
@@ -169,6 +161,24 @@
               increaseBrightness = setBrightnessIncrease true;
               increaseVolume = setVolumeIncrease true;
 
+              screenshotActiveWindow = pkgs.writeShellApplication {
+                name = "screenshot-active-window";
+                runtimeInputs = with pkgs; [grim hyprland jq wl-clipboard];
+
+                text = ''
+                  hyprctl -j activewindow |
+                    jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' |
+                    grim -g - - |
+                    wl-copy
+                '';
+              };
+
+              screenshotEntireScreen = pkgs.writeShellApplication {
+                name = "screenshot-entire-screen";
+                runtimeInputs = with pkgs; [grim wl-clipboard];
+                text = "${pkgs.grim.pname} - | wl-copy";
+              };
+
               systemStatus = pkgs.writeShellApplication {
                 name = "system-status";
 
@@ -250,14 +260,14 @@
               "SUPER CTRL, L, exec, ${applications.increaseVolume}/bin/${applications.increaseVolume.meta.mainProgram}"
               "SUPER CTRL, Q, exec, ${pkgs.wlogout.pname}"
               "SUPER CTRL, S, exec, systemctl suspend"
-              "SUPER SHIFT, C, exec, hyprctl -j activewindow | ${pkgs.jq.pname} -r '\"\\(.at[0]),\\(.at[1]) \\(.size[0])x\\(.size[1])\"' | ${pkgs.grim.pname} -g - - | wl-copy"
+              "SUPER SHIFT, C, exec, ${applications.screenshotActiveWindow}/bin/${applications.screenshotActiveWindow.meta.mainProgram}"
               "SUPER SHIFT, F, fakefullscreen,"
               "SUPER SHIFT, J, swapnext, next"
               "SUPER SHIFT, K, swapnext, prev"
               "SUPER SHIFT, P, pin,"
               "SUPER SHIFT, Q, killactive,"
               "SUPER, B, exec, ${config.home.sessionVariables.BROWSER}"
-              "SUPER, C, exec, ${pkgs.grim.pname} - | wl-copy"
+              "SUPER, C, exec, ${applications.screenshotEntireScreen}/bin/${applications.screenshotEntireScreen.meta.mainProgram}"
               "SUPER, F, fullscreen,"
               "SUPER, H, focusmonitor, -1"
               "SUPER, J, cyclenext, next"

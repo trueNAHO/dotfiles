@@ -18,7 +18,6 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/fd
         ../modules/homeManager/home/packages/glow
         ../modules/homeManager/home/packages/gping
-        ../modules/homeManager/home/packages/grim
         ../modules/homeManager/home/packages/killall
         ../modules/homeManager/home/packages/pass
         ../modules/homeManager/home/packages/pipe-rename
@@ -42,7 +41,6 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/programs/git
         ../modules/homeManager/programs/gpg
         ../modules/homeManager/programs/home-manager
-        ../modules/homeManager/programs/jq
         ../modules/homeManager/programs/lazygit
         ../modules/homeManager/programs/mpv
         ../modules/homeManager/programs/qutebrowser
@@ -89,7 +87,6 @@ inputs.homeManager.lib.homeManagerConfiguration {
                   fd.enable = true;
                   glow.enable = true;
                   gping.enable = true;
-                  grim.enable = true;
                   killall.enable = true;
                   pass.enable = true;
                   pipe-rename.enable = true;
@@ -118,7 +115,6 @@ inputs.homeManager.lib.homeManagerConfiguration {
                 git.enable = true;
                 gpg.enable = true;
                 home-manager.enable = true;
-                jq.enable = true;
                 lazygit.enable = true;
                 mpv.enable = true;
                 qutebrowser.enable = true;
