@@ -110,9 +110,7 @@
                   text = let
                     maxBatteryValue = toString 100;
                   in ''
-                    battery="$(
-                      acpi --battery | awk '/Battery 0/ { print $0; exit }'
-                    )"
+                    battery="$(acpi | awk '/Battery 0/ { print $0; exit }')"
 
                     battery_value_now="$(
                         awk -v FPAT='[[:digit:]]+' '{ print $2 }' <<< "$battery"
