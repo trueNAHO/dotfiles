@@ -4,6 +4,8 @@
   pkgs,
   ...
 }: {
+  imports = [../password-store];
+
   options.modules.homeManager.programs.rofi = {
     enable = lib.mkEnableOption "rofi";
     pass.enable = lib.mkEnableOption "rofi.pass";
@@ -32,6 +34,8 @@
           width: 25%;
         }
       '';
+
+      modules.homeManager.programs.password-store.enable = true;
 
       programs.rofi = {
         enable = cfg.enable;
