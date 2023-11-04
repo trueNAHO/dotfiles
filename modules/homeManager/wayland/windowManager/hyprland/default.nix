@@ -8,6 +8,7 @@
     ../../../../wayland
     ../../../programs/rofi
     ../../../programs/wlogout
+    ../../../services/dunst
   ];
 
   options.modules.homeManager.wayland.windowManager.hyprland.enable =
@@ -17,13 +18,17 @@
     lib.mkIf
     config.modules.homeManager.wayland.windowManager.hyprland.enable {
       modules = {
-        homeManager.programs = {
-          rofi = {
-            enable = true;
-            pass.enable = true;
+        homeManager = {
+          programs = {
+            rofi = {
+              enable = true;
+              pass.enable = true;
+            };
+
+            wlogout.enable = true;
           };
 
-          wlogout.enable = true;
+          services.dunst.enable = true;
         };
 
         wayland.enable = true;
