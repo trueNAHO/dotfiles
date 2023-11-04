@@ -19,7 +19,6 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/glow
         ../modules/homeManager/home/packages/gping
         ../modules/homeManager/home/packages/killall
-        ../modules/homeManager/home/packages/pass
         ../modules/homeManager/home/packages/pipe-rename
         ../modules/homeManager/home/packages/procs
         ../modules/homeManager/home/packages/tldr
@@ -43,6 +42,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/programs/home-manager
         ../modules/homeManager/programs/lazygit
         ../modules/homeManager/programs/mpv
+        ../modules/homeManager/programs/password-store
         ../modules/homeManager/programs/qutebrowser
         ../modules/homeManager/programs/ripgrep
         ../modules/homeManager/programs/rofi
@@ -88,7 +88,6 @@ inputs.homeManager.lib.homeManagerConfiguration {
                   glow.enable = true;
                   gping.enable = true;
                   killall.enable = true;
-                  pass.enable = true;
                   pipe-rename.enable = true;
                   procs.enable = true;
                   tldr.enable = true;
@@ -117,6 +116,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
                 home-manager.enable = true;
                 lazygit.enable = true;
                 mpv.enable = true;
+                password-store.enable = true;
                 qutebrowser.enable = true;
                 ripgrep.enable = true;
 
