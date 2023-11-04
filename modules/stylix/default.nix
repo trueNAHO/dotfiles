@@ -10,6 +10,12 @@
 
   config = lib.mkIf config.modules.stylix.enable {
     stylix = {
+      cursor = {
+        name = "Bibata-Modern-Amber";
+        package = pkgs.bibata-cursors;
+        size = 22;
+      };
+
       fonts = {
         emoji = {
           package = pkgs.noto-fonts-emoji;
