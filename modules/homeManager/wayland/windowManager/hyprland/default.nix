@@ -37,7 +37,7 @@
       wayland.windowManager.hyprland = {
         enable =
           lib.info
-          "Add 'programs.hyprland.enable = true;' to the system configuration for Hyprland to work: https://nixos.wiki/wiki/Hyprland"
+          "Add 'programs.hyprland.enable = true;' to the system configuration for '${pkgs.hyprland.meta.mainProgram}' to work: https://nixos.wiki/wiki/Hyprland"
           true;
 
         settings = let

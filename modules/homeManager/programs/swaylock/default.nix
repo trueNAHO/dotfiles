@@ -11,7 +11,7 @@
     programs.swaylock = {
       enable =
         lib.info
-        "Add 'security.pam.services.swaylock = {};' to the system configuration for ${pkgs.swaylock.pname} to work: https://nix-community.github.io/home-manager/options.html#opt-programs.swaylock.enable"
+        "Add 'security.pam.services.swaylock = {};' to the system configuration for '${pkgs.swaylock.pname}' to work: https://nix-community.github.io/home-manager/options.html#opt-programs.swaylock.enable"
         true;
 
       settings = {
