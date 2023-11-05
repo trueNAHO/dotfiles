@@ -38,7 +38,7 @@
         name = "scrollback_editor";
         text = ''
           ${config.home.sessionVariables.EDITOR} \
-            -c '$ | set norelativenumber' \
+            -c 'silent $ | set norelativenumber' \
             "$@"
         '';
       };
