@@ -26,6 +26,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/tokei
         ../modules/homeManager/home/packages/tree
         ../modules/homeManager/home/packages/wl-clipboard
+        ../modules/homeManager/home/packages/xdg-utils
         ../modules/homeManager/home/shellAliases
         ../modules/homeManager/programs/alacritty
         ../modules/homeManager/programs/bash
@@ -96,6 +97,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
                   tokei.enable = true;
                   tree.enable = true;
                   wl-clipboard.enable = true;
+                  xdg-utils.enable = true;
                 };
 
                 shellAliases.enable = true;
