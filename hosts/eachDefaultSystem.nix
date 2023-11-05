@@ -29,6 +29,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/shellAliases
         ../modules/homeManager/programs/alacritty
         ../modules/homeManager/programs/bash
+        ../modules/homeManager/programs/bashmount
         ../modules/homeManager/programs/bat
         ../modules/homeManager/programs/btop
         ../modules/homeManager/programs/direnv
@@ -103,6 +104,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
               programs = {
                 alacritty.enable = true;
                 bash.enable = true;
+                bashmount.enable = true;
                 bat.enable = true;
                 btop.enable = true;
                 direnv.enable = true;
