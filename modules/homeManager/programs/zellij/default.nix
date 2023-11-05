@@ -89,8 +89,8 @@
 
       (lib.mkIf config.wayland.windowManager.hyprland.enable {
         home.shellAliases.${pkgs.hyprland.meta.mainProgram} = let
-          hyprland = pkgs.hyprland;
-        in ''ZELLIJ="" ${hyprland}/bin/${hyprland.meta.mainProgram}'';
+          hyprlandCommand = "${pkgs.hyprland}/bin/${pkgs.hyprland.meta.mainProgram}";
+        in ''ZELLIJ="" ${hyprlandCommand}'';
       })
     ]);
 }
