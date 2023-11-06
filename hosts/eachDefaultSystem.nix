@@ -67,100 +67,100 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/services/battery
         ../modules/stylix
         ../modules/wayland
+      ];
 
-        {
-          home = let
-            username = "naho";
-          in {
-            homeDirectory = "/home/${username}";
-            stateVersion = "23.05";
-            username = username;
-          };
+      config = {
+        home = let
+          username = "naho";
+        in {
+          homeDirectory = "/home/${username}";
+          stateVersion = "23.05";
+          username = username;
+        };
 
-          modules = {
-            homeManager = {
-              fonts.enable = true;
+        modules = {
+          homeManager = {
+            fonts.enable = true;
 
-              home = {
-                packages = {
-                  acpi.enable = true;
-                  du-dust.enable = true;
-                  dua.enable = true;
-                  duf.enable = true;
-                  fd.enable = true;
-                  glow.enable = true;
-                  gping.enable = true;
-                  killall.enable = true;
-                  pipe-rename.enable = true;
-                  procs.enable = true;
-                  tldr.enable = true;
-                  todo.enable = true;
-                  tokei.enable = true;
-                  tree.enable = true;
-                  wl-clipboard.enable = true;
-                  xdg-utils.enable = true;
-                };
-
-                shellAliases.enable = true;
+            home = {
+              packages = {
+                acpi.enable = true;
+                du-dust.enable = true;
+                dua.enable = true;
+                duf.enable = true;
+                fd.enable = true;
+                glow.enable = true;
+                gping.enable = true;
+                killall.enable = true;
+                pipe-rename.enable = true;
+                procs.enable = true;
+                tldr.enable = true;
+                todo.enable = true;
+                tokei.enable = true;
+                tree.enable = true;
+                wl-clipboard.enable = true;
+                xdg-utils.enable = true;
               };
 
-              programs = {
-                alacritty.enable = true;
-                bash.enable = true;
-                bashmount.enable = true;
-                bat.enable = true;
-                btop.enable = true;
-                direnv.enable = true;
-                eza.enable = true;
-                feh.enable = true;
-                fish.enable = true;
-                fzf.enable = true;
-                gh.enable = true;
-                git.enable = true;
-                gpg.enable = true;
-                home-manager.enable = true;
-                lazygit.enable = true;
-                mpv.enable = true;
-                password-store.enable = true;
-                qutebrowser.enable = true;
-                ripgrep.enable = true;
-
-                rofi = {
-                  enable = true;
-                  pass.enable = true;
-                };
-
-                swaylock.enable = true;
-                wezterm.enable = true;
-                wlogout.enable = true;
-                xplr.enable = true;
-                zathura.enable = true;
-                zellij.enable = true;
-                zoxide.enable = true;
-              };
-
-              services = {
-                dunst.enable = true;
-                easyeffects.enable = true;
-                gammastep.enable = true;
-                gpg-agent.enable = true;
-                swayidle.enable = true;
-              };
-
-              systemd.user.tmpfiles.rules.enable = true;
-              wayland.windowManager.hyprland.enable = true;
-              xdg.enable = true;
+              shellAliases.enable = true;
             };
 
-            programs.nixvim.enable = true;
-            services.battery.enable = true;
-            stylix.enable = true;
-            wayland.enable = true;
+            programs = {
+              alacritty.enable = true;
+              bash.enable = true;
+              bashmount.enable = true;
+              bat.enable = true;
+              btop.enable = true;
+              direnv.enable = true;
+              eza.enable = true;
+              feh.enable = true;
+              fish.enable = true;
+              fzf.enable = true;
+              gh.enable = true;
+              git.enable = true;
+              gpg.enable = true;
+              home-manager.enable = true;
+              lazygit.enable = true;
+              mpv.enable = true;
+              password-store.enable = true;
+              qutebrowser.enable = true;
+              ripgrep.enable = true;
+
+              rofi = {
+                enable = true;
+                pass.enable = true;
+              };
+
+              swaylock.enable = true;
+              wezterm.enable = true;
+              wlogout.enable = true;
+              xplr.enable = true;
+              zathura.enable = true;
+              zellij.enable = true;
+              zoxide.enable = true;
+            };
+
+            services = {
+              dunst.enable = true;
+              easyeffects.enable = true;
+              gammastep.enable = true;
+              gpg-agent.enable = true;
+              swayidle.enable = true;
+            };
+
+            systemd.user.tmpfiles.rules.enable = true;
+            wayland.windowManager.hyprland.enable = true;
+            xdg.enable = true;
           };
 
-          nixpkgs.config.allowUnfree = true;
-        }
-      ];
+          programs.nixvim.enable = true;
+          services.battery.enable = true;
+          stylix.enable = true;
+          wayland.enable = true;
+        };
+
+        nixpkgs.config.allowUnfree = true;
+      };
     }
   ];
 }
