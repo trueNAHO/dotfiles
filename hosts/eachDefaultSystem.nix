@@ -62,6 +62,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/services/swayidle
         ../modules/homeManager/systemd/user/tmpfiles/rules
         ../modules/homeManager/wayland/windowManager/hyprland
+        ../modules/homeManager/xdg
         ../modules/programs/nixvim
         ../modules/services/battery
         ../modules/stylix
@@ -148,6 +149,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
 
               systemd.user.tmpfiles.rules.enable = true;
               wayland.windowManager.hyprland.enable = true;
+              xdg.enable = true;
             };
 
             programs.nixvim.enable = true;
