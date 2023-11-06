@@ -7,17 +7,6 @@
   imports = [../../homeManager/services/dunst];
 
   options.modules.services.battery = {
-    cacheFile = lib.mkOption {
-      default = "/tmp/${config.home.username}_systemd_service_battery";
-
-      description = ''
-        Cache file storing the battery percentage of the last notification.
-      '';
-
-      example = "${config.xdg.cacheHome}/systemd_service_battery";
-      type = lib.types.str;
-    };
-
     delta = lib.mkOption {
       default = 5;
 
@@ -31,6 +20,13 @@
     };
 
     enable = lib.mkEnableOption "battery";
+
+    runtimeDir = lib.mkOption {
+      default = "$XDG_RUNTIME_DIR/battery";
+      description = "Runtime directory for this service.";
+      example = "$XDG_RUNTIME_DIR/battery.d";
+      type = lib.types.str;
+    };
 
     systemd.user.timers.battery.Timer.OnCalendar = lib.mkOption {
       default = "*:0/5";
@@ -109,6 +105,7 @@
 
                   text = let
                     maxBatteryValue = toString 100;
+                    valueFile = "${cfg.runtimeDir}/value";
                   in ''
                     battery="$(acpi | awk '/Battery 0/ { print $0; exit }')"
 
@@ -116,15 +113,17 @@
                         awk -v FPAT='[[:digit:]]+' '{ print $2 }' <<< "$battery"
                     )"
 
-                    if [[ -f "${cfg.cacheFile}" ]]; then
-                      battery_value_before="$(cat "${cfg.cacheFile}")"
+                    mkdir --parent "${cfg.runtimeDir}"
+
+                    if [[ -f "${valueFile}" ]]; then
+                      battery_value_before="$(cat "${valueFile}")"
                     else
-                      printf '%s\n' "${maxBatteryValue}" > "${cfg.cacheFile}"
+                      printf '%s\n' "${maxBatteryValue}" > "${valueFile}"
                       battery_value_before="${maxBatteryValue}"
                     fi
 
                     if (( battery_value_now > battery_value_before )); then
-                      printf '%s\n' "$battery_value_now" > "${cfg.cacheFile}"
+                      printf '%s\n' "$battery_value_now" > "${valueFile}"
                       exit 0
 
                     elif ((
@@ -167,7 +166,7 @@
                       "Battery" \
                       "<u>Capacity:</u> $battery_value_now%\n<u>Status:</u> $status\n<u>Time remaining:</u> $time_remaining\n<u>Urgency:</u> ''${urgency^}"
 
-                    printf '%s\n' "$battery_value_now" > "${cfg.cacheFile}"
+                    printf '%s\n' "$battery_value_now" > "${valueFile}"
                   '';
                 };
               in "${application}/bin/${application.meta.mainProgram}";
