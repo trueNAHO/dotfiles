@@ -8,7 +8,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
   extraSpecialArgs = {inherit inputs;};
 
   modules = [
-    {
+    ({config, ...}: {
       imports = [
         ../modules/homeManager/fonts
         ../modules/homeManager/home/packages/acpi
@@ -70,12 +70,10 @@ inputs.homeManager.lib.homeManagerConfiguration {
       ];
 
       config = {
-        home = let
-          username = "naho";
-        in {
-          homeDirectory = "/home/${username}";
+        home = {
+          homeDirectory = "/home/${config.home.username}";
           stateVersion = "23.05";
-          username = username;
+          username = "naho";
         };
 
         modules = {
@@ -161,6 +159,6 @@ inputs.homeManager.lib.homeManagerConfiguration {
 
         nixpkgs.config.allowUnfree = true;
       };
-    }
+    })
   ];
 }
