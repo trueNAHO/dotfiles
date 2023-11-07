@@ -279,7 +279,7 @@
             ) (lib.lists.range 0 9)
             ++ [
               "SUPER ALT, C, centerwindow,"
-              "SUPER ALT, D, exec, dunstify close-all"
+              "SUPER ALT, D, exec, dunstctl close-all"
               "SUPER ALT, H, resizeactive, -${resize} 0"
               "SUPER ALT, J, resizeactive, 0 -${resize}"
               "SUPER ALT, K, resizeactive, 0 ${resize}"
