@@ -226,7 +226,7 @@
                 text = ''
                   notify-send \
                     "System Status" \
-                      "<u>Audio Volume:</u> $(${getVolumePercentage.meta.mainProgram})%\n<u>Battery:</u> $(acpi | awk '{print substr($0, index($0,$3))}')\n<u>Brightness:</u> $(${getBrightnessPercentage.meta.mainProgram})%\n<u>Date:</u> $(date "+%Y-%m-%d %H:%M:%S")"
+                      "<u>Audio:</u> $(${getVolumePercentage.meta.mainProgram})%\n<u>Battery:</u> $(acpi | awk '{print substr($0, index($0,$3))}')\n<u>Brightness:</u> $(${getBrightnessPercentage.meta.mainProgram})%\n<u>Date:</u> $(date "+%Y-%m-%d %H:%M:%S")"
                 '';
               };
 
