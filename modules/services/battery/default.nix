@@ -32,8 +32,9 @@
       default = "*:0/5";
 
       description = ''
-        Set `systemd.user.timers.battery.Timer.OnCalendar` as given by
-        [https://nix-community.github.io/home-manager/options.html#opt-systemd.user.timers][].
+        Set the [`systemd.user.timers.battery.Timer.OnCalendar`](
+        https://nix-community.github.io/home-manager/options.html#opt-systemd.user.timers)
+        setting.
       '';
 
       example = "*:0/1";
