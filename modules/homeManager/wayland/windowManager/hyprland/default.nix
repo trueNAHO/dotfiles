@@ -9,6 +9,7 @@
     ../../../programs/rofi
     ../../../programs/wlogout
     ../../../services/dunst
+    ../../../services/swayidle
   ];
 
   options.modules.homeManager.wayland.windowManager.hyprland.enable =
@@ -28,7 +29,16 @@
             wlogout.enable = true;
           };
 
-          services.dunst.enable = true;
+          services = {
+            dunst.enable = true;
+
+            swayidle.timeouts.command = let
+              hyprctl = "${pkgs.hyprland}/bin/hyprctl";
+            in {
+              turnDisplaysOff = "${hyprctl} dispatch dpms off";
+              turnDisplaysOn = "${hyprctl} dispatch dpms on";
+            };
+          };
         };
 
         wayland.enable = true;
