@@ -34,7 +34,7 @@
           cm = "commit";
           cma = "!${git} add --all && ${git} commit";
           co = "checkout";
-          fix = "!${git} add --all && ${git} commit --message \"chore!: $(date)\"";
+          fix = ''!${git} add --all && ${git} commit --message "chore!: $(date "+%Y-%m-%d %H:%M:%S %z")"'';
           mgd = "!${git} merge $1 && ${git} branch --delete $1 #";
           nuke = "!${git} reset --hard HEAD && ${git} clean -d --force";
           reword = "commit --amend";
