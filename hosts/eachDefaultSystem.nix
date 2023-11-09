@@ -12,6 +12,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
       imports = [
         ../modules/homeManager/fonts
         ../modules/homeManager/home/packages/acpi
+        ../modules/homeManager/home/packages/aria
         ../modules/homeManager/home/packages/du-dust
         ../modules/homeManager/home/packages/dua
         ../modules/homeManager/home/packages/duf
@@ -85,6 +86,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
             home = {
               packages = {
                 acpi.enable = true;
+                aria.enable = true;
                 du-dust.enable = true;
                 dua.enable = true;
                 duf.enable = true;
