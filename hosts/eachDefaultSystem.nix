@@ -25,6 +25,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/todo
         ../modules/homeManager/home/packages/tokei
         ../modules/homeManager/home/packages/tree
+        ../modules/homeManager/home/packages/unzip
         ../modules/homeManager/home/packages/wl-clipboard
         ../modules/homeManager/home/packages/xdg-utils
         ../modules/homeManager/home/packages/zip
@@ -97,6 +98,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
                 todo.enable = true;
                 tokei.enable = true;
                 tree.enable = true;
+                unzip.enable = true;
                 wl-clipboard.enable = true;
                 xdg-utils.enable = true;
                 zip.enable = true;
