@@ -38,13 +38,13 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/programs/btop
         ../modules/homeManager/programs/direnv
         ../modules/homeManager/programs/eza
-        ../modules/homeManager/programs/feh
         ../modules/homeManager/programs/fish
         ../modules/homeManager/programs/fzf
         ../modules/homeManager/programs/gh
         ../modules/homeManager/programs/git
         ../modules/homeManager/programs/gpg
         ../modules/homeManager/programs/home-manager
+        ../modules/homeManager/programs/imv
         ../modules/homeManager/programs/lazygit
         ../modules/homeManager/programs/mpv
         ../modules/homeManager/programs/password-store
@@ -117,13 +117,13 @@ inputs.homeManager.lib.homeManagerConfiguration {
               btop.enable = true;
               direnv.enable = true;
               eza.enable = true;
-              feh.enable = true;
               fish.enable = true;
               fzf.enable = true;
               gh.enable = true;
               git.enable = true;
               gpg.enable = true;
               home-manager.enable = true;
+              imv.enable = true;
               lazygit.enable = true;
               mpv.enable = true;
               password-store.enable = true;
