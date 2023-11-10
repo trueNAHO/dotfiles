@@ -78,8 +78,8 @@
           ];
 
           handler = "external";
-          multiple_files.command = [terminal "-e" xplr];
-          single_file.command = [terminal "-e" xplr];
+          multiple_files.command = [terminal "-e" xplr "--read-only"];
+          single_file.command = [terminal "-e" xplr "--read-only"];
         };
 
         input.forward_unbound_keys = "none";
