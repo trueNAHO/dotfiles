@@ -72,14 +72,28 @@
           folder.command = [
             terminal
             "-e"
-            xplr
-            "--print-pwd-as-result"
-            "--read-only"
+            pkgs.runtimeShell
+            "-c"
+            "${xplr} --print-pwd-as-result --read-only >{}"
           ];
 
           handler = "external";
-          multiple_files.command = [terminal "-e" xplr "--read-only"];
-          single_file.command = [terminal "-e" xplr "--read-only"];
+
+          multiple_files.command = [
+            terminal
+            "-e"
+            pkgs.runtimeShell
+            "-c"
+            "${xplr} --read-only >{}"
+          ];
+
+          single_file.command = [
+            terminal
+            "-e"
+            pkgs.runtimeShell
+            "-c"
+            "${xplr} --read-only >{}"
+          ];
         };
 
         input.forward_unbound_keys = "none";
