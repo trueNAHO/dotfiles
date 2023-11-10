@@ -313,6 +313,10 @@
               ]
             ) (lib.lists.range 0 9)
             ++ [
+              "SUPER ALT SHIFT, H, layoutmsg, orientationleft"
+              "SUPER ALT SHIFT, J, layoutmsg, orientationbottom"
+              "SUPER ALT SHIFT, K, layoutmsg, orientationtop"
+              "SUPER ALT SHIFT, L, layoutmsg, orientationright"
               "SUPER ALT, C, centerwindow,"
               "SUPER ALT, D, exec, dunstctl close-all"
               "SUPER ALT, H, resizeactive, -${resize} 0"
