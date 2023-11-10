@@ -171,6 +171,30 @@
                     '';
                   };
             in {
+              cycleLayout = pkgs.writeShellApplication {
+                name = "${pkgs.hyprland.pname}-cycle-layout";
+                runtimeInputs = with pkgs; [hyprland jq];
+
+                text = let
+                  general.layout = {
+                    dwindle = "dwindle";
+                    master = "master";
+                  };
+                in ''
+                  old_layout="$(
+                    hyprctl getoption -j general:layout | jq -r '.str'
+                  )"
+
+                  if [[ "$old_layout" == "${general.layout.dwindle}" ]]; then
+                    new_layout="${general.layout.master}"
+                  else
+                    new_layout="${general.layout.dwindle}"
+                  fi
+
+                  hyprctl keyword general:layout "$new_layout"
+                '';
+              };
+
               decreaseBrightness = setBrightnessIncrease false;
               decreaseVolume = setVolumeIncrease false;
 
@@ -296,6 +320,8 @@
               "SUPER ALT, K, resizeactive, 0 ${resize}"
               "SUPER ALT, L, resizeactive, ${resize} 0"
               "SUPER ALT, M, exec, ${applications.hyprlandToggleMode}/bin/${applications.hyprlandToggleMode.meta.mainProgram}"
+              "SUPER ALT, N, exec, ${applications.cycleLayout}/bin/${applications.cycleLayout.meta.mainProgram}"
+              "SUPER ALT, P, exec, ${applications.cycleLayout}/bin/${applications.cycleLayout.meta.mainProgram}"
               "SUPER CTRL, C, exec, loginctl lock-session"
               "SUPER CTRL, H, exec, ${applications.decreaseVolume}/bin/${applications.decreaseVolume.meta.mainProgram}"
               "SUPER CTRL, J, exec, ${applications.increaseBrightness}/bin/${applications.increaseBrightness.meta.mainProgram}"
