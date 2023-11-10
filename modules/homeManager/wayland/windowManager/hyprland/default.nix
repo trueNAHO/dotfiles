@@ -173,12 +173,49 @@
             in {
               decreaseBrightness = setBrightnessIncrease false;
               decreaseVolume = setVolumeIncrease false;
+
+              hyprlandToggleMode = pkgs.writeShellApplication {
+                name = "${pkgs.hyprland.pname}-toggle-mode";
+                runtimeInputs = with pkgs; [gawk hyprland];
+
+                text = let
+                  batch = builtins.concatStringsSep ";" (
+                    map (keyword: "keyword ${keyword}") [
+                      "animations:enabled 1"
+                      "decoration:blur:enabled 1"
+                      "decoration:drop_shadow 1"
+                      "decoration:inactive_opacity 0.85"
+                      "decoration:rounding ${toString fancy_gap}"
+                      "general:border_size 1"
+                      "general:gaps_in ${toString fancy_gap}"
+                      "general:gaps_out ${toString (fancy_gap * 2)}"
+                      "misc:animate_manual_resizes 1"
+                      "misc:animate_mouse_windowdragging_resizes 1"
+                    ]
+                  );
+
+                  fancy_gap = 20;
+                in ''
+                  animations_enabled="$(
+                    hyprctl getoption animations:enabled |
+                      awk 'NR == 2 { print $NF }'
+                  )"
+
+                  if (( animations_enabled == 0 )); then
+                    hyprctl --batch '${batch}'
+                  else
+                    hyprctl reload
+                  fi
+                '';
+              };
+
               increaseBrightness = setBrightnessIncrease true;
               increaseVolume = setVolumeIncrease true;
 
               recordEntireScreen = pkgs.writeShellApplication {
                 name = "record-entire-screen";
                 runtimeInputs = [pkgs.wf-recorder];
+
                 text = ''
                   ${config.home.sessionVariables.TERMINAL} \
                     -e \
@@ -239,41 +276,6 @@
                       "<u>Audio:</u> $(${getVolumePercentage.meta.mainProgram})%\n<u>Battery:</u> $(acpi | awk '{print substr($0, index($0,$3))}')\n<u>Brightness:</u> $(${getBrightnessPercentage.meta.mainProgram})%\n<u>Date:</u> $(date "+%Y-%m-%d %H:%M:%S")"
                 '';
               };
-
-              toggleMode = pkgs.writeShellApplication {
-                name = "${pkgs.hyprland.pname}-toggle-mode";
-                runtimeInputs = with pkgs; [gawk hyprland];
-
-                text = let
-                  batch = builtins.concatStringsSep ";" (
-                    map (keyword: "keyword ${keyword}") [
-                      "animations:enabled 1"
-                      "decoration:blur:enabled 1"
-                      "decoration:drop_shadow 1"
-                      "decoration:inactive_opacity 0.85"
-                      "decoration:rounding ${toString fancy_gap}"
-                      "general:border_size 1"
-                      "general:gaps_in ${toString fancy_gap}"
-                      "general:gaps_out ${toString (fancy_gap * 2)}"
-                      "misc:animate_manual_resizes 1"
-                      "misc:animate_mouse_windowdragging_resizes 1"
-                    ]
-                  );
-
-                  fancy_gap = 20;
-                in ''
-                  animations_enabled="$(
-                    hyprctl getoption animations:enabled |
-                      awk 'NR == 2 { print $NF }'
-                  )"
-
-                  if (( animations_enabled == 0 )); then
-                    hyprctl --batch '${batch}'
-                  else
-                    hyprctl reload
-                  fi
-                '';
-              };
             };
 
             resize = "10%";
@@ -295,7 +297,7 @@
               "SUPER ALT, K, resizeactive, 0 ${resize}"
               "SUPER ALT, L, resizeactive, ${resize} 0"
               "SUPER CTRL, C, exec, loginctl lock-session"
-              "SUPER CTRL, F, exec, ${applications.toggleMode}/bin/${applications.toggleMode.meta.mainProgram}"
+              "SUPER CTRL, F, exec, ${applications.hyprlandToggleMode}/bin/${applications.hyprlandToggleMode.meta.mainProgram}"
               "SUPER CTRL, H, exec, ${applications.decreaseVolume}/bin/${applications.decreaseVolume.meta.mainProgram}"
               "SUPER CTRL, J, exec, ${applications.increaseBrightness}/bin/${applications.increaseBrightness.meta.mainProgram}"
               "SUPER CTRL, K, exec, ${applications.decreaseBrightness}/bin/${applications.decreaseBrightness.meta.mainProgram}"
