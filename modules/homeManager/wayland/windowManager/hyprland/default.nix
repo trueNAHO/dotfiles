@@ -176,7 +176,7 @@
 
               hyprlandToggleMode = pkgs.writeShellApplication {
                 name = "${pkgs.hyprland.pname}-toggle-mode";
-                runtimeInputs = with pkgs; [gawk hyprland];
+                runtimeInputs = with pkgs; [hyprland jq];
 
                 text = let
                   batch = builtins.concatStringsSep ";" (
@@ -197,8 +197,7 @@
                   fancy_gap = 20;
                 in ''
                   animations_enabled="$(
-                    hyprctl getoption animations:enabled |
-                      awk 'NR == 2 { print $NF }'
+                    hyprctl getoption -j animations:enabled | jq -r '.int'
                   )"
 
                   if (( animations_enabled == 0 )); then
