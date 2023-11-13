@@ -70,6 +70,8 @@
 
           bind = let
             applications = let
+              decreaseString = "decrease";
+
               getBrightnessPercentage = pkgs.writeShellApplication {
                 name = "get-brightness-percentage";
                 runtimeInputs = with pkgs; [brightnessctl gawk];
@@ -90,37 +92,39 @@
                 '';
               };
 
-              setBrightnessMaximise = let
-                maximumBrightnessPercentage = 100;
-                minimumBrightnessPercentage = 1;
-              in
-                maximise: let
-                  maximiseString =
-                    if maximise
-                    then "maximise"
-                    else "minimise";
+              increaseString = "increase";
+              maximiseString = "maximise";
+              maximumBrightnessPercentage = 100;
+              maximumVolumePercentage = 100;
+              minimiseString = "minimise";
+              minimumBrightnessPercentage = 1;
+              minimumVolumePercentage = 0;
 
-                  value =
-                    if maximise
-                    then "${toString maximumBrightnessPercentage}%"
-                    else "${toString minimumBrightnessPercentage}%";
-                in
-                  pkgs.writeShellApplication {
-                    name = "set-brightness-${maximiseString}";
-                    runtimeInputs = [pkgs.brightnessctl];
-                    text = ''brightnessctl set "${value}"'';
-                  };
+              setBrightnessMaximise = maximise: let
+                type =
+                  if maximise
+                  then maximiseString
+                  else minimiseString;
+
+                value =
+                  if maximise
+                  then "${toString maximumBrightnessPercentage}%"
+                  else "${toString minimumBrightnessPercentage}%";
+              in
+                pkgs.writeShellApplication {
+                  name = "set-brightness-${type}";
+                  runtimeInputs = [pkgs.brightnessctl];
+                  text = ''brightnessctl set "${value}"'';
+                };
 
               setBrightnessIncrease = let
                 brightnessStepPercentage = 10;
-                maximumBrightnessPercentage = 100;
-                minimumBrightnessPercentage = 1;
               in
                 increase: let
-                  increaseString =
+                  type =
                     if increase
-                    then "increase"
-                    else "decrease";
+                    then increaseString
+                    else decreaseString;
 
                   value = let
                     percentage = "${toString brightnessStepPercentage}%";
@@ -130,7 +134,7 @@
                     else "${percentage}-";
                 in
                   pkgs.writeShellApplication {
-                    name = "set-brightness-${increaseString}";
+                    name = "set-brightness-${type}";
                     runtimeInputs = with pkgs;
                       [brightnessctl libnotify]
                       ++ [getBrightnessPercentage];
@@ -154,40 +158,34 @@
                     '';
                   };
 
-              setVolumeMaximise = let
-                maximumVolumePercentage = 100;
-                minimumVolumePercentage = 0;
+              setVolumeMaximise = maximise: let
+                type =
+                  if maximise
+                  then maximiseString
+                  else minimiseString;
+
+                value =
+                  if maximise
+                  then "${toString maximumVolumePercentage}%"
+                  else "${toString minimumVolumePercentage}%";
               in
-                maximise: let
-                  maximiseString =
-                    if maximise
-                    then "maximise"
-                    else "minimise";
+                pkgs.writeShellApplication {
+                  name = "set-volume-${type}";
+                  runtimeInputs = [pkgs.wireplumber];
 
-                  value =
-                    if maximise
-                    then "${toString maximumVolumePercentage}%"
-                    else "${toString minimumVolumePercentage}%";
-                in
-                  pkgs.writeShellApplication {
-                    name = "set-volume-${maximiseString}";
-                    runtimeInputs = [pkgs.wireplumber];
-
-                    text = ''
-                      wpctl set-volume @DEFAULT_AUDIO_SINK@ "${value}"
-                    '';
-                  };
+                  text = ''
+                    wpctl set-volume @DEFAULT_AUDIO_SINK@ "${value}"
+                  '';
+                };
 
               setVolumeIncrease = let
                 volumeStepPercentage = 5;
-                maximumVolumePercentage = 100;
-                minimumVolumePercentage = 0;
               in
                 increase: let
-                  increaseString =
+                  type =
                     if increase
-                    then "increase"
-                    else "decrease";
+                    then increaseString
+                    else decreaseString;
 
                   value = let
                     percentage = "${toString volumeStepPercentage}%";
@@ -197,7 +195,7 @@
                     else "${percentage}-";
                 in
                   pkgs.writeShellApplication {
-                    name = "set-volume-${increaseString}";
+                    name = "set-volume-${type}";
                     runtimeInputs = with pkgs;
                       [libnotify wireplumber]
                       ++ [getVolumePercentage];
