@@ -23,6 +23,7 @@
     home = let
       neovim = pkgs.neovim.meta.mainProgram;
     in {
+      packages = with pkgs; [cargo rustc];
       sessionVariables.EDITOR = neovim;
       shellAliases.n = neovim;
     };

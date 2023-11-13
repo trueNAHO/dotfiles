@@ -11,6 +11,7 @@
     ./nvim-colorizer
     ./nvim-tree
     ./rainbow-delimiters
+    ./rust-tools
     ./spider
     ./surround
     ./telescope
