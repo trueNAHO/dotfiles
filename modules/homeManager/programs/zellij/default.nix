@@ -48,7 +48,9 @@
                 index: let
                   indexString = toString index;
                 in ''
-                  bind "Alt ${indexString}" { GoToTab ${indexString}; SwitchToMode "normal"; }
+                  bind "Alt ${indexString}" {
+                    GoToTab ${indexString}; SwitchToMode "normal"
+                  }
                 ''
               ) (lib.lists.range 1 9)
             );
@@ -67,7 +69,11 @@
                   bind "Alt K" { MovePane; }
                   bind "Alt L" { Resize "Increase"; }
                   bind "Alt Q" { CloseFocus; SwitchToMode "normal"; }
-                  bind "Alt W" { TogglePaneEmbedOrFloating; SwitchToMode "normal"; }
+
+                  bind "Alt W" {
+                    TogglePaneEmbedOrFloating; SwitchToMode "normal"
+                  }
+
                   bind "Alt X" { SwitchToMode "locked"; }
                   bind "Alt c" { NewTab; SwitchToMode "normal"; }
                   bind "Alt e" { EditScrollback; SwitchToMode "normal"; }
@@ -180,7 +186,11 @@
 
                 floating_panes max_panes=4 {
                   pane { x "1%"; y "55%"; width "45%"; height "45%"; }
-                  pane focus=true { x "50%"; y "55%"; width "45%"; height "45%"; }
+
+                  pane focus=true {
+                    x "50%"; y "55%"; width "45%"; height "45%"
+                  }
+
                   pane { x "1%"; y "1%"; width "45%"; height "45%"; }
                   pane { x "50%"; y "1%"; width "45%"; height "45%"; }
                 }
