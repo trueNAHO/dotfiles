@@ -12,7 +12,7 @@
       home.sessionVariables.TMPDIR = "${config.home.homeDirectory}/tmp";
 
       systemd.user.tmpfiles.rules = [
-        "d ${config.home.sessionVariables.TMPDIR} - - - 1w"
+        "d ${config.home.sessionVariables.TMPDIR} - - - bmA:1w"
       ];
     };
 }
