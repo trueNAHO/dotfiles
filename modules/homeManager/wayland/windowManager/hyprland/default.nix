@@ -90,6 +90,27 @@
                 '';
               };
 
+              setBrightnessMaximise = let
+                maximumBrightnessPercentage = 100;
+                minimumBrightnessPercentage = 1;
+              in
+                maximise: let
+                  maximiseString =
+                    if maximise
+                    then "maximise"
+                    else "minimise";
+
+                  value =
+                    if maximise
+                    then "${toString maximumBrightnessPercentage}%"
+                    else "${toString minimumBrightnessPercentage}%";
+                in
+                  pkgs.writeShellApplication {
+                    name = "set-brightness-${maximiseString}";
+                    runtimeInputs = [pkgs.brightnessctl];
+                    text = ''brightnessctl set "${value}"'';
+                  };
+
               setBrightnessIncrease = let
                 brightnessStepPercentage = 10;
                 maximumBrightnessPercentage = 100;
@@ -130,6 +151,30 @@
                       )); then
                         notify-send "Brightness" "<u>Value:</u> $brightness%"
                       fi
+                    '';
+                  };
+
+              setVolumeMaximise = let
+                maximumVolumePercentage = 100;
+                minimumVolumePercentage = 0;
+              in
+                maximise: let
+                  maximiseString =
+                    if maximise
+                    then "maximise"
+                    else "minimise";
+
+                  value =
+                    if maximise
+                    then "${toString maximumVolumePercentage}%"
+                    else "${toString minimumVolumePercentage}%";
+                in
+                  pkgs.writeShellApplication {
+                    name = "set-volume-${maximiseString}";
+                    runtimeInputs = [pkgs.wireplumber];
+
+                    text = ''
+                      wpctl set-volume @DEFAULT_AUDIO_SINK@ "${value}"
                     '';
                   };
 
@@ -235,6 +280,11 @@
               increaseBrightness = setBrightnessIncrease true;
               increaseVolume = setVolumeIncrease true;
 
+              maximiseBrightness = setBrightnessMaximise true;
+              maximiseVolume = setVolumeMaximise true;
+              minimiseBrightness = setBrightnessMaximise false;
+              minimiseVolume = setVolumeMaximise false;
+
               recordEntireScreen = pkgs.writeShellApplication {
                 name = "record-entire-screen";
                 runtimeInputs = [pkgs.wf-recorder];
@@ -326,6 +376,10 @@
               "SUPER ALT, M, exec, ${applications.hyprlandToggleMode}/bin/${applications.hyprlandToggleMode.meta.mainProgram}"
               "SUPER ALT, N, exec, ${applications.cycleLayout}/bin/${applications.cycleLayout.meta.mainProgram}"
               "SUPER ALT, P, exec, ${applications.cycleLayout}/bin/${applications.cycleLayout.meta.mainProgram}"
+              "SUPER CTRL SHIFT, H, exec, ${applications.minimiseVolume}/bin/${applications.minimiseVolume.meta.mainProgram}"
+              "SUPER CTRL SHIFT, J, exec, ${applications.maximiseBrightness}/bin/${applications.maximiseBrightness.meta.mainProgram}"
+              "SUPER CTRL SHIFT, K, exec, ${applications.minimiseBrightness}/bin/${applications.minimiseBrightness.meta.mainProgram}"
+              "SUPER CTRL SHIFT, L, exec, ${applications.maximiseVolume}/bin/${applications.maximiseVolume.meta.mainProgram}"
               "SUPER CTRL, C, exec, loginctl lock-session"
               "SUPER CTRL, H, exec, ${applications.decreaseVolume}/bin/${applications.decreaseVolume.meta.mainProgram}"
               "SUPER CTRL, J, exec, ${applications.increaseBrightness}/bin/${applications.increaseBrightness.meta.mainProgram}"
