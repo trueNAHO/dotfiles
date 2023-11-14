@@ -13,12 +13,8 @@ in {
           cmp.mapping(function(fallback)
             local luasnip = require('luasnip')
 
-            if cmp.visible() then
-              cmp.select_prev_item()
-
-            elseif luasnip.jumpable(-1) then
+            if luasnip.jumpable(-1) then
               luasnip.jump(-1)
-
             else
               fallback()
             end
@@ -32,10 +28,7 @@ in {
           cmp.mapping(function(fallback)
             local luasnip = require('luasnip')
 
-            if cmp.visible() then
-              cmp.select_next_item()
-
-            elseif luasnip.expand_or_jumpable() then
+            if luasnip.expand_or_jumpable() then
               luasnip.expand_or_jump()
 
             elseif has_words_before() then
