@@ -6,6 +6,7 @@
   ...
 }: {
   imports = [
+    ../../homeManager/home/packages/rustup
     ../../stylix
     ./autoCmd
     ./colorschemes
@@ -18,12 +19,14 @@
   options.modules.programs.nixvim.enable = lib.mkEnableOption "nixvim";
 
   config = lib.mkIf config.modules.programs.nixvim.enable {
-    modules.stylix.enable = true;
+    modules = {
+      homeManager.home.packages.rustup.enable = true;
+      stylix.enable = true;
+    };
 
     home = let
       neovim = pkgs.neovim.meta.mainProgram;
     in {
-      packages = with pkgs; [cargo rustc];
       sessionVariables.EDITOR = neovim;
       shellAliases.n = neovim;
     };

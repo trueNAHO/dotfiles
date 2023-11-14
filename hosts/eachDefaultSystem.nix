@@ -22,6 +22,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/killall
         ../modules/homeManager/home/packages/pipe-rename
         ../modules/homeManager/home/packages/procs
+        ../modules/homeManager/home/packages/rustup
         ../modules/homeManager/home/packages/tldr
         ../modules/homeManager/home/packages/todo
         ../modules/homeManager/home/packages/tokei
@@ -96,6 +97,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
                 killall.enable = true;
                 pipe-rename.enable = true;
                 procs.enable = true;
+                rustup.enable = true;
                 tldr.enable = true;
                 todo.enable = true;
                 tokei.enable = true;
