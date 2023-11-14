@@ -21,7 +21,7 @@ in {
           end, { "i", "s" })
         '';
 
-        "<C-d>" = "cmp.mapping.scroll_docs(-${scrollDelta})";
+        "<C-d>" = "cmp.mapping.scroll_docs(${scrollDelta})";
         "<C-e>" = "cmp.mapping.abort()";
 
         "<C-f>" = ''
@@ -40,7 +40,7 @@ in {
 
         "<C-n>" = "cmp.mapping.select_next_item()";
         "<C-p>" = "cmp.mapping.select_prev_item()";
-        "<C-u>" = "cmp.mapping.scroll_docs(${scrollDelta})";
+        "<C-u>" = "cmp.mapping.scroll_docs(-${scrollDelta})";
         "<C-y>" = "cmp.mapping.confirm()";
         "<Down>" = "cmp.mapping.select_next_item()";
         "<Up>" = "cmp.mapping.select_prev_item()";
