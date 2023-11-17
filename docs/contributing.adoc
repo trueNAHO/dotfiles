@@ -2,7 +2,7 @@
 :toc:
 
 Thank you for considering contributing to this project! To ensure that
-submissions run smoothly, please review the following guidelines:
+submissions run smoothly, please review the following guidelines.
 
 [[what-we-want]]
 == What We Want
