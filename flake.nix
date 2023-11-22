@@ -40,7 +40,7 @@
         pre-commit-hooks.follows = "preCommitHooks";
       };
 
-      url = "github:nix-community/nixvim";
+      url = "github:trueNAHO/nixvim/fix-plugins-languages-rust-rust-tools-negates-lsp-format";
     };
 
     preCommitHooks = {
