@@ -293,16 +293,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1700653776,
-        "narHash": "sha256-3jzezFuwEKGI3sDI+F4woK7dEqIOxXz++83WWJyhjqA=",
-        "owner": "trueNAHO",
+        "lastModified": 1700775724,
+        "narHash": "sha256-YA5QK1qDWTv0qkfEraLRCqOYd230AHhG4LN80aMxPpE=",
+        "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "98efc18f17240ebc26f7e12d6f23a0a67da3275c",
+        "rev": "ab9b6abc22b5991cc22299021223c848deb8c556",
         "type": "github"
       },
       "original": {
-        "owner": "trueNAHO",
-        "ref": "fix-plugins-languages-rust-rust-tools-negates-lsp-format",
+        "owner": "nix-community",
         "repo": "nixvim",
         "type": "github"
       }
