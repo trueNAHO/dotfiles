@@ -10,7 +10,13 @@
   config = lib.mkIf config.modules.homeManager.home.packages.tree.enable {
     home = {
       packages = [pkgs.tree];
-      shellAliases.t = "${pkgs.tree.pname} -C";
+
+      shellAliases = let
+        tree = "${pkgs.tree.pname} -C";
+      in {
+        t = tree;
+        tg = "${tree} --gitignore";
+      };
     };
   };
 }
