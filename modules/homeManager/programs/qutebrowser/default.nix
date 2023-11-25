@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: {
-  imports = [../../home/packages/wl-clipboard ../alacritty ../mpv ../xplr];
+  imports = [../../home/packages/wl-clipboard ../mpv ../xplr];
 
   options.modules.homeManager.programs.qutebrowser.enable =
     lib.mkEnableOption "qutebrowser";
@@ -16,7 +16,6 @@
       home.packages.wl-clipboard.enable = true;
 
       programs = {
-        alacritty.enable = true;
         mpv.enable = true;
         xplr.enable = true;
       };
@@ -47,7 +46,7 @@
       };
 
       settings = let
-        terminal = pkgs.alacritty.pname;
+        terminal = config.home.sessionVariables.TERMINAL;
         xplr = pkgs.xplr.pname;
       in {
         colors.webpage = {

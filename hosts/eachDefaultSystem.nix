@@ -53,7 +53,6 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/programs/ripgrep
         ../modules/homeManager/programs/rofi
         ../modules/homeManager/programs/swaylock
-        ../modules/homeManager/programs/wezterm
         ../modules/homeManager/programs/wlogout
         ../modules/homeManager/programs/xplr
         ../modules/homeManager/programs/zathura
@@ -138,7 +137,6 @@ inputs.homeManager.lib.homeManagerConfiguration {
               };
 
               swaylock.enable = true;
-              wezterm.enable = true;
               wlogout.enable = true;
               xplr.enable = true;
               zathura.enable = true;

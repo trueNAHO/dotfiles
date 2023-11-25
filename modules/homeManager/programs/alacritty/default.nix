@@ -1,12 +1,15 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: {
   options.modules.homeManager.programs.alacritty.enable =
     lib.mkEnableOption "alacritty";
 
   config = lib.mkIf config.modules.homeManager.programs.alacritty.enable {
+    home.sessionVariables.TERMINAL = pkgs.alacritty.pname;
+
     programs.alacritty = {
       enable = true;
 
