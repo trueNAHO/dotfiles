@@ -11,7 +11,7 @@ To install https://github.com/trueNAHO[NAHO]'s dotfiles with
 https://nix-community.github.io/home-manager/index.html#ch-installation[
 `home-manager`], run
 
-,bash]
+[bash]
 ----
 home-manager switch --flake "github:trueNAHO/dotfiles#<BUILD_TARGET>"
 ----
