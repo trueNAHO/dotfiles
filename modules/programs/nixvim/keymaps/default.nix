@@ -1,7 +1,7 @@
 {
   programs.nixvim.keymaps =
-    map (keymaps: keymaps // {options.silent = true;})
-    (map (keymaps: keymaps // {mode = "n";}) [
+    map (keymaps: {options.silent = true;} // keymaps)
+    (map (keymaps: {mode = "n";} // keymaps) [
       {
         action = "<C-d>zz";
         key = "<C-d>";
@@ -48,7 +48,7 @@
         key = "n";
       }
     ])
-    ++ (map (keymaps: keymaps // {mode = ["n" "v"];}) [
+    ++ (map (keymaps: {mode = ["n" "v"];} // keymaps) [
       {
         action = ''"+Y'';
         key = "<leader>Y";
