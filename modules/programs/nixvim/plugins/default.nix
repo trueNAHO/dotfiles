@@ -1,6 +1,7 @@
 {
   imports = [
     ./comment-nvim
+    ./debugprint
     ./fidget
     ./gitmessenger
     ./gitsigns

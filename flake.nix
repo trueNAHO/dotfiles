@@ -40,7 +40,7 @@
         pre-commit-hooks.follows = "preCommitHooks";
       };
 
-      url = "github:nix-community/nixvim";
+      url = "github:trueNAHO/nixvim/feat-plugins-languages-debugprint";
     };
 
     preCommitHooks = {
