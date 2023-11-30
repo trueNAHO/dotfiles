@@ -65,8 +65,8 @@
                   ${goToTab}
                   bind "Alt D" { Detach; }
                   bind "Alt H" { Resize "Decrease"; }
-                  bind "Alt J" { MovePaneBackwards; }
-                  bind "Alt K" { MovePane; }
+                  bind "Alt J" { MovePane; }
+                  bind "Alt K" { MovePaneBackwards; }
                   bind "Alt L" { Resize "Increase"; }
                   bind "Alt Q" { CloseFocus; SwitchToMode "normal"; }
 
