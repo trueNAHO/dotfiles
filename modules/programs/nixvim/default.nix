@@ -27,7 +27,11 @@
     home = let
       neovim = pkgs.neovim.meta.mainProgram;
     in {
-      sessionVariables.EDITOR = neovim;
+      sessionVariables = {
+        EDITOR = neovim;
+        MANPAGER = "${neovim} +Man!";
+      };
+
       shellAliases.n = neovim;
     };
 
