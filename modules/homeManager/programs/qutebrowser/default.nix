@@ -46,7 +46,6 @@
       };
 
       settings = let
-        terminal = config.home.sessionVariables.TERMINAL;
         xplr = pkgs.xplr.pname;
       in {
         colors.webpage = {
@@ -60,7 +59,7 @@
         };
 
         editor.command = [
-          terminal
+          config.home.sessionVariables.TERMINAL
           "-e"
           pkgs.runtimeShell
           "-c"
@@ -69,7 +68,7 @@
 
         fileselect = {
           folder.command = [
-            terminal
+            config.home.sessionVariables.TERMINAL
             "-e"
             pkgs.runtimeShell
             "-c"
@@ -79,7 +78,7 @@
           handler = "external";
 
           multiple_files.command = [
-            terminal
+            config.home.sessionVariables.TERMINAL
             "-e"
             pkgs.runtimeShell
             "-c"
@@ -87,7 +86,7 @@
           ];
 
           single_file.command = [
-            terminal
+            config.home.sessionVariables.TERMINAL
             "-e"
             pkgs.runtimeShell
             "-c"
