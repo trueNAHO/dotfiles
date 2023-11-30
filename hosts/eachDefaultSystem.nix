@@ -32,7 +32,6 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/xdg-utils
         ../modules/homeManager/home/packages/zip
         ../modules/homeManager/home/shellAliases
-        ../modules/homeManager/programs/alacritty
         ../modules/homeManager/programs/bash
         ../modules/homeManager/programs/bashmount
         ../modules/homeManager/programs/bat
@@ -46,6 +45,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/programs/gpg
         ../modules/homeManager/programs/home-manager
         ../modules/homeManager/programs/imv
+        ../modules/homeManager/programs/kitty
         ../modules/homeManager/programs/lazygit
         ../modules/homeManager/programs/mpv
         ../modules/homeManager/programs/password-store
@@ -111,7 +111,6 @@ inputs.homeManager.lib.homeManagerConfiguration {
             };
 
             programs = {
-              alacritty.enable = true;
               bash.enable = true;
               bashmount.enable = true;
               bat.enable = true;
@@ -125,6 +124,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
               gpg.enable = true;
               home-manager.enable = true;
               imv.enable = true;
+              kitty.enable = true;
               lazygit.enable = true;
               mpv.enable = true;
               password-store.enable = true;

@@ -63,7 +63,7 @@
           "-e"
           pkgs.runtimeShell
           "-c"
-          "${config.home.sessionVariables.EDITOR} -c 'call cursor({line}, {column0})' -- {file} && wl-copy < {file}"
+          "${config.home.sessionVariables.EDITOR} -c 'call cursor({line}, {column0})' -- {file} && nohup wl-copy < {file} >/dev/null 2>&1"
         ];
 
         fileselect = {
