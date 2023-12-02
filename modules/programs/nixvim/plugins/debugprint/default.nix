@@ -39,6 +39,7 @@
           {
             action = "function() return ${requireDebugprintDeleteprints}() end";
             key = "${leader}d";
+            options.expr = false;
           }
         ])
         ++ (map (keymaps: {mode = ["n" "v"];} // keymaps) [
