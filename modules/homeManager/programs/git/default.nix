@@ -15,7 +15,6 @@
       in {
         cdg = cdgit;
         cdgit = cdgit;
-        cg = cdgit;
         g = git;
       };
 
