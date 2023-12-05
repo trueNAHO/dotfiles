@@ -61,7 +61,7 @@
         nixpkgs.follows = "nixpkgs";
       };
 
-      url = "github:danth/stylix";
+      url = "github:willemml/stylix/feat/modules/nixvim-transparency";
     };
 
     triPaneXplr = {

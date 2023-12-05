@@ -7,9 +7,7 @@
 }: {
   imports = [
     ../../homeManager/home/packages/rustup
-    ../../stylix
     ./autoCmd
-    ./colorschemes
     ./keymaps
     ./options
     ./plugins
@@ -19,10 +17,7 @@
   options.modules.programs.nixvim.enable = lib.mkEnableOption "nixvim";
 
   config = lib.mkIf config.modules.programs.nixvim.enable {
-    modules = {
-      homeManager.home.packages.rustup.enable = true;
-      stylix.enable = true;
-    };
+    modules.homeManager.home.packages.rustup.enable = true;
 
     home = let
       neovim = pkgs.neovim.meta.mainProgram;
