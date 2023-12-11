@@ -8,7 +8,7 @@ https://wiki.archlinux.org/title/Dotfiles[dotfiles].
 == Usage
 
 To install https://github.com/trueNAHO[NAHO]'s dotfiles with
-https://nix-community.github.io/home-manager/index.html#ch-installation[
+https://nix-community.github.io/home-manager/index.xhtml#ch-installation[
 `home-manager`], run
 
 [bash]
