@@ -47,6 +47,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/programs/imv
         ../modules/homeManager/programs/kitty
         ../modules/homeManager/programs/lazygit
+        ../modules/homeManager/programs/man
         ../modules/homeManager/programs/mpv
         ../modules/homeManager/programs/password-store
         ../modules/homeManager/programs/qutebrowser
@@ -126,6 +127,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
               imv.enable = true;
               kitty.enable = true;
               lazygit.enable = true;
+              man.enable = true;
               mpv.enable = true;
               password-store.enable = true;
               qutebrowser.enable = true;
