@@ -45,7 +45,10 @@
 
         functions = {
           _repeat_parent_directory = {
-            body = "string repeat --count (math (string length -- $argv[1]) - 1) ../";
+            body = ''
+              string repeat --count (math (string length -- $argv[1]) - 1) ../
+            '';
+
             description = "Output parent directory multiple times";
           };
 
@@ -96,7 +99,8 @@
             body = ''
               set -l command_line_status $status
 
-              if test -e /etc/hostname && test "$(cat /etc/hostname)" = $hostname;
+              if test -e /etc/hostname &&
+                test "$(cat /etc/hostname)" = $hostname
                 set -f user_hostname ""
               else
                 set -f user_hostname $USER@$hostname
@@ -135,7 +139,10 @@
 
           mkcd = {
             body = "mkdir --parent -- $argv && cd -- $argv[1]";
-            description = "Make directories, and change working directory to the first one specified";
+            description = ''
+              Make directories, and change working directory to the first one
+              specified
+            '';
           };
 
           watcher = {
