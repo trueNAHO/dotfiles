@@ -5,8 +5,10 @@
   ...
 }: {
   imports = [
+    ../../home/packages/asciidoctor
     ../../home/packages/fd
     ../../home/packages/wl-clipboard
+    ../../programs/man
     ../../wayland/windowManager/hyprland
   ];
   options.modules.homeManager.programs.fish.enable = lib.mkEnableOption "fish";
@@ -32,9 +34,12 @@
 
     modules.homeManager = {
       home.packages = {
+        asciidoctor.enable = true;
         fd.enable = true;
         wl-clipboard.enable = true;
       };
+
+      programs.man.enable = true;
 
       wayland.windowManager.hyprland.enable = true;
     };
@@ -50,6 +55,19 @@
             '';
 
             description = "Output parent directory multiple times";
+          };
+
+          asciidoctor-man = {
+            body = ''
+              ${pkgs.asciidoctor-with-extensions.meta.mainProgram} \
+              --backend manpage \
+              --out-file - \
+              $argv |
+              ${pkgs.man.meta.mainProgram} \
+              --local-file -
+            '';
+
+            description = "View Asciidoctor files in Manpage format";
           };
 
           fish_command_not_found = {
