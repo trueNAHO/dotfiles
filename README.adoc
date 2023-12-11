@@ -1,40 +1,75 @@
-= Dotfiles
+= dotfiles(1)
+:dotfiles-code-of-conduct-7: https://github.com/trueNAHO/dotfiles/blob/master/docs/code_of_conduct.adoc
+:dotfiles-contributing-7: https://github.com/trueNAHO/dotfiles/blob/master/docs/contributing.adoc
+:dotfiles: https://wiki.archlinux.org/title/Dotfiles
+:home-configuration: https://nix-community.github.io/home-manager/options.html
+:home-manager: https://nix-community.github.io/home-manager
+:license: https://github.com/trueNAHO/dotfiles/blob/master/LICENSE
+:naho-dotfiles: https://github.com/trueNAHO/dotfiles
+:naho-os: https://github.com/trueNAHO/os
+:naho: https://github.com/trueNAHO
+:version-control-visualization: https://github.com/trueNAHO/trueNAHO/blob/master/version_control_visualization/repositories/dotfiles/README.adoc
 
-== About
+== Name
 
-https://github.com/trueNAHO[NAHO]'s
-https://wiki.archlinux.org/title/Dotfiles[dotfiles].
+dotfiles - NAHO's dotfiles
 
-== Usage
+== Synopsis
 
-To install https://github.com/trueNAHO[NAHO]'s dotfiles with
-https://nix-community.github.io/home-manager/index.xhtml#ch-installation[
-`home-manager`], run
+*home-manager switch* --flake _flake-uri_
 
-[bash]
-----
-home-manager switch --flake "github:trueNAHO/dotfiles#<BUILD_TARGET>"
-----
+== Description
 
-with one of the following build targets:
+{naho}[NAHO]'s {dotfiles}[dotfiles] managed with {home-manager}[Home Manager].
 
+== Options
+
+*--flake* _flake-uri[#name]_::
+
+"Build Home Manager configuration from the flake, which must contain the
+output `homeConfigurations.name`. If no `name` is specified it will first try
+`username@hostname` and then `username`." (home-manager(1))
++
+The currently supported derivations are:
++
 * `aarch64-darwin`
 * `aarch64-linux`
 * `x86_64-darwin`
 * `x86_64-linux`
 
+== Examples
+:command-base: home-manager switch --flake
+:command-local-path: /path/to/repository
+
+:command-local: {command-base} {command-local-path}#
+:command-upstream: {command-base} github:trueNAHO/dotfiles#
+
+To install the dotfiles directly from {naho-dotfiles}[upstream], run one of
+the following commands:
+
+[,bash,subs="attributes"]
+----
+{command-upstream}aarch64-darwin
+{command-upstream}aarch64-linux
+{command-upstream}x86_64-darwin
+{command-upstream}x86_64-linux
+----
+
+To install the dotfiles from a local copy at `{command-local-path}`, run one of
+the following commands:
+
+[,bash,subs="attributes"]
+----
+{command-local}aarch64-darwin
+{command-local}aarch64-linux
+{command-local}x86_64-darwin
+{command-local}x86_64-linux
+----
+
 == See Also
 
-* https://github.com/trueNAHO/os[NAHO's NixOS configurations]
-* https://github.com/trueNAHO/trueNAHO/blob/master/version_control_visualization/repositories/dotfiles/README.adoc[
-  Version Control Visualization]
-
-== Contributing
-
-To contribute, please review link:docs/contributing.adoc[our contribution
-guidelines].
-
-== License
-
-This project is licensed under link:LICENSE[GNU GENERAL PUBLIC LICENSE Version
-3].
+{home-manager}[Home Manager], {license}[License], {naho-os}[NAHO's NixOS
+configurations], {version-control-visualization}[Version Control Visualization],
+{dotfiles-code-of-conduct-7}[dotfiles.code-of-conduct(7)],
+{dotfiles-contributing-7}[dotfiles.contributing(7)],
+{home-configuration}[home-configuration.nix(5)]

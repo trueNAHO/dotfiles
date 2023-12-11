@@ -1,8 +1,11 @@
-= Contributing
+= dotfiles.contributing(7)
+:dotfiles-1: https://github.com/trueNAHO/dotfiles/blob/master/README.adoc
+:dotfiles-code-of-conduct-7: https://github.com/trueNAHO/dotfiles/blob/master/docs/code_of_conduct.adoc
 :toc:
 
-Thank you for considering contributing to this project! To ensure that
-submissions run smoothly, please review the following guidelines.
+== Name
+
+dotfiles.contributing - Contribution Guidelines
 
 [[what-we-want]]
 == What We Want
@@ -48,12 +51,7 @@ http://scottchacon.com/2011/08/31/github-flow.html[GitHub Flow].
 
 Follow http://commitizen.github.io/cz-cli[Commitizen]'s commit standards.
 
-== Code of Conduct
+== See Also
 
-To maintain a respectful community, please review link:code_of_conduct.adoc[our
-code of conduct].
-
-== License
-
-This project is licensed under link:../LICENSE[GNU GENERAL PUBLIC LICENSE
-Version 3].
+{dotfiles-1}[dotfiles(1)],
+{dotfiles-code-of-conduct-7}[dotfiles.code-of-conduct(7)]

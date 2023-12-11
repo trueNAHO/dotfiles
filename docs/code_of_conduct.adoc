@@ -1,4 +1,11 @@
-= Contributor Covenant Code of Conduct
+= dotfiles.code-of-conduct(7)
+:dotfiles-1: https://github.com/trueNAHO/dotfiles/blob/master/README.adoc
+:dotfiles-contributing-7: https://github.com/trueNAHO/dotfiles/blob/master/docs/contributing.adoc
+:toc:
+
+== Name
+
+dotfiles.code-of-conduct - Contributor Covenant Code of Conduct
 
 == Our Pledge
 
@@ -61,6 +68,7 @@ representative at an online or offline event.
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement at
 [INSERT CONTACT METHOD].
+
 All complaints will be reviewed and investigated promptly and fairly.
 
 All community leaders are obligated to respect the privacy and security of the
@@ -71,48 +79,61 @@ reporter of any incident.
 Community leaders will follow these Community Impact Guidelines in determining
 the consequences for any action they deem in violation of this Code of Conduct:
 
-=== 1. Correction
+=== Correction
 
-**Community Impact**: Use of inappropriate language or other behavior deemed
-unprofessional or unwelcome in the community.
+==== Community Impact
 
-**Consequence**: A private, written warning from community leaders, providing
-clarity around the nature of the violation and an explanation of why the
-behavior was inappropriate. A public apology may be requested.
+Use of inappropriate language or other behavior deemed unprofessional or
+unwelcome in the community.
 
-=== 2. Warning
+==== Consequence
 
-**Community Impact**: A violation through a single incident or series of
-actions.
+A private, written warning from community leaders, providing clarity around the
+nature of the violation and an explanation of why the behavior was
+inappropriate. A public apology may be requested.
 
-**Consequence**: A warning with consequences for continued behavior. No
-interaction with the people involved, including unsolicited interaction with
-those enforcing the Code of Conduct, for a specified period of time. This
-includes avoiding interactions in community spaces as well as external channels
-like social media. Violating these terms may lead to a temporary or permanent
-ban.
+=== Warning
 
-=== 3. Temporary Ban
+==== Community Impact
 
-**Community Impact**: A serious violation of community standards, including
-sustained inappropriate behavior.
+A violation through a single incident or series of actions.
 
-**Consequence**: A temporary ban from any sort of interaction or public
-communication with the community for a specified period of time. No public or
-private interaction with the people involved, including unsolicited interaction
-with those enforcing the Code of Conduct, is allowed during this period.
-Violating these terms may lead to a permanent ban.
+==== Consequence
 
-=== 4. Permanent Ban
+A warning with consequences for continued behavior. No interaction with the
+people involved, including unsolicited interaction with those enforcing the Code
+of Conduct, for a specified period of time. This includes avoiding interactions
+in community spaces as well as external channels like social media. Violating
+these terms may lead to a temporary or permanent ban.
 
-**Community Impact**: Demonstrating a pattern of violation of community
-standards, including sustained inappropriate behavior, harassment of an
-individual, or aggression toward or disparagement of classes of individuals.
+=== Temporary Ban
 
-**Consequence**: A permanent ban from any sort of public interaction within the
-community.
+==== Community Impact
 
-== Attribution
+A serious violation of community standards, including sustained inappropriate
+behavior.
+
+==== Consequence
+
+A temporary ban from any sort of interaction or public communication with the
+community for a specified period of time. No public or private interaction with
+the people involved, including unsolicited interaction with those enforcing the
+Code of Conduct, is allowed during this period. Violating these terms may lead
+to a permanent ban.
+
+=== Permanent Ban
+
+==== Community Impact
+
+Demonstrating a pattern of violation of community standards, including sustained
+inappropriate behavior, harassment of an individual, or aggression toward or
+disparagement of classes of individuals.
+
+==== Consequence
+
+A permanent ban from any sort of public interaction within the community.
+
+== See Also
 
 This Code of Conduct is adapted from the Contributor Covenant, version 2.1,
 available at
@@ -124,3 +145,5 @@ enforcement ladder.
 For answers to common questions about this code of conduct, see the FAQ at
 https://www.contributor-covenant.org/faq. Translations are available at
 https://www.contributor-covenant.org/translations.
+
+{dotfiles-1}[dotfiles(1)], {dotfiles-contributing-7}[dotfiles.contributing(7)]
