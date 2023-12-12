@@ -70,6 +70,14 @@
             description = "View Asciidoctor files in Manpage format";
           };
 
+          cheat = {
+            body = ''
+              ${pkgs.curl}/bin/${pkgs.curl.pname} --silent cheat.sh/"$argv"
+            '';
+
+            description = "The only cheat sheet you need";
+          };
+
           fish_command_not_found = {
             body = "nix run nixpkgs#$argv[1] -- $argv[2..]";
             description = "Run a Nix application";
