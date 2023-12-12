@@ -10,6 +10,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
   modules = [
     ({config, ...}: {
       imports = [
+        ../modules/home/packages/dotfiles
         ../modules/homeManager/fonts
         ../modules/homeManager/home/packages/acpi
         ../modules/homeManager/home/packages/aria
@@ -76,6 +77,8 @@ inputs.homeManager.lib.homeManagerConfiguration {
 
       config = {
         modules = {
+          home.packages.dotfiles.enable = true;
+
           homeManager = {
             fonts.enable = true;
 
