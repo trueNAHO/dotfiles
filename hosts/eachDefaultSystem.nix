@@ -20,6 +20,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/duf
         ../modules/homeManager/home/packages/fd
         ../modules/homeManager/home/packages/file
+        ../modules/homeManager/home/packages/gcc
         ../modules/homeManager/home/packages/glow
         ../modules/homeManager/home/packages/gping
         ../modules/homeManager/home/packages/killall
@@ -93,6 +94,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
                 duf.enable = true;
                 fd.enable = true;
                 file.enable = true;
+                gcc.enable = true;
                 glow.enable = true;
                 gping.enable = true;
                 killall.enable = true;
