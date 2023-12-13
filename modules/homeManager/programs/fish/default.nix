@@ -49,8 +49,10 @@
         enable = true;
 
         functions = let
-          asciidoctor-man = {
+          asciidoctor-man = function: {
             body = ''
+              ${validateNonEmptyArguments function}
+
               ${pkgs.asciidoctor-with-extensions.meta.mainProgram} \
                 --backend manpage \
                 --out-file - \
@@ -61,9 +63,15 @@
 
             description = "View Asciidoctor files in Manpage format";
           };
-        in {
-          inherit asciidoctor-man;
 
+          validateNonEmptyArguments = function: ''
+            if not count $argv >/dev/null
+              printf '%s\n' "No arguments provided" 1>&2
+              functions ${function}
+              return 1
+            end
+          '';
+        in {
           _repeat_parent_directory = {
             body = ''
               string repeat --count (math (string length -- $argv[1]) - 1) ../
@@ -72,7 +80,8 @@
             description = "Output parent directory multiple times";
           };
 
-          a = asciidoctor-man;
+          a = asciidoctor-man "a";
+          asciidoctor-man = asciidoctor-man "asciidoctor-man";
 
           cheat = {
             body = ''
@@ -83,7 +92,10 @@
           };
 
           fish_command_not_found = {
-            body = "nix run nixpkgs#$argv[1] -- $argv[2..]";
+            body = ''
+              ${validateNonEmptyArguments "fish_command_not_found"}
+              nix run nixpkgs#$argv[1] -- $argv[2..]
+            '';
             description = "Run a Nix application";
           };
 
@@ -168,7 +180,11 @@
           };
 
           mkcd = {
-            body = "mkdir --parent -- $argv && cd -- $argv[1]";
+            body = ''
+              ${validateNonEmptyArguments "mkcd"}
+              mkdir --parent -- $argv && cd -- $argv[1]
+            '';
+
             description = ''
               Make directories, and change working directory to the first one
               specified
@@ -177,6 +193,8 @@
 
           watcher = {
             body = ''
+              ${validateNonEmptyArguments "watcher"}
+
               ${pkgs.inotify-tools}/bin/inotifywait \
                 --event create,delete,modify,move \
                 --monitor \
