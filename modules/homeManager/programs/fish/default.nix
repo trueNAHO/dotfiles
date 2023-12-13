@@ -52,11 +52,11 @@
           asciidoctor-man = {
             body = ''
               ${pkgs.asciidoctor-with-extensions.meta.mainProgram} \
-              --backend manpage \
-              --out-file - \
-              $argv |
-              ${pkgs.man.meta.mainProgram} \
-              --local-file -
+                --backend manpage \
+                --out-file - \
+                $argv |
+                ${pkgs.man.meta.mainProgram} \
+                --local-file -
             '';
 
             description = "View Asciidoctor files in Manpage format";
