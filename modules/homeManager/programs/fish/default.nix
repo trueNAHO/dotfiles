@@ -48,15 +48,7 @@
       fish = {
         enable = true;
 
-        functions = {
-          _repeat_parent_directory = {
-            body = ''
-              string repeat --count (math (string length -- $argv[1]) - 1) ../
-            '';
-
-            description = "Output parent directory multiple times";
-          };
-
+        functions = let
           asciidoctor-man = {
             body = ''
               ${pkgs.asciidoctor-with-extensions.meta.mainProgram} \
@@ -69,6 +61,18 @@
 
             description = "View Asciidoctor files in Manpage format";
           };
+        in {
+          inherit asciidoctor-man;
+
+          _repeat_parent_directory = {
+            body = ''
+              string repeat --count (math (string length -- $argv[1]) - 1) ../
+            '';
+
+            description = "Output parent directory multiple times";
+          };
+
+          a = asciidoctor-man;
 
           cheat = {
             body = ''
