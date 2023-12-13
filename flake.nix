@@ -1,5 +1,5 @@
 {
-  description = "NAHO's Home Manager configuration";
+  description = "NAHO's dofiles managed with Home Manager";
 
   inputs = {
     # Add the 'beautysh' input for consistent versioning across inputs.
