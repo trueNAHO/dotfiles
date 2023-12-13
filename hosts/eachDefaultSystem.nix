@@ -75,12 +75,6 @@ inputs.homeManager.lib.homeManagerConfiguration {
       ];
 
       config = {
-        home = {
-          homeDirectory = "/home/${config.home.username}";
-          stateVersion = "23.05";
-          username = "naho";
-        };
-
         modules = {
           homeManager = {
             fonts.enable = true;
@@ -165,6 +159,12 @@ inputs.homeManager.lib.homeManagerConfiguration {
           services.battery.enable = true;
           stylix.enable = true;
           wayland.enable = true;
+        };
+
+        home = {
+          homeDirectory = "/home/${config.home.username}";
+          stateVersion = "23.05";
+          username = "naho";
         };
 
         nixpkgs.config.allowUnfree = true;
