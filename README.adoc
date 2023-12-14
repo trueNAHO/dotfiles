@@ -1,6 +1,7 @@
 = dotfiles(1)
 :dotfiles-code-of-conduct-7: https://github.com/trueNAHO/dotfiles/blob/master/docs/code_of_conduct.adoc
 :dotfiles-contributing-7: https://github.com/trueNAHO/dotfiles/blob/master/docs/contributing.adoc
+:dotfiles-design-7: https://github.com/trueNAHO/dotfiles/blob/master/docs/design/main.adoc
 :dotfiles: https://wiki.archlinux.org/title/Dotfiles
 :home-configuration: https://nix-community.github.io/home-manager/options.html
 :home-manager: https://nix-community.github.io/home-manager
@@ -72,4 +73,5 @@ the following commands:
 configurations], {version-control-visualization}[Version Control Visualization],
 {dotfiles-code-of-conduct-7}[dotfiles.code-of-conduct(7)],
 {dotfiles-contributing-7}[dotfiles.contributing(7)],
+{dotfiles-design-7}[dotfiles.design(7)],
 {home-configuration}[home-configuration.nix(5)]

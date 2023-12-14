@@ -1,0 +1,19 @@
+= dotfiles.design(7)
+:dotfiles-1: https://github.com/trueNAHO/dotfiles/blob/master/README.adoc
+:dotfiles-design-keymaps-5: https://github.com/trueNAHO/dotfiles/blob/master/docs/design/keymaps.adoc
+
+== Name
+
+dotfiles.design - Design Specification Collection
+
+== Description
+
+Collects design specifications.
+
+== Specifications
+
+* {dotfiles-design-keymaps-5}[dotfiles.design.keymaps(5)]
+
+== See Also
+
+{dotfiles-1}[dotfiles(1)]

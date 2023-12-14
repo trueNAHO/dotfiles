@@ -1,6 +1,7 @@
 = dotfiles.contributing(7)
 :dotfiles-1: https://github.com/trueNAHO/dotfiles/blob/master/README.adoc
 :dotfiles-code-of-conduct-7: https://github.com/trueNAHO/dotfiles/blob/master/docs/code_of_conduct.adoc
+:dotfiles-design-7: https://github.com/trueNAHO/dotfiles/blob/master/docs/design/main.adoc
 :toc:
 
 == Name
@@ -54,4 +55,5 @@ Follow http://commitizen.github.io/cz-cli[Commitizen]'s commit standards.
 == See Also
 
 {dotfiles-1}[dotfiles(1)],
-{dotfiles-code-of-conduct-7}[dotfiles.code-of-conduct(7)]
+{dotfiles-code-of-conduct-7}[dotfiles.code-of-conduct(7)],
+{dotfiles-design-7}[dotfiles.design(7)]
