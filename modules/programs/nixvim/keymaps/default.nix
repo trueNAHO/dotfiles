@@ -33,6 +33,26 @@
         }
 
         {
+          action = "<C-w>W";
+          key = "<leader>k";
+        }
+
+        {
+          action = "<C-w>_<C-w>|";
+          key = "<leader>F";
+        }
+
+        {
+          action = "<C-w>c";
+          key = "<leader>Q";
+        }
+
+        {
+          action = "<C-w>w";
+          key = "<leader>j";
+        }
+
+        {
           action = "Nzzzv";
           key = "N";
         }

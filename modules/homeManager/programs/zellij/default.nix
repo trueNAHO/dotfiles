@@ -69,11 +69,7 @@
                   bind "Alt K" { MovePaneBackwards; }
                   bind "Alt L" { Resize "Increase"; }
                   bind "Alt Q" { CloseFocus; SwitchToMode "normal"; }
-
-                  bind "Alt W" {
-                    TogglePaneEmbedOrFloating; SwitchToMode "normal"
-                  }
-
+                  bind "Alt W" { ToggleFloatingPanes; SwitchToMode "normal"; }
                   bind "Alt X" { SwitchToMode "locked"; }
                   bind "Alt c" { NewTab; SwitchToMode "normal"; }
                   bind "Alt e" { EditScrollback; SwitchToMode "normal"; }
@@ -85,7 +81,10 @@
                   bind "Alt n" { NextSwapLayout; }
                   bind "Alt p" { PreviousSwapLayout; }
                   bind "Alt t" { NewPane; SwitchToMode "normal"; }
-                  bind "Alt w" { ToggleFloatingPanes; SwitchToMode "normal"; }
+
+                  bind "Alt w" {
+                    TogglePaneEmbedOrFloating; SwitchToMode "normal"
+                  }
                 }
               }
 
