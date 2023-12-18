@@ -21,5 +21,6 @@
     ./trouble
     ./undotree
     ./vim-illuminate
+    ./wtf
   ];
 }
