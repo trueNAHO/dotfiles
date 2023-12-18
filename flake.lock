@@ -130,30 +130,6 @@
         "type": "github"
       }
     },
-    "beautysh": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "poetry2nix": "poetry2nix",
-        "utils": [
-          "flakeUtils"
-        ]
-      },
-      "locked": {
-        "lastModified": 1680308980,
-        "narHash": "sha256-aUEHV0jk2qIFP3jlsWYWhBbm+w/N9gzH3e4I5DcdB5s=",
-        "owner": "lovesegfault",
-        "repo": "beautysh",
-        "rev": "9845efc3ea3e86cc0d41465d720a47f521b2799c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "lovesegfault",
-        "repo": "beautysh",
-        "type": "github"
-      }
-    },
     "dragonXplr": {
       "flake": false,
       "locked": {
@@ -248,26 +224,27 @@
         ]
       },
       "locked": {
-        "lastModified": 1701728041,
-        "narHash": "sha256-x0pyrI1vC8evVDxCxyO6olOyr4wlFg9+VS3C3p4xFYQ=",
-        "owner": "nix-community",
+        "lastModified": 1702044199,
+        "narHash": "sha256-jlOy2zxKld6lktYOJO8WF43QCr3AUaDSRD6HOMIyVQ4=",
+        "owner": "msfjarvis",
         "repo": "home-manager",
-        "rev": "ac7216918cd65f3824ba7817dea8f22e61221eaf",
+        "rev": "d5302b5b6ff3063523a80784aef747b657cece1f",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
+        "owner": "msfjarvis",
+        "ref": "hs/gh-2.40-compat",
         "repo": "home-manager",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1701436327,
-        "narHash": "sha256-tRHbnoNI8SIM5O5xuxOmtSLnswEByzmnQcGGyNRjxsE=",
+        "lastModified": 1702312524,
+        "narHash": "sha256-gkZJRDBUCpTPBvQk25G0B7vfbpEYM5s5OZqghkjZsnE=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "91050ea1e57e50388fa87a3302ba12d188ef723a",
+        "rev": "a9bf124c46ef298113270b1f84a164865987a91c",
         "type": "github"
       },
       "original": {
@@ -279,9 +256,6 @@
     },
     "nixvim": {
       "inputs": {
-        "beautysh": [
-          "beautysh"
-        ],
         "flake-utils": [
           "flakeUtils"
         ],
@@ -293,42 +267,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1701285584,
-        "narHash": "sha256-vU6jXtxsDMsEk4GhVzrmePtqPHZIqPbHkuVyfjkkG1o=",
+        "lastModified": 1702919160,
+        "narHash": "sha256-odhmKWCI+Un/xOKdZGXzFWT1cd1pscNQt3UuK4QdNzE=",
         "owner": "trueNAHO",
         "repo": "nixvim",
-        "rev": "7bd5b310d8222d2bfd68679787dd463e7cfca121",
+        "rev": "d09eb608cb2ccc5862369ca4f40a047c5480d152",
         "type": "github"
       },
       "original": {
         "owner": "trueNAHO",
         "ref": "feat-plugins-languages-debugprint",
         "repo": "nixvim",
-        "type": "github"
-      }
-    },
-    "poetry2nix": {
-      "inputs": {
-        "flake-utils": [
-          "beautysh",
-          "utils"
-        ],
-        "nixpkgs": [
-          "beautysh",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1658665240,
-        "narHash": "sha256-/wkx7D7enyBPRjIkK0w7QxLQhzEkb3UxNQnjyc3FTUI=",
-        "owner": "nix-community",
-        "repo": "poetry2nix",
-        "rev": "8b8edc85d24661d5a6d0d71d6a7011f3e699780f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "poetry2nix",
         "type": "github"
       }
     },
@@ -350,11 +299,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1700922917,
-        "narHash": "sha256-ej2fch/T584b5K9sk1UhmZF7W6wEfDHuoUYpFN8dtvM=",
+        "lastModified": 1702456155,
+        "narHash": "sha256-I2XhXGAecdGlqi6hPWYT83AQtMgL+aa3ulA85RAEgOk=",
         "owner": "cachix",
         "repo": "pre-commit-hooks.nix",
-        "rev": "e5ee5c5f3844550c01d2131096c7271cec5e9b78",
+        "rev": "007a45d064c1c32d04e1b8a0de5ef00984c419bc",
         "type": "github"
       },
       "original": {
@@ -365,7 +314,6 @@
     },
     "root": {
       "inputs": {
-        "beautysh": "beautysh",
         "dragonXplr": "dragonXplr",
         "flakeCompat": "flakeCompat",
         "flakeUtils": "flakeUtils",

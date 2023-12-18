@@ -2,16 +2,6 @@
   description = "NAHO's dofiles managed with Home Manager";
 
   inputs = {
-    # Add the 'beautysh' input for consistent versioning across inputs.
-    beautysh = {
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        utils.follows = "flakeUtils";
-      };
-
-      url = "github:lovesegfault/beautysh";
-    };
-
     dragonXplr = {
       flake = false;
       url = "github:sayanarijit/dragon.xplr";
@@ -27,14 +17,13 @@
 
     homeManager = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:nix-community/home-manager";
+      url = "github:msfjarvis/home-manager/hs/gh-2.40-compat";
     };
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nixvim = {
       inputs = {
-        beautysh.follows = "beautysh";
         flake-utils.follows = "flakeUtils";
         nixpkgs.follows = "nixpkgs";
         pre-commit-hooks.follows = "preCommitHooks";
