@@ -10,6 +10,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
   modules = [
     ({config, ...}: {
       imports = [
+        ../modules/agenix/homeManagerModules/default
         ../modules/home/packages/dotfiles
         ../modules/homeManager/fonts
         ../modules/homeManager/home/packages/acpi
@@ -79,6 +80,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
 
       config = {
         modules = {
+          agenix.homeManagerModules.default.enable = true;
           home.packages.dotfiles.enable = true;
 
           homeManager = {

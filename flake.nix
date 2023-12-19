@@ -2,6 +2,15 @@
   description = "NAHO's dofiles managed with Home Manager";
 
   inputs = {
+    agenix = {
+      inputs = {
+        home-manager.follows = "homeManager";
+        nixpkgs.follows = "nixpkgs";
+      };
+
+      url = "github:ryantm/agenix";
+    };
+
     dragonXplr = {
       flake = false;
       url = "github:sayanarijit/dragon.xplr";
