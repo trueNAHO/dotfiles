@@ -26,6 +26,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/gping
         ../modules/homeManager/home/packages/killall
         ../modules/homeManager/home/packages/pipe-rename
+        ../modules/homeManager/home/packages/poppler_utils
         ../modules/homeManager/home/packages/procs
         ../modules/homeManager/home/packages/rustup
         ../modules/homeManager/home/packages/tldr
@@ -101,6 +102,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
                 gping.enable = true;
                 killall.enable = true;
                 pipe-rename.enable = true;
+                poppler_utils.enable = true;
                 procs.enable = true;
                 rustup.enable = true;
                 tldr.enable = true;
