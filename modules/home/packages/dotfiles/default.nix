@@ -15,7 +15,7 @@
         {
           installPhase = let
             manDirectory = "share/man";
-            tmpDirectory = "tmp_share_man";
+            tmpDirectory = ".this_directory_should_be_cleaned_up_at_the_end";
           in ''
             mkdir --parent "$out/${tmpDirectory}"
 
