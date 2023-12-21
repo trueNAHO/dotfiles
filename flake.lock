@@ -313,16 +313,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1702919160,
-        "narHash": "sha256-odhmKWCI+Un/xOKdZGXzFWT1cd1pscNQt3UuK4QdNzE=",
-        "owner": "trueNAHO",
+        "lastModified": 1703185304,
+        "narHash": "sha256-CKsV786NBB8fuls4vyKGTfOz9bkpAn2lh8PKL8YLZ+M=",
+        "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "d09eb608cb2ccc5862369ca4f40a047c5480d152",
+        "rev": "43d20e833267ffd026af692060fb344960930fe1",
         "type": "github"
       },
       "original": {
-        "owner": "trueNAHO",
-        "ref": "feat-plugins-languages-debugprint",
+        "owner": "nix-community",
         "repo": "nixvim",
         "type": "github"
       }
