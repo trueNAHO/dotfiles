@@ -392,16 +392,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1701798883,
-        "narHash": "sha256-wv15ahlMEfLXPq8CW08GC7VP54INaCF8pcESXt26kNc=",
-        "owner": "willemml",
+        "lastModified": 1703004037,
+        "narHash": "sha256-ceYPl/ML0kQBCUaOw0gG2TxHHEl4k9xivFpsdlKidIQ=",
+        "owner": "danth",
         "repo": "stylix",
-        "rev": "2ed2b0086b41d582aca26e083c19c0e47c8991e3",
+        "rev": "d14ac4912a9ab02f8b49b761e9e4b9ae836171af",
         "type": "github"
       },
       "original": {
-        "owner": "willemml",
-        "ref": "feat/modules/nixvim-transparency",
+        "owner": "danth",
         "repo": "stylix",
         "type": "github"
       }
