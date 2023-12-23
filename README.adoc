@@ -31,7 +31,7 @@ dotfiles - NAHO's dotfiles
 output `homeConfigurations.name`. If no `name` is specified it will first try
 `username@hostname` and then `username`." (home-manager(1))
 +
-The currently supported derivations are:
+The following derivations are available:
 +
 * `aarch64-darwin`
 * `aarch64-linux`
