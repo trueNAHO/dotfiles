@@ -16,7 +16,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/acpi
         ../modules/homeManager/home/packages/aria
         ../modules/homeManager/home/packages/asciidoctor
-        ../modules/homeManager/home/packages/du-dust
+        ../modules/homeManager/home/packages/du_dust
         ../modules/homeManager/home/packages/dua
         ../modules/homeManager/home/packages/duf
         ../modules/homeManager/home/packages/fd
@@ -25,7 +25,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/glow
         ../modules/homeManager/home/packages/gping
         ../modules/homeManager/home/packages/killall
-        ../modules/homeManager/home/packages/pipe-rename
+        ../modules/homeManager/home/packages/pipe_rename
         ../modules/homeManager/home/packages/poppler_utils
         ../modules/homeManager/home/packages/procs
         ../modules/homeManager/home/packages/rustup
@@ -34,8 +34,8 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/tokei
         ../modules/homeManager/home/packages/tree
         ../modules/homeManager/home/packages/unzip
-        ../modules/homeManager/home/packages/wl-clipboard
-        ../modules/homeManager/home/packages/xdg-utils
+        ../modules/homeManager/home/packages/wl_clipboard
+        ../modules/homeManager/home/packages/xdg_utils
         ../modules/homeManager/home/packages/zip
         ../modules/homeManager/home/shellAliases
         ../modules/homeManager/programs/bash
@@ -49,13 +49,13 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/programs/gh
         ../modules/homeManager/programs/git
         ../modules/homeManager/programs/gpg
-        ../modules/homeManager/programs/home-manager
+        ../modules/homeManager/programs/home_manager
         ../modules/homeManager/programs/imv
         ../modules/homeManager/programs/kitty
         ../modules/homeManager/programs/lazygit
         ../modules/homeManager/programs/man
         ../modules/homeManager/programs/mpv
-        ../modules/homeManager/programs/password-store
+        ../modules/homeManager/programs/password_store
         ../modules/homeManager/programs/qutebrowser
         ../modules/homeManager/programs/ripgrep
         ../modules/homeManager/programs/rofi
@@ -68,7 +68,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/services/dunst
         ../modules/homeManager/services/easyeffects
         ../modules/homeManager/services/gammastep
-        ../modules/homeManager/services/gpg-agent
+        ../modules/homeManager/services/gpg_agent
         ../modules/homeManager/services/swayidle
         ../modules/homeManager/systemd/user/tmpfiles/rules
         ../modules/homeManager/wayland/windowManager/hyprland

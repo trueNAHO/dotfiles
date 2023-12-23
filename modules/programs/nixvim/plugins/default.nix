@@ -1,26 +1,26 @@
 {
   imports = [
-    ./comment-nvim
+    ./comment_nvim
     ./debugprint
     ./fidget
     ./gitmessenger
     ./gitsigns
     ./leap
     ./lsp
-    ./lsp-format
-    ./nvim-cmp
-    ./nvim-colorizer
-    ./nvim-tree
-    ./rainbow-delimiters
-    ./rust-tools
+    ./lsp_format
+    ./nvim_cmp
+    ./nvim_colorizer
+    ./nvim_tree
+    ./rainbow_delimiters
+    ./rust_tools
     ./spider
     ./surround
     ./telescope
     ./treesitter
-    ./treesitter-context
+    ./treesitter_context
     ./trouble
     ./undotree
-    ./vim-illuminate
+    ./vim_illuminate
     ./wtf
   ];
 }

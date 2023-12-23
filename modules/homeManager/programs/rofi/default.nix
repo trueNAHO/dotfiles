@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: {
-  imports = [../password-store];
+  imports = [../password_store];
 
   options.modules.homeManager.programs.rofi = {
     enable = lib.mkEnableOption "rofi";

@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: {
-  imports = [../../home/packages/wl-clipboard ../mpv ../xplr];
+  imports = [../../home/packages/wl_clipboard ../mpv ../xplr];
 
   options.modules.homeManager.programs.qutebrowser.enable =
     lib.mkEnableOption "qutebrowser";
