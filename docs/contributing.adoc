@@ -1,7 +1,9 @@
 = dotfiles.contributing(7)
+:commitizen: link:http://commitizen.github.io/cz-cli
 :dotfiles-1: link:https://github.com/trueNAHO/dotfiles/blob/master/README.adoc
 :dotfiles-code-of-conduct-7: link:https://github.com/trueNAHO/dotfiles/blob/master/docs/code_of_conduct.adoc
 :dotfiles-design-7: link:https://github.com/trueNAHO/dotfiles/blob/master/docs/design/main.adoc
+:github-flow: link:http://scottchacon.com/2011/08/31/github-flow.html
 :toc:
 
 == Name
@@ -45,12 +47,11 @@ out to the maintainers, if you have any questions.
 
 === Contribution Process
 
-To contribute changes, adhere to the
-link:http://scottchacon.com/2011/08/31/github-flow.html[GitHub Flow].
+To contribute changes, adhere to the {github-flow}[GitHub Flow].
 
 === Commit Messages
 
-Follow link:http://commitizen.github.io/cz-cli[Commitizen]'s commit standards.
+Follow {commitizen}[Commitizen]'s commit standards.
 
 == See Also
 
