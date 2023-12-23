@@ -274,7 +274,6 @@
         aliases = {
           a = "forgit add";
           b = "forgit checkout_branch";
-          c = "forgit checkout_commit";
           cp = "forgit cherry_pick";
           d = "forgit diff";
           f = "forgit checkout_file";
