@@ -47,7 +47,7 @@ out to the maintainers, if you have any questions.
 
 === Contribution Process
 
-To contribute changes, adhere to the {github-flow}[GitHub Flow].
+Adhere to the {github-flow}[GitHub Flow].
 
 === Commit Messages
 
