@@ -11,6 +11,7 @@
     ../../programs/man
     ../../wayland/windowManager/hyprland
   ];
+
   options.modules.homeManager.programs.fish.enable = lib.mkEnableOption "fish";
 
   config = lib.mkIf config.modules.homeManager.programs.fish.enable {
@@ -96,6 +97,7 @@
               ${validateNonEmptyArguments "fish_command_not_found"}
               nix run nixpkgs#$argv[1] -- $argv[2..]
             '';
+
             description = "Run a Nix application";
           };
 
