@@ -1,15 +1,15 @@
 = dotfiles(1)
-:dotfiles-code-of-conduct-7: https://github.com/trueNAHO/dotfiles/blob/master/docs/code_of_conduct.adoc
-:dotfiles-contributing-7: https://github.com/trueNAHO/dotfiles/blob/master/docs/contributing.adoc
-:dotfiles-design-7: https://github.com/trueNAHO/dotfiles/blob/master/docs/design/main.adoc
-:dotfiles: https://wiki.archlinux.org/title/Dotfiles
-:home-configuration: https://nix-community.github.io/home-manager/options.xhtml
-:home-manager: https://nix-community.github.io/home-manager
-:license: https://github.com/trueNAHO/dotfiles/blob/master/LICENSE
-:naho-dotfiles: https://github.com/trueNAHO/dotfiles
-:naho-os: https://github.com/trueNAHO/os
-:naho: https://github.com/trueNAHO
-:version-control-visualization: https://github.com/trueNAHO/trueNAHO/blob/master/version_control_visualization/repositories/dotfiles/README.adoc
+:dotfiles-code-of-conduct-7: link:https://github.com/trueNAHO/dotfiles/blob/master/docs/code_of_conduct.adoc
+:dotfiles-contributing-7: link:https://github.com/trueNAHO/dotfiles/blob/master/docs/contributing.adoc
+:dotfiles-design-7: link:https://github.com/trueNAHO/dotfiles/blob/master/docs/design/main.adoc
+:dotfiles: link:https://wiki.archlinux.org/title/Dotfiles
+:home-configuration: link:https://nix-community.github.io/home-manager/options.xhtml
+:home-manager: link:https://nix-community.github.io/home-manager
+:license: link:https://github.com/trueNAHO/dotfiles/blob/master/LICENSE
+:naho-dotfiles: link:https://github.com/trueNAHO/dotfiles
+:naho-os: link:https://github.com/trueNAHO/os
+:naho: link:https://github.com/trueNAHO
+:version-control-visualization: link:https://github.com/trueNAHO/trueNAHO/blob/master/version_control_visualization/repositories/dotfiles/README.adoc
 
 == Name
 
