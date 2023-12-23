@@ -1,6 +1,8 @@
 = dotfiles.design.keymaps(5)
-:dotfiles-1: link:https://github.com/trueNAHO/dotfiles/blob/master/README.adoc
-:dotfiles-design-7: link:https://github.com/trueNAHO/dotfiles/blob/master/docs/design/main.adoc
+:repository-blob: link:https://github.com/trueNAHO/dotfiles/blob/master
+
+:dotfiles-1: {repository-blob}/README.adoc
+:dotfiles-design-7: {repository-blob}/docs/design/main.adoc
 
 == Name
 

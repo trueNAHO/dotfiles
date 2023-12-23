@@ -1,6 +1,8 @@
 = dotfiles.design(7)
-:dotfiles-1: link:https://github.com/trueNAHO/dotfiles/blob/master/README.adoc
-:dotfiles-design-keymaps-5: link:https://github.com/trueNAHO/dotfiles/blob/master/docs/design/keymaps.adoc
+:repository-blob: link:https://github.com/trueNAHO/dotfiles/blob/master
+
+:dotfiles-1: {repository-blob}/README.adoc
+:dotfiles-design-keymaps-5: {repository-blob}/docs/design/keymaps.adoc
 
 == Name
 

@@ -1,15 +1,18 @@
 = dotfiles(1)
-:dotfiles-code-of-conduct-7: link:https://github.com/trueNAHO/dotfiles/blob/master/docs/code_of_conduct.adoc
-:dotfiles-contributing-7: link:https://github.com/trueNAHO/dotfiles/blob/master/docs/contributing.adoc
-:dotfiles-design-7: link:https://github.com/trueNAHO/dotfiles/blob/master/docs/design/main.adoc
-:dotfiles: link:https://wiki.archlinux.org/title/Dotfiles
+:archwiki-dotfiles: link:https://wiki.archlinux.org/title/Dotfiles
 :home-configuration: link:https://nix-community.github.io/home-manager/options.xhtml
 :home-manager: link:https://nix-community.github.io/home-manager
-:license: link:https://github.com/trueNAHO/dotfiles/blob/master/LICENSE
-:naho-dotfiles: link:https://github.com/trueNAHO/dotfiles
-:naho-os: link:https://github.com/trueNAHO/os
 :naho: link:https://github.com/trueNAHO
+:os: link:https://github.com/trueNAHO/os
+:repository: link:https://github.com/trueNAHO/dotfiles
 :version-control-visualization: link:https://github.com/trueNAHO/trueNAHO/blob/master/version_control_visualization/repositories/dotfiles/README.adoc
+
+:repository-blob: {repository}/blob/master
+
+:dotfiles-code-of-conduct-7: {repository-blob}/docs/code_of_conduct.adoc
+:dotfiles-contributing-7: {repository-blob}/docs/contributing.adoc
+:dotfiles-design-7: {repository-blob}/docs/design/main.adoc
+:license: {repository-blob}/LICENSE
 
 == Name
 
@@ -21,7 +24,8 @@ dotfiles - NAHO's dotfiles
 
 == Description
 
-{naho}[NAHO]'s {dotfiles}[dotfiles] managed with {home-manager}[Home Manager].
+{naho}[NAHO]'s {archwiki-dotfiles}[dotfiles] managed with {home-manager}[Home
+Manager].
 
 == Options
 
@@ -45,7 +49,7 @@ The following derivations are available:
 :command-local: {command-base} {command-local-path}#
 :command-upstream: {command-base} github:trueNAHO/dotfiles#
 
-To install the dotfiles directly from {naho-dotfiles}[upstream], run one of
+To install the dotfiles directly from {repository}[upstream], run one of
 the following commands:
 
 [,bash,subs="attributes"]
@@ -69,7 +73,7 @@ the following commands:
 
 == See Also
 
-{home-manager}[Home Manager], {license}[License], {naho-os}[NAHO's NixOS
+{home-manager}[Home Manager], {license}[License], {os}[NAHO's NixOS
 configurations], {version-control-visualization}[Version Control Visualization],
 {dotfiles-code-of-conduct-7}[dotfiles.code-of-conduct(7)],
 {dotfiles-contributing-7}[dotfiles.contributing(7)],
