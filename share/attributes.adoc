@@ -1,0 +1,18 @@
+:repository: link:https://github.com/trueNAHO/dotfiles
+
+:repository-blob: {repository}/blob/master
+
+:archwiki-dotfiles: link:https://wiki.archlinux.org/title/Dotfiles
+:commitizen: link:http://commitizen.github.io/cz-cli
+:dotfiles-1: {repository-blob}/README.adoc
+:dotfiles-code-of-conduct-7: {repository-blob}/docs/code_of_conduct.adoc
+:dotfiles-contributing-7: {repository-blob}/docs/contributing.adoc
+:dotfiles-design-7: {repository-blob}/docs/design/main.adoc
+:dotfiles-design-keymaps-5: {repository-blob}/docs/design/keymaps.adoc
+:github-flow: link:http://scottchacon.com/2011/08/31/github-flow.html
+:home-configuration-nix-5: link:https://nix-community.github.io/home-manager/options.xhtml
+:home-manager: link:https://nix-community.github.io/home-manager
+:license: {repository-blob}/LICENSE
+:naho: link:https://github.com/trueNAHO
+:os: link:https://github.com/trueNAHO/os
+:version-control-visualization: link:https://github.com/trueNAHO/trueNAHO/blob/master/version_control_visualization/repositories/dotfiles/README.adoc

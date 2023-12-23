@@ -1,12 +1,7 @@
-= dotfiles.contributing(7)
-:commitizen: link:http://commitizen.github.io/cz-cli
-:github-flow: link:http://scottchacon.com/2011/08/31/github-flow.html
-:repository-blob: link:https://github.com/trueNAHO/dotfiles/blob/master
-:toc:
+include::../share/attributes.adoc[]
 
-:dotfiles-1: {repository-blob}/README.adoc
-:dotfiles-code-of-conduct-7: {repository-blob}/docs/code_of_conduct.adoc
-:dotfiles-design-7: {repository-blob}/docs/design/main.adoc
+= dotfiles.contributing(7)
+:toc:
 
 == Name
 

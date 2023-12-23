@@ -1,18 +1,6 @@
+include::share/attributes.adoc[]
+
 = dotfiles(1)
-:archwiki-dotfiles: link:https://wiki.archlinux.org/title/Dotfiles
-:home-configuration-nix-5: link:https://nix-community.github.io/home-manager/options.xhtml
-:home-manager: link:https://nix-community.github.io/home-manager
-:naho: link:https://github.com/trueNAHO
-:os: link:https://github.com/trueNAHO/os
-:repository: link:https://github.com/trueNAHO/dotfiles
-:version-control-visualization: link:https://github.com/trueNAHO/trueNAHO/blob/master/version_control_visualization/repositories/dotfiles/README.adoc
-
-:repository-blob: {repository}/blob/master
-
-:dotfiles-code-of-conduct-7: {repository-blob}/docs/code_of_conduct.adoc
-:dotfiles-contributing-7: {repository-blob}/docs/contributing.adoc
-:dotfiles-design-7: {repository-blob}/docs/design/main.adoc
-:license: {repository-blob}/LICENSE
 
 == Name
 

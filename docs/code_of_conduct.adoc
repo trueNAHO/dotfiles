@@ -1,9 +1,7 @@
-= dotfiles.code-of-conduct(7)
-:repository-blob: link:https://github.com/trueNAHO/dotfiles/blob/master
-:toc:
+include::../share/attributes.adoc[]
 
-:dotfiles-1: {repository-blob}/README.adoc
-:dotfiles-contributing-7: {repository-blob}/docs/contributing.adoc
+= dotfiles.code-of-conduct(7)
+:toc:
 
 == Name
 
