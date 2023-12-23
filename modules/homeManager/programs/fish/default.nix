@@ -98,7 +98,7 @@
               nix run nixpkgs#$argv[1] -- $argv[2..]
             '';
 
-            description = "Run a Nix application";
+            description = "What to do when a command wasn't found";
           };
 
           fish_mode_prompt = {
@@ -124,7 +124,7 @@
               end
             '';
 
-            description = "Output mode";
+            description = "Define the appearance of the mode indicator";
           };
 
           fish_greeting = {
@@ -136,7 +136,7 @@
               end
             '';
 
-            description = "Output greeting";
+            description = "Display a welcome message in interactive shells";
           };
 
           fish_prompt = {
@@ -166,7 +166,7 @@
               set_color $fish_color_normal
             '';
 
-            description = "Output left prompt";
+            description = "Define the appearance of the command line prompt";
           };
 
           fish_right_prompt = {
@@ -178,7 +178,9 @@
               end
             '';
 
-            description = "Output right prompt";
+            description = ''
+              Define the appearance of the right-side command line prompt
+            '';
           };
 
           mkcd = {
