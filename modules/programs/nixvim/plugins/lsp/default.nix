@@ -23,6 +23,12 @@ in {
       silent = true;
     };
 
-    servers.nil_ls.enable = true;
+    servers = {
+      html.enable = true;
+      jsonls.enable = true;
+      nil_ls.enable = true;
+      pyright.enable = true;
+      yamlls.enable = true;
+    };
   };
 }
