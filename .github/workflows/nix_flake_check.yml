@@ -1,10 +1,10 @@
-name: CI
+name: Nix Flake Check
 
 on:
   push:
 
 jobs:
-  ci:
+  nix-flake-check:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
