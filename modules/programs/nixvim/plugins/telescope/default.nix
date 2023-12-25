@@ -9,7 +9,15 @@
   in {
     keymaps = [
       {
-        action = "function() require('telescope.builtin').live_grep({default_text='${todo}', initial_mode='normal'}) end";
+        action = ''
+          function()
+            require("telescope.builtin").live_grep({
+              default_text="${todo}",
+              initial_mode="normal",
+            })
+          end
+        '';
+
         key = "${leader.telescope}t";
         lua = true;
         mode = "n";

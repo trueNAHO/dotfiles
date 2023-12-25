@@ -22,17 +22,35 @@
           }
 
           {
-            action = "function() return ${requireDebugprintDebugprint}({above = true}) end";
+            action = ''
+              function()
+                return ${requireDebugprintDebugprint}({ above = true })
+              end
+            '';
+
             key = "${leader}P";
           }
 
           {
-            action = "function() return ${requireDebugprintDebugprint}({motion = true}) end";
+            action = ''
+              function()
+                return ${requireDebugprintDebugprint}({ motion = true })
+              end
+            '';
+
             key = "${leader}m";
           }
 
           {
-            action = "function() return ${requireDebugprintDebugprint}({motion = true, above = true}) end";
+            action = ''
+              function()
+                return ${requireDebugprintDebugprint}({
+                  above = true,
+                  motion = true,
+                })
+              end
+            '';
+
             key = "${leader}M";
           }
 
@@ -44,12 +62,25 @@
         ])
         ++ (map (keymaps: {mode = ["n" "v"];} // keymaps) [
           {
-            action = "function() return ${requireDebugprintDebugprint}({variable = true}) end";
+            action = ''
+              function()
+                return ${requireDebugprintDebugprint}({ variable = true })
+              end
+            '';
+
             key = "${leader}v";
           }
 
           {
-            action = "function() return ${requireDebugprintDebugprint}({above = true, variable = true}) end";
+            action = ''
+              function()
+                return ${requireDebugprintDebugprint}({
+                  above = true,
+                  variable = true,
+                })
+              end
+            '';
+
             key = "${leader}V";
           }
         ]));

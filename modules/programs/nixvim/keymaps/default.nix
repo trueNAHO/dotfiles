@@ -58,7 +58,14 @@
         }
 
         {
-          action = "function() local spell = not vim.opt.spell:get() vim.opt.spell = spell print(spell) end";
+          action = ''
+            function()
+              local spell = not vim.opt.spell:get()
+              vim.opt.spell = spell
+              print(spell)
+            end
+          '';
+
           key = "<leader>s";
           lua = true;
         }
