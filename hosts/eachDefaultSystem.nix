@@ -119,7 +119,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
               shellAliases.enable = true;
             };
 
-            nixpkgs.config.allowUnfree.enable = true;
+            nixpkgs.config.allowUnfree.enable = false;
 
             programs = {
               bash.enable = true;
