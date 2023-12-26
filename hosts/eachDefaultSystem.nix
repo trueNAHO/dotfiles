@@ -38,6 +38,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/xdg_utils
         ../modules/homeManager/home/packages/zip
         ../modules/homeManager/home/shellAliases
+        ../modules/homeManager/nixpkgs/config/allowUnfree
         ../modules/homeManager/programs/bash
         ../modules/homeManager/programs/bashmount
         ../modules/homeManager/programs/bat
@@ -118,6 +119,8 @@ inputs.homeManager.lib.homeManagerConfiguration {
               shellAliases.enable = true;
             };
 
+            nixpkgs.config.allowUnfree.enable = true;
+
             programs = {
               bash.enable = true;
               bashmount.enable = true;
@@ -177,8 +180,6 @@ inputs.homeManager.lib.homeManagerConfiguration {
           stateVersion = "23.05";
           username = "naho";
         };
-
-        nixpkgs.config.allowUnfree = true;
       };
     })
   ];
