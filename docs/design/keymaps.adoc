@@ -14,7 +14,10 @@ keymappings.
 
 === Window Layout and Movement
 
-.Applications may utilize distinct `<LEADER_1>` and `<LEADER_2>` keys to avoid keymapping conflicts.
+Applications may utilize distinct `<LEADER_1>` and `<LEADER_2>` keys to avoid
+keymapping conflicts:
+
+.Window Layout and Movement Keymappings-behavior Correlation
 |===
 | Keymapping | Behaviour
 
