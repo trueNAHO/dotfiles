@@ -7,13 +7,6 @@
 :repository: link:https://github.com/trueNAHO/dotfiles
 :version-control-visualization: link:https://github.com/trueNAHO/trueNAHO/blob/master/version_control_visualization/repositories/dotfiles/README.adoc
 
-:repository-blob: {repository}/blob/master
-
-:dotfiles-code-of-conduct-7: {repository-blob}/docs/code_of_conduct.adoc
-:dotfiles-contributing-7: {repository-blob}/docs/contributing.adoc
-:dotfiles-design-7: {repository-blob}/docs/design/main.adoc
-:license: {repository-blob}/LICENSE
-
 == Name
 
 dotfiles - NAHO's dotfiles
@@ -73,9 +66,9 @@ the following commands:
 
 == See Also
 
-{home-manager}[Home Manager], {license}[License], {os}[NAHO's NixOS
+{home-manager}[Home Manager], link:LICENSE[License], {os}[NAHO's NixOS
 configurations], {version-control-visualization}[Version Control Visualization],
-{dotfiles-code-of-conduct-7}[dotfiles.code-of-conduct(7)],
-{dotfiles-contributing-7}[dotfiles.contributing(7)],
-{dotfiles-design-7}[dotfiles.design(7)],
+link:docs/code_of_conduct.adoc[dotfiles.code-of-conduct(7)],
+link:docs/contributing.adoc[dotfiles.contributing(7)],
+link:docs/design/main.adoc[dotfiles.design(7)],
 {home-configuration-nix-5}[home-configuration.nix(5)]

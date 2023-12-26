@@ -1,8 +1,4 @@
 = dotfiles.design(7)
-:repository-blob: link:https://github.com/trueNAHO/dotfiles/blob/master
-
-:dotfiles-1: {repository-blob}/README.adoc
-:dotfiles-design-keymaps-5: {repository-blob}/docs/design/keymaps.adoc
 
 == Name
 
@@ -14,8 +10,8 @@ Collection of design specifications.
 
 == Specifications
 
-* {dotfiles-design-keymaps-5}[dotfiles.design.keymaps(5)]
+* link:keymaps.adoc[dotfiles.design.keymaps(5)]
 
 == See Also
 
-{dotfiles-1}[dotfiles(1)]
+link:../../README.adoc[dotfiles(1)]

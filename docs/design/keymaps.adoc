@@ -1,8 +1,4 @@
 = dotfiles.design.keymaps(5)
-:repository-blob: link:https://github.com/trueNAHO/dotfiles/blob/master
-
-:dotfiles-1: {repository-blob}/README.adoc
-:dotfiles-design-7: {repository-blob}/docs/design/main.adoc
 
 == Name
 
@@ -85,4 +81,4 @@ keymappings.
 
 == See Also
 
-{dotfiles-1}[dotfiles(1)], {dotfiles-design-7}[dotfiles.design(7)]
+link:../../README.adoc[dotfiles(1)], link:main.adoc[dotfiles.design(7)]
