@@ -2,6 +2,7 @@
 :archwiki-dotfiles: link:https://wiki.archlinux.org/title/Dotfiles
 :home-configuration-nix-5: link:https://nix-community.github.io/home-manager/options.xhtml
 :home-manager: link:https://nix-community.github.io/home-manager
+:hosts-each-default-system: link:hosts/eachDefaultSystem.nix
 :naho: link:https://github.com/trueNAHO
 :os: link:https://github.com/trueNAHO/os
 :repository: link:https://github.com/trueNAHO/dotfiles
@@ -24,16 +25,35 @@ Manager].
 
 *--flake* _flake-uri[#name]_::
 
-"Build Home Manager configuration from the flake, which must contain the
-output `homeConfigurations.name`. If no `name` is specified it will first try
-`username@hostname` and then `username`." (home-manager(1))
-+
-The following derivations are available:
-+
-* `aarch64-darwin`
-* `aarch64-linux`
-* `x86_64-darwin`
-* `x86_64-linux`
+[,home-manager(1)]
+____
+Build Home Manager configuration from the flake, which must contain the output
+`homeConfigurations.name`. If no `name` is specified it will first try
+`username@hostname` and then `username`.
+____
+
+[[packages]]
+== Packages
+
+=== aarch64-darwin
+
+{hosts-each-default-system}[Enables all internal `aarch64-darwin` architecture
+modules.]
+
+=== aarch64-linux
+
+{hosts-each-default-system}[Enables all internal `aarch64-linux` architecture
+modules.]
+
+=== x86_64-darwin
+
+{hosts-each-default-system}[Enables all internal `x86_64-darwin` architecture
+modules.]
+
+=== x86_64-linux
+
+{hosts-each-default-system}[Enables all internal `x86_64-linux` architecture
+modules.]
 
 == Examples
 :command-base: home-manager switch --flake
@@ -42,8 +62,8 @@ The following derivations are available:
 :command-local: {command-base} {command-local-path}#
 :command-upstream: {command-base} github:trueNAHO/dotfiles#
 
-To install the dotfiles directly from {repository}[upstream], run one of
-the following commands:
+To build the <<packages, packages>> directly from {repository}[upstream] using
+{home-manager}[`home-manager`], run one of the following commands:
 
 [,bash,subs="attributes"]
 ----
@@ -53,8 +73,8 @@ the following commands:
 {command-upstream}x86_64-linux
 ----
 
-To install the dotfiles from a local copy at `{command-local-path}`, run one of
-the following commands:
+To build the <<packages, packages>> from a local copy at `{command-local-path}`
+using {home-manager}[`home-manager`], run one of the following commands:
 
 [,bash,subs="attributes"]
 ----
