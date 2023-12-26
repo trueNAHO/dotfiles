@@ -71,6 +71,19 @@
         }
 
         {
+          action = ''
+            function()
+              local virtual_text = not vim.diagnostic.config().virtual_text
+              vim.diagnostic.config({ virtual_text = virtual_text })
+              print(virtual_text)
+            end
+          '';
+
+          key = "<leader>v";
+          lua = true;
+        }
+
+        {
           action = "nzzzv";
           key = "n";
         }
