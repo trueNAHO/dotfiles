@@ -16,13 +16,13 @@
 
   config = lib.mkIf config.modules.homeManager.programs.fish.enable {
     home = let
-      pluginDependencies.fishPlugins = {
+      dependencies.pkgs.fishPlugins = {
         done = [pkgs.libnotify];
         forgit = [pkgs.fzf];
         fzf-fish = with pkgs; [bat fd fish fzf];
       };
     in {
-      packages = with pluginDependencies.fishPlugins;
+      packages = with dependencies.pkgs.fishPlugins;
         done ++ forgit ++ fzf-fish;
 
       sessionVariables = {
