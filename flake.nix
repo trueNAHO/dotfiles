@@ -6,6 +6,7 @@
       inputs = {
         home-manager.follows = "homeManager";
         nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
       };
 
       url = "github:ryantm/agenix";
@@ -22,7 +23,10 @@
       url = "github:edolstra/flake-compat";
     };
 
-    flakeUtils.url = "github:numtide/flake-utils";
+    flakeUtils = {
+      inputs.systems.follows = "systems";
+      url = "github:numtide/flake-utils";
+    };
 
     homeManager = {
       inputs.nixpkgs.follows = "nixpkgs";
@@ -61,6 +65,9 @@
 
       url = "github:danth/stylix";
     };
+
+    # Add the 'systems' input for consistent versioning across inputs.
+    systems.url = "github:nix-systems/default";
 
     triPaneXplr = {
       flake = false;
