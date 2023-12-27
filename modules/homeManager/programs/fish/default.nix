@@ -15,15 +15,16 @@
   options.modules.homeManager.programs.fish.enable = lib.mkEnableOption "fish";
 
   config = lib.mkIf config.modules.homeManager.programs.fish.enable {
-    home = let
-      dependencies.pkgs.fishPlugins = {
-        done = [pkgs.libnotify];
-        forgit = [pkgs.fzf];
-        fzf-fish = with pkgs; [bat fd fish fzf];
-      };
-    in {
-      packages = with dependencies.pkgs.fishPlugins;
-        done ++ forgit ++ fzf-fish;
+    home = {
+      packages = let
+        dependencies.pkgs.fishPlugins = {
+          done = [pkgs.libnotify];
+          forgit = [pkgs.fzf];
+          fzf-fish = with pkgs; [bat fd fish fzf];
+        };
+      in
+        with dependencies.pkgs.fishPlugins;
+          done ++ forgit ++ fzf-fish;
 
       sessionVariables = {
         FORGIT_COPY_CMD = "wl-copy";
