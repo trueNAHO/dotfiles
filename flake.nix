@@ -30,7 +30,7 @@
 
     homeManager = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:nix-community/home-manager";
+      url = "github:trueNAHO/home-manager/fix-modules-programs-gh-consider-existing-symlinks";
     };
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
