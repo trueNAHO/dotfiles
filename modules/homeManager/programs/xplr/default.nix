@@ -8,11 +8,10 @@
   options.modules.homeManager.programs.xplr.enable = lib.mkEnableOption "xplr";
 
   config = lib.mkIf config.modules.homeManager.programs.xplr.enable {
-    home = {
-      # Add 'curl' and 'xdragon' packages because the 'inputs.dragonXplr' plugin
-      # depends on them.
-      packages = with pkgs; [curl xdragon];
-    };
+    home.packages = let
+      dependencies.inputs.dragonXplr = with pkgs; [curl xdragon];
+    in
+      dependencies.inputs.dragonXplr;
 
     programs = {
       fish.functions.x = {
