@@ -23,8 +23,9 @@
           fzf-fish = with pkgs; [bat fd fish fzf];
         };
       in
-        with dependencies.pkgs.fishPlugins;
-          done ++ forgit ++ fzf-fish;
+        lib.lists.flatten (
+          lib.attrsets.attrValues dependencies.pkgs.fishPlugins
+        );
 
       sessionVariables = {
         FORGIT_COPY_CMD = "wl-copy";
