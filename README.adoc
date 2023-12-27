@@ -38,22 +38,22 @@ ____
 
 === aarch64-darwin
 
-{hosts-each-default-system}[Enables all internal `aarch64-darwin` architecture
+{hosts-each-default-system}[Uses all internal `aarch64-darwin` architecture
 modules.]
 
 === aarch64-linux
 
-{hosts-each-default-system}[Enables all internal `aarch64-linux` architecture
+{hosts-each-default-system}[Uses all internal `aarch64-linux` architecture
 modules.]
 
 === x86_64-darwin
 
-{hosts-each-default-system}[Enables all internal `x86_64-darwin` architecture
+{hosts-each-default-system}[Uses all internal `x86_64-darwin` architecture
 modules.]
 
 === x86_64-linux
 
-{hosts-each-default-system}[Enables all internal `x86_64-linux` architecture
+{hosts-each-default-system}[Uses all internal `x86_64-linux` architecture
 modules.]
 
 == Examples
