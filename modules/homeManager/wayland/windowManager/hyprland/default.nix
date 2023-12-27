@@ -140,6 +140,7 @@
                       ++ [getBrightnessPercentage];
 
                     text = ''
+                      # TODO:
                       # https://github.com/Hummer12007/brightnessctl/issues/82
                       brightnessctl \
                         --min-value="${toString minimumBrightnessPercentage}" \

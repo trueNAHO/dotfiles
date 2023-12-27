@@ -15,7 +15,7 @@
       ibm-plex
     ];
 
-    # https://github.com/nix-community/home-manager/pull/2732
+    # TODO: https://github.com/nix-community/home-manager/pull/2732
     xdg.configFile."fontconfig/conf.d/52-hm-default-fonts.conf".text = let
       genDefault = fonts: name: let
         prefer = builtins.concatStringsSep "" (
