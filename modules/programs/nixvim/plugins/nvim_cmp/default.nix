@@ -7,7 +7,6 @@ in {
     nvim-cmp = {
       enable = true;
 
-      # https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#luasnip
       mapping = {
         "<C-b>" = ''
           cmp.mapping(function(fallback)
