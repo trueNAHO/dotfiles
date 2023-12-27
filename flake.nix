@@ -26,7 +26,7 @@
 
     homeManager = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:msfjarvis/home-manager/hs/gh-2.40-compat";
+      url = "github:nix-community/home-manager";
     };
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";

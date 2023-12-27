@@ -15,10 +15,6 @@
       file = config.age.secrets.modulesHomemanagerProgramsGhToken.path;
     in "$(cat ${file})";
 
-    # Prevent configuration drift by avoiding the creation of the runtime
-    # authentication darling.
-    xdg.configFile."gh/hosts.yml".text = "";
-
     programs.gh = {
       enable = true;
       settings.git_protocol = "ssh";
