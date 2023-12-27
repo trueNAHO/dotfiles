@@ -86,16 +86,20 @@
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
       in {
-        checks.preCommitHooks = preCommitHooks.lib.${system}.run {
-          hooks = {
-            alejandra.enable = true;
-            convco.enable = true;
-            typos.enable = true;
-            yamllint.enable = true;
-          };
+        checks = {
+          homeManager = self.homeConfigurations.${system}.activationPackage;
 
-          settings.alejandra.verbosity = "quiet";
-          src = ./.;
+          preCommitHooks = preCommitHooks.lib.${system}.run {
+            hooks = {
+              alejandra.enable = true;
+              convco.enable = true;
+              typos.enable = true;
+              yamllint.enable = true;
+            };
+
+            settings.alejandra.verbosity = "quiet";
+            src = ./.;
+          };
         };
 
         devShells.default = pkgs.mkShell {
