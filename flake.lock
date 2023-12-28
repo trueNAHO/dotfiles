@@ -275,16 +275,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1703690302,
-        "narHash": "sha256-zE32R7zO21Ay1HZew5NoL2p0FchQvbwWNyAVq7XabeY=",
-        "owner": "trueNAHO",
+        "lastModified": 1703787578,
+        "narHash": "sha256-YanYMRry0uvExeCZYbM7yEp3H0gct9SocfFWvsYtyfs=",
+        "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "061a323654267eeeed2098b1cafbd71cdfb88c5f",
+        "rev": "f8a4a5c18f4fee53ac3016a52a97df2aaeede65b",
         "type": "github"
       },
       "original": {
-        "owner": "trueNAHO",
-        "ref": "fix-modules-programs-gh-consider-existing-symlinks",
+        "owner": "nix-community",
         "repo": "home-manager",
         "type": "github"
       }
