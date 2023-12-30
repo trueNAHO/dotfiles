@@ -2,7 +2,10 @@
   programs.nixvim = {
     keymaps = [
       {
-        action = "require('trouble').toggle";
+        action = ''
+          function() require("trouble").toggle("workspace_diagnostics") end
+        '';
+
         key = "<leader>ll";
         lua = true;
         mode = "n";

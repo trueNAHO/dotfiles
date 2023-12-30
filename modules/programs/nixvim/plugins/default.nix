@@ -16,6 +16,7 @@
     ./spider
     ./surround
     ./telescope
+    ./todo-comments
     ./treesitter
     ./treesitter_context
     ./trouble
