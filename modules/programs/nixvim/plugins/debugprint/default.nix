@@ -86,7 +86,6 @@
         ]));
 
     plugins.debugprint = {
-      createCommands = false;
       createKeymaps = false;
       enable = true;
     };
