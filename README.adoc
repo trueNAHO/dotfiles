@@ -5,6 +5,11 @@
 :hosts-each-default-system: link:hosts/eachDefaultSystem.nix
 :naho: link:https://github.com/trueNAHO
 :os: link:https://github.com/trueNAHO/os
+:repository-star-history-align: center
+:repository-star-history-alt: Star History Chart
+:repository-star-history-src-dark: https://api.star-history.com/svg?repos=trueNAHO/dotfiles&type=Date&theme=dark
+:repository-star-history-src-light: https://api.star-history.com/svg?repos=trueNAHO/dotfiles&type=Date
+:repository-star-history-width: 100%
 :repository: link:https://github.com/trueNAHO/dotfiles
 :toc:
 :version-control-visualization: link:https://github.com/trueNAHO/trueNAHO/blob/master/version_control_visualization/repositories/dotfiles/README.adoc
@@ -87,9 +92,35 @@ using {home-manager}[`home-manager`], run one of the following commands:
 
 == See Also
 
-{home-manager}[Home Manager], link:LICENSE[License], {os}[NAHO's NixOS
-configurations], {version-control-visualization}[Version Control Visualization],
+{repository-star-history-src-dark}[GitHub Star History], {home-manager}[Home
+Manager], link:LICENSE[License], {os}[NAHO's NixOS configurations],
+{version-control-visualization}[Version Control Visualization],
 link:docs/code_of_conduct.adoc[dotfiles.code-of-conduct(7)],
 link:docs/contributing.adoc[dotfiles.contributing(7)],
 link:docs/design/main.adoc[dotfiles.design(7)],
 {home-configuration-nix-5}[home-configuration.nix(5)]
+
+ifdef::env-github[]
+[subs=attributes]
+++++
+<p align="{repository-star-history-align}">
+  <picture>
+    <source
+      media="(prefers-color-scheme: dark)"
+      srcset="{repository-star-history-src-dark}"
+    />
+
+    <source
+      media="(prefers-color-scheme: light)"
+      srcset="{repository-star-history-src-light}"
+    />
+
+    <img
+      alt="{repository-star-history-alt}"
+      src="{repository-star-history-src-dark}"
+      width="{repository-star-history-width}"
+    />
+  </picture>
+</p>
+++++
+endif::[]
