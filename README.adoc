@@ -3,6 +3,8 @@
 :home-configuration-nix-5: link:https://nix-community.github.io/home-manager/options.xhtml
 :home-manager: link:https://nix-community.github.io/home-manager
 :hosts-each-default-system: link:hosts/eachDefaultSystem.nix
+:idprefix:
+:idseparator: -
 :naho: link:https://github.com/trueNAHO
 :os: link:https://github.com/trueNAHO/os
 :repository-star-history-align: center
@@ -38,7 +40,6 @@ Build Home Manager configuration from the flake, which must contain the output
 `username@hostname` and then `username`.
 ____
 
-[[packages]]
 == Packages
 
 === aarch64-darwin

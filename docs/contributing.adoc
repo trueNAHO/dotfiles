@@ -1,13 +1,14 @@
 = dotfiles.contributing(7)
 :commitizen: link:http://commitizen.github.io/cz-cli
 :github-flow: link:http://scottchacon.com/2011/08/31/github-flow.html
+:idprefix:
+:idseparator: -
 :toc:
 
 == Name
 
 dotfiles.contributing - Contribution Guidelines
 
-[[what-we-want]]
 == What We Want
 
 We welcome any contributions that help improve this project. Here are some
@@ -23,7 +24,6 @@ If you are uncertain about whether your contribution aligns with the scope of
 this project, please review <<what-we-do-not-want, what we do not want>>. Feel
 free to reach out to the maintainers, if you have any questions.
 
-[[what-we-do-not-want]]
 == What We Do Not Want
 
 While we appreciate all contributions that help improve this project, some may
