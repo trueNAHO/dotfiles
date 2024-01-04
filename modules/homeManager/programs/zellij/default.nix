@@ -63,6 +63,7 @@
 
                 normal {
                   ${goToTab}
+                  bind "Alt C" { Clear; }
                   bind "Alt D" { Detach; }
                   bind "Alt H" { Resize "Decrease"; }
                   bind "Alt J" { MovePane; }
