@@ -119,12 +119,12 @@
                     if [[ -f "${valueFile}" ]]; then
                       battery_value_before="$(cat "${valueFile}")"
                     else
-                      printf '%s\n' "${maxBatteryValue}" > "${valueFile}"
+                      printf '%s\n' "${maxBatteryValue}" >"${valueFile}"
                       battery_value_before="${maxBatteryValue}"
                     fi
 
                     if (( battery_value_now > battery_value_before )); then
-                      printf '%s\n' "$battery_value_now" > "${valueFile}"
+                      printf '%s\n' "$battery_value_now" >"${valueFile}"
                       exit 0
 
                     elif ((
@@ -167,7 +167,7 @@
                       "Battery" \
                       "<u>Capacity:</u> $battery_value_now%\n<u>Status:</u> $status\n<u>Time remaining:</u> $time_remaining\n<u>Urgency:</u> ''${urgency^}"
 
-                    printf '%s\n' "$battery_value_now" > "${valueFile}"
+                    printf '%s\n' "$battery_value_now" >"${valueFile}"
                   '';
                 };
               in "${application}/bin/${application.meta.mainProgram}";
