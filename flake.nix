@@ -33,6 +33,16 @@
       url = "github:nix-community/home-manager";
     };
 
+    nix-alien = {
+      inputs = {
+        flake-compat.follows = "flakeCompat";
+        flake-utils.follows = "flakeUtils";
+        nixpkgs.follows = "nixpkgs";
+      };
+
+      url = "github:thiagokokada/nix-alien";
+    };
+
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nixvim = {

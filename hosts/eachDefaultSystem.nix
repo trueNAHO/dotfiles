@@ -1,11 +1,12 @@
 {
   inputs,
   pkgs,
+  system,
   ...
 }:
 inputs.homeManager.lib.homeManagerConfiguration {
   inherit pkgs;
-  extraSpecialArgs = {inherit inputs;};
+  extraSpecialArgs = {inherit inputs system;};
 
   modules = [
     ({config, ...}: {
@@ -74,6 +75,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/systemd/user/tmpfiles/rules
         ../modules/homeManager/wayland/windowManager/hyprland
         ../modules/homeManager/xdg
+        ../modules/nix-alien
         ../modules/programs/nixvim
         ../modules/services/battery
         ../modules/stylix
@@ -169,6 +171,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
             xdg.enable = true;
           };
 
+          nix-alien.enable = true;
           programs.nixvim.enable = true;
           services.battery.enable = true;
           stylix.enable = true;
