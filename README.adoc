@@ -7,14 +7,16 @@
 :idseparator: -
 :naho: link:https://github.com/trueNAHO
 :os: link:https://github.com/trueNAHO/os
+:repository-path: trueNAHO/dotfiles
 :repository-star-history-align: center
 :repository-star-history-alt: Star History Chart
-:repository-star-history-src-dark: https://api.star-history.com/svg?repos=trueNAHO/dotfiles&type=Date&theme=dark
-:repository-star-history-src-light: https://api.star-history.com/svg?repos=trueNAHO/dotfiles&type=Date
 :repository-star-history-width: 100%
-:repository: link:https://github.com/trueNAHO/dotfiles
 :toc:
 :version-control-visualization: link:https://github.com/trueNAHO/trueNAHO/blob/master/version_control_visualization/repositories/dotfiles/README.adoc
+
+:repository-star-history-src-dark: https://api.star-history.com/svg?repos={repository-path}&type=Date&theme=dark
+:repository-star-history-src-light: https://api.star-history.com/svg?repos={repository-path}&type=Date
+:repository: link:https://github.com/{repository-path}
 
 == Name
 
@@ -67,7 +69,7 @@ modules.]
 :command-local-path: /path/to/repository
 
 :command-local: {command-base} {command-local-path}#
-:command-upstream: {command-base} github:trueNAHO/dotfiles#
+:command-upstream: {command-base} github:{repository-path}#
 
 To build the <<packages, packages>> directly from {repository}[upstream] using
 {home-manager}[`home-manager`], run one of the following commands:
