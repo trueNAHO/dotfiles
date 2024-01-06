@@ -14,6 +14,7 @@
 :toc:
 :version-control-visualization: link:https://github.com/trueNAHO/trueNAHO/blob/master/version_control_visualization/repositories/dotfiles/README.adoc
 
+:repository-flake-url: github:{repository-path}
 :repository-star-history-src-dark: https://api.star-history.com/svg?repos={repository-path}&type=Date&theme=dark
 :repository-star-history-src-light: https://api.star-history.com/svg?repos={repository-path}&type=Date
 :repository: link:https://github.com/{repository-path}
@@ -69,7 +70,7 @@ modules.]
 :command-local-path: /path/to/repository
 
 :command-local: {command-base} {command-local-path}#
-:command-upstream: {command-base} github:{repository-path}#
+:command-upstream: {command-base} {repository-flake-url}#
 
 To build the <<packages, packages>> directly from {repository}[upstream] using
 {home-manager}[`home-manager`], run one of the following commands:
