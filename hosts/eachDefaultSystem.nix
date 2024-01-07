@@ -29,6 +29,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/pipe_rename
         ../modules/homeManager/home/packages/poppler_utils
         ../modules/homeManager/home/packages/procs
+        ../modules/homeManager/home/packages/ripgrep-all
         ../modules/homeManager/home/packages/rustup
         ../modules/homeManager/home/packages/tldr
         ../modules/homeManager/home/packages/todo
@@ -107,6 +108,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
                 pipe-rename.enable = true;
                 poppler_utils.enable = true;
                 procs.enable = true;
+                ripgrep-all.enable = true;
                 rustup.enable = true;
                 tldr.enable = true;
                 todo.enable = true;
