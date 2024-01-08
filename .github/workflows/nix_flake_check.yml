@@ -6,6 +6,7 @@ on:
 jobs:
   nix-flake-check:
     runs-on: ubuntu-22.04
+
     steps:
       - uses: actions/checkout@v4
       - uses: DeterminateSystems/nix-installer-action@v9
