@@ -1,0 +1,26 @@
+---
+name: Nix Flake Update
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "0 0 1 * *"
+
+jobs:
+  nix-flake-update:
+    runs-on: ubuntu-22.04
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@v9
+      - uses: DeterminateSystems/magic-nix-cache-action@v2
+
+      - uses: DeterminateSystems/update-flake-lock@main
+        with:
+          pr-labels: dependencies
+          pr-title: "ci(flake): update all inputs"
