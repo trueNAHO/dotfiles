@@ -47,7 +47,6 @@
 
     nixvim = {
       inputs = {
-        flake-utils.follows = "flakeUtils";
         nixpkgs.follows = "nixpkgs";
         pre-commit-hooks.follows = "preCommitHooks";
       };
