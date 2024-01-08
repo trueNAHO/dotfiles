@@ -47,6 +47,7 @@
 
     nixvim = {
       inputs = {
+        home-manager.follows = "homeManager";
         nixpkgs.follows = "nixpkgs";
         pre-commit-hooks.follows = "preCommitHooks";
       };
