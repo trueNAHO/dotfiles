@@ -87,6 +87,7 @@
 
   outputs = {
     self,
+    agenix,
     flakeUtils,
     nixpkgs,
     preCommitHooks,
@@ -114,6 +115,7 @@
 
         devShells.default = pkgs.mkShell {
           inherit (self.checks.${system}.preCommitHooks) shellHook;
+          packages = [agenix.packages.${system}.default];
         };
       }
     )
