@@ -7,6 +7,9 @@
     lib.mkEnableOption "allowUnfree";
 
   config = {
-    nixpkgs.config.allowUnfree = config.modules.homeManager.nixpkgs.config.allowUnfree.enable;
+    nixpkgs.config.allowUnfree =
+      lib.info
+      "nixpkgs.config.allowUnfree = ${toString config.modules.homeManager.nixpkgs.config.allowUnfree.enable};"
+      config.modules.homeManager.nixpkgs.config.allowUnfree.enable;
   };
 }
