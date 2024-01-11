@@ -26,6 +26,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/gcc
         ../modules/homeManager/home/packages/glow
         ../modules/homeManager/home/packages/gping
+        ../modules/homeManager/home/packages/kdenlive
         ../modules/homeManager/home/packages/killall
         ../modules/homeManager/home/packages/pipe_rename
         ../modules/homeManager/home/packages/poppler_utils
@@ -106,6 +107,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
                 gcc.enable = true;
                 glow.enable = true;
                 gping.enable = true;
+                kdenlive.enable = true;
                 killall.enable = true;
                 pipe-rename.enable = true;
                 poppler_utils.enable = true;
