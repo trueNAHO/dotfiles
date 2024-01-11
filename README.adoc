@@ -17,7 +17,10 @@
 :repository-flake-url: github:{repository-path}
 :repository-star-history-src-dark: https://api.star-history.com/svg?repos={repository-path}&type=Date&theme=dark
 :repository-star-history-src-light: https://api.star-history.com/svg?repos={repository-path}&type=Date
-:repository: link:https://github.com/{repository-path}
+:repository-raw: https://github.com/{repository-path}
+
+:repository: link:{repository-raw}
+:repository-raw-stargazers: {repository-raw}/stargazers
 
 == Name
 
@@ -107,24 +110,26 @@ link:docs/design/main.adoc[dotfiles.design(7)],
 ifdef::env-github[]
 [subs=attributes]
 ++++
-<p align="{repository-star-history-align}">
-  <picture>
-    <source
-      media="(prefers-color-scheme: dark)"
-      srcset="{repository-star-history-src-dark}"
-    />
+<a href="{repository-raw-stargazers}">
+  <p align="{repository-star-history-align}">
+    <picture>
+      <source
+        media="(prefers-color-scheme: dark)"
+        srcset="{repository-star-history-src-dark}"
+      />
 
-    <source
-      media="(prefers-color-scheme: light)"
-      srcset="{repository-star-history-src-light}"
-    />
+      <source
+        media="(prefers-color-scheme: light)"
+        srcset="{repository-star-history-src-light}"
+      />
 
-    <img
-      alt="{repository-star-history-alt}"
-      src="{repository-star-history-src-dark}"
-      width="{repository-star-history-width}"
-    />
-  </picture>
-</p>
+      <img
+        alt="{repository-star-history-alt}"
+        src="{repository-star-history-src-dark}"
+        width="{repository-star-history-width}"
+      />
+    </picture>
+  </p>
+</a>
 ++++
 endif::[]
