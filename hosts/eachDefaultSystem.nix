@@ -52,6 +52,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/programs/btop
         ../modules/homeManager/programs/direnv
         ../modules/homeManager/programs/eza
+        ../modules/homeManager/programs/firefox
         ../modules/homeManager/programs/fish
         ../modules/homeManager/programs/fzf
         ../modules/homeManager/programs/gh
@@ -142,6 +143,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
               btop.enable = true;
               direnv.enable = true;
               eza.enable = true;
+              firefox.enable = true;
               fish.enable = true;
               fzf.enable = true;
               gh.enable = true;
