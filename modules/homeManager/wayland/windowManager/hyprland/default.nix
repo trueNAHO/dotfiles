@@ -293,7 +293,7 @@
                     -e \
                     wf-recorder \
                     --audio \
-                    -f "${config.home.sessionVariables.TMPDIR}/$(date "+%Y-%m-%d-%H-%M-%S").mp4"
+                    -f "${config.home.sessionVariables.TMPDIR}/$(date "+%Y_%m_%d_%H_%M_%S").mp4"
                 '';
               };
 
@@ -307,7 +307,7 @@
                     wf-recorder \
                     --audio \
                     --geometry "$(slurp)" \
-                    -f "${config.home.sessionVariables.TMPDIR}/$(date "+%Y-%m-%d-%H-%M-%S").mp4"
+                    -f "${config.home.sessionVariables.TMPDIR}/$(date "+%Y_%m_%d_%H_%M_%S").mp4"
                 '';
               };
 
