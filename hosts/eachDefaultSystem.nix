@@ -28,6 +28,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/gping
         ../modules/homeManager/home/packages/kdenlive
         ../modules/homeManager/home/packages/killall
+        ../modules/homeManager/home/packages/parallel
         ../modules/homeManager/home/packages/pipe_rename
         ../modules/homeManager/home/packages/poppler_utils
         ../modules/homeManager/home/packages/procs
@@ -109,6 +110,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
                 gping.enable = true;
                 kdenlive.enable = true;
                 killall.enable = true;
+                parallel.enable = true;
                 pipe-rename.enable = true;
                 poppler_utils.enable = true;
                 procs.enable = true;
