@@ -183,6 +183,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
 
             xdg = {
               enable = true;
+              mimeApps.enable = true;
               userDirs.enable = true;
             };
           };

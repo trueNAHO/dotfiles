@@ -5,6 +5,7 @@
 }: {
   options.modules.homeManager.xdg = {
     enable = lib.mkEnableOption "xdg";
+    mimeApps.enable = lib.mkEnableOption "xdg.mimeApps";
     userDirs.enable = lib.mkEnableOption "xdg.userDirs";
   };
 
@@ -13,6 +14,7 @@
   in {
     xdg = {
       enable = cfg.enable;
+      mimeApps.enable = cfg.mimeApps.enable;
 
       userDirs = lib.mkIf cfg.userDirs.enable {
         desktop = config.home.sessionVariables.TMPDIR;
