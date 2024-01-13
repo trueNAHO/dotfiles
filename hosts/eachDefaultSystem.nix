@@ -180,7 +180,11 @@ inputs.homeManager.lib.homeManagerConfiguration {
 
             systemd.user.tmpfiles.rules.enable = true;
             wayland.windowManager.hyprland.enable = true;
-            xdg.enable = true;
+
+            xdg = {
+              enable = true;
+              userDirs.enable = true;
+            };
           };
 
           nix-alien.enable = true;

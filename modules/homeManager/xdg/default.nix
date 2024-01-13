@@ -3,13 +3,18 @@
   lib,
   ...
 }: {
-  options.modules.homeManager.xdg.enable = lib.mkEnableOption "xdg";
+  options.modules.homeManager.xdg = {
+    enable = lib.mkEnableOption "xdg";
+    userDirs.enable = lib.mkEnableOption "xdg.userDirs";
+  };
 
-  config = lib.mkIf config.modules.homeManager.xdg.enable {
+  config = let
+    cfg = config.modules.homeManager.xdg;
+  in {
     xdg = {
-      enable = true;
+      enable = cfg.enable;
 
-      userDirs = {
+      userDirs = lib.mkIf cfg.userDirs.enable {
         desktop = config.home.sessionVariables.TMPDIR;
         documents = config.home.sessionVariables.TMPDIR;
         download = config.home.sessionVariables.TMPDIR;
