@@ -4,8 +4,6 @@
   pkgs,
   ...
 }: {
-  imports = [../../wayland/windowManager/hyprland];
-
   options.modules.homeManager.programs.zellij.enable =
     lib.mkEnableOption "zellij";
 
@@ -14,8 +12,6 @@
     config.modules.homeManager.programs.zellij.enable
     (lib.mkMerge [
       {
-        modules.homeManager.wayland.windowManager.hyprland.enable = true;
-
         programs = {
           zellij = {
             enable = true;
