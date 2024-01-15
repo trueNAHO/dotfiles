@@ -273,7 +273,7 @@
         ];
       };
 
-      git = {
+      git = lib.mkIf config.modules.homeManager.programs.git.enable {
         aliases = {
           a = "forgit add";
           b = "forgit checkout_branch";
