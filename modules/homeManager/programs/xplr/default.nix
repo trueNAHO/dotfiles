@@ -9,6 +9,7 @@
 
   config = lib.mkIf config.modules.homeManager.programs.xplr.enable {
     home.packages = let
+      # TODO: add missing dependencies upstream.
       dependencies.inputs.dragonXplr = with pkgs; [curl xdragon];
     in
       dependencies.inputs.dragonXplr;

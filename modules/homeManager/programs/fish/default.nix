@@ -17,6 +17,7 @@
   config = lib.mkIf config.modules.homeManager.programs.fish.enable {
     home = {
       packages = let
+        # TODO: add missing dependencies upstream.
         dependencies.pkgs.fishPlugins = {
           done = [pkgs.libnotify];
           forgit = [pkgs.fzf];
