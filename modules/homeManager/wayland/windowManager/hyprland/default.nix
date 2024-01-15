@@ -51,7 +51,7 @@
           true;
 
         settings = let
-          gap = 5;
+          windowGap = 5;
         in {
           animations = let
             windowsBezier = "windowsBezier";
@@ -70,8 +70,6 @@
 
           bind = let
             applications = let
-              decreaseString = "decrease";
-
               getBrightnessPercentage = pkgs.writeShellApplication {
                 name = "get-brightness-percentage";
                 runtimeInputs = with pkgs; [brightnessctl gawk];
@@ -92,128 +90,135 @@
                 '';
               };
 
-              increaseString = "increase";
-              maximiseString = "maximise";
-              maximumBrightnessPercentage = 100;
-              maximumVolumePercentage = 100;
-              minimiseString = "minimise";
-              minimumBrightnessPercentage = 1;
-              minimumVolumePercentage = 0;
+              helpers = {
+                increaseBrightness = let
+                  stepPercentage = 10;
+                in
+                  increase: let
+                    maximumBrightnessPercentageString =
+                      toString
+                      maximumBrightnessPercentage;
 
-              setBrightnessMaximise = maximise: let
-                type =
-                  if maximise
-                  then maximiseString
-                  else minimiseString;
+                    minimumBrightnessPercentageString =
+                      toString
+                      minimumBrightnessPercentage;
 
-                value =
-                  if maximise
-                  then "${toString maximumBrightnessPercentage}%"
-                  else "${toString minimumBrightnessPercentage}%";
-              in
-                pkgs.writeShellApplication {
-                  name = "set-brightness-${type}";
-                  runtimeInputs = [pkgs.brightnessctl];
-                  text = ''brightnessctl set "${value}"'';
-                };
-
-              setBrightnessIncrease = let
-                brightnessStepPercentage = 10;
-              in
-                increase: let
-                  type =
-                    if increase
-                    then increaseString
-                    else decreaseString;
-
-                  value = let
-                    percentage = "${toString brightnessStepPercentage}%";
+                    type = helpers.increaseToString increase;
+                    value = let
+                      percentage = "${toString stepPercentage}%";
+                    in
+                      if increase
+                      then "+${percentage}"
+                      else "${percentage}-";
                   in
-                    if increase
-                    then "+${percentage}"
-                    else "${percentage}-";
+                    pkgs.writeShellApplication {
+                      name = "set-brightness-${type}";
+
+                      runtimeInputs = with pkgs;
+                        [brightnessctl libnotify]
+                        ++ [getBrightnessPercentage];
+
+                      text = ''
+                        # TODO:
+                        # https://github.com/Hummer12007/brightnessctl/issues/82
+                        brightnessctl \
+                          --min-value="${minimumBrightnessPercentageString}" \
+                          set "${value}"
+
+                        brightness="$(
+                          ${getBrightnessPercentage.meta.mainProgram}
+                        )"
+
+                        if ((
+                          brightness <= ${minimumBrightnessPercentageString} ||
+                          brightness >= ${maximumBrightnessPercentageString}
+                        )); then
+                          notify-send "Brightness" "<u>Value:</u> $brightness%"
+                        fi
+                      '';
+                    };
+
+                increaseToString = increase:
+                  if increase
+                  then "increase"
+                  else "decrease";
+
+                increaseVolume = let
+                  stepPercentage = 5;
+                in
+                  increase: let
+                    value =
+                      "${toString stepPercentage}%"
+                      + (
+                        if increase
+                        then "+"
+                        else "-"
+                      );
+                  in
+                    pkgs.writeShellApplication {
+                      name = "set-volume-${helpers.increaseToString increase}";
+
+                      runtimeInputs = with pkgs;
+                        [libnotify wireplumber]
+                        ++ [getVolumePercentage];
+
+                      text = ''
+                        wpctl set-volume @DEFAULT_AUDIO_SINK@ "${value}"
+
+                        volume="$(${getVolumePercentage.meta.mainProgram})"
+
+                        if ((
+                          volume <= ${toString minimumVolumePercentage} ||
+                          volume >= ${toString maximumVolumePercentage}
+                        )); then
+                          notify-send "Volume" "<u>Value:</u> $volume%"
+                        fi
+                      '';
+                    };
+
+                maximiseBrightness = maximise: let
+                  type = helpers.maximiseToString maximise;
+
+                  value =
+                    toString (
+                      if maximise
+                      then maximumBrightnessPercentage
+                      else minimumBrightnessPercentage
+                    )
+                    + "%";
                 in
                   pkgs.writeShellApplication {
                     name = "set-brightness-${type}";
-                    runtimeInputs = with pkgs;
-                      [brightnessctl libnotify]
-                      ++ [getBrightnessPercentage];
-
-                    text = ''
-                      # TODO:
-                      # https://github.com/Hummer12007/brightnessctl/issues/82
-                      brightnessctl \
-                        --min-value="${toString minimumBrightnessPercentage}" \
-                        set "${value}"
-
-                      brightness="$(
-                        ${getBrightnessPercentage.meta.mainProgram}
-                      )"
-
-                      if ((
-                        brightness <= ${toString minimumBrightnessPercentage} ||
-                        brightness >= ${toString maximumBrightnessPercentage}
-                      )); then
-                        notify-send "Brightness" "<u>Value:</u> $brightness%"
-                      fi
-                    '';
+                    runtimeInputs = [pkgs.brightnessctl];
+                    text = ''brightnessctl set "${value}"'';
                   };
 
-              setVolumeMaximise = maximise: let
-                type =
+                maximiseToString = maximise:
                   if maximise
-                  then maximiseString
-                  else minimiseString;
+                  then "maximise"
+                  else "minimise";
 
-                value =
-                  if maximise
-                  then "${toString maximumVolumePercentage}%"
-                  else "${toString minimumVolumePercentage}%";
-              in
-                pkgs.writeShellApplication {
-                  name = "set-volume-${type}";
-                  runtimeInputs = [pkgs.wireplumber];
-
-                  text = ''
-                    wpctl set-volume @DEFAULT_AUDIO_SINK@ "${value}"
-                  '';
-                };
-
-              setVolumeIncrease = let
-                volumeStepPercentage = 5;
-              in
-                increase: let
-                  type =
-                    if increase
-                    then increaseString
-                    else decreaseString;
-
-                  value = let
-                    percentage = "${toString volumeStepPercentage}%";
-                  in
-                    if increase
-                    then "${percentage}+"
-                    else "${percentage}-";
+                maximiseVolume = maximise: let
+                  value =
+                    toString (
+                      if maximise
+                      then maximumVolumePercentage
+                      else minimumVolumePercentage
+                    )
+                    + "%";
                 in
                   pkgs.writeShellApplication {
-                    name = "set-volume-${type}";
-                    runtimeInputs = with pkgs;
-                      [libnotify wireplumber]
-                      ++ [getVolumePercentage];
-
-                    text = ''
-                      wpctl set-volume @DEFAULT_AUDIO_SINK@ "${value}"
-
-                      volume="$(${getVolumePercentage.meta.mainProgram})"
-
-                      if ((
-                        volume <= ${toString minimumVolumePercentage} ||
-                        volume >= ${toString maximumVolumePercentage}
-                      )); then
-                        notify-send "Volume" "<u>Value:</u> $volume%"
-                      fi
-                    '';
+                    name = "set-volume-${helpers.maximiseToString maximise}";
+                    runtimeInputs = [pkgs.wireplumber];
+                    text = ''wpctl set-volume @DEFAULT_AUDIO_SINK@ "${value}"'';
                   };
+              };
+
+              maximumBrightnessPercentage = 100;
+              maximumVolumePercentage = 100;
+              minimumBrightnessPercentage = 1;
+              minimumVolumePercentage = 0;
+              recordOutputFile = ''${config.home.sessionVariables.TMPDIR}/$(date "+%Y_%m_%d_%H_%M_%S").mp4'';
             in {
               cycleLayout = pkgs.writeShellApplication {
                 name = "${pkgs.hyprland.pname}-cycle-layout";
@@ -239,8 +244,8 @@
                 '';
               };
 
-              decreaseBrightness = setBrightnessIncrease false;
-              decreaseVolume = setVolumeIncrease false;
+              decreaseBrightness = helpers.increaseBrightness false;
+              decreaseVolume = helpers.increaseVolume false;
 
               hyprlandToggleMode = pkgs.writeShellApplication {
                 name = "${pkgs.hyprland.pname}-toggle-mode";
@@ -276,13 +281,12 @@
                 '';
               };
 
-              increaseBrightness = setBrightnessIncrease true;
-              increaseVolume = setVolumeIncrease true;
-
-              maximiseBrightness = setBrightnessMaximise true;
-              maximiseVolume = setVolumeMaximise true;
-              minimiseBrightness = setBrightnessMaximise false;
-              minimiseVolume = setVolumeMaximise false;
+              increaseBrightness = helpers.increaseBrightness true;
+              increaseVolume = helpers.increaseVolume true;
+              maximiseBrightness = helpers.maximiseBrightness true;
+              maximiseVolume = helpers.maximiseVolume true;
+              minimiseBrightness = helpers.maximiseBrightness false;
+              minimiseVolume = helpers.maximiseVolume false;
 
               recordEntireScreen = pkgs.writeShellApplication {
                 name = "record-entire-screen";
@@ -293,7 +297,7 @@
                     -e \
                     wf-recorder \
                     --audio \
-                    -f "${config.home.sessionVariables.TMPDIR}/$(date "+%Y_%m_%d_%H_%M_%S").mp4"
+                    -f "${recordOutputFile}"
                 '';
               };
 
@@ -307,7 +311,7 @@
                     wf-recorder \
                     --audio \
                     --geometry "$(slurp)" \
-                    -f "${config.home.sessionVariables.TMPDIR}/$(date "+%Y_%m_%d_%H_%M_%S").mp4"
+                    -f "${recordOutputFile}"
                 '';
               };
 
@@ -350,7 +354,7 @@
               };
             };
 
-            resize = "10%";
+            windowResize = "10%";
           in
             builtins.concatMap (
               index: let
@@ -368,10 +372,10 @@
               "SUPER ALT SHIFT, L, layoutmsg, orientationright"
               "SUPER ALT, C, centerwindow,"
               "SUPER ALT, D, exec, dunstctl close-all"
-              "SUPER ALT, H, resizeactive, -${resize} 0"
-              "SUPER ALT, J, resizeactive, 0 ${resize}"
-              "SUPER ALT, K, resizeactive, 0 -${resize}"
-              "SUPER ALT, L, resizeactive, ${resize} 0"
+              "SUPER ALT, H, resizeactive, -${windowResize} 0"
+              "SUPER ALT, J, resizeactive, 0 ${windowResize}"
+              "SUPER ALT, K, resizeactive, 0 -${windowResize}"
+              "SUPER ALT, L, resizeactive, ${windowResize} 0"
               "SUPER ALT, M, exec, ${applications.hyprlandToggleMode}/bin/${applications.hyprlandToggleMode.meta.mainProgram}"
               "SUPER ALT, N, exec, ${applications.cycleLayout}/bin/${applications.cycleLayout.meta.mainProgram}"
               "SUPER ALT, P, exec, ${applications.cycleLayout}/bin/${applications.cycleLayout.meta.mainProgram}"
@@ -416,8 +420,8 @@
           ];
 
           general = {
-            gaps_in = gap;
-            gaps_out = gap;
+            gaps_in = windowGap;
+            gaps_out = windowGap;
           };
 
           gestures.workspace_swipe = true;
@@ -427,7 +431,7 @@
             dim_inactive = true;
             dim_strength = 0.15;
             drop_shadow = false;
-            rounding = gap;
+            rounding = windowGap;
           };
         };
       };
