@@ -37,7 +37,6 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/ripgrep-all
         ../modules/homeManager/home/packages/rustup
         ../modules/homeManager/home/packages/tldr
-        ../modules/homeManager/home/packages/todo
         ../modules/homeManager/home/packages/tokei
         ../modules/homeManager/home/packages/tree
         ../modules/homeManager/home/packages/unzip
@@ -69,6 +68,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/programs/ripgrep
         ../modules/homeManager/programs/rofi
         ../modules/homeManager/programs/swaylock
+        ../modules/homeManager/programs/taskwarrior
         ../modules/homeManager/programs/wlogout
         ../modules/homeManager/programs/xplr
         ../modules/homeManager/programs/zathura
@@ -122,7 +122,6 @@ inputs.homeManager.lib.homeManagerConfiguration {
                 ripgrep-all.enable = true;
                 rustup.enable = true;
                 tldr.enable = true;
-                todo.enable = true;
                 tokei.enable = true;
                 tree.enable = true;
                 unzip.enable = true;
@@ -165,6 +164,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
               };
 
               swaylock.enable = true;
+              taskwarrior.enable = true;
               wlogout.enable = true;
               xplr.enable = true;
               zathura.enable = true;
