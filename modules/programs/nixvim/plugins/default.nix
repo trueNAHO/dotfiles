@@ -1,6 +1,7 @@
 {
   imports = [
     ./codeium-nvim
+    ./codeium-vim
     ./comment_nvim
     ./debugprint
     ./fidget
