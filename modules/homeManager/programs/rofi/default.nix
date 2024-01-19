@@ -15,6 +15,8 @@
     cfg = config.modules.homeManager.programs.rofi;
   in
     lib.mkIf (cfg.enable || cfg.pass.enable) {
+      # TODO: Patch upstream to configure the theme with an option:
+      # https://github.com/danth/stylix/issues/176.
       home.file."${config.programs.rofi.configPath}".text = let
         largePadding = toString 10;
         smallPadding = toString 5;
