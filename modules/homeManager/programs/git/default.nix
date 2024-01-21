@@ -21,7 +21,6 @@
       programs.git = let
         adg = "log --all --decorate --graph";
         append = "!${git} add --all && ${git} commit --amend --no-edit";
-        checkout = "checkout";
       in {
         aliases = {
           adg = adg;
@@ -31,10 +30,9 @@
           app = append;
           append = append;
           br = "branch";
-          c = checkout;
+          c = "checkout";
           cm = "commit";
           cma = "!${git} add --all && ${git} commit";
-          co = checkout;
           fix = ''!${git} add --all && ${git} commit --message "chore!: $(date "+%Y-%m-%d %H:%M:%S %z")"'';
           nuke = "!${git} reset --hard HEAD && ${git} clean -d --force";
           reword = "commit --amend";
