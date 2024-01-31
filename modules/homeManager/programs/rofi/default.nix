@@ -15,28 +15,6 @@
     cfg = config.modules.homeManager.programs.rofi;
   in
     lib.mkIf (cfg.enable || cfg.pass.enable) {
-      # TODO: Patch upstream to configure the theme with an option:
-      # https://github.com/danth/stylix/issues/176.
-      home.file."${config.programs.rofi.configPath}".text = let
-        largePadding = toString 10;
-        smallPadding = toString 5;
-      in ''
-        element {
-          padding: ${smallPadding}px;
-          spacing: ${smallPadding}px;
-        }
-
-        inputbar {
-          children: [ prompt, entry ];
-          padding: ${largePadding}px ${largePadding}px;
-          spacing: ${largePadding}px;
-        }
-
-        window {
-          width: 25%;
-        }
-      '';
-
       modules.homeManager.programs.password-store.enable = true;
 
       programs.rofi = {
@@ -46,6 +24,25 @@
         pass = {
           enable = cfg.pass.enable;
           package = pkgs.rofi-pass-wayland;
+        };
+
+        theme = {
+          element = let
+            padding = "5px";
+          in {
+            inherit padding;
+            spacing = padding;
+          };
+
+          inputbar = let
+            padding = "10px";
+          in {
+            children = ["prompt" "entry"];
+            padding = "${padding} ${padding}";
+            spacing = padding;
+          };
+
+          window.width = "25%";
         };
       };
     };
