@@ -38,6 +38,7 @@
         };
 
         sizes = {
+          applications = config.stylix.fonts.sizes.desktop;
           terminal = 7;
         };
       };
