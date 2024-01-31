@@ -36,6 +36,10 @@
           package = pkgs.crimson;
           name = "Crimson";
         };
+
+        sizes = {
+          terminal = 7;
+        };
       };
 
       image = pkgs.fetchurl {

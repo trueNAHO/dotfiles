@@ -27,7 +27,6 @@
         clear_all_shortcuts = true;
         confirm_os_window_close = 0;
         enable_audio_bell = false;
-        font_size = 7;
         input_delay = 0;
         window_margin_width = 2;
       };
