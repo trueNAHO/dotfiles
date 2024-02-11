@@ -17,6 +17,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/acpi
         ../modules/homeManager/home/packages/aria
         ../modules/homeManager/home/packages/asciidoctor
+        ../modules/homeManager/home/packages/bandwhich
         ../modules/homeManager/home/packages/du_dust
         ../modules/homeManager/home/packages/dua
         ../modules/homeManager/home/packages/duf
@@ -103,6 +104,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
                 acpi.enable = true;
                 aria.enable = true;
                 asciidoctor.enable = true;
+                bandwhich.enable = true;
                 du-dust.enable = true;
                 dua.enable = true;
                 duf.enable = true;
