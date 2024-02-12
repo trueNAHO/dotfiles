@@ -55,6 +55,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/programs/bash
         ../modules/homeManager/programs/bashmount
         ../modules/homeManager/programs/bat
+        ../modules/homeManager/programs/borgmatic
         ../modules/homeManager/programs/btop
         ../modules/homeManager/programs/direnv
         ../modules/homeManager/programs/eza
@@ -153,6 +154,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
               bash.enable = true;
               bashmount.enable = true;
               bat.enable = true;
+              borgmatic.enable = true;
               btop.enable = true;
               direnv.enable = true;
               eza.enable = true;
