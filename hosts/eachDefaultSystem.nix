@@ -18,6 +18,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/aria
         ../modules/homeManager/home/packages/asciidoctor
         ../modules/homeManager/home/packages/bandwhich
+        ../modules/homeManager/home/packages/catimg
         ../modules/homeManager/home/packages/catnip
         ../modules/homeManager/home/packages/diskonaut
         ../modules/homeManager/home/packages/du_dust
@@ -107,6 +108,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
                 aria.enable = true;
                 asciidoctor.enable = true;
                 bandwhich.enable = true;
+                catimg.enable = true;
                 catnip.enable = true;
                 diskonaut.enable = true;
                 du-dust.enable = true;
