@@ -35,6 +35,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/kdenlive
         ../modules/homeManager/home/packages/killall
         ../modules/homeManager/home/packages/libreoffice
+        ../modules/homeManager/home/packages/neofetch
         ../modules/homeManager/home/packages/parallel
         ../modules/homeManager/home/packages/pipe_rename
         ../modules/homeManager/home/packages/poppler_utils
@@ -126,6 +127,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
                 kdenlive.enable = true;
                 killall.enable = true;
                 libreoffice.enable = true;
+                neofetch.enable = true;
                 parallel.enable = true;
                 pipe-rename.enable = true;
                 poppler_utils.enable = true;
