@@ -82,6 +82,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/programs/zathura
         ../modules/homeManager/programs/zellij
         ../modules/homeManager/programs/zoxide
+        ../modules/homeManager/services/borgmatic
         ../modules/homeManager/services/dunst
         ../modules/homeManager/services/easyeffects
         ../modules/homeManager/services/gammastep
@@ -189,6 +190,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
             };
 
             services = {
+              borgmatic.enable = true;
               dunst.enable = true;
               easyeffects.enable = true;
               gammastep.enable = true;
