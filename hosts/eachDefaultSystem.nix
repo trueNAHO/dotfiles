@@ -25,6 +25,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
         ../modules/homeManager/home/packages/dua
         ../modules/homeManager/home/packages/duf
         ../modules/homeManager/home/packages/fd
+        ../modules/homeManager/home/packages/ferdium
         ../modules/homeManager/home/packages/ffmpeg
         ../modules/homeManager/home/packages/file
         ../modules/homeManager/home/packages/gcc
@@ -120,6 +121,7 @@ inputs.homeManager.lib.homeManagerConfiguration {
                 dua.enable = true;
                 duf.enable = true;
                 fd.enable = true;
+                ferdium.enable = true;
                 ffmpeg.enable = true;
                 file.enable = true;
                 gcc.enable = true;
