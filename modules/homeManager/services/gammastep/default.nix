@@ -9,8 +9,8 @@
   config = lib.mkIf config.modules.homeManager.services.gammastep.enable {
     services.gammastep = {
       enable = true;
-      latitude = 50.0;
-      longitude = 6.0;
+      latitude = 48.0;
+      longitude = 16.0;
     };
   };
 }
