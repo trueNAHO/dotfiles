@@ -55,6 +55,7 @@
         };
 
         diff-so-fancy.enable = true;
+        package = pkgs.gitAndTools.gitFull;
 
         signing = {
           key = "5FC6088AFB1A609D4532F9190C1C177B3B6468E0";
