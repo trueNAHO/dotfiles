@@ -1,4 +1,4 @@
-{inputs, ...}:
+{inputs}:
 inputs.flakeUtils.lib.eachDefaultSystem (
   system: let
     pkgs = inputs.nixpkgs.legacyPackages.${system};

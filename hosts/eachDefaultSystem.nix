@@ -2,7 +2,6 @@
   inputs,
   pkgs,
   system,
-  ...
 }:
 inputs.homeManager.lib.homeManagerConfiguration {
   inherit pkgs;
