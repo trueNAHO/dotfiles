@@ -85,22 +85,15 @@
     };
   };
 
-  outputs = {
-    self,
-    agenix,
-    flakeUtils,
-    nixpkgs,
-    preCommitHooks,
-    ...
-  } @ inputs:
-    flakeUtils.lib.eachDefaultSystem (
+  outputs = inputs:
+    inputs.flakeUtils.lib.eachDefaultSystem (
       system: let
-        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs = inputs.nixpkgs.legacyPackages.${system};
       in {
         checks = {
-          homeManager = self.homeConfigurations.${system}.activationPackage;
+          homeManager = inputs.self.homeConfigurations.${system}.activationPackage;
 
-          preCommitHooks = preCommitHooks.lib.${system}.run {
+          preCommitHooks = inputs.preCommitHooks.lib.${system}.run {
             hooks = {
               alejandra.enable = true;
               convco.enable = true;
@@ -118,8 +111,8 @@
         };
 
         devShells.default = pkgs.mkShell {
-          inherit (self.checks.${system}.preCommitHooks) shellHook;
-          packages = [agenix.packages.${system}.default];
+          inherit (inputs.self.checks.${system}.preCommitHooks) shellHook;
+          packages = [inputs.agenix.packages.${system}.default];
         };
       }
     )
