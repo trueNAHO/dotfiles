@@ -45,7 +45,7 @@ a| Uses all `modules`.
 |===
 
 == Examples
-:command-base: home-manager switch --flake {repository-flake-url}#
+:command-base: nix run nixpkgs#home-manager -- switch --flake {repository-flake-url}#
 
 To build the <<packages, packages>> directly from {repository}[upstream] using
 {home-manager}[`home-manager`], run one of the following commands:
