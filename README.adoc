@@ -1,8 +1,8 @@
 = dotfiles(1)
 :archwiki-dotfiles: link:https://wiki.archlinux.org/title/Dotfiles
+:home-configurations-each-default-system: link:home_configurations/eachDefaultSystem/default.nix
 :home-configuration-nix-5: link:https://nix-community.github.io/home-manager/options.xhtml
 :home-manager: link:https://nix-community.github.io/home-manager
-:hosts-each-default-system: link:hosts/eachDefaultSystem.nix
 :idprefix:
 :idseparator: -
 :naho: link:https://github.com/trueNAHO
@@ -52,10 +52,10 @@ ____
 | Packages | Description
 
 a|
-- {hosts-each-default-system}[`aarch64-darwin`]
-- {hosts-each-default-system}[`aarch64-linux`]
-- {hosts-each-default-system}[`x86_64-darwin`]
-- {hosts-each-default-system}[`x86_64-linux`]
+- {home-configurations-each-default-system}[`aarch64-darwin-eachDefaultSystem`]
+- {home-configurations-each-default-system}[`aarch64-linux-eachDefaultSystem`]
+- {home-configurations-each-default-system}[`x86_64-darwin-eachDefaultSystem`]
+- {home-configurations-each-default-system}[`x86_64-linux-eachDefaultSystem`]
 a| Uses all `modules`.
 |===
 
@@ -71,10 +71,10 @@ To build the <<packages, packages>> directly from {repository}[upstream] using
 
 [,bash,subs="attributes"]
 ----
-{command-upstream}aarch64-darwin
-{command-upstream}aarch64-linux
-{command-upstream}x86_64-darwin
-{command-upstream}x86_64-linux
+{command-upstream}aarch64-darwin-eachDefaultSystem
+{command-upstream}aarch64-linux-eachDefaultSystem
+{command-upstream}x86_64-darwin-eachDefaultSystem
+{command-upstream}x86_64-linux-eachDefaultSystem
 ----
 
 To build the <<packages, packages>> from a local copy at `{command-local-path}`
@@ -82,10 +82,10 @@ using {home-manager}[`home-manager`], run one of the following commands:
 
 [,bash,subs="attributes"]
 ----
-{command-local}aarch64-darwin
-{command-local}aarch64-linux
-{command-local}x86_64-darwin
-{command-local}x86_64-linux
+{command-local}aarch64-darwin-eachDefaultSystem
+{command-local}aarch64-linux-eachDefaultSystem
+{command-local}x86_64-darwin-eachDefaultSystem
+{command-local}x86_64-linux-eachDefaultSystem
 ----
 
 == See Also

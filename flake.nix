@@ -90,25 +90,34 @@
       system: let
         pkgs = inputs.nixpkgs.legacyPackages.${system};
       in {
-        checks = {
-          homeManager = inputs.self.homeConfigurations.${system}.activationPackage;
+        checks =
+          builtins.mapAttrs
+          (_: homeConfiguration: homeConfiguration.activationPackage)
+          (
+            pkgs.lib.filterAttrs
+            (
+              homeConfigurationName: _:
+                pkgs.lib.hasPrefix system homeConfigurationName
+            )
+            inputs.self.homeConfigurations
+          )
+          // {
+            preCommitHooks = inputs.preCommitHooks.lib.${system}.run {
+              hooks = {
+                alejandra.enable = true;
+                convco.enable = true;
+                typos.enable = true;
+                yamllint.enable = true;
+              };
 
-          preCommitHooks = inputs.preCommitHooks.lib.${system}.run {
-            hooks = {
-              alejandra.enable = true;
-              convco.enable = true;
-              typos.enable = true;
-              yamllint.enable = true;
+              settings = {
+                alejandra.verbosity = "quiet";
+                typos.exclude = "*.age";
+              };
+
+              src = ./.;
             };
-
-            settings = {
-              alejandra.verbosity = "quiet";
-              typos.exclude = "*.age";
-            };
-
-            src = ./.;
           };
-        };
 
         devShells.default = pkgs.mkShell {
           inherit (inputs.self.checks.${system}.preCommitHooks) shellHook;
@@ -116,5 +125,28 @@
         };
       }
     )
-    // import ./hosts {inherit inputs;};
+    // {
+      homeConfigurations =
+        builtins.foldl'
+        (
+          acc: system: let
+            pkgs = inputs.nixpkgs.legacyPackages.${system};
+          in
+            acc
+            // pkgs.lib.mapAttrs'
+            (
+              homeConfigurationName: homeConfiguration:
+                pkgs.lib.nameValuePair
+                "${system}-${homeConfigurationName}"
+                homeConfiguration
+            )
+            (
+              builtins.foldl' (
+                acc: file: acc // (import file {inherit inputs pkgs system;})
+              ) {} (import ./home_configurations)
+            )
+        )
+        {}
+        inputs.flakeUtils.lib.defaultSystems;
+    };
 }
