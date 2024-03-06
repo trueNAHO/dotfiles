@@ -45,32 +45,17 @@ a| Uses all `modules`.
 |===
 
 == Examples
-:command-base: home-manager switch --flake
-:command-local-path: /path/to/repository
-
-:command-local: {command-base} {command-local-path}#
-:command-upstream: {command-base} {repository-flake-url}#
+:command-base: home-manager switch --flake {repository-flake-url}#
 
 To build the <<packages, packages>> directly from {repository}[upstream] using
 {home-manager}[`home-manager`], run one of the following commands:
 
 [,bash,subs="attributes"]
 ----
-{command-upstream}aarch64-darwin-eachDefaultSystem
-{command-upstream}aarch64-linux-eachDefaultSystem
-{command-upstream}x86_64-darwin-eachDefaultSystem
-{command-upstream}x86_64-linux-eachDefaultSystem
-----
-
-To build the <<packages, packages>> from a local copy at `{command-local-path}`
-using {home-manager}[`home-manager`], run one of the following commands:
-
-[,bash,subs="attributes"]
-----
-{command-local}aarch64-darwin-eachDefaultSystem
-{command-local}aarch64-linux-eachDefaultSystem
-{command-local}x86_64-darwin-eachDefaultSystem
-{command-local}x86_64-linux-eachDefaultSystem
+{command-base}aarch64-darwin-eachDefaultSystem
+{command-base}aarch64-linux-eachDefaultSystem
+{command-base}x86_64-darwin-eachDefaultSystem
+{command-base}x86_64-linux-eachDefaultSystem
 ----
 
 == See Also
