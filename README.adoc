@@ -48,25 +48,16 @@ ____
 
 == Packages
 
-=== aarch64-darwin
+|===
+| Packages | Description
 
-{hosts-each-default-system}[Uses all internal `aarch64-darwin` architecture
-modules.]
-
-=== aarch64-linux
-
-{hosts-each-default-system}[Uses all internal `aarch64-linux` architecture
-modules.]
-
-=== x86_64-darwin
-
-{hosts-each-default-system}[Uses all internal `x86_64-darwin` architecture
-modules.]
-
-=== x86_64-linux
-
-{hosts-each-default-system}[Uses all internal `x86_64-linux` architecture
-modules.]
+a|
+- {hosts-each-default-system}[`aarch64-darwin`]
+- {hosts-each-default-system}[`aarch64-linux`]
+- {hosts-each-default-system}[`x86_64-darwin`]
+- {hosts-each-default-system}[`x86_64-linux`]
+a| Uses all `modules`.
+|===
 
 == Examples
 :command-base: home-manager switch --flake
