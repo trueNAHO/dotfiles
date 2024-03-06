@@ -121,7 +121,11 @@
 
         devShells.default = pkgs.mkShell {
           inherit (inputs.self.checks.${system}.preCommitHooks) shellHook;
-          packages = [inputs.agenix.packages.${system}.default];
+
+          packages = [
+            inputs.agenix.packages.${system}.default
+            inputs.homeManager.packages.${system}.default
+          ];
         };
       }
     )
