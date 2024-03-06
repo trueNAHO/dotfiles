@@ -26,25 +26,10 @@
 
 dotfiles - NAHO's dotfiles
 
-== Synopsis
-
-*home-manager switch* --flake _flake-uri_
-
 == Description
 
 {naho}[NAHO]'s {archwiki-dotfiles}[dotfiles] managed with {home-manager}[Home
 Manager].
-
-== Options
-
-*--flake* _flake-uri[#name]_::
-
-[,home-manager(1)]
-____
-Build Home Manager configuration from the flake, which must contain the output
-`homeConfigurations.name`. If no `name` is specified it will first try
-`username@hostname` and then `username`.
-____
 
 == Packages
 
