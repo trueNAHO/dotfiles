@@ -68,6 +68,7 @@
           ../../modules/homeManager/programs/gpg
           ../../modules/homeManager/programs/home_manager
           ../../modules/homeManager/programs/imv
+          ../../modules/homeManager/programs/jq
           ../../modules/homeManager/programs/kitty
           ../../modules/homeManager/programs/lazygit
           ../../modules/homeManager/programs/man
@@ -170,6 +171,7 @@
                 gpg.enable = true;
                 home-manager.enable = true;
                 imv.enable = true;
+                jq.enable = true;
                 kitty.enable = true;
                 lazygit.enable = true;
                 man.enable = true;
