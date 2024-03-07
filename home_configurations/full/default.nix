@@ -42,7 +42,6 @@
           ../../modules/homeManager/home/packages/procs
           ../../modules/homeManager/home/packages/ripgrep-all
           ../../modules/homeManager/home/packages/rustup
-          ../../modules/homeManager/home/packages/taskwarrior-tui
           ../../modules/homeManager/home/packages/thunderbird
           ../../modules/homeManager/home/packages/tldr
           ../../modules/homeManager/home/packages/tokei
@@ -139,7 +138,6 @@
                   procs.enable = true;
                   ripgrep-all.enable = true;
                   rustup.enable = true;
-                  taskwarrior-tui.enable = true;
                   thunderbird.enable = true;
                   tldr.enable = true;
                   tokei.enable = true;
