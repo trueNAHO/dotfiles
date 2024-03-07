@@ -20,18 +20,18 @@
         annotations.coefficient = 0;
         blocked.coefficient = -2;
         blocking.coefficient = 0;
-        due.coefficient = 6;
+        due.coefficient = 4;
         project.coefficient = 0;
         scheduled.coefficient = 1;
         tags.coefficient = 0;
 
         uda.priority = {
-          H.coefficient = 6;
-          L.coefficient = 2;
-          M.coefficient = 4;
+          H.coefficient = 4;
+          L.coefficient = -2;
+          M.coefficient = 2;
         };
 
-        user.tag.next.coefficient = 8;
+        user.tag.next.coefficient = 6;
         waiting.coefficient = -1;
       };
 
