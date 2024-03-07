@@ -12,10 +12,12 @@
       expandtab = true;
       foldmethod = "marker";
       ignorecase = true;
+      linebreak = true;
       mouse = "a";
       relativenumber = true;
       scrolloff = 8;
       shiftwidth = 4;
+      showbreak = "↪ ";
       smartcase = true;
       smartindent = true;
       softtabstop = 4;
