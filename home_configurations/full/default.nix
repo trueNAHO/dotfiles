@@ -3,7 +3,7 @@
   pkgs,
   system,
 }: {
-  eachDefaultSystem = inputs.homeManager.lib.homeManagerConfiguration {
+  full = inputs.homeManager.lib.homeManagerConfiguration {
     inherit pkgs;
     extraSpecialArgs = {inherit inputs system;};
 

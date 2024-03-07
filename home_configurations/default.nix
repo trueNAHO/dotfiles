@@ -1,1 +1,1 @@
-[./eachDefaultSystem]
+[./full]

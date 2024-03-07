@@ -1,6 +1,6 @@
 = dotfiles(1)
 :archwiki-dotfiles: link:https://wiki.archlinux.org/title/Dotfiles
-:home-configurations-each-default-system: link:home_configurations/eachDefaultSystem/default.nix
+:home-configurations-full: link:home_configurations/full/default.nix
 :home-configuration-nix-5: link:https://nix-community.github.io/home-manager/options.xhtml
 :home-manager: link:https://nix-community.github.io/home-manager
 :idprefix:
@@ -37,10 +37,10 @@ Manager].
 | Packages | Description
 
 a|
-- {home-configurations-each-default-system}[`aarch64-darwin-eachDefaultSystem`]
-- {home-configurations-each-default-system}[`aarch64-linux-eachDefaultSystem`]
-- {home-configurations-each-default-system}[`x86_64-darwin-eachDefaultSystem`]
-- {home-configurations-each-default-system}[`x86_64-linux-eachDefaultSystem`]
+- {home-configurations-full}[`aarch64-darwin-full`]
+- {home-configurations-full}[`aarch64-linux-full`]
+- {home-configurations-full}[`x86_64-darwin-full`]
+- {home-configurations-full}[`x86_64-linux-full`]
 a| Uses all `modules`.
 |===
 
@@ -52,10 +52,10 @@ To build the <<packages, packages>> directly from {repository}[upstream] using
 
 [,bash,subs="attributes"]
 ----
-{command-base}aarch64-darwin-eachDefaultSystem
-{command-base}aarch64-linux-eachDefaultSystem
-{command-base}x86_64-darwin-eachDefaultSystem
-{command-base}x86_64-linux-eachDefaultSystem
+{command-base}aarch64-darwin-full
+{command-base}aarch64-linux-full
+{command-base}x86_64-darwin-full
+{command-base}x86_64-linux-full
 ----
 
 == See Also
