@@ -40,6 +40,7 @@
           ../../modules/homeManager/home/packages/pipe_rename
           ../../modules/homeManager/home/packages/poppler_utils
           ../../modules/homeManager/home/packages/procs
+          ../../modules/homeManager/home/packages/pstree
           ../../modules/homeManager/home/packages/ripgrep-all
           ../../modules/homeManager/home/packages/rustup
           ../../modules/homeManager/home/packages/thunderbird
@@ -137,6 +138,7 @@
                   pipe-rename.enable = true;
                   poppler_utils.enable = true;
                   procs.enable = true;
+                  pstree.enable = true;
                   ripgrep-all.enable = true;
                   rustup.enable = true;
                   thunderbird.enable = true;
