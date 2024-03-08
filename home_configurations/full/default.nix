@@ -59,6 +59,7 @@
           ../../modules/homeManager/programs/btop
           ../../modules/homeManager/programs/direnv
           ../../modules/homeManager/programs/eza
+          ../../modules/homeManager/programs/feh
           ../../modules/homeManager/programs/firefox
           ../../modules/homeManager/programs/fish
           ../../modules/homeManager/programs/fzf
@@ -161,6 +162,7 @@
                 btop.enable = true;
                 direnv.enable = true;
                 eza.enable = true;
+                feh.enable = true;
                 firefox.enable = true;
                 fish.enable = true;
                 fzf.enable = true;
