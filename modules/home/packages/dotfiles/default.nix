@@ -14,7 +14,7 @@
       (pkgs.stdenv.mkDerivation
         {
           installPhase = let
-            man = "$man/share/man";
+            man = "${placeholder "man"}/share/man";
             tmp = ".${man}";
           in ''
             mkdir --parent "$out" "${man}" "${tmp}"
