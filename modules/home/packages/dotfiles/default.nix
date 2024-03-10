@@ -15,20 +15,20 @@
         {
           installPhase = let
             man = "${placeholder "man"}/share/man";
-            tmp = ".${man}";
           in ''
-            mkdir --parent "$out" "${man}" "${tmp}"
+            tmp="$(mktemp --directory)"
+            trap "rm --force --recursive $tmp" EXIT
 
-            trap "rm --force --recursive ${tmp}" EXIT
+            mkdir --parent "$out" "${man}"
 
             ${pkgs.fd.pname} \
               --extension adoc \
               -X \
               ${pkgs.asciidoctor-with-extensions.meta.mainProgram} \
               --backend manpage \
-              --destination-dir "${tmp}"
+              --destination-dir "$tmp"
 
-            ${pkgs.fd.pname} --type file . "${tmp}" |
+            ${pkgs.fd.pname} --type file . "$tmp" |
               while read -r file; do
                 filename="$(basename --suffix .gz "$file")"
                 output_directory="${man}/man''${filename##*.}"
