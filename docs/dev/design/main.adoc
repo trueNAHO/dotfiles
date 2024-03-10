@@ -1,0 +1,17 @@
+= dotfiles.dev.design(7)
+
+== Name
+
+dotfiles.dev.design - Design Specification Collection
+
+== Description
+
+Collection of design specifications.
+
+== Specifications
+
+* link:keymaps.adoc[dotfiles.dev.design.keymaps(5)]
+
+== See Also
+
+link:../../../README.adoc[dotfiles(1)]

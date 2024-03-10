@@ -1,4 +1,4 @@
-= dotfiles.contributing(7)
+= dotfiles.dev.contributing(7)
 :commitizen: link:http://commitizen.github.io/cz-cli
 :github-flow: link:http://scottchacon.com/2011/08/31/github-flow.html
 :idprefix:
@@ -7,7 +7,7 @@
 
 == Name
 
-dotfiles.contributing - Contribution Guidelines
+dotfiles.dev.contributing - Contribution Guidelines
 
 == What We Want
 
@@ -52,6 +52,6 @@ Follow {commitizen}[Commitizen]'s commit standards.
 
 == See Also
 
-link:../README.adoc[dotfiles(1)],
-link:code_of_conduct.adoc[dotfiles.code-of-conduct(7)],
-link:design/main.adoc[dotfiles.design(7)]
+link:../../README.adoc[dotfiles(1)],
+link:code_of_conduct.adoc[dotfiles.dev.code-of-conduct(7)],
+link:design/main.adoc[dotfiles.dev.design(7)]

@@ -23,6 +23,8 @@
 
             ${pkgs.fd.pname} \
               --extension adoc \
+              . \
+              docs \
               -X \
               ${pkgs.asciidoctor-with-extensions.meta.mainProgram} \
               --attribute attribute-missing=warn \

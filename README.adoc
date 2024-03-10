@@ -63,9 +63,9 @@ To build the <<packages, packages>> directly from {repository}[upstream] using
 {repository-star-history-src-dark}[GitHub Star History], {home-manager}[Home
 Manager], link:LICENSE[License], {os}[NAHO's NixOS configurations],
 {version-control-visualization}[Version Control Visualization],
-link:docs/code_of_conduct.adoc[dotfiles.code-of-conduct(7)],
-link:docs/contributing.adoc[dotfiles.contributing(7)],
-link:docs/design/main.adoc[dotfiles.design(7)],
+link:docs/dev/code_of_conduct.adoc[dotfiles.dev.code-of-conduct(7)],
+link:docs/dev/contributing.adoc[dotfiles.dev.contributing(7)],
+link:docs/dev/design/main.adoc[dotfiles.dev.design(7)],
 {home-configuration-nix-5}[home-configuration.nix(5)]
 
 ifdef::env-github[]
