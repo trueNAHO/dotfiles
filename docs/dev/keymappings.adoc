@@ -1,4 +1,4 @@
-= dotfiles.dev.keymappings(5)
+= dotfiles.dev.keymappings(7)
 :toc:
 
 == Name
