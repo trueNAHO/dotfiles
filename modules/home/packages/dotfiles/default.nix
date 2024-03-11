@@ -13,7 +13,7 @@
     home.packages = [
       (import ../../../../lib/derivations/man_page.nix {
         inherit pkgs;
-        path = "docs/user";
+        path = ../../../../docs/user;
       })
     ];
   };

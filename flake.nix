@@ -124,7 +124,7 @@
             developerDocumentation = let
               derivation = import lib/derivations/man_page.nix {
                 inherit pkgs;
-                path = "docs/dev";
+                path = docs/dev;
               };
             in "${pkgs.lib.getOutput "man" derivation}/share/man";
           in ''
