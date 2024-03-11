@@ -1,4 +1,4 @@
-= dotfiles(1)
+= dotfiles
 :archwiki-dotfiles: link:https://wiki.archlinux.org/title/Dotfiles
 :home-configuration-nix-5: link:https://nix-community.github.io/home-manager/options.xhtml
 :home-manager: link:https://nix-community.github.io/home-manager
@@ -14,11 +14,7 @@
 :repository-star-history-src-dark: https://api.star-history.com/svg?repos={repository-path}&type=Date&theme=dark
 :repository-star-history-src-light: https://api.star-history.com/svg?repos={repository-path}&type=Date
 
-== Name
-
-dotfiles - NAHO's dotfiles
-
-== Description
+== About
 
 {naho}[NAHO]'s {archwiki-dotfiles}[dotfiles] managed with {home-manager}[Home
 Manager].
@@ -29,10 +25,12 @@ Manager].
 
 == See Also
 
-{repository-star-history-src-dark}[GitHub Star History], {home-manager}[Home
-Manager], link:LICENSE[License], {os}[NAHO's NixOS configurations],
-{version-control-visualization}[Version Control Visualization],
-{home-configuration-nix-5}[home-configuration.nix(5)]
+* {repository-star-history-src-dark}[GitHub Star History]
+* {home-manager}[Home Manager]
+* link:LICENSE[License]
+* {os}[NAHO's NixOS configurations]
+* {version-control-visualization}[Version Control Visualization]
+* {home-configuration-nix-5}[home-configuration.nix(5)]
 
 ifdef::backend-html5[]
 [subs=attributes]
