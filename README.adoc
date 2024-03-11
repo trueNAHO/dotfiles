@@ -36,7 +36,7 @@ Manager], link:LICENSE[License], {os}[NAHO's NixOS configurations],
 {version-control-visualization}[Version Control Visualization],
 {home-configuration-nix-5}[home-configuration.nix(5)]
 
-ifdef::env-github[]
+ifdef::backend-html5[]
 [subs=attributes]
 ++++
 <a href="{repository-raw-stargazers}">
