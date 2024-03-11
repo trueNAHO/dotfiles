@@ -1,4 +1,5 @@
 = dotfiles.dev.keymappings(5)
+:toc:
 
 == Name
 
