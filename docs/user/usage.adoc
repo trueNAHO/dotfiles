@@ -3,6 +3,7 @@
 :home-manager: link:https://nix-community.github.io/home-manager
 :idprefix:
 :idseparator: -
+:nix: link:https://nixos.wiki/wiki/Nix_Installation_Guide
 :repository-path: trueNAHO/dotfiles
 :toc:
 
@@ -33,8 +34,8 @@ a| Uses all `modules`.
 :command-base: nix run nixpkgs#home-manager -- switch --flake github:{repository-path}#
 
 To build the <<home-manager-configurations, Home Manager configurations>>
-directly from {repository}[upstream] using {home-manager}[`home-manager`], run
-one of the following commands:
+directly from {repository}[upstream] using {nix}[`nix`], run one of the
+following commands:
 
 [,bash,subs="attributes"]
 ----
