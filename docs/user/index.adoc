@@ -1,8 +1,16 @@
 = dotfiles(7)
+:archwiki-dotfiles: link:https://wiki.archlinux.org/title/Dotfiles
+:home-manager: link:https://nix-community.github.io/home-manager
+:naho: link:https://github.com/trueNAHO
 
 == Name
 
-dotfiles - User Documentation Overview
+dotfiles - NAHO's dotfiles
+
+== Description
+
+{naho}[NAHO]'s {archwiki-dotfiles}[dotfiles] managed with {home-manager}[Home
+Manager].
 
 == See Also
 
