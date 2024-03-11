@@ -1,8 +1,6 @@
 = dotfiles.dev.contributing(7)
 :commitizen: link:http://commitizen.github.io/cz-cli
 :github-flow: link:http://scottchacon.com/2011/08/31/github-flow.html
-:idprefix:
-:idseparator: -
 :toc:
 
 == Name
@@ -21,7 +19,7 @@ examples of the kinds of contributions we are looking for:
 * Portability and reproducibility improvements
 
 If you are uncertain about whether your contribution aligns with the scope of
-this project, please review <<what-we-do-not-want, what we do not want>>. Feel
+this project, please review <<_what_we_do_not_want, what we do not want>>. Feel
 free to reach out to the maintainers, if you have any questions.
 
 == What We Do Not Want
@@ -37,7 +35,7 @@ for a fork. Here are some examples that may fall into this category:
 * Increased end-user maintenance
 
 If you are uncertain about whether your contribution aligns with the scope of
-this project, please review <<what-we-want, what we want>>. Feel free to reach
+this project, please review <<_what_we_want, what we want>>. Feel free to reach
 out to the maintainers, if you have any questions.
 
 == Contribution Guidelines

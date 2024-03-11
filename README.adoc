@@ -2,8 +2,6 @@
 :archwiki-dotfiles: link:https://wiki.archlinux.org/title/Dotfiles
 :home-configuration-nix-5: link:https://nix-community.github.io/home-manager/options.xhtml
 :home-manager: link:https://nix-community.github.io/home-manager
-:idprefix:
-:idseparator: -
 :naho: link:https://github.com/trueNAHO
 :os: link:https://github.com/trueNAHO/os
 :repository-path: trueNAHO/dotfiles

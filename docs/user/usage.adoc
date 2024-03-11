@@ -1,8 +1,6 @@
 = dotfiles.user.usage(7)
 :home-configurations-full: link:../../home_configurations/full/default.nix
 :home-manager: link:https://nix-community.github.io/home-manager
-:idprefix:
-:idseparator: -
 :nix: link:https://nixos.wiki/wiki/Nix_Installation_Guide
 :repository-path: trueNAHO/dotfiles
 :toc:
@@ -33,7 +31,7 @@ a| Uses all `modules`.
 == Examples
 :command-base: nix run nixpkgs#home-manager -- switch --flake github:{repository-path}#
 
-To build the <<home-manager-configurations, Home Manager configurations>>
+To build the <<_home_manager_configurations, Home Manager configurations>>
 directly from {repository}[upstream] using {nix}[`nix`], run one of the
 following commands:
 
