@@ -134,12 +134,32 @@
           out = "${placeholder "out"}/usr/share/doc";
         in
           pkgs.stdenv.mkDerivation {
-            buildPhase = ''
+            buildPhase = let
+              redirectURL = "docs/index.html";
+            in ''
               asciidoctor-multipage \
                 --attribute attribute-missing=warn \
                 --destination-dir "${out}/docs" \
                 --failure-level INFO \
                 docs/index.adoc
+
+              cat >"${out}/index.html" <<EOF
+              <!DOCTYPE html>
+              <html>
+
+              <head>
+                  <meta http-equiv="refresh" content="0; url=${redirectURL}">
+              </head>
+
+              <body>
+                  <p>
+                      If you are not redirected automatically,
+                      <a href="${redirectURL}">click here</a>.
+                  </p>
+              </body>
+
+              </html>
+              EOF
             '';
 
             installPhase = let
