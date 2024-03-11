@@ -14,4 +14,4 @@ Manager].
 
 == See Also
 
-link:../index.adoc[dotfiles-docs(7)], link:usage.adoc[dotfiles.usage(7)]
+link:../index.adoc[Documentation Overview], link:usage.adoc[dotfiles.usage(7)]

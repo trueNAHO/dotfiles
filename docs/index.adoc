@@ -1,4 +1,4 @@
-= dotfiles-docs(7)
+= dotfiles
 
 == Name
 
