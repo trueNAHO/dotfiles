@@ -1,9 +1,9 @@
-= dotfiles.user(7)
+= dotfiles(7)
 
 == Name
 
-dotfiles.user - User Documentation Overview
+dotfiles - User Documentation Overview
 
 == See Also
 
-link:../index.adoc[dotfiles(7)], link:usage.adoc[dotfiles.user.usage(7)]
+link:../index.adoc[dotfiles-docs(7)], link:usage.adoc[dotfiles.usage(7)]

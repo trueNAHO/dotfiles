@@ -1,4 +1,4 @@
-= dotfiles.user.usage(7)
+= dotfiles.usage(7)
 :home-configurations-full: link:../../home_configurations/full/default.nix
 :home-manager: link:https://nix-community.github.io/home-manager
 :nix: link:https://nixos.wiki/wiki/Nix_Installation_Guide
@@ -9,7 +9,7 @@
 
 == Name
 
-dotfiles.user.usage - Usage Guide
+dotfiles.usage - Usage Guide
 
 == Description
 
@@ -45,4 +45,4 @@ following commands:
 
 == See Also
 
-link:index.adoc[dotfiles.user(7)]
+link:index.adoc[dotfiles(7)]

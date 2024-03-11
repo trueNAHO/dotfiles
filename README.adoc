@@ -21,7 +21,7 @@ Manager].
 
 == Documentation
 
-* link:docs/index.adoc[dotfiles(7)]
+* link:docs/index.adoc[dotfiles-docs(7)]
 
 == See Also
 
