@@ -1,8 +1,8 @@
-= dotfiles.dev.design.keymaps(5)
+= dotfiles.dev.keymaps(5)
 
 == Name
 
-dotfiles.dev.design.keymaps - Unified Keymapping Specifications
+dotfiles.dev.keymaps - Unified Keymapping Specifications
 
 == Description
 
@@ -84,4 +84,4 @@ keymapping conflicts:
 
 == See Also
 
-link:../../../README.adoc[dotfiles(1)], link:main.adoc[dotfiles.dev.design(7)]
+link:../../../README.adoc[dotfiles(1)]

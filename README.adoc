@@ -65,7 +65,6 @@ Manager], link:LICENSE[License], {os}[NAHO's NixOS configurations],
 {version-control-visualization}[Version Control Visualization],
 link:docs/dev/code_of_conduct.adoc[dotfiles.dev.code-of-conduct(7)],
 link:docs/dev/contributing.adoc[dotfiles.dev.contributing(7)],
-link:docs/dev/design/main.adoc[dotfiles.dev.design(7)],
 {home-configuration-nix-5}[home-configuration.nix(5)]
 
 ifdef::env-github[]
