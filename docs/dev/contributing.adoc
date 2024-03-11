@@ -52,5 +52,4 @@ Follow {commitizen}[Commitizen]'s commit standards.
 
 == See Also
 
-link:../../README.adoc[dotfiles(1)],
-link:code_of_conduct.adoc[dotfiles.dev.code-of-conduct(7)]
+link:index.adoc[dotfiles.dev(7)]

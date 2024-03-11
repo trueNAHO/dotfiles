@@ -144,5 +144,4 @@ For answers to common questions about this code of conduct, see the FAQ at
 https://www.contributor-covenant.org/faq. Translations are available at
 https://www.contributor-covenant.org/translations.
 
-link:../../README.adoc[dotfiles(1)],
-link:contributing.adoc[dotfiles.dev.contributing(7)]
+link:index.adoc[dotfiles.dev(7)]

@@ -85,4 +85,4 @@ keymapping conflicts:
 
 == See Also
 
-link:../../../README.adoc[dotfiles(1)]
+link:index.adoc[dotfiles.dev(7)]

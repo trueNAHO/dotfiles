@@ -1,0 +1,9 @@
+= dotfiles(7)
+
+== Name
+
+dotfiles - Documentation Overview
+
+== See Also
+
+link:dev/index.adoc[dotfiles.dev(7)]

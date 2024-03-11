@@ -31,6 +31,10 @@ dotfiles - NAHO's dotfiles
 {naho}[NAHO]'s {archwiki-dotfiles}[dotfiles] managed with {home-manager}[Home
 Manager].
 
+== Documentation
+
+* link:docs/index.adoc[dotfiles(7)]
+
 == Packages
 
 |===
@@ -63,8 +67,6 @@ To build the <<packages, packages>> directly from {repository}[upstream] using
 {repository-star-history-src-dark}[GitHub Star History], {home-manager}[Home
 Manager], link:LICENSE[License], {os}[NAHO's NixOS configurations],
 {version-control-visualization}[Version Control Visualization],
-link:docs/dev/code_of_conduct.adoc[dotfiles.dev.code-of-conduct(7)],
-link:docs/dev/contributing.adoc[dotfiles.dev.contributing(7)],
 {home-configuration-nix-5}[home-configuration.nix(5)]
 
 ifdef::env-github[]
