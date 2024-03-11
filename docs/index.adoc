@@ -6,4 +6,4 @@ dotfiles - Documentation Overview
 
 == See Also
 
-link:dev/index.adoc[dotfiles.dev(7)]
+link:dev/index.adoc[dotfiles.dev(7)], link:user/index.adoc[dotfiles.user(7)]

@@ -1,0 +1,9 @@
+= dotfiles.user(7)
+
+== Name
+
+dotfiles.user - User Documentation Overview
+
+== See Also
+
+link:../index.adoc[dotfiles(7)], link:usage.adoc[dotfiles.user.usage(7)]

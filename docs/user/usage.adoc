@@ -1,0 +1,49 @@
+= dotfiles.user.usage(7)
+:home-configurations-full: link:../../home_configurations/full/default.nix
+:home-manager: link:https://nix-community.github.io/home-manager
+:idprefix:
+:idseparator: -
+:repository-path: trueNAHO/dotfiles
+:toc:
+
+:repository: link:https://github.com/{repository-path}
+
+== Name
+
+dotfiles.user.usage - Usage Guide
+
+== Description
+
+Provides essential instructions on using {repository}[_dotfiles_].
+
+== Home Manager Configurations
+
+|===
+| Packages | Description
+
+a|
+- {home-configurations-full}[`aarch64-darwin-full`]
+- {home-configurations-full}[`aarch64-linux-full`]
+- {home-configurations-full}[`x86_64-darwin-full`]
+- {home-configurations-full}[`x86_64-linux-full`]
+a| Uses all `modules`.
+|===
+
+== Examples
+:command-base: nix run nixpkgs#home-manager -- switch --flake github:{repository-path}#
+
+To build the <<home-manager-configurations, Home Manager configurations>>
+directly from {repository}[upstream] using {home-manager}[`home-manager`], run
+one of the following commands:
+
+[,bash,subs="attributes"]
+----
+{command-base}aarch64-darwin-full
+{command-base}aarch64-linux-full
+{command-base}x86_64-darwin-full
+{command-base}x86_64-linux-full
+----
+
+== See Also
+
+link:index.adoc[dotfiles.user(7)]

@@ -1,6 +1,5 @@
 = dotfiles(1)
 :archwiki-dotfiles: link:https://wiki.archlinux.org/title/Dotfiles
-:home-configurations-full: link:home_configurations/full/default.nix
 :home-configuration-nix-5: link:https://nix-community.github.io/home-manager/options.xhtml
 :home-manager: link:https://nix-community.github.io/home-manager
 :idprefix:
@@ -11,16 +10,11 @@
 :repository-star-history-align: center
 :repository-star-history-alt: Star History Chart
 :repository-star-history-width: 100%
-:toc:
 :version-control-visualization: link:https://github.com/trueNAHO/trueNAHO/blob/master/version_control_visualization/repositories/dotfiles/README.adoc
 
-:repository-flake-url: github:{repository-path}
+:repository-raw-stargazers: https://github.com/{repository-path}/stargazers
 :repository-star-history-src-dark: https://api.star-history.com/svg?repos={repository-path}&type=Date&theme=dark
 :repository-star-history-src-light: https://api.star-history.com/svg?repos={repository-path}&type=Date
-:repository-raw: https://github.com/{repository-path}
-
-:repository: link:{repository-raw}
-:repository-raw-stargazers: {repository-raw}/stargazers
 
 == Name
 
@@ -34,33 +28,6 @@ Manager].
 == Documentation
 
 * link:docs/index.adoc[dotfiles(7)]
-
-== Packages
-
-|===
-| Packages | Description
-
-a|
-- {home-configurations-full}[`aarch64-darwin-full`]
-- {home-configurations-full}[`aarch64-linux-full`]
-- {home-configurations-full}[`x86_64-darwin-full`]
-- {home-configurations-full}[`x86_64-linux-full`]
-a| Uses all `modules`.
-|===
-
-== Examples
-:command-base: nix run nixpkgs#home-manager -- switch --flake {repository-flake-url}#
-
-To build the <<packages, packages>> directly from {repository}[upstream] using
-{home-manager}[`home-manager`], run one of the following commands:
-
-[,bash,subs="attributes"]
-----
-{command-base}aarch64-darwin-full
-{command-base}aarch64-linux-full
-{command-base}x86_64-darwin-full
-{command-base}x86_64-linux-full
-----
 
 == See Also
 
