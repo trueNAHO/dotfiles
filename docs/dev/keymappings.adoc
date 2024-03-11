@@ -1,8 +1,8 @@
-= dotfiles.dev.keymaps(5)
+= dotfiles.dev.keymappings(5)
 
 == Name
 
-dotfiles.dev.keymaps - Unified Keymapping Specifications
+dotfiles.dev.keymappings - Unified Keymapping Specifications
 
 == Description
 
