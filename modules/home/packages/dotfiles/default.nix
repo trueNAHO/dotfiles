@@ -25,8 +25,10 @@
               --extension adoc \
               -X \
               ${pkgs.asciidoctor-with-extensions.meta.mainProgram} \
+              --attribute attribute-missing=warn \
               --backend manpage \
-              --destination-dir "$tmp"
+              --destination-dir "$tmp" \
+              --failure-level INFO
 
             ${pkgs.fd.pname} --type file . "$tmp" |
               while read -r file; do
