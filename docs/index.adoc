@@ -1,9 +1,0 @@
-= dotfiles
-
-== Name
-
-dotfiles - Documentation Overview
-
-== See Also
-
-link:dev/index.adoc[dotfiles.dev(7)], link:user/index.adoc[dotfiles(7)]

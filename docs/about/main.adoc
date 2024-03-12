@@ -1,0 +1,4 @@
+== About
+
+{naho}[NAHO]'s {archwiki-dotfiles}[dotfiles] managed with {home-manager}[Home
+Manager].

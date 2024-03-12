@@ -1,0 +1,26 @@
+=== Home Manager Configurations
+:command-base: nix run nixpkgs#home-manager -- switch --flake {repository-flake}#
+
+The following {home-manager}[Home Manager] configurations are available:
+
+|===
+| Home Manager Configurations | Description
+
+a|
+- {home-configurations-full}[`aarch64-darwin-full`]
+- {home-configurations-full}[`aarch64-linux-full`]
+- {home-configurations-full}[`x86_64-darwin-full`]
+- {home-configurations-full}[`x86_64-linux-full`]
+a| Uses all `modules`.
+|===
+
+To build them directly from {repository}[upstream] using {nix}[`nix`], run one
+of the following commands depending on the target platform:
+
+[,bash,subs="attributes"]
+----
+{command-base}aarch64-darwin-full
+{command-base}aarch64-linux-full
+{command-base}x86_64-darwin-full
+{command-base}x86_64-linux-full
+----

@@ -21,7 +21,7 @@ Manager].
 
 == Documentation
 
-* link:docs/index.adoc[Documentation Overview]
+* link:docs/index.adoc[`docs/index.adoc`]
 
 == See Also
 

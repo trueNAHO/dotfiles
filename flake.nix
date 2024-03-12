@@ -136,7 +136,6 @@
               --extension adoc \
               -X \
               ${pkgs.asciidoctor-with-extensions.meta.mainProgram} \
-              --attribute attribute-missing=warn \
               --failure-level INFO
           '';
 
