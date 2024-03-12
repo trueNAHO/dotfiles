@@ -250,10 +250,11 @@
           switch $(
             read \
               --local \
+              --nchars 1 \
               --prompt-str "Start ${graphicalEnvironment}? [y/n] " |
               string lower
           )
-            case "" y yes
+            case "" y
               exec ${graphicalEnvironment}
           end
         '';
