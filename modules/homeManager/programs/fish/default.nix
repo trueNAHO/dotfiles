@@ -254,7 +254,7 @@
               --prompt-str "Start ${graphicalEnvironment}? [y/n] " |
               string lower
           )
-            case "" y
+            case "" y " "
               exec ${graphicalEnvironment}
           end
         '';
