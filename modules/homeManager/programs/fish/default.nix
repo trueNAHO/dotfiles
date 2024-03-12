@@ -247,9 +247,9 @@
         loginShellInit = let
           graphicalEnvironment = pkgs.hyprland.meta.mainProgram;
         in ''
-          read -l -P "Start ${graphicalEnvironment}? [y/n] " reply
-
-          switch $(string lower $reply)
+          switch $(
+            read -l -P "Start ${graphicalEnvironment}? [y/n] " | string lower
+          )
             case "" y yes
               exec ${graphicalEnvironment}
           end
