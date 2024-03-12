@@ -28,8 +28,19 @@ a|
 a| Uses all `modules`.
 |===
 
+== Packages
+
+|===
+| Packages | Description
+
+a| `docs`
+a| Build documentation.
+|===
+
 == Examples
-:command-base: nix run nixpkgs#home-manager -- switch --flake github:{repository-path}#
+:repository-flake: github:{repository-path}
+
+:command-base: nix run nixpkgs#home-manager -- switch --flake {repository-flake}#
 
 To build the <<_home_manager_configurations, Home Manager configurations>>
 directly from {repository}[upstream] using {nix}[`nix`], run one of the
@@ -41,6 +52,14 @@ following commands:
 {command-base}aarch64-linux-full
 {command-base}x86_64-darwin-full
 {command-base}x86_64-linux-full
+----
+
+To build the <<_packages, packages>> directly from {repository}[upstream] using
+{nix}[`nix`], run:
+
+[,bash,subs="attributes"]
+----
+nix build {repository-flake}#docs
 ----
 
 == See Also
