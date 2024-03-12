@@ -122,17 +122,7 @@
           };
 
         devShells.default = pkgs.mkShell {
-          shellHook = let
-            developerDocumentation = let
-              derivation = import lib/derivations/man_page.nix {
-                inherit pkgs;
-                path = docs/dev;
-              };
-            in "${pkgs.lib.getOutput "man" derivation}/share/man";
-          in ''
-            ${inputs.self.checks.${system}.preCommitHooks.shellHook}
-            export MANPATH=${developerDocumentation}:$MANPATH
-          '';
+          inherit (inputs.self.checks.${system}.preCommitHooks) shellHook;
 
           packages = [
             inputs.agenix.packages.${system}.default

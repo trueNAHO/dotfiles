@@ -11,7 +11,6 @@
       ({config, ...}: {
         imports = [
           ../../modules/agenix/homeManagerModules/default
-          ../../modules/home/packages/dotfiles
           ../../modules/homeManager/fonts
           ../../modules/homeManager/home/packages/acpi
           ../../modules/homeManager/home/packages/aria
@@ -103,7 +102,6 @@
         config = {
           modules = {
             agenix.homeManagerModules.default.enable = true;
-            home.packages.dotfiles.enable = true;
 
             homeManager = {
               fonts.enable = true;
