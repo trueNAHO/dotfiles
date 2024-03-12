@@ -7,6 +7,4 @@ dotfiles.dev - Development Documentation Overview
 == See Also
 
 link:../index.adoc[Documentation Overview],
-link:code_of_conduct.adoc[dotfiles.dev.code-of-conduct(7)],
-link:contributing.adoc[dotfiles.dev.contributing(7)],
 link:keymappings.adoc[dotfiles.dev.keymappings(7)]
