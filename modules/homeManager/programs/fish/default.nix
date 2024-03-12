@@ -248,7 +248,10 @@
           graphicalEnvironment = pkgs.hyprland.meta.mainProgram;
         in ''
           switch $(
-            read -l -P "Start ${graphicalEnvironment}? [y/n] " | string lower
+            read \
+              --local \
+              --prompt-str "Start ${graphicalEnvironment}? [y/n] " |
+              string lower
           )
             case "" y yes
               exec ${graphicalEnvironment}
