@@ -130,36 +130,28 @@
           ];
         };
 
-        packages.docs = pkgs.stdenv.mkDerivation {
-          buildPhase = ''
-            ${pkgs.fd.pname} \
-              --extension adoc \
-              -X \
-              ${pkgs.asciidoctor-with-extensions.meta.mainProgram} \
-              --failure-level INFO
-          '';
+        packages.docs = let
+          out = "${placeholder "out"}/usr/share/doc";
+        in
+          pkgs.stdenv.mkDerivation {
+            buildPhase = ''
+              asciidoctor-multipage \
+                --attribute attribute-missing=warn \
+                --destination-dir "${out}/docs" \
+                --failure-level INFO \
+                docs/main.adoc
+            '';
 
-          installPhase = ''
-            mkdir --parent "$out"
-            ${pkgs.fd.pname} --extension html -X cp --parents {} "$out"
-          '';
+            installPhase = let
+              sources = builtins.concatStringsSep " " [
+                "home_configurations/full/default.nix"
+              ];
+            in ''cp --parents ${sources} "${out}"'';
 
-          name = "docs";
-          nativeBuildInputs = with pkgs; [asciidoctor fd];
-
-          # Asciidoctor link macros pointing to Asciidoctor files should point
-          # to the generated HTML files.
-          patchPhase = ''
-            ${pkgs.fd.pname} \
-              --extension adoc \
-              -X \
-              sed \
-              --in-place \
-              's@link:\(\(\w\|/\)\+\)\.adoc\[@link:\1.html[@g'
-          '';
-
-          src = ./docs;
-        };
+            name = "docs";
+            nativeBuildInputs = [pkgs.asciidoctor-with-extensions];
+            src = ./.;
+          };
       }
     )
     // {
