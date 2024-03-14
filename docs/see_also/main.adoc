@@ -1,5 +1,7 @@
 == See Also
 
+The _dotfiles_ repository is available at: {repository}[].
+
 * {repository-star-history-src-dark}[GitHub Star History]
 * {home-manager}[Home Manager]
 * link:LICENSE[License]
