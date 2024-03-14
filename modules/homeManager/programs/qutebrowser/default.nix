@@ -4,7 +4,13 @@
   pkgs,
   ...
 }: {
-  imports = [../../home/packages/wl_clipboard ../../xdg ../mpv ../xplr];
+  imports = [
+    ../../home/packages/wl_clipboard
+    ../../xdg
+    ../firefox
+    ../mpv
+    ../xplr
+  ];
 
   options.modules.homeManager.programs.qutebrowser.enable =
     lib.mkEnableOption "qutebrowser";
@@ -20,6 +26,7 @@
           home.packages.wl-clipboard.enable = true;
 
           programs = {
+            firefox.enable = true;
             mpv.enable = true;
             xplr.enable = true;
           };
@@ -38,6 +45,7 @@
               mpvShuffle = "--shuffle";
               spawn = "spawn --detach --verbose";
             in {
+              "${leader}f" = "${spawn} firefox '{url}'";
               "${leader}mA" = "${spawn} ${mpv} ${mpvAudio} '{url}'";
               "${leader}mV" = "${spawn} ${mpv} '{url}'";
               "${leader}ma" = "hint links ${spawn} ${mpv} ${mpvAudio} '{hint-url}'";
