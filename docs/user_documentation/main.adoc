@@ -1,5 +1,0 @@
-== User Documentation
-
-include::home_manager_configurations/main.adoc[]
-
-include::packages/main.adoc[]

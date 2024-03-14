@@ -139,7 +139,7 @@
                 --attribute attribute-missing=warn \
                 --destination-dir "${out}/docs" \
                 --failure-level INFO \
-                docs/main.adoc
+                docs/index.adoc
             '';
 
             installPhase = let

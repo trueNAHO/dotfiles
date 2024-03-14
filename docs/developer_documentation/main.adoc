@@ -1,3 +1,0 @@
-== Developer Documentation
-
-include::keymapping_behaviour_correlation/main.adoc[]

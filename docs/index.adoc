@@ -21,10 +21,10 @@
 :repository-star-history-src-light: https://api.star-history.com/svg?repos={repository-path}&type=Date
 :repository: link:https://github.com/{repository-path}
 
-include::about/main.adoc[]
+include::about/index.adoc[]
 
-include::user_documentation/main.adoc[]
+include::user_documentation/index.adoc[]
 
-include::developer_documentation/main.adoc[]
+include::developer_documentation/index.adoc[]
 
-include::see_also/main.adoc[]
+include::see_also/index.adoc[]
