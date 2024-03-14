@@ -31,21 +31,21 @@
 
           keyBindings = {
             normal = let
-              leaderKey = "<Space>";
-              loopPlaylist = "--loop-playlist";
+              leader = "<Space>";
               mpv = pkgs.mpv.meta.mainProgram;
               mpvAudio = "--player-operation-mode=pseudo-gui --vid=no";
-              qutebrowserSpawn = "spawn --detach --verbose";
-              shuffle = "--shuffle";
+              mpvLoopPlaylist = "--loop-playlist";
+              mpvShuffle = "--shuffle";
+              spawn = "spawn --detach --verbose";
             in {
-              "${leaderKey}mA" = "${qutebrowserSpawn} ${mpv} ${mpvAudio} '{url}'";
-              "${leaderKey}mV" = "${qutebrowserSpawn} ${mpv} '{url}'";
-              "${leaderKey}ma" = "hint links ${qutebrowserSpawn} ${mpv} ${mpvAudio} '{hint-url}'";
-              "${leaderKey}mlA" = "${qutebrowserSpawn} ${mpv} ${loopPlaylist} ${mpvAudio} ${shuffle} '{url}'";
-              "${leaderKey}mlV" = "${qutebrowserSpawn} ${mpv} ${loopPlaylist} '{url}'";
-              "${leaderKey}mla" = "hint links ${qutebrowserSpawn} ${mpv} ${loopPlaylist} ${mpvAudio} ${shuffle} '{hint-url}'";
-              "${leaderKey}mlv" = "hint links ${qutebrowserSpawn} ${mpv} ${loopPlaylist} '{hint-url}'";
-              "${leaderKey}mv" = "hint links ${qutebrowserSpawn} ${mpv} '{hint-url}'";
+              "${leader}mA" = "${spawn} ${mpv} ${mpvAudio} '{url}'";
+              "${leader}mV" = "${spawn} ${mpv} '{url}'";
+              "${leader}ma" = "hint links ${spawn} ${mpv} ${mpvAudio} '{hint-url}'";
+              "${leader}mlA" = "${spawn} ${mpv} ${mpvLoopPlaylist} ${mpvAudio} ${mpvShuffle} '{url}'";
+              "${leader}mlV" = "${spawn} ${mpv} ${mpvLoopPlaylist} '{url}'";
+              "${leader}mla" = "hint links ${spawn} ${mpv} ${mpvLoopPlaylist} ${mpvAudio} ${mpvShuffle} '{hint-url}'";
+              "${leader}mlv" = "hint links ${spawn} ${mpv} ${mpvLoopPlaylist} '{hint-url}'";
+              "${leader}mv" = "hint links ${spawn} ${mpv} '{hint-url}'";
             };
           };
 
