@@ -1,7 +1,7 @@
 = dotfiles
 :archwiki-dotfiles: link:https://wiki.archlinux.org/title/Dotfiles
 :home-configurations-full: link:../home_configurations/full/default.nix
-:home-manager: link:https://nix-community.github.io/home-manager
+:home-manager: link:https://github.com/nix-community/home-manager
 :naho: link:https://github.com/trueNAHO
 :nix: link:https://nixos.wiki/wiki/Nix_Installation_Guide
 :nofooter:
