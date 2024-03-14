@@ -1,6 +1,5 @@
 = dotfiles
 :archwiki-dotfiles: link:https://wiki.archlinux.org/title/Dotfiles
-:home-configuration-nix-5: link:https://nix-community.github.io/home-manager/options.xhtml
 :home-configurations-full: link:../home_configurations/full/default.nix
 :home-manager: link:https://nix-community.github.io/home-manager
 :naho: link:https://github.com/trueNAHO

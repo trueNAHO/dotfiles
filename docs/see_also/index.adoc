@@ -7,7 +7,6 @@ The _dotfiles_ repository is available at: {repository}[].
 * link:LICENSE[License]
 * {os}[NAHO's NixOS configurations]
 * {version-control-visualization}[Version Control Visualization]
-* {home-configuration-nix-5}[home-configuration.nix(5)]
 
 [subs=attributes]
 ++++

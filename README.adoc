@@ -1,6 +1,5 @@
 = dotfiles
 :archwiki-dotfiles: link:https://wiki.archlinux.org/title/Dotfiles
-:home-configuration-nix-5: link:https://nix-community.github.io/home-manager/options.xhtml
 :home-manager: link:https://nix-community.github.io/home-manager
 :naho: link:https://github.com/trueNAHO
 :os: link:https://github.com/trueNAHO/os
@@ -30,7 +29,6 @@ Manager].
 * link:LICENSE[License]
 * {os}[NAHO's NixOS configurations]
 * {version-control-visualization}[Version Control Visualization]
-* {home-configuration-nix-5}[home-configuration.nix(5)]
 
 ifdef::backend-html5[]
 [subs=attributes]
