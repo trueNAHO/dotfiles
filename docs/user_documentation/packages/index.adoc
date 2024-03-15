@@ -1,6 +1,6 @@
 === Packages
 
-The following packages are available:
+The following package is available:
 
 |===
 | Packages | Description
@@ -9,7 +9,7 @@ a| `docs`
 | Builds the HTML documentation.
 |===
 
-To build them directly from {repository}[upstream] using {nix}[`nix`], run:
+To build it directly from {repository}[upstream] using {nix}[`nix`], run:
 
 [,bash,subs="attributes"]
 ----
