@@ -1,0 +1,7 @@
+=== Contributing
+
+include::contribution_process/index.adoc[]
+
+include::commit_messages/index.adoc[]
+
+include::development_environment/index.adoc[]

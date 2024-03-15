@@ -1,0 +1,3 @@
+==== Contribution Process
+
+Adhere to the {github-flow}[GitHub Flow].

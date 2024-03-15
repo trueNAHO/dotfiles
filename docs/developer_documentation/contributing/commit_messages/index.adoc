@@ -1,0 +1,3 @@
+==== Commit Messages
+
+Follow {commitizen}[Commitizen]'s commit standards.

@@ -1,0 +1,16 @@
+==== Development Environment
+
+Automatically enter the development environment upon ``cd``ing into the
+repository by running:
+
+[,bash]
+----
+direnv allow
+----
+
+Alternatively, enter the one-time developer shell with:
+
+[,bash]
+----
+nix develop
+----
