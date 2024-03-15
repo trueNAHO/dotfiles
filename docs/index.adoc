@@ -1,6 +1,5 @@
 = dotfiles
 :archwiki-dotfiles: link:https://wiki.archlinux.org/title/Dotfiles
-:home-configurations-full: link:../home_configurations/full/default.nix
 :home-manager: link:https://github.com/nix-community/home-manager
 :naho: link:https://github.com/trueNAHO
 :nix: link:https://nixos.wiki/wiki/Nix_Installation_Guide
@@ -19,6 +18,10 @@
 :repository-star-history-src-dark: https://api.star-history.com/svg?repos={repository-path}&type=Date&theme=dark
 :repository-star-history-src-light: https://api.star-history.com/svg?repos={repository-path}&type=Date
 :repository: link:https://github.com/{repository-path}
+
+:repository-blob: {repository}/blob/master
+
+:home-configurations-full: {repository-blob}/home_configurations/full/default.nix
 
 include::about/index.adoc[]
 

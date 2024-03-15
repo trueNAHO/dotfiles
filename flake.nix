@@ -134,43 +134,17 @@
           out = "${placeholder "out"}/usr/share/doc";
         in
           pkgs.stdenv.mkDerivation {
-            buildPhase = let
-              redirectURL = "docs/index.html";
-            in ''
+            buildPhase = ''
               asciidoctor-multipage \
                 --attribute attribute-missing=warn \
-                --destination-dir "${out}/docs" \
+                --destination-dir "${out}" \
                 --failure-level INFO \
-                docs/index.adoc
-
-              cat >"${out}/index.html" <<EOF
-              <!DOCTYPE html>
-              <html>
-
-              <head>
-                  <meta http-equiv="refresh" content="0; url=${redirectURL}">
-              </head>
-
-              <body>
-                  <p>
-                      If you are not redirected automatically,
-                      <a href="${redirectURL}">click here</a>.
-                  </p>
-              </body>
-
-              </html>
-              EOF
+                index.adoc
             '';
-
-            installPhase = let
-              sources = builtins.concatStringsSep " " [
-                "home_configurations/full/default.nix"
-              ];
-            in ''cp --parents ${sources} "${out}"'';
 
             name = "docs";
             nativeBuildInputs = [pkgs.asciidoctor-with-extensions];
-            src = ./.;
+            src = ./docs;
           };
       }
     )
