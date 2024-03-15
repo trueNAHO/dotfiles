@@ -7,10 +7,10 @@ The following {home-manager}[Home Manager] configurations are available:
 | Home Manager Configurations | Description
 
 a|
-- {home-configurations-full}[`aarch64-darwin-full`]
-- {home-configurations-full}[`aarch64-linux-full`]
-- {home-configurations-full}[`x86_64-darwin-full`]
-- {home-configurations-full}[`x86_64-linux-full`]
+- {repository-blob-home-configurations-full}[`aarch64-darwin-full`]
+- {repository-blob-home-configurations-full}[`aarch64-linux-full`]
+- {repository-blob-home-configurations-full}[`x86_64-darwin-full`]
+- {repository-blob-home-configurations-full}[`x86_64-linux-full`]
 a| Uses all `modules`.
 |===
 
