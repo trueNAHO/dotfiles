@@ -1,0 +1,3 @@
+=== Architecture
+
+include::cross_cutting_concerns/index.adoc[]

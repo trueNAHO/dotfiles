@@ -2,4 +2,4 @@
 
 include::contributing/index.adoc[]
 
-include::keymapping_behaviour_correlation/index.adoc[]
+include::architecture/index.adoc[]
