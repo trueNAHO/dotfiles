@@ -9,10 +9,10 @@
   config = lib.mkIf config.modules.homeManager.programs.gh.enable {
     modules.agenix.homeManagerModules.default.enable = true;
 
-    age.secrets.modulesHomemanagerProgramsGhToken.file = ./gh_token.age;
+    age.secrets.modulesHomeManagerProgramsGhGhToken.file = ./gh_token.age;
 
     home.sessionVariables.GH_TOKEN = let
-      file = config.age.secrets.modulesHomemanagerProgramsGhToken.path;
+      file = config.age.secrets.modulesHomeManagerProgramsGhGhToken.path;
     in "$(cat ${file})";
 
     # Prevent configuration drift by avoiding the creation of the runtime

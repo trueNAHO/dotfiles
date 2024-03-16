@@ -12,7 +12,7 @@
   config = lib.mkIf config.modules.homeManager.programs.borgmatic.enable {
     modules.agenix.homeManagerModules.default.enable = true;
 
-    age.secrets.modulesHomemanagerProgramsBorgmatic.file = ./encryption_passcommand.age;
+    age.secrets.modulesHomeManagerProgramsBorgmaticEncryptionPasscommand.file = ./encryption_passcommand.age;
 
     programs.borgmatic = {
       backups.home = {
@@ -80,7 +80,7 @@
         };
 
         storage.encryptionPasscommand = let
-          file = config.age.secrets.modulesHomemanagerProgramsBorgmatic.path;
+          file = config.age.secrets.modulesHomeManagerProgramsBorgmaticEncryptionPasscommand.path;
         in "${pkgs.runtimeShell} -c '${pkgs.coreutils}/bin/cat \"${file}\"'";
       };
 
