@@ -337,13 +337,7 @@
                 name = "system-status";
 
                 runtimeInputs = with pkgs;
-                  [
-                    acpi
-                    brightnessctl
-                    gawk
-                    libnotify
-                    wireplumber
-                  ]
+                  [acpi gawk libnotify]
                   ++ [getBrightnessPercentage getVolumePercentage];
 
                 text = ''
