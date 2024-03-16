@@ -5,5 +5,5 @@ let
 in {
   "modules/homeManager/programs/borgmatic/encryption_passcommand.age".publicKeys = publicKeys;
   "modules/homeManager/programs/gh/gh_token.age".publicKeys = publicKeys;
-  "modules/programs/nixvim/plugins/codeium.age".publicKeys = publicKeys;
+  "modules/programs/nixvim/plugins/codeium_api_key.age".publicKeys = publicKeys;
 }

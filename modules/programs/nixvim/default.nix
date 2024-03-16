@@ -30,7 +30,7 @@
       };
     };
 
-    age.secrets.modulesProgramsNixvimPluginsCodeium.file = plugins/codeium.age;
+    age.secrets.modulesProgramsNixvimPluginsCodeiumApiKey.file = plugins/codeium_api_key.age;
 
     home = let
       neovim = pkgs.neovim.meta.mainProgram;

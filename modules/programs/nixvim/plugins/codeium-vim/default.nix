@@ -16,7 +16,7 @@
       ln \
         --force \
         --symbolic \
-        ${config.age.secrets.modulesProgramsNixvimPluginsCodeium.path} \
+        ${config.age.secrets.modulesProgramsNixvimPluginsCodeiumApiKey.path} \
         "${directory}/config.json"
     '';
 
