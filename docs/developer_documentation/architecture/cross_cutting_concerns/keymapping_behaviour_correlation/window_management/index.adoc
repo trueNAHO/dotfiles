@@ -21,10 +21,10 @@ a| `<LEADER_1>` + `<LEADER_2>` + `h`
 | Decrease the active window's width.
 
 a| `<LEADER_1>` + `<LEADER_2>` + `j`
-| Increase the active window's height.
+| Decrease the active window's height.
 
 a| `<LEADER_1>` + `<LEADER_2>` + `k`
-| Decrease the active window's height.
+| Increase the active window's height.
 
 a| `<LEADER_1>` + `<LEADER_2>` + `l`
 | Increase the active window's width.

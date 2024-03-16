@@ -14,12 +14,12 @@
 
           {
             action = "<C-w>+";
-            key = "<M-C-j>";
+            key = "<M-C-k>";
           }
 
           {
             action = "<C-w>-";
-            key = "<M-C-k>";
+            key = "<M-C-j>";
           }
 
           {
