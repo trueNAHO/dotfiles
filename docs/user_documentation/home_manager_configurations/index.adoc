@@ -14,6 +14,7 @@ a|
 a| Uses all `modules`.
 |===
 
+====
 To build them directly from {repository}[upstream] using {nix}[`nix`], run one
 of the following commands depending on the target platform:
 
@@ -36,3 +37,4 @@ of the following commands depending on the target platform:
 ----
 {command-base}x86_64-linux-full
 ----
+====
