@@ -1,0 +1,3 @@
+===== /secrets.nix
+
+Secrets are deployed using {agenix}[`agenix`].

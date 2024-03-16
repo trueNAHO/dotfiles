@@ -1,4 +1,5 @@
 = dotfiles
+:agenix: link:https://github.com/ryantm/agenix
 :archwiki-dotfiles: link:https://wiki.archlinux.org/title/Dotfiles
 :commitizen: link:http://commitizen.github.io/cz-cli
 :github-flow: link:https://scottchacon.com/2011/08/31/github-flow

@@ -1,0 +1,3 @@
+==== Code Map
+
+include::secrets_nix/index.adoc[]

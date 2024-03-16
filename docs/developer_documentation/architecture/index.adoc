@@ -1,3 +1,5 @@
 === Architecture
 
+include::code_map/index.adoc[]
+
 include::cross_cutting_concerns/index.adoc[]
