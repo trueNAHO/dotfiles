@@ -36,7 +36,9 @@
           fix = ''!${git} add --all && ${git} commit --message "chore!: $(date "+%Y-%m-%d %H:%M:%S %z")"'';
           nuke = "!${git} reset --hard HEAD && ${git} clean -d --force";
           reword = "commit --amend";
-          rs = "reset";
+          rh = "reset --hard";
+          rm = "reset --mixed";
+          rs = "reset --soft";
           rv = "revert";
           rw = "commit --amend";
           s = "status --short";
