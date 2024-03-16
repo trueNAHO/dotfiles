@@ -30,6 +30,7 @@
           ../../modules/homeManager/home/packages/glava
           ../../modules/homeManager/home/packages/glow
           ../../modules/homeManager/home/packages/gping
+          ../../modules/homeManager/home/packages/inkscape
           ../../modules/homeManager/home/packages/kdenlive
           ../../modules/homeManager/home/packages/killall
           ../../modules/homeManager/home/packages/libreoffice
@@ -126,6 +127,7 @@
                   glava.enable = true;
                   glow.enable = true;
                   gping.enable = true;
+                  inkscape.enable = true;
                   kdenlive.enable = true;
                   killall.enable = true;
                   libreoffice.enable = true;
