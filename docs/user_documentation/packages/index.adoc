@@ -12,7 +12,7 @@ a| `docs`
 ====
 To build it directly from {repository}[upstream] using {nix}[`nix`], run:
 
-[,bash,subs="attributes"]
+[,bash,subs=attributes+]
 ----
 nix build {repository-flake}#docs
 ----

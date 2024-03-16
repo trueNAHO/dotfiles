@@ -18,22 +18,22 @@ a| Uses all `modules`.
 To build them directly from {repository}[upstream] using {nix}[`nix`], run one
 of the following commands depending on the target platform:
 
-[,bash,subs="attributes"]
+[,bash,subs=attributes+]
 ----
 {command-base}aarch64-darwin-full
 ----
 
-[,bash,subs="attributes"]
+[,bash,subs=attributes+]
 ----
 {command-base}aarch64-linux-full
 ----
 
-[,bash,subs="attributes"]
+[,bash,subs=attributes+]
 ----
 {command-base}x86_64-darwin-full
 ----
 
-[,bash,subs="attributes"]
+[,bash,subs=attributes+]
 ----
 {command-base}x86_64-linux-full
 ----

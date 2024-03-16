@@ -8,7 +8,7 @@ The _dotfiles_ repository is available at: {repository}[].
 * {os}[NAHO's NixOS configurations]
 * {version-control-visualization}[Version Control Visualization]
 
-[subs=attributes]
+[subs=attributes+]
 ++++
 <a href="{repository-raw-stargazers}">
   <p align="{repository-star-history-align}">

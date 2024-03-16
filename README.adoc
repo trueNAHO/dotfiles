@@ -31,7 +31,7 @@ Manager].
 * {version-control-visualization}[Version Control Visualization]
 
 ifdef::backend-html5[]
-[subs=attributes]
+[subs=attributes+]
 ++++
 <a href="{repository-raw-stargazers}">
   <p align="{repository-star-history-align}">
