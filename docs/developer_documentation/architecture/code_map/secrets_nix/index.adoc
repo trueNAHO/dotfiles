@@ -6,5 +6,5 @@
 
 [NOTE]
 ====
-* <<developer_documentation_architecture_cross_cutting_concerns_naming_conventions_secrets>>
+* <<developer_documentation_architecture_cross_cutting_concerns_naming_conventions_age_secrets_name>>
 ====

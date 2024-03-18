@@ -1,3 +1,3 @@
 ===== Naming Conventions
 
-include::secrets/index.adoc[]
+include::age_secrets_name/index.adoc[]
