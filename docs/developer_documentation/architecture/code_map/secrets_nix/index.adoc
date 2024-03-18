@@ -1,4 +1,10 @@
+[[developer_documentation_architecture_code_map_secrets_nix]]
 ===== /secrets.nix
 
 {repository-blob}/secrets.nix[This file] declares the secrets deployed using
 {agenix}[`agenix`].
+
+[NOTE]
+====
+* <<developer_documentation_architecture_cross_cutting_concerns_naming_conventions_secrets>>
+====
