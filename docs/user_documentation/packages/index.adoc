@@ -3,7 +3,7 @@
 The following package is available:
 
 |===
-| Packages | Description
+| Package | Description
 
 a| `docs`
 | Builds the HTML documentation.
