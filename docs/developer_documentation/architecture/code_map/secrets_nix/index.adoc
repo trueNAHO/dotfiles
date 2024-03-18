@@ -1,3 +1,4 @@
 ===== /secrets.nix
 
-Secrets are deployed using {agenix}[`agenix`].
+{repository-blob}/secrets.nix[This file] declares the secrets deployed using
+{agenix}[`agenix`].

@@ -1,3 +1,13 @@
 ==== Code Map
 
+include::docs_index_adoc/index.adoc[]
+
+include::home_configurations_default_nix/index.adoc[]
+
+include::home_configurations_name_default_nix/index.adoc[]
+
+include::modules_homeManager/index.adoc[]
+
+include::modules_not_homeManager/index.adoc[]
+
 include::secrets_nix/index.adoc[]

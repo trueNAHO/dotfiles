@@ -1,6 +1,7 @@
 = dotfiles
 :agenix: link:https://github.com/ryantm/agenix
 :archwiki-dotfiles: link:https://wiki.archlinux.org/title/Dotfiles
+:asciidoctor-multipage: link:https://github.com/owenh000/asciidoctor-multipage
 :commitizen: link:http://commitizen.github.io/cz-cli
 :github-flow: link:https://scottchacon.com/2011/08/31/github-flow
 :home-manager: link:https://github.com/nix-community/home-manager

@@ -1,0 +1,17 @@
+[[developer_documentation_architecture_code_map_modules_homeManager]]
+===== /modules/homeManager/
+
+{repository-blob}/modules/homeManager[This directory] is complementary to
+`<<developer_documentation_architecture_code_map_modules_not_homeManager>>` and
+contains all {home-manager}[Home Manager] modules used by
+`<<developer_documentation_architecture_code_map_home_configurations_name_default_nix>>`.
+
+Its normalised directory structure mirrors Home Manager's module structure:
+
+====
+// Insert two literal hyphens using '&#45;' to avoid Asciidoctor's em dash
+// expansion.
+The `programs.camelCase.kebab&#45;&#45;case.snake__case` Home Manager module
+would be located at
+`/modules/homeManager/programs/camelCase/kebab-case/snake_case/default.nix`.
+====

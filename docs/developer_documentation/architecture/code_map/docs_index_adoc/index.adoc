@@ -1,0 +1,5 @@
+===== /docs/index.adoc
+
+{repository-blob}/docs/index.adoc[This file] contains the single source document
+used by {asciidoctor-multipage}[`asciidoctor-multipage`] in the
+<<user_documentation_packages, `docs` package>>.

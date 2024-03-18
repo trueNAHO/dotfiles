@@ -1,0 +1,10 @@
+[[developer_documentation_architecture_code_map_modules_not_homeManager]]
+===== /modules/(?!homeManager)/
+
+This directory (all directories in the {repository-blob}/modules[`/modules/`]
+directory except
+`<<developer_documentation_architecture_code_map_modules_homeManager>>`) is
+complementary to
+`<<developer_documentation_architecture_code_map_modules_homeManager>>` and
+contains all non-{home-manager}[Home Manager] modules used by
+`<<developer_documentation_architecture_code_map_home_configurations_name_default_nix>>`.

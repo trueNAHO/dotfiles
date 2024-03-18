@@ -1,3 +1,4 @@
+[[user_documentation_packages]]
 === Packages
 
 The following package is available:

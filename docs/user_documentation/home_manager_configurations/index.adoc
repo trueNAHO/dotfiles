@@ -1,3 +1,4 @@
+[[user_documentation_home_manager_configurations]]
 === Home Manager Configurations
 :command-base: nix run nixpkgs#home-manager -- switch --flake {repository-flake}#
 

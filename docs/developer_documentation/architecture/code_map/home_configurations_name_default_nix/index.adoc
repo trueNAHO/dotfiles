@@ -1,0 +1,9 @@
+[[developer_documentation_architecture_code_map_home_configurations_name_default_nix]]
+===== /home_configurations/<NAME>/default.nix
+
+This file represents the entry point to the `<NAME>`
+<<user_documentation_home_manager_configurations, Home Manager configuration>>.
+
+Everything non-specific to this configuration must be declared in either
+`<<developer_documentation_architecture_code_map_modules_homeManager>>` or
+`<<developer_documentation_architecture_code_map_modules_not_homeManager>>`.
