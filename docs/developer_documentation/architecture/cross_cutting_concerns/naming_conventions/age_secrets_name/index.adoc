@@ -17,7 +17,7 @@ The `<NAME>` attribute for the `{file}` file would be `pathToSecretMySecret`:
 [,bash,subs=attributes+]
 ----
 $ ls {file} |
-    sed -E 's@[/_]+(.)@\U\1@g' |
+    sed -E 's@[-/_]+(.)@\U\1@g' |
     xargs -I {} basename {} .age
 pathToSecretSnakeCase
 ----
