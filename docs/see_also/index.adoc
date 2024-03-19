@@ -32,3 +32,5 @@ The _dotfiles_ repository is available at: {repository}[].
   </p>
 </a>
 ++++
+
+video::{version-control-visualization-video-id}[youtube,width=100%]

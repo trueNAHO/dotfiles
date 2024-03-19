@@ -18,13 +18,14 @@
 :source-highlighter: rouge
 :toc: left
 :toclevels: 5
-:version-control-visualization: link:https://github.com/trueNAHO/trueNAHO/blob/master/version_control_visualization/repositories/dotfiles/README.adoc
+:version-control-visualization-video-id: mJPvRkYkbYE
 
 :repository-flake: github:{repository-path}
 :repository-raw-stargazers: https://github.com/{repository-path}/stargazers
 :repository-star-history-src-dark: https://api.star-history.com/svg?repos={repository-path}&type=Date&theme=dark
 :repository-star-history-src-light: https://api.star-history.com/svg?repos={repository-path}&type=Date
 :repository: link:https://github.com/{repository-path}
+:version-control-visualization: link:https://youtu.be/{version-control-visualization-video-id}
 
 :repository-blob: {repository}/blob/master
 
