@@ -1,5 +1,5 @@
 ==== Cross-Cutting Concerns
 
-include::keymapping_behaviour_correlation/index.adoc[]
+include::keymapping_behaviour_correlations/index.adoc[]
 
 include::naming_conventions/index.adoc[]

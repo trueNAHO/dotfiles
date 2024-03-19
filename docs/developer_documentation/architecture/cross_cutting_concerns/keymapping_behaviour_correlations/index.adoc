@@ -1,4 +1,4 @@
-===== Keymapping-Behavior Correlation
+===== Keymapping-Behavior Correlations
 
 Adhering to the keymapping-behavior correlations ensures a coherent user
 experience across applications. Note that applications are not required to
