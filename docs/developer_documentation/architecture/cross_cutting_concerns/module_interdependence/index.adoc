@@ -1,0 +1,4 @@
+===== Module Interdependence
+
+Declare module dependencies using `imports` and specify only their necessary
+options by assuming they are not preconfigured.
