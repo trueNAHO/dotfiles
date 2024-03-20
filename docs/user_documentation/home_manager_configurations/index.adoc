@@ -1,6 +1,7 @@
 [[user_documentation_home_manager_configurations]]
 === Home Manager Configurations
 :command-base: nix run nixpkgs#home-manager -- switch --flake {repository-flake}#
+:repository-blob-home-configurations-full: {repository-blob}/home_configurations/full/default.nix
 
 The following {home-manager}[Home Manager] configurations are available:
 

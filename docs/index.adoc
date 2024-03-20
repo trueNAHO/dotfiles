@@ -29,8 +29,6 @@
 
 :repository-blob: {repository}/blob/master
 
-:repository-blob-home-configurations-full: {repository-blob}/home_configurations/full/default.nix
-
 include::about/index.adoc[]
 
 include::user_documentation/index.adoc[]
