@@ -156,18 +156,12 @@
             pkgs = inputs.nixpkgs.legacyPackages.${system};
           in
             acc
-            // pkgs.lib.mapAttrs'
-            (
-              homeConfigurationName: homeConfiguration:
-                pkgs.lib.nameValuePair
-                "${system}-${homeConfigurationName}"
-                homeConfiguration
-            )
-            (
-              builtins.foldl' (
-                acc: file: acc // (import file {inherit inputs pkgs system;})
-              ) {} (import ./home_configurations)
-            )
+            // (import lib/prependPrefix.nix {
+              inherit inputs pkgs system;
+
+              files = [./home_configurations/full];
+              prefix = system;
+            })
         )
         {}
         inputs.flakeUtils.lib.defaultSystems;

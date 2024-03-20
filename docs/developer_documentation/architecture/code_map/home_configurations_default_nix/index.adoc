@@ -1,5 +1,0 @@
-===== /home_configurations/default.nix
-
-{repository-blob}/home_configurations/default.nix[This file] contains the list
-of <<user_documentation_home_manager_configurations, Home Manager
-configurations>> to `import` into {repository-blob}/flake.nix[`/flake.nix`].
