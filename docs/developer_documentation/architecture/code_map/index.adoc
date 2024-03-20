@@ -2,7 +2,13 @@
 
 include::docs_index_adoc/index.adoc[]
 
-include::home_configurations_name_default_nix/index.adoc[]
+include::home_configurations_accessibility_default_nix/index.adoc[]
+
+include::home_configurations_accessibility_scope_default_nix/index.adoc[]
+
+include::home_configurations_accessibility_scope_name_default_nix/index.adoc[]
+
+include::home_configurations_default_nix/index.adoc[]
 
 include::lib_prepend_prefix_nix/index.adoc[]
 

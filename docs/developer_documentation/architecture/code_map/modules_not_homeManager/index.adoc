@@ -7,4 +7,4 @@ directory except
 complementary to
 `<<developer_documentation_architecture_code_map_modules_homeManager>>` and
 contains all non-{home-manager}[Home Manager] modules used by
-`<<developer_documentation_architecture_code_map_home_configurations_name_default_nix>>`.
+`<<developer_documentation_architecture_code_map_home_configurations_accessibility_scope_name_default_nix>>`.

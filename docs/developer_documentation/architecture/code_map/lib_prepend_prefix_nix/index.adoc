@@ -1,3 +1,4 @@
+[[developer_documentation_architecture_code_map_lib_prepend_prefix_nix]]
 ===== /lib/prependPrefix.nix
 
 {repository-blob}/lib/prependPrefix.nix[This file] contains a function that

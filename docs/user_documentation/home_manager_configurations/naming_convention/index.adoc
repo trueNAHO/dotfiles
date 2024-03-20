@@ -1,0 +1,48 @@
+[[user_documentation_home_manager_configurations_naming_convention]]
+==== Naming Convention
+
+<<user_documentation_home_manager_configurations_overview, Home Manager
+configurations>> adhere to the `<SYSTEM>-<ACCESSIBILITY>-<SCOPE>-<NAME>` naming
+convention:
+
+|===
+| Parameter | Values
+
+a| `<ACCESSIBILITY>`
+a|
+!===
+! Value ! Description
+
+a! `private`
+a! Requires `<<developer_documentation_architecture_code_map_secrets_nix>>`.
+
+a! `public`
+a! Does not require
+   `<<developer_documentation_architecture_code_map_secrets_nix>>`.
+!===
+
+a| `<NAME>`
+| The values are provided by the keys within the attribute set in
+  <<developer_documentation_architecture_code_map_home_configurations_accessibility_scope_name_default_nix>>
+
+a| `<SCOPE>`
+a|
+!===
+! Value ! Description
+
+a! `integrated`
+a! Non-``standalone`` `<SCOPE>`.
+
+a! `standalone`
+a!
+{minimal-reproducible-example}[Minimal Working Example] for a single module
+(<<developer_documentation_architecture_code_map_modules_homeManager>> or
+<<developer_documentation_architecture_code_map_modules_not_homeManager>>).
+
+NOTE: This value implies `<NAME>` corresponding to the module name.
+!===
+
+a| `<SYSTEM>`
+a| The values are provided by
+   {repository-blob}/flake.nix[`inputs.flakeUtils.lib.defaultSystems`].
+|===

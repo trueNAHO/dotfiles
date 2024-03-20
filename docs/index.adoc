@@ -5,6 +5,7 @@
 :commitizen: link:http://commitizen.github.io/cz-cli
 :github-flow: link:https://scottchacon.com/2011/08/31/github-flow
 :home-manager: link:https://github.com/nix-community/home-manager
+:minimal-reproducible-example: link:https://stackoverflow.com/help/minimal-reproducible-example
 :multipage-level: 5
 :naho: link:https://github.com/trueNAHO
 :nix: link:https://nixos.wiki/wiki/Nix_Installation_Guide

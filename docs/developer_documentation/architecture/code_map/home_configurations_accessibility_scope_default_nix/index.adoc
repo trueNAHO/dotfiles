@@ -1,0 +1,8 @@
+[[developer_documentation_architecture_code_map_home_configurations_accessibility_scope_default_nix]]
+===== /home_configurations/<ACCESSIBILITY>/<SCOPE>/default.nix
+
+This file prepends the
+<<user_documentation_home_manager_configurations_naming_convention, `<SCOPE>`>>
+prefix to the attribute set returned by
+<<developer_documentation_architecture_code_map_home_configurations_accessibility_scope_name_default_nix>>,
+using <<developer_documentation_architecture_code_map_lib_prepend_prefix_nix>>.

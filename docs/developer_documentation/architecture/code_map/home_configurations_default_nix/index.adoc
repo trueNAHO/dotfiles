@@ -1,0 +1,7 @@
+===== /home_configurations/default.nix
+
+This file prepends the
+<<user_documentation_home_manager_configurations_naming_convention,
+`<SYSTEM>`>> prefix to the attribute set returned by
+<<developer_documentation_architecture_code_map_home_configurations_accessibility_default_nix>>,
+using <<developer_documentation_architecture_code_map_lib_prepend_prefix_nix>>.

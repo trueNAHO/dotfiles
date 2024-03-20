@@ -155,13 +155,7 @@
           acc: system: let
             pkgs = inputs.nixpkgs.legacyPackages.${system};
           in
-            acc
-            // (import lib/prependPrefix.nix {
-              inherit inputs pkgs system;
-
-              files = [./home_configurations/full];
-              prefix = system;
-            })
+            acc // (import ./home_configurations {inherit inputs pkgs system;})
         )
         {}
         inputs.flakeUtils.lib.defaultSystems;

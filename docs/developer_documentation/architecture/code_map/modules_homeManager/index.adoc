@@ -5,7 +5,7 @@
 {repository-blob}/modules/homeManager[This directory] is complementary to
 `<<developer_documentation_architecture_code_map_modules_not_homeManager>>` and
 contains all {home-manager}[Home Manager] modules used by
-`<<developer_documentation_architecture_code_map_home_configurations_name_default_nix>>`.
+`<<developer_documentation_architecture_code_map_home_configurations_accessibility_scope_name_default_nix>>`.
 
 Its directory structure mirrors Home Manager's `$MODULE` module structure:
 
