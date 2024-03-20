@@ -35,6 +35,7 @@
           ../../modules/homeManager/home/packages/killall
           ../../modules/homeManager/home/packages/libreoffice
           ../../modules/homeManager/home/packages/neofetch
+          ../../modules/homeManager/home/packages/p7zip
           ../../modules/homeManager/home/packages/parallel
           ../../modules/homeManager/home/packages/pipe_rename
           ../../modules/homeManager/home/packages/poppler_utils
@@ -132,6 +133,7 @@
                   killall.enable = true;
                   libreoffice.enable = true;
                   neofetch.enable = true;
+                  p7zip.enable = true;
                   parallel.enable = true;
                   pipe-rename.enable = true;
                   poppler_utils.enable = true;
