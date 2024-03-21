@@ -1,5 +1,5 @@
 ===== Module Interdependence
 
 Declare <<developer_documentation_architecture_code_map_modules_directory,
-module>> dependencies using `imports` and specify only their necessary options
-by assuming they are not preconfigured.
+module>> dependencies using {nix-flake}[Nix flake]'s `imports` key and specify
+only their necessary options by assuming they are not preconfigured.
