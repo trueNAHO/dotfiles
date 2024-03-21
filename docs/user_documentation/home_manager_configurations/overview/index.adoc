@@ -13,7 +13,9 @@ a|
 * {repository-blob-home-configurations-private-integrated-full}[`aarch64-linux-private-integrated-full`]
 * {repository-blob-home-configurations-private-integrated-full}[`x86_64-darwin-private-integrated-full`]
 * {repository-blob-home-configurations-private-integrated-full}[`x86_64-linux-private-integrated-full`]
-a| Uses all `modules`.
+a| Uses all modules
+   (<<developer_documentation_architecture_code_map_modules_homeManager>> or
+   <<developer_documentation_architecture_code_map_modules_not_homeManager>>).
 |===
 
 ====
