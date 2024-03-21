@@ -1,0 +1,48 @@
+[[developer_documentation_architecture_code_map_modules_directory]]
+===== /modules/<DIRECTORY>/
+:directory-modules: /modules
+:sed: sed 's@\.@/@g'
+
+:directory-modules-home-manager: {directory-modules}/homeManager
+
+This directory contains all modules used by
+`<<developer_documentation_architecture_code_map_home_configurations_accessibility_scope_name_default_nix>>`.
+
+The `{directory-modules-home-manager}` directory is reserved for
+{home-manager}[Home Manager] modules, while other `{directory-modules}`
+directories are intended for non-Home Manager modules.
+
+The `{directory-modules}` directory structure mirrors Home Manager's `$MODULE`
+module structure:
+
+[,bash,subs=attributes+]
+----
+echo "$MODULE" | {sed}
+----
+
+====
+
+The `programs.camelCase.kebab-case.snake_case` Home Manager `$MODULE` module
+would be declared at
+`{directory-modules-home-manager}/programs/camelCase/kebab-case/snake_case/default.nix`:
+
+[,bash,subs=attributes+]
+----
+$ echo programs.camelCase.kebab-case.snake_case |
+    {sed} |
+    xargs printf '{directory-modules-home-manager}/%s/default.nix\n'
+{directory-modules-home-manager}/programs/camelCase/kebab-case/snake_case/default.nix
+----
+
+The custom `programs.camelCase.kebab-case.snake_case` `$MODULE` module
+would be declared at
+`{directory-modules}/programs/camelCase/kebab-case/snake_case/default.nix`:
+
+[,bash,subs=attributes+]
+----
+$ echo programs.camelCase.kebab-case.snake_case |
+    {sed} |
+    xargs printf '{directory-modules}/%s/default.nix\n'
+{directory-modules}/programs/camelCase/kebab-case/snake_case/default.nix
+----
+====

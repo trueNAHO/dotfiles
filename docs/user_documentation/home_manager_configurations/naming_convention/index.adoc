@@ -35,9 +35,8 @@ a! Non-``standalone`` `<SCOPE>`.
 
 a! `standalone`
 a!
-{minimal-reproducible-example}[Minimal Working Example] for a single module
-(<<developer_documentation_architecture_code_map_modules_homeManager>> or
-<<developer_documentation_architecture_code_map_modules_not_homeManager>>).
+{minimal-reproducible-example}[Minimal Working Example] for a single
+<<developer_documentation_architecture_code_map_modules_directory, module>>.
 
 NOTE: This value implies `<NAME>` corresponding to the module name.
 !===

@@ -10,6 +10,5 @@ configuration>> and contains a function returning a
 <NAME&#62;>> = <<user_documentation_home_manager_configurations_overview,
 <HOME_MANAGER_CONFIGURATION&#62;>>;}` attribute set.
 
-Everything non-specific to this Home Manager configuration must be declared in
-either `<<developer_documentation_architecture_code_map_modules_homeManager>>`
-or `<<developer_documentation_architecture_code_map_modules_not_homeManager>>`.
+Everything non-specific to this Home Manager configuration must be declared in a
+<<developer_documentation_architecture_code_map_modules_directory, module>>.

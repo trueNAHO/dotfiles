@@ -12,8 +12,6 @@ include::home_configurations_default_nix/index.adoc[]
 
 include::lib_prepend_prefix_nix/index.adoc[]
 
-include::modules_homeManager/index.adoc[]
-
-include::modules_not_homeManager/index.adoc[]
+include::modules_directory/index.adoc[]
 
 include::secrets_nix/index.adoc[]
