@@ -1,0 +1,6 @@
+===== /flake.lock
+
+[NOTE]
+====
+* {nix-flake}[]
+====

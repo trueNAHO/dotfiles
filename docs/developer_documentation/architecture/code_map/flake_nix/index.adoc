@@ -1,0 +1,6 @@
+===== /flake.nix
+
+[NOTE]
+====
+* {nix-flake}[]
+====

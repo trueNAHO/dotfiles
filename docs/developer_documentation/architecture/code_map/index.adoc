@@ -1,5 +1,9 @@
 ==== Code Map
 
+include::flake_lock/index.adoc[]
+
+include::flake_nix/index.adoc[]
+
 include::docs_index_adoc/index.adoc[]
 
 include::home_configurations_accessibility_default_nix/index.adoc[]
