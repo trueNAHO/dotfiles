@@ -5,11 +5,13 @@
 configurations>> adhere to the `<SYSTEM>-<ACCESSIBILITY>-<SCOPE>-<NAME>` naming
 convention:
 
+[cols="18,82"]
 |===
 | Parameter | Values
 
 a| `<ACCESSIBILITY>`
 a|
+[cols="17,83"]
 !===
 ! Value ! Description
 
@@ -27,6 +29,7 @@ a| `<NAME>`
 
 a| `<SCOPE>`
 a|
+[cols="17,83"]
 !===
 ! Value ! Description
 
