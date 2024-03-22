@@ -23,7 +23,7 @@ a! Does not require
 
 a| `<NAME>`
 | The values are provided by the keys within the attribute set in
-  <<developer_documentation_architecture_code_map_home_configurations_accessibility_scope_name_default_nix>>
+  <<developer_documentation_architecture_code_map_home_configurations_accessibility_scope_name_default_nix>>.
 
 a| `<SCOPE>`
 a|
