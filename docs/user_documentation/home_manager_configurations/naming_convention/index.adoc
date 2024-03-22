@@ -38,7 +38,28 @@ a!
 {minimal-reproducible-example}[Minimal Working Example] for a single
 <<developer_documentation_architecture_code_map_modules_directory, module>>.
 
-NOTE: This value implies `<NAME>` corresponding to the module name.
+[NOTE]
+====
+This value implies the `<NAME>` parameter corresponding to the output of the
+following command, where `$MODULE` represents the path to the module file:
+
+[,bash]
+----
+echo "$MODULE" \| cut --delimiter / --fields 2-
+----
+
+:module: programs.camelCase.kebab-case.snake_case
+=====
+The `<NAME>` parameter for the `{module}` module would be
+`programs.camelCase.kebab-case.snake_case`:
+
+[,bash,subs=attributes+]
+----
+$ echo {module} \| cut --delimiter / --fields 2-
+programs.camelCase.kebab-case.snake_case
+----
+=====
+====
 !===
 
 a| `<SYSTEM>`
