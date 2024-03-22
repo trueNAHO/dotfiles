@@ -21,7 +21,6 @@ echo "$MODULE" | {sed}
 ----
 
 ====
-
 The `programs.camelCase.kebab-case.snake_case` Home Manager `$MODULE` module
 would be declared at
 `{directory-modules-home-manager}/programs/camelCase/kebab-case/snake_case/default.nix`:
