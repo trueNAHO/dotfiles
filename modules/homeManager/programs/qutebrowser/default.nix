@@ -155,18 +155,24 @@
         };
       }
 
-      (lib.mkIf config.modules.homeManager.programs.firefox.enable {
-        modules.homeManager.xdg.mimeApps.enable = true;
+      (
+        lib.mkIf (
+          config
+          ? modules.homeManager.programs.firefox.enable
+          && config.modules.homeManager.programs.firefox.enable
+        ) {
+          modules.homeManager.xdg.mimeApps.enable = true;
 
-        xdg.mimeApps.defaultApplications = let
-          qutebrowser = "org.qutebrowser.qutebrowser.desktop";
-        in {
-          "application/xhtml+xml" = [qutebrowser];
-          "text/html" = [qutebrowser];
-          "text/xml" = [qutebrowser];
-          "x-scheme-handler/http" = [qutebrowser];
-          "x-scheme-handler/https" = [qutebrowser];
-        };
-      })
+          xdg.mimeApps.defaultApplications = let
+            qutebrowser = "org.qutebrowser.qutebrowser.desktop";
+          in {
+            "application/xhtml+xml" = [qutebrowser];
+            "text/html" = [qutebrowser];
+            "text/xml" = [qutebrowser];
+            "x-scheme-handler/http" = [qutebrowser];
+            "x-scheme-handler/https" = [qutebrowser];
+          };
+        }
+      )
     ]);
 }

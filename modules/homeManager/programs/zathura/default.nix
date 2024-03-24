@@ -19,13 +19,19 @@
         };
       }
 
-      (lib.mkIf config.modules.homeManager.home.packages.gimp.enable {
-        modules.homeManager.xdg.mimeApps.enable = true;
+      (
+        lib.mkIf (
+          config
+          ? modules.homeManager.home.packages.gimp.enable
+          && config.modules.homeManager.home.packages.gimp.enable
+        ) {
+          modules.homeManager.xdg.mimeApps.enable = true;
 
-        xdg.mimeApps.defaultApplications = {
-          "application/pdf" = ["org.pwmt.zathura-pdf-mupdf.desktop"];
-          "application/postscript" = ["org.pwmt.zathura-ps.desktop"];
-        };
-      })
+          xdg.mimeApps.defaultApplications = {
+            "application/pdf" = ["org.pwmt.zathura-pdf-mupdf.desktop"];
+            "application/postscript" = ["org.pwmt.zathura-ps.desktop"];
+          };
+        }
+      )
     ]);
 }

@@ -200,10 +200,16 @@
         };
       }
 
-      (lib.mkIf config.wayland.windowManager.hyprland.enable {
-        home.shellAliases.${pkgs.hyprland.meta.mainProgram} = let
-          hyprlandCommand = "${pkgs.hyprland}/bin/${pkgs.hyprland.meta.mainProgram}";
-        in ''ZELLIJ="" ${hyprlandCommand}'';
-      })
+      (
+        lib.mkIf (
+          config
+          ? wayland.windowManager.hyprland.enable
+          && config.wayland.windowManager.hyprland.enable
+        ) {
+          home.shellAliases.${pkgs.hyprland.meta.mainProgram} = let
+            hyprlandCommand = "${pkgs.hyprland}/bin/${pkgs.hyprland.meta.mainProgram}";
+          in ''ZELLIJ="" ${hyprlandCommand}'';
+        }
+      )
     ]);
 }
