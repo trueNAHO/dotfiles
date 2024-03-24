@@ -2,28 +2,28 @@
   imports = [
     ./codeium-nvim
     ./codeium-vim
-    ./comment_nvim
+    ./comment-nvim
     ./debugprint
     ./fidget
     ./gitmessenger
     ./gitsigns
     ./leap
     ./lsp
-    ./lsp_format
-    ./nvim_cmp
-    ./nvim_colorizer
-    ./nvim_tree
-    ./rainbow_delimiters
+    ./lsp-format
+    ./nvim-cmp
+    ./nvim-colorizer
+    ./nvim-tree
+    ./rainbow-delimiters
     ./rustaceanvim
     ./spider
     ./surround
     ./telescope
     ./todo-comments
     ./treesitter
-    ./treesitter_context
+    ./treesitter-context
     ./trouble
     ./undotree
-    ./vim_illuminate
+    ./illuminate
     ./wtf
   ];
 }

@@ -7,7 +7,7 @@
   imports = [
     ../../home/packages/asciidoctor
     ../../home/packages/fd
-    ../../home/packages/wl_clipboard
+    ../../home/packages/wl-clipboard
     ../../programs/man
     ../../wayland/windowManager/hyprland
   ];

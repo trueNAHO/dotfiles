@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    ../../home/packages/wl_clipboard
+    ../../home/packages/wl-clipboard
     ../../xdg
     ../firefox
     ../mpv

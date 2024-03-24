@@ -19,7 +19,7 @@
           ../../../../modules/homeManager/home/packages/catimg
           ../../../../modules/homeManager/home/packages/catnip
           ../../../../modules/homeManager/home/packages/diskonaut
-          ../../../../modules/homeManager/home/packages/du_dust
+          ../../../../modules/homeManager/home/packages/du-dust
           ../../../../modules/homeManager/home/packages/dua
           ../../../../modules/homeManager/home/packages/duf
           ../../../../modules/homeManager/home/packages/fd
@@ -37,7 +37,7 @@
           ../../../../modules/homeManager/home/packages/neofetch
           ../../../../modules/homeManager/home/packages/p7zip
           ../../../../modules/homeManager/home/packages/parallel
-          ../../../../modules/homeManager/home/packages/pipe_rename
+          ../../../../modules/homeManager/home/packages/pipe-rename
           ../../../../modules/homeManager/home/packages/poppler_utils
           ../../../../modules/homeManager/home/packages/procs
           ../../../../modules/homeManager/home/packages/pstree
@@ -48,8 +48,8 @@
           ../../../../modules/homeManager/home/packages/tokei
           ../../../../modules/homeManager/home/packages/tree
           ../../../../modules/homeManager/home/packages/unzip
-          ../../../../modules/homeManager/home/packages/wl_clipboard
-          ../../../../modules/homeManager/home/packages/xdg_utils
+          ../../../../modules/homeManager/home/packages/wl-clipboard
+          ../../../../modules/homeManager/home/packages/xdg-utils
           ../../../../modules/homeManager/home/packages/zip
           ../../../../modules/homeManager/home/shellAliases
           ../../../../modules/homeManager/nixpkgs/config/allowUnfree
@@ -67,14 +67,14 @@
           ../../../../modules/homeManager/programs/gh
           ../../../../modules/homeManager/programs/git
           ../../../../modules/homeManager/programs/gpg
-          ../../../../modules/homeManager/programs/home_manager
+          ../../../../modules/homeManager/programs/home-manager
           ../../../../modules/homeManager/programs/imv
           ../../../../modules/homeManager/programs/jq
           ../../../../modules/homeManager/programs/kitty
           ../../../../modules/homeManager/programs/lazygit
           ../../../../modules/homeManager/programs/man
           ../../../../modules/homeManager/programs/mpv
-          ../../../../modules/homeManager/programs/password_store
+          ../../../../modules/homeManager/programs/password-store
           ../../../../modules/homeManager/programs/qutebrowser
           ../../../../modules/homeManager/programs/ripgrep
           ../../../../modules/homeManager/programs/rofi
@@ -89,7 +89,7 @@
           ../../../../modules/homeManager/services/dunst
           ../../../../modules/homeManager/services/easyeffects
           ../../../../modules/homeManager/services/gammastep
-          ../../../../modules/homeManager/services/gpg_agent
+          ../../../../modules/homeManager/services/gpg-agent
           ../../../../modules/homeManager/services/swayidle
           ../../../../modules/homeManager/systemd/user/tmpfiles/rules
           ../../../../modules/homeManager/wayland/windowManager/hyprland
