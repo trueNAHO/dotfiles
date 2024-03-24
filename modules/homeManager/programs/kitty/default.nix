@@ -1,14 +1,15 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }: {
+  imports = [../../home/sessionVariables];
+
   options.modules.homeManager.programs.kitty.enable =
     lib.mkEnableOption "kitty";
 
   config = lib.mkIf config.modules.homeManager.programs.kitty.enable {
-    home.sessionVariables.TERMINAL = pkgs.kitty.pname;
+    modules.homeManager.home.sessionVariables.TERMINAL.enable = true;
 
     programs.kitty = {
       enable = true;

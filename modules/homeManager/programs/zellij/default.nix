@@ -4,6 +4,8 @@
   pkgs,
   ...
 }: {
+  imports = [../../home/sessionVariables];
+
   options.modules.homeManager.programs.zellij.enable =
     lib.mkEnableOption "zellij";
 
@@ -12,6 +14,8 @@
     config.modules.homeManager.programs.zellij.enable
     (lib.mkMerge [
       {
+        modules.homeManager.home.sessionVariables.EDITOR.enable = true;
+
         programs = {
           zellij = {
             enable = true;

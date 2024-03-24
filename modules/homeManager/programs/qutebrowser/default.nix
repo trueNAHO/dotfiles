@@ -6,6 +6,7 @@
 }: {
   imports = [
     ../../home/packages/wl-clipboard
+    ../../home/sessionVariables
     ../../xdg
     ../firefox
     ../mpv
@@ -20,10 +21,16 @@
     config.modules.homeManager.programs.qutebrowser.enable
     (lib.mkMerge [
       {
-        home.sessionVariables.BROWSER = pkgs.qutebrowser.pname;
-
         modules.homeManager = {
-          home.packages.wl-clipboard.enable = true;
+          home = {
+            packages.wl-clipboard.enable = true;
+
+            sessionVariables = {
+              BROWSER.enable = true;
+              EDITOR.enable = true;
+              TERMINAL.enable = true;
+            };
+          };
 
           programs = {
             firefox.enable = true;

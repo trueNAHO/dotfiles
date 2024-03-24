@@ -31,17 +31,7 @@
     };
 
     age.secrets.modulesProgramsNixvimPluginsCodeiumApiKey.file = plugins/codeium_api_key.age;
-
-    home = let
-      neovim = pkgs.neovim.meta.mainProgram;
-    in {
-      sessionVariables = {
-        EDITOR = neovim;
-        MANPAGER = "${neovim} +Man!";
-      };
-
-      shellAliases.n = neovim;
-    };
+    home.shellAliases.n = pkgs.neovim.meta.mainProgram;
 
     programs.nixvim = {
       enable = true;

@@ -6,6 +6,7 @@
 }: {
   imports = [
     ../../../../wayland
+    ../../../home/sessionVariables
     ../../../programs/rofi
     ../../../programs/wlogout
     ../../../services/dunst
@@ -20,6 +21,12 @@
     config.modules.homeManager.wayland.windowManager.hyprland.enable {
       modules = {
         homeManager = {
+          home.sessionVariables = {
+            BROWSER.enable = true;
+            TERMINAL.enable = true;
+            TMPDIR.enable = true;
+          };
+
           programs = {
             rofi = {
               enable = true;

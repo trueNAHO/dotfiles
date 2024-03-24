@@ -51,6 +51,7 @@
           ../../../../modules/homeManager/home/packages/wl-clipboard
           ../../../../modules/homeManager/home/packages/xdg-utils
           ../../../../modules/homeManager/home/packages/zip
+          ../../../../modules/homeManager/home/sessionVariables
           ../../../../modules/homeManager/home/shellAliases
           ../../../../modules/homeManager/nixpkgs/config/allowUnfree
           ../../../../modules/homeManager/programs/bash
@@ -151,6 +152,7 @@
                   zip.enable = true;
                 };
 
+                sessionVariables.enable = true;
                 shellAliases.enable = true;
               };
 

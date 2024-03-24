@@ -3,6 +3,8 @@
   lib,
   ...
 }: {
+  imports = [../home/sessionVariables];
+
   options.modules.homeManager.xdg = {
     enable = lib.mkEnableOption "xdg";
     mimeApps.enable = lib.mkEnableOption "xdg.mimeApps";
@@ -12,6 +14,8 @@
   config = let
     cfg = config.modules.homeManager.xdg;
   in {
+    modules.homeManager.home.sessionVariables.TMPDIR.enable = true;
+
     xdg = {
       enable = cfg.enable;
       mimeApps.enable = cfg.mimeApps.enable;

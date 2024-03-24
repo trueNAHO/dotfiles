@@ -8,6 +8,7 @@
     ../../home/packages/asciidoctor
     ../../home/packages/fd
     ../../home/packages/wl-clipboard
+    ../../home/sessionVariables
     ../../programs/man
     ../../wayland/windowManager/hyprland
   ];
@@ -32,15 +33,18 @@
         FORGIT_COPY_CMD = "wl-copy";
         FORGIT_FZF_DEFAULT_OPTS = "--bind=ctrl-j:preview-down --bind=ctrl-k:preview-up";
         FORGIT_NO_ALIASES = 1;
-        SHELL = pkgs.fish.pname;
       };
     };
 
     modules.homeManager = {
-      home.packages = {
-        asciidoctor.enable = true;
-        fd.enable = true;
-        wl-clipboard.enable = true;
+      home = {
+        packages = {
+          asciidoctor.enable = true;
+          fd.enable = true;
+          wl-clipboard.enable = true;
+        };
+
+        sessionVariables.SHELL.enable = true;
       };
 
       programs.man.enable = true;
