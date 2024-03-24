@@ -31,18 +31,18 @@
       modules.homeManager.programs.swaylock.enable = true;
 
       services.swayidle = let
-        command.lock = "${pkgs.swaylock}/bin/${pkgs.swaylock.pname} --daemonize";
+        command = "${pkgs.swaylock}/bin/${pkgs.swaylock.pname} --daemonize";
       in {
         enable = true;
 
         events = [
           {
-            inherit (command) lock;
+            inherit command;
             event = "before-sleep";
           }
 
           {
-            inherit (command) lock;
+            inherit command;
             event = "lock";
           }
         ];
@@ -53,8 +53,7 @@
           timeout = 5 * 60;
         in [
           {
-            inherit (command) lock;
-            inherit timeout;
+            inherit command timeout;
           }
 
           {
