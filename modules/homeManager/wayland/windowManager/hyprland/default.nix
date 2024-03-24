@@ -39,11 +39,15 @@
           services = {
             dunst.enable = true;
 
-            swayidle.displayTimeout.timeouts = let
-              hyprctl = "${pkgs.hyprland}/bin/hyprctl";
-            in {
-              command = "${hyprctl} dispatch dpms off";
-              resumeCommand = "${hyprctl} dispatch dpms on";
+            swayidle.displayTimeout = {
+              enable = true;
+
+              timeouts = let
+                hyprctl = "${pkgs.hyprland}/bin/hyprctl";
+              in {
+                command = "${hyprctl} dispatch dpms off";
+                resumeCommand = "${hyprctl} dispatch dpms on";
+              };
             };
           };
         };

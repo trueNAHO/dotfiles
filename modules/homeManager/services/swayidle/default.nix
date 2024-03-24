@@ -7,23 +7,27 @@
   imports = [../../programs/swaylock];
 
   options.modules.homeManager.services.swayidle = {
-    displayTimeout.timeouts = {
-      command = lib.mkOption {
-        description = "Command to turn all displays off.";
-        example = "swaymsg 'output * dpms off'";
-        type = lib.types.str;
-      };
+    displayTimeout = {
+      enable = lib.mkEnableOption "swayidle.displayTimeout";
 
-      resumeCommand = lib.mkOption {
-        description = "Command to turn all displays on.";
-        example = "swaymsg 'output * dpms on'";
-        type = lib.types.str;
-      };
+      timeouts = {
+        command = lib.mkOption {
+          description = "Command to turn all displays off.";
+          example = "swaymsg 'output * dpms off'";
+          type = lib.types.str;
+        };
 
-      timeout = lib.mkOption {
-        default = 5 * 60;
-        description = "Timeout in seconds.";
-        type = lib.types.ints.positive;
+        resumeCommand = lib.mkOption {
+          description = "Command to turn all displays on.";
+          example = "swaymsg 'output * dpms on'";
+          type = lib.types.str;
+        };
+
+        timeout = lib.mkOption {
+          default = 5 * 60;
+          description = "Timeout in seconds.";
+          type = lib.types.ints.positive;
+        };
       };
     };
 
@@ -55,7 +59,7 @@
 
         systemdTarget = "graphical-session-pre.target";
 
-        timeouts = [
+        timeouts = lib.mkIf cfg.displayTimeout.enable [
           {
             inherit command;
             inherit (cfg.displayTimeout.timeouts) timeout;
