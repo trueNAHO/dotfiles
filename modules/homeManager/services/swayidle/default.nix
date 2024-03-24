@@ -7,14 +7,14 @@
   imports = [../../programs/swaylock];
 
   options.modules.homeManager.services.swayidle = {
-    timeouts.command = {
-      turnDisplaysOff = lib.mkOption {
+    displayTimeout.timeouts = {
+      command = lib.mkOption {
         description = "Command to turn all displays off.";
         example = "swaymsg 'output * dpms off'";
         type = lib.types.str;
       };
 
-      turnDisplaysOn = lib.mkOption {
+      resumeCommand = lib.mkOption {
         description = "Command to turn all displays on.";
         example = "swaymsg 'output * dpms on'";
         type = lib.types.str;
@@ -57,8 +57,7 @@
           }
 
           {
-            command = cfg.timeouts.command.turnDisplaysOff;
-            resumeCommand = cfg.timeouts.command.turnDisplaysOn;
+            inherit (cfg.displayTimeout.timeouts) command resumeCommand;
             timeout = builtins.floor (timeout * 1.2 + 0.5);
           }
         ];
