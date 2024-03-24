@@ -37,13 +37,13 @@
 
         events = [
           {
+            inherit (command) lock;
             event = "before-sleep";
-            command = command.lock;
           }
 
           {
+            inherit (command) lock;
             event = "lock";
-            command = command.lock;
           }
         ];
 
@@ -53,8 +53,8 @@
           timeout = 5 * 60;
         in [
           {
+            inherit (command) lock;
             inherit timeout;
-            command = command.lock;
           }
 
           {
