@@ -14,7 +14,7 @@ include::home_configurations_accessibility_scope_name_default_nix/index.adoc[]
 
 include::home_configurations_default_nix/index.adoc[]
 
-include::lib_prepend_prefix_nix/index.adoc[]
+include::lib_home_configurations_prepend_prefix_nix/index.adoc[]
 
 include::modules_directory/index.adoc[]
 

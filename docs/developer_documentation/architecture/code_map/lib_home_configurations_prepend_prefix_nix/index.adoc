@@ -1,0 +1,6 @@
+[[developer_documentation_architecture_code_map_lib_home_configurations_prepend_prefix_nix]]
+===== /lib/home_configurations/prependPrefix.nix
+
+{repository-blob}/lib/home_configurations/prependPrefix.nix[This file] contains
+a function that prepends prefixes to attribute set keys for a list of files.
+Additionally, certain arguments are propagated to each file within the list.
