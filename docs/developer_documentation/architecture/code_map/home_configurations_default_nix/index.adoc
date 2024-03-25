@@ -5,4 +5,4 @@
 prefix to the attribute set returned by
 <<developer_documentation_architecture_code_map_home_configurations_accessibility_default_nix>>,
 using
-<<developer_documentation_architecture_code_map_lib_home_configurations_prepend_prefix_nix>>.
+<<developer_documentation_architecture_code_map_lib_home_configurations_prepend_prefix_default_nix>>.
