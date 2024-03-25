@@ -99,127 +99,125 @@ import ../../../../lib/home_configurations/home_configuration {
     ../../../../modules/wayland
   ];
 
-  homeManagerConfig = {
-    modules = {
-      agenix.homeManagerModules.default.enable = true;
+  homeManagerConfig.modules = {
+    agenix.homeManagerModules.default.enable = true;
 
-      homeManager = {
-        fonts.enable = true;
+    homeManager = {
+      fonts.enable = true;
 
-        home = {
-          packages = {
-            acpi.enable = true;
-            aria.enable = true;
-            asciidoctor.enable = true;
-            bandwhich.enable = true;
-            catimg.enable = true;
-            catnip.enable = true;
-            diskonaut.enable = true;
-            du-dust.enable = true;
-            dua.enable = true;
-            duf.enable = true;
-            fd.enable = true;
-            ffmpeg.enable = true;
-            file.enable = true;
-            gcc.enable = true;
-            gimp.enable = true;
-            glava.enable = true;
-            glow.enable = true;
-            gping.enable = true;
-            inkscape.enable = true;
-            kdenlive.enable = true;
-            killall.enable = true;
-            libreoffice.enable = true;
-            neofetch.enable = true;
-            p7zip.enable = true;
-            parallel.enable = true;
-            pipe-rename.enable = true;
-            poppler_utils.enable = true;
-            procs.enable = true;
-            pstree.enable = true;
-            ripgrep-all.enable = true;
-            rustup.enable = true;
-            thunderbird.enable = true;
-            tldr.enable = true;
-            tokei.enable = true;
-            tree.enable = true;
-            unzip.enable = true;
-            wl-clipboard.enable = true;
-            xdg-utils.enable = true;
-            zip.enable = true;
-          };
-
-          sessionVariables.enable = true;
-          shellAliases.enable = true;
+      home = {
+        packages = {
+          acpi.enable = true;
+          aria.enable = true;
+          asciidoctor.enable = true;
+          bandwhich.enable = true;
+          catimg.enable = true;
+          catnip.enable = true;
+          diskonaut.enable = true;
+          du-dust.enable = true;
+          dua.enable = true;
+          duf.enable = true;
+          fd.enable = true;
+          ffmpeg.enable = true;
+          file.enable = true;
+          gcc.enable = true;
+          gimp.enable = true;
+          glava.enable = true;
+          glow.enable = true;
+          gping.enable = true;
+          inkscape.enable = true;
+          kdenlive.enable = true;
+          killall.enable = true;
+          libreoffice.enable = true;
+          neofetch.enable = true;
+          p7zip.enable = true;
+          parallel.enable = true;
+          pipe-rename.enable = true;
+          poppler_utils.enable = true;
+          procs.enable = true;
+          pstree.enable = true;
+          ripgrep-all.enable = true;
+          rustup.enable = true;
+          thunderbird.enable = true;
+          tldr.enable = true;
+          tokei.enable = true;
+          tree.enable = true;
+          unzip.enable = true;
+          wl-clipboard.enable = true;
+          xdg-utils.enable = true;
+          zip.enable = true;
         };
 
-        nixpkgs.config.allowUnfree.enable = pkgs.lib.mkDefault false;
-
-        programs = {
-          bash.enable = true;
-          bashmount.enable = true;
-          bat.enable = true;
-          borgmatic.enable = true;
-          btop.enable = true;
-          direnv.enable = true;
-          eza.enable = true;
-          feh.enable = true;
-          firefox.enable = true;
-          fish.enable = true;
-          fzf.enable = true;
-          gh.enable = true;
-          git.enable = true;
-          gpg.enable = true;
-          home-manager.enable = true;
-          imv.enable = true;
-          jq.enable = true;
-          kitty.enable = true;
-          lazygit.enable = true;
-          man.enable = true;
-          mpv.enable = true;
-          password-store.enable = true;
-          qutebrowser.enable = true;
-          ripgrep.enable = true;
-
-          rofi = {
-            enable = true;
-            pass.enable = true;
-          };
-
-          swaylock.enable = true;
-          taskwarrior.enable = true;
-          wlogout.enable = true;
-          xplr.enable = true;
-          zathura.enable = true;
-          zellij.enable = true;
-          zoxide.enable = true;
-        };
-
-        services = {
-          borgmatic.enable = true;
-          dunst.enable = true;
-          easyeffects.enable = true;
-          gammastep.enable = true;
-          gpg-agent.enable = true;
-          swayidle.enable = true;
-        };
-
-        systemd.user.tmpfiles.rules.enable = true;
-        wayland.windowManager.hyprland.enable = true;
-
-        xdg = {
-          enable = true;
-          mimeApps.enable = true;
-          userDirs.enable = true;
-        };
+        sessionVariables.enable = true;
+        shellAliases.enable = true;
       };
 
-      nix-alien.enable = true;
-      programs.nixvim.enable = true;
-      services.battery.enable = true;
-      stylix.enable = true;
-      wayland.enable = true;
+      nixpkgs.config.allowUnfree.enable = pkgs.lib.mkDefault false;
+
+      programs = {
+        bash.enable = true;
+        bashmount.enable = true;
+        bat.enable = true;
+        borgmatic.enable = true;
+        btop.enable = true;
+        direnv.enable = true;
+        eza.enable = true;
+        feh.enable = true;
+        firefox.enable = true;
+        fish.enable = true;
+        fzf.enable = true;
+        gh.enable = true;
+        git.enable = true;
+        gpg.enable = true;
+        home-manager.enable = true;
+        imv.enable = true;
+        jq.enable = true;
+        kitty.enable = true;
+        lazygit.enable = true;
+        man.enable = true;
+        mpv.enable = true;
+        password-store.enable = true;
+        qutebrowser.enable = true;
+        ripgrep.enable = true;
+
+        rofi = {
+          enable = true;
+          pass.enable = true;
+        };
+
+        swaylock.enable = true;
+        taskwarrior.enable = true;
+        wlogout.enable = true;
+        xplr.enable = true;
+        zathura.enable = true;
+        zellij.enable = true;
+        zoxide.enable = true;
+      };
+
+      services = {
+        borgmatic.enable = true;
+        dunst.enable = true;
+        easyeffects.enable = true;
+        gammastep.enable = true;
+        gpg-agent.enable = true;
+        swayidle.enable = true;
+      };
+
+      systemd.user.tmpfiles.rules.enable = true;
+      wayland.windowManager.hyprland.enable = true;
+
+      xdg = {
+        enable = true;
+        mimeApps.enable = true;
+        userDirs.enable = true;
+      };
     };
+
+    nix-alien.enable = true;
+    programs.nixvim.enable = true;
+    services.battery.enable = true;
+    stylix.enable = true;
+    wayland.enable = true;
   };
 
   name = "full";
