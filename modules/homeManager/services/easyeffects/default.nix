@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }: {
   options.modules.homeManager.services.easyeffects.enable =
@@ -13,8 +12,13 @@
     lib.mkIf config.modules.homeManager.services.easyeffects.enable {
       services.easyeffects = {
         enable =
-          lib.info
-          "Add 'programs.dconf.enable = true;' to the system configuration for '${pkgs.easyeffects.pname}' to work: https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable"
+          import ../../../../lib/modules/lib_info_nixos {
+            inherit lib;
+
+            documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable";
+            literalExpression = "programs.dconf.enable = true;";
+            src = "modules.homeManager.services.easyeffects";
+          }
           true;
 
         preset = preset;

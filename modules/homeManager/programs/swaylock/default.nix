@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }: {
   options.modules.homeManager.programs.swaylock.enable =
@@ -10,8 +9,13 @@
   config = lib.mkIf config.modules.homeManager.programs.swaylock.enable {
     programs.swaylock = {
       enable =
-        lib.info
-        "Add 'security.pam.services.swaylock = {};' to the system configuration for '${pkgs.swaylock.pname}' to work: https://nix-community.github.io/home-manager/options.xhtml#opt-programs.swaylock.enable"
+        import ../../../../lib/modules/lib_info_nixos {
+          inherit lib;
+
+          documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-programs.swaylock.enable";
+          literalExpression = "security.pam.services.swaylock = {};";
+          src = "modules.homeManager.programs.swaylock";
+        }
         true;
 
       settings = {

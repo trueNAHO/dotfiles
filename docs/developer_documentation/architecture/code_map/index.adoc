@@ -18,6 +18,8 @@ include::lib_home_configurations_home_configuration_default_nix/index.adoc[]
 
 include::lib_home_configurations_prepend_prefix_default_nix/index.adoc[]
 
+include::lib_modules_lib_info_nixos_default_nix/index.adoc[]
+
 include::modules_directory/index.adoc[]
 
 include::secrets_nix/index.adoc[]

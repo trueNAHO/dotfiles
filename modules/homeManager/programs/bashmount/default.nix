@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }: {
   options.modules.homeManager.programs.bashmount.enable =
@@ -9,8 +8,13 @@
 
   config = lib.mkIf config.modules.homeManager.programs.bashmount.enable {
     programs.bashmount.enable =
-      lib.info
-      "Add 'services.udisks2.enable = true;' to the system configuration for '${pkgs.bashmount.pname}' and 'udiskctl' to work: https://nix-community.github.io/home-manager/options.xhtml#opt-services.udiskie.enable"
+      import ../../../../lib/modules/lib_info_nixos {
+        inherit lib;
+
+        documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.udiskie.enable";
+        literalExpression = "services.udisks2.enable = true;";
+        src = "modules.homeManager.programs.bashmount, udiskctl";
+      }
       true;
   };
 }
