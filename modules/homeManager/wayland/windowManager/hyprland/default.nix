@@ -55,16 +55,18 @@
         wayland.enable = true;
       };
 
-      wayland.windowManager.hyprland = {
-        enable =
-          import ../../../../../lib/modules/lib_info_nixos {
-            inherit lib;
+      home.activation.hyprland =
+        import
+        ../../../../../lib/modules/lib_hm_dag_entry_after_write_boundary_nixos {
+          inherit lib;
 
-            documentation = "https://nixos.wiki/wiki/Hyprland";
-            literalExpression = "programs.hyprland.enable = true;";
-            src = "modules.homeManager.wayland.windowManager.hyprland";
-          }
-          true;
+          documentation = "https://nixos.wiki/wiki/Hyprland";
+          literalExpression = "programs.hyprland.enable = true;";
+          src = "modules.homeManager.wayland.windowManager.hyprland";
+        };
+
+      wayland.windowManager.hyprland = {
+        enable = true;
 
         settings = let
           windowGap = 5;

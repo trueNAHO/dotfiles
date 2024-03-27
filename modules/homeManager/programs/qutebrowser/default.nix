@@ -39,18 +39,19 @@
           };
         };
 
+        home.activation.qutebrowser =
+          import
+          ../../../../lib/modules/lib_hm_dag_entry_after_write_boundary_nixos {
+            inherit lib;
+
+            documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable";
+            literalExpression = "programs.dconf.enable = true;";
+            src = "modules.homeManager.programs.qutebrowser";
+          };
+
         programs.qutebrowser = {
           aliases.x = "quit --save";
-
-          enable =
-            import ../../../../lib/modules/lib_info_nixos {
-              inherit lib;
-
-              documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable";
-              literalExpression = "programs.dconf.enable = true;";
-              src = "modules.homeManager.programs.qutebrowser";
-            }
-            true;
+          enable = true;
 
           keyBindings = {
             normal = let

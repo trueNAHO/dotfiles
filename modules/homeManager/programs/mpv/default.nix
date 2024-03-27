@@ -10,16 +10,18 @@
   config = lib.mkIf config.modules.homeManager.programs.mpv.enable {
     modules.stylix.enable = true;
 
-    programs.mpv = {
-      enable =
-        import ../../../../lib/modules/lib_info_nixos {
-          inherit lib;
+    home.activation.mpv =
+      import
+      ../../../../lib/modules/lib_hm_dag_entry_after_write_boundary_nixos {
+        inherit lib;
 
-          documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable";
-          literalExpression = "programs.dconf.enable = true;";
-          src = "modules.homeManager.programs.mpv";
-        }
-        true;
+        documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable";
+        literalExpression = "programs.dconf.enable = true;";
+        src = "modules.homeManager.programs.mpv";
+      };
+
+    programs.mpv = {
+      enable = true;
 
       scriptOpts = {
         playlistmanager.key_showplaylist = "F8";

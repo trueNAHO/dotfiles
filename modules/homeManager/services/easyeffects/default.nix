@@ -10,17 +10,18 @@
     preset = "default";
   in
     lib.mkIf config.modules.homeManager.services.easyeffects.enable {
+      home.activation.easyeffects =
+        import
+        ../../../../lib/modules/lib_hm_dag_entry_after_write_boundary_nixos {
+          inherit lib;
+
+          documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable";
+          literalExpression = "programs.dconf.enable = true;";
+          src = "modules.homeManager.services.easyeffects";
+        };
+
       services.easyeffects = {
-        enable =
-          import ../../../../lib/modules/lib_info_nixos {
-            inherit lib;
-
-            documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable";
-            literalExpression = "programs.dconf.enable = true;";
-            src = "modules.homeManager.services.easyeffects";
-          }
-          true;
-
+        enable = true;
         preset = preset;
       };
 

@@ -7,16 +7,18 @@
     lib.mkEnableOption "swaylock";
 
   config = lib.mkIf config.modules.homeManager.programs.swaylock.enable {
-    programs.swaylock = {
-      enable =
-        import ../../../../lib/modules/lib_info_nixos {
-          inherit lib;
+    home.activation.swaylock =
+      import
+      ../../../../lib/modules/lib_hm_dag_entry_after_write_boundary_nixos {
+        inherit lib;
 
-          documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-programs.swaylock.enable";
-          literalExpression = "security.pam.services.swaylock = {};";
-          src = "modules.homeManager.programs.swaylock";
-        }
-        true;
+        documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-programs.swaylock.enable";
+        literalExpression = "security.pam.services.swaylock = {};";
+        src = "modules.homeManager.programs.swaylock";
+      };
+
+    programs.swaylock = {
+      enable = true;
 
       settings = {
         indicator-radius = 100;
