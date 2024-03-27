@@ -7,7 +7,7 @@
     lib.mkEnableOption "swaylock";
 
   config = lib.mkIf config.modules.homeManager.programs.swaylock.enable {
-    home.activation.swaylock =
+    home.activation."modules.homeManager.programs.swaylock" =
       import
       ../../../../lib/modules/nixos_requirement {
         inherit lib;

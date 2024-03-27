@@ -55,7 +55,7 @@
         wayland.enable = true;
       };
 
-      home.activation.hyprland =
+      home.activation."modules.homeManager.wayland.windowManager.hyprland" =
         import
         ../../../../../lib/modules/nixos_requirement {
           inherit lib;

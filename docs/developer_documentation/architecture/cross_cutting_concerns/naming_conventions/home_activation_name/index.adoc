@@ -1,0 +1,14 @@
+[[developer_documentation_architecture_cross_cutting_concerns_naming_conventions_home_activation_name]]
+====== home.activation.<NAME>
+:module: programs.camelCase.kebab-case.snake_case
+
+The `<NAME>` attribute in `home.activation.<NAME>` corresponds to the
+<<developer_documentation_architecture_code_map_modules_directory, module>>
+attribute set.
+
+====
+The `<NAME>` attribute for the `{module}` module attribute set would be
+`{module}`: `home.activation."{module}" = import
+<<developer_documentation_architecture_code_map_lib_modules_lib_hm_dag_entry_after_write_boundary_printf_default_nix>>
+{/* ... */};`.
+====

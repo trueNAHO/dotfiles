@@ -1,3 +1,5 @@
 ===== Naming Conventions
 
 include::age_secrets_name/index.adoc[]
+
+include::home_activation_name/index.adoc[]

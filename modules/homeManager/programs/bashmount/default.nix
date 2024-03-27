@@ -7,7 +7,7 @@
     lib.mkEnableOption "bashmount";
 
   config = lib.mkIf config.modules.homeManager.programs.bashmount.enable {
-    home.activation.udiskie =
+    home.activation."modules.homeManager.programs.bashmount" =
       import
       ../../../../lib/modules/nixos_requirement {
         inherit lib;

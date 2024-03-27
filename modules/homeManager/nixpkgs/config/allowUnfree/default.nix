@@ -10,7 +10,7 @@
     cfg = config.modules.homeManager.nixpkgs.config.allowUnfree;
     string = "nixpkgs.config.allowUnfree = ${toString cfg.enable};";
   in {
-    home.activation.allowUnfree =
+    home.activation."modules.homeManager.nixpkgs.config.allowUnfree" =
       import
       ../../../../../lib/modules/lib_hm_dag_entry_after_write_boundary_printf {
         inherit string lib;

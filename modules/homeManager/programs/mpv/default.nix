@@ -10,7 +10,7 @@
   config = lib.mkIf config.modules.homeManager.programs.mpv.enable {
     modules.stylix.enable = true;
 
-    home.activation.mpv =
+    home.activation."modules.homeManager.programs.mpv" =
       import
       ../../../../lib/modules/nixos_requirement {
         inherit lib;

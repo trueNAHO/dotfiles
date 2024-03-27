@@ -7,3 +7,8 @@ file] contains a function returning an activation script that prints the
 formatting.
 
 The `lib` argument is required to access the `lib.hm.dag.entryAfter` function.
+
+[NOTE]
+====
+* <<developer_documentation_architecture_cross_cutting_concerns_naming_conventions_home_activation_name>>
+====

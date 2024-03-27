@@ -7,7 +7,7 @@
   # setting the config path storing the API key, similar to the 'config_path'
   # option in https://github.com/Exafunction/codeium.nvim:
   # https://github.com/Exafunction/codeium.vim/issues/303.
-  home.activation.codeiumVim = let
+  home.activation."modules.programs.nixvim" = let
     directory = "${config.xdg.dataHome}/.codeium";
   in
     lib.hm.dag.entryAfter ["writeBoundary"] ''

@@ -10,7 +10,7 @@
     preset = "default";
   in
     lib.mkIf config.modules.homeManager.services.easyeffects.enable {
-      home.activation.easyeffects =
+      home.activation."modules.homeManager.services.easyeffects" =
         import
         ../../../../lib/modules/nixos_requirement {
           inherit lib;

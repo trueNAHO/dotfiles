@@ -9,7 +9,7 @@
   options.modules.stylix.enable = lib.mkEnableOption "Stylix";
 
   config = lib.mkIf config.modules.stylix.enable {
-    home.activation.stylix =
+    home.activation."modules.stylix" =
       import
       ../../lib/modules/nixos_requirement {
         inherit lib;

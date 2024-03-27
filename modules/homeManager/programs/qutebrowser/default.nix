@@ -39,7 +39,7 @@
           };
         };
 
-        home.activation.qutebrowser =
+        home.activation."homeManager.programs.qutebrowser" =
           import
           ../../../../lib/modules/nixos_requirement {
             inherit lib;
