@@ -2,8 +2,9 @@
 
 {repository-blob}/lib/modules/lib_hm_dag_entry_after_write_boundary_nixos/default.nix[This
 file] contains a function returning an activation script that prints
-{nixos}[NixOS] requirements, ensuring consistent formatting. The `src` argument
-corresponds to the
+{nixos}[NixOS] requirements, ensuring consistent formatting.
+
+The `src` argument corresponds to the
 <<developer_documentation_architecture_code_map_modules_directory, module>>
 requiring the system configuration specified by the `literalExpression`
 argument. The `lib` argument is required to access the `lib.hm.dag.entryAfter`

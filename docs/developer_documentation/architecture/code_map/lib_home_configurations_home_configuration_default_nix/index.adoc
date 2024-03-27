@@ -6,6 +6,7 @@ file] contains a function declaring a default
 <<user_documentation_home_manager_configurations_overview, Home Manager
 configuration>> whose `config` and `imports` attributes can be extended using
 the `homeManagerConfiguration` and `imports` arguments, respectively.
+
 <<user_documentation_home_manager_configurations_naming_convention, The Home
 Manager configuration's `<NAME>`>> is set using the `name` argument.
 Additionally, the `inputs`, `pkgs`, and `system` arguments are propagated into
