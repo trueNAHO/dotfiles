@@ -6,10 +6,12 @@
   options.modules.homeManager.nixpkgs.config.allowUnfree.enable =
     lib.mkEnableOption "allowUnfree";
 
-  config = {
+  config = let
+    cfg = config.modules.homeManager.nixpkgs.config.allowUnfree;
+  in {
     nixpkgs.config.allowUnfree =
       lib.info
-      "nixpkgs.config.allowUnfree = ${toString config.modules.homeManager.nixpkgs.config.allowUnfree.enable};"
-      config.modules.homeManager.nixpkgs.config.allowUnfree.enable;
+      "nixpkgs.config.allowUnfree = ${toString cfg.enable};"
+      cfg.enable;
   };
 }
