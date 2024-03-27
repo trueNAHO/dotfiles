@@ -108,7 +108,6 @@ import ../../../../lib/home_configurations/home_configuration {
         gammastep.enable = true;
         gpg-agent.enable = true;
         swayidle.enable = true;
-        udiskie.enable = true;
       };
 
       systemd.user.tmpfiles.rules.enable = true;
@@ -211,7 +210,6 @@ import ../../../../lib/home_configurations/home_configuration {
     ../../../../modules/homeManager/services/gammastep
     ../../../../modules/homeManager/services/gpg-agent
     ../../../../modules/homeManager/services/swayidle
-    ../../../../modules/homeManager/services/udiskie
     ../../../../modules/homeManager/systemd/user/tmpfiles/rules
     ../../../../modules/homeManager/wayland/windowManager/hyprland
     ../../../../modules/homeManager/xdg
