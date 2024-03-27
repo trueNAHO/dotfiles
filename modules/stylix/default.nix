@@ -11,7 +11,7 @@
   config = lib.mkIf config.modules.stylix.enable {
     home.activation.stylix =
       import
-      ../../lib/modules/lib_hm_dag_entry_after_write_boundary_nixos {
+      ../../lib/modules/nixos_requirement {
         inherit lib;
 
         documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable";
