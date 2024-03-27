@@ -15,6 +15,7 @@ import ../../../../lib/home_configurations/home_configuration {
       home = {
         packages = {
           acpi.enable = true;
+          advcpmv.enable = true;
           aria.enable = true;
           asciidoctor.enable = true;
           bandwhich.enable = true;
@@ -131,6 +132,7 @@ import ../../../../lib/home_configurations/home_configuration {
     ../../../../modules/agenix/homeManagerModules/default
     ../../../../modules/homeManager/fonts
     ../../../../modules/homeManager/home/packages/acpi
+    ../../../../modules/homeManager/home/packages/advcpmv
     ../../../../modules/homeManager/home/packages/aria
     ../../../../modules/homeManager/home/packages/asciidoctor
     ../../../../modules/homeManager/home/packages/bandwhich
