@@ -11,7 +11,15 @@
     modules.stylix.enable = true;
 
     programs.mpv = {
-      enable = true;
+      enable =
+        import ../../../../lib/modules/lib_info_nixos {
+          inherit lib;
+
+          documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable";
+          literalExpression = "programs.dconf.enable = true;";
+          src = "modules.homeManager.programs.mpv";
+        }
+        true;
 
       scriptOpts = {
         playlistmanager.key_showplaylist = "F8";

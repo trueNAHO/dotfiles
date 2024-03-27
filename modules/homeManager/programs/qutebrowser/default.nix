@@ -41,7 +41,16 @@
 
         programs.qutebrowser = {
           aliases.x = "quit --save";
-          enable = true;
+
+          enable =
+            import ../../../../lib/modules/lib_info_nixos {
+              inherit lib;
+
+              documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable";
+              literalExpression = "programs.dconf.enable = true;";
+              src = "modules.homeManager.programs.qutebrowser";
+            }
+            true;
 
           keyBindings = {
             normal = let
