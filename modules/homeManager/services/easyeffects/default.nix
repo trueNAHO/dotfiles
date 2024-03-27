@@ -21,8 +21,8 @@
         };
 
       services.easyeffects = {
+        inherit preset;
         enable = true;
-        preset = preset;
       };
 
       xdg.configFile."easyeffects/output/${preset}.json".text = builtins.toJSON {
