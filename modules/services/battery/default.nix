@@ -33,7 +33,7 @@
 
       description = ''
         Set the [`systemd.user.timers.battery.Timer.OnCalendar`](
-        https://nix-community.github.io/home-manager/options.html#opt-systemd.user.timers)
+        https://nix-community.github.io/home-manager/options.xhtml#opt-systemd.user.timers)
         setting.
       '';
 

@@ -14,7 +14,7 @@
       services.easyeffects = {
         enable =
           lib.info
-          "Add 'programs.dconf.enable = true;' to the system configuration for '${pkgs.easyeffects.pname}' to work: https://nix-community.github.io/home-manager/options.html#opt-services.easyeffects.enable"
+          "Add 'programs.dconf.enable = true;' to the system configuration for '${pkgs.easyeffects.pname}' to work: https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable"
           true;
 
         preset = preset;
