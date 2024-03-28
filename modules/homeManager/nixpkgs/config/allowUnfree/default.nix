@@ -12,7 +12,7 @@
   in {
     home.activation."modules.homeManager.nixpkgs.config.allowUnfree" =
       import
-      ../../../../../lib/modules/lib_hm_dag_entry_after_write_boundary_printf {
+      ../../../../../lib/modules/lib_hm_dag_entry_before_write_boundary_printf {
         inherit string lib;
         src = "modules.homeManager.nixpkgs.config.allowUnfree";
       };
