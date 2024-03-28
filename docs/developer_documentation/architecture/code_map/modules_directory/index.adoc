@@ -22,7 +22,7 @@ echo "$MODULE" | {sed}
 
 :module: programs.camelCase.kebab-case.snake_case
 ====
-The `{module}` Home Manager `$MODULE` module would be declared at
+The `{module}` Home Manager `$MODULE` module attribute set would be declared at
 `{directory-modules-home-manager}/programs/camelCase/kebab-case/snake_case/default.nix`:
 
 [,bash,subs=attributes+]
@@ -33,7 +33,7 @@ $ echo {module} |
 {directory-modules-home-manager}/programs/camelCase/kebab-case/snake_case/default.nix
 ----
 
-The custom `{module}` `$MODULE` module would be declared at
+The custom `{module}` `$MODULE` module attribute set would be declared at
 `{directory-modules}/programs/camelCase/kebab-case/snake_case/default.nix`:
 
 [,bash,subs=attributes+]

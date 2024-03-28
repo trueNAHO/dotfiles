@@ -44,7 +44,7 @@ a!
 [NOTE]
 ====
 This value implies the `<NAME>` parameter corresponding to the output of the
-following command, where `$MODULE` represents the path to the module file:
+following command, where `$MODULE` represents the module attribute set:
 
 [,bash]
 ----
