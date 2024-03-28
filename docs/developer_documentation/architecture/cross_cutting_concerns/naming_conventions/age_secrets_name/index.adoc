@@ -1,6 +1,6 @@
 [[developer_documentation_architecture_cross_cutting_concerns_naming_conventions_age_secrets_name]]
 ====== age.secrets.<NAME>
-:sed: sed -E 's@[-/_]+(.)@\U\1@g'
+:sed: sed -E 's@[-/_]+(.)@\u\1@g'
 
 The `<NAME>` attribute in {agenix}[`age.secrets.<NAME>.file`] corresponds to the
 output of the following command, where `$FILE` represents the path to the
