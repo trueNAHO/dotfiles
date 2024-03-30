@@ -8,7 +8,7 @@
 
   config = let
     cfg = config.modules.homeManager.nixpkgs.config.allowUnfree;
-    string = "nixpkgs.config.allowUnfree = ${toString cfg.enable};";
+    string = "'nixpkgs.config.allowUnfree = ${toString cfg.enable};'";
   in {
     home.activation."modules.homeManager.nixpkgs.config.allowUnfree" =
       import
