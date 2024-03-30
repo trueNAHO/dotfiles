@@ -12,6 +12,7 @@
       expandtab = true;
       foldmethod = "marker";
       ignorecase = true;
+      lazyredraw = true;
       linebreak = true;
       mouse = "a";
       relativenumber = true;
