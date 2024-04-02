@@ -25,8 +25,8 @@
 
 :repository-flake: github:{repository-path}
 :repository-raw-stargazers: https://github.com/{repository-path}/stargazers
-:repository-star-history-src-dark: https://api.star-history.com/svg?repos={repository-path}&type=Date&theme=dark
-:repository-star-history-src-light: https://api.star-history.com/svg?repos={repository-path}&type=Date
+:repository-star-history-src-dark: https://api.star-history.com/svg?repos={repository-path}&theme=dark
+:repository-star-history-src-light: https://api.star-history.com/svg?repos={repository-path}
 :repository: link:https://github.com/{repository-path}
 :version-control-visualization: link:https://youtu.be/{version-control-visualization-video-id}
 
