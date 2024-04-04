@@ -52,6 +52,7 @@
         extraConfig = {
           log.date = "iso";
           merge.conflictstyle = "diff3";
+          rebase.updateRefs = true;
           rerere.enabled = true;
           submodule.recurse = true;
         };
