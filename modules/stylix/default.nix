@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [inputs.stylix.homeManagerModules.stylix];
-  options.modules.stylix.enable = lib.mkEnableOption "Stylix";
+  options.modules.stylix.enable = lib.mkEnableOption "stylix";
 
   config = lib.mkIf config.modules.stylix.enable {
     home.activation."modules.stylix" =

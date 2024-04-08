@@ -5,7 +5,7 @@
   ...
 }: {
   options.modules.homeManager.home.shellAliases.enable =
-    lib.mkEnableOption "global shell aliases";
+    lib.mkEnableOption "shellAliases";
 
   config = lib.mkIf config.modules.homeManager.home.shellAliases.enable {
     home.shellAliases = let
