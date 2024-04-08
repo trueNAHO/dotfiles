@@ -1,45 +1,10 @@
 [[user_documentation_home_manager_configurations_overview]]
 ==== Overview
-:command-base: nix run nixpkgs#home-manager -- switch --flake {repository-flake}#
-:repository-blob-home-configurations-private-integrated-full: {repository-blob}/home_configurations/private/integrated/full/default.nix
 
-The following {home-manager}[Home Manager] configurations adhering to the
+{home-manager}[Home Manager] configurations adhere to the
 <<user_documentation_home_manager_configurations_naming_convention,
-`<SYSTEM>-<ACCESSIBILITY>-<SCOPE>-<NAME>` naming convention>> are available:
+`<SYSTEM>-<ACCESSIBILITY>-<SCOPE>-<NAME>` naming convention>>.
 
-|===
-| Home Manager Configurations | Description
+include::private/index.adoc[]
 
-a|
-* {repository-blob-home-configurations-private-integrated-full}[`aarch64-darwin-private-integrated-full`]
-* {repository-blob-home-configurations-private-integrated-full}[`aarch64-linux-private-integrated-full`]
-* {repository-blob-home-configurations-private-integrated-full}[`x86_64-darwin-private-integrated-full`]
-* {repository-blob-home-configurations-private-integrated-full}[`x86_64-linux-private-integrated-full`]
-a| Uses all <<developer_documentation_architecture_code_map_modules_directory,
-   modules>>.
-|===
-
-====
-To build them directly from {repository}[upstream] using {nix}[`nix`], run one
-of the following commands depending on the target platform:
-
-[,bash,subs=attributes+]
-----
-{command-base}aarch64-darwin-full
-----
-
-[,bash,subs=attributes+]
-----
-{command-base}aarch64-linux-full
-----
-
-[,bash,subs=attributes+]
-----
-{command-base}x86_64-darwin-full
-----
-
-[,bash,subs=attributes+]
-----
-{command-base}x86_64-linux-full
-----
-====
+include::public/index.adoc[]

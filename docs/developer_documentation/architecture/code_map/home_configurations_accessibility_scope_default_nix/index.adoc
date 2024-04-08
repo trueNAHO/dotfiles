@@ -4,6 +4,6 @@
 This file prepends the
 <<user_documentation_home_manager_configurations_naming_convention, `<SCOPE>`>>
 prefix to the attribute set returned by
-<<developer_documentation_architecture_code_map_home_configurations_accessibility_scope_name_default_nix>>,
+<<developer_documentation_architecture_code_map_home_configurations_accessibility_scope_prefix_name_default_nix>>,
 using
 <<developer_documentation_architecture_code_map_lib_home_configurations_prepend_prefix_default_nix>>.

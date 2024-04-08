@@ -1,5 +1,5 @@
-[[developer_documentation_architecture_code_map_home_configurations_accessibility_scope_name_default_nix]]
-===== /home_configurations/<ACCESSIBILITY>/<SCOPE>/<NAME>/default.nix
+[[developer_documentation_architecture_code_map_home_configurations_accessibility_scope_prefix_name_default_nix]]
+===== /home_configurations/<ACCESSIBILITY>/<SCOPE>/(<PREFIX>/)*/<NAME>/default.nix
 
 This file represents the entry point to the
 <<user_documentation_home_manager_configurations_naming_convention,
@@ -9,6 +9,10 @@ configuration>> and contains a function returning a
 `{<<user_documentation_home_manager_configurations_naming_convention,
 <NAME&#62;>> = <<user_documentation_home_manager_configurations_overview,
 <HOME_MANAGER_CONFIGURATION&#62;>>;}` attribute set.
+
+The optional `<PREFIX>` directories hierarchically add the `<PREFIX>` prefix to
+the file's returned attribute set, using
+<<developer_documentation_architecture_code_map_lib_home_configurations_prepend_prefix_default_nix>>.
 
 Everything non-specific to this Home Manager configuration must be declared in a
 <<developer_documentation_architecture_code_map_modules_directory, module>>.

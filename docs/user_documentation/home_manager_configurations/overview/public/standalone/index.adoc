@@ -1,0 +1,2423 @@
+====== Standalone
+:directory: {repository-blob}/home_configurations/public/standalone
+
+[cols="4a,1a"]
+|===
+| Home Manager Configurations | Description
+
+| * {directory}/agenix/homeManagerModules/default/default.nix[`aarch64-darwin-public-standalone-agenix-homeManagerModules-default`]
+  * {directory}/agenix/homeManagerModules/default/default.nix[`aarch64-linux-public-standalone-agenix-homeManagerModules-default`]
+  * {directory}/agenix/homeManagerModules/default/default.nix[`x86_64-darwin-public-standalone-agenix-homeManagerModules-default`]
+  * {directory}/agenix/homeManagerModules/default/default.nix[`x86_64-linux-public-standalone-agenix-homeManagerModules-default`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.agenix.homeManagerModules.default`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/fonts/default.nix[`aarch64-darwin-public-standalone-homeManager-fonts`]
+  * {directory}/homeManager/fonts/default.nix[`aarch64-linux-public-standalone-homeManager-fonts`]
+  * {directory}/homeManager/fonts/default.nix[`x86_64-darwin-public-standalone-homeManager-fonts`]
+  * {directory}/homeManager/fonts/default.nix[`x86_64-linux-public-standalone-homeManager-fonts`]
+| {minimal-reproducible-example}[MWE] of the `modules.homeManager.fonts`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/acpi/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-acpi`]
+  * {directory}/homeManager/home/packages/acpi/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-acpi`]
+  * {directory}/homeManager/home/packages/acpi/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-acpi`]
+  * {directory}/homeManager/home/packages/acpi/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-acpi`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.acpi`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/advcpmv/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-advcpmv`]
+  * {directory}/homeManager/home/packages/advcpmv/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-advcpmv`]
+  * {directory}/homeManager/home/packages/advcpmv/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-advcpmv`]
+  * {directory}/homeManager/home/packages/advcpmv/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-advcpmv`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.advcpmv`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/aria/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-aria`]
+  * {directory}/homeManager/home/packages/aria/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-aria`]
+  * {directory}/homeManager/home/packages/aria/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-aria`]
+  * {directory}/homeManager/home/packages/aria/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-aria`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.aria`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/asciidoctor/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-asciidoctor`]
+  * {directory}/homeManager/home/packages/asciidoctor/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-asciidoctor`]
+  * {directory}/homeManager/home/packages/asciidoctor/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-asciidoctor`]
+  * {directory}/homeManager/home/packages/asciidoctor/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-asciidoctor`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.asciidoctor`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/bandwhich/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-bandwhich`]
+  * {directory}/homeManager/home/packages/bandwhich/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-bandwhich`]
+  * {directory}/homeManager/home/packages/bandwhich/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-bandwhich`]
+  * {directory}/homeManager/home/packages/bandwhich/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-bandwhich`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.bandwhich`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/catimg/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-catimg`]
+  * {directory}/homeManager/home/packages/catimg/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-catimg`]
+  * {directory}/homeManager/home/packages/catimg/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-catimg`]
+  * {directory}/homeManager/home/packages/catimg/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-catimg`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.catimg`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/catnip/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-catnip`]
+  * {directory}/homeManager/home/packages/catnip/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-catnip`]
+  * {directory}/homeManager/home/packages/catnip/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-catnip`]
+  * {directory}/homeManager/home/packages/catnip/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-catnip`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.catnip`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/diskonaut/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-diskonaut`]
+  * {directory}/homeManager/home/packages/diskonaut/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-diskonaut`]
+  * {directory}/homeManager/home/packages/diskonaut/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-diskonaut`]
+  * {directory}/homeManager/home/packages/diskonaut/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-diskonaut`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.diskonaut`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/du-dust/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-du-dust`]
+  * {directory}/homeManager/home/packages/du-dust/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-du-dust`]
+  * {directory}/homeManager/home/packages/du-dust/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-du-dust`]
+  * {directory}/homeManager/home/packages/du-dust/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-du-dust`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.du-dust`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/dua/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-dua`]
+  * {directory}/homeManager/home/packages/dua/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-dua`]
+  * {directory}/homeManager/home/packages/dua/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-dua`]
+  * {directory}/homeManager/home/packages/dua/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-dua`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.dua`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/duf/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-duf`]
+  * {directory}/homeManager/home/packages/duf/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-duf`]
+  * {directory}/homeManager/home/packages/duf/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-duf`]
+  * {directory}/homeManager/home/packages/duf/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-duf`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.duf`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/fd/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-fd`]
+  * {directory}/homeManager/home/packages/fd/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-fd`]
+  * {directory}/homeManager/home/packages/fd/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-fd`]
+  * {directory}/homeManager/home/packages/fd/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-fd`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.fd`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/ffmpeg/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-ffmpeg`]
+  * {directory}/homeManager/home/packages/ffmpeg/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-ffmpeg`]
+  * {directory}/homeManager/home/packages/ffmpeg/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-ffmpeg`]
+  * {directory}/homeManager/home/packages/ffmpeg/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-ffmpeg`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.ffmpeg`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/file/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-file`]
+  * {directory}/homeManager/home/packages/file/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-file`]
+  * {directory}/homeManager/home/packages/file/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-file`]
+  * {directory}/homeManager/home/packages/file/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-file`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.file`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/gcc/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-gcc`]
+  * {directory}/homeManager/home/packages/gcc/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-gcc`]
+  * {directory}/homeManager/home/packages/gcc/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-gcc`]
+  * {directory}/homeManager/home/packages/gcc/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-gcc`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.gcc`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/gimp/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-gimp`]
+  * {directory}/homeManager/home/packages/gimp/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-gimp`]
+  * {directory}/homeManager/home/packages/gimp/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-gimp`]
+  * {directory}/homeManager/home/packages/gimp/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-gimp`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.gimp`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/glava/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-glava`]
+  * {directory}/homeManager/home/packages/glava/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-glava`]
+  * {directory}/homeManager/home/packages/glava/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-glava`]
+  * {directory}/homeManager/home/packages/glava/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-glava`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.glava`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/glow/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-glow`]
+  * {directory}/homeManager/home/packages/glow/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-glow`]
+  * {directory}/homeManager/home/packages/glow/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-glow`]
+  * {directory}/homeManager/home/packages/glow/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-glow`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.glow`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/gping/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-gping`]
+  * {directory}/homeManager/home/packages/gping/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-gping`]
+  * {directory}/homeManager/home/packages/gping/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-gping`]
+  * {directory}/homeManager/home/packages/gping/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-gping`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.gping`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/inkscape/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-inkscape`]
+  * {directory}/homeManager/home/packages/inkscape/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-inkscape`]
+  * {directory}/homeManager/home/packages/inkscape/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-inkscape`]
+  * {directory}/homeManager/home/packages/inkscape/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-inkscape`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.inkscape`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/kdenlive/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-kdenlive`]
+  * {directory}/homeManager/home/packages/kdenlive/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-kdenlive`]
+  * {directory}/homeManager/home/packages/kdenlive/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-kdenlive`]
+  * {directory}/homeManager/home/packages/kdenlive/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-kdenlive`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.kdenlive`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/killall/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-killall`]
+  * {directory}/homeManager/home/packages/killall/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-killall`]
+  * {directory}/homeManager/home/packages/killall/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-killall`]
+  * {directory}/homeManager/home/packages/killall/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-killall`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.killall`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/libreoffice/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-libreoffice`]
+  * {directory}/homeManager/home/packages/libreoffice/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-libreoffice`]
+  * {directory}/homeManager/home/packages/libreoffice/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-libreoffice`]
+  * {directory}/homeManager/home/packages/libreoffice/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-libreoffice`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.libreoffice`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/neofetch/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-neofetch`]
+  * {directory}/homeManager/home/packages/neofetch/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-neofetch`]
+  * {directory}/homeManager/home/packages/neofetch/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-neofetch`]
+  * {directory}/homeManager/home/packages/neofetch/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-neofetch`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.neofetch`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/p7zip/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-p7zip`]
+  * {directory}/homeManager/home/packages/p7zip/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-p7zip`]
+  * {directory}/homeManager/home/packages/p7zip/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-p7zip`]
+  * {directory}/homeManager/home/packages/p7zip/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-p7zip`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.p7zip`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/parallel/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-parallel`]
+  * {directory}/homeManager/home/packages/parallel/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-parallel`]
+  * {directory}/homeManager/home/packages/parallel/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-parallel`]
+  * {directory}/homeManager/home/packages/parallel/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-parallel`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.parallel`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/pipe-rename/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-pipe-rename`]
+  * {directory}/homeManager/home/packages/pipe-rename/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-pipe-rename`]
+  * {directory}/homeManager/home/packages/pipe-rename/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-pipe-rename`]
+  * {directory}/homeManager/home/packages/pipe-rename/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-pipe-rename`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.pipe-rename`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/poppler_utils/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-poppler_utils`]
+  * {directory}/homeManager/home/packages/poppler_utils/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-poppler_utils`]
+  * {directory}/homeManager/home/packages/poppler_utils/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-poppler_utils`]
+  * {directory}/homeManager/home/packages/poppler_utils/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-poppler_utils`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.poppler_utils`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/procs/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-procs`]
+  * {directory}/homeManager/home/packages/procs/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-procs`]
+  * {directory}/homeManager/home/packages/procs/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-procs`]
+  * {directory}/homeManager/home/packages/procs/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-procs`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.procs`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/pstree/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-pstree`]
+  * {directory}/homeManager/home/packages/pstree/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-pstree`]
+  * {directory}/homeManager/home/packages/pstree/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-pstree`]
+  * {directory}/homeManager/home/packages/pstree/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-pstree`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.pstree`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/ripgrep-all/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-ripgrep-all`]
+  * {directory}/homeManager/home/packages/ripgrep-all/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-ripgrep-all`]
+  * {directory}/homeManager/home/packages/ripgrep-all/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-ripgrep-all`]
+  * {directory}/homeManager/home/packages/ripgrep-all/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-ripgrep-all`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.ripgrep-all`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/rustup/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-rustup`]
+  * {directory}/homeManager/home/packages/rustup/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-rustup`]
+  * {directory}/homeManager/home/packages/rustup/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-rustup`]
+  * {directory}/homeManager/home/packages/rustup/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-rustup`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.rustup`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/thunderbird/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-thunderbird`]
+  * {directory}/homeManager/home/packages/thunderbird/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-thunderbird`]
+  * {directory}/homeManager/home/packages/thunderbird/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-thunderbird`]
+  * {directory}/homeManager/home/packages/thunderbird/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-thunderbird`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.thunderbird`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/tldr/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-tldr`]
+  * {directory}/homeManager/home/packages/tldr/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-tldr`]
+  * {directory}/homeManager/home/packages/tldr/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-tldr`]
+  * {directory}/homeManager/home/packages/tldr/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-tldr`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.tldr`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/tokei/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-tokei`]
+  * {directory}/homeManager/home/packages/tokei/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-tokei`]
+  * {directory}/homeManager/home/packages/tokei/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-tokei`]
+  * {directory}/homeManager/home/packages/tokei/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-tokei`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.tokei`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/tree/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-tree`]
+  * {directory}/homeManager/home/packages/tree/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-tree`]
+  * {directory}/homeManager/home/packages/tree/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-tree`]
+  * {directory}/homeManager/home/packages/tree/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-tree`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.tree`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/unzip/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-unzip`]
+  * {directory}/homeManager/home/packages/unzip/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-unzip`]
+  * {directory}/homeManager/home/packages/unzip/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-unzip`]
+  * {directory}/homeManager/home/packages/unzip/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-unzip`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.unzip`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/wl-clipboard/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-wl-clipboard`]
+  * {directory}/homeManager/home/packages/wl-clipboard/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-wl-clipboard`]
+  * {directory}/homeManager/home/packages/wl-clipboard/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-wl-clipboard`]
+  * {directory}/homeManager/home/packages/wl-clipboard/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-wl-clipboard`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.wl-clipboard`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/xdg-utils/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-xdg-utils`]
+  * {directory}/homeManager/home/packages/xdg-utils/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-xdg-utils`]
+  * {directory}/homeManager/home/packages/xdg-utils/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-xdg-utils`]
+  * {directory}/homeManager/home/packages/xdg-utils/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-xdg-utils`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.xdg-utils`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/packages/zip/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-zip`]
+  * {directory}/homeManager/home/packages/zip/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-zip`]
+  * {directory}/homeManager/home/packages/zip/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-zip`]
+  * {directory}/homeManager/home/packages/zip/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-zip`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.packages.zip`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/sessionVariables/default.nix[`aarch64-darwin-public-standalone-homeManager-home-sessionVariables`]
+  * {directory}/homeManager/home/sessionVariables/default.nix[`aarch64-linux-public-standalone-homeManager-home-sessionVariables`]
+  * {directory}/homeManager/home/sessionVariables/default.nix[`x86_64-darwin-public-standalone-homeManager-home-sessionVariables`]
+  * {directory}/homeManager/home/sessionVariables/default.nix[`x86_64-linux-public-standalone-homeManager-home-sessionVariables`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.sessionVariables`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/home/shellAliases/default.nix[`aarch64-darwin-public-standalone-homeManager-home-shellAliases`]
+  * {directory}/homeManager/home/shellAliases/default.nix[`aarch64-linux-public-standalone-homeManager-home-shellAliases`]
+  * {directory}/homeManager/home/shellAliases/default.nix[`x86_64-darwin-public-standalone-homeManager-home-shellAliases`]
+  * {directory}/homeManager/home/shellAliases/default.nix[`x86_64-linux-public-standalone-homeManager-home-shellAliases`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.home.shellAliases`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/nixpkgs/config/allowUnfree/default.nix[`aarch64-darwin-public-standalone-homeManager-nixpkgs-config-allowUnfree`]
+  * {directory}/homeManager/nixpkgs/config/allowUnfree/default.nix[`aarch64-linux-public-standalone-homeManager-nixpkgs-config-allowUnfree`]
+  * {directory}/homeManager/nixpkgs/config/allowUnfree/default.nix[`x86_64-darwin-public-standalone-homeManager-nixpkgs-config-allowUnfree`]
+  * {directory}/homeManager/nixpkgs/config/allowUnfree/default.nix[`x86_64-linux-public-standalone-homeManager-nixpkgs-config-allowUnfree`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.nixpkgs.config.allowUnfree`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/bash/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-bash`]
+  * {directory}/homeManager/programs/bash/default.nix[`aarch64-linux-public-standalone-homeManager-programs-bash`]
+  * {directory}/homeManager/programs/bash/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-bash`]
+  * {directory}/homeManager/programs/bash/default.nix[`x86_64-linux-public-standalone-homeManager-programs-bash`]
+| {minimal-reproducible-example}[MWE] of the `modules.homeManager.programs.bash`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/bashmount/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-bashmount`]
+  * {directory}/homeManager/programs/bashmount/default.nix[`aarch64-linux-public-standalone-homeManager-programs-bashmount`]
+  * {directory}/homeManager/programs/bashmount/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-bashmount`]
+  * {directory}/homeManager/programs/bashmount/default.nix[`x86_64-linux-public-standalone-homeManager-programs-bashmount`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.programs.bashmount`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/bat/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-bat`]
+  * {directory}/homeManager/programs/bat/default.nix[`aarch64-linux-public-standalone-homeManager-programs-bat`]
+  * {directory}/homeManager/programs/bat/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-bat`]
+  * {directory}/homeManager/programs/bat/default.nix[`x86_64-linux-public-standalone-homeManager-programs-bat`]
+| {minimal-reproducible-example}[MWE] of the `modules.homeManager.programs.bat`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/btop/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-btop`]
+  * {directory}/homeManager/programs/btop/default.nix[`aarch64-linux-public-standalone-homeManager-programs-btop`]
+  * {directory}/homeManager/programs/btop/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-btop`]
+  * {directory}/homeManager/programs/btop/default.nix[`x86_64-linux-public-standalone-homeManager-programs-btop`]
+| {minimal-reproducible-example}[MWE] of the `modules.homeManager.programs.btop`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/direnv/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-direnv`]
+  * {directory}/homeManager/programs/direnv/default.nix[`aarch64-linux-public-standalone-homeManager-programs-direnv`]
+  * {directory}/homeManager/programs/direnv/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-direnv`]
+  * {directory}/homeManager/programs/direnv/default.nix[`x86_64-linux-public-standalone-homeManager-programs-direnv`]
+| {minimal-reproducible-example}[MWE] of the `modules.homeManager.programs.direnv`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/eza/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-eza`]
+  * {directory}/homeManager/programs/eza/default.nix[`aarch64-linux-public-standalone-homeManager-programs-eza`]
+  * {directory}/homeManager/programs/eza/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-eza`]
+  * {directory}/homeManager/programs/eza/default.nix[`x86_64-linux-public-standalone-homeManager-programs-eza`]
+| {minimal-reproducible-example}[MWE] of the `modules.homeManager.programs.eza`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/feh/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-feh`]
+  * {directory}/homeManager/programs/feh/default.nix[`aarch64-linux-public-standalone-homeManager-programs-feh`]
+  * {directory}/homeManager/programs/feh/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-feh`]
+  * {directory}/homeManager/programs/feh/default.nix[`x86_64-linux-public-standalone-homeManager-programs-feh`]
+| {minimal-reproducible-example}[MWE] of the `modules.homeManager.programs.feh`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/firefox/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-firefox`]
+  * {directory}/homeManager/programs/firefox/default.nix[`aarch64-linux-public-standalone-homeManager-programs-firefox`]
+  * {directory}/homeManager/programs/firefox/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-firefox`]
+  * {directory}/homeManager/programs/firefox/default.nix[`x86_64-linux-public-standalone-homeManager-programs-firefox`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.programs.firefox`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/fish/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-fish`]
+  * {directory}/homeManager/programs/fish/default.nix[`aarch64-linux-public-standalone-homeManager-programs-fish`]
+  * {directory}/homeManager/programs/fish/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-fish`]
+  * {directory}/homeManager/programs/fish/default.nix[`x86_64-linux-public-standalone-homeManager-programs-fish`]
+| {minimal-reproducible-example}[MWE] of the `modules.homeManager.programs.fish`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/fzf/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-fzf`]
+  * {directory}/homeManager/programs/fzf/default.nix[`aarch64-linux-public-standalone-homeManager-programs-fzf`]
+  * {directory}/homeManager/programs/fzf/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-fzf`]
+  * {directory}/homeManager/programs/fzf/default.nix[`x86_64-linux-public-standalone-homeManager-programs-fzf`]
+| {minimal-reproducible-example}[MWE] of the `modules.homeManager.programs.fzf`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/git/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-git`]
+  * {directory}/homeManager/programs/git/default.nix[`aarch64-linux-public-standalone-homeManager-programs-git`]
+  * {directory}/homeManager/programs/git/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-git`]
+  * {directory}/homeManager/programs/git/default.nix[`x86_64-linux-public-standalone-homeManager-programs-git`]
+| {minimal-reproducible-example}[MWE] of the `modules.homeManager.programs.git`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/gpg/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-gpg`]
+  * {directory}/homeManager/programs/gpg/default.nix[`aarch64-linux-public-standalone-homeManager-programs-gpg`]
+  * {directory}/homeManager/programs/gpg/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-gpg`]
+  * {directory}/homeManager/programs/gpg/default.nix[`x86_64-linux-public-standalone-homeManager-programs-gpg`]
+| {minimal-reproducible-example}[MWE] of the `modules.homeManager.programs.gpg`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/home-manager/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-home-manager`]
+  * {directory}/homeManager/programs/home-manager/default.nix[`aarch64-linux-public-standalone-homeManager-programs-home-manager`]
+  * {directory}/homeManager/programs/home-manager/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-home-manager`]
+  * {directory}/homeManager/programs/home-manager/default.nix[`x86_64-linux-public-standalone-homeManager-programs-home-manager`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.programs.home-manager`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/imv/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-imv`]
+  * {directory}/homeManager/programs/imv/default.nix[`aarch64-linux-public-standalone-homeManager-programs-imv`]
+  * {directory}/homeManager/programs/imv/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-imv`]
+  * {directory}/homeManager/programs/imv/default.nix[`x86_64-linux-public-standalone-homeManager-programs-imv`]
+| {minimal-reproducible-example}[MWE] of the `modules.homeManager.programs.imv`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/jq/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-jq`]
+  * {directory}/homeManager/programs/jq/default.nix[`aarch64-linux-public-standalone-homeManager-programs-jq`]
+  * {directory}/homeManager/programs/jq/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-jq`]
+  * {directory}/homeManager/programs/jq/default.nix[`x86_64-linux-public-standalone-homeManager-programs-jq`]
+| {minimal-reproducible-example}[MWE] of the `modules.homeManager.programs.jq`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/kitty/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-kitty`]
+  * {directory}/homeManager/programs/kitty/default.nix[`aarch64-linux-public-standalone-homeManager-programs-kitty`]
+  * {directory}/homeManager/programs/kitty/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-kitty`]
+  * {directory}/homeManager/programs/kitty/default.nix[`x86_64-linux-public-standalone-homeManager-programs-kitty`]
+| {minimal-reproducible-example}[MWE] of the `modules.homeManager.programs.kitty`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/lazygit/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-lazygit`]
+  * {directory}/homeManager/programs/lazygit/default.nix[`aarch64-linux-public-standalone-homeManager-programs-lazygit`]
+  * {directory}/homeManager/programs/lazygit/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-lazygit`]
+  * {directory}/homeManager/programs/lazygit/default.nix[`x86_64-linux-public-standalone-homeManager-programs-lazygit`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.programs.lazygit`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/man/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-man`]
+  * {directory}/homeManager/programs/man/default.nix[`aarch64-linux-public-standalone-homeManager-programs-man`]
+  * {directory}/homeManager/programs/man/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-man`]
+  * {directory}/homeManager/programs/man/default.nix[`x86_64-linux-public-standalone-homeManager-programs-man`]
+| {minimal-reproducible-example}[MWE] of the `modules.homeManager.programs.man`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/mpv/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-mpv`]
+  * {directory}/homeManager/programs/mpv/default.nix[`aarch64-linux-public-standalone-homeManager-programs-mpv`]
+  * {directory}/homeManager/programs/mpv/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-mpv`]
+  * {directory}/homeManager/programs/mpv/default.nix[`x86_64-linux-public-standalone-homeManager-programs-mpv`]
+| {minimal-reproducible-example}[MWE] of the `modules.homeManager.programs.mpv`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/password-store/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-password-store`]
+  * {directory}/homeManager/programs/password-store/default.nix[`aarch64-linux-public-standalone-homeManager-programs-password-store`]
+  * {directory}/homeManager/programs/password-store/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-password-store`]
+  * {directory}/homeManager/programs/password-store/default.nix[`x86_64-linux-public-standalone-homeManager-programs-password-store`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.programs.password-store`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/qutebrowser/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-qutebrowser`]
+  * {directory}/homeManager/programs/qutebrowser/default.nix[`aarch64-linux-public-standalone-homeManager-programs-qutebrowser`]
+  * {directory}/homeManager/programs/qutebrowser/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-qutebrowser`]
+  * {directory}/homeManager/programs/qutebrowser/default.nix[`x86_64-linux-public-standalone-homeManager-programs-qutebrowser`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.programs.qutebrowser`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/ripgrep/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-ripgrep`]
+  * {directory}/homeManager/programs/ripgrep/default.nix[`aarch64-linux-public-standalone-homeManager-programs-ripgrep`]
+  * {directory}/homeManager/programs/ripgrep/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-ripgrep`]
+  * {directory}/homeManager/programs/ripgrep/default.nix[`x86_64-linux-public-standalone-homeManager-programs-ripgrep`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.programs.ripgrep`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/rofi/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-rofi`]
+  * {directory}/homeManager/programs/rofi/default.nix[`aarch64-linux-public-standalone-homeManager-programs-rofi`]
+  * {directory}/homeManager/programs/rofi/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-rofi`]
+  * {directory}/homeManager/programs/rofi/default.nix[`x86_64-linux-public-standalone-homeManager-programs-rofi`]
+| {minimal-reproducible-example}[MWE] of the `modules.homeManager.programs.rofi`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/swaylock/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-swaylock`]
+  * {directory}/homeManager/programs/swaylock/default.nix[`aarch64-linux-public-standalone-homeManager-programs-swaylock`]
+  * {directory}/homeManager/programs/swaylock/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-swaylock`]
+  * {directory}/homeManager/programs/swaylock/default.nix[`x86_64-linux-public-standalone-homeManager-programs-swaylock`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.programs.swaylock`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/taskwarrior/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-taskwarrior`]
+  * {directory}/homeManager/programs/taskwarrior/default.nix[`aarch64-linux-public-standalone-homeManager-programs-taskwarrior`]
+  * {directory}/homeManager/programs/taskwarrior/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-taskwarrior`]
+  * {directory}/homeManager/programs/taskwarrior/default.nix[`x86_64-linux-public-standalone-homeManager-programs-taskwarrior`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.programs.taskwarrior`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/wlogout/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-wlogout`]
+  * {directory}/homeManager/programs/wlogout/default.nix[`aarch64-linux-public-standalone-homeManager-programs-wlogout`]
+  * {directory}/homeManager/programs/wlogout/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-wlogout`]
+  * {directory}/homeManager/programs/wlogout/default.nix[`x86_64-linux-public-standalone-homeManager-programs-wlogout`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.programs.wlogout`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/xplr/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-xplr`]
+  * {directory}/homeManager/programs/xplr/default.nix[`aarch64-linux-public-standalone-homeManager-programs-xplr`]
+  * {directory}/homeManager/programs/xplr/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-xplr`]
+  * {directory}/homeManager/programs/xplr/default.nix[`x86_64-linux-public-standalone-homeManager-programs-xplr`]
+| {minimal-reproducible-example}[MWE] of the `modules.homeManager.programs.xplr`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/zathura/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-zathura`]
+  * {directory}/homeManager/programs/zathura/default.nix[`aarch64-linux-public-standalone-homeManager-programs-zathura`]
+  * {directory}/homeManager/programs/zathura/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-zathura`]
+  * {directory}/homeManager/programs/zathura/default.nix[`x86_64-linux-public-standalone-homeManager-programs-zathura`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.programs.zathura`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/zellij/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-zellij`]
+  * {directory}/homeManager/programs/zellij/default.nix[`aarch64-linux-public-standalone-homeManager-programs-zellij`]
+  * {directory}/homeManager/programs/zellij/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-zellij`]
+  * {directory}/homeManager/programs/zellij/default.nix[`x86_64-linux-public-standalone-homeManager-programs-zellij`]
+| {minimal-reproducible-example}[MWE] of the `modules.homeManager.programs.zellij`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/programs/zoxide/default.nix[`aarch64-darwin-public-standalone-homeManager-programs-zoxide`]
+  * {directory}/homeManager/programs/zoxide/default.nix[`aarch64-linux-public-standalone-homeManager-programs-zoxide`]
+  * {directory}/homeManager/programs/zoxide/default.nix[`x86_64-darwin-public-standalone-homeManager-programs-zoxide`]
+  * {directory}/homeManager/programs/zoxide/default.nix[`x86_64-linux-public-standalone-homeManager-programs-zoxide`]
+| {minimal-reproducible-example}[MWE] of the `modules.homeManager.programs.zoxide`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/services/dunst/default.nix[`aarch64-darwin-public-standalone-homeManager-services-dunst`]
+  * {directory}/homeManager/services/dunst/default.nix[`aarch64-linux-public-standalone-homeManager-services-dunst`]
+  * {directory}/homeManager/services/dunst/default.nix[`x86_64-darwin-public-standalone-homeManager-services-dunst`]
+  * {directory}/homeManager/services/dunst/default.nix[`x86_64-linux-public-standalone-homeManager-services-dunst`]
+| {minimal-reproducible-example}[MWE] of the `modules.homeManager.services.dunst`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/services/easyeffects/default.nix[`aarch64-darwin-public-standalone-homeManager-services-easyeffects`]
+  * {directory}/homeManager/services/easyeffects/default.nix[`aarch64-linux-public-standalone-homeManager-services-easyeffects`]
+  * {directory}/homeManager/services/easyeffects/default.nix[`x86_64-darwin-public-standalone-homeManager-services-easyeffects`]
+  * {directory}/homeManager/services/easyeffects/default.nix[`x86_64-linux-public-standalone-homeManager-services-easyeffects`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.services.easyeffects`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/services/gammastep/default.nix[`aarch64-darwin-public-standalone-homeManager-services-gammastep`]
+  * {directory}/homeManager/services/gammastep/default.nix[`aarch64-linux-public-standalone-homeManager-services-gammastep`]
+  * {directory}/homeManager/services/gammastep/default.nix[`x86_64-darwin-public-standalone-homeManager-services-gammastep`]
+  * {directory}/homeManager/services/gammastep/default.nix[`x86_64-linux-public-standalone-homeManager-services-gammastep`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.services.gammastep`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/services/gpg-agent/default.nix[`aarch64-darwin-public-standalone-homeManager-services-gpg-agent`]
+  * {directory}/homeManager/services/gpg-agent/default.nix[`aarch64-linux-public-standalone-homeManager-services-gpg-agent`]
+  * {directory}/homeManager/services/gpg-agent/default.nix[`x86_64-darwin-public-standalone-homeManager-services-gpg-agent`]
+  * {directory}/homeManager/services/gpg-agent/default.nix[`x86_64-linux-public-standalone-homeManager-services-gpg-agent`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.services.gpg-agent`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/services/swayidle/default.nix[`aarch64-darwin-public-standalone-homeManager-services-swayidle`]
+  * {directory}/homeManager/services/swayidle/default.nix[`aarch64-linux-public-standalone-homeManager-services-swayidle`]
+  * {directory}/homeManager/services/swayidle/default.nix[`x86_64-darwin-public-standalone-homeManager-services-swayidle`]
+  * {directory}/homeManager/services/swayidle/default.nix[`x86_64-linux-public-standalone-homeManager-services-swayidle`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.services.swayidle`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/systemd/user/tmpfiles/rules/default.nix[`aarch64-darwin-public-standalone-homeManager-systemd-user-tmpfiles-rules`]
+  * {directory}/homeManager/systemd/user/tmpfiles/rules/default.nix[`aarch64-linux-public-standalone-homeManager-systemd-user-tmpfiles-rules`]
+  * {directory}/homeManager/systemd/user/tmpfiles/rules/default.nix[`x86_64-darwin-public-standalone-homeManager-systemd-user-tmpfiles-rules`]
+  * {directory}/homeManager/systemd/user/tmpfiles/rules/default.nix[`x86_64-linux-public-standalone-homeManager-systemd-user-tmpfiles-rules`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.systemd.user.tmpfiles.rules`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/wayland/windowManager/hyprland/default.nix[`aarch64-darwin-public-standalone-homeManager-wayland-windowManager-hyprland`]
+  * {directory}/homeManager/wayland/windowManager/hyprland/default.nix[`aarch64-linux-public-standalone-homeManager-wayland-windowManager-hyprland`]
+  * {directory}/homeManager/wayland/windowManager/hyprland/default.nix[`x86_64-darwin-public-standalone-homeManager-wayland-windowManager-hyprland`]
+  * {directory}/homeManager/wayland/windowManager/hyprland/default.nix[`x86_64-linux-public-standalone-homeManager-wayland-windowManager-hyprland`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.wayland.windowManager.hyprland`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/homeManager/xdg/default.nix[`aarch64-darwin-public-standalone-homeManager-xdg`]
+  * {directory}/homeManager/xdg/default.nix[`aarch64-linux-public-standalone-homeManager-xdg`]
+  * {directory}/homeManager/xdg/default.nix[`x86_64-darwin-public-standalone-homeManager-xdg`]
+  * {directory}/homeManager/xdg/default.nix[`x86_64-linux-public-standalone-homeManager-xdg`]
+| {minimal-reproducible-example}[MWE] of the `modules.homeManager.xdg`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/nix-alien/default.nix[`aarch64-darwin-public-standalone-nix-alien`]
+  * {directory}/nix-alien/default.nix[`aarch64-linux-public-standalone-nix-alien`]
+  * {directory}/nix-alien/default.nix[`x86_64-darwin-public-standalone-nix-alien`]
+  * {directory}/nix-alien/default.nix[`x86_64-linux-public-standalone-nix-alien`]
+| {minimal-reproducible-example}[MWE] of the `modules.nix-alien`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/services/battery/default.nix[`aarch64-darwin-public-standalone-services-battery`]
+  * {directory}/services/battery/default.nix[`aarch64-linux-public-standalone-services-battery`]
+  * {directory}/services/battery/default.nix[`x86_64-darwin-public-standalone-services-battery`]
+  * {directory}/services/battery/default.nix[`x86_64-linux-public-standalone-services-battery`]
+| {minimal-reproducible-example}[MWE] of the `modules.services.battery`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/stylix/default.nix[`aarch64-darwin-public-standalone-stylix`]
+  * {directory}/stylix/default.nix[`aarch64-linux-public-standalone-stylix`]
+  * {directory}/stylix/default.nix[`x86_64-darwin-public-standalone-stylix`]
+  * {directory}/stylix/default.nix[`x86_64-linux-public-standalone-stylix`]
+| {minimal-reproducible-example}[MWE] of the `modules.stylix`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/wayland/default.nix[`aarch64-darwin-public-standalone-wayland`]
+  * {directory}/wayland/default.nix[`aarch64-linux-public-standalone-wayland`]
+  * {directory}/wayland/default.nix[`x86_64-darwin-public-standalone-wayland`]
+  * {directory}/wayland/default.nix[`x86_64-linux-public-standalone-wayland`]
+| {minimal-reproducible-example}[MWE] of the `modules.wayland`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+|===
+
+====
+To build the Home Manager configurations directly from {repository}[upstream]
+using {nix}[`nix`], run one of the following commands depending on the target
+platform and Home Manager configuration:
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-agenix-homeManagerModules-default
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-agenix-homeManagerModules-default
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-agenix-homeManagerModules-default
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-agenix-homeManagerModules-default
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-fonts
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-fonts
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-fonts
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-fonts
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-acpi
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-acpi
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-acpi
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-acpi
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-advcpmv
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-advcpmv
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-advcpmv
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-advcpmv
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-aria
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-aria
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-aria
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-aria
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-asciidoctor
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-asciidoctor
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-asciidoctor
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-asciidoctor
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-bandwhich
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-bandwhich
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-bandwhich
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-bandwhich
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-catimg
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-catimg
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-catimg
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-catimg
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-catnip
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-catnip
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-catnip
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-catnip
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-diskonaut
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-diskonaut
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-diskonaut
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-diskonaut
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-du-dust
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-du-dust
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-du-dust
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-du-dust
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-dua
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-dua
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-dua
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-dua
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-duf
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-duf
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-duf
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-duf
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-fd
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-fd
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-fd
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-fd
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-ffmpeg
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-ffmpeg
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-ffmpeg
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-ffmpeg
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-file
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-file
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-file
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-file
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-gcc
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-gcc
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-gcc
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-gcc
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-gimp
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-gimp
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-gimp
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-gimp
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-glava
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-glava
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-glava
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-glava
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-glow
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-glow
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-glow
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-glow
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-gping
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-gping
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-gping
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-gping
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-inkscape
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-inkscape
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-inkscape
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-inkscape
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-kdenlive
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-kdenlive
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-kdenlive
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-kdenlive
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-killall
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-killall
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-killall
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-killall
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-libreoffice
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-libreoffice
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-libreoffice
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-libreoffice
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-neofetch
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-neofetch
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-neofetch
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-neofetch
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-p7zip
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-p7zip
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-p7zip
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-p7zip
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-parallel
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-parallel
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-parallel
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-parallel
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-pipe-rename
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-pipe-rename
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-pipe-rename
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-pipe-rename
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-poppler_utils
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-poppler_utils
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-poppler_utils
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-poppler_utils
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-procs
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-procs
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-procs
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-procs
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-pstree
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-pstree
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-pstree
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-pstree
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-ripgrep-all
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-ripgrep-all
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-ripgrep-all
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-ripgrep-all
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-rustup
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-rustup
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-rustup
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-rustup
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-thunderbird
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-thunderbird
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-thunderbird
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-thunderbird
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-tldr
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-tldr
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-tldr
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-tldr
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-tokei
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-tokei
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-tokei
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-tokei
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-tree
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-tree
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-tree
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-tree
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-unzip
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-unzip
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-unzip
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-unzip
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-wl-clipboard
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-wl-clipboard
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-wl-clipboard
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-wl-clipboard
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-xdg-utils
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-xdg-utils
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-xdg-utils
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-xdg-utils
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-zip
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-zip
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-zip
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-zip
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-sessionVariables
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-sessionVariables
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-sessionVariables
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-sessionVariables
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-shellAliases
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-shellAliases
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-shellAliases
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-shellAliases
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-nixpkgs-config-allowUnfree
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-nixpkgs-config-allowUnfree
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-nixpkgs-config-allowUnfree
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-nixpkgs-config-allowUnfree
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-bash
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-bash
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-bash
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-bash
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-bashmount
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-bashmount
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-bashmount
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-bashmount
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-bat
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-bat
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-bat
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-bat
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-btop
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-btop
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-btop
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-btop
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-direnv
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-direnv
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-direnv
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-direnv
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-eza
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-eza
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-eza
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-eza
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-feh
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-feh
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-feh
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-feh
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-firefox
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-firefox
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-firefox
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-firefox
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-fish
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-fish
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-fish
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-fish
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-fzf
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-fzf
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-fzf
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-fzf
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-git
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-git
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-git
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-git
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-gpg
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-gpg
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-gpg
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-gpg
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-home-manager
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-home-manager
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-home-manager
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-home-manager
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-imv
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-imv
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-imv
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-imv
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-jq
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-jq
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-jq
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-jq
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-kitty
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-kitty
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-kitty
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-kitty
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-lazygit
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-lazygit
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-lazygit
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-lazygit
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-man
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-man
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-man
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-man
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-mpv
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-mpv
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-mpv
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-mpv
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-password-store
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-password-store
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-password-store
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-password-store
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-qutebrowser
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-qutebrowser
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-qutebrowser
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-qutebrowser
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-ripgrep
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-ripgrep
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-ripgrep
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-ripgrep
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-rofi
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-rofi
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-rofi
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-rofi
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-swaylock
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-swaylock
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-swaylock
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-swaylock
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-taskwarrior
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-taskwarrior
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-taskwarrior
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-taskwarrior
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-wlogout
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-wlogout
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-wlogout
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-wlogout
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-xplr
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-xplr
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-xplr
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-xplr
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-zathura
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-zathura
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-zathura
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-zathura
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-zellij
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-zellij
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-zellij
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-zellij
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-programs-zoxide
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-programs-zoxide
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-programs-zoxide
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-programs-zoxide
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-services-dunst
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-services-dunst
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-services-dunst
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-services-dunst
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-services-easyeffects
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-services-easyeffects
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-services-easyeffects
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-services-easyeffects
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-services-gammastep
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-services-gammastep
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-services-gammastep
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-services-gammastep
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-services-gpg-agent
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-services-gpg-agent
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-services-gpg-agent
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-services-gpg-agent
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-services-swayidle
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-services-swayidle
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-services-swayidle
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-services-swayidle
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-systemd-user-tmpfiles-rules
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-systemd-user-tmpfiles-rules
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-systemd-user-tmpfiles-rules
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-systemd-user-tmpfiles-rules
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-wayland-windowManager-hyprland
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-wayland-windowManager-hyprland
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-wayland-windowManager-hyprland
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-wayland-windowManager-hyprland
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-xdg
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-xdg
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-xdg
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-xdg
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-nix-alien
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-nix-alien
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-nix-alien
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-nix-alien
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-services-battery
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-services-battery
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-services-battery
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-services-battery
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-stylix
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-stylix
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-stylix
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-stylix
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-wayland
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-wayland
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-wayland
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-wayland
+----
+====

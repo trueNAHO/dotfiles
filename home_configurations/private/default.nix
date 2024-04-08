@@ -6,6 +6,6 @@
 import ../../lib/home_configurations/prependPrefix {
   inherit inputs pkgs system;
 
-  files = [./integrated];
+  files = [./integrated ./standalone];
   prefix = "private";
 }

@@ -30,6 +30,7 @@
 :repository: link:https://github.com/{repository-path}
 :version-control-visualization: link:https://youtu.be/{version-control-visualization-video-id}
 
+:command-home-manager-switch-flake: nix run nixpkgs#home-manager -- switch --flake {repository-flake}#
 :repository-blob: {repository}/blob/master
 
 include::about/index.adoc[]

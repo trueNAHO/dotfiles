@@ -2,7 +2,7 @@
 
 The <<user_documentation_home_manager_configurations_naming_convention,
 `standalone` `<SCOPE>`>>
-<<developer_documentation_architecture_code_map_home_configurations_accessibility_scope_name_default_nix,
+<<developer_documentation_architecture_code_map_home_configurations_accessibility_scope_prefix_name_default_nix,
 Home Manager configurations>> are primarily used for
 <<developer_documentation_architecture_code_map_modules_directory, module>>
 verification. Ideally, every module should be verified with a corresponding
