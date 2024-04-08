@@ -3,3 +3,5 @@
 include::age_secrets_name/index.adoc[]
 
 include::home_activation_name/index.adoc[]
+
+include::lib_mk_enable_option_description/index.adoc[]
