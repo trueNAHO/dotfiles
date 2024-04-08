@@ -1,7 +1,5 @@
 ==== Cross-Cutting Concerns
 
-include::keymapping_behaviour_correlations/index.adoc[]
-
 include::module_interdependence/index.adoc[]
 
 include::module_verification/index.adoc[]

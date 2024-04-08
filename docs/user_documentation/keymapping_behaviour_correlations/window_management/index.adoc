@@ -1,4 +1,4 @@
-====== Window Management
+==== Window Management
 
 The following `<LEADER_1>` and `<LEADER_2>` keys may be distinct:
 
