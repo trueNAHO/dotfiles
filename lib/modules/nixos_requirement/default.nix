@@ -6,7 +6,7 @@
 }: let
   documentationString =
     if documentation != ""
-    then " (${documentation})"
+    then ": ${documentation}"
     else "";
 in
   import ../lib_hm_dag_entry_before_write_boundary_printf {
