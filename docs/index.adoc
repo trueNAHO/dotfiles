@@ -5,6 +5,7 @@
 :commitizen: link:http://commitizen.github.io/cz-cli
 :github-flow: link:https://scottchacon.com/2011/08/31/github-flow
 :home-manager: link:https://github.com/nix-community/home-manager
+:logo-raw: https://raw.githubusercontent.com/trueNAHO/logo-nixos/v1.0.0/src/main.svg
 :minimal-reproducible-example: link:https://stackoverflow.com/help/minimal-reproducible-example
 :multipage-level: 5
 :naho: link:https://github.com/trueNAHO
@@ -23,6 +24,7 @@
 :toclevels: 5
 :version-control-visualization-video-id: mJPvRkYkbYE
 
+:logo: link:{logo-raw}
 :repository-flake: github:{repository-path}
 :repository-raw-stargazers: https://github.com/{repository-path}/stargazers
 :repository-star-history-src-dark: https://api.star-history.com/svg?repos={repository-path}&theme=dark

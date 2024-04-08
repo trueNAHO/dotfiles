@@ -1,6 +1,7 @@
 = dotfiles
 :archwiki-dotfiles: link:https://wiki.archlinux.org/title/Dotfiles
 :home-manager: link:https://github.com/nix-community/home-manager
+:logo-raw: https://raw.githubusercontent.com/trueNAHO/logo-nixos/v1.0.0/src/main.svg
 :naho: link:https://github.com/trueNAHO
 :os: link:https://github.com/trueNAHO/os
 :repository-path: trueNAHO/dotfiles
@@ -17,6 +18,8 @@
 
 {naho}[NAHO]'s {archwiki-dotfiles}[dotfiles] managed with {home-manager}[Home
 Manager].
+
+image::{logo-raw}[NAHO's NixOS Logo, link={logo-raw}, width=100%]
 
 == Documentation
 
