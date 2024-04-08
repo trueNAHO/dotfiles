@@ -3,7 +3,9 @@
   lib,
   pkgs,
   ...
-}: {
+}: let
+  module = "modules.homeManager.wayland.windowManager.hyprland";
+in {
   imports = [
     ../../../../wayland
     ../../../home/sessionVariables
@@ -14,7 +16,7 @@
   ];
 
   options.modules.homeManager.wayland.windowManager.hyprland.enable =
-    lib.mkEnableOption "hyprland";
+    lib.mkEnableOption module;
 
   config =
     lib.mkIf
@@ -55,16 +57,15 @@
         wayland.enable = true;
       };
 
-      home.activation = let
-        src = "modules.homeManager.wayland.windowManager.hyprland";
-      in {
-        ${src} =
+      home.activation = {
+        ${module} =
           import
           ../../../../../lib/modules/nixos_requirement {
-            inherit lib src;
+            inherit lib;
 
             documentation = "https://nixos.wiki/wiki/Hyprland";
             literalExpression = "programs.hyprland.enable = true;";
+            src = module;
           };
       };
 

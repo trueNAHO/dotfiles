@@ -3,23 +3,25 @@
   lib,
   pkgs,
   ...
-}: {
+}: let
+  module = "modules.homeManager.programs.mpv";
+in {
   imports = [../../../stylix];
-  options.modules.homeManager.programs.mpv.enable = lib.mkEnableOption "mpv";
+
+  options.modules.homeManager.programs.mpv.enable = lib.mkEnableOption module;
 
   config = lib.mkIf config.modules.homeManager.programs.mpv.enable {
     modules.stylix.enable = true;
 
-    home.activation = let
-      src = "modules.homeManager.programs.mpv";
-    in {
-      ${src} =
+    home.activation = {
+      ${module} =
         import
         ../../../../lib/modules/nixos_requirement {
-          inherit lib src;
+          inherit lib;
 
           documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable";
           literalExpression = "programs.dconf.enable = true;";
+          src = module;
         };
     };
 

@@ -2,21 +2,22 @@
   config,
   lib,
   ...
-}: {
+}: let
+  module = "modules.homeManager.programs.bashmount";
+in {
   options.modules.homeManager.programs.bashmount.enable =
-    lib.mkEnableOption "bashmount";
+    lib.mkEnableOption module;
 
   config = lib.mkIf config.modules.homeManager.programs.bashmount.enable {
-    home.activation = let
-      src = "modules.homeManager.programs.bashmount";
-    in {
-      ${src} =
+    home.activation = {
+      ${module} =
         import
         ../../../../lib/modules/nixos_requirement {
-          inherit lib src;
+          inherit lib;
 
           documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.udiskie.enable";
           literalExpression = "services.udisks2.enable = true;";
+          src = module;
         };
     };
 

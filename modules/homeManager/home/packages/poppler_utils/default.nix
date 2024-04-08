@@ -5,7 +5,7 @@
   ...
 }: {
   options.modules.homeManager.home.packages.poppler_utils.enable =
-    lib.mkEnableOption "poppler_utils";
+    lib.mkEnableOption "modules.homeManager.home.packages.poppler_utils";
 
   config =
     lib.mkIf

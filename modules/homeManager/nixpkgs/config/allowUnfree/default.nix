@@ -2,21 +2,22 @@
   config,
   lib,
   ...
-}: {
+}: let
+  module = "modules.homeManager.nixpkgs.config.allowUnfree";
+in {
   options.modules.homeManager.nixpkgs.config.allowUnfree.enable =
-    lib.mkEnableOption "allowUnfree";
+    lib.mkEnableOption module;
 
   config = let
     cfg = config.modules.homeManager.nixpkgs.config.allowUnfree;
     string = "'nixpkgs.config.allowUnfree = ${toString cfg.enable};'";
   in {
-    home.activation = let
-      src = "modules.homeManager.nixpkgs.config.allowUnfree";
-    in {
-      ${src} =
+    home.activation = {
+      ${module} =
         import
         ../../../../../lib/modules/lib_hm_dag_entry_before_write_boundary_printf {
-          inherit lib src string;
+          inherit lib string;
+          src = module;
         };
     };
 

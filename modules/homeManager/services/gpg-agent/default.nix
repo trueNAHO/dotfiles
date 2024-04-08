@@ -4,7 +4,7 @@
   ...
 }: {
   options.modules.homeManager.services.gpg-agent.enable =
-    lib.mkEnableOption "gpg-agent";
+    lib.mkEnableOption "modules.homeManager.services.gpg-agent";
 
   config = lib.mkIf config.modules.homeManager.services.gpg-agent.enable {
     services.gpg-agent = {

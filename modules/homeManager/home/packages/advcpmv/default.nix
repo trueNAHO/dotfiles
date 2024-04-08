@@ -5,7 +5,7 @@
   ...
 }: {
   options.modules.homeManager.home.packages.advcpmv.enable =
-    lib.mkEnableOption "advcpmv";
+    lib.mkEnableOption "modules.homeManager.home.packages.advcpmv";
 
   config = lib.mkIf config.modules.homeManager.home.packages.advcpmv.enable {
     home = {

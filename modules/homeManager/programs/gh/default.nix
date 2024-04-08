@@ -4,7 +4,9 @@
   ...
 }: {
   imports = [../../../agenix/homeManagerModules/default];
-  options.modules.homeManager.programs.gh.enable = lib.mkEnableOption "gh";
+
+  options.modules.homeManager.programs.gh.enable =
+    lib.mkEnableOption "modules.homeManager.programs.gh";
 
   config = lib.mkIf config.modules.homeManager.programs.gh.enable {
     modules.agenix.homeManagerModules.default.enable = true;

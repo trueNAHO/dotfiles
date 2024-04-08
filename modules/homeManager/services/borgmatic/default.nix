@@ -6,7 +6,7 @@
   imports = [../../programs/borgmatic];
 
   options.modules.homeManager.services.borgmatic.enable =
-    lib.mkEnableOption "borgmatic";
+    lib.mkEnableOption "modules.homeManager.services.borgmatic";
 
   config = lib.mkIf config.modules.homeManager.services.borgmatic.enable {
     modules.homeManager.programs.borgmatic.enable = true;

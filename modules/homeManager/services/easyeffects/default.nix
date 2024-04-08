@@ -2,24 +2,25 @@
   config,
   lib,
   ...
-}: {
+}: let
+  module = "modules.homeManager.services.easyeffects";
+in {
   options.modules.homeManager.services.easyeffects.enable =
-    lib.mkEnableOption "easyeffects";
+    lib.mkEnableOption module;
 
   config = let
     preset = "default";
   in
     lib.mkIf config.modules.homeManager.services.easyeffects.enable {
-      home.activation = let
-        src = "modules.homeManager.services.easyeffects";
-      in {
-        ${src} =
+      home.activation = {
+        ${module} =
           import
           ../../../../lib/modules/nixos_requirement {
-            inherit lib src;
+            inherit lib;
 
             documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable";
             literalExpression = "programs.dconf.enable = true;";
+            src = module;
           };
       };
 

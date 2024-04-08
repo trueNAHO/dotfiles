@@ -6,9 +6,9 @@
   imports = [../home/sessionVariables];
 
   options.modules.homeManager.xdg = {
-    enable = lib.mkEnableOption "xdg";
-    mimeApps.enable = lib.mkEnableOption "xdg.mimeApps";
-    userDirs.enable = lib.mkEnableOption "xdg.userDirs";
+    enable = lib.mkEnableOption "modules.homeManager.xdg";
+    mimeApps.enable = lib.mkEnableOption "modules.homeManager.xdg.mimeApps";
+    userDirs.enable = lib.mkEnableOption "modules.homeManager.xdg.userDirs";
   };
 
   config = let

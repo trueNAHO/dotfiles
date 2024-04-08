@@ -5,7 +5,7 @@
   ...
 }: {
   options.modules.homeManager.programs.password-store.enable =
-    lib.mkEnableOption "password-store";
+    lib.mkEnableOption "modules.homeManager.programs.password-store";
 
   config = lib.mkIf config.modules.homeManager.programs.password-store.enable {
     programs.password-store = {

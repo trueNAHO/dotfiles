@@ -4,7 +4,7 @@
   ...
 }: {
   options.modules.homeManager.services.gammastep.enable =
-    lib.mkEnableOption "gammastep";
+    lib.mkEnableOption "modules.homeManager.services.gammastep";
 
   config = lib.mkIf config.modules.homeManager.services.gammastep.enable {
     services.gammastep = {

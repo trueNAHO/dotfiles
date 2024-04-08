@@ -19,7 +19,7 @@
       type = lib.types.ints.between 0 100;
     };
 
-    enable = lib.mkEnableOption "battery";
+    enable = lib.mkEnableOption "modules.services.battery";
 
     runtimeDir = lib.mkOption {
       default = "$XDG_RUNTIME_DIR/battery";

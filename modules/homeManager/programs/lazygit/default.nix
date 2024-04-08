@@ -7,7 +7,7 @@
   imports = [../git];
 
   options.modules.homeManager.programs.lazygit.enable =
-    lib.mkEnableOption "lazygit";
+    lib.mkEnableOption "modules.homeManager.programs.lazygit";
 
   config = lib.mkIf config.modules.homeManager.programs.lazygit.enable {
     home.shellAliases.lg = pkgs.lazygit.pname;

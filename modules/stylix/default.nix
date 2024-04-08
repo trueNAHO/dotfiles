@@ -4,21 +4,22 @@
   lib,
   pkgs,
   ...
-}: {
+}: let
+  module = "modules.stylix";
+in {
   imports = [inputs.stylix.homeManagerModules.stylix];
-  options.modules.stylix.enable = lib.mkEnableOption "stylix";
+  options.modules.stylix.enable = lib.mkEnableOption module;
 
   config = lib.mkIf config.modules.stylix.enable {
-    home.activation = let
-      src = "modules.stylix";
-    in {
-      ${src} =
+    home.activation = {
+      ${module} =
         import
         ../../lib/modules/nixos_requirement {
-          inherit lib src;
+          inherit lib;
 
           documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable";
           literalExpression = "programs.dconf.enable = true;";
+          src = module;
         };
     };
 

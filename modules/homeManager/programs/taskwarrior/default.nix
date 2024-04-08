@@ -5,7 +5,7 @@
   ...
 }: {
   options.modules.homeManager.programs.taskwarrior.enable =
-    lib.mkEnableOption "taskwarrior";
+    lib.mkEnableOption "modules.homeManager.programs.taskwarrior";
 
   config = lib.mkIf config.modules.homeManager.programs.taskwarrior.enable {
     home.shellAliases.tk = pkgs.taskwarrior.meta.mainProgram;

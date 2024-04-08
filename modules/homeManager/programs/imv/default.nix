@@ -5,7 +5,8 @@
 }: {
   imports = [../../xdg];
 
-  options.modules.homeManager.programs.imv.enable = lib.mkEnableOption "imv";
+  options.modules.homeManager.programs.imv.enable =
+    lib.mkEnableOption "modules.homeManager.programs.imv";
 
   config =
     lib.mkIf

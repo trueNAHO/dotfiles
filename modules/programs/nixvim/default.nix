@@ -17,7 +17,8 @@
     inputs.nixvim.homeManagerModules.nixvim
   ];
 
-  options.modules.programs.nixvim.enable = lib.mkEnableOption "nixvim";
+  options.modules.programs.nixvim.enable =
+    lib.mkEnableOption "modules.programs.nixvim";
 
   config = lib.mkIf config.modules.programs.nixvim.enable {
     modules = {

@@ -5,13 +5,25 @@
   ...
 }: {
   options.modules.homeManager.home.sessionVariables = {
-    BROWSER.enable = lib.mkEnableOption "sessionVariables.BROWSER";
-    EDITOR.enable = lib.mkEnableOption "sessionVariables.EDITOR";
-    MANPAGER.enable = lib.mkEnableOption "sessionVariables.MANPAGER";
-    SHELL.enable = lib.mkEnableOption "sessionVariables.SHELL";
-    TERMINAL.enable = lib.mkEnableOption "sessionVariables.TERMINAL";
-    TMPDIR.enable = lib.mkEnableOption "sessionVariables.TMPDIR";
-    enable = lib.mkEnableOption "sessionVariables";
+    BROWSER.enable =
+      lib.mkEnableOption "modules.homeManager.home.sessionVariables.BROWSER";
+
+    EDITOR.enable =
+      lib.mkEnableOption "modules.homeManager.home.sessionVariables.EDITOR";
+
+    MANPAGER.enable =
+      lib.mkEnableOption "modules.homeManager.home.sessionVariables.MANPAGER";
+
+    SHELL.enable =
+      lib.mkEnableOption "modules.homeManager.home.sessionVariables.SHELL";
+
+    TERMINAL.enable =
+      lib.mkEnableOption "modules.homeManager.home.sessionVariables.TERMINAL";
+
+    TMPDIR.enable =
+      lib.mkEnableOption "modules.homeManager.home.sessionVariables.TMPDIR";
+
+    enable = lib.mkEnableOption "modules.homeManager.home.sessionVariables";
   };
 
   config.home.sessionVariables = let

@@ -7,7 +7,7 @@
   imports = [../../../agenix/homeManagerModules/default];
 
   options.modules.homeManager.programs.borgmatic.enable =
-    lib.mkEnableOption "borgmatic";
+    lib.mkEnableOption "modules.homeManager.programs.borgmatic";
 
   config = lib.mkIf config.modules.homeManager.programs.borgmatic.enable {
     modules.agenix.homeManagerModules.default.enable = true;

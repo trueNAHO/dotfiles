@@ -6,7 +6,7 @@
   imports = [../../xdg];
 
   options.modules.homeManager.programs.zathura.enable =
-    lib.mkEnableOption "zathura";
+    lib.mkEnableOption "modules.homeManager.programs.zathura";
 
   config =
     lib.mkIf

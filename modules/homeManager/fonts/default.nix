@@ -4,7 +4,8 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.fonts.enable = lib.mkEnableOption "fonts";
+  options.modules.homeManager.fonts.enable =
+    lib.mkEnableOption "modules.homeManager.fonts";
 
   config = lib.mkIf config.modules.homeManager.fonts.enable {
     fonts.fontconfig.enable = true;

@@ -4,7 +4,8 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.programs.eza.enable = lib.mkEnableOption "eza";
+  options.modules.homeManager.programs.eza.enable =
+    lib.mkEnableOption "modules.homeManager.programs.eza";
 
   config = lib.mkIf config.modules.homeManager.programs.eza.enable {
     home.shellAliases = let

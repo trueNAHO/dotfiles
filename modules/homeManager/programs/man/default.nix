@@ -3,7 +3,8 @@
   lib,
   ...
 }: {
-  options.modules.homeManager.programs.man.enable = lib.mkEnableOption "man";
+  options.modules.homeManager.programs.man.enable =
+    lib.mkEnableOption "modules.homeManager.programs.man";
 
   config = lib.mkIf config.modules.homeManager.programs.man.enable {
     programs.man.enable = true;

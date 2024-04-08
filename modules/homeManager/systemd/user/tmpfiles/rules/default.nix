@@ -6,7 +6,7 @@
   imports = [../../../../home/sessionVariables];
 
   options.modules.homeManager.systemd.user.tmpfiles.rules.enable =
-    lib.mkEnableOption "systemd.user.tmpfiles.rules";
+    lib.mkEnableOption "modules.homeManager.systemd.user.tmpfiles.rules";
 
   config =
     lib.mkIf

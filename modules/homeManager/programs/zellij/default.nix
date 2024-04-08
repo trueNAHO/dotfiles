@@ -7,7 +7,7 @@
   imports = [../../home/sessionVariables];
 
   options.modules.homeManager.programs.zellij.enable =
-    lib.mkEnableOption "zellij";
+    lib.mkEnableOption "modules.homeManager.programs.zellij";
 
   config =
     lib.mkIf

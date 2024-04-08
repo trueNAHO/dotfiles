@@ -7,8 +7,8 @@
   imports = [../password-store];
 
   options.modules.homeManager.programs.rofi = {
-    enable = lib.mkEnableOption "rofi";
-    pass.enable = lib.mkEnableOption "rofi.pass";
+    enable = lib.mkEnableOption "modules.homeManager.programs.rofi";
+    pass.enable = lib.mkEnableOption "modules.homeManager.programs.rofi.pass";
   };
 
   config = let

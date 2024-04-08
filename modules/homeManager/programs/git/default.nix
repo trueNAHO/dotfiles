@@ -4,7 +4,8 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.programs.git.enable = lib.mkEnableOption "git";
+  options.modules.homeManager.programs.git.enable =
+    lib.mkEnableOption "modules.homeManager.programs.git";
 
   config = let
     git = pkgs.git.pname;

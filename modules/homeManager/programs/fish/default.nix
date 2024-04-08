@@ -13,7 +13,8 @@
     ../../wayland/windowManager/hyprland
   ];
 
-  options.modules.homeManager.programs.fish.enable = lib.mkEnableOption "fish";
+  options.modules.homeManager.programs.fish.enable =
+    lib.mkEnableOption "modules.homeManager.programs.fish";
 
   config = lib.mkIf config.modules.homeManager.programs.fish.enable {
     home = {

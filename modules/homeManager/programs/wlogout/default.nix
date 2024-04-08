@@ -6,7 +6,7 @@
   imports = [../../services/swayidle];
 
   options.modules.homeManager.programs.wlogout.enable =
-    lib.mkEnableOption "wlogout";
+    lib.mkEnableOption "modules.homeManager.programs.wlogout";
 
   config = lib.mkIf config.modules.homeManager.programs.wlogout.enable {
     modules.homeManager.services.swayidle.enable = true;

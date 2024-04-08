@@ -6,7 +6,7 @@
   imports = [../../home/sessionVariables];
 
   options.modules.homeManager.programs.kitty.enable =
-    lib.mkEnableOption "kitty";
+    lib.mkEnableOption "modules.homeManager.programs.kitty";
 
   config = lib.mkIf config.modules.homeManager.programs.kitty.enable {
     modules.homeManager.home.sessionVariables.TERMINAL.enable = true;

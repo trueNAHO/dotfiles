@@ -4,7 +4,7 @@
   ...
 }: {
   options.modules.homeManager.programs.direnv.enable =
-    lib.mkEnableOption "direnv";
+    lib.mkEnableOption "modules.homeManager.programs.direnv";
 
   config = lib.mkIf config.modules.homeManager.programs.direnv.enable {
     programs.direnv = {

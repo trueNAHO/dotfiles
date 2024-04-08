@@ -3,7 +3,9 @@
   lib,
   pkgs,
   ...
-}: {
+}: let
+  module = "modules.homeManager.programs.qutebrowser";
+in {
   imports = [
     ../../home/packages/wl-clipboard
     ../../home/sessionVariables
@@ -14,7 +16,7 @@
   ];
 
   options.modules.homeManager.programs.qutebrowser.enable =
-    lib.mkEnableOption "qutebrowser";
+    lib.mkEnableOption module;
 
   config =
     lib.mkIf
@@ -39,16 +41,15 @@
           };
         };
 
-        home.activation = let
-          src = "homeManager.programs.qutebrowser";
-        in {
-          ${src} =
+        home.activation = {
+          ${module} =
             import
             ../../../../lib/modules/nixos_requirement {
-              inherit lib src;
+              inherit lib;
 
               documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable";
               literalExpression = "programs.dconf.enable = true;";
+              src = module;
             };
         };
 

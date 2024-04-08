@@ -5,7 +5,8 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.programs.xplr.enable = lib.mkEnableOption "xplr";
+  options.modules.homeManager.programs.xplr.enable =
+    lib.mkEnableOption "modules.homeManager.programs.xplr";
 
   config = lib.mkIf config.modules.homeManager.programs.xplr.enable {
     home.packages = let

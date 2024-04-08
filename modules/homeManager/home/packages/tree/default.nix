@@ -5,7 +5,7 @@
   ...
 }: {
   options.modules.homeManager.home.packages.tree.enable =
-    lib.mkEnableOption "tree";
+    lib.mkEnableOption "modules.homeManager.home.packages.tree";
 
   config = lib.mkIf config.modules.homeManager.home.packages.tree.enable {
     home = {

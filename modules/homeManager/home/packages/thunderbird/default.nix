@@ -8,7 +8,7 @@
   ...
 }: {
   options.modules.homeManager.home.packages.thunderbird.enable =
-    lib.mkEnableOption "thunderbird";
+    lib.mkEnableOption "modules.homeManager.home.packages.thunderbird";
 
   config = lib.mkIf config.modules.homeManager.home.packages.thunderbird.enable {
     home.packages = [pkgs.thunderbird];

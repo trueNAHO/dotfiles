@@ -8,7 +8,9 @@
 
   options.modules.homeManager.services.swayidle = {
     displayTimeout = {
-      enable = lib.mkEnableOption "swayidle.displayTimeout";
+      enable =
+        lib.mkEnableOption
+        "modules.homeManager.services.swayidle.displayTimeout";
 
       timeouts = {
         command = lib.mkOption {
@@ -31,7 +33,7 @@
       };
     };
 
-    enable = lib.mkEnableOption "swayidle";
+    enable = lib.mkEnableOption "modules.homeManager.services.swayidle";
   };
 
   config = let
