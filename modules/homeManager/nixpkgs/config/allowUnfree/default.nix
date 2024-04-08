@@ -10,12 +10,15 @@
     cfg = config.modules.homeManager.nixpkgs.config.allowUnfree;
     string = "'nixpkgs.config.allowUnfree = ${toString cfg.enable};'";
   in {
-    home.activation."modules.homeManager.nixpkgs.config.allowUnfree" =
-      import
-      ../../../../../lib/modules/lib_hm_dag_entry_before_write_boundary_printf {
-        inherit string lib;
-        src = "modules.homeManager.nixpkgs.config.allowUnfree";
-      };
+    home.activation = let
+      src = "modules.homeManager.nixpkgs.config.allowUnfree";
+    in {
+      ${src} =
+        import
+        ../../../../../lib/modules/lib_hm_dag_entry_before_write_boundary_printf {
+          inherit lib src string;
+        };
+    };
 
     nixpkgs.config.allowUnfree = lib.info string cfg.enable;
   };

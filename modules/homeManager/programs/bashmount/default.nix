@@ -7,15 +7,18 @@
     lib.mkEnableOption "bashmount";
 
   config = lib.mkIf config.modules.homeManager.programs.bashmount.enable {
-    home.activation."modules.homeManager.programs.bashmount" =
-      import
-      ../../../../lib/modules/nixos_requirement {
-        inherit lib;
+    home.activation = let
+      src = "modules.homeManager.programs.bashmount";
+    in {
+      ${src} =
+        import
+        ../../../../lib/modules/nixos_requirement {
+          inherit lib src;
 
-        documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.udiskie.enable";
-        literalExpression = "services.udisks2.enable = true;";
-        src = "modules.homeManager.programs.bashmount, udiskctl";
-      };
+          documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.udiskie.enable";
+          literalExpression = "services.udisks2.enable = true;";
+        };
+    };
 
     programs.bashmount.enable = true;
   };

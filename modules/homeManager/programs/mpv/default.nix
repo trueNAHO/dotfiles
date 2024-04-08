@@ -10,15 +10,18 @@
   config = lib.mkIf config.modules.homeManager.programs.mpv.enable {
     modules.stylix.enable = true;
 
-    home.activation."modules.homeManager.programs.mpv" =
-      import
-      ../../../../lib/modules/nixos_requirement {
-        inherit lib;
+    home.activation = let
+      src = "modules.homeManager.programs.mpv";
+    in {
+      ${src} =
+        import
+        ../../../../lib/modules/nixos_requirement {
+          inherit lib src;
 
-        documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable";
-        literalExpression = "programs.dconf.enable = true;";
-        src = "modules.homeManager.programs.mpv";
-      };
+          documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable";
+          literalExpression = "programs.dconf.enable = true;";
+        };
+    };
 
     programs.mpv = {
       enable = true;

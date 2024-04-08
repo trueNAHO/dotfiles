@@ -39,15 +39,18 @@
           };
         };
 
-        home.activation."homeManager.programs.qutebrowser" =
-          import
-          ../../../../lib/modules/nixos_requirement {
-            inherit lib;
+        home.activation = let
+          src = "homeManager.programs.qutebrowser";
+        in {
+          ${src} =
+            import
+            ../../../../lib/modules/nixos_requirement {
+              inherit lib src;
 
-            documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable";
-            literalExpression = "programs.dconf.enable = true;";
-            src = "modules.homeManager.programs.qutebrowser";
-          };
+              documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable";
+              literalExpression = "programs.dconf.enable = true;";
+            };
+        };
 
         programs.qutebrowser = {
           aliases.x = "quit --save";

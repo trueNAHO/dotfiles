@@ -9,15 +9,18 @@
   options.modules.stylix.enable = lib.mkEnableOption "stylix";
 
   config = lib.mkIf config.modules.stylix.enable {
-    home.activation."modules.stylix" =
-      import
-      ../../lib/modules/nixos_requirement {
-        inherit lib;
+    home.activation = let
+      src = "modules.stylix";
+    in {
+      ${src} =
+        import
+        ../../lib/modules/nixos_requirement {
+          inherit lib src;
 
-        documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable";
-        literalExpression = "programs.dconf.enable = true;";
-        src = "modules.stylix";
-      };
+          documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable";
+          literalExpression = "programs.dconf.enable = true;";
+        };
+    };
 
     stylix = {
       cursor = {
