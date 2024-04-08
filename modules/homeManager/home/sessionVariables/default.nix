@@ -27,7 +27,7 @@
         EDITOR = neovim;
       })
 
-      (lib.mkIf cfg.MANPAGER.enable {
+      (lib.mkIf (cfg.enable || cfg.MANPAGER.enable) {
         MANPAGER = "${neovim} +Man!";
       })
 
