@@ -18,6 +18,12 @@
     cfg = config.modules.homeManager.home.sessionVariables;
     neovim = pkgs.neovim.meta.mainProgram;
   in
+    # The 'lib.mkMerge [(lib.mkIf <BOOL> {<VARIABLE> = <VALUE>;})];' pattern is
+    # used instead of the simpler '{<VARIABLE> = lib.mkIf <BOOL> <VALUE>;};'
+    # expression in order to avoid the following upstream error:
+    #
+    #     error: The option `home.sessionVariables.<VARIABLE>' is used but not
+    #     defined.
     lib.mkMerge [
       (lib.mkIf (cfg.enable || cfg.BROWSER.enable) {
         BROWSER = pkgs.qutebrowser.pname;
