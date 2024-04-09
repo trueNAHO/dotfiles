@@ -5,6 +5,44 @@
 |===
 | Home Manager Configurations | Description
 
+| * {directory}/programs/nixvim/default.nix[`aarch64-darwin-private-standalone-programs-nixvim`]
+  * {directory}/programs/nixvim/default.nix[`aarch64-linux-private-standalone-programs-nixvim`]
+  * {directory}/programs/nixvim/default.nix[`x86_64-darwin-private-standalone-programs-nixvim`]
+  * {directory}/programs/nixvim/default.nix[`x86_64-linux-private-standalone-programs-nixvim`]
+| {minimal-reproducible-example}[MWE] of the `modules.programs.nixvim`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/codeium-nvim/default.nix[`aarch64-darwin-private-standalone-programs-nixvim-plugins-codeium-nvim`]
+  * {directory}/programs/nixvim/plugins/codeium-nvim/default.nix[`aarch64-linux-private-standalone-programs-nixvim-plugins-codeium-nvim`]
+  * {directory}/programs/nixvim/plugins/codeium-nvim/default.nix[`x86_64-darwin-private-standalone-programs-nixvim-plugins-codeium-nvim`]
+  * {directory}/programs/nixvim/plugins/codeium-nvim/default.nix[`x86_64-linux-private-standalone-programs-nixvim-plugins-codeium-nvim`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.codeium-nvim`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/codeium-vim/default.nix[`aarch64-darwin-private-standalone-programs-nixvim-plugins-codeium-vim`]
+  * {directory}/programs/nixvim/plugins/codeium-vim/default.nix[`aarch64-linux-private-standalone-programs-nixvim-plugins-codeium-vim`]
+  * {directory}/programs/nixvim/plugins/codeium-vim/default.nix[`x86_64-darwin-private-standalone-programs-nixvim-plugins-codeium-vim`]
+  * {directory}/programs/nixvim/plugins/codeium-vim/default.nix[`x86_64-linux-private-standalone-programs-nixvim-plugins-codeium-vim`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.codeium-vim`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/default.nix[`aarch64-darwin-private-standalone-programs-nixvim-plugins`]
+  * {directory}/programs/nixvim/plugins/default.nix[`aarch64-linux-private-standalone-programs-nixvim-plugins`]
+  * {directory}/programs/nixvim/plugins/default.nix[`x86_64-darwin-private-standalone-programs-nixvim-plugins`]
+  * {directory}/programs/nixvim/plugins/default.nix[`x86_64-linux-private-standalone-programs-nixvim-plugins`]
+| {minimal-reproducible-example}[MWE] of the `modules.programs.nixvim.plugins`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/nvim-cmp/default.nix[`aarch64-darwin-private-standalone-programs-nixvim-plugins-nvim-cmp`]
+  * {directory}/programs/nixvim/plugins/nvim-cmp/default.nix[`aarch64-linux-private-standalone-programs-nixvim-plugins-nvim-cmp`]
+  * {directory}/programs/nixvim/plugins/nvim-cmp/default.nix[`x86_64-darwin-private-standalone-programs-nixvim-plugins-nvim-cmp`]
+  * {directory}/programs/nixvim/plugins/nvim-cmp/default.nix[`x86_64-linux-private-standalone-programs-nixvim-plugins-nvim-cmp`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.nvim-cmp`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
 | * {directory}/homeManager/programs/borgmatic/default.nix[`aarch64-darwin-private-standalone-homeManager-programs-borgmatic`]
   * {directory}/homeManager/programs/borgmatic/default.nix[`aarch64-linux-private-standalone-homeManager-programs-borgmatic`]
   * {directory}/homeManager/programs/borgmatic/default.nix[`x86_64-darwin-private-standalone-homeManager-programs-borgmatic`]
@@ -27,19 +65,112 @@
 | {minimal-reproducible-example}[MWE] of the
   `modules.homeManager.services.borgmatic.enable`
   <<developer_documentation_architecture_code_map_modules_directory, module>>.
-
-| * {directory}/programs/nixivm[`aarch64-darwin-private-standalone-programs-nixvim`]
-  * {directory}/programs/nixivm[`aarch64-linux-private-standalone-programs-nixvim`]
-  * {directory}/programs/nixivm[`x86_64-darwin-private-standalone-programs-nixvim`]
-  * {directory}/programs/nixivm[`x86_64-linux-private-standalone-programs-nixvim`]
-| {minimal-reproducible-example}[MWE] of the `modules.programs.nixvim`
-  <<developer_documentation_architecture_code_map_modules_directory, module>>.
 |===
 
 ====
 To build the Home Manager configurations directly from {repository}[upstream]
 using {nix}[`nix`], run one of the following commands depending on the target
 platform and Home Manager configuration:
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-private-standalone-programs-nixvim
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-private-standalone-programs-nixvim
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-private-standalone-programs-nixvim
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-private-standalone-programs-nixvim
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-private-standalone-programs-nixvim-plugins
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-private-standalone-programs-nixvim-plugins
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-private-standalone-programs-nixvim-plugins
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-private-standalone-programs-nixvim-plugins
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-private-standalone-programs-nixvim-plugins-codeium-nvim
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-private-standalone-programs-nixvim-plugins-codeium-nvim
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-private-standalone-programs-nixvim-plugins-codeium-nvim
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-private-standalone-programs-nixvim-plugins-codeium-nvim
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-private-standalone-programs-nixvim-plugins-codeium-vim
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-private-standalone-programs-nixvim-plugins-codeium-vim
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-private-standalone-programs-nixvim-plugins-codeium-vim
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-private-standalone-programs-nixvim-plugins-codeium-vim
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-private-standalone-programs-nixvim-plugins-nvim-cmp
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-private-standalone-programs-nixvim-plugins-nvim-cmp
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-private-standalone-programs-nixvim-plugins-nvim-cmp
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-private-standalone-programs-nixvim-plugins-nvim-cmp
+----
 
 [,bash,subs=attributes+]
 ----
@@ -99,25 +230,5 @@ platform and Home Manager configuration:
 [,bash,subs=attributes+]
 ----
 {command-home-manager-switch-flake}x86_64-linux-private-standalone-homeManager-services-borgmatic
-----
-
-[,bash,subs=attributes+]
-----
-{command-home-manager-switch-flake}aarch64-darwin-private-standalone-programs-nixvim
-----
-
-[,bash,subs=attributes+]
-----
-{command-home-manager-switch-flake}aarch64-linux-private-standalone-programs-nixvim
-----
-
-[,bash,subs=attributes+]
-----
-{command-home-manager-switch-flake}x86_64-darwin-private-standalone-programs-nixvim
-----
-
-[,bash,subs=attributes+]
-----
-{command-home-manager-switch-flake}x86_64-linux-private-standalone-programs-nixvim
 ----
 ====

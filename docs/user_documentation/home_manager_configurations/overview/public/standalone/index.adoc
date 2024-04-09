@@ -13,6 +13,203 @@
   `modules.agenix.homeManagerModules.default`
   <<developer_documentation_architecture_code_map_modules_directory, module>>.
 
+| * {directory}/programs/nixvim/autoCmd/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-autoCmd`]
+  * {directory}/programs/nixvim/autoCmd/default.nix[`aarch64-linux-public-standalone-programs-nixvim-autoCmd`]
+  * {directory}/programs/nixvim/autoCmd/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-autoCmd`]
+  * {directory}/programs/nixvim/autoCmd/default.nix[`x86_64-linux-public-standalone-programs-nixvim-autoCmd`]
+| {minimal-reproducible-example}[MWE] of the `modules.programs.nixvim.autoCmd`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/keymaps/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-keymaps`]
+  * {directory}/programs/nixvim/keymaps/default.nix[`aarch64-linux-public-standalone-programs-nixvim-keymaps`]
+  * {directory}/programs/nixvim/keymaps/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-keymaps`]
+  * {directory}/programs/nixvim/keymaps/default.nix[`x86_64-linux-public-standalone-programs-nixvim-keymaps`]
+| {minimal-reproducible-example}[MWE] of the `modules.programs.nixvim.keymaps`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/options/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-options`]
+  * {directory}/programs/nixvim/options/default.nix[`aarch64-linux-public-standalone-programs-nixvim-options`]
+  * {directory}/programs/nixvim/options/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-options`]
+  * {directory}/programs/nixvim/options/default.nix[`x86_64-linux-public-standalone-programs-nixvim-options`]
+| {minimal-reproducible-example}[MWE] of the `modules.programs.nixvim.options`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/comment-nvim/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-comment-nvim`]
+  * {directory}/programs/nixvim/plugins/comment-nvim/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-comment-nvim`]
+  * {directory}/programs/nixvim/plugins/comment-nvim/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-comment-nvim`]
+  * {directory}/programs/nixvim/plugins/comment-nvim/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-comment-nvim`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.comment-nvim`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/debugprint/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-debugprint`]
+  * {directory}/programs/nixvim/plugins/debugprint/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-debugprint`]
+  * {directory}/programs/nixvim/plugins/debugprint/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-debugprint`]
+  * {directory}/programs/nixvim/plugins/debugprint/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-debugprint`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.debugprint`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/fidget/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-fidget`]
+  * {directory}/programs/nixvim/plugins/fidget/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-fidget`]
+  * {directory}/programs/nixvim/plugins/fidget/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-fidget`]
+  * {directory}/programs/nixvim/plugins/fidget/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-fidget`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.fidget`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/gitmessenger/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-gitmessenger`]
+  * {directory}/programs/nixvim/plugins/gitmessenger/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-gitmessenger`]
+  * {directory}/programs/nixvim/plugins/gitmessenger/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-gitmessenger`]
+  * {directory}/programs/nixvim/plugins/gitmessenger/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-gitmessenger`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.gitmessenger`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/gitsigns/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-gitsigns`]
+  * {directory}/programs/nixvim/plugins/gitsigns/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-gitsigns`]
+  * {directory}/programs/nixvim/plugins/gitsigns/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-gitsigns`]
+  * {directory}/programs/nixvim/plugins/gitsigns/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-gitsigns`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.gitsigns`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/illuminate/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-illuminate`]
+  * {directory}/programs/nixvim/plugins/illuminate/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-illuminate`]
+  * {directory}/programs/nixvim/plugins/illuminate/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-illuminate`]
+  * {directory}/programs/nixvim/plugins/illuminate/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-illuminate`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.illuminate`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/leap/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-leap`]
+  * {directory}/programs/nixvim/plugins/leap/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-leap`]
+  * {directory}/programs/nixvim/plugins/leap/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-leap`]
+  * {directory}/programs/nixvim/plugins/leap/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-leap`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.leap`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/lsp-format/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-lsp-format`]
+  * {directory}/programs/nixvim/plugins/lsp-format/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-lsp-format`]
+  * {directory}/programs/nixvim/plugins/lsp-format/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-lsp-format`]
+  * {directory}/programs/nixvim/plugins/lsp-format/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-lsp-format`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.lsp-format`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/lsp/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-lsp`]
+  * {directory}/programs/nixvim/plugins/lsp/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-lsp`]
+  * {directory}/programs/nixvim/plugins/lsp/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-lsp`]
+  * {directory}/programs/nixvim/plugins/lsp/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-lsp`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.lsp`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/nvim-colorizer/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-nvim-colorizer`]
+  * {directory}/programs/nixvim/plugins/nvim-colorizer/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-nvim-colorizer`]
+  * {directory}/programs/nixvim/plugins/nvim-colorizer/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-nvim-colorizer`]
+  * {directory}/programs/nixvim/plugins/nvim-colorizer/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-nvim-colorizer`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.nvim-colorizer`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/nvim-tree/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-nvim-tree`]
+  * {directory}/programs/nixvim/plugins/nvim-tree/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-nvim-tree`]
+  * {directory}/programs/nixvim/plugins/nvim-tree/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-nvim-tree`]
+  * {directory}/programs/nixvim/plugins/nvim-tree/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-nvim-tree`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.nvim-tree`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/rainbow-delimiters/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-rainbow-delimiters`]
+  * {directory}/programs/nixvim/plugins/rainbow-delimiters/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-rainbow-delimiters`]
+  * {directory}/programs/nixvim/plugins/rainbow-delimiters/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-rainbow-delimiters`]
+  * {directory}/programs/nixvim/plugins/rainbow-delimiters/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-rainbow-delimiters`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.rainbow-delimiters`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/rustaceanvim/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-rustaceanvim`]
+  * {directory}/programs/nixvim/plugins/rustaceanvim/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-rustaceanvim`]
+  * {directory}/programs/nixvim/plugins/rustaceanvim/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-rustaceanvim`]
+  * {directory}/programs/nixvim/plugins/rustaceanvim/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-rustaceanvim`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.rustaceanvim`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/spider/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-spider`]
+  * {directory}/programs/nixvim/plugins/spider/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-spider`]
+  * {directory}/programs/nixvim/plugins/spider/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-spider`]
+  * {directory}/programs/nixvim/plugins/spider/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-spider`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.spider`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/surround/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-surround`]
+  * {directory}/programs/nixvim/plugins/surround/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-surround`]
+  * {directory}/programs/nixvim/plugins/surround/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-surround`]
+  * {directory}/programs/nixvim/plugins/surround/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-surround`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.surround`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/telescope/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-telescope`]
+  * {directory}/programs/nixvim/plugins/telescope/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-telescope`]
+  * {directory}/programs/nixvim/plugins/telescope/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-telescope`]
+  * {directory}/programs/nixvim/plugins/telescope/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-telescope`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.telescope`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/todo-comments/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-todo-comments`]
+  * {directory}/programs/nixvim/plugins/todo-comments/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-todo-comments`]
+  * {directory}/programs/nixvim/plugins/todo-comments/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-todo-comments`]
+  * {directory}/programs/nixvim/plugins/todo-comments/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-todo-comments`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.todo-comments`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/treesitter-context/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-treesitter-context`]
+  * {directory}/programs/nixvim/plugins/treesitter-context/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-treesitter-context`]
+  * {directory}/programs/nixvim/plugins/treesitter-context/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-treesitter-context`]
+  * {directory}/programs/nixvim/plugins/treesitter-context/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-treesitter-context`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.treesitter-context`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/treesitter/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-treesitter`]
+  * {directory}/programs/nixvim/plugins/treesitter/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-treesitter`]
+  * {directory}/programs/nixvim/plugins/treesitter/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-treesitter`]
+  * {directory}/programs/nixvim/plugins/treesitter/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-treesitter`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.treesitter`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/trouble/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-trouble`]
+  * {directory}/programs/nixvim/plugins/trouble/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-trouble`]
+  * {directory}/programs/nixvim/plugins/trouble/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-trouble`]
+  * {directory}/programs/nixvim/plugins/trouble/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-trouble`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.trouble`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/undotree/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-undotree`]
+  * {directory}/programs/nixvim/plugins/undotree/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-undotree`]
+  * {directory}/programs/nixvim/plugins/undotree/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-undotree`]
+  * {directory}/programs/nixvim/plugins/undotree/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-undotree`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.undotree`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
+| * {directory}/programs/nixvim/plugins/wtf/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-wtf`]
+  * {directory}/programs/nixvim/plugins/wtf/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-wtf`]
+  * {directory}/programs/nixvim/plugins/wtf/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-wtf`]
+  * {directory}/programs/nixvim/plugins/wtf/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-wtf`]
+| {minimal-reproducible-example}[MWE] of the
+  `modules.programs.nixvim.plugins.wtf`
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
+
 | * {directory}/homeManager/fonts/default.nix[`aarch64-darwin-public-standalone-homeManager-fonts`]
   * {directory}/homeManager/fonts/default.nix[`aarch64-linux-public-standalone-homeManager-fonts`]
   * {directory}/homeManager/fonts/default.nix[`x86_64-darwin-public-standalone-homeManager-fonts`]
@@ -699,6 +896,506 @@ platform and Home Manager configuration:
 [,bash,subs=attributes+]
 ----
 {command-home-manager-switch-flake}x86_64-linux-public-standalone-agenix-homeManagerModules-default
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-autoCmd
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-autoCmd
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-autoCmd
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-autoCmd
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-keymaps
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-keymaps
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-keymaps
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-keymaps
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-options
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-options
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-options
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-options
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-comment-nvim
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-comment-nvim
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-comment-nvim
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-comment-nvim
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-debugprint
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-debugprint
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-debugprint
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-debugprint
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-fidget
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-fidget
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-fidget
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-fidget
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-gitmessenger
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-gitmessenger
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-gitmessenger
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-gitmessenger
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-gitsigns
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-gitsigns
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-gitsigns
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-gitsigns
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-illuminate
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-illuminate
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-illuminate
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-illuminate
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-leap
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-leap
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-leap
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-leap
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-lsp
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-lsp
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-lsp
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-lsp
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-lsp-format
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-lsp-format
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-lsp-format
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-lsp-format
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-nvim-colorizer
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-nvim-colorizer
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-nvim-colorizer
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-nvim-colorizer
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-nvim-tree
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-nvim-tree
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-nvim-tree
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-nvim-tree
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-rainbow-delimiters
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-rainbow-delimiters
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-rainbow-delimiters
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-rainbow-delimiters
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-rustaceanvim
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-rustaceanvim
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-rustaceanvim
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-rustaceanvim
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-spider
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-spider
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-spider
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-spider
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-surround
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-surround
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-surround
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-surround
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-telescope
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-telescope
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-telescope
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-telescope
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-todo-comments
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-todo-comments
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-todo-comments
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-todo-comments
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-treesitter
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-treesitter
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-treesitter
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-treesitter
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-treesitter-context
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-treesitter-context
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-treesitter-context
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-treesitter-context
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-trouble
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-trouble
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-trouble
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-trouble
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-undotree
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-undotree
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-undotree
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-undotree
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-wtf
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-wtf
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-wtf
+----
+
+[,bash,subs=attributes+]
+----
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-wtf
 ----
 
 [,bash,subs=attributes+]

@@ -1,49 +1,60 @@
 {
-  programs.nixvim = {
-    keymaps = let
-      requireTodocomments = "require('todo-comments')";
-    in
-      map (keymaps:
-        {
-          lua = true;
-          mode = "n";
-          options.silent = true;
-        }
-        // keymaps)
-      [
-        {
-          action = "function() ${requireTodocomments}.jump_next() end";
-          key = "]t";
-        }
+  config,
+  lib,
+  ...
+}: {
+  options.modules.programs.nixvim.plugins.todo-comments.enable =
+    lib.mkEnableOption "modules.programs.nixvim.plugins.todo-comments";
 
-        {
-          action = "function() ${requireTodocomments}.jump_prev() end";
-          key = "[t";
-        }
-      ];
+  config =
+    lib.mkIf
+    config.modules.programs.nixvim.plugins.todo-comments.enable {
+      programs.nixvim = {
+        keymaps = let
+          requireTodocomments = "require('todo-comments')";
+        in
+          map (keymaps:
+            {
+              lua = true;
+              mode = "n";
+              options.silent = true;
+            }
+            // keymaps)
+          [
+            {
+              action = "function() ${requireTodocomments}.jump_next() end";
+              key = "]t";
+            }
 
-    plugins.todo-comments = {
-      enable = true;
+            {
+              action = "function() ${requireTodocomments}.jump_prev() end";
+              key = "[t";
+            }
+          ];
 
-      extraOptions = {
-        highlight = {
-          comments_only = false;
-          pattern = [''.*<(KEYWORDS)\s*:'' ''.*<(KEYWORDS)\s*!\(''];
+        plugins.todo-comments = {
+          enable = true;
+
+          extraOptions = {
+            highlight = {
+              comments_only = false;
+              pattern = [''.*<(KEYWORDS)\s*:'' ''.*<(KEYWORDS)\s*!\(''];
+            };
+
+            keywords.TODO.alt = ["todo" "unimplemented"];
+            search.pattern = ''\b(KEYWORDS)(:|!\()'';
+          };
+
+          keymaps = let
+            leader = {
+              telescope = "<leader>t";
+              trouble = "<leader>l";
+            };
+          in {
+            todoTelescope.key = "${leader.telescope}t";
+            todoTrouble.key = "${leader.trouble}q";
+          };
         };
-
-        keywords.TODO.alt = ["todo" "unimplemented"];
-        search.pattern = ''\b(KEYWORDS)(:|!\()'';
-      };
-
-      keymaps = let
-        leader = {
-          telescope = "<leader>t";
-          trouble = "<leader>l";
-        };
-      in {
-        todoTelescope.key = "${leader.telescope}t";
-        todoTrouble.key = "${leader.trouble}q";
       };
     };
-  };
 }

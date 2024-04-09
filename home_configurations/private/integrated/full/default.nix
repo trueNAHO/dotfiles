@@ -122,7 +122,12 @@ import ../../../../lib/home_configurations/home_configuration {
     };
 
     nix-alien.enable = true;
-    programs.nixvim.enable = true;
+
+    programs.nixvim = {
+      enable = true;
+      full = true;
+    };
+
     services.battery.enable = true;
     stylix.enable = true;
     wayland.enable = true;
