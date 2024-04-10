@@ -6,6 +6,7 @@
   ...
 }: {
   imports = [
+    ../../homeManager/home/sessionVariables
     ./autoCmd
     ./keymaps
     ./options
@@ -20,6 +21,11 @@
 
   config = lib.mkIf config.modules.programs.nixvim.enable (lib.mkMerge [
     {
+      modules.homeManager.home.sessionVariables = {
+        EDITOR.enable = true;
+        MANPAGER.enable = true;
+      };
+
       home.shellAliases.n = pkgs.neovim.meta.mainProgram;
 
       programs.nixvim = {
