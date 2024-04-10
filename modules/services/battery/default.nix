@@ -3,7 +3,9 @@
   lib,
   pkgs,
   ...
-}: {
+}: let
+  module = "modules.services.battery";
+in {
   imports = [../../homeManager/services/dunst];
 
   options.modules.services.battery = {
@@ -19,7 +21,7 @@
       type = lib.types.ints.between 0 100;
     };
 
-    enable = lib.mkEnableOption "modules.services.battery";
+    enable = lib.mkEnableOption module;
 
     runtimeDir = lib.mkOption {
       default = "$XDG_RUNTIME_DIR/battery";
@@ -83,8 +85,8 @@
             <= cfg.urgency.low;
 
           message = let
-            module = "modules.services.battery.urgency";
-          in "Expected '${module}.critical <= ${module}.normal <= ${module}.low', got: '${toString cfg.urgency.critical} <= ${toString cfg.urgency.normal} <= ${toString cfg.urgency.low}'";
+            module.urgency = "${module}.urgency";
+          in "Expected '${module.urgency}.critical <= ${module.urgency}.normal <= ${module.urgency}.low', got: '${toString cfg.urgency.critical} <= ${toString cfg.urgency.normal} <= ${toString cfg.urgency.low}'";
         }
       ];
 
