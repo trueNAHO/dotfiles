@@ -24,7 +24,8 @@
   * {directory}/homeManager/services/borgmatic/default.nix[`aarch64-linux-private-standalone-homeManager-services-borgmatic`]
   * {directory}/homeManager/services/borgmatic/default.nix[`x86_64-darwin-private-standalone-homeManager-services-borgmatic`]
   * {directory}/homeManager/services/borgmatic/default.nix[`x86_64-linux-private-standalone-homeManager-services-borgmatic`]
-| {minimal-reproducible-example}[MWE] of the `modules.programs.nixvim`
+| {minimal-reproducible-example}[MWE] of the
+  `modules.homeManager.services.borgmatic.enable`
   <<developer_documentation_architecture_code_map_modules_directory, module>>.
 
 | * {directory}/programs/nixivm[`aarch64-darwin-private-standalone-programs-nixvim`]
