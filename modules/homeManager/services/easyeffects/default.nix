@@ -29,23 +29,25 @@ in {
         enable = true;
       };
 
-      xdg.configFile."easyeffects/output/${preset}.json".text = builtins.toJSON {
-        output = let
-          autogain = "autogain#0";
-        in {
-          ${autogain} = {
-            bypass = false;
-            input-gain = 0;
-            maximum-history = 15;
-            output-gain = 0;
-            reference = "Geometric Mean (MSI)";
-            silence-threshold = -70;
-            target = -23;
-          };
+      xdg.configFile."easyeffects/output/${preset}.json".text =
+        builtins.toJSON
+        {
+          output = let
+            autogain = "autogain#0";
+          in {
+            ${autogain} = {
+              bypass = false;
+              input-gain = 0;
+              maximum-history = 15;
+              output-gain = 0;
+              reference = "Geometric Mean (MSI)";
+              silence-threshold = -70;
+              target = -23;
+            };
 
-          blocklist = [];
-          plugins_order = [autogain];
+            blocklist = [];
+            plugins_order = [autogain];
+          };
         };
-      };
     };
 }

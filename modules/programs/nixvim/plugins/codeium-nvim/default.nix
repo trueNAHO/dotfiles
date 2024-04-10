@@ -17,7 +17,9 @@
       homeManager.nixpkgs.config.allowUnfree.enable = true;
     };
 
-    age.secrets.modulesProgramsNixvimPluginsCodeiumApiKey.file = ../codeium_api_key.age;
+    age.secrets.modulesProgramsNixvimPluginsCodeiumApiKey = {
+      file = ../codeium_api_key.age;
+    };
 
     programs.nixvim.plugins.codeium-nvim = {
       configPath.__raw = ''

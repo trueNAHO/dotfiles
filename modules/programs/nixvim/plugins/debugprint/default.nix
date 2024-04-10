@@ -63,7 +63,12 @@
             }
 
             {
-              action = "function() return ${requireDebugprintDeleteprints}() end";
+              action = ''
+                function()
+                  return ${requireDebugprintDeleteprints}()
+                end
+              '';
+
               key = "${leader}d";
               options.expr = false;
             }

@@ -15,7 +15,8 @@ in {
     home.activation = {
       ${module} =
         import
-        ../../../../../lib/modules/lib_hm_dag_entry_before_write_boundary_printf {
+        ../../../../../lib/modules/lib_hm_dag_entry_before_write_boundary_printf
+        {
           inherit lib string;
           src = module;
         };

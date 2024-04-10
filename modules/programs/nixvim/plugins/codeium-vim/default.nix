@@ -17,7 +17,9 @@
       homeManager.nixpkgs.config.allowUnfree.enable = true;
     };
 
-    age.secrets.modulesProgramsNixvimPluginsCodeiumApiKey.file = ../codeium_api_key.age;
+    age.secrets.modulesProgramsNixvimPluginsCodeiumApiKey = {
+      file = ../codeium_api_key.age;
+    };
 
     # TODO: Replace the activation script with an upstream VIM plugin option for
     # setting the config path storing the API key, similar to the 'config_path'
