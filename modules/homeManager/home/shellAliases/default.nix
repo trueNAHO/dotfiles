@@ -8,14 +8,9 @@
     lib.mkEnableOption "modules.homeManager.home.shellAliases";
 
   config = lib.mkIf config.modules.homeManager.home.shellAliases.enable {
-    home.shellAliases = let
-      clippy = "cargo clippy --all-targets --all-features -- -D warnings";
-    in {
+    home.shellAliases = {
       c = "cd";
       cal = "${pkgs.util-linux.outPath}/bin/cal --monday";
-      cg = "cargo";
-      cl = clippy;
-      clippy = clippy;
     };
   };
 }
