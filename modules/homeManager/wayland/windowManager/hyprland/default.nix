@@ -373,7 +373,7 @@ in {
                       (
                         lib.nameValuePair
                         "Battery"
-                        "$(acpi | awk '{print substr($0, index($0,$3))}')"
+                        "$(acpi | awk '{print substr($0, index($0, $3))}')"
                       )
 
                       (
