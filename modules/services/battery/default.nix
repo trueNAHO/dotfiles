@@ -108,6 +108,39 @@ in {
 
                   text = let
                     maxBatteryValue = toString 100;
+
+                    notifySendBody =
+                      import
+                      ../../../lib/modules/notify_send_body {
+                        inherit lib;
+
+                        list = [
+                          (
+                            lib.nameValuePair
+                            "Capacity"
+                            "$battery_value_now%"
+                          )
+
+                          (
+                            lib.nameValuePair
+                            "Status"
+                            "$status"
+                          )
+
+                          (
+                            lib.nameValuePair
+                            "Time remaining"
+                            "$time_remaining"
+                          )
+
+                          (
+                            lib.nameValuePair
+                            "Urgency"
+                            "\${urgency^}"
+                          )
+                        ];
+                      };
+
                     valueFile = "${cfg.runtimeDir}/value";
                   in ''
                     battery="$(acpi | awk '/Battery 0/ { print $0; exit }')"
@@ -167,7 +200,7 @@ in {
                     notify-send \
                       --urgency "$urgency" \
                       "Battery" \
-                      "<u>Capacity:</u> $battery_value_now%\n<u>Status:</u> $status\n<u>Time remaining:</u> $time_remaining\n<u>Urgency:</u> ''${urgency^}"
+                      "${notifySendBody}"
 
                     printf '%s\n' "$battery_value_now" >"${valueFile}"
                   '';
