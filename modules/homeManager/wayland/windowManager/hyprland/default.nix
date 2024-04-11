@@ -363,13 +363,10 @@ in {
                   ++ [getBrightnessPercentage getVolumePercentage];
 
                 text = let
-                  body =
-                    lib.concatMapStrings
-                    ({
-                      name,
-                      value,
-                    }: "<u>${name}:</u> ${value}\\n")
-                    [
+                  body = import ../../../../../lib/modules/notify_send_body {
+                    inherit lib;
+
+                    list = [
                       (
                         lib.nameValuePair
                         "Battery"
@@ -394,6 +391,7 @@ in {
                         "$(${getVolumePercentage.meta.mainProgram})%"
                       )
                     ];
+                  };
                 in ''
                   notify-send "System Status" "${body}"
                 '';

@@ -22,6 +22,8 @@ include::lib_modules_lib_hm_dag_entry_before_write_boundary_printf_default_nix/i
 
 include::lib_modules_nixos_requirement_default_nix/index.adoc[]
 
+include::lib_notify_send_body_default_nix/index.adoc[]
+
 include::modules_directory/index.adoc[]
 
 include::secrets_nix/index.adoc[]
