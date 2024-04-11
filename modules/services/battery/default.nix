@@ -101,111 +101,109 @@ in {
             Install.WantedBy = ["default.target"];
 
             Service = {
-              ExecStart = let
-                application = pkgs.writeShellApplication {
-                  inherit name;
-                  runtimeInputs = with pkgs; [acpi coreutils gawk libnotify];
+              ExecStart = lib.getExe (pkgs.writeShellApplication {
+                inherit name;
+                runtimeInputs = with pkgs; [acpi coreutils gawk libnotify];
 
-                  text = let
-                    maxBatteryValue = toString 100;
+                text = let
+                  maxBatteryValue = toString 100;
 
-                    notifySendBody =
-                      import
-                      ../../../lib/modules/notify_send_body {
-                        inherit lib;
+                  notifySendBody =
+                    import
+                    ../../../lib/modules/notify_send_body {
+                      inherit lib;
 
-                        list = [
-                          (
-                            lib.nameValuePair
-                            "Capacity"
-                            "$battery_value_now%"
-                          )
+                      list = [
+                        (
+                          lib.nameValuePair
+                          "Capacity"
+                          "$battery_value_now%"
+                        )
 
-                          (
-                            lib.nameValuePair
-                            "Status"
-                            "$status"
-                          )
+                        (
+                          lib.nameValuePair
+                          "Status"
+                          "$status"
+                        )
 
-                          (
-                            lib.nameValuePair
-                            "Time remaining"
-                            "$time_remaining"
-                          )
+                        (
+                          lib.nameValuePair
+                          "Time remaining"
+                          "$time_remaining"
+                        )
 
-                          (
-                            lib.nameValuePair
-                            "Urgency"
-                            "\${urgency^}"
-                          )
-                        ];
-                      };
+                        (
+                          lib.nameValuePair
+                          "Urgency"
+                          "\${urgency^}"
+                        )
+                      ];
+                    };
 
-                    valueFile = "${cfg.runtimeDir}/value";
-                  in ''
-                    battery="$(acpi | awk '/Battery 0/ { print $0; exit }')"
+                  valueFile = "${cfg.runtimeDir}/value";
+                in ''
+                  battery="$(acpi | awk '/Battery 0/ { print $0; exit }')"
 
-                    battery_value_now="$(
-                        awk -v FPAT='[[:digit:]]+' '{ print $2 }' <<< "$battery"
-                    )"
+                  battery_value_now="$(
+                      awk -v FPAT='[[:digit:]]+' '{ print $2 }' <<< "$battery"
+                  )"
 
-                    mkdir --parent "${cfg.runtimeDir}"
+                  mkdir --parent "${cfg.runtimeDir}"
 
-                    if [[ -f "${valueFile}" ]]; then
-                      battery_value_before="$(cat "${valueFile}")"
-                    else
-                      printf '%s\n' "${maxBatteryValue}" >"${valueFile}"
-                      battery_value_before="${maxBatteryValue}"
-                    fi
+                  if [[ -f "${valueFile}" ]]; then
+                    battery_value_before="$(cat "${valueFile}")"
+                  else
+                    printf '%s\n' "${maxBatteryValue}" >"${valueFile}"
+                    battery_value_before="${maxBatteryValue}"
+                  fi
 
-                    if (( battery_value_now > battery_value_before )); then
-                      printf '%s\n' "$battery_value_now" >"${valueFile}"
-                      exit 0
-
-                    elif ((
-                      battery_value_before -
-                      battery_value_now <
-                      ${toString cfg.delta}
-                    )); then
-                      exit 0
-
-                    elif ((
-                      battery_value_now <=
-                      ${toString cfg.urgency.critical}
-                    )); then
-                      urgency="critical"
-
-                    elif ((
-                      battery_value_now <=
-                      ${toString cfg.urgency.normal}
-                    )); then
-                      urgency="normal"
-
-                    elif ((
-                      battery_value_now <=
-                      ${toString cfg.urgency.low}
-                    )); then
-                      urgency="low"
-
-                    else
-                      exit 0
-                    fi
-
-                    status="$(
-                      awk -v FPAT='[a-zA-Z]+' '{print $2}' <<< "$battery"
-                    )"
-
-                    time_remaining="$(awk '{ print $5 }' <<< "$battery")"
-
-                    notify-send \
-                      --urgency "$urgency" \
-                      "Battery" \
-                      "${notifySendBody}"
-
+                  if (( battery_value_now > battery_value_before )); then
                     printf '%s\n' "$battery_value_now" >"${valueFile}"
-                  '';
-                };
-              in "${application}/bin/${application.meta.mainProgram}";
+                    exit 0
+
+                  elif ((
+                    battery_value_before -
+                    battery_value_now <
+                    ${toString cfg.delta}
+                  )); then
+                    exit 0
+
+                  elif ((
+                    battery_value_now <=
+                    ${toString cfg.urgency.critical}
+                  )); then
+                    urgency="critical"
+
+                  elif ((
+                    battery_value_now <=
+                    ${toString cfg.urgency.normal}
+                  )); then
+                    urgency="normal"
+
+                  elif ((
+                    battery_value_now <=
+                    ${toString cfg.urgency.low}
+                  )); then
+                    urgency="low"
+
+                  else
+                    exit 0
+                  fi
+
+                  status="$(
+                    awk -v FPAT='[a-zA-Z]+' '{print $2}' <<< "$battery"
+                  )"
+
+                  time_remaining="$(awk '{ print $5 }' <<< "$battery")"
+
+                  notify-send \
+                    --urgency "$urgency" \
+                    "Battery" \
+                    "${notifySendBody}"
+
+                  printf '%s\n' "$battery_value_now" >"${valueFile}"
+                '';
+              });
 
               Type = "oneshot";
             };

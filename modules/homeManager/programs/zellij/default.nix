@@ -89,7 +89,7 @@
                 }
               }
 
-              scrollback_editor "${application}/bin/${application.meta.mainProgram}";
+              scrollback_editor "${lib.getExe application}";
             '';
 
           "zellij/layouts/default.kdl".text = ''
@@ -206,9 +206,7 @@
           ? wayland.windowManager.hyprland.enable
           && config.wayland.windowManager.hyprland.enable
         ) {
-          home.shellAliases.${pkgs.hyprland.meta.mainProgram} = let
-            hyprlandCommand = "${pkgs.hyprland}/bin/${pkgs.hyprland.meta.mainProgram}";
-          in ''ZELLIJ="" ${hyprlandCommand}'';
+          home.shellAliases.${pkgs.hyprland.meta.mainProgram} = ''ZELLIJ="" ${lib.getExe pkgs.hyprland}'';
         }
       )
     ]);

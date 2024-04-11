@@ -83,7 +83,7 @@
 
         storage.encryptionPasscommand = let
           file = config.age.secrets.modulesHomeManagerProgramsBorgmaticEncryptionPasscommand.path;
-        in "${pkgs.runtimeShell} -c '${pkgs.coreutils}/bin/cat \"${file}\"'";
+        in "${pkgs.runtimeShell} -c '${lib.getExe' pkgs.coreutils "cat"} \"${file}\"'";
       };
 
       enable = true;

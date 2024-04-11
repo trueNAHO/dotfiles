@@ -43,7 +43,7 @@
       modules.homeManager.programs.swaylock.enable = true;
 
       services.swayidle = let
-        command = "${pkgs.swaylock}/bin/${pkgs.swaylock.pname} --daemonize";
+        command = "${lib.getExe pkgs.swaylock} --daemonize";
       in {
         enable = true;
 

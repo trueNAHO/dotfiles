@@ -93,10 +93,7 @@
           asciidoctor-man = asciidoctor-man "asciidoctor-man";
 
           cheat = {
-            body = ''
-              ${pkgs.curl}/bin/${pkgs.curl.pname} --silent cheat.sh/"$argv"
-            '';
-
+            body = ''${lib.getExe pkgs.curl} --silent cheat.sh/"$argv"'';
             description = "The only cheat sheet you need";
           };
 
@@ -207,7 +204,7 @@
             body = ''
               ${validateNonEmptyArguments "watcher"}
 
-              ${pkgs.inotify-tools}/bin/inotifywait \
+              ${lib.getExe' pkgs.inotify-tools "inotifywait"} \
                 --event create,delete,modify,move \
                 --monitor \
                 --recursive \
