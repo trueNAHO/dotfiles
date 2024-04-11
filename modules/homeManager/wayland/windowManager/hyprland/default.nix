@@ -362,10 +362,40 @@ in {
                   [acpi gawk libnotify]
                   ++ [getBrightnessPercentage getVolumePercentage];
 
-                text = ''
-                  notify-send \
-                    "System Status" \
-                      "<u>Battery:</u> $(acpi | awk '{print substr($0, index($0,$3))}')\n<u>Brightness:</u> $(${getBrightnessPercentage.meta.mainProgram})%\n<u>Date:</u> $(date "+%Y-%m-%d %H:%M:%S")\n<u>Volume:</u> $(${getVolumePercentage.meta.mainProgram})%"
+                text = let
+                  body =
+                    lib.concatMapStrings
+                    ({
+                      name,
+                      value,
+                    }: "<u>${name}:</u> ${value}\\n")
+                    [
+                      (
+                        lib.nameValuePair
+                        "Battery"
+                        "$(acpi | awk '{print substr($0, index($0,$3))}')"
+                      )
+
+                      (
+                        lib.nameValuePair
+                        "Brightness"
+                        "$(${getBrightnessPercentage.meta.mainProgram})%"
+                      )
+
+                      (
+                        lib.nameValuePair
+                        "Date"
+                        ''$(date "+%Y-%m-%d %H:%M:%S")''
+                      )
+
+                      (
+                        lib.nameValuePair
+                        "Volume"
+                        "$(${getVolumePercentage.meta.mainProgram})%"
+                      )
+                    ];
+                in ''
+                  notify-send "System Status" "${body}"
                 '';
               };
             };
