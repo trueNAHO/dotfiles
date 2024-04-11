@@ -26,10 +26,9 @@
             };
           };
 
-          fish.interactiveShellInit = (
+          fish.interactiveShellInit =
             lib.mkBefore
-            "test -z $ZELLIJ; and exec ${pkgs.zellij.pname}"
-          );
+            "test -z $ZELLIJ; and exec ${pkgs.zellij.pname}";
         };
 
         xdg.configFile = {
