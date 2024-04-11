@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }: {
   options.modules.homeManager.home.shellAliases.enable =
@@ -10,7 +9,7 @@
   config = lib.mkIf config.modules.homeManager.home.shellAliases.enable {
     home.shellAliases = {
       c = "cd";
-      cal = "${pkgs.util-linux.outPath}/bin/cal --monday";
+      cal = "cal --monday";
     };
   };
 }
