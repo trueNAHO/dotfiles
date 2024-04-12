@@ -23,9 +23,7 @@ in {
           src = module;
 
           string = let
-            keys = builtins.concatStringsSep ", " (
-              map toString config.age.identityPaths
-            );
+            keys = builtins.concatStringsSep ", " config.age.identityPaths;
           in "at least one recipient key required: ${keys}";
         };
     };
