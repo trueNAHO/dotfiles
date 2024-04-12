@@ -172,8 +172,10 @@
           };
 
           fish_right_prompt = {
-            body = ''
-              if test $CMD_DURATION -gt 5000
+            body = let
+              duration = 5000;
+            in ''
+              if test $CMD_DURATION -gt ${toString duration}
                 set_color -o $fish_color_comment
                 printf %s (math "floor ($CMD_DURATION / 100 + 0.5) / 10")s
                 set_color $fish_color_normal
