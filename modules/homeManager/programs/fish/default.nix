@@ -6,7 +6,6 @@
 }: {
   imports = [
     ../../home/packages/asciidoctor
-    ../../home/packages/fd
     ../../home/packages/wl-clipboard
     ../../home/sessionVariables
     ../../programs/man
@@ -41,7 +40,6 @@
       home = {
         packages = {
           asciidoctor.enable = true;
-          fd.enable = true;
           wl-clipboard.enable = true;
         };
 
