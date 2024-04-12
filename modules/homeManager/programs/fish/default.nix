@@ -150,11 +150,17 @@
 
           fish_greeting = {
             body = ''
-              if set -q fish_private_mode
-                printf \
-                  '%s\n' \
-                  "Private mode: fish will not access old or store new history"
+              if not set -q fish_private_mode
+                return
               end
+
+              set_color --italics $fish_color_error
+
+              printf \
+                '%s\n' \
+                "Private mode: fish will not access old or store new history"
+
+              set_color $fish_color_normal
             '';
 
             description = "Display a welcome message in interactive shells";
