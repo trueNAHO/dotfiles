@@ -74,7 +74,7 @@
             if not count $argv >/dev/null
               printf '%s\n' "No arguments provided" 1>&2
               functions ${function}
-              return 1
+              return 123
             end
           '';
         in {
@@ -90,7 +90,7 @@
           asciidoctor-man = asciidoctor-man "asciidoctor-man";
 
           cheat = {
-            body = ''${lib.getExe pkgs.curl} --silent cheat.sh/"$argv"'';
+            body = ''${lib.getExe pkgs.curl} --silent "cheat.sh/$argv"'';
             description = "The only cheat sheet you need";
           };
 
@@ -105,24 +105,27 @@
 
           fish_mode_prompt = {
             body = ''
-              if test "$fish_key_bindings" = fish_vi_key_bindings
-                or test "$fish_key_bindings" = fish_hybrid_key_bindings
-                switch $fish_bind_mode
-                  case insert
-                    set_color -o $fish_color_normal
-                    printf %s '[I] '
-                  case default
-                    set_color -o $fish_color_param
-                    printf %s '[N] '
-                  case visual
-                    set_color -o $fish_color_operator
-                    printf %s '[V] '
-                  case replace replace_one
-                    set_color -o $fish_color_error
-                    printf %s '[R] '
-                end
+              switch $fish_key_bindings
+                case fish_hybrid_key_bindings fish_vi_key_bindings
+                  switch $fish_bind_mode
+                    case insert
+                      set_color --bold $fish_color_normal
+                      printf '%s' "[I] "
 
-                set_color $fish_color_normal
+                    case default
+                      set_color --bold $fish_color_param
+                      printf '%s' "[N] "
+
+                    case visual
+                      set_color --bold $fish_color_operator
+                      printf '%s' "[V] "
+
+                    case replace replace_one
+                      set_color --bold $fish_color_error
+                      printf '%s' "[R] "
+                  end
+
+                  set_color $fish_color_normal
               end
             '';
 
@@ -143,28 +146,29 @@
 
           fish_prompt = {
             body = ''
-              set -l command_line_status $status
+              set --function command_line_status $status
 
-              if test -e /etc/hostname &&
-                test "$(cat /etc/hostname)" = $hostname
-                set -f user_hostname ""
+              if test \
+                    -e /etc/hostname \
+                    -a "$(cat /etc/hostname)" = $hostname;
+                set --function user_hostname ""
               else
-                set -f user_hostname $USER@$hostname
+                set --function user_hostname $USER@$hostname
               end
 
               if fish_is_root_user
-                set -f prompt_character '#'
+                set --function prompt_character "#"
               else
-                set -f prompt_character '$'
+                set --function prompt_character '$'
               end
 
               if test $command_line_status -eq 0
-                set_color -o $fish_color_normal
+                set_color --bold $fish_color_normal
               else
-                set_color -o $fish_color_error
+                set_color --bold $fish_color_error
               end
 
-              printf %s $user_hostname$prompt_character' '
+              printf '%s%s ' $user_hostname $prompt_character
               set_color $fish_color_normal
             '';
 
@@ -175,11 +179,13 @@
             body = let
               duration = 5000;
             in ''
-              if test $CMD_DURATION -gt ${toString duration}
-                set_color -o $fish_color_comment
-                printf %s (math "floor ($CMD_DURATION / 100 + 0.5) / 10")s
-                set_color $fish_color_normal
+              if test $CMD_DURATION -le ${toString duration}
+                return
               end
+
+              set_color --bold $fish_color_comment
+              printf '%ss' (math "floor ($CMD_DURATION / 100 + 0.5) / 10")
+              set_color $fish_color_normal
             '';
 
             description = ''
