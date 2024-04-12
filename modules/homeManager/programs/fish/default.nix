@@ -109,22 +109,24 @@
                 case fish_hybrid_key_bindings fish_vi_key_bindings
                   switch $fish_bind_mode
                     case insert
-                      set_color --bold $fish_color_normal
-                      printf '%s' "[I] "
+                      set --function color $fish_color_normal
+                      set --function mode "I"
 
                     case default
-                      set_color --bold $fish_color_param
-                      printf '%s' "[N] "
+                      set --function color $fish_color_param
+                      set --function mode "N"
 
                     case visual
-                      set_color --bold $fish_color_operator
-                      printf '%s' "[V] "
+                      set --function color $fish_color_operator
+                      set --function mode "V"
 
                     case replace replace_one
-                      set_color --bold $fish_color_error
-                      printf '%s' "[R] "
+                      set --function color $fish_color_error
+                      set --function mode "R"
                   end
 
+                  set_color --bold $color
+                  printf '[%s] ' $mode
                   set_color $fish_color_normal
               end
             '';
@@ -163,11 +165,12 @@
               end
 
               if test $command_line_status -eq 0
-                set_color --bold $fish_color_normal
+                set --function color $fish_color_normal
               else
-                set_color --bold $fish_color_error
+                set --function color $fish_color_error
               end
 
+              set_color --bold $color
               printf '%s%s ' $user_hostname $prompt_character
               set_color $fish_color_normal
             '';
