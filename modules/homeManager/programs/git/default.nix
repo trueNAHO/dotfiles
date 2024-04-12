@@ -11,6 +11,14 @@
     git = pkgs.git.pname;
   in
     lib.mkIf config.modules.homeManager.programs.git.enable {
+      # The local 'home.shellAliases' variables are not replaced with the
+      # arguably simpler
+      #
+      #     home.shellAliases.<ALIAS_2> = config.home.shellAliases.<ALIAS_1>;
+      #
+      # statement to prevent the following error:
+      #
+      #     error: infinite recursion encountered
       home.shellAliases = let
         cdgit = "cd -- \"$(${git} rev-parse --show-toplevel)\"";
       in {
