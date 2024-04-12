@@ -22,6 +22,16 @@
 
             settings = {
               scroll_buffer_size = 100000;
+
+              scrollback_editor = lib.getExe (pkgs.writeShellApplication {
+                name = "scrollback_editor";
+                text = ''
+                  ${config.home.sessionVariables.EDITOR} \
+                    -c 'silent $ | set norelativenumber' \
+                    "$@"
+                '';
+              });
+
               simplified_ui = true;
             };
           };
@@ -33,15 +43,6 @@
 
         xdg.configFile = {
           "zellij/config.kdl".text = let
-            application = pkgs.writeShellApplication {
-              name = "scrollback_editor";
-              text = ''
-                ${config.home.sessionVariables.EDITOR} \
-                  -c 'silent $ | set norelativenumber' \
-                  "$@"
-              '';
-            };
-
             goToTab = builtins.concatStringsSep "\n" (
               map (
                 index: let
@@ -87,8 +88,6 @@
                   }
                 }
               }
-
-              scrollback_editor "${lib.getExe application}";
             '';
 
           "zellij/layouts/default.kdl".text = ''
