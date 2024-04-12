@@ -47,7 +47,6 @@
       };
 
       programs.man.enable = true;
-
       wayland.windowManager.hyprland.enable = true;
     };
 
