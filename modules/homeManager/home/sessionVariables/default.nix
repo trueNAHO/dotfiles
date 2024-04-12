@@ -32,10 +32,13 @@
   in
     # The 'lib.mkMerge [(lib.mkIf <BOOL> {<VARIABLE> = <VALUE>;})];' pattern is
     # used instead of the simpler '{<VARIABLE> = lib.mkIf <BOOL> <VALUE>;};'
-    # expression in order to avoid the following upstream error:
+    # expression in order to avoid the following upstream error of the
+    # 'home.sessionVariables.<VARIABLE>' option:
     #
     #     error: The option `home.sessionVariables.<VARIABLE>' is used but not
     #     defined.
+    #
+    # TODO: Patch an upstream fix.
     lib.mkMerge [
       (lib.mkIf (cfg.enable || cfg.BROWSER.enable) {
         BROWSER = pkgs.qutebrowser.pname;
