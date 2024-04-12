@@ -84,6 +84,39 @@
             description = "View Asciidoctor files in Manpage format";
           };
 
+          fishModePrompt = prefix: {
+            body = ''
+              switch $fish_key_bindings
+                case fish_hybrid_key_bindings fish_vi_key_bindings
+                  switch $fish_bind_mode
+                    case insert
+                      set --function color $fish_color_normal
+                      set --function mode "I"
+
+                    case default
+                      set --function color $fish_color_param
+                      set --function mode "N"
+
+                    case visual
+                      set --function color $fish_color_operator
+                      set --function mode "V"
+
+                    case replace replace_one
+                      set --function color $fish_color_error
+                      set --function mode "R"
+                  end
+
+                  ${prefix}
+
+                  set_color --bold $color
+                  printf '[%s] ' $mode
+                  set_color $fish_color_normal
+              end
+            '';
+
+            description = "Define the appearance of the mode indicator";
+          };
+
           validateNonEmptyArguments = function: ''
             if not count $argv >/dev/null
               printf '%s\n' "No arguments provided" 1>&2
@@ -117,42 +150,27 @@
             description = "What to do when a command wasn't found";
           };
 
-          fish_mode_prompt = {
-            body = ''
-              switch $fish_key_bindings
-                case fish_hybrid_key_bindings fish_vi_key_bindings
-                  switch $fish_bind_mode
-                    case insert
-                      set --function color $fish_color_normal
-                      set --function mode "I"
-
-                    case default
-                      set --function color $fish_color_param
-                      set --function mode "N"
-
-                    case visual
-                      set --function color $fish_color_operator
-                      set --function mode "V"
-
-                    case replace replace_one
-                      set --function color $fish_color_error
-                      set --function mode "R"
-                  end
-
-                  set_color --bold $color
-                  printf '[%s] ' $mode
-                  set_color $fish_color_normal
-              end
-            '';
-
-            description = "Define the appearance of the mode indicator";
-          };
+          fish_mode_prompt = fishModePrompt "";
 
           fish_greeting = {
-            body = ''
+            body = let
+              fishModePromptPrivate = let
+                prefix = ''
+                  set_color --bold $fish_color_comment
+                  printf '[%s] ' "P"
+                  set_color $fish_color_normal
+                '';
+              in ''
+                function fish_mode_prompt
+                  ${(fishModePrompt prefix).body}
+                end
+              '';
+            in ''
               if not set -q fish_private_mode
                 return
               end
+
+              ${fishModePromptPrivate}
 
               set_color --italics $fish_color_error
 
