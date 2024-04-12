@@ -279,18 +279,20 @@
       };
 
       git = lib.mkIf config.modules.homeManager.programs.git.enable {
-        aliases = {
-          a = "forgit add";
-          b = "forgit checkout_branch";
-          cp = "forgit cherry_pick";
-          d = "forgit diff";
-          f = "forgit checkout_file";
-          i = "forgit ignore";
-          l = "forgit log";
-          rb = "forgit rebase";
-          sp = "forgit stash_push";
-          ss = "forgit stash_show";
-          t = "forgit checkout_tag";
+        aliases = let
+          forgit = "forgit";
+        in {
+          a = "${forgit} add";
+          b = "${forgit} checkout_branch";
+          cp = "${forgit} cherry_pick";
+          d = "${forgit} diff";
+          f = "${forgit} checkout_file";
+          i = "${forgit} ignore";
+          l = "${forgit} log";
+          rb = "${forgit} rebase";
+          sp = "${forgit} stash_push";
+          ss = "${forgit} stash_show";
+          t = "${forgit} checkout_tag";
         };
       };
     };
