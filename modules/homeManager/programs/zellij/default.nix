@@ -41,6 +41,8 @@
             "test -z $ZELLIJ; and exec ${pkgs.zellij.pname}";
         };
 
+        # Partially declare the literal KDL configuration as a string rather
+        # than a Nix expression due to lacking upstream support.
         xdg.configFile = {
           "zellij/config.kdl".text = let
             goToTab = builtins.concatStringsSep "\n" (
