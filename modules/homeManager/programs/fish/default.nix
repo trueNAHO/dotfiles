@@ -182,7 +182,7 @@
             body = let
               duration = 5000;
             in ''
-              if test $CMD_DURATION -le ${toString duration}
+              if test $CMD_DURATION -lt ${toString duration}
                 return
               end
 
