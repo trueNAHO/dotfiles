@@ -174,14 +174,6 @@
                 set --function color $fish_color_error
               end
 
-              if test \
-                    -e /etc/hostname \
-                    -a "$(cat /etc/hostname)" = $hostname;
-                set --function user_hostname ""
-              else
-                set --function user_hostname $USER@$hostname
-              end
-
               if fish_is_root_user
                 set --function prompt_character "#"
               else
@@ -189,7 +181,7 @@
               end
 
               set_color --bold $color
-              printf '%s%s ' $user_hostname $prompt_character
+              printf '%s ' $prompt_character
               set_color $fish_color_normal
             '';
 
