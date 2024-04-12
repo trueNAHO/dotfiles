@@ -91,19 +91,19 @@
                   switch $fish_bind_mode
                     case insert
                       set --function color $fish_color_normal
-                      set --function mode "I"
+                      set --function mode I
 
                     case default
                       set --function color $fish_color_param
-                      set --function mode "N"
+                      set --function mode N
 
                     case visual
                       set --function color $fish_color_operator
-                      set --function mode "V"
+                      set --function mode V
 
                     case replace replace_one
                       set --function color $fish_color_error
-                      set --function mode "R"
+                      set --function mode R
                   end
 
                   ${prefix}
@@ -157,7 +157,7 @@
               fishModePromptPrivate = let
                 prefix = ''
                   set_color --bold $fish_color_comment
-                  printf '[%s] ' "P"
+                  printf '[%s] ' P
                   set_color $fish_color_normal
                 '';
               in ''
