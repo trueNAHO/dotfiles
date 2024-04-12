@@ -162,7 +162,11 @@
 
           fish_prompt = {
             body = ''
-              set --function command_line_status $status
+              if test $status -eq 0
+                set --function color $fish_color_normal
+              else
+                set --function color $fish_color_error
+              end
 
               if test \
                     -e /etc/hostname \
@@ -176,12 +180,6 @@
                 set --function prompt_character "#"
               else
                 set --function prompt_character '$'
-              end
-
-              if test $command_line_status -eq 0
-                set --function color $fish_color_normal
-              else
-                set --function color $fish_color_error
               end
 
               set_color --bold $color
