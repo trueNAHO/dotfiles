@@ -34,10 +34,18 @@
     };
 
     nix-alien = {
+      # The 'nix-index-database' and 'nixpkgs' inputs are not overridden to
+      # prevent version mismatches:
+      #
+      # > Overriding 'nix-alien' inputs may cause mismatches between the
+      # > 'nix-index-database' and 'nixpkgs', causing possibly incorrect
+      # > results, so it is unsupported.
+      # >
+      # > (Source:
+      # > https://github.com/thiagokokada/nix-alien/blob/75c0c2d5eb1fdd2c5187c49888cab40b060605fa/README.md#nixos-installation-with-flakes)
       inputs = {
         flake-compat.follows = "flakeCompat";
         flake-utils.follows = "flakeUtils";
-        nixpkgs.follows = "nixpkgs";
       };
 
       url = "github:thiagokokada/nix-alien";

@@ -368,6 +368,8 @@
         "nix-filter": "nix-filter",
         "nix-index-database": "nix-index-database",
         "nixpkgs": [
+          "nix-alien",
+          "nix-index-database",
           "nixpkgs"
         ]
       },
