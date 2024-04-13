@@ -119,8 +119,12 @@
 
           validateNonEmptyArguments = function: ''
             if not count $argv >/dev/null
+              set_color --bold $fish_color_error
               printf '%s\n' "No arguments provided" 1>&2
+              set_color $fish_color_normal
+
               functions ${function}
+
               return 123
             end
           '';
