@@ -7,6 +7,6 @@ lib.concatMapStrings
   {
     name,
     value,
-  }: "<u>${name}:</u> ${value}\\n"
+  }: ''<u>${name}:</u> ${value}\n''
 )
 list
