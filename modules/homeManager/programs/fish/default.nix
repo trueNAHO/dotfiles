@@ -192,6 +192,10 @@
                 set --function color $fish_color_error
               end
 
+              if set -q SSH_CLIENT || set -q SSH_CONNECTION || set -q SSH_TTY
+                set --function user_hostname $USER@$hostname
+              end
+
               if fish_is_root_user
                 set --function prompt_character "#"
               else
@@ -199,7 +203,7 @@
               end
 
               set_color --bold $color
-              printf '%s ' $prompt_character
+              printf '%s%s ' $user_hostname $prompt_character
               set_color $fish_color_normal
             '';
 
