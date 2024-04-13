@@ -214,13 +214,19 @@
             body = let
               duration = 5000;
             in ''
-              if test $CMD_DURATION -lt ${toString duration}
-                return
+              set --function command_status $status
+
+              if test $command_status -ne 0
+                set_color --bold $fish_color_error
+                printf '(%s) ' $command_status
+                set_color $fish_color_normal
               end
 
-              set_color --bold $fish_color_comment
-              printf '%ss' (math "floor ($CMD_DURATION / 100 + 0.5) / 10")
-              set_color $fish_color_normal
+              if test $CMD_DURATION -ge ${toString duration}
+                set_color --bold $fish_color_comment
+                printf '%ss' (math "floor ($CMD_DURATION / 100 + 0.5) / 10")
+                set_color $fish_color_normal
+              end
             '';
 
             description = ''
