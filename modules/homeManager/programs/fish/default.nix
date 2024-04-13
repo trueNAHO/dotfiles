@@ -284,10 +284,12 @@
         home.packages = [pkgs.libnotify];
 
         programs.fish = {
-          plugins = [
+          plugins = let
+            done = pkgs.fishPlugins.done;
+          in [
             {
-              name = pkgs.fishPlugins.done.pname;
-              src = pkgs.fishPlugins.done.src;
+              inherit (done) src;
+              name = done.pname;
             }
           ];
         };
@@ -361,10 +363,12 @@
         programs.fish = {
           interactiveShellInit = "fzf_configure_bindings";
 
-          plugins = [
+          plugins = let
+            fzf-fish = pkgs.fishPlugins.fzf-fish;
+          in [
             {
-              name = pkgs.fishPlugins.fzf-fish.pname;
-              src = pkgs.fishPlugins.fzf-fish.src;
+              inherit (fzf-fish) src;
+              name = fzf-fish.pname;
             }
           ];
         };
