@@ -327,10 +327,10 @@
         ];
       };
 
-      git = lib.mkIf config.modules.homeManager.programs.git.enable {
-        aliases = let
-          forgit = "forgit";
-        in {
+      git.aliases = let
+        forgit = "forgit";
+      in
+        lib.mkIf config.modules.homeManager.programs.git.enable {
           a = "${forgit} add";
           b = "${forgit} checkout_branch";
           cp = "${forgit} cherry_pick";
@@ -343,7 +343,6 @@
           ss = "${forgit} stash_show";
           t = "${forgit} checkout_tag";
         };
-      };
     };
   };
 }
