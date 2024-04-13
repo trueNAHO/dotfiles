@@ -8,7 +8,6 @@ import ../../../../../../lib/home_configurations/prependPrefix {
 
   files = [
     ./acpi
-    ./advcpmv
     ./aria
     ./asciidoctor
     ./bandwhich

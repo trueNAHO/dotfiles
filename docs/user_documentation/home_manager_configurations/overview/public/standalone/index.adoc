@@ -225,14 +225,6 @@
   `modules.homeManager.home.packages.acpi`
   <<developer_documentation_architecture_code_map_modules_directory, module>>.
 
-| * {directory}/homeManager/home/packages/advcpmv/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-advcpmv`]
-  * {directory}/homeManager/home/packages/advcpmv/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-advcpmv`]
-  * {directory}/homeManager/home/packages/advcpmv/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-advcpmv`]
-  * {directory}/homeManager/home/packages/advcpmv/default.nix[`x86_64-linux-public-standalone-homeManager-home-packages-advcpmv`]
-| {minimal-reproducible-example}[MWE] of the
-  `modules.homeManager.home.packages.advcpmv`
-  <<developer_documentation_architecture_code_map_modules_directory, module>>.
-
 | * {directory}/homeManager/home/packages/aria/default.nix[`aarch64-darwin-public-standalone-homeManager-home-packages-aria`]
   * {directory}/homeManager/home/packages/aria/default.nix[`aarch64-linux-public-standalone-homeManager-home-packages-aria`]
   * {directory}/homeManager/home/packages/aria/default.nix[`x86_64-darwin-public-standalone-homeManager-home-packages-aria`]
@@ -1436,26 +1428,6 @@ platform and Home Manager configuration:
 [,bash,subs=attributes+]
 ----
 {command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-acpi
-----
-
-[,bash,subs=attributes+]
-----
-{command-home-manager-switch-flake}aarch64-darwin-public-standalone-homeManager-home-packages-advcpmv
-----
-
-[,bash,subs=attributes+]
-----
-{command-home-manager-switch-flake}aarch64-linux-public-standalone-homeManager-home-packages-advcpmv
-----
-
-[,bash,subs=attributes+]
-----
-{command-home-manager-switch-flake}x86_64-darwin-public-standalone-homeManager-home-packages-advcpmv
-----
-
-[,bash,subs=attributes+]
-----
-{command-home-manager-switch-flake}x86_64-linux-public-standalone-homeManager-home-packages-advcpmv
 ----
 
 [,bash,subs=attributes+]
