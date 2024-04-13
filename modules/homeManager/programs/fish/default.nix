@@ -197,7 +197,7 @@
               end
 
               if set -q SSH_CLIENT || set -q SSH_CONNECTION || set -q SSH_TTY
-                set --function user_hostname $USER@$hostname
+                set --function user_hostname "$USER@$hostname "
               end
 
               if fish_is_root_user
