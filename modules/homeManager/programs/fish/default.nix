@@ -70,9 +70,7 @@
 
         functions = let
           asciidoctor-man = function: {
-            body = ''
-              ${validateNonEmptyArguments function}
-
+            body = validateFunctionArguments function ''
               ${pkgs.asciidoctor-with-extensions.meta.mainProgram} \
                 --backend manpage \
                 --out-file - \
@@ -117,7 +115,7 @@
             description = "Define the appearance of the mode indicator";
           };
 
-          validateNonEmptyArguments = function: ''
+          validateFunctionArguments = function: body: ''
             if not count $argv >/dev/null
               set_color --bold $fish_color_error
               printf '%s\n' "No arguments provided" 1>&2
@@ -127,6 +125,8 @@
 
               return 123
             end
+
+            ${body}
           '';
         in {
           _repeat_parent_directory = {
@@ -146,10 +146,10 @@
           };
 
           fish_command_not_found = {
-            body = ''
-              ${validateNonEmptyArguments "fish_command_not_found"}
-              nix run nixpkgs#$argv[1] -- $argv[2..]
-            '';
+            body =
+              validateFunctionArguments
+              "fish_command_not_found"
+              "nix run nixpkgs#$argv[1] -- $argv[2..]";
 
             description = "What to do when a command wasn't found";
           };
@@ -239,10 +239,10 @@
           };
 
           mkcd = {
-            body = ''
-              ${validateNonEmptyArguments "mkcd"}
-              mkdir --parent -- $argv && cd -- $argv[1]
-            '';
+            body =
+              validateFunctionArguments
+              "mkcd"
+              "mkdir --parent -- $argv && cd -- $argv[1]";
 
             description = ''
               Make directories, and change working directory to the first one
@@ -251,9 +251,7 @@
           };
 
           watcher = {
-            body = ''
-              ${validateNonEmptyArguments "watcher"}
-
+            body = validateFunctionArguments "watcher" ''
               ${lib.getExe' pkgs.inotify-tools "inotifywait"} \
                 --event create,delete,modify,move \
                 --monitor \
