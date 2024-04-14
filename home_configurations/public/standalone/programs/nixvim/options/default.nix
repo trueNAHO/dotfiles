@@ -6,15 +6,17 @@
 import ../../../../../../lib/home_configurations/home_configuration {
   inherit inputs pkgs system;
 
-  homeManagerConfig.modules.programs.nixvim = {
-    enable = true;
-    options.enable = true;
-  };
+  homeManagerConfiguration = {
+    config.modules.programs.nixvim = {
+      enable = true;
+      options.enable = true;
+    };
 
-  imports = [
-    ../../../../../../modules/programs/nixvim
-    ../../../../../../modules/programs/nixvim/options
-  ];
+    imports = [
+      ../../../../../../modules/programs/nixvim
+      ../../../../../../modules/programs/nixvim/options
+    ];
+  };
 
   name = "options";
 }

@@ -6,7 +6,10 @@
 import ../../../../../../../lib/home_configurations/home_configuration {
   inherit inputs pkgs system;
 
-  homeManagerConfig.modules.homeManager.home.packages.glow.enable = true;
-  imports = [../../../../../../../modules/homeManager/home/packages/glow];
+  homeManagerConfiguration = {
+    config.modules.homeManager.home.packages.glow.enable = true;
+    imports = [../../../../../../../modules/homeManager/home/packages/glow];
+  };
+
   name = "glow";
 }

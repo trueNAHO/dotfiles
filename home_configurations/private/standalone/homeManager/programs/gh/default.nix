@@ -6,7 +6,10 @@
 import ../../../../../../lib/home_configurations/home_configuration {
   inherit inputs pkgs system;
 
-  homeManagerConfig.modules.homeManager.programs.gh.enable = true;
-  imports = [../../../../../../modules/homeManager/programs/gh];
+  homeManagerConfiguration = {
+    config.modules.homeManager.programs.gh.enable = true;
+    imports = [../../../../../../modules/homeManager/programs/gh];
+  };
+
   name = "gh";
 }

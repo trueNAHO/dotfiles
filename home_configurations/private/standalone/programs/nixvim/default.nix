@@ -14,6 +14,8 @@ in
   // (import ../../../../../lib/home_configurations/home_configuration {
     inherit inputs name pkgs system;
 
-    homeManagerConfig.modules.programs.nixvim.enable = true;
-    imports = [../../../../../modules/programs/nixvim];
+    homeManagerConfiguration = {
+      config.modules.programs.nixvim.enable = true;
+      imports = [../../../../../modules/programs/nixvim];
+    };
   })

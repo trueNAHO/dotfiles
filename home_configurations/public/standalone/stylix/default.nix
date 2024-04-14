@@ -6,7 +6,10 @@
 import ../../../../lib/home_configurations/home_configuration {
   inherit inputs pkgs system;
 
-  homeManagerConfig.modules.stylix.enable = true;
-  imports = [../../../../modules/stylix];
+  homeManagerConfiguration = {
+    config.modules.stylix.enable = true;
+    imports = [../../../../modules/stylix];
+  };
+
   name = "stylix";
 }

@@ -6,15 +6,17 @@
 import ../../../../../../../lib/home_configurations/home_configuration {
   inherit inputs pkgs system;
 
-  homeManagerConfig.modules.programs.nixvim = {
-    enable = true;
-    plugins.rainbow-delimiters.enable = true;
-  };
+  homeManagerConfiguration = {
+    config.modules.programs.nixvim = {
+      enable = true;
+      plugins.rainbow-delimiters.enable = true;
+    };
 
-  imports = [
-    ../../../../../../../modules/programs/nixvim
-    ../../../../../../../modules/programs/nixvim/plugins/rainbow-delimiters
-  ];
+    imports = [
+      ../../../../../../../modules/programs/nixvim
+      ../../../../../../../modules/programs/nixvim/plugins/rainbow-delimiters
+    ];
+  };
 
   name = "rainbow-delimiters";
 }

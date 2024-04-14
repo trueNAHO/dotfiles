@@ -6,7 +6,10 @@
 import ../../../../../../lib/home_configurations/home_configuration {
   inherit inputs pkgs system;
 
-  homeManagerConfig.modules.homeManager.programs.fzf.enable = true;
-  imports = [../../../../../../modules/homeManager/programs/fzf];
+  homeManagerConfiguration = {
+    config.modules.homeManager.programs.fzf.enable = true;
+    imports = [../../../../../../modules/homeManager/programs/fzf];
+  };
+
   name = "fzf";
 }

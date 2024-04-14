@@ -5,8 +5,7 @@ Defines a default Home Manager configuration.
 
 ```
 home_configuration :: {
-  homeManagerConfig :: AttrSet;
-  imports :: [Path];
+  homeManagerConfiguration :: AttrSet;
   inputs :: AttrSet;
   name :: String;
   pkgs :: AttrSet;
@@ -16,11 +15,8 @@ home_configuration :: {
 
 # Arguments
 
-homeManagerConfig
+homeManagerConfiguration
 : The Home Manager configuration to merge with the default.
-
-imports
-: The `imports` value of the Home Manager configuration module.
 
 inputs
 : The attribute set of all the dependencies of the flake.
@@ -41,8 +37,11 @@ system
 home_configuration {
   inherit inputs pkgs;
 
-  homeManagerConfig.modules.homeManager.programs.home-manager.enable = true;
-  imports = [modules/homeManager/programs/home-manager];
+  homeManagerConfiguration = {
+    config.modules.homeManager.programs.home-manager.enable = true;
+    imports = [modules/homeManager/programs/home-manager];
+  };
+
   name = "home-manager";
   system = "x86_64-linux";
 }
@@ -50,8 +49,7 @@ home_configuration {
 ```
 */
 {
-  homeManagerConfig,
-  imports,
+  homeManagerConfiguration,
   inputs,
   name,
   pkgs,
@@ -61,22 +59,42 @@ home_configuration {
     inherit pkgs;
     extraSpecialArgs = {inherit inputs system;};
 
+    # The default 'config' attribute set is merged with the
+    # 'homeManagerConfiguration' argument by merging the default 'config'
+    # attribute set with 'homeManagerConfiguration.config', using 'mkMerge', and
+    # by merging the non-'config' 'homeManagerConfiguration' attributes with the
+    # merged 'config' attribute, using the '//' operator. Excluding the
+    # 'homeManagerConfiguration.config' attribute from the '//' operation
+    # ensures that the default 'config.home' attribute is not entirely
+    # overwritten by a potential 'homeManagerConfiguration.config.home'
+    # attribute, leveraging the same benefits 'mkMerge' has over '//'.
+    #
+    # Due to the following error, the more straightforward implementation of
+    # merging the default 'config' attribute set directly with
+    # 'homeManagerConfiguration', using 'mkMerge', is not used:
+    #
+    #     error: The option `home.stateVersion' is used but not defined.
+    #
+    # This error is most likely caused by the evaluation order implied the
+    # 'mkMerge' function.
     modules = [
-      ({config, ...}: {
-        inherit imports;
-
-        config = pkgs.lib.mkMerge [
+      (
+        {config, ...}:
           {
-            home = {
-              homeDirectory = "/home/${config.home.username}";
-              stateVersion = "23.05";
-              username = "naho";
-            };
-          }
+            config = pkgs.lib.mkMerge [
+              {
+                home = {
+                  homeDirectory = "/home/${config.home.username}";
+                  stateVersion = "23.05";
+                  username = "naho";
+                };
+              }
 
-          homeManagerConfig
-        ];
-      })
+              homeManagerConfiguration.config
+            ];
+          }
+          // (builtins.removeAttrs homeManagerConfiguration ["config"])
+      )
     ];
   };
 }

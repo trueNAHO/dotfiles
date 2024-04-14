@@ -6,13 +6,13 @@
 import ../../../../../../../lib/home_configurations/home_configuration {
   inherit inputs pkgs system;
 
-  homeManagerConfig.modules.homeManager.home.packages.wl-clipboard = {
-    enable = true;
-  };
+  homeManagerConfiguration = {
+    config.modules.homeManager.home.packages.wl-clipboard.enable = true;
 
-  imports = [
-    ../../../../../../../modules/homeManager/home/packages/wl-clipboard
-  ];
+    imports = [
+      ../../../../../../../modules/homeManager/home/packages/wl-clipboard
+    ];
+  };
 
   name = "wl-clipboard";
 }

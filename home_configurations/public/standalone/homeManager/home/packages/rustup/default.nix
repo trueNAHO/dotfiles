@@ -6,7 +6,10 @@
 import ../../../../../../../lib/home_configurations/home_configuration {
   inherit inputs pkgs system;
 
-  homeManagerConfig.modules.homeManager.home.packages.rustup.enable = true;
-  imports = [../../../../../../../modules/homeManager/home/packages/rustup];
+  homeManagerConfiguration = {
+    config.modules.homeManager.home.packages.rustup.enable = true;
+    imports = [../../../../../../../modules/homeManager/home/packages/rustup];
+  };
+
   name = "rustup";
 }

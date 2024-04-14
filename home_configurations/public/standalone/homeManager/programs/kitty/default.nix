@@ -6,7 +6,10 @@
 import ../../../../../../lib/home_configurations/home_configuration {
   inherit inputs pkgs system;
 
-  homeManagerConfig.modules.homeManager.programs.kitty.enable = true;
-  imports = [../../../../../../modules/homeManager/programs/kitty];
+  homeManagerConfiguration = {
+    config.modules.homeManager.programs.kitty.enable = true;
+    imports = [../../../../../../modules/homeManager/programs/kitty];
+  };
+
   name = "kitty";
 }
