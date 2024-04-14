@@ -42,7 +42,7 @@ home_configuration {
   inherit inputs pkgs;
 
   homeManagerConfig.modules.homeManager.programs.home-manager.enable = true;
-  imports = [./a ./b ./c];
+  imports = [modules/homeManager/programs/home-manager];
   name = "home-manager";
   system = "x86_64-linux";
 }
