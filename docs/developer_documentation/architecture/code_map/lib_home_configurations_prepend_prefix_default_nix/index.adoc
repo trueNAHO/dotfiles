@@ -1,9 +1,0 @@
-[[developer_documentation_architecture_code_map_lib_home_configurations_prepend_prefix_default_nix]]
-===== /lib/home_configurations/prependPrefix/default.nix
-
-{repository-blob}/lib/home_configurations/prependPrefix/default.nix[This file]
-contains a function prepending the `prefix` argument to each attribute set key
-in the list of files specified by the `files` argument.
-
-The `inputs`, `pkgs`, and `system` arguments are propagated to each file in the
-list.

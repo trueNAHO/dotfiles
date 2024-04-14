@@ -1,0 +1,5 @@
+[[developer_documentation_architecture_code_map_lib_directory_function_default_nix]]
+===== /lib/<DIRECTORY>/<FUNCTION>/default.nix
+
+This file contains the `<FUNCTION>` function intended to be used in the
+<<developer_documentation_architecture_code_map, `/<DIRECTORY>`>> directory.

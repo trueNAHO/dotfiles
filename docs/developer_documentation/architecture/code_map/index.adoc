@@ -1,3 +1,4 @@
+[[developer_documentation_architecture_code_map]]
 ==== Code Map
 
 include::flake_lock/index.adoc[]
@@ -14,15 +15,7 @@ include::home_configurations_accessibility_scope_prefix_name_default_nix/index.a
 
 include::home_configurations_default_nix/index.adoc[]
 
-include::lib_home_configurations_home_configuration_default_nix/index.adoc[]
-
-include::lib_home_configurations_prepend_prefix_default_nix/index.adoc[]
-
-include::lib_modules_lib_hm_dag_entry_before_write_boundary_printf_default_nix/index.adoc[]
-
-include::lib_modules_nixos_requirement_default_nix/index.adoc[]
-
-include::lib_notify_send_body_default_nix/index.adoc[]
+include::lib_directory_function_default_nix/index.adoc[]
 
 include::modules_directory/index.adoc[]
 
