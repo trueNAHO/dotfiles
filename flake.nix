@@ -156,6 +156,19 @@
           };
       }
     )
+    # The 'outputs.homeConfigurations' attribute set is not contained in
+    # 'inputs.flakeUtils.lib.eachDefaultSystem' to prevent the following invalid
+    # 'system' key injection:
+    #
+    #     outputs.homeConfigurations.${system}.<HOME_CONFIGURATION_NAME>
+    #
+    # Due to the more reliable 'pkgs.lib.mkMerge' function being unavailable,
+    # the 'inputs.flakeUtils.lib.defaultSystems' expression and
+    # 'outputs.homeConfigurations' attribute set are merged using the '//'
+    # operator.
+    #
+    # Unlike 'inputs.flakeUtils.lib.eachDefaultSystem', this implementation
+    # merely provides the 'system' argument.
     // {
       homeConfigurations =
         builtins.foldl'
