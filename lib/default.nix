@@ -229,9 +229,6 @@
 
     # Arguments
 
-    list
-    : The list of `name`-`value` pairs.
-
     name
     : The title of the `value`.
 
@@ -248,14 +245,11 @@
     => "<u>Title 1:</u> Content 1\n<u>Title 2:</u> Content 2\n"
     ```
     */
-    notifySend.body = list:
-      lib.concatMapStrings
-      (
-        {
-          name,
-          value,
-        }: ''<u>${name}:</u> ${value}\n''
-      )
-      list;
+    notifySend.body = lib.concatMapStrings (
+      {
+        name,
+        value,
+      }: ''<u>${name}:</u> ${value}\n''
+    );
   };
 }
