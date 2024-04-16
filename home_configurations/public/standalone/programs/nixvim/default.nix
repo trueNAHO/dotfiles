@@ -1,11 +1,7 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../lib/home_configurations/prependPrefix {
-  inherit inputs pkgs system;
-
-  files = [./autoCmd ./keymaps ./options ./plugins];
-  prefix = "nixvim";
-}
+lib:
+lib.dotfiles.homeManagerConfiguration.prependPrefix "nixvim" [
+  ./autoCmd
+  ./keymaps
+  ./options
+  ./plugins
+]

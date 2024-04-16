@@ -1,15 +1,5 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
-
-  homeManagerConfiguration = {
-    config.modules.homeManager.programs.zoxide.enable = true;
-    imports = [../../../../../../modules/homeManager/programs/zoxide];
-  };
-
-  name = "zoxide";
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "zoxide" {
+  config.modules.homeManager.programs.zoxide.enable = true;
+  imports = [../../../../../../modules/homeManager/programs/zoxide];
 }

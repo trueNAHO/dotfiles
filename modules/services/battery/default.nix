@@ -108,37 +108,12 @@ in {
                 text = let
                   maxBatteryValue = toString 100;
 
-                  notifySendBody =
-                    import
-                    ../../../lib/modules/notify_send_body {
-                      inherit lib;
-
-                      list = [
-                        (
-                          lib.nameValuePair
-                          "Capacity"
-                          "$battery_value_now%"
-                        )
-
-                        (
-                          lib.nameValuePair
-                          "Status"
-                          "$status"
-                        )
-
-                        (
-                          lib.nameValuePair
-                          "Time remaining"
-                          "$time_remaining"
-                        )
-
-                        (
-                          lib.nameValuePair
-                          "Urgency"
-                          "\${urgency^}"
-                        )
-                      ];
-                    };
+                  notifySendBody = lib.dotfiles.notifySend.body [
+                    (lib.nameValuePair "Capacity" "$battery_value_now%")
+                    (lib.nameValuePair "Status" "$status")
+                    (lib.nameValuePair "Time remaining" "$time_remaining")
+                    (lib.nameValuePair "Urgency" "\${urgency^}")
+                  ];
 
                   valueFile = "${cfg.runtimeDir}/value";
                 in ''

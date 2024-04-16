@@ -1,22 +1,12 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
-
-  homeManagerConfiguration = {
-    config.modules.programs.nixvim = {
-      enable = true;
-      plugins.treesitter.enable = true;
-    };
-
-    imports = [
-      ../../../../../../../modules/programs/nixvim
-      ../../../../../../../modules/programs/nixvim/plugins/treesitter
-    ];
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "treesitter" {
+  config.modules.programs.nixvim = {
+    enable = true;
+    plugins.treesitter.enable = true;
   };
 
-  name = "treesitter";
+  imports = [
+    ../../../../../../../modules/programs/nixvim
+    ../../../../../../../modules/programs/nixvim/plugins/treesitter
+  ];
 }

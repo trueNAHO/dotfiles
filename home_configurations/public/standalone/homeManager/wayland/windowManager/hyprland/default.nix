@@ -1,17 +1,8 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "hyprland" {
+  config.modules.homeManager.wayland.windowManager.hyprland.enable = true;
 
-  homeManagerConfiguration = {
-    config.modules.homeManager.wayland.windowManager.hyprland.enable = true;
-    imports = [
-      ../../../../../../../modules/homeManager/wayland/windowManager/hyprland
-    ];
-  };
-
-  name = "hyprland";
+  imports = [
+    ../../../../../../../modules/homeManager/wayland/windowManager/hyprland
+  ];
 }

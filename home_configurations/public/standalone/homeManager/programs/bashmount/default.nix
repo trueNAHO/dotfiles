@@ -1,15 +1,5 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
-
-  homeManagerConfiguration = {
-    config.modules.homeManager.programs.bashmount.enable = true;
-    imports = [../../../../../../modules/homeManager/programs/bashmount];
-  };
-
-  name = "bashmount";
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "bashmount" {
+  config.modules.homeManager.programs.bashmount.enable = true;
+  imports = [../../../../../../modules/homeManager/programs/bashmount];
 }

@@ -1,15 +1,5 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
-
-  homeManagerConfiguration = {
-    config.modules.homeManager.home.packages.glow.enable = true;
-    imports = [../../../../../../../modules/homeManager/home/packages/glow];
-  };
-
-  name = "glow";
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "glow" {
+  config.modules.homeManager.home.packages.glow.enable = true;
+  imports = [../../../../../../../modules/homeManager/home/packages/glow];
 }

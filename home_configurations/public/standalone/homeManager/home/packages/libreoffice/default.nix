@@ -1,18 +1,8 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "libreoffice" {
+  config.modules.homeManager.home.packages.libreoffice.enable = true;
 
-  homeManagerConfiguration = {
-    config.modules.homeManager.home.packages.libreoffice.enable = true;
-
-    imports = [
-      ../../../../../../../modules/homeManager/home/packages/libreoffice
-    ];
-  };
-
-  name = "libreoffice";
+  imports = [
+    ../../../../../../../modules/homeManager/home/packages/libreoffice
+  ];
 }

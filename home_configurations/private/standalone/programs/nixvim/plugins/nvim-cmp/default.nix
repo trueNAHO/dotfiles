@@ -1,22 +1,12 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
-
-  homeManagerConfiguration = {
-    config.modules.programs.nixvim = {
-      enable = true;
-      plugins.nvim-cmp.enable = true;
-    };
-
-    imports = [
-      ../../../../../../../modules/programs/nixvim
-      ../../../../../../../modules/programs/nixvim/plugins/nvim-cmp
-    ];
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "nvim-cmp" {
+  config.modules.programs.nixvim = {
+    enable = true;
+    plugins.nvim-cmp.enable = true;
   };
 
-  name = "nvim-cmp";
+  imports = [
+    ../../../../../../../modules/programs/nixvim
+    ../../../../../../../modules/programs/nixvim/plugins/nvim-cmp
+  ];
 }

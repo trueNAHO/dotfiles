@@ -1,28 +1,19 @@
-{
-  inputs,
-  pkgs,
-  system,
-}: let
+lib: let
   name = "plugins";
 in
-  (import ../../../../../../lib/home_configurations/prependPrefix {
-    inherit inputs pkgs system;
-
-    files = [./codeium-nvim ./codeium-vim ./nvim-cmp];
-    prefix = name;
-  })
-  // (import ../../../../../../lib/home_configurations/home_configuration {
-    inherit inputs name pkgs system;
-
-    homeManagerConfiguration = {
-      config.modules.programs.nixvim = {
-        enable = true;
-        plugins.full = true;
-      };
-
-      imports = [
-        ../../../../../../modules/programs/nixvim
-        ../../../../../../modules/programs/nixvim/plugins
-      ];
+  (lib.dotfiles.homeManagerConfiguration.prependPrefix name [
+    ./codeium-nvim
+    ./codeium-vim
+    ./nvim-cmp
+  ])
+  // (lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration name {
+    config.modules.programs.nixvim = {
+      enable = true;
+      plugins.full = true;
     };
+
+    imports = [
+      ../../../../../../modules/programs/nixvim
+      ../../../../../../modules/programs/nixvim/plugins
+    ];
   })

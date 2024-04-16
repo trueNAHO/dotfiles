@@ -1,11 +1,2 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../../lib/home_configurations/prependPrefix {
-  inherit inputs pkgs system;
-
-  files = [./tmpfiles];
-  prefix = "user";
-}
+lib:
+lib.dotfiles.homeManagerConfiguration.prependPrefix "user" [./tmpfiles]

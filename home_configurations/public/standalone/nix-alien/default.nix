@@ -1,15 +1,5 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
-
-  homeManagerConfiguration = {
-    config.modules.nix-alien.enable = true;
-    imports = [../../../../modules/nix-alien];
-  };
-
-  name = "nix-alien";
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "nix-alien" {
+  config.modules.nix-alien.enable = true;
+  imports = [../../../../modules/nix-alien];
 }

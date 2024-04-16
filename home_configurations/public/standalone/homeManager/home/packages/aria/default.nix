@@ -1,15 +1,5 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
-
-  homeManagerConfiguration = {
-    config.modules.homeManager.home.packages.aria.enable = true;
-    imports = [../../../../../../../modules/homeManager/home/packages/aria];
-  };
-
-  name = "aria";
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "aria" {
+  config.modules.homeManager.home.packages.aria.enable = true;
+  imports = [../../../../../../../modules/homeManager/home/packages/aria];
 }

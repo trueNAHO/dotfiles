@@ -1,4 +1,3 @@
-[[developer_documentation_architecture_code_map]]
 ==== Code Map
 
 include::flake_lock/index.adoc[]
@@ -15,7 +14,7 @@ include::home_configurations_accessibility_scope_prefix_name_default_nix/index.a
 
 include::home_configurations_default_nix/index.adoc[]
 
-include::lib_directory_function_default_nix/index.adoc[]
+include::lib_default_nix/index.adoc[]
 
 include::modules_directory/index.adoc[]
 

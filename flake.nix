@@ -176,7 +176,18 @@
           acc: system: let
             pkgs = inputs.nixpkgs.legacyPackages.${system};
           in
-            acc // (import ./home_configurations {inherit inputs pkgs system;})
+            acc
+            // (import ./home_configurations {
+              inherit system;
+
+              lib = inputs.nixpkgs.lib.extend (
+                final: prev:
+                  import ./lib {
+                    inherit inputs pkgs system;
+                    lib = final;
+                  }
+              );
+            })
         )
         {}
         inputs.flakeUtils.lib.defaultSystems;

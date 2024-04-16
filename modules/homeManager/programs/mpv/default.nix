@@ -15,14 +15,10 @@ in {
 
     home.activation = {
       ${module} =
-        import
-        ../../../../lib/modules/nixos_requirement {
-          inherit lib;
-
-          documentation = "https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable";
-          literalExpression = "programs.dconf.enable = true;";
-          src = module;
-        };
+        lib.dotfiles.lib.hm.dag.entryBefore.writeBoundary.systemRequirement
+        module
+        "programs.dconf.enable = true;"
+        "https://nix-community.github.io/home-manager/options.xhtml#opt-services.easyeffects.enable";
     };
 
     programs.mpv = {

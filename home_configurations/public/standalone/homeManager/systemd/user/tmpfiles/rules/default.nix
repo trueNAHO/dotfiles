@@ -1,18 +1,8 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "rules" {
+  config.modules.homeManager.systemd.user.tmpfiles.rules.enable = true;
 
-  homeManagerConfiguration = {
-    config.modules.homeManager.systemd.user.tmpfiles.rules.enable = true;
-
-    imports = [
-      ../../../../../../../../modules/homeManager/systemd/user/tmpfiles/rules
-    ];
-  };
-
-  name = "rules";
+  imports = [
+    ../../../../../../../../modules/homeManager/systemd/user/tmpfiles/rules
+  ];
 }

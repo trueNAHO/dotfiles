@@ -57,17 +57,11 @@ in {
         wayland.enable = true;
       };
 
-      home.activation = {
-        ${module} =
-          import
-          ../../../../../lib/modules/nixos_requirement {
-            inherit lib;
-
-            documentation = "https://nixos.wiki/wiki/Hyprland";
-            literalExpression = "programs.hyprland.enable = true;";
-            src = module;
-          };
-      };
+      home.activation.${module} =
+        lib.dotfiles.lib.hm.dag.entryBefore.writeBoundary.systemRequirement
+        module
+        "programs.hyprland.enable = true;"
+        "https://nixos.wiki/wiki/Hyprland";
 
       wayland.windowManager.hyprland = {
         enable = true;
@@ -363,35 +357,27 @@ in {
                   ++ [getBrightnessPercentage getVolumePercentage];
 
                 text = let
-                  body = import ../../../../../lib/modules/notify_send_body {
-                    inherit lib;
+                  body = lib.dotfiles.notifySend.body [
+                    (
+                      lib.nameValuePair
+                      "Battery"
+                      "$(acpi | awk '{print substr($0, index($0, $3))}')"
+                    )
 
-                    list = [
-                      (
-                        lib.nameValuePair
-                        "Battery"
-                        "$(acpi | awk '{print substr($0, index($0, $3))}')"
-                      )
+                    (
+                      lib.nameValuePair
+                      "Brightness"
+                      "$(${getBrightnessPercentage.meta.mainProgram})%"
+                    )
 
-                      (
-                        lib.nameValuePair
-                        "Brightness"
-                        "$(${getBrightnessPercentage.meta.mainProgram})%"
-                      )
+                    (lib.nameValuePair "Date" ''$(date "+%Y-%m-%d %H:%M:%S")'')
 
-                      (
-                        lib.nameValuePair
-                        "Date"
-                        ''$(date "+%Y-%m-%d %H:%M:%S")''
-                      )
-
-                      (
-                        lib.nameValuePair
-                        "Volume"
-                        "$(${getVolumePercentage.meta.mainProgram})%"
-                      )
-                    ];
-                  };
+                    (
+                      lib.nameValuePair
+                      "Volume"
+                      "$(${getVolumePercentage.meta.mainProgram})%"
+                    )
+                  ];
                 in ''
                   notify-send "System Status" "${body}"
                 '';

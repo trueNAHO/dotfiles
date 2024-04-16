@@ -9,7 +9,6 @@ module attribute set>>.
 ====
 The `<NAME>` attribute for the `{module}` module attribute set would be
 `{module}`: `home.activation."{module}" = import
-<<developer_documentation_architecture_code_map_lib_directory_function_default_nix,
-`/lib/modules/lib_modules_lib_hm_dag_entry_before_write_boundary_printf/default.nix`>>
-{/* ... */};`.
+<<developer_documentation_architecture_code_map_lib_default_nix,
+`lib.dotfiles.lib.hm.dag.entryBefore.writeBoundary.printf`>> {/* ... */};`.
 ====

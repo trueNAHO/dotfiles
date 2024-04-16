@@ -1,15 +1,5 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
-
-  homeManagerConfiguration = {
-    config.modules.homeManager.programs.lazygit.enable = true;
-    imports = [../../../../../../modules/homeManager/programs/lazygit];
-  };
-
-  name = "lazygit";
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "lazygit" {
+  config.modules.homeManager.programs.lazygit.enable = true;
+  imports = [../../../../../../modules/homeManager/programs/lazygit];
 }

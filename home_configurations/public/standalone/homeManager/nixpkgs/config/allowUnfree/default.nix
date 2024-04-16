@@ -1,18 +1,8 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "allowUnfree" {
+  config.modules.homeManager.nixpkgs.config.allowUnfree.enable = true;
 
-  homeManagerConfiguration = {
-    config.modules.homeManager.nixpkgs.config.allowUnfree.enable = true;
-
-    imports = [
-      ../../../../../../../modules/homeManager/nixpkgs/config/allowUnfree
-    ];
-  };
-
-  name = "allowUnfree";
+  imports = [
+    ../../../../../../../modules/homeManager/nixpkgs/config/allowUnfree
+  ];
 }

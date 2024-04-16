@@ -1,22 +1,12 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
-
-  homeManagerConfiguration = {
-    config.modules.programs.nixvim = {
-      enable = true;
-      plugins.telescope.enable = true;
-    };
-
-    imports = [
-      ../../../../../../../modules/programs/nixvim
-      ../../../../../../../modules/programs/nixvim/plugins/telescope
-    ];
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "telescope" {
+  config.modules.programs.nixvim = {
+    enable = true;
+    plugins.telescope.enable = true;
   };
 
-  name = "telescope";
+  imports = [
+    ../../../../../../../modules/programs/nixvim
+    ../../../../../../../modules/programs/nixvim/plugins/telescope
+  ];
 }

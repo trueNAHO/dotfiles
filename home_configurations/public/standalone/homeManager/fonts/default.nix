@@ -1,15 +1,5 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
-
-  homeManagerConfiguration = {
-    config.modules.homeManager.fonts.enable = true;
-    imports = [../../../../../modules/homeManager/fonts];
-  };
-
-  name = "fonts";
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "fonts" {
+  config.modules.homeManager.fonts.enable = true;
+  imports = [../../../../../modules/homeManager/fonts];
 }

@@ -1,15 +1,5 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
-
-  homeManagerConfiguration = {
-    config.modules.homeManager.home.packages.gping.enable = true;
-    imports = [../../../../../../../modules/homeManager/home/packages/gping];
-  };
-
-  name = "gping";
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "gping" {
+  config.modules.homeManager.home.packages.gping.enable = true;
+  imports = [../../../../../../../modules/homeManager/home/packages/gping];
 }

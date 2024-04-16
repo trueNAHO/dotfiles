@@ -12,15 +12,8 @@ in {
     cfg = config.modules.homeManager.nixpkgs.config.allowUnfree;
     string = "'nixpkgs.config.allowUnfree = ${toString cfg.enable};'";
   in {
-    home.activation = {
-      ${module} =
-        import
-        ../../../../../lib/modules/lib_hm_dag_entry_before_write_boundary_printf
-        {
-          inherit lib string;
-          src = module;
-        };
-    };
+    home.activation.${module} =
+      lib.dotfiles.lib.hm.dag.entryBefore.writeBoundary.printf module string;
 
     nixpkgs.config.allowUnfree = lib.info string cfg.enable;
   };

@@ -1,18 +1,8 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "thunderbird" {
+  config.modules.homeManager.home.packages.thunderbird.enable = true;
 
-  homeManagerConfiguration = {
-    config.modules.homeManager.home.packages.thunderbird.enable = true;
-
-    imports = [
-      ../../../../../../../modules/homeManager/home/packages/thunderbird
-    ];
-  };
-
-  name = "thunderbird";
+  imports = [
+    ../../../../../../../modules/homeManager/home/packages/thunderbird
+  ];
 }

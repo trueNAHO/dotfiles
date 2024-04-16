@@ -1,15 +1,7 @@
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration
+"password-store"
 {
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
-
-  homeManagerConfiguration = {
-    config.modules.homeManager.programs.password-store.enable = true;
-    imports = [../../../../../../modules/homeManager/programs/password-store];
-  };
-
-  name = "password-store";
+  config.modules.homeManager.programs.password-store.enable = true;
+  imports = [../../../../../../modules/homeManager/programs/password-store];
 }

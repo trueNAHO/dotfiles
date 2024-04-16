@@ -1,22 +1,14 @@
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration
+"nvim-colorizer"
 {
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
-
-  homeManagerConfiguration = {
-    config.modules.programs.nixvim = {
-      enable = true;
-      plugins.nvim-colorizer.enable = true;
-    };
-
-    imports = [
-      ../../../../../../../modules/programs/nixvim
-      ../../../../../../../modules/programs/nixvim/plugins/nvim-colorizer
-    ];
+  config.modules.programs.nixvim = {
+    enable = true;
+    plugins.nvim-colorizer.enable = true;
   };
 
-  name = "nvim-colorizer";
+  imports = [
+    ../../../../../../../modules/programs/nixvim
+    ../../../../../../../modules/programs/nixvim/plugins/nvim-colorizer
+  ];
 }

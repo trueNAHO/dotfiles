@@ -1,18 +1,8 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "wl-clipboard" {
+  config.modules.homeManager.home.packages.wl-clipboard.enable = true;
 
-  homeManagerConfiguration = {
-    config.modules.homeManager.home.packages.wl-clipboard.enable = true;
-
-    imports = [
-      ../../../../../../../modules/homeManager/home/packages/wl-clipboard
-    ];
-  };
-
-  name = "wl-clipboard";
+  imports = [
+    ../../../../../../../modules/homeManager/home/packages/wl-clipboard
+  ];
 }

@@ -1,0 +1,6 @@
+[[developer_documentation_architecture_code_map_lib_default_nix]]
+===== /lib/default.nix
+
+{repository-blob}/lib/default.nix[This file] contains the function returning the
+attribute set that extends the `inputs.nixpkgs.lib` and `inputs.homeManager.lib`
+libraries.

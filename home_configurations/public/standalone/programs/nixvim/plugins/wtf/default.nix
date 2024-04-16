@@ -1,22 +1,12 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
-
-  homeManagerConfiguration = {
-    config.modules.programs.nixvim = {
-      enable = true;
-      plugins.wtf.enable = true;
-    };
-
-    imports = [
-      ../../../../../../../modules/programs/nixvim
-      ../../../../../../../modules/programs/nixvim/plugins/wtf
-    ];
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "wtf" {
+  config.modules.programs.nixvim = {
+    enable = true;
+    plugins.wtf.enable = true;
   };
 
-  name = "wtf";
+  imports = [
+    ../../../../../../../modules/programs/nixvim
+    ../../../../../../../modules/programs/nixvim/plugins/wtf
+  ];
 }

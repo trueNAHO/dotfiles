@@ -1,15 +1,5 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
-
-  homeManagerConfiguration = {
-    config.modules.wayland.enable = true;
-    imports = [../../../../modules/wayland];
-  };
-
-  name = "wayland";
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "wayland" {
+  config.modules.wayland.enable = true;
+  imports = [../../../../modules/wayland];
 }

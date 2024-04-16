@@ -1,22 +1,12 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
-
-  homeManagerConfiguration = {
-    config.modules.programs.nixvim = {
-      enable = true;
-      plugins.trouble.enable = true;
-    };
-
-    imports = [
-      ../../../../../../../modules/programs/nixvim
-      ../../../../../../../modules/programs/nixvim/plugins/trouble
-    ];
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "trouble" {
+  config.modules.programs.nixvim = {
+    enable = true;
+    plugins.trouble.enable = true;
   };
 
-  name = "trouble";
+  imports = [
+    ../../../../../../../modules/programs/nixvim
+    ../../../../../../../modules/programs/nixvim/plugins/trouble
+  ];
 }

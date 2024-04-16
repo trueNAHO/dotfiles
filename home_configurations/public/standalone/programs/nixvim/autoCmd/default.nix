@@ -1,22 +1,12 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../../lib/home_configurations/home_configuration {
-  inherit inputs pkgs system;
-
-  homeManagerConfiguration = {
-    config.modules.programs.nixvim = {
-      autoCmd.enable = true;
-      enable = true;
-    };
-
-    imports = [
-      ../../../../../../modules/programs/nixvim
-      ../../../../../../modules/programs/nixvim/autoCmd
-    ];
+lib:
+lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "autoCmd" {
+  config.modules.programs.nixvim = {
+    autoCmd.enable = true;
+    enable = true;
   };
 
-  name = "autoCmd";
+  imports = [
+    ../../../../../../modules/programs/nixvim
+    ../../../../../../modules/programs/nixvim/autoCmd
+  ];
 }

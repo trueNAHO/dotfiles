@@ -1,11 +1,5 @@
 {
-  inputs,
-  pkgs,
+  lib,
   system,
 }:
-import ../lib/home_configurations/prependPrefix {
-  inherit inputs pkgs system;
-
-  files = [./private ./public];
-  prefix = system;
-}
+lib.dotfiles.homeManagerConfiguration.prependPrefix system [./private ./public]

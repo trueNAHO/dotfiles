@@ -1,11 +1,2 @@
-{
-  inputs,
-  pkgs,
-  system,
-}:
-import ../../../../../../lib/home_configurations/prependPrefix {
-  inherit inputs pkgs system;
-
-  files = [./allowUnfree];
-  prefix = "config";
-}
+lib:
+lib.dotfiles.homeManagerConfiguration.prependPrefix "config" [./allowUnfree]

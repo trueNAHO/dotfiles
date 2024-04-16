@@ -11,16 +11,11 @@ in {
   options.modules.stylix.enable = lib.mkEnableOption module;
 
   config = lib.mkIf config.modules.stylix.enable {
-    home.activation = {
-      ${module} =
-        import
-        ../../lib/modules/nixos_requirement {
-          inherit lib;
-
-          literalExpression = "programs.dconf.enable = true;";
-          src = module;
-        };
-    };
+    home.activation.${module} =
+      lib.dotfiles.lib.hm.dag.entryBefore.writeBoundary.systemRequirement
+      module
+      "programs.dconf.enable = true;"
+      "";
 
     stylix = {
       cursor = {
