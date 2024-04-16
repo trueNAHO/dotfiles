@@ -113,12 +113,10 @@
       prependPrefix "standalone" [./a ./b]
       => { standalone-a = { ... }; standalone-b = { ... }; }
       */
-      prependPrefix = prefix: files: let
-        propagate = file: import file lib;
-      in
+      prependPrefix = prefix: files:
         lib.mapAttrs'
         (name: value: lib.nameValuePair "${prefix}-${name}" value)
-        (builtins.foldl' (acc: file: acc // (propagate file)) {} files);
+        (builtins.foldl' (acc: file: acc // (import file lib)) {} files);
     };
 
     lib.hm.dag.entryBefore.writeBoundary = {
