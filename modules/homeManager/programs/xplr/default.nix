@@ -25,7 +25,10 @@
           end
         '';
 
-        description = "Open ${pkgs.xplr.pname} and change the working directory to the last visited one";
+        description = ''
+          Open ${pkgs.xplr.pname} and change the working directory to the last
+          visited one
+        '';
       };
 
       xplr = {
