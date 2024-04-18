@@ -14,7 +14,9 @@ in {
 
       description = ''
         Minimum battery percentage drop since the last notification to trigger a
-        new one.
+        new one. Set to `0` to receive notifications on every
+        `config.modules.services.battery.systemd.user.timers.battery.Timer.OnCalendar`
+        update.
       '';
 
       example = 10;
