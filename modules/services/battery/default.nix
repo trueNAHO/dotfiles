@@ -13,10 +13,11 @@ in {
     delta = lib.mkOption {
       default = 5;
 
-      description = ''
+      description = let
+        OnCalendar = "systemd.user.timers.battery.Timer.OnCalendar";
+      in ''
         Minimum battery percentage drop since the last notification to trigger a
-        new one. Set to `0` to receive notifications on every
-        `config.modules.services.battery.systemd.user.timers.battery.Timer.OnCalendar`
+        new one. Set to `0` to receive notifications on every `${OnCalendar}`
         update.
       '';
 
@@ -36,9 +37,10 @@ in {
     systemd.user.timers.battery.Timer.OnCalendar = lib.mkOption {
       default = "*:0/5";
 
-      description = ''
-        Set the [`systemd.user.timers.battery.Timer.OnCalendar`](
-        https://nix-community.github.io/home-manager/options.xhtml#opt-systemd.user.timers)
+      description = let
+        url = "https://nix-community.github.io/home-manager/options.xhtml#opt-systemd.user.timers";
+      in ''
+        Set the [`systemd.user.timers.battery.Timer.OnCalendar`](${url})
         setting.
       '';
 
