@@ -4,6 +4,7 @@
   pkgs,
   ...
 }: let
+  maximumBatteryCapacity = 100;
   module = "modules.services.battery";
 in {
   imports = [../../homeManager/services/dunst];
@@ -20,7 +21,7 @@ in {
       '';
 
       example = 10;
-      type = lib.types.ints.between 0 100;
+      type = lib.types.ints.between 0 maximumBatteryCapacity;
     };
 
     enable = lib.mkEnableOption module;
@@ -51,7 +52,7 @@ in {
         with the `${urgency}` urgency level.
       '';
 
-      type = lib.types.ints.between 1 100;
+      type = lib.types.ints.between 1 maximumBatteryCapacity;
     in {
       critical = lib.mkOption {
         inherit type;
@@ -114,7 +115,9 @@ in {
 
                 text = let
                   delta = toString cfg.delta;
-                  maxBatteryValue = toString 100;
+
+                  maximumBatteryCapacityString =
+                    toString maximumBatteryCapacity;
 
                   notifySendBody = lib.dotfiles.notifySend.body [
                     (lib.nameValuePair "Capacity" "$battery_value_now%")
@@ -142,8 +145,8 @@ in {
                   if [[ -f "${value}" ]]; then
                     battery_value_before="$(cat "${value}")"
                   else
-                    printf '%s\n' "${maxBatteryValue}" >"${value}"
-                    battery_value_before="${maxBatteryValue}"
+                    printf '%s\n' "${maximumBatteryCapacityString}" >"${value}"
+                    battery_value_before="${maximumBatteryCapacityString}"
                   fi
 
                   if (( battery_value_now > battery_value_before )); then
