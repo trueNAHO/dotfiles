@@ -5,10 +5,12 @@
 }: {
   imports = [../home/sessionVariables];
 
-  options.modules.homeManager.xdg = {
-    enable = lib.mkEnableOption "modules.homeManager.xdg";
-    mimeApps.enable = lib.mkEnableOption "modules.homeManager.xdg.mimeApps";
-    userDirs.enable = lib.mkEnableOption "modules.homeManager.xdg.userDirs";
+  options.modules.homeManager.xdg = let
+    module = "modules.homeManager.xdg";
+  in {
+    enable = lib.mkEnableOption module;
+    mimeApps.enable = lib.mkEnableOption "${module}.mimeApps";
+    userDirs.enable = lib.mkEnableOption "${module}.userDirs";
   };
 
   config = let

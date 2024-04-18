@@ -4,26 +4,28 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.home.sessionVariables = {
+  options.modules.homeManager.home.sessionVariables = let
+    module = "modules.homeManager.home.sessionVariables";
+  in {
     BROWSER.enable =
-      lib.mkEnableOption "modules.homeManager.home.sessionVariables.BROWSER";
+      lib.mkEnableOption "${module}.BROWSER";
 
     EDITOR.enable =
-      lib.mkEnableOption "modules.homeManager.home.sessionVariables.EDITOR";
+      lib.mkEnableOption "${module}.EDITOR";
 
     MANPAGER.enable =
-      lib.mkEnableOption "modules.homeManager.home.sessionVariables.MANPAGER";
+      lib.mkEnableOption "${module}.MANPAGER";
 
     SHELL.enable =
-      lib.mkEnableOption "modules.homeManager.home.sessionVariables.SHELL";
+      lib.mkEnableOption "${module}.SHELL";
 
     TERMINAL.enable =
-      lib.mkEnableOption "modules.homeManager.home.sessionVariables.TERMINAL";
+      lib.mkEnableOption "${module}.TERMINAL";
 
     TMPDIR.enable =
-      lib.mkEnableOption "modules.homeManager.home.sessionVariables.TMPDIR";
+      lib.mkEnableOption "${module}.TMPDIR";
 
-    enable = lib.mkEnableOption "modules.homeManager.home.sessionVariables";
+    enable = lib.mkEnableOption module;
   };
 
   config.home.sessionVariables = let
