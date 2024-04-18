@@ -111,6 +111,7 @@ in {
             Service = {
               ExecStart = lib.getExe (pkgs.writeShellApplication {
                 inherit name;
+
                 runtimeInputs = with pkgs; [acpi coreutils gawk libnotify];
 
                 text = let
