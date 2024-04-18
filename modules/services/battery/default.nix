@@ -50,26 +50,31 @@ in {
         Battery percentages starting from this value trigger notifications
         with the `${urgency}` urgency level.
       '';
+
+      type = lib.types.ints.between 1 100;
     in {
       critical = lib.mkOption {
+        inherit type;
+
         default = 25;
         description = description "critical";
         example = 10;
-        type = lib.types.ints.between 1 100;
       };
 
       low = lib.mkOption {
+        inherit type;
+
         default = 75;
         description = description "low";
         example = 50;
-        type = lib.types.ints.between 1 100;
       };
 
       normal = lib.mkOption {
+        inherit type;
+
         default = 50;
         description = description "normal";
         example = 25;
-        type = lib.types.ints.between 1 100;
       };
     };
   };
