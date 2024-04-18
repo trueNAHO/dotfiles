@@ -194,14 +194,21 @@
                 set --function command_status $status
 
                 if test $command_status -ne 0
+                  set --function command_status_suffix " "
+
                   set_color --bold $fish_color_error
-                  printf '(%s) ' $command_status
+                  printf '(%s)' $command_status
                   set_color $fish_color_normal
                 end
 
                 if test $CMD_DURATION -ge ${toString duration}
                   set_color --bold $fish_color_comment
-                  printf '%ss' (math "floor ($CMD_DURATION / 100 + 0.5) / 10")
+
+                  printf \
+                    '%s%ss' \
+                    $command_status_suffix \
+                    (math "floor ($CMD_DURATION / 100 + 0.5) / 10")
+
                   set_color $fish_color_normal
                 end
               '';
