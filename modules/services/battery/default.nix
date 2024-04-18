@@ -122,7 +122,7 @@ in {
                     (lib.nameValuePair "Urgency" "\${urgency^}")
                   ];
 
-                  valueFile = "${cfg.runtimeDir}/value";
+                  value = "${cfg.runtimeDir}/value";
                 in ''
                   battery="$(acpi | awk '/Battery 0/ { print $0; exit }')"
 
@@ -132,15 +132,15 @@ in {
 
                   mkdir --parent "${cfg.runtimeDir}"
 
-                  if [[ -f "${valueFile}" ]]; then
-                    battery_value_before="$(cat "${valueFile}")"
+                  if [[ -f "${value}" ]]; then
+                    battery_value_before="$(cat "${value}")"
                   else
-                    printf '%s\n' "${maxBatteryValue}" >"${valueFile}"
+                    printf '%s\n' "${maxBatteryValue}" >"${value}"
                     battery_value_before="${maxBatteryValue}"
                   fi
 
                   if (( battery_value_now > battery_value_before )); then
-                    printf '%s\n' "$battery_value_now" >"${valueFile}"
+                    printf '%s\n' "$battery_value_now" >"${value}"
                     exit 0
 
                   elif ((
@@ -183,7 +183,7 @@ in {
                     "Battery" \
                     "${notifySendBody}"
 
-                  printf '%s\n' "$battery_value_now" >"${valueFile}"
+                  printf '%s\n' "$battery_value_now" >"${value}"
                 '';
               });
 
