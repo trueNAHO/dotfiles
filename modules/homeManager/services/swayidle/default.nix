@@ -16,19 +16,16 @@
         command = lib.mkOption {
           description = "Command to turn all displays off.";
           example = "swaymsg 'output * dpms off'";
-          type = lib.types.str;
         };
 
         resumeCommand = lib.mkOption {
           description = "Command to turn all displays on.";
           example = "swaymsg 'output * dpms on'";
-          type = lib.types.str;
         };
 
         timeout = lib.mkOption {
           default = 5 * 60;
           description = "Timeout in seconds.";
-          type = lib.types.ints.positive;
         };
       };
     };
