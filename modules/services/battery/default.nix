@@ -113,6 +113,7 @@ in {
                 runtimeInputs = with pkgs; [acpi coreutils gawk libnotify];
 
                 text = let
+                  delta = toString cfg.delta;
                   maxBatteryValue = toString 100;
 
                   notifySendBody = lib.dotfiles.notifySend.body [
@@ -121,6 +122,12 @@ in {
                     (lib.nameValuePair "Time remaining" "$time_remaining")
                     (lib.nameValuePair "Urgency" "\${urgency^}")
                   ];
+
+                  urgency = {
+                    critical = toString cfg.urgency.critical;
+                    low = toString cfg.urgency.low;
+                    normal = toString cfg.urgency.normal;
+                  };
 
                   value = "${cfg.runtimeDir}/value";
                 in ''
@@ -141,34 +148,38 @@ in {
 
                   if (( battery_value_now > battery_value_before )); then
                     printf '%s\n' "$battery_value_now" >"${value}"
+
+                    printf \
+                      "${value}: %s -> %s\n" \
+                      "$battery_value_before" \
+                      "$battery_value_now"
+
                     exit 0
 
                   elif ((
-                    battery_value_before -
-                    battery_value_now <
-                    ${toString cfg.delta}
+                    battery_value_before - battery_value_now < ${delta}
                   )); then
+                    printf \
+                      'Insignificant battery percentage drop: %s -> %s (delta: ${delta})\n' \
+                      "$battery_value_before" \
+                      "$battery_value_now" \
+
                     exit 0
 
-                  elif ((
-                    battery_value_now <=
-                    ${toString cfg.urgency.critical}
-                  )); then
+                  elif (( battery_value_now <= ${urgency.critical})); then
                     urgency="critical"
 
-                  elif ((
-                    battery_value_now <=
-                    ${toString cfg.urgency.normal}
-                  )); then
+                  elif (( battery_value_now <= ${urgency.normal})); then
                     urgency="normal"
 
-                  elif ((
-                    battery_value_now <=
-                    ${toString cfg.urgency.low}
-                  )); then
+                  elif (( battery_value_now <= ${urgency.low})); then
                     urgency="low"
 
                   else
+                    printf \
+                      "Battery percentage above 'low' urgency: %s > ${urgency.low}\n" \
+                      "$battery_value_now"
+
                     exit 0
                   fi
 
