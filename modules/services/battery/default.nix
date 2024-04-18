@@ -146,15 +146,15 @@ in {
                   if [[ -f "${value}" ]]; then
                     battery_value_before="$(cat "${value}")"
                   else
-                    printf '%s\n' "${maximumBatteryCapacityString}" >"${value}"
+                    printf '%d\n' "${maximumBatteryCapacityString}" >"${value}"
                     battery_value_before="${maximumBatteryCapacityString}"
                   fi
 
                   if (( battery_value_now > battery_value_before )); then
-                    printf '%s\n' "$battery_value_now" >"${value}"
+                    printf '%d\n' "$battery_value_now" >"${value}"
 
                     printf \
-                      "${value}: %s -> %s\n" \
+                      "${value}: %d -> %d\n" \
                       "$battery_value_before" \
                       "$battery_value_now"
 
@@ -164,7 +164,7 @@ in {
                     battery_value_before - battery_value_now < ${delta}
                   )); then
                     printf \
-                      'Insignificant battery percentage drop: %s -> %s (delta: ${delta})\n' \
+                      'Insignificant battery percentage drop: %d -> %d (delta: ${delta})\n' \
                       "$battery_value_before" \
                       "$battery_value_now" \
 
@@ -181,7 +181,7 @@ in {
 
                   else
                     printf \
-                      "Battery percentage above 'low' urgency: %s > ${urgency.low}\n" \
+                      "Battery percentage above 'low' urgency: %d > ${urgency.low}\n" \
                       "$battery_value_now"
 
                     exit 0
@@ -198,7 +198,7 @@ in {
                     "Battery" \
                     "${notifySendBody}"
 
-                  printf '%s\n' "$battery_value_now" >"${value}"
+                  printf '%d\n' "$battery_value_now" >"${value}"
                 '';
               });
 
