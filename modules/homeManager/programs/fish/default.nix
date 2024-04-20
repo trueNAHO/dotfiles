@@ -249,6 +249,7 @@
           };
 
           interactiveShellInit = ''
+            # https://fishshell.com/docs/current/interactive.html#vi-mode-commands
             begin
               fish_vi_key_bindings
 
