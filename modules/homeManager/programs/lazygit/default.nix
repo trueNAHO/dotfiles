@@ -10,8 +10,9 @@
     lib.mkEnableOption "modules.homeManager.programs.lazygit";
 
   config = lib.mkIf config.modules.homeManager.programs.lazygit.enable {
-    home.shellAliases.lg = pkgs.lazygit.pname;
     modules.homeManager.programs.git.enable = true;
+
+    home.shellAliases.lg = pkgs.lazygit.pname;
 
     programs.lazygit = {
       enable = true;
