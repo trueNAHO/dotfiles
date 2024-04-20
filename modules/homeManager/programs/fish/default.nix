@@ -259,8 +259,8 @@
                 bind --mode $mode --user \cp __fish_paginate
               end
 
-              set fish_cursor_insert line
-              set fish_cursor_replace_one underscore
+              set --global fish_cursor_insert line
+              set --global fish_cursor_replace_one underscore
             end
 
             abbr \
