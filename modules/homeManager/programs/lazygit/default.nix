@@ -18,7 +18,16 @@
 
       settings.git = {
         autoFetch = false;
-        branchLogCmd = "${pkgs.git.pname} log --color=always --decorate --graph --oneline {{branchName}}";
+
+        branchLogCmd = lib.concatStringsSep " " [
+          pkgs.git.pname
+          "log"
+          "--color=always"
+          "--decorate"
+          "--graph"
+          "--oneline"
+          "{{branchName}}"
+        ];
       };
     };
   };
