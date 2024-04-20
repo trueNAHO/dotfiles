@@ -248,9 +248,9 @@
             };
           };
 
-          interactiveShellInit = ''
+          interactiveShellInit = lib.concatLines [
             # https://fishshell.com/docs/current/interactive.html#vi-mode-commands
-            begin
+            ''
               fish_vi_key_bindings
 
               # Exclude 'paste' mode to prevent triggering commands when
@@ -263,14 +263,16 @@
               set --global fish_cursor_insert line
               set --global fish_cursor_replace underscore
               set --global fish_cursor_replace_one underscore
-            end
+            ''
 
-            abbr \
-              --add multi_dot \
-              --position anywhere \
-              --regex '\.\.+' \
-              --function _repeat_parent_directory
-          '';
+            ''
+              abbr \
+                --add multi_dot \
+                --position anywhere \
+                --regex '\.\.+' \
+                --function _repeat_parent_directory
+            ''
+          ];
 
           loginShellInit = let
             graphicalEnvironment = pkgs.hyprland.meta.mainProgram;
