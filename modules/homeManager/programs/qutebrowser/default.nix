@@ -51,25 +51,23 @@ in {
           aliases.x = "quit --save";
           enable = true;
 
-          keyBindings = {
-            normal = let
-              leader = "<Space>";
-              mpv = pkgs.mpv.meta.mainProgram;
-              mpvAudio = "--player-operation-mode=pseudo-gui --vid=no";
-              mpvLoopPlaylist = "--loop-playlist";
-              mpvShuffle = "--shuffle";
-              spawn = "spawn --detach --verbose";
-            in {
-              "${leader}f" = "${spawn} firefox '{url}'";
-              "${leader}mA" = "${spawn} ${mpv} ${mpvAudio} '{url}'";
-              "${leader}mV" = "${spawn} ${mpv} '{url}'";
-              "${leader}ma" = "hint links ${spawn} ${mpv} ${mpvAudio} '{hint-url}'";
-              "${leader}mlA" = "${spawn} ${mpv} ${mpvLoopPlaylist} ${mpvAudio} ${mpvShuffle} '{url}'";
-              "${leader}mlV" = "${spawn} ${mpv} ${mpvLoopPlaylist} '{url}'";
-              "${leader}mla" = "hint links ${spawn} ${mpv} ${mpvLoopPlaylist} ${mpvAudio} ${mpvShuffle} '{hint-url}'";
-              "${leader}mlv" = "hint links ${spawn} ${mpv} ${mpvLoopPlaylist} '{hint-url}'";
-              "${leader}mv" = "hint links ${spawn} ${mpv} '{hint-url}'";
-            };
+          keyBindings.normal = let
+            leader = "<Space>";
+            mpv = pkgs.mpv.meta.mainProgram;
+            mpvAudio = "--player-operation-mode=pseudo-gui --vid=no";
+            mpvLoopPlaylist = "--loop-playlist";
+            mpvShuffle = "--shuffle";
+            spawn = "spawn --detach --verbose";
+          in {
+            "${leader}f" = "${spawn} firefox '{url}'";
+            "${leader}mA" = "${spawn} ${mpv} ${mpvAudio} '{url}'";
+            "${leader}mV" = "${spawn} ${mpv} '{url}'";
+            "${leader}ma" = "hint links ${spawn} ${mpv} ${mpvAudio} '{hint-url}'";
+            "${leader}mlA" = "${spawn} ${mpv} ${mpvLoopPlaylist} ${mpvAudio} ${mpvShuffle} '{url}'";
+            "${leader}mlV" = "${spawn} ${mpv} ${mpvLoopPlaylist} '{url}'";
+            "${leader}mla" = "hint links ${spawn} ${mpv} ${mpvLoopPlaylist} ${mpvAudio} ${mpvShuffle} '{hint-url}'";
+            "${leader}mlv" = "hint links ${spawn} ${mpv} ${mpvLoopPlaylist} '{hint-url}'";
+            "${leader}mv" = "hint links ${spawn} ${mpv} '{hint-url}'";
           };
 
           settings = let
