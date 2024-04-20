@@ -8,7 +8,9 @@
     lib.mkEnableOption "modules.homeManager.programs.bat";
 
   config = lib.mkIf config.modules.homeManager.programs.bat.enable {
-    home.shellAliases.b = pkgs.bat.pname;
+    # TODO: Add upstream 'config.programs.bat.finalPackage' option.
+    home.shellAliases.b = lib.getExe pkgs.bat;
+
     programs.bat.enable = true;
   };
 }

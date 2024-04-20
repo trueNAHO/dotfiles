@@ -37,11 +37,11 @@
           functions = let
             asciidoctor-man = function: {
               body = validateFunctionArguments function ''
-                ${pkgs.asciidoctor-with-extensions.meta.mainProgram} \
+                ${lib.getExe pkgs.asciidoctor-with-extensions} \
                   --backend manpage \
                   --out-file - \
                   $argv |
-                  ${pkgs.man.meta.mainProgram} \
+                  ${lib.getExe config.programs.man.package} \
                   --local-file -
               '';
 
@@ -73,7 +73,7 @@
                     ${prefix}
 
                     set_color --bold $color
-                    printf '[%s] ' $mode
+                    ${printf} '[%s] ' $mode
                     set_color $fish_color_normal
                 end
               '';
@@ -81,10 +81,12 @@
               description = "Define the appearance of the mode indicator";
             };
 
+            printf = lib.getExe' pkgs.coreutils "printf";
+
             validateFunctionArguments = function: body: ''
               if not count $argv >/dev/null
                 set_color --bold $fish_color_error
-                printf '%s\n' "No arguments provided" 1>&2
+                ${printf} '%s\n' "No arguments provided" 1>&2
                 set_color $fish_color_normal
 
                 functions ${function}
@@ -130,7 +132,7 @@
                 fishModePromptPrivate = let
                   prefix = ''
                     set_color --bold $fish_color_comment
-                    printf '[%s] ' P
+                    ${printf} '[%s] ' P
                     set_color $fish_color_normal
                   '';
                 in ''
@@ -147,7 +149,7 @@
 
                 set_color --italics $fish_color_error
 
-                printf \
+                ${printf} \
                   'Private mode: %s\n' \
                   "fish will not access old or store new history"
 
@@ -178,7 +180,7 @@
                 end
 
                 set_color --bold $color
-                printf '%s%s ' $user_hostname $prompt_character
+                ${printf} '%s%s ' $user_hostname $prompt_character
                 set_color $fish_color_normal
               '';
 
@@ -197,14 +199,14 @@
                   set --function command_status_suffix " "
 
                   set_color --bold $fish_color_error
-                  printf '(%s)' $command_status
+                  ${printf} '(%s)' $command_status
                   set_color $fish_color_normal
                 end
 
                 if test $CMD_DURATION -ge ${toString duration}
                   set_color --bold $fish_color_comment
 
-                  printf \
+                  ${printf} \
                     '%s%ss' \
                     $command_status_suffix \
                     (math "floor ($CMD_DURATION / 100 + 0.5) / 10")
@@ -222,7 +224,10 @@
               body =
                 validateFunctionArguments
                 "mkcd"
-                "mkdir --parent -- $argv && cd -- $argv[1]";
+                ''
+                  ${lib.getExe' pkgs.coreutils "mkdir"} --parent -- $argv &&
+                    cd -- $argv[1]
+                '';
 
               description = ''
                 Make directories, and change working directory to the first
@@ -275,17 +280,18 @@
           ];
 
           loginShellInit = let
-            graphicalEnvironment = pkgs.hyprland.meta.mainProgram;
+            package =
+              lib.getExe config.wayland.windowManager.hyprland.finalPackage;
           in ''
             switch $(
               read \
                 --local \
                 --nchars 1 \
-                --prompt-str "Start ${graphicalEnvironment}? [y/n] " |
+                --prompt-str "Start ${pkgs.hyprland.meta.mainProgram}? [y/n] " |
                 string lower
             )
               case "" y " "
-                exec ${graphicalEnvironment}
+                exec ${package}
             end
           '';
         };

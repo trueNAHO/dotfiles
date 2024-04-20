@@ -22,7 +22,7 @@
       #
       # TODO: Patch an upstream fix.
       shellAliases = let
-        tree = "${pkgs.tree.pname} -C";
+        tree = "${lib.getExe pkgs.tree} -C";
       in {
         t = tree;
         tg = "${tree} --gitignore";

@@ -237,7 +237,7 @@ in {
               recordOutputFile = ''${config.home.sessionVariables.TMPDIR}/$(date "+%Y_%m_%d_%H_%M_%S").mp4'';
             in {
               cycleLayout = pkgs.writeShellApplication {
-                name = "${pkgs.hyprland.pname}-cycle-layout";
+                name = "${pkgs.hyprland.meta.mainProgram}-cycle-layout";
                 runtimeInputs = with pkgs; [hyprland jq];
 
                 text = let
@@ -264,7 +264,7 @@ in {
               decreaseVolume = helpers.increaseVolume false;
 
               hyprlandToggleMode = pkgs.writeShellApplication {
-                name = "${pkgs.hyprland.pname}-toggle-mode";
+                name = "${pkgs.hyprland.meta.mainProgram}-toggle-mode";
                 runtimeInputs = with pkgs; [hyprland jq];
 
                 text = let
@@ -418,7 +418,7 @@ in {
               "SUPER CTRL, J, exec, ${lib.getExe applications.decreaseBrightness}"
               "SUPER CTRL, K, exec, ${lib.getExe applications.increaseBrightness}"
               "SUPER CTRL, L, exec, ${lib.getExe applications.increaseVolume}"
-              "SUPER CTRL, Q, exec, ${pkgs.wlogout.pname}"
+              "SUPER CTRL, Q, exec, ${lib.getExe config.programs.wlogout.package}"
               "SUPER CTRL, S, exec, systemctl suspend"
               "SUPER SHIFT, C, exec, ${lib.getExe applications.screenshotActiveWindow}"
               "SUPER SHIFT, F, fakefullscreen,"
@@ -434,8 +434,8 @@ in {
               "SUPER, J, cyclenext, next"
               "SUPER, K, cyclenext, prev"
               "SUPER, L, focusmonitor, +1"
-              "SUPER, P, exec, ${pkgs.rofi-pass.pname}"
-              "SUPER, R, exec, rofi -show run"
+              "SUPER, P, exec, ${lib.getExe config.programs.rofi.pass.package}"
+              "SUPER, R, exec, ${lib.getExe config.programs.rofi.finalPackage} -show run"
               "SUPER, S, exec, ${lib.getExe applications.systemStatus}"
               "SUPER, T, exec, ${config.home.sessionVariables.TERMINAL}"
               "SUPER, V, exec, ${lib.getExe applications.recordEntireScreen}"

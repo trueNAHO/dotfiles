@@ -12,7 +12,7 @@
   config = lib.mkIf config.modules.homeManager.programs.lazygit.enable {
     modules.homeManager.programs.git.enable = true;
 
-    home.shellAliases.lg = pkgs.lazygit.pname;
+    home.shellAliases.lg = lib.getExe config.programs.lazygit.package;
 
     programs.lazygit = {
       enable = true;
@@ -21,7 +21,7 @@
         autoFetch = false;
 
         branchLogCmd = lib.concatStringsSep " " [
-          pkgs.git.pname
+          (lib.getExe pkgs.git)
           "log"
           "--color=always"
           "--decorate"

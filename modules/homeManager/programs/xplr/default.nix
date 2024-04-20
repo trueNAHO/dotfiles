@@ -16,9 +16,11 @@
       dependencies.inputs.dragonXplr;
 
     programs = {
-      fish.functions.x = {
+      fish.functions.x = let
+        xplr = lib.getExe config.programs.xplr.package;
+      in {
         body = ''
-          set -l pwd "$(${pkgs.xplr.pname} --print-pwd-as-result $argv)"
+          set -l pwd "$(${xplr} --print-pwd-as-result $argv)"
 
           if test -n $pwd
             cd -- $pwd
@@ -26,8 +28,7 @@
         '';
 
         description = ''
-          Open ${pkgs.xplr.pname} and change the working directory to the last
-          visited one
+          Open ${xplr} and change the working directory to the last visited one
         '';
       };
 

@@ -36,9 +36,11 @@
             };
           };
 
-          fish.interactiveShellInit =
-            lib.mkBefore
-            "test -z $ZELLIJ; and exec ${pkgs.zellij.pname}";
+          fish.interactiveShellInit = lib.mkBefore ''
+            if test -z $ZELLIJ
+              exec ${lib.getExe config.programs.zellij.package}
+            end
+          '';
         };
 
         # Partially declare the literal KDL configuration as a string rather

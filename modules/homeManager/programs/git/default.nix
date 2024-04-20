@@ -10,7 +10,7 @@
     lib.mkEnableOption "modules.homeManager.programs.git";
 
   config = let
-    git = pkgs.git.pname;
+    git = lib.getExe config.programs.git.package;
   in
     lib.mkIf config.modules.homeManager.programs.git.enable {
       modules.homeManager.programs.gpg.enable = true;

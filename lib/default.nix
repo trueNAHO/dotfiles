@@ -213,7 +213,9 @@
       */
       printf = src: message:
         lib.hm.dag.entryBefore ["writeBoundary"] ''
-          printf 'trace: INFO: ${src}: %s\n' "${message}"
+          ${lib.getExe' pkgs.coreutils "printf"} \
+            'trace: INFO: ${src}: %s\n' \
+            "${message}"
         '';
     };
 

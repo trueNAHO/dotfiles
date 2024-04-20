@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }: {
   options.modules.homeManager.programs.eza.enable =
@@ -19,7 +18,7 @@
     #
     # TODO: Patch an upstream fix.
     home.shellAliases = let
-      eza = pkgs.eza.pname;
+      eza = lib.getExe config.programs.eza.package;
     in {
       l = eza;
       la = "${eza} --all";

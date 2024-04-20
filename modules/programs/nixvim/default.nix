@@ -2,7 +2,6 @@
   config,
   inputs,
   lib,
-  pkgs,
   ...
 }: {
   imports = [
@@ -26,7 +25,7 @@
         MANPAGER.enable = true;
       };
 
-      home.shellAliases.n = pkgs.neovim.meta.mainProgram;
+      home.shellAliases.n = lib.getExe config.programs.nixvim.finalPackage;
 
       programs.nixvim = {
         enable = true;

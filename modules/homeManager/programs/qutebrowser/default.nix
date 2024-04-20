@@ -65,7 +65,7 @@ in {
             mpv = {
               audio = "--player-operation-mode=pseudo-gui --vid=no";
               loop = "--loop-playlist";
-              mainProgram = pkgs.mpv.meta.mainProgram;
+              mainProgram = lib.getExe config.programs.mpv.finalPackage;
               shuffle = "--shuffle";
             };
 
@@ -73,7 +73,12 @@ in {
             url = "'{url}'";
           in
             lib.mkMerge [
-              (keybinding "f" [spawn pkgs.firefox.pname url])
+              (keybinding "f" [
+                spawn
+                (lib.getExe config.programs.firefox.finalPackage)
+                url
+              ])
+
               (keybinding "mA" [spawn mpv.mainProgram mpv.audio url])
               (keybinding "mV" [spawn mpv.mainProgram url])
               (keybinding "ma" [hint spawn mpv.mainProgram mpv.audio hintUrl])
@@ -104,7 +109,7 @@ in {
             ];
 
           settings = let
-            xplr = pkgs.xplr.pname;
+            xplr = lib.getExe config.programs.xplr.package;
           in {
             colors.webpage = {
               darkmode.enabled = true;
@@ -121,7 +126,7 @@ in {
               "-e"
               pkgs.runtimeShell
               "-c"
-              "${config.home.sessionVariables.EDITOR} -c 'call cursor({line}, {column0})' -- {file} && nohup wl-copy < {file} >/dev/null 2>&1"
+              "${config.home.sessionVariables.EDITOR} -c 'call cursor({line}, {column0})' -- {file} && nohup ${lib.getExe' pkgs.wl-clipboard "wl-copy"} < {file} >/dev/null 2>&1"
             ];
 
             fileselect = {

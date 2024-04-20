@@ -1,14 +1,13 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }: {
   options.modules.homeManager.programs.taskwarrior.enable =
     lib.mkEnableOption "modules.homeManager.programs.taskwarrior";
 
   config = lib.mkIf config.modules.homeManager.programs.taskwarrior.enable {
-    home.shellAliases.tk = pkgs.taskwarrior.meta.mainProgram;
+    home.shellAliases.tk = lib.getExe config.programs.taskwarrior.package;
 
     programs.taskwarrior = {
       # TODO: https://github.com/danth/stylix/pull/223

@@ -33,9 +33,17 @@
     enable = lib.mkEnableOption module;
   };
 
+  # The native 'pkgs.<PACKAGE>' packages are used as a fallback when the
+  # packages are unavailable in 'config' due to the intentional lack of
+  # unconditional 'imports'.
   config.home.sessionVariables = let
     cfg = config.modules.homeManager.home.sessionVariables;
-    neovim = pkgs.neovim.meta.mainProgram;
+
+    neovim = lib.getExe (
+      if config ? programs.nixvim.finalPackage
+      then config.programs.nixvim.finalPackage
+      else pkgs.neovim
+    );
   in
     # The 'lib.mkMerge [(lib.mkIf <BOOL> {<VARIABLE> = <VALUE>;})];' pattern is
     # used instead of the simpler '{<VARIABLE> = lib.mkIf <BOOL> <VALUE>;};'
@@ -48,7 +56,11 @@
     # TODO: Patch an upstream fix.
     lib.mkMerge [
       (lib.mkIf (cfg.enable || cfg.BROWSER.enable) {
-        BROWSER = pkgs.qutebrowser.pname;
+        BROWSER = lib.getExe (
+          if config ? programs.qutebrowser.package
+          then config.programs.qutebrowser.package
+          else pkgs.qutebrowser
+        );
       })
 
       (lib.mkIf (cfg.enable || cfg.EDITOR.enable) {
@@ -60,11 +72,19 @@
       })
 
       (lib.mkIf (cfg.enable || cfg.SHELL.enable) {
-        SHELL = pkgs.fish.pname;
+        SHELL = lib.getExe (
+          if config ? programs.fish.package
+          then config.programs.fish.package
+          else pkgs.fish
+        );
       })
 
       (lib.mkIf (cfg.enable || cfg.TERMINAL.enable) {
-        TERMINAL = pkgs.kitty.pname;
+        TERMINAL = lib.getExe (
+          if config ? programs.kitty.package
+          then config.programs.kitty.package
+          else pkgs.kitty
+        );
       })
 
       (lib.mkIf (cfg.enable || cfg.TMPDIR.enable) {
