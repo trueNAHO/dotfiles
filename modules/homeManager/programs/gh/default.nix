@@ -16,7 +16,7 @@
 
     home.sessionVariables.GH_TOKEN = let
       file = config.age.secrets.modulesHomeManagerProgramsGhGhToken.path;
-    in "$(${lib.getExe' pkgs.coreutils "cat"} ${file})";
+    in ''$(${lib.getExe' pkgs.coreutils "cat"} "${file}")'';
 
     # Prevent configuration drift by avoiding the creation of the runtime
     # authentication darling.
