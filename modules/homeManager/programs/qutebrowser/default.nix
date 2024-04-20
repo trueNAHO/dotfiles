@@ -73,7 +73,7 @@ in {
             url = "'{url}'";
           in
             lib.mkMerge [
-              (keybinding "f" [spawn "firefox" url])
+              (keybinding "f" [spawn pkgs.firefox.pname url])
               (keybinding "mA" [spawn mpv.mainProgram mpv.audio url])
               (keybinding "mV" [spawn mpv.mainProgram url])
               (keybinding "ma" [hint spawn mpv.mainProgram mpv.audio hintUrl])
