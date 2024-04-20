@@ -4,6 +4,8 @@
   pkgs,
   ...
 }: {
+  imports = [../gpg];
+
   options.modules.homeManager.programs.git.enable =
     lib.mkEnableOption "modules.homeManager.programs.git";
 
@@ -11,6 +13,8 @@
     git = pkgs.git.pname;
   in
     lib.mkIf config.modules.homeManager.programs.git.enable {
+      modules.homeManager.programs.gpg.enable = true;
+
       # The local 'home.shellAliases' variables are not replaced with the
       # arguably simpler
       #
