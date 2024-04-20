@@ -51,7 +51,7 @@
             (
               lib.lists.findFirst
               (repository: repository ? label && repository.label == label)
-              (throw "unable to find a repository labeled '${label}'")
+              (throw "undefined repository: ${label}")
               config.programs.borgmatic.backups.home.location.repositories
             )
             .path;
