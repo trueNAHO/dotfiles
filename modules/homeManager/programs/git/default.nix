@@ -48,7 +48,15 @@
           c = "checkout";
           cm = "commit";
           cma = "!${git} add --all && ${git} commit";
-          fix = ''!${git} add --all && ${git} commit --message "chore!: $(date "+%Y-%m-%d %H:%M:%S %z")"'';
+
+          fix = let
+            command = ''date "+%Y-%m-%d %H:%M:%S %z"'';
+          in
+            lib.concatStringsSep " " [
+              "!${git} add --all &&"
+              ''${git} commit --message "chore!: $(${command})"''
+            ];
+
           nuke = "!${git} reset --hard HEAD && ${git} clean -d --force";
           reword = "commit --amend";
           rh = "reset --hard";
