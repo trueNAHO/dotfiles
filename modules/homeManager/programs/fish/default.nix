@@ -246,9 +246,8 @@
               '';
 
               description = ''
-                inotifywait wrapper for recursively watching the first CLI
-                argument, and executing the remaining ones on events. This
-                wrapper is convenient for CI workflows.
+                inotifywait wrapper for recursively watching the first argument,
+                and passing the remaining ones to '${pkgs.runtimeShell}'
               '';
             };
           };
