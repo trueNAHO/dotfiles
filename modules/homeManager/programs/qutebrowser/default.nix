@@ -52,23 +52,56 @@ in {
           enable = true;
 
           keyBindings.normal = let
-            leader = "<Space>";
-            mpv = pkgs.mpv.meta.mainProgram;
-            mpvAudio = "--player-operation-mode=pseudo-gui --vid=no";
-            mpvLoopPlaylist = "--loop-playlist";
-            mpvShuffle = "--shuffle";
+            keybinding = let
+              leader = "<Space>";
+            in
+              name: value: {
+                "${leader}${name}" = lib.concatStringsSep " " value;
+              };
+
+            hint = "hint links";
+            hintUrl = "'{hint-url}'";
+
+            mpv = {
+              audio = "--player-operation-mode=pseudo-gui --vid=no";
+              loop = "--loop-playlist";
+              mainProgram = pkgs.mpv.meta.mainProgram;
+              shuffle = "--shuffle";
+            };
+
             spawn = "spawn --detach --verbose";
-          in {
-            "${leader}f" = "${spawn} firefox '{url}'";
-            "${leader}mA" = "${spawn} ${mpv} ${mpvAudio} '{url}'";
-            "${leader}mV" = "${spawn} ${mpv} '{url}'";
-            "${leader}ma" = "hint links ${spawn} ${mpv} ${mpvAudio} '{hint-url}'";
-            "${leader}mlA" = "${spawn} ${mpv} ${mpvLoopPlaylist} ${mpvAudio} ${mpvShuffle} '{url}'";
-            "${leader}mlV" = "${spawn} ${mpv} ${mpvLoopPlaylist} '{url}'";
-            "${leader}mla" = "hint links ${spawn} ${mpv} ${mpvLoopPlaylist} ${mpvAudio} ${mpvShuffle} '{hint-url}'";
-            "${leader}mlv" = "hint links ${spawn} ${mpv} ${mpvLoopPlaylist} '{hint-url}'";
-            "${leader}mv" = "hint links ${spawn} ${mpv} '{hint-url}'";
-          };
+            url = "'{url}'";
+          in
+            lib.mkMerge [
+              (keybinding "f" [spawn "firefox" url])
+              (keybinding "mA" [spawn mpv.mainProgram mpv.audio url])
+              (keybinding "mV" [spawn mpv.mainProgram url])
+              (keybinding "ma" [hint spawn mpv.mainProgram mpv.audio hintUrl])
+
+              (keybinding "mlA" [
+                spawn
+                mpv.mainProgram
+                mpv.loop
+                mpv.audio
+                mpv.shuffle
+                url
+              ])
+
+              (keybinding "mlV" [spawn mpv.mainProgram mpv.loop url])
+
+              (keybinding "mla" [
+                hint
+                spawn
+                mpv.mainProgram
+                mpv.loop
+                mpv.audio
+                mpv.shuffle
+                hintUrl
+              ])
+
+              (keybinding "mlv" [hint spawn mpv.mainProgram mpv.loop hintUrl])
+              (keybinding "mv" ["hint" "links" spawn mpv.mainProgram hintUrl])
+            ];
 
           settings = let
             xplr = pkgs.xplr.pname;
