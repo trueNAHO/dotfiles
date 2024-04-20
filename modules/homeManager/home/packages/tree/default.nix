@@ -19,6 +19,8 @@
       # statement to prevent the following error:
       #
       #     error: infinite recursion encountered
+      #
+      # TODO: Patch an upstream fix.
       shellAliases = let
         tree = "${pkgs.tree.pname} -C";
       in {

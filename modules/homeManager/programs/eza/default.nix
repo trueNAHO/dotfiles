@@ -16,6 +16,8 @@
     # statement to prevent the following error:
     #
     #     error: infinite recursion encountered
+    #
+    # TODO: Patch an upstream fix.
     home.shellAliases = let
       eza = pkgs.eza.pname;
     in {

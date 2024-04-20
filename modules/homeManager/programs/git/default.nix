@@ -19,6 +19,8 @@
       # statement to prevent the following error:
       #
       #     error: infinite recursion encountered
+      #
+      # TODO: Patch an upstream fix.
       home.shellAliases = let
         cdgit = "cd -- \"$(${git} rev-parse --show-toplevel)\"";
       in {
