@@ -116,6 +116,7 @@
               hooks = {
                 alejandra.enable = true;
                 convco.enable = true;
+                deadnix.enable = true;
                 typos.enable = true;
                 yamllint.enable = true;
               };
