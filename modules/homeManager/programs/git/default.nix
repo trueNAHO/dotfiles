@@ -38,12 +38,13 @@
         append = "!${git} add --all && ${git} commit --amend --no-edit";
       in {
         aliases = {
+          inherit append;
+
           adg = adg;
           adgs = "${adg} --stat";
           adog = "${adg} --oneline";
           adogs = "${adg} --oneline --stat";
           app = append;
-          append = append;
           br = "branch";
           c = "checkout";
           cm = "commit";
