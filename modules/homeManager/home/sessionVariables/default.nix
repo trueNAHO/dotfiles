@@ -1,9 +1,14 @@
+# This module is an interface preventing circular 'imports' dependencies.
 {
   config,
   lib,
   pkgs,
   ...
 }: {
+  # To avoid circular 'imports' dependency edge cases, this module should not
+  # declare any dependencies using 'imports'.
+  imports = [];
+
   options.modules.homeManager.home.sessionVariables = let
     module = "modules.homeManager.home.sessionVariables";
   in {
