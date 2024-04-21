@@ -18,7 +18,7 @@
           settings.binds = {
             "<Shift+P>" = let
               printf = lib.getExe' pkgs.coreutils "printf";
-            in ''exec ${printf} '%s\n' "$imv_current_file"'';
+            in ''${printf} '%s\n' "$imv_current_file"'';
 
             n = "next";
             p = "prev";
