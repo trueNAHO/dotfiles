@@ -20,7 +20,7 @@
         xplr = lib.getExe config.programs.xplr.package;
       in {
         body = ''
-          set -l pwd "$(${xplr} --print-pwd-as-result $argv)"
+          set --function pwd "$(${xplr} --print-pwd-as-result $argv)"
 
           if test -n $pwd
             cd -- $pwd
