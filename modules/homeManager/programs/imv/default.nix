@@ -39,21 +39,22 @@
           xdg.mimeApps.defaultApplications = let
             imvDesktop = "imv.desktop";
             imvDirDesktop = "imv-dir.desktop";
-          in {
-            "image/bmp" = [imvDirDesktop imvDesktop];
-            "image/gif" = [imvDirDesktop imvDesktop];
-            "image/heif" = [imvDesktop];
-            "image/jpeg" = [imvDirDesktop imvDesktop];
-            "image/png" = [imvDirDesktop imvDesktop];
-            "image/tiff" = [imvDirDesktop imvDesktop];
-            "image/x-pcx" = [imvDirDesktop imvDesktop];
-            "image/x-portable-anymap" = [imvDirDesktop imvDesktop];
-            "image/x-portable-bitmap" = [imvDirDesktop imvDesktop];
-            "image/x-portable-graymap" = [imvDirDesktop imvDesktop];
-            "image/x-portable-pixmap" = [imvDirDesktop imvDesktop];
-            "image/x-tga" = [imvDirDesktop imvDesktop];
-            "image/x-xbitmap" = [imvDirDesktop imvDesktop];
-          };
+          in
+            lib.mapAttrs' (name: lib.nameValuePair "image/${name}") {
+              "bmp" = [imvDirDesktop imvDesktop];
+              "gif" = [imvDirDesktop imvDesktop];
+              "heif" = [imvDesktop];
+              "jpeg" = [imvDirDesktop imvDesktop];
+              "png" = [imvDirDesktop imvDesktop];
+              "tiff" = [imvDirDesktop imvDesktop];
+              "x-pcx" = [imvDirDesktop imvDesktop];
+              "x-portable-anymap" = [imvDirDesktop imvDesktop];
+              "x-portable-bitmap" = [imvDirDesktop imvDesktop];
+              "x-portable-graymap" = [imvDirDesktop imvDesktop];
+              "x-portable-pixmap" = [imvDirDesktop imvDesktop];
+              "x-tga" = [imvDirDesktop imvDesktop];
+              "x-xbitmap" = [imvDirDesktop imvDesktop];
+            };
         }
       )
     ]);
