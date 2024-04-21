@@ -67,6 +67,11 @@ in {
         enable = true;
 
         settings = let
+          helpers.bind = mods: list:
+            lib.concatStringsSep "," (
+              [(lib.concatStringsSep " " mods)] ++ list
+            );
+
           windowGap = 5;
         in {
           animations = let
@@ -384,6 +389,9 @@ in {
               };
             };
 
+            bind = mods: key: dispatcher: parameters:
+              helpers.bind mods [key dispatcher parameters];
+
             windowResize = "10%";
           in
             builtins.concatMap (
@@ -396,57 +404,192 @@ in {
               ]
             ) (lib.lists.range 0 9)
             ++ [
-              "SUPER ALT SHIFT, H, layoutmsg, orientationleft"
-              "SUPER ALT SHIFT, J, layoutmsg, orientationbottom"
-              "SUPER ALT SHIFT, K, layoutmsg, orientationtop"
-              "SUPER ALT SHIFT, L, layoutmsg, orientationright"
-              "SUPER ALT, C, centerwindow,"
-              "SUPER ALT, D, exec, dunstctl close-all"
-              "SUPER ALT, H, resizeactive, -${windowResize} 0"
-              "SUPER ALT, J, resizeactive, 0 -${windowResize}"
-              "SUPER ALT, K, resizeactive, 0 ${windowResize}"
-              "SUPER ALT, L, resizeactive, ${windowResize} 0"
-              "SUPER ALT, M, exec, ${lib.getExe applications.hyprlandToggleMode}"
-              "SUPER ALT, N, exec, ${lib.getExe applications.cycleLayout}"
-              "SUPER ALT, P, exec, ${lib.getExe applications.cycleLayout}"
-              "SUPER CTRL SHIFT, H, exec, ${lib.getExe applications.minimiseVolume}"
-              "SUPER CTRL SHIFT, J, exec, ${lib.getExe applications.minimiseBrightness}"
-              "SUPER CTRL SHIFT, K, exec, ${lib.getExe applications.maximiseBrightness}"
-              "SUPER CTRL SHIFT, L, exec, ${lib.getExe applications.maximiseVolume}"
-              "SUPER CTRL, C, exec, loginctl lock-session"
-              "SUPER CTRL, H, exec, ${lib.getExe applications.decreaseVolume}"
-              "SUPER CTRL, J, exec, ${lib.getExe applications.decreaseBrightness}"
-              "SUPER CTRL, K, exec, ${lib.getExe applications.increaseBrightness}"
-              "SUPER CTRL, L, exec, ${lib.getExe applications.increaseVolume}"
-              "SUPER CTRL, Q, exec, ${lib.getExe config.programs.wlogout.package}"
-              "SUPER CTRL, S, exec, systemctl suspend"
-              "SUPER SHIFT, C, exec, ${lib.getExe applications.screenshotActiveWindow}"
-              "SUPER SHIFT, F, fakefullscreen,"
-              "SUPER SHIFT, J, swapnext, next"
-              "SUPER SHIFT, K, swapnext, prev"
-              "SUPER SHIFT, P, pin,"
-              "SUPER SHIFT, Q, killactive,"
-              "SUPER SHIFT, V, exec, ${lib.getExe applications.recordSelection}"
-              "SUPER, B, exec, ${config.home.sessionVariables.BROWSER}"
-              "SUPER, C, exec, ${lib.getExe applications.screenshotSelection}"
-              "SUPER, F, fullscreen,"
-              "SUPER, H, focusmonitor, -1"
-              "SUPER, J, cyclenext, next"
-              "SUPER, K, cyclenext, prev"
-              "SUPER, L, focusmonitor, +1"
-              "SUPER, P, exec, ${lib.getExe config.programs.rofi.pass.package}"
-              "SUPER, R, exec, ${lib.getExe config.programs.rofi.finalPackage} -show run"
-              "SUPER, S, exec, ${lib.getExe applications.systemStatus}"
-              "SUPER, T, exec, ${config.home.sessionVariables.TERMINAL}"
-              "SUPER, V, exec, ${lib.getExe applications.recordEntireScreen}"
-              "SUPER, W, togglefloating,"
-              "SUPER, mouse_down, workspace, e+1"
-              "SUPER, mouse_up, workspace, e-1"
+              (bind ["SUPER" "ALT" "SHIFT"] "H" "layoutmsg" "orientationleft")
+              (bind ["SUPER" "ALT" "SHIFT"] "J" "layoutmsg" "orientationbottom")
+              (bind ["SUPER" "ALT" "SHIFT"] "K" "layoutmsg" "orientationtop")
+              (bind ["SUPER" "ALT" "SHIFT"] "L" "layoutmsg" "orientationright")
+              (bind ["SUPER" "ALT"] "C" "centerwindow" "")
+              (bind ["SUPER" "ALT"] "D" "exec" "dunstctl close-all")
+              (bind ["SUPER" "ALT"] "H" "resizeactive" "-${windowResize} 0")
+              (bind ["SUPER" "ALT"] "J" "resizeactive" "0 -${windowResize}")
+              (bind ["SUPER" "ALT"] "K" "resizeactive" "0 ${windowResize}")
+              (bind ["SUPER" "ALT"] "L" "resizeactive" "${windowResize} 0")
+
+              (
+                bind
+                ["SUPER" "ALT"]
+                "M"
+                "exec"
+                (lib.getExe applications.hyprlandToggleMode)
+              )
+
+              (
+                bind
+                ["SUPER" "ALT"]
+                "N"
+                "exec"
+                (lib.getExe applications.cycleLayout)
+              )
+
+              (
+                bind
+                ["SUPER" "ALT"]
+                "P"
+                "exec"
+                (lib.getExe applications.cycleLayout)
+              )
+
+              (
+                bind
+                ["SUPER" "CTRL" "SHIFT"]
+                "H"
+                "exec"
+                (lib.getExe applications.minimiseVolume)
+              )
+
+              (
+                bind
+                ["SUPER" "CTRL" "SHIFT"]
+                "J"
+                "exec"
+                (lib.getExe applications.minimiseBrightness)
+              )
+
+              (
+                bind
+                ["SUPER" "CTRL" "SHIFT"]
+                "K"
+                "exec"
+                (lib.getExe applications.maximiseBrightness)
+              )
+
+              (
+                bind
+                ["SUPER" "CTRL" "SHIFT"]
+                "L"
+                "exec"
+                (lib.getExe applications.maximiseVolume)
+              )
+
+              (bind ["SUPER" "CTRL"] "C" "exec" "loginctl lock-session")
+
+              (
+                bind
+                ["SUPER" "CTRL"]
+                "H"
+                "exec"
+                (lib.getExe applications.decreaseVolume)
+              )
+
+              (
+                bind
+                ["SUPER" "CTRL"]
+                "J"
+                "exec"
+                (lib.getExe applications.decreaseBrightness)
+              )
+
+              (
+                bind
+                ["SUPER" "CTRL"]
+                "K"
+                "exec"
+                (lib.getExe applications.increaseBrightness)
+              )
+
+              (
+                bind
+                ["SUPER" "CTRL"]
+                "L"
+                "exec"
+                (lib.getExe applications.increaseVolume)
+              )
+
+              (
+                bind
+                ["SUPER" "CTRL"]
+                "Q"
+                "exec"
+                (lib.getExe config.programs.wlogout.package)
+              )
+
+              (bind ["SUPER" "CTRL"] "S" "exec" "systemctl suspend")
+
+              (
+                bind
+                ["SUPER" "SHIFT"]
+                "C"
+                "exec"
+                (lib.getExe applications.screenshotActiveWindow)
+              )
+
+              (bind ["SUPER" "SHIFT"] "F" "fakefullscreen" "")
+              (bind ["SUPER" "SHIFT"] "J" "swapnext" "next")
+              (bind ["SUPER" "SHIFT"] "K" "swapnext" "prev")
+              (bind ["SUPER" "SHIFT"] "P" "pin" "")
+              (bind ["SUPER" "SHIFT"] "Q" "killactive" "")
+
+              (
+                bind
+                ["SUPER" "SHIFT"]
+                "V"
+                "exec"
+                (lib.getExe applications.recordSelection)
+              )
+
+              (bind ["SUPER"] "B" "exec" config.home.sessionVariables.BROWSER)
+
+              (
+                bind
+                ["SUPER"]
+                "C"
+                "exec"
+                (lib.getExe applications.screenshotSelection)
+              )
+
+              (bind ["SUPER"] "F" "fullscreen" "")
+              (bind ["SUPER"] "H" "focusmonitor" "-1")
+              (bind ["SUPER"] "J" "cyclenext" "next")
+              (bind ["SUPER"] "K" "cyclenext" "prev")
+              (bind ["SUPER"] "L" "focusmonitor" "+1")
+
+              (
+                bind
+                ["SUPER"]
+                "P"
+                "exec"
+                (lib.getExe config.programs.rofi.pass.package)
+              )
+
+              (
+                bind
+                ["SUPER"]
+                "R"
+                "exec"
+                "${lib.getExe config.programs.rofi.finalPackage} -show run"
+              )
+
+              (bind ["SUPER"] "S" "exec" (lib.getExe applications.systemStatus))
+              (bind ["SUPER"] "T" "exec" config.home.sessionVariables.TERMINAL)
+
+              (
+                bind
+                ["SUPER"]
+                "V"
+                "exec"
+                (lib.getExe applications.recordEntireScreen)
+              )
+
+              (bind ["SUPER"] "W" "togglefloating" "")
+              (bind ["SUPER"] "mouse_down" "workspace" "e+1")
+              (bind ["SUPER"] "mouse_up" "workspace" "e-1")
             ];
 
-          bindm = [
-            "SUPER, mouse:272, movewindow"
-            "SUPER, mouse:273, resizewindow"
+          bindm = let
+            bindm = mods: key: dispatcher: helpers.bind mods [key dispatcher];
+          in [
+            (bindm ["SUPER"] "mouse:272" "movewindow")
+            (bindm ["SUPER"] "mouse:273" "resizewindow")
           ];
 
           general = {
