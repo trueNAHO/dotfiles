@@ -45,7 +45,6 @@ in {
       '';
 
       example = "*:0/1";
-      type = lib.types.str;
     };
 
     urgency = let
