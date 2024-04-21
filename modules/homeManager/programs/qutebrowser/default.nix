@@ -52,13 +52,6 @@ in {
           enable = true;
 
           keyBindings.normal = let
-            keybinding = let
-              leader = "<Space>";
-            in
-              name: value: {
-                "${leader}${name}" = lib.concatStringsSep " " value;
-              };
-
             hint = "hint links";
             hintUrl = "'{hint-url}'";
 
@@ -72,29 +65,36 @@ in {
             spawn = "spawn --detach --verbose";
             url = "'{url}'";
           in
-            lib.mkMerge [
-              (keybinding "f" [
+            lib.mapAttrs'
+            (
+              name: value:
+                lib.nameValuePair
+                "<Space>${name}"
+                (lib.concatStringsSep " " value)
+            )
+            {
+              "f" = [
                 spawn
                 (lib.getExe config.programs.firefox.finalPackage)
                 url
-              ])
+              ];
 
-              (keybinding "mA" [spawn mpv.mainProgram mpv.audio url])
-              (keybinding "mV" [spawn mpv.mainProgram url])
-              (keybinding "ma" [hint spawn mpv.mainProgram mpv.audio hintUrl])
+              "mA" = [spawn mpv.mainProgram mpv.audio url];
+              "mV" = [spawn mpv.mainProgram url];
+              "ma" = [hint spawn mpv.mainProgram mpv.audio hintUrl];
 
-              (keybinding "mlA" [
+              "mlA" = [
                 spawn
                 mpv.mainProgram
                 mpv.loop
                 mpv.audio
                 mpv.shuffle
                 url
-              ])
+              ];
 
-              (keybinding "mlV" [spawn mpv.mainProgram mpv.loop url])
+              "mlV" = [spawn mpv.mainProgram mpv.loop url];
 
-              (keybinding "mla" [
+              "mla" = [
                 hint
                 spawn
                 mpv.mainProgram
@@ -102,11 +102,11 @@ in {
                 mpv.audio
                 mpv.shuffle
                 hintUrl
-              ])
+              ];
 
-              (keybinding "mlv" [hint spawn mpv.mainProgram mpv.loop hintUrl])
-              (keybinding "mv" ["hint" "links" spawn mpv.mainProgram hintUrl])
-            ];
+              "mlv" = [hint spawn mpv.mainProgram mpv.loop hintUrl];
+              "mv" = [hint spawn mpv.mainProgram hintUrl];
+            };
 
           settings = let
             xplr = lib.getExe config.programs.xplr.package;
