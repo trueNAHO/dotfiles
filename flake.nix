@@ -181,7 +181,7 @@
               inherit system;
 
               lib = inputs.nixpkgs.lib.extend (
-                final: prev:
+                final: _:
                   import ./lib {
                     inherit inputs pkgs system;
                     lib = final;
