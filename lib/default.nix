@@ -115,7 +115,7 @@
       */
       prependPrefix = prefix: files:
         lib.mapAttrs'
-        (name: value: lib.nameValuePair "${prefix}-${name}" value)
+        (name: lib.nameValuePair "${prefix}-${name}")
         (builtins.foldl' (acc: file: acc // (import file lib)) {} files);
     };
 
