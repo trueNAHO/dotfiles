@@ -129,7 +129,7 @@ in {
                       then "+${percentage}"
                       else "${percentage}-";
                   in
-                    pkgs.writeShellApplication {
+                    lib.getExe (pkgs.writeShellApplication {
                       name = "set-brightness-${type}";
 
                       runtimeInputs = with pkgs;
@@ -154,7 +154,7 @@ in {
                           notify-send "Brightness" "<u>Value:</u> $brightness%"
                         fi
                       '';
-                    };
+                    });
 
                 increaseToString = increase:
                   if increase
@@ -173,7 +173,7 @@ in {
                         else "-"
                       );
                   in
-                    pkgs.writeShellApplication {
+                    lib.getExe (pkgs.writeShellApplication {
                       name = "set-volume-${helpers.increaseToString increase}";
 
                       runtimeInputs = with pkgs;
@@ -192,7 +192,7 @@ in {
                           notify-send "Volume" "<u>Value:</u> $volume%"
                         fi
                       '';
-                    };
+                    });
 
                 maximiseBrightness = maximise: let
                   type = helpers.maximiseToString maximise;
@@ -205,11 +205,11 @@ in {
                     )
                     + "%";
                 in
-                  pkgs.writeShellApplication {
+                  lib.getExe (pkgs.writeShellApplication {
                     name = "set-brightness-${type}";
                     runtimeInputs = [pkgs.brightnessctl];
                     text = ''brightnessctl set "${value}"'';
-                  };
+                  });
 
                 maximiseToString = maximise:
                   if maximise
@@ -225,11 +225,11 @@ in {
                     )
                     + "%";
                 in
-                  pkgs.writeShellApplication {
+                  lib.getExe (pkgs.writeShellApplication {
                     name = "set-volume-${helpers.maximiseToString maximise}";
                     runtimeInputs = [pkgs.wireplumber];
                     text = ''wpctl set-volume @DEFAULT_AUDIO_SINK@ "${value}"'';
-                  };
+                  });
               };
 
               maximumBrightnessPercentage = 100;
@@ -238,7 +238,7 @@ in {
               minimumVolumePercentage = 0;
               recordOutputFile = ''${config.home.sessionVariables.TMPDIR}/$(date "+%Y_%m_%d_%H_%M_%S").mp4'';
             in {
-              cycleLayout = pkgs.writeShellApplication {
+              cycleLayout = lib.getExe (pkgs.writeShellApplication {
                 name = "${pkgs.hyprland.meta.mainProgram}-cycle-layout";
                 runtimeInputs = with pkgs; [hyprland jq];
 
@@ -260,12 +260,12 @@ in {
 
                   hyprctl keyword general:layout "$new_layout"
                 '';
-              };
+              });
 
               decreaseBrightness = helpers.increaseBrightness false;
               decreaseVolume = helpers.increaseVolume false;
 
-              hyprlandToggleMode = pkgs.writeShellApplication {
+              hyprlandToggleMode = lib.getExe (pkgs.writeShellApplication {
                 name = "${pkgs.hyprland.meta.mainProgram}-toggle-mode";
                 runtimeInputs = with pkgs; [hyprland jq];
 
@@ -297,7 +297,7 @@ in {
                     hyprctl reload
                   fi
                 '';
-              };
+              });
 
               increaseBrightness = helpers.increaseBrightness true;
               increaseVolume = helpers.increaseVolume true;
@@ -306,7 +306,7 @@ in {
               minimiseBrightness = helpers.maximiseBrightness false;
               minimiseVolume = helpers.maximiseVolume false;
 
-              recordEntireScreen = pkgs.writeShellApplication {
+              recordEntireScreen = lib.getExe (pkgs.writeShellApplication {
                 name = "record-entire-screen";
                 runtimeInputs = [pkgs.wf-recorder];
 
@@ -317,9 +317,9 @@ in {
                     --audio \
                     -f "${recordOutputFile}"
                 '';
-              };
+              });
 
-              recordSelection = pkgs.writeShellApplication {
+              recordSelection = lib.getExe (pkgs.writeShellApplication {
                 name = "record-selection";
                 runtimeInputs = with pkgs; [wf-recorder slurp];
 
@@ -331,9 +331,9 @@ in {
                     --geometry "$(slurp)" \
                     -f "${recordOutputFile}"
                 '';
-              };
+              });
 
-              screenshotActiveWindow = pkgs.writeShellApplication {
+              screenshotActiveWindow = lib.getExe (pkgs.writeShellApplication {
                 name = "screenshot-active-window";
                 runtimeInputs = with pkgs; [grim hyprland jq wl-clipboard];
 
@@ -343,15 +343,15 @@ in {
                     grim -g - - |
                     wl-copy
                 '';
-              };
+              });
 
-              screenshotSelection = pkgs.writeShellApplication {
+              screenshotSelection = lib.getExe (pkgs.writeShellApplication {
                 name = "screenshot-selection";
                 runtimeInputs = with pkgs; [grim slurp wl-clipboard];
                 text = "slurp | grim -g - - | wl-copy";
-              };
+              });
 
-              systemStatus = pkgs.writeShellApplication {
+              systemStatus = lib.getExe (pkgs.writeShellApplication {
                 name = "system-status";
 
                 runtimeInputs = with pkgs;
@@ -383,7 +383,7 @@ in {
                 in ''
                   notify-send "System Status" "${body}"
                 '';
-              };
+              });
             };
 
             bind = mods: key: dispatcher: parameters:
@@ -411,37 +411,16 @@ in {
               (bind ["SUPER" "ALT"] "J" "resizeactive" "0 -${windowResize}")
               (bind ["SUPER" "ALT"] "K" "resizeactive" "0 ${windowResize}")
               (bind ["SUPER" "ALT"] "L" "resizeactive" "${windowResize} 0")
-
-              (
-                bind
-                ["SUPER" "ALT"]
-                "M"
-                "exec"
-                (lib.getExe applications.hyprlandToggleMode)
-              )
-
-              (
-                bind
-                ["SUPER" "ALT"]
-                "N"
-                "exec"
-                (lib.getExe applications.cycleLayout)
-              )
-
-              (
-                bind
-                ["SUPER" "ALT"]
-                "P"
-                "exec"
-                (lib.getExe applications.cycleLayout)
-              )
+              (bind ["SUPER" "ALT"] "M" "exec" applications.hyprlandToggleMode)
+              (bind ["SUPER" "ALT"] "N" "exec" applications.cycleLayout)
+              (bind ["SUPER" "ALT"] "P" "exec" applications.cycleLayout)
 
               (
                 bind
                 ["SUPER" "CTRL" "SHIFT"]
                 "H"
                 "exec"
-                (lib.getExe applications.minimiseVolume)
+                applications.minimiseVolume
               )
 
               (
@@ -449,7 +428,7 @@ in {
                 ["SUPER" "CTRL" "SHIFT"]
                 "J"
                 "exec"
-                (lib.getExe applications.minimiseBrightness)
+                applications.minimiseBrightness
               )
 
               (
@@ -457,7 +436,7 @@ in {
                 ["SUPER" "CTRL" "SHIFT"]
                 "K"
                 "exec"
-                (lib.getExe applications.maximiseBrightness)
+                applications.maximiseBrightness
               )
 
               (
@@ -465,42 +444,14 @@ in {
                 ["SUPER" "CTRL" "SHIFT"]
                 "L"
                 "exec"
-                (lib.getExe applications.maximiseVolume)
+                applications.maximiseVolume
               )
 
               (bind ["SUPER" "CTRL"] "C" "exec" "loginctl lock-session")
-
-              (
-                bind
-                ["SUPER" "CTRL"]
-                "H"
-                "exec"
-                (lib.getExe applications.decreaseVolume)
-              )
-
-              (
-                bind
-                ["SUPER" "CTRL"]
-                "J"
-                "exec"
-                (lib.getExe applications.decreaseBrightness)
-              )
-
-              (
-                bind
-                ["SUPER" "CTRL"]
-                "K"
-                "exec"
-                (lib.getExe applications.increaseBrightness)
-              )
-
-              (
-                bind
-                ["SUPER" "CTRL"]
-                "L"
-                "exec"
-                (lib.getExe applications.increaseVolume)
-              )
+              (bind ["SUPER" "CTRL"] "H" "exec" applications.decreaseVolume)
+              (bind ["SUPER" "CTRL"] "J" "exec" applications.decreaseBrightness)
+              (bind ["SUPER" "CTRL"] "K" "exec" applications.increaseBrightness)
+              (bind ["SUPER" "CTRL"] "L" "exec" applications.increaseVolume)
 
               (
                 bind
@@ -517,7 +468,7 @@ in {
                 ["SUPER" "SHIFT"]
                 "C"
                 "exec"
-                (lib.getExe applications.screenshotActiveWindow)
+                applications.screenshotActiveWindow
               )
 
               (bind ["SUPER" "SHIFT"] "F" "fakefullscreen" "")
@@ -525,25 +476,9 @@ in {
               (bind ["SUPER" "SHIFT"] "K" "swapnext" "prev")
               (bind ["SUPER" "SHIFT"] "P" "pin" "")
               (bind ["SUPER" "SHIFT"] "Q" "killactive" "")
-
-              (
-                bind
-                ["SUPER" "SHIFT"]
-                "V"
-                "exec"
-                (lib.getExe applications.recordSelection)
-              )
-
+              (bind ["SUPER" "SHIFT"] "V" "exec" applications.recordSelection)
               (bind ["SUPER"] "B" "exec" config.home.sessionVariables.BROWSER)
-
-              (
-                bind
-                ["SUPER"]
-                "C"
-                "exec"
-                (lib.getExe applications.screenshotSelection)
-              )
-
+              (bind ["SUPER"] "C" "exec" applications.screenshotSelection)
               (bind ["SUPER"] "F" "fullscreen" "")
               (bind ["SUPER"] "H" "focusmonitor" "-1")
               (bind ["SUPER"] "J" "cyclenext" "next")
@@ -566,17 +501,9 @@ in {
                 "${lib.getExe config.programs.rofi.finalPackage} -show run"
               )
 
-              (bind ["SUPER"] "S" "exec" (lib.getExe applications.systemStatus))
+              (bind ["SUPER"] "S" "exec" applications.systemStatus)
               (bind ["SUPER"] "T" "exec" config.home.sessionVariables.TERMINAL)
-
-              (
-                bind
-                ["SUPER"]
-                "V"
-                "exec"
-                (lib.getExe applications.recordEntireScreen)
-              )
-
+              (bind ["SUPER"] "V" "exec" applications.recordEntireScreen)
               (bind ["SUPER"] "W" "togglefloating" "")
               (bind ["SUPER"] "mouse_down" "workspace" "e+1")
               (bind ["SUPER"] "mouse_up" "workspace" "e-1")
