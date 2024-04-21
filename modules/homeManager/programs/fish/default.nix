@@ -354,22 +354,22 @@
             '';
           };
 
-          git.aliases = let
-            forgit = "forgit";
-          in
-            lib.mkIf config.modules.homeManager.programs.git.enable {
-              a = "${forgit} add";
-              b = "${forgit} checkout_branch";
-              cp = "${forgit} cherry_pick";
-              d = "${forgit} diff";
-              f = "${forgit} checkout_file";
-              i = "${forgit} ignore";
-              l = "${forgit} log";
-              rb = "${forgit} rebase";
-              sp = "${forgit} stash_push";
-              ss = "${forgit} stash_show";
-              t = "${forgit} checkout_tag";
-            };
+          git.aliases =
+            lib.mkIf
+            config.modules.homeManager.programs.git.enable
+            (builtins.mapAttrs (_: value: "forgit ${value}") {
+              a = "add";
+              b = "checkout_branch";
+              cp = "cherry_pick";
+              d = "diff";
+              f = "checkout_file";
+              i = "ignore";
+              l = "log";
+              rb = "rebase";
+              sp = "stash_push";
+              ss = "stash_show";
+              t = "checkout_tag";
+            });
         };
       }
 
