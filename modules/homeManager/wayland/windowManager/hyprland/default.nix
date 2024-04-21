@@ -80,10 +80,7 @@ in {
             animation = ["windows, 1, 7, ${windowsBezier}"];
 
             bezier = let
-              curve =
-                builtins.concatStringsSep
-                ","
-                (map toString [0.05 0.9 0.1 1.05]);
+              curve = lib.concatMapStringsSep "," toString [0.05 0.9 0.1 1.05];
             in ["${windowsBezier}, ${curve}"];
 
             enabled = false;
