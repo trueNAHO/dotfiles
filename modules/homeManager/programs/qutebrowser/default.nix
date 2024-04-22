@@ -65,12 +65,9 @@ in {
             spawn = "spawn --detach --verbose";
             url = "'{url}'";
           in
-            lib.mapAttrs'
+            lib.concatMapAttrs
             (
-              name: value:
-                lib.nameValuePair
-                "<Space>${name}"
-                (lib.concatStringsSep " " value)
+              name: value: {"<Space>${name}" = lib.concatStringsSep " " value;}
             )
             {
               "f" = [
