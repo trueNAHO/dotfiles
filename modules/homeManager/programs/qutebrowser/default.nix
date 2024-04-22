@@ -189,29 +189,27 @@ in {
 
             tabs.last_close = "default-page";
 
-            zoom.levels = [
-              "25%"
-              "33%"
-              "50%"
-              "67%"
-              "75%"
-              "90%"
-              "100%"
-              "110%"
-              "125%"
-              "150%"
-              "175%"
-              "200%"
-              "250%"
-              "300%"
-              "400%"
-              "500%"
-              "600%"
-              "700%"
-              "800%"
-              "900%"
-              "1000%"
-            ];
+            zoom.levels = let
+              # Considering the small input size and the lack of a built-in
+              # power function [2], this naive power implementation should
+              # satisfy reasonable performance requirements.
+              #
+              # Due to the lack of a modulo and bitwise AND operator, it is
+              # questionable whether the recursive exponentiation by squaring
+              # [1] implementation would even be faster.
+              #
+              # [1]: https://en.wikipedia.org/wiki/Exponentiation_by_squaring
+              # [2]: https://github.com/NixOS/nix/issues/10387
+              pow = base: power:
+                if power != 0
+                then base * (pow base (power - 1))
+                else 1;
+            in
+              # To avoid excessive memory reallocations, the individual zoom
+              # levels are computed from scratch on the CPU, instead of
+              # implementing an accumulative multiplication that stores each
+              # step in the final list.
+              map (level: "${toString (pow 1.5 level)}%") (pkgs.lib.range 8 17);
           };
         };
       }
