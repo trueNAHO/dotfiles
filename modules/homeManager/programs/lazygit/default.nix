@@ -4,13 +4,16 @@
   pkgs,
   ...
 }: {
-  imports = [../git];
+  imports = [../../home/sessionVariables ../git];
 
   options.modules.homeManager.programs.lazygit.enable =
     lib.mkEnableOption "modules.homeManager.programs.lazygit";
 
   config = lib.mkIf config.modules.homeManager.programs.lazygit.enable {
-    modules.homeManager.programs.git.enable = true;
+    modules.homeManager = {
+      home.sessionVariables.EDITOR.enable = true;
+      programs.git.enable = true;
+    };
 
     home.shellAliases.lg = lib.getExe config.programs.lazygit.package;
 
