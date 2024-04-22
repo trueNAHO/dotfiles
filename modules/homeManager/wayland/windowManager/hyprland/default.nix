@@ -391,7 +391,8 @@ in {
 
             windowResize = "10%";
           in
-            builtins.concatMap (
+            builtins.concatMap
+            (
               index: let
                 key = toString index;
                 workspace = toString (index + 1);
@@ -399,7 +400,8 @@ in {
                 "SUPER SHIFT, ${key}, movetoworkspacesilent, ${workspace}"
                 "SUPER, ${key}, workspace, ${workspace}"
               ]
-            ) (lib.range 0 9)
+            )
+            (lib.range 0 9)
             ++ [
               (bind ["SUPER" "ALT" "SHIFT"] "H" "layoutmsg" "orientationleft")
               (bind ["SUPER" "ALT" "SHIFT"] "J" "layoutmsg" "orientationbottom")
