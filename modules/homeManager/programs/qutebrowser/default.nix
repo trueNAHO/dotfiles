@@ -140,7 +140,7 @@ in {
                 #     output.  To save output to FILE, use 'nohup COMMAND >
                 #     FILE'.
                 #
-                #     (Source: nohup(1))
+                #     -- nohup(1)
                 ">/dev/null"
                 "2>&1"
               ])
