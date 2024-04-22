@@ -16,13 +16,30 @@
 
       keybindings = let
         change_font_size_value = toString 0.5;
-      in {
-        "alt+equal" = "change_font_size all 0";
-        "alt+minus" = "change_font_size all -${change_font_size_value}";
-        "alt+plus" = "change_font_size all +${change_font_size_value}";
-        "kitty_mod+c" = "copy_to_clipboard";
-        "kitty_mod+v" = "paste_from_clipboard";
-      };
+      in
+        lib.mkMerge (
+          map ({
+            name,
+            value,
+          }: {${lib.concatStringsSep "+" name} = value;}) [
+            (lib.nameValuePair ["alt" "equal"] "change_font_size all 0")
+
+            (
+              lib.nameValuePair
+              ["alt" "minus"]
+              "change_font_size all -${change_font_size_value}"
+            )
+
+            (
+              lib.nameValuePair
+              ["alt" "plus"]
+              "change_font_size all +${change_font_size_value}"
+            )
+
+            (lib.nameValuePair ["kitty_mod" "c"] "copy_to_clipboard")
+            (lib.nameValuePair ["kitty_mod" "v"] "paste_from_clipboard")
+          ]
+        );
 
       settings = {
         clear_all_shortcuts = true;
