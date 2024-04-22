@@ -184,9 +184,7 @@
                 set_color $fish_color_normal
               '';
 
-              description = ''
-                Define the appearance of the command line prompt
-              '';
+              description = "Define the appearance of the command line prompt";
             };
 
             fish_right_prompt = {
