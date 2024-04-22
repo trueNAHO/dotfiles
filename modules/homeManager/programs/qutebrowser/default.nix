@@ -31,6 +31,7 @@ in {
               BROWSER.enable = true;
               EDITOR.enable = true;
               TERMINAL.enable = true;
+              enable = true;
             };
           };
 

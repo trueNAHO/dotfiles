@@ -49,7 +49,11 @@ lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "full" {
           zip.enable = true;
         };
 
-        sessionVariables.enable = true;
+        sessionVariables = {
+          enable = true;
+          full = true;
+        };
+
         shellAliases.enable = true;
       };
 

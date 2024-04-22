@@ -9,7 +9,10 @@
     lib.mkEnableOption "modules.homeManager.programs.kitty";
 
   config = lib.mkIf config.modules.homeManager.programs.kitty.enable {
-    modules.homeManager.home.sessionVariables.TERMINAL.enable = true;
+    modules.homeManager.home.sessionVariables = {
+      TERMINAL.enable = true;
+      enable = true;
+    };
 
     programs.kitty = {
       enable = true;

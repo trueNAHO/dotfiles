@@ -31,6 +31,7 @@
       lib.mkEnableOption "${module}.TMPDIR";
 
     enable = lib.mkEnableOption module;
+    full = lib.mkEnableOption "${module}.full";
   };
 
   # The native 'pkgs.<PACKAGE>' packages are used as a fallback when the
@@ -54,8 +55,8 @@
     #     defined.
     #
     # TODO: Patch an upstream fix.
-    lib.mkMerge [
-      (lib.mkIf (cfg.enable || cfg.BROWSER.enable) {
+    lib.mkIf cfg.enable (lib.mkMerge [
+      (lib.mkIf (cfg.full || cfg.BROWSER.enable) {
         BROWSER = lib.getExe (
           if config ? programs.qutebrowser.package
           then config.programs.qutebrowser.package
@@ -63,15 +64,15 @@
         );
       })
 
-      (lib.mkIf (cfg.enable || cfg.EDITOR.enable) {
+      (lib.mkIf (cfg.full || cfg.EDITOR.enable) {
         EDITOR = neovim;
       })
 
-      (lib.mkIf (cfg.enable || cfg.MANPAGER.enable) {
+      (lib.mkIf (cfg.full || cfg.MANPAGER.enable) {
         MANPAGER = "${neovim} +Man!";
       })
 
-      (lib.mkIf (cfg.enable || cfg.SHELL.enable) {
+      (lib.mkIf (cfg.full || cfg.SHELL.enable) {
         SHELL = lib.getExe (
           if config ? programs.fish.package
           then config.programs.fish.package
@@ -79,7 +80,7 @@
         );
       })
 
-      (lib.mkIf (cfg.enable || cfg.TERMINAL.enable) {
+      (lib.mkIf (cfg.full || cfg.TERMINAL.enable) {
         TERMINAL = lib.getExe (
           if config ? programs.kitty.package
           then config.programs.kitty.package
@@ -87,8 +88,8 @@
         );
       })
 
-      (lib.mkIf (cfg.enable || cfg.TMPDIR.enable) {
+      (lib.mkIf (cfg.full || cfg.TMPDIR.enable) {
         TMPDIR = "${config.home.homeDirectory}/tmp";
       })
-    ];
+    ]);
 }

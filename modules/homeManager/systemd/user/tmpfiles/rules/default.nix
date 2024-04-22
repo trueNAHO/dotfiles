@@ -11,7 +11,10 @@
   config =
     lib.mkIf
     config.modules.homeManager.systemd.user.tmpfiles.rules.enable {
-      modules.homeManager.home.sessionVariables.TMPDIR.enable = true;
+      modules.homeManager.home.sessionVariables = {
+        TMPDIR.enable = true;
+        enable = true;
+      };
 
       systemd.user.tmpfiles.rules = [
         "d ${config.home.sessionVariables.TMPDIR} - - - bmA:1w"

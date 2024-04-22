@@ -14,7 +14,10 @@
     config.modules.homeManager.programs.zellij.enable
     (lib.mkMerge [
       {
-        modules.homeManager.home.sessionVariables.EDITOR.enable = true;
+        modules.homeManager.home.sessionVariables = {
+          EDITOR.enable = true;
+          enable = true;
+        };
 
         programs = {
           zellij = {

@@ -27,6 +27,7 @@ in {
             BROWSER.enable = true;
             TERMINAL.enable = true;
             TMPDIR.enable = true;
+            enable = true;
           };
 
           programs = {

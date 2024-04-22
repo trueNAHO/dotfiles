@@ -24,7 +24,11 @@
         modules.homeManager = {
           home = {
             packages.asciidoctor.enable = true;
-            sessionVariables.SHELL.enable = true;
+
+            sessionVariables = {
+              SHELL.enable = true;
+              enable = true;
+            };
           };
 
           programs.man.enable = true;

@@ -16,7 +16,10 @@
   config = let
     cfg = config.modules.homeManager.xdg;
   in {
-    modules.homeManager.home.sessionVariables.TMPDIR.enable = true;
+    modules.homeManager.home.sessionVariables = {
+      TMPDIR.enable = true;
+      enable = true;
+    };
 
     xdg = {
       enable = cfg.enable;

@@ -23,6 +23,7 @@
       modules.homeManager.home.sessionVariables = {
         EDITOR.enable = true;
         MANPAGER.enable = true;
+        enable = true;
       };
 
       home.shellAliases.n = lib.getExe config.programs.nixvim.finalPackage;
