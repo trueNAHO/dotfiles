@@ -123,7 +123,18 @@ in {
               "-e"
               pkgs.runtimeShell
               "-c"
-              "${config.home.sessionVariables.EDITOR} -c 'call cursor({line}, {column0})' -- {file} && nohup ${lib.getExe' pkgs.wl-clipboard "wl-copy"} < {file} >/dev/null 2>&1"
+              (lib.concatStringsSep " " [
+                config.home.sessionVariables.EDITOR
+                "-c 'call cursor({line}, {column0})'"
+                "--"
+                "{file}"
+                "&&"
+                "nohup"
+                (lib.getExe' pkgs.wl-clipboard "wl-copy")
+                "< {file}"
+                ">/dev/null"
+                "2>&1"
+              ])
             ];
 
             fileselect = {
