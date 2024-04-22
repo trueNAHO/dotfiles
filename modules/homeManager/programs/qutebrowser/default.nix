@@ -132,6 +132,15 @@ in {
                 "nohup"
                 (lib.getExe' pkgs.wl-clipboard "wl-copy")
                 "< {file}"
+
+                # Redirect all terminal output to '/dev/null' to avoid pesky
+                # 'nohup.out' file creations:
+                #
+                #     If standard error is a terminal, redirect it to standard
+                #     output.  To save output to FILE, use 'nohup COMMAND >
+                #     FILE'.
+                #
+                #     (Source: nohup(1))
                 ">/dev/null"
                 "2>&1"
               ])
