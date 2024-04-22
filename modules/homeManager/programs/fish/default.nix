@@ -318,19 +318,12 @@
           sessionVariables = {
             FORGIT_COPY_CMD = "wl-copy";
 
-            FORGIT_FZF_DEFAULT_OPTS =
-              lib.concatMapStringsSep
-              " "
-              (
-                {
-                  name,
-                  value,
-                }: "--bind=${name}:${value}"
-              )
-              [
-                (lib.nameValuePair "ctrl-j" "preview-down")
-                (lib.nameValuePair "ctrl-k" "preview-up")
-              ];
+            FORGIT_FZF_DEFAULT_OPTS = builtins.concatStringsSep " " (
+              lib.mapAttrsToList (name: value: "--bind=${name}:${value}") {
+                ctrl-j = "preview-down";
+                ctrl-k = "preview-up";
+              }
+            );
 
             FORGIT_NO_ALIASES = 1;
           };
