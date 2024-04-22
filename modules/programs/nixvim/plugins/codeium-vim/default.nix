@@ -33,7 +33,7 @@
     # [1]: https://github.com/Exafunction/codeium.nvim
     # [2]: https://github.com/Exafunction/codeium.vim
     # [3]: https://github.com/Exafunction/codeium.vim/issues/303
-    home.activation."modules.programs.nixvim" =
+    home.activation."modules.programs.nixvim.plugins.codeium-vim" =
       lib.hm.dag.entryAfter
       ["writeBoundary"]
       (
