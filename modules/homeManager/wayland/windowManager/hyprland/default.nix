@@ -399,7 +399,7 @@ in {
                 "SUPER SHIFT, ${key}, movetoworkspacesilent, ${workspace}"
                 "SUPER, ${key}, workspace, ${workspace}"
               ]
-            ) (lib.lists.range 0 9)
+            ) (lib.range 0 9)
             ++ [
               (bind ["SUPER" "ALT" "SHIFT"] "H" "layoutmsg" "orientationleft")
               (bind ["SUPER" "ALT" "SHIFT"] "J" "layoutmsg" "orientationbottom")
