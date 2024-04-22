@@ -57,8 +57,8 @@ in {
 
             mpv = {
               audio = "--player-operation-mode=pseudo-gui --vid=no";
+              finalPackage = lib.getExe config.programs.mpv.finalPackage;
               loop = "--loop-playlist";
-              mainProgram = lib.getExe config.programs.mpv.finalPackage;
               shuffle = "--shuffle";
             };
 
@@ -76,33 +76,33 @@ in {
                 url
               ];
 
-              "mA" = [spawn mpv.mainProgram mpv.audio url];
-              "mV" = [spawn mpv.mainProgram url];
-              "ma" = [hint spawn mpv.mainProgram mpv.audio hintUrl];
+              "mA" = [spawn mpv.finalPackage mpv.audio url];
+              "mV" = [spawn mpv.finalPackage url];
+              "ma" = [hint spawn mpv.finalPackage mpv.audio hintUrl];
 
               "mlA" = [
                 spawn
-                mpv.mainProgram
+                mpv.finalPackage
                 mpv.loop
                 mpv.audio
                 mpv.shuffle
                 url
               ];
 
-              "mlV" = [spawn mpv.mainProgram mpv.loop url];
+              "mlV" = [spawn mpv.finalPackage mpv.loop url];
 
               "mla" = [
                 hint
                 spawn
-                mpv.mainProgram
+                mpv.finalPackage
                 mpv.loop
                 mpv.audio
                 mpv.shuffle
                 hintUrl
               ];
 
-              "mlv" = [hint spawn mpv.mainProgram mpv.loop hintUrl];
-              "mv" = [hint spawn mpv.mainProgram hintUrl];
+              "mlv" = [hint spawn mpv.finalPackage mpv.loop hintUrl];
+              "mv" = [hint spawn mpv.finalPackage hintUrl];
             };
 
           settings = let
