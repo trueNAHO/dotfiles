@@ -22,10 +22,17 @@
       file = ../codeium_api_key.age;
     };
 
-    # TODO: Replace the activation script with an upstream VIM plugin option for
-    # setting the config path storing the API key, similar to the 'config_path'
-    # option in https://github.com/Exafunction/codeium.nvim:
-    # https://github.com/Exafunction/codeium.vim/issues/303.
+    # Unlike 'codeium.nvim' [1], 'codeium.vim' [2] does not interface path to
+    # the configuration file containing the API key. This activation script
+    # symlinks the decrypted agenix file to the expected location.
+    #
+    # TODO: Replace this activation script with an upstream 'codeium.vim' [2]
+    # option interfacing the path to the configuration file containing the API
+    # key. [3]
+    #
+    # [1]: https://github.com/Exafunction/codeium.nvim
+    # [2]: https://github.com/Exafunction/codeium.vim
+    # [3]: https://github.com/Exafunction/codeium.vim/issues/303
     home.activation."modules.programs.nixvim" =
       lib.hm.dag.entryAfter
       ["writeBoundary"]
