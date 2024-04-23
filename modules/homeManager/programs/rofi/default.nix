@@ -26,20 +26,26 @@
           package = pkgs.rofi-pass-wayland;
         };
 
-        theme = {
-          element = let
-            padding = "5px";
+        theme = let
+          padding = let
+            padding = {
+              element = 5;
+              inputbar = padding.element * 2;
+            };
           in {
-            inherit padding;
-            spacing = padding;
+            element = "${toString padding.element}px";
+            inputbar = "${toString padding.inputbar}px";
+          };
+        in {
+          element = {
+            padding = padding.element;
+            spacing = padding.element;
           };
 
-          inputbar = let
-            padding = "10px";
-          in {
+          inputbar = {
             children = ["prompt" "entry"];
-            padding = "${padding} ${padding}";
-            spacing = padding;
+            padding = "${padding.inputbar} ${padding.inputbar}";
+            spacing = padding.inputbar;
           };
 
           window.width = "25%";
