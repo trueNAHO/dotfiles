@@ -33,8 +33,7 @@
   * {directory}/programs/nixvim/plugins/default.nix[`x86_64-darwin-private-standalone-programs-nixvim-plugins`]
   * {directory}/programs/nixvim/plugins/default.nix[`x86_64-linux-private-standalone-programs-nixvim-plugins`]
 | {minimal-reproducible-example}[MWE] of the `modules.programs.nixvim.plugins`
-  <<developer_documentation_architecture_code_map_modules_directory, module>>,
-  enabling all plugins.
+  <<developer_documentation_architecture_code_map_modules_directory, module>>.
 
 | * {directory}/programs/nixvim/plugins/nvim-cmp/default.nix[`aarch64-darwin-private-standalone-programs-nixvim-plugins-nvim-cmp`]
   * {directory}/programs/nixvim/plugins/nvim-cmp/default.nix[`aarch64-linux-private-standalone-programs-nixvim-plugins-nvim-cmp`]
