@@ -27,10 +27,13 @@
         ) {
           modules.homeManager.xdg.mimeApps.enable = true;
 
-          xdg.mimeApps.defaultApplications = {
-            "application/pdf" = ["org.pwmt.zathura-pdf-mupdf.desktop"];
-            "application/postscript" = ["org.pwmt.zathura-ps.desktop"];
-          };
+          xdg.mimeApps.defaultApplications =
+            lib.mapAttrs'
+            (name: lib.nameValuePair "application/${name}")
+            {
+              "pdf" = ["org.pwmt.zathura-pdf-mupdf.desktop"];
+              "postscript" = ["org.pwmt.zathura-ps.desktop"];
+            };
         }
       )
     ]);
