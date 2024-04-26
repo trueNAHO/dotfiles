@@ -23,6 +23,7 @@ in {
         enable = true;
       };
 
+      # TODO: Add upstream option for declaring presets.
       xdg.configFile."easyeffects/output/${preset}.json".text =
         builtins.toJSON
         {
