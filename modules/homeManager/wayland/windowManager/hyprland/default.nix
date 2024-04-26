@@ -271,8 +271,11 @@ in {
                 runtimeInputs = with pkgs; [hyprland jq];
 
                 text = let
-                  batch = builtins.concatStringsSep ";" (
-                    map (keyword: "keyword ${keyword}") [
+                  batch =
+                    lib.concatMapStringsSep
+                    ";"
+                    (keyword: "keyword ${keyword}")
+                    [
                       "animations:enabled 1"
                       "decoration:blur:enabled 1"
                       "decoration:drop_shadow 1"
@@ -283,8 +286,7 @@ in {
                       "general:gaps_out ${toString (fancy_gap * 2)}"
                       "misc:animate_manual_resizes 1"
                       "misc:animate_mouse_windowdragging_resizes 1"
-                    ]
-                  );
+                    ];
 
                   fancy_gap = 20;
                 in ''
