@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: {
   imports = [../../services/swayidle];
@@ -14,44 +15,51 @@
     programs.wlogout = {
       enable = true;
 
-      layout = [
+      layout = let
+        systemd = let
+          systemd = lib.getExe' pkgs.systemd;
+        in {
+          loginctl = systemd "loginctl";
+          systemctl = systemd "systemctl";
+        };
+      in [
         {
-          action = "loginctl lock-session";
+          action = "${systemd.loginctl} lock-session";
           keybind = "l";
           label = "lock";
           text = "Lock";
         }
 
         {
-          action = "systemctl hibernate";
+          action = "${systemd.systemctl} hibernate";
           keybind = "h";
           label = "hibernate";
           text = "Hibernate";
         }
 
         {
-          action = "loginctl terminate-user ${config.home.username}";
+          action = "${systemd.loginctl} terminate-user ${config.home.username}";
           keybind = "q";
           label = "logout";
           text = "Logout";
         }
 
         {
-          action = "systemctl poweroff";
+          action = "${systemd.systemctl} poweroff";
           keybind = "p";
           label = "shutdown";
           text = "Shutdown";
         }
 
         {
-          action = "systemctl suspend";
+          action = "${systemd.systemctl} suspend";
           keybind = "s";
           label = "suspend";
           text = "Suspend";
         }
 
         {
-          action = "systemctl reboot";
+          action = "${systemd.systemctl} reboot";
           keybind = "r";
           label = "reboot";
           text = "Reboot";
