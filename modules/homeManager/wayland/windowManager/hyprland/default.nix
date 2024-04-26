@@ -84,6 +84,9 @@ in {
               curve = lib.concatMapStringsSep "," toString [0.05 0.9 0.1 1.05];
             in ["${windowsBezier}, ${curve}"];
 
+            # Despite the animations being disabled on startup, the animation
+            # tweaks are written to the configuration file. Note that the
+            # animations can still be enabled at run time.
             enabled = false;
           };
 
