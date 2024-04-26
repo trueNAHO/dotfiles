@@ -36,11 +36,15 @@
         enable = true;
 
         extraConfig =
-          builtins.concatStringsSep "\n"
-          (map (plugin: "dofile('${plugin}/init.lua').setup()") [
-            inputs.dragonXplr
-            inputs.triPaneXplr
-          ]);
+          lib.concatMapStringsSep
+          "\n"
+          (module: "require('${module}').setup()")
+          (builtins.attrNames config.programs.xplr.plugins);
+
+        plugins = {
+          dragon = inputs.dragonXplr;
+          tri-pane = inputs.triPaneXplr;
+        };
       };
     };
   };
