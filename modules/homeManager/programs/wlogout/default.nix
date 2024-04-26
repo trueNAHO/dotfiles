@@ -14,7 +14,7 @@
     programs.wlogout = {
       enable = true;
 
-      layout = map (layout: layout // {circular = true;}) [
+      layout = [
         {
           action = "loginctl lock-session";
           keybind = "l";
