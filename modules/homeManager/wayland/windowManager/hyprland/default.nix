@@ -271,7 +271,9 @@ in {
                 runtimeInputs = with pkgs; [hyprland jq];
 
                 text = let
-                  batch =
+                  batch = let
+                    fancy_gap = 20;
+                  in
                     lib.concatMapStringsSep
                     ";"
                     (keyword: "keyword ${keyword}")
@@ -287,8 +289,6 @@ in {
                       "misc:animate_manual_resizes 1"
                       "misc:animate_mouse_windowdragging_resizes 1"
                     ];
-
-                  fancy_gap = 20;
                 in ''
                   animations_enabled="$(
                     hyprctl getoption -j animations:enabled | jq -r '.int'
