@@ -5,14 +5,7 @@
 :naho: link:https://github.com/trueNAHO
 :os: link:https://github.com/trueNAHO/os
 :repository-path: trueNAHO/dotfiles
-:repository-star-history-align: center
-:repository-star-history-alt: Star History Chart
-:repository-star-history-width: 100%
 :version-control-visualization: link:https://youtu.be/mJPvRkYkbYE
-
-:repository-raw-stargazers: https://github.com/{repository-path}/stargazers
-:repository-star-history-src-dark: https://api.star-history.com/svg?repos={repository-path}&theme=dark
-:repository-star-history-src-light: https://api.star-history.com/svg?repos={repository-path}
 
 == About
 
@@ -27,35 +20,7 @@ image::{logo-raw}[NAHO's NixOS Logo, link={logo-raw}, width=100%]
 
 == See Also
 
-* {repository-star-history-src-dark}[GitHub Star History]
 * {home-manager}[Home Manager]
 * link:LICENSE[License]
 * {os}[NAHO's NixOS configurations]
 * {version-control-visualization}[Version Control Visualization]
-
-ifdef::backend-html5[]
-[subs=attributes+]
-++++
-<a href="{repository-raw-stargazers}">
-  <p align="{repository-star-history-align}">
-    <picture>
-      <source
-        media="(prefers-color-scheme: dark)"
-        srcset="{repository-star-history-src-dark}"
-      />
-
-      <source
-        media="(prefers-color-scheme: light)"
-        srcset="{repository-star-history-src-light}"
-      />
-
-      <img
-        alt="{repository-star-history-alt}"
-        src="{repository-star-history-src-dark}"
-        width="{repository-star-history-width}"
-      />
-    </picture>
-  </p>
-</a>
-++++
-endif::[]

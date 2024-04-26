@@ -15,9 +15,6 @@
 :nofooter:
 :os: link:https://github.com/trueNAHO/os
 :repository-path: trueNAHO/dotfiles
-:repository-star-history-align: center
-:repository-star-history-alt: Star History Chart
-:repository-star-history-width: 100%
 :reproducible:
 :source-highlighter: rouge
 :toc: left
@@ -26,9 +23,6 @@
 
 :logo: link:{logo-raw}
 :repository-flake: github:{repository-path}
-:repository-raw-stargazers: https://github.com/{repository-path}/stargazers
-:repository-star-history-src-dark: https://api.star-history.com/svg?repos={repository-path}&theme=dark
-:repository-star-history-src-light: https://api.star-history.com/svg?repos={repository-path}
 :repository: link:https://github.com/{repository-path}
 :version-control-visualization: link:https://youtu.be/{version-control-visualization-video-id}
 
