@@ -3,3 +3,10 @@
 include::naming_convention/index.adoc[]
 
 include::overview/index.adoc[]
+
+// -----BEGIN MODULE OPTIONS-----
+//
+// Do not remove this BEGIN/END block: Generated module options documentation
+// will be inserted here.
+//
+// -----END MODULE OPTIONS-----

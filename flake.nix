@@ -140,7 +140,65 @@
           out = "${placeholder "out"}/usr/share/doc";
         in
           pkgs.stdenv.mkDerivation {
-            buildPhase = ''
+            buildPhase = let
+              options =
+                (pkgs.nixosOptionsDoc {
+                  # Any internal module options that are not contained in this
+                  # Home Manager configuration are not included in the generated
+                  # internal module options documentation.
+                  inherit
+                    (inputs.self.outputs.homeConfigurations."${system}-private-integrated-full")
+                    options
+                    ;
+
+                  transformOptions = option:
+                    option
+                    // {
+                      declarations = let
+                        declarationPrefix = toString ./.;
+                      in
+                        map
+                        (
+                          declaration: let
+                            declarationString = toString declaration;
+
+                            declarationWithoutprefix =
+                              lib.removePrefix
+                              "${declarationPrefix}/"
+                              declarationString;
+                          in
+                            if lib.hasPrefix declarationPrefix declarationString
+                            then {
+                              name = "<dotfiles/${declarationWithoutprefix}/default.nix>";
+                              url = "https://github.com/trueNAHO/dotfiles/blob/master/${declarationWithoutprefix}/default.nix";
+                            }
+                            else throw "unexpected declaration: ${declarationString}"
+                        )
+                        option.declarations;
+
+                      visible =
+                        option.visible
+                        && builtins.elemAt option.loc 0 == "modules";
+                    };
+                })
+                .optionsAsciiDoc;
+
+              sed = let
+                header = header: ''^\/\/ -----${header} MODULE OPTIONS-----$'';
+              in {
+                begin = header "BEGIN";
+                end = header "END";
+              };
+            in ''
+              options="$(mktemp)"
+
+              sed 's/^==/=====/' "${options}" >"$options"
+
+              sed \
+                --in-place \
+                "/${sed.begin}/,/${sed.end}/c ==== Options\n\ninclude::$options[]" \
+                user_documentation/home_manager_configurations/index.adoc
+
               asciidoctor-multipage \
                 --attribute attribute-missing=warn \
                 --destination-dir "${out}" \
