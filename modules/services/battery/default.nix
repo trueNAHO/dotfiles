@@ -219,8 +219,8 @@ in {
             Install.WantedBy = ["timers.target"];
 
             Timer = {
+              inherit (cfg.systemd.user.timers.battery.Timer) OnCalendar;
               Unit = "${name}.service";
-              OnCalendar = cfg.systemd.user.timers.battery.Timer.OnCalendar;
             };
 
             Unit.Description = "${description} scheduler";
