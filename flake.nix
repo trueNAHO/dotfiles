@@ -103,10 +103,7 @@
           (_: homeConfiguration: homeConfiguration.activationPackage)
           (
             lib.filterAttrs
-            (
-              homeConfigurationName: _:
-                lib.hasPrefix system homeConfigurationName
-            )
+            (name: _: lib.hasPrefix system name)
             inputs.self.homeConfigurations
           )
           // {
