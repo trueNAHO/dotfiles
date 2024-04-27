@@ -45,9 +45,7 @@ in {
           name = "Crimson";
         };
 
-        sizes = {
-          terminal = 7;
-        };
+        sizes.terminal = 7;
       };
 
       image = pkgs.fetchurl {
