@@ -210,7 +210,7 @@ in {
               # levels are computed from scratch on the CPU, instead of
               # implementing an accumulative multiplication that stores each
               # step in the final list.
-              map (level: "${toString (pow 1.5 level)}%") (pkgs.lib.range 8 17);
+              map (level: "${toString (pow 1.5 level)}%") (lib.range 8 17);
           };
         };
       }

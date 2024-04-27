@@ -95,16 +95,17 @@
   outputs = inputs:
     inputs.flakeUtils.lib.eachDefaultSystem (
       system: let
+        inherit (pkgs) lib;
         pkgs = inputs.nixpkgs.legacyPackages.${system};
       in {
         checks =
           builtins.mapAttrs
           (_: homeConfiguration: homeConfiguration.activationPackage)
           (
-            pkgs.lib.filterAttrs
+            lib.filterAttrs
             (
               homeConfigurationName: _:
-                pkgs.lib.hasPrefix system homeConfigurationName
+                lib.hasPrefix system homeConfigurationName
             )
             inputs.self.homeConfigurations
           )
@@ -162,8 +163,8 @@
     #
     #     outputs.homeConfigurations.${system}.<HOME_CONFIGURATION_NAME>
     #
-    # Due to the more reliable 'pkgs.lib.mkMerge' function being unavailable,
-    # the 'inputs.flakeUtils.lib.defaultSystems' expression and
+    # Due to the more reliable 'lib.mkMerge' function being unavailable, the
+    # 'inputs.flakeUtils.lib.defaultSystems' expression and
     # 'outputs.homeConfigurations' attribute set are merged using the '//'
     # operator.
     #
@@ -180,7 +181,7 @@
             // (import ./home_configurations {
               inherit system;
 
-              lib = inputs.nixpkgs.lib.extend (
+              lib = pkgs.lib.extend (
                 final: _:
                   import ./lib {
                     inherit inputs pkgs system;

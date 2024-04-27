@@ -65,7 +65,7 @@
             (
               {config, ...}:
                 {
-                  config = pkgs.lib.mkMerge [
+                  config = lib.mkMerge [
                     {
                       home = {
                         homeDirectory = "/home/${config.home.username}";
