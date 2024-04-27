@@ -11,13 +11,7 @@
       enable = true;
 
       keymaps = {
-        motions = {
-          b = "b";
-          e = "e";
-          ge = "ge";
-          w = "w";
-        };
-
+        motions = lib.genAttrs ["b" "e" "ge" "w"] (name: name);
         silent = true;
       };
 
