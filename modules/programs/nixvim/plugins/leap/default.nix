@@ -19,6 +19,7 @@
               })
             end
           '';
+
           key = "<leader>f";
           lua = true;
           mode = ["n" "v"];
