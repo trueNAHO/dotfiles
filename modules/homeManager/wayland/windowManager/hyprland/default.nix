@@ -534,7 +534,14 @@ in {
           decoration = {
             blur.enabled = false;
             dim_inactive = true;
-            dim_strength = 0.15;
+
+            # The explicit 'toString' call prevents the following harmless
+            # warning:
+            #
+            #     trace: warning: Imprecise conversion from float to string
+            #     0.166667
+            dim_strength = toString (1.0 / 6);
+
             drop_shadow = false;
             rounding = windowGap;
           };
