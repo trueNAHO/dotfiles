@@ -9,15 +9,15 @@
 in {
   imports = [../../homeManager/services/dunst];
 
-  options.modules.services.battery = {
+  options.modules.services.battery = let
+    onCalendar = "[`systemd.user.timers.battery.Timer.OnCalendar`](https://nix-community.github.io/home-manager/options.xhtml#opt-systemd.user.timers)";
+  in {
     delta = lib.mkOption {
       default = 5;
 
-      description = let
-        OnCalendar = "systemd.user.timers.battery.Timer.OnCalendar";
-      in ''
+      description = ''
         Minimum battery percentage drop since the last notification to trigger a
-        new one. Set to `0` to receive notifications on every `${OnCalendar}`
+        new one. Set to `0` to receive notifications on every ${onCalendar}
         update.
       '';
 
@@ -36,14 +36,7 @@ in {
 
     systemd.user.timers.battery.Timer.OnCalendar = lib.mkOption {
       default = "*:0/5";
-
-      description = let
-        url = "https://nix-community.github.io/home-manager/options.xhtml#opt-systemd.user.timers";
-      in ''
-        Set the [`systemd.user.timers.battery.Timer.OnCalendar`](${url})
-        setting.
-      '';
-
+      description = "Set the ${onCalendar} setting.";
       example = "*:0/1";
     };
 
