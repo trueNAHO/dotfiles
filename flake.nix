@@ -100,7 +100,7 @@
       in {
         checks =
           builtins.mapAttrs
-          (_: homeConfiguration: homeConfiguration.activationPackage)
+          (_: value: value.activationPackage)
           (
             lib.filterAttrs
             (name: _: lib.hasPrefix system name)
