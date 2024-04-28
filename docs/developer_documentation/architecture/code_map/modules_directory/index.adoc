@@ -33,8 +33,8 @@ $ echo {module} |
 {directory-modules-home-manager}/programs/camelCase/kebab-case/snake_case/default.nix
 ----
 
-The custom `{module}` `$MODULE` module attribute set would be declared at
-`{directory-modules}/programs/camelCase/kebab-case/snake_case/default.nix`:
+The non-Home Manager `{module}` `$MODULE` module attribute set would be declared
+at `{directory-modules}/programs/camelCase/kebab-case/snake_case/default.nix`:
 
 [,bash,subs=attributes+]
 ----
