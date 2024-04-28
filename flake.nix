@@ -99,8 +99,10 @@
         pkgs = inputs.nixpkgs.legacyPackages.${system};
       in {
         checks =
-          builtins.mapAttrs
-          (_: value: value.activationPackage)
+          lib.concatMapAttrs
+          (name: value: {
+            ${lib.removePrefix "${system}-" name} = value.activationPackage;
+          })
           (
             lib.filterAttrs
             (name: _: lib.hasPrefix system name)
