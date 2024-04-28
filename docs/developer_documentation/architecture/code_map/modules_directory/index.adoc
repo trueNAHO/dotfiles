@@ -3,44 +3,32 @@
 :directory-modules: /modules
 :sed: sed 's@\.@/@g'
 
-:directory-modules-home-manager: {directory-modules}/homeManager
-
 This directory contains all modules used by
 `<<developer_documentation_architecture_code_map_home_configurations_accessibility_scope_prefix_name_default_nix>>`.
 
-The `{directory-modules-home-manager}` directory is reserved for
+The `{directory-modules}/homeManager` directory is reserved for
 {home-manager}[Home Manager] modules, while other `{directory-modules}`
 directories are intended for non-Home Manager modules.
 
-The `{directory-modules}` directory structure mirrors Home Manager's `$MODULE`
-module structure:
+The `{directory-modules}` directory structure mirrors the `$MODULE` module
+structure:
 
 [,bash,subs=attributes+]
 ----
 echo "$MODULE" | {sed}
 ----
 
-:module: programs.camelCase.kebab-case.snake_case
+:module-attribute-set: modules.camelCase.kebab-case.snake_case
+:module-path: /modules/camelCase/kebab-case/snake_case/default.nix
 ====
-The `{module}` Home Manager `$MODULE` module attribute set would be declared at
-`{directory-modules-home-manager}/programs/camelCase/kebab-case/snake_case/default.nix`:
+The `{module-attribute-set}` module attribute set would be declared at
+`{module-path}`:
 
 [,bash,subs=attributes+]
 ----
-$ echo {module} |
-    {sed} |
-    xargs printf '{directory-modules-home-manager}/%s/default.nix\n'
-{directory-modules-home-manager}/programs/camelCase/kebab-case/snake_case/default.nix
-----
-
-The non-Home Manager `{module}` `$MODULE` module attribute set would be declared
-at `{directory-modules}/programs/camelCase/kebab-case/snake_case/default.nix`:
-
-[,bash,subs=attributes+]
-----
-$ echo {module} |
-    {sed} |
-    xargs printf '{directory-modules}/%s/default.nix\n'
-{directory-modules}/programs/camelCase/kebab-case/snake_case/default.nix
+$ echo {module-attribute-set} |
+  {sed} |
+  xargs printf '/%s/default.nix\n'
+{module-path}
 ----
 ====

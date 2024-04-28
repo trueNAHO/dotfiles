@@ -48,18 +48,23 @@ following command, where `$MODULE` represents the module attribute set:
 
 [,bash]
 ----
-echo "$MODULE" \| cut --delimiter / --fields 2-
+echo "$MODULE" \|
+  cut --delimiter . --fields 2- \|
+  sed 's/\./-/g'
 ----
 
-:module: programs.camelCase.kebab-case.snake_case
+:module-attribute-set: modules.camelCase.kebab-case.snake_case
+:module-name: camelCase-kebab-case-snake_case
 =====
-The `<NAME>` parameter for the `{module}` module would be
-`programs.camelCase.kebab-case.snake_case`:
+The `<NAME>` parameter for the `{module-attribute-set}` module would be
+`{module-name}`:
 
 [,bash,subs=attributes+]
 ----
-$ echo {module} \| cut --delimiter / --fields 2-
-programs.camelCase.kebab-case.snake_case
+$ echo {module-attribute-set} \|
+  cut --delimiter . --fields 2- \|
+  sed 's/\./-/g'
+{module-name}
 ----
 =====
 ====

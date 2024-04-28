@@ -1,6 +1,5 @@
-[[developer_documentation_architecture_cross_cutting_concerns_naming_conventions_lib_mk_enable_option_description]]
 ====== lib.mkEnableOption "<DESCRIPTION>"
-:module: programs.camelCase.kebab-case.snake_case
+:module: modules.camelCase.kebab-case.snake_case
 
 The `<DESCRIPTION>` in `lib.mkEnableOption "<DESCRIPTION>"` corresponds to the
 <<developer_documentation_architecture_code_map_modules_directory, module>>
