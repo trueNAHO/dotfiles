@@ -74,11 +74,7 @@
                       };
                     }
 
-                    (
-                      if extraConfig ? config
-                      then extraConfig.config
-                      else {}
-                    )
+                    (extraConfig.config or {})
                   ];
                 }
                 // (builtins.removeAttrs extraConfig ["config"])

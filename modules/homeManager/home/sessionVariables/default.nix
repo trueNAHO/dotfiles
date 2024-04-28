@@ -39,12 +39,7 @@
   # unconditional 'imports'.
   config.home.sessionVariables = let
     cfg = config.modules.homeManager.home.sessionVariables;
-
-    neovim = lib.getExe (
-      if config ? programs.nixvim.finalPackage
-      then config.programs.nixvim.finalPackage
-      else pkgs.neovim
-    );
+    neovim = lib.getExe (config.programs.nixvim.finalPackage or pkgs.neovim);
   in
     # The 'lib.mkMerge [(lib.mkIf <BOOL> {<VARIABLE> = <VALUE>;})];' pattern is
     # used instead of the simpler '{<VARIABLE> = lib.mkIf <BOOL> <VALUE>;};'
@@ -58,9 +53,7 @@
     lib.mkIf cfg.enable (lib.mkMerge [
       (lib.mkIf (cfg.full || cfg.BROWSER.enable) {
         BROWSER = lib.getExe (
-          if config ? programs.qutebrowser.package
-          then config.programs.qutebrowser.package
-          else pkgs.qutebrowser
+          config.programs.qutebrowser.package or pkgs.qutebrowser
         );
       })
 
@@ -73,19 +66,11 @@
       })
 
       (lib.mkIf (cfg.full || cfg.SHELL.enable) {
-        SHELL = lib.getExe (
-          if config ? programs.fish.package
-          then config.programs.fish.package
-          else pkgs.fish
-        );
+        SHELL = lib.getExe (config.programs.fish.package or pkgs.fish);
       })
 
       (lib.mkIf (cfg.full || cfg.TERMINAL.enable) {
-        TERMINAL = lib.getExe (
-          if config ? programs.kitty.package
-          then config.programs.kitty.package
-          else pkgs.kitty
-        );
+        TERMINAL = lib.getExe (config.programs.kitty.package or pkgs.kitty);
       })
 
       (lib.mkIf (cfg.full || cfg.TMPDIR.enable) {

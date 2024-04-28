@@ -206,11 +206,7 @@
       }
 
       (
-        lib.mkIf (
-          config
-          ? wayland.windowManager.hyprland.enable
-          && config.wayland.windowManager.hyprland.enable
-        ) {
+        lib.mkIf (config.wayland.windowManager.hyprland.enable or false) {
           home.shellAliases.${pkgs.hyprland.meta.mainProgram} = ''ZELLIJ="" ${lib.getExe pkgs.hyprland}'';
         }
       )

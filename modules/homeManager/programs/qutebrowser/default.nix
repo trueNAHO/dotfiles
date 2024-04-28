@@ -216,11 +216,7 @@ in {
       }
 
       (
-        lib.mkIf (
-          config
-          ? modules.homeManager.programs.firefox.enable
-          && config.modules.homeManager.programs.firefox.enable
-        ) {
+        lib.mkIf (config.modules.homeManager.programs.firefox.enable or false) {
           modules.homeManager.xdg.mimeApps.enable = true;
 
           xdg.mimeApps.defaultApplications = let

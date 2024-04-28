@@ -29,11 +29,9 @@
       }
 
       (
-        lib.mkIf (
-          config
-          ? modules.homeManager.home.packages.gimp.enable
-          && config.modules.homeManager.home.packages.gimp.enable
-        ) {
+        lib.mkIf
+        (config.modules.homeManager.home.packages.gimp.enable or false)
+        {
           modules.homeManager.xdg.mimeApps.enable = true;
 
           xdg.mimeApps.defaultApplications = let
