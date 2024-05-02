@@ -4,6 +4,7 @@
   inputs = {
     agenix = {
       inputs = {
+        darwin.follows = "nixDarwin";
         home-manager.follows = "homeManager";
         nixpkgs.follows = "nixpkgs";
         systems.follows = "systems";
@@ -50,12 +51,19 @@
       url = "github:thiagokokada/nix-alien";
     };
 
+    # Add the 'nixDarwin' input for consistent versioning across inputs.
+    nixDarwin = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:lnl7/nix-darwin";
+    };
+
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nixvim = {
       inputs = {
         flake-compat.follows = "flakeCompat";
         home-manager.follows = "homeManager";
+        nix-darwin.follows = "nixDarwin";
         nixpkgs.follows = "nixpkgs";
         pre-commit-hooks.follows = "preCommitHooks";
       };
