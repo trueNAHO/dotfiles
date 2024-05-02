@@ -18,7 +18,7 @@
       url = "github:sayanarijit/dragon.xplr";
     };
 
-    # Add the 'flakeCompat' input for consistent versioning across inputs.
+    # This input ensures consistent versioning across inputs.
     flakeCompat = {
       flake = false;
       url = "github:edolstra/flake-compat";
@@ -51,7 +51,7 @@
       url = "github:thiagokokada/nix-alien";
     };
 
-    # Add the 'nixDarwin' input for consistent versioning across inputs.
+    # This input ensures consistent versioning across inputs.
     nixDarwin = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:lnl7/nix-darwin";
@@ -92,7 +92,7 @@
       url = "github:danth/stylix";
     };
 
-    # Add the 'systems' input for consistent versioning across inputs.
+    # This input ensures consistent versioning across inputs.
     systems.url = "github:nix-systems/default";
 
     triPaneXplr = {
