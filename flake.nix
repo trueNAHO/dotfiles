@@ -54,6 +54,7 @@
 
     nixvim = {
       inputs = {
+        flake-compat.follows = "flakeCompat";
         home-manager.follows = "homeManager";
         nixpkgs.follows = "nixpkgs";
         pre-commit-hooks.follows = "preCommitHooks";
