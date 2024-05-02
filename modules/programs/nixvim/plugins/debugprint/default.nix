@@ -7,101 +7,29 @@
     lib.mkEnableOption "modules.programs.nixvim.plugins.debugprint";
 
   config = lib.mkIf config.modules.programs.nixvim.plugins.debugprint.enable {
-    programs.nixvim = {
-      keymaps = let
-        leader = "<leader>d";
-        requireDebugprintDebugprint = "require('debugprint').debugprint";
-        requireDebugprintDeleteprints = "require('debugprint').deleteprints";
-      in
-        map (keymaps:
-          {
-            lua = true;
+    programs.nixvim.plugins.debugprint = {
+      enable = true;
 
-            options = {
-              expr = true;
-              silent = true;
-            };
-          }
-          // keymaps)
-        ((map (keymaps: {mode = "n";} // keymaps) [
-            {
-              action = "function() return ${requireDebugprintDebugprint}() end";
-              key = "${leader}p";
-            }
+      settings.keymaps =
+        builtins.mapAttrs
+        (_: value: builtins.mapAttrs (_: value: "<leader>d${value}") value)
+        {
+          normal = {
+            delete_debug_prints = "d";
+            plain_above = "P";
+            plain_below = "p";
+            textobj_above = "O";
+            textobj_below = "o";
+            toggle_comment_debug_prints = "t";
+            variable_above = "V";
+            variable_below = "v";
+          };
 
-            {
-              action = ''
-                function()
-                  return ${requireDebugprintDebugprint}({ above = true })
-                end
-              '';
-
-              key = "${leader}P";
-            }
-
-            {
-              action = ''
-                function()
-                  return ${requireDebugprintDebugprint}({ motion = true })
-                end
-              '';
-
-              key = "${leader}m";
-            }
-
-            {
-              action = ''
-                function()
-                  return ${requireDebugprintDebugprint}({
-                    above = true,
-                    motion = true,
-                  })
-                end
-              '';
-
-              key = "${leader}M";
-            }
-
-            {
-              action = ''
-                function()
-                  return ${requireDebugprintDeleteprints}()
-                end
-              '';
-
-              key = "${leader}d";
-              options.expr = false;
-            }
-          ])
-          ++ (map (keymaps: {mode = ["n" "v"];} // keymaps) [
-            {
-              action = ''
-                function()
-                  return ${requireDebugprintDebugprint}({ variable = true })
-                end
-              '';
-
-              key = "${leader}v";
-            }
-
-            {
-              action = ''
-                function()
-                  return ${requireDebugprintDebugprint}({
-                    above = true,
-                    variable = true,
-                  })
-                end
-              '';
-
-              key = "${leader}V";
-            }
-          ]));
-
-      plugins.debugprint = {
-        createKeymaps = false;
-        enable = true;
-      };
+          visual = {
+            variable_below = "v";
+            variable_above = "V";
+          };
+        };
     };
   };
 }

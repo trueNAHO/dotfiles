@@ -122,16 +122,20 @@
 
             preCommitHooks = inputs.preCommitHooks.lib.${system}.run {
               hooks = {
-                alejandra.enable = true;
+                alejandra = {
+                  enable = true;
+                  settings.verbosity = "quiet";
+                };
+
                 convco.enable = true;
                 deadnix.enable = true;
-                typos.enable = true;
-                yamllint.enable = true;
-              };
 
-              settings = {
-                alejandra.verbosity = "quiet";
-                typos.exclude = "*.age";
+                typos = {
+                  enable = true;
+                  settings.exclude = "*.age";
+                };
+
+                yamllint.enable = true;
               };
 
               src = ./.;

@@ -8,7 +8,7 @@
     ../../homeManager/home/sessionVariables
     ./autoCmd
     ./keymaps
-    ./options
+    ./opts
     ./plugins
     inputs.nixvim.homeManagerModules.nixvim
   ];
@@ -44,7 +44,7 @@
       modules.programs.nixvim = {
         autoCmd.enable = lib.mkDefault true;
         keymaps.enable = lib.mkDefault true;
-        options.enable = lib.mkDefault true;
+        opts.enable = lib.mkDefault true;
         plugins.full = lib.mkDefault true;
       };
     })

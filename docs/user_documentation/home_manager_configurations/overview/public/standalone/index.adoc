@@ -27,19 +27,19 @@
 | {minimal-reproducible-example}[MWE] of the `modules.programs.nixvim.keymaps`
   <<developer_documentation_architecture_code_map_modules_directory, module>>.
 
-| * {directory}/programs/nixvim/options/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-options`]
-  * {directory}/programs/nixvim/options/default.nix[`aarch64-linux-public-standalone-programs-nixvim-options`]
-  * {directory}/programs/nixvim/options/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-options`]
-  * {directory}/programs/nixvim/options/default.nix[`x86_64-linux-public-standalone-programs-nixvim-options`]
-| {minimal-reproducible-example}[MWE] of the `modules.programs.nixvim.options`
+| * {directory}/programs/nixvim/opts/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-opts`]
+  * {directory}/programs/nixvim/opts/default.nix[`aarch64-linux-public-standalone-programs-nixvim-opts`]
+  * {directory}/programs/nixvim/opts/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-opts`]
+  * {directory}/programs/nixvim/opts/default.nix[`x86_64-linux-public-standalone-programs-nixvim-opts`]
+| {minimal-reproducible-example}[MWE] of the `modules.programs.nixvim.opts`
   <<developer_documentation_architecture_code_map_modules_directory, module>>.
 
-| * {directory}/programs/nixvim/plugins/comment-nvim/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-comment-nvim`]
-  * {directory}/programs/nixvim/plugins/comment-nvim/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-comment-nvim`]
-  * {directory}/programs/nixvim/plugins/comment-nvim/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-comment-nvim`]
-  * {directory}/programs/nixvim/plugins/comment-nvim/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-comment-nvim`]
+| * {directory}/programs/nixvim/plugins/comment/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-comment`]
+  * {directory}/programs/nixvim/plugins/comment/default.nix[`aarch64-linux-public-standalone-programs-nixvim-plugins-comment`]
+  * {directory}/programs/nixvim/plugins/comment/default.nix[`x86_64-darwin-public-standalone-programs-nixvim-plugins-comment`]
+  * {directory}/programs/nixvim/plugins/comment/default.nix[`x86_64-linux-public-standalone-programs-nixvim-plugins-comment`]
 | {minimal-reproducible-example}[MWE] of the
-  `modules.programs.nixvim.plugins.comment-nvim`
+  `modules.programs.nixvim.plugins.comment`
   <<developer_documentation_architecture_code_map_modules_directory, module>>.
 
 | * {directory}/programs/nixvim/plugins/debugprint/default.nix[`aarch64-darwin-public-standalone-programs-nixvim-plugins-debugprint`]
@@ -932,42 +932,42 @@ platform and Home Manager configuration:
 
 [,bash,subs=attributes+]
 ----
-{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-options
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-opts
 ----
 
 [,bash,subs=attributes+]
 ----
-{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-options
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-opts
 ----
 
 [,bash,subs=attributes+]
 ----
-{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-options
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-opts
 ----
 
 [,bash,subs=attributes+]
 ----
-{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-options
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-opts
 ----
 
 [,bash,subs=attributes+]
 ----
-{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-comment-nvim
+{command-home-manager-switch-flake}aarch64-darwin-public-standalone-programs-nixvim-plugins-comment
 ----
 
 [,bash,subs=attributes+]
 ----
-{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-comment-nvim
+{command-home-manager-switch-flake}aarch64-linux-public-standalone-programs-nixvim-plugins-comment
 ----
 
 [,bash,subs=attributes+]
 ----
-{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-comment-nvim
+{command-home-manager-switch-flake}x86_64-darwin-public-standalone-programs-nixvim-plugins-comment
 ----
 
 [,bash,subs=attributes+]
 ----
-{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-comment-nvim
+{command-home-manager-switch-flake}x86_64-linux-public-standalone-programs-nixvim-plugins-comment
 ----
 
 [,bash,subs=attributes+]

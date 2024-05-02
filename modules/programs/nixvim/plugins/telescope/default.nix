@@ -9,7 +9,7 @@
   config = lib.mkIf config.modules.programs.nixvim.plugins.telescope.enable {
     programs.nixvim.plugins.telescope = {
       enable = true;
-      defaults.layout_strategy = "vertical";
+      settings.defaults.layout_strategy = "vertical";
 
       keymaps = let
         leader = {

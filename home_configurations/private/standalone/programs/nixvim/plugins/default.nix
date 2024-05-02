@@ -2,9 +2,9 @@ lib: let
   name = "plugins";
 in
   (lib.dotfiles.homeManagerConfiguration.prependPrefix name [
+    ./cmp
     ./codeium-nvim
     ./codeium-vim
-    ./nvim-cmp
   ])
   // (lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration name {
     config.modules.programs.nixvim = {

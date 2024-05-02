@@ -1,6 +1,6 @@
 lib:
 lib.dotfiles.homeManagerConfiguration.prependPrefix "plugins" [
-  ./comment-nvim
+  ./comment
   ./debugprint
   ./fidget
   ./gitmessenger

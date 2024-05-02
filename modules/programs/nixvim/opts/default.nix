@@ -3,17 +3,17 @@
   lib,
   ...
 }: {
-  options.modules.programs.nixvim.options.enable =
-    lib.mkEnableOption "modules.programs.nixvim.options";
+  options.modules.programs.nixvim.opts.enable =
+    lib.mkEnableOption "modules.programs.nixvim.opts";
 
-  config = lib.mkIf config.modules.programs.nixvim.options.enable {
+  config = lib.mkIf config.modules.programs.nixvim.opts.enable {
     programs.nixvim = {
       extraConfigLua = ''
         vim.opt.matchpairs:append("<:>")
         vim.opt.shortmess:append("I")
       '';
 
-      options = {
+      opts = {
         breakindent = true;
         colorcolumn = "+1";
         cursorline = true;
