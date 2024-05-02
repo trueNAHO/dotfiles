@@ -13,7 +13,7 @@ permissions:
 
 concurrency:
   cancel-in-progress: true
-  group: "pages"
+  group: pages
 
 jobs:
   docs:
