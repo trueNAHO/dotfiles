@@ -12,7 +12,8 @@
 {naho}[NAHO]'s {archwiki-dotfiles}[dotfiles] managed with {home-manager}[Home
 Manager].
 
-image::{logo-raw}[NAHO's NixOS Logo, link={logo-raw}, width=100%]
+[.text-center]
+image::{logo-raw}[NAHO's NixOS Logo, link={logo-raw}, width=50%]
 
 == Documentation
 
