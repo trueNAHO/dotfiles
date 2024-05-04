@@ -26,6 +26,7 @@
         timeout = lib.mkOption {
           default = 5 * 60;
           description = "Timeout in seconds.";
+          example = 10 * 60;
         };
       };
     };
