@@ -14,11 +14,13 @@
 
       timeouts = {
         command = lib.mkOption {
+          default = "";
           description = "Command to turn all displays off.";
           example = "swaymsg 'output * dpms off'";
         };
 
         resumeCommand = lib.mkOption {
+          default = "";
           description = "Command to turn all displays on.";
           example = "swaymsg 'output * dpms on'";
         };
