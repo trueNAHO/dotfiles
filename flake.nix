@@ -213,7 +213,7 @@
                             }
                             else
                               throw
-                              "unexpected declaration: ${declarationString}"
+                              "declaration not in ${declarationPrefix}: ${declarationString}"
                         )
                         option.declarations;
 
