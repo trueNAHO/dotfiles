@@ -1,0 +1,14 @@
+=== Checks
+
+The `checks.<SYSTEM>` attribute set derives its outputs from the
+`homeConfigurations` outputs.
+
+====
+To evaluate the flake and run its tests directly from {repository}[upstream]
+using {nix}[`nix`], run:
+
+[,bash,subs=attributes+]
+----
+nix flake check {repository-flake}
+----
+====

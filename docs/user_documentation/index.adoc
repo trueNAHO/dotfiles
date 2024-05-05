@@ -1,5 +1,7 @@
 == User Documentation
 
+include::checks/index.adoc[]
+
 include::home_manager_configurations/index.adoc[]
 
 include::keymapping_behaviour_correlations/index.adoc[]
