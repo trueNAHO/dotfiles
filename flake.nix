@@ -211,7 +211,9 @@
                               name = "<dotfiles/${declarationWithoutprefix}/default.nix>";
                               url = "https://github.com/trueNAHO/dotfiles/blob/master/${declarationWithoutprefix}/default.nix";
                             }
-                            else throw "unexpected declaration: ${declarationString}"
+                            else
+                              throw
+                              "unexpected declaration: ${declarationString}"
                         )
                         option.declarations;
 
