@@ -115,8 +115,31 @@
       */
       prependPrefix = prefix: files:
         lib.mapAttrs'
-        (name: lib.nameValuePair "${prefix}-${name}")
+        (
+          name:
+            lib.nameValuePair
+            "${prefix}${lib.dotfiles.homeManagerConfiguration.separator}${name}"
+        )
         (builtins.foldl' (acc: file: acc // (import file lib)) {} files);
+
+      /*
+      The separator used to join the sections in the Home Manager configuration
+      name.
+
+      # Type
+
+      ```
+      separator :: String
+      ```
+
+      # Examples
+
+      ```nix
+      "<BEFORE>${separator}<AFTER>"
+      => "<BEFORE>-<AFTER>"
+      ```
+      */
+      separator = "-";
     };
 
     lib.hm.dag.entryBefore.writeBoundary = {

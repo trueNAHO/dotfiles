@@ -104,14 +104,28 @@
   outputs = inputs:
     inputs.flakeUtils.lib.eachDefaultSystem (
       system: let
-        inherit (pkgs) lib;
+        lib = pkgs.lib.extend (
+          final: _:
+            import ./lib {
+              inherit inputs pkgs system;
+              lib = final;
+            }
+        );
+
         pkgs = inputs.nixpkgs.legacyPackages.${system};
       in {
         checks =
-          lib.concatMapAttrs
-          (name: value: {
-            ${lib.removePrefix "${system}-" name} = value.activationPackage;
-          })
+          lib.mapAttrs'
+          (
+            name: value:
+              lib.nameValuePair
+              (
+                lib.removePrefix
+                "${system}${lib.dotfiles.homeManagerConfiguration.separator}"
+                name
+              )
+              value.activationPackage
+          )
           (
             lib.filterAttrs
             (name: _: lib.hasPrefix system name)
@@ -162,7 +176,17 @@
                   # Home Manager configuration are not included in the generated
                   # internal module options documentation.
                   inherit
-                    (inputs.self.outputs.homeConfigurations."${system}-private-integrated-full")
+                    (
+                      inputs
+                      .self
+                      .outputs
+                      .homeConfigurations
+                      .${
+                        builtins.concatStringsSep
+                        lib.dotfiles.homeManagerConfiguration.separator
+                        [system "private" "integrated" "full"]
+                      }
+                    )
                     options
                     ;
 
