@@ -201,16 +201,21 @@ in {
               #
               # [1]: https://en.wikipedia.org/wiki/Exponentiation_by_squaring
               # [2]: https://github.com/NixOS/nix/issues/10387
-              pow = base: power:
-                if power != 0
-                then base * (pow base (power - 1))
-                else 1;
+              pow =
+                lib.fix
+                (
+                  self: base: power:
+                    if power != 0
+                    then base * (self base (power - 1))
+                    else 1
+                )
+                1.5;
             in
               # To avoid excessive memory reallocations, the individual zoom
               # levels are computed from scratch on the CPU, instead of
               # implementing an accumulative multiplication that stores each
               # step in the final list.
-              map (level: "${toString (pow 1.5 level)}%") (lib.range 8 17);
+              map (level: "${toString (pow level)}%") (lib.range 8 17);
           };
         };
       }
