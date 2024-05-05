@@ -4,4 +4,11 @@ include::home_manager_configurations/index.adoc[]
 
 include::keymapping_behaviour_correlations/index.adoc[]
 
+// -----BEGIN MODULE OPTIONS-----
+//
+// Do not remove this BEGIN/END block: Generated module options documentation
+// will be inserted here.
+//
+// -----END MODULE OPTIONS-----
+
 include::packages/index.adoc[]
