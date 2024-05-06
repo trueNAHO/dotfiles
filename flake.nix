@@ -236,6 +236,12 @@
               in {
                 begin = header "BEGIN";
                 end = header "END";
+
+                text = builtins.concatStringsSep ''\n'' [
+                  "=== Module Options"
+                  ""
+                  "include::$options[]"
+                ];
               };
             in ''
               options="$(mktemp)"
@@ -244,7 +250,7 @@
 
               sed \
                 --in-place \
-                "/${sed.begin}/,/${sed.end}/c === Module Options\n\ninclude::$options[]" \
+                "/${sed.begin}/,/${sed.end}/c${sed.text}" \
                 user_documentation/index.adoc &
 
               wait
