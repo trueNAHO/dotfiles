@@ -233,12 +233,14 @@
             in ''
               options="$(mktemp)"
 
-              sed 's/^==/====/' "${options}" >"$options"
+              sed 's/^==/====/' "${options}" >"$options" &
 
               sed \
                 --in-place \
                 "/${sed.begin}/,/${sed.end}/c === Module Options\n\ninclude::$options[]" \
-                user_documentation/index.adoc
+                user_documentation/index.adoc &
+
+              wait
 
               asciidoctor-multipage \
                 --attribute attribute-missing=warn \
