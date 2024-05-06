@@ -175,7 +175,7 @@
                   # Any internal module options that are not contained in this
                   # Home Manager configuration are not included in the generated
                   # internal module options documentation.
-                  inherit
+                  options =
                     (
                       let
                         name = "docs";
@@ -194,8 +194,8 @@
                         )
                         .${name}
                     )
-                    options
-                    ;
+                    .options
+                    .modules;
 
                   transformOptions = option:
                     option
@@ -223,10 +223,6 @@
                               "declaration not in ${declarationPrefix}: ${declarationString}"
                         )
                         option.declarations;
-
-                      visible =
-                        option.visible
-                        && builtins.elemAt option.loc 0 == "modules";
                     };
                 })
                 .optionsAsciiDoc;
