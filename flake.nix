@@ -177,15 +177,22 @@
                   # internal module options documentation.
                   inherit
                     (
-                      inputs
-                      .self
-                      .outputs
-                      .homeConfigurations
-                      .${
-                        builtins.concatStringsSep
-                        lib.dotfiles.homeManagerConfiguration.separator
-                        [system "private" "integrated" "full"]
-                      }
+                      let
+                        name = "docs";
+                      in
+                        (
+                          lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration
+                          name
+                          # The lacking 'config' attribute prevents evaluating
+                          # full-blown Home Manager derivations, which increases
+                          # performance.
+                          {
+                            imports = [
+                              home_configurations/private/integrated/full/imports.nix
+                            ];
+                          }
+                        )
+                        .${name}
                     )
                     options
                     ;
