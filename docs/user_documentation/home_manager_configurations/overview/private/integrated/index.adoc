@@ -20,21 +20,21 @@ platform and Home Manager configuration:
 
 [,bash,subs=attributes+]
 ----
-{command-home-manager-switch-flake}aarch64-darwin-full
+{command-home-manager-switch-flake}aarch64-darwin-private-integrated-full
 ----
 
 [,bash,subs=attributes+]
 ----
-{command-home-manager-switch-flake}aarch64-linux-full
+{command-home-manager-switch-flake}aarch64-linux-private-integrated-full
 ----
 
 [,bash,subs=attributes+]
 ----
-{command-home-manager-switch-flake}x86_64-darwin-full
+{command-home-manager-switch-flake}x86_64-darwin-private-integrated-full
 ----
 
 [,bash,subs=attributes+]
 ----
-{command-home-manager-switch-flake}x86_64-linux-full
+{command-home-manager-switch-flake}x86_64-linux-private-integrated-full
 ----
 ====
