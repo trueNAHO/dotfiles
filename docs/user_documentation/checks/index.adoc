@@ -1,8 +1,5 @@
 === Checks
 
-The `checks.<SYSTEM>` attribute set derives its outputs from the
-`homeConfigurations` outputs.
-
 ====
 To evaluate the flake and run its tests directly from {repository}[upstream]
 using {nix}[`nix`], run:
@@ -12,3 +9,10 @@ using {nix}[`nix`], run:
 nix flake check {repository-flake}
 ----
 ====
+
+// -----BEGIN CHECK DERIVATIONS-----
+//
+// Do not remove this BEGIN/END block: Generated check derivations documentation
+// will be inserted here.
+//
+// -----END CHECK DERIVATIONS-----

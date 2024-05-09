@@ -2,6 +2,4 @@
 
 include::module_interdependence/index.adoc[]
 
-include::module_verification/index.adoc[]
-
 include::naming_conventions/index.adoc[]

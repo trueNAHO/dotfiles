@@ -3,8 +3,6 @@
 
 {home-manager}[Home Manager] configurations adhere to the
 <<user_documentation_home_manager_configurations_naming_convention,
-`<SYSTEM>-<ACCESSIBILITY>-<SCOPE>-<NAME>` naming convention>>.
+`<SYSTEM>-<ACCESSIBILITY>-<NAME>` naming convention>>.
 
 include::private/index.adoc[]
-
-include::public/index.adoc[]

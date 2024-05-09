@@ -22,7 +22,7 @@
 
       name
       : The `<NAME>` of the Home Manager configuration, defined by the
-        `<SYSTEM>-<ACCESSIBILITY>-<SCOPE>-<NAME>` naming convention.
+        `<SYSTEM>-<ACCESSIBILITY>-<NAME>` naming convention.
 
       # Examples
 
@@ -61,6 +61,9 @@
           #
           # This error is most likely caused by the evaluation order implied the
           # 'mkMerge' function.
+          #
+          # For performance reasons, the simpler yet slower
+          # 'lib.dotfiles.recursiveMerge' function is not used.
           modules = [
             (
               {config, ...}:
@@ -110,8 +113,8 @@
       import ./b lib
       => { b = { ... }; }
 
-      prependPrefix "standalone" [./a ./b]
-      => { standalone-a = { ... }; standalone-b = { ... }; }
+      prependPrefix "public" [./a ./b]
+      => { public-a = { ... }; public-b = { ... }; }
       */
       prependPrefix = prefix: files:
         lib.mapAttrs'
@@ -276,6 +279,95 @@
         name,
         value,
       }: ''<u>${name}:</u> ${value}\n''
+    );
+
+    /*
+    Recursively merges a list of attribute sets.
+
+    Unlike 'lib.mkMerge', this function actually returns a merged attribute set.
+
+    # Type
+
+    ```
+    recursiveMerge :: [AttrSet] -> AttrSet
+    ```
+
+    # Throws
+
+    Throws an error if elements to be merged have different types.
+
+    # Examples
+
+    ```nix
+    recursiveMerge [
+      {
+        attrset = {
+          attrset = {
+            int = 0;
+            list = [ 1 2 3 ];
+          };
+        };
+
+        int = 4;
+        list = [ 5 6 7 ];
+      }
+      {
+        attrset = {
+          attrset = {
+            bool = false;
+            int = 1;
+          };
+        };
+
+        int = 1;
+        list = [ 7 8 9 ];
+      }
+    ]
+    => {
+      attrset = {
+        attrset = {
+          bool = false;
+          int = 1;
+          list = [ 1 2 3 ];
+        };
+      };
+
+      int = 1;
+      list = [ 5 6 7 8 9 ];
+    }
+
+    recursiveMerge [
+      {int = 0;}
+      {int = null;}
+    ]
+    => error: Cannot merge different types: 'int' and 'null'
+    ```
+    */
+    recursiveMerge = lib.fix (
+      self:
+        builtins.zipAttrsWith (
+          _: values: let
+            expectedType = lib.last valueTypes;
+
+            findFirst =
+              lib.findFirst
+              (type: type != expectedType)
+              null
+              valueTypes;
+
+            last = lib.last values;
+            valueTypes = builtins.map builtins.typeOf values;
+          in
+            if findFirst != null
+            then
+              throw
+              "Cannot merge different types: '${findFirst}' and '${expectedType}'"
+            else if builtins.isAttrs last
+            then self values
+            else if builtins.isList last
+            then lib.unique (builtins.concatLists values)
+            else last
+        )
     );
   };
 }

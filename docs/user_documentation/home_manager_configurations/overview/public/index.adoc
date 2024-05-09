@@ -1,3 +1,0 @@
-===== Public
-
-include::standalone/index.adoc[]

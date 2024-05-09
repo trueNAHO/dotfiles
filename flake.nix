@@ -112,6 +112,72 @@
             }
         );
 
+        nixosOptionsDoc = {
+          nixosOptionsDoc = let
+            options =
+              (
+                let
+                  name = "nixos-options-doc";
+                in
+                  # TODO: Avoid Import From Derivation (IFD) by extracting the
+                  # options without intermediate derivations.
+                  (
+                    lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration
+                    name
+                    # The lacking 'config' attribute prevents evaluating
+                    # full-blown Home Manager derivations, which increases
+                    # performance and compatibility by not evaluating
+                    # derivations for non-native architectures.
+                    {
+                      imports = [home_configurations/private/full/imports.nix];
+                    }
+                  )
+                  .${name}
+              )
+              .options
+              .modules;
+          in
+            extraConfig:
+              pkgs.nixosOptionsDoc (extraConfig {
+                # This attribute set is expected contain all internal module
+                # options.
+                inherit options;
+              });
+
+          transformOptions = {
+            declarations.documentation = let
+              declarationPrefix = toString ./.;
+            in
+              option: {
+                declarations =
+                  map
+                  (
+                    declaration: let
+                      declarationString = toString declaration;
+
+                      declarationWithoutprefix =
+                        lib.removePrefix
+                        "${declarationPrefix}/"
+                        declarationString;
+                    in
+                      if lib.hasPrefix declarationPrefix declarationString
+                      then {
+                        name = "<dotfiles/${declarationWithoutprefix}/default.nix>";
+                        url = "https://github.com/trueNAHO/dotfiles/blob/master/${declarationWithoutprefix}/default.nix";
+                      }
+                      else
+                        throw
+                        "declaration not in ${declarationPrefix}: ${declarationString}"
+                  )
+                  option.declarations;
+              };
+
+            visible.bool = option: {
+              visible = option.visible && option.type == "boolean";
+            };
+          };
+        };
+
         pkgs = inputs.nixpkgs.legacyPackages.${system};
       in {
         checks =
@@ -130,6 +196,118 @@
             lib.filterAttrs
             (name: _: lib.hasPrefix system name)
             inputs.self.homeConfigurations
+          )
+          # This set automatically generates
+          # 'inputs.self.checks.<SYSTEM>.standalone-<OPTION>-<VALUE>' Home
+          # Manager activation packages based on internal module options.
+          // (
+            builtins.mapAttrs
+            (_: value: value.activationPackage)
+            (
+              let
+                homeManagerConfiguration = optionName: optionValue: let
+                  path = lib.splitString separator optionName;
+                  separator = ".";
+                in
+                  lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration
+                  (
+                    builtins.concatStringsSep
+                    lib.dotfiles.homeManagerConfiguration.separator
+                    (
+                      ["standalone"]
+                      ++ lib.drop 1 path
+                      ++ [(lib.boolToString optionValue)]
+                    )
+                  )
+                  (
+                    # Due to the following error, the list of attribute sets is
+                    # merged using 'lib.dotfiles.recursiveMerge' instead of
+                    # 'lib.mkMerge':
+                    #
+                    #     error: Module `:anon-1:anon-1' has an unsupported
+                    #     attribute `_type'. This is caused by introducing a
+                    #     top-level `config' or `options' attribute. Add
+                    #     configuration attributes immediately on the top level
+                    #     instead, or move all of them (namely: _type contents)
+                    #     into the explicit `config' attribute.
+                    lib.dotfiles.recursiveMerge
+                    # Backtrack the 'optionName' attribute set to declare itself
+                    # and potentially necessary parent options to the same
+                    # value.
+                    #
+                    # For example, the 'a.b.c.d.full' option would declare
+                    # itself and the following options, if available, to the
+                    # same value, while importing their necessary dependencies:
+                    #
+                    #     - a.b.c.d.enable
+                    #     - a.b.c.enable
+                    #     - a.b.enable
+                    #     - a.enable
+                    #
+                    # The backtracking only considers 'enable' options to
+                    # provide minimal working examples, while enabling
+                    # potentially necessary parent modules.
+                    (
+                      map
+                      (
+                        option: let
+                          name = builtins.concatStringsSep separator option;
+                        in
+                          lib.optionalAttrs
+                          (options ? ${name})
+                          (
+                            lib.setAttrByPath (["config"] ++ option) optionValue
+                            // {
+                              imports =
+                                lib.flatten
+                                options.${name}.declarations;
+                            }
+                          )
+                      )
+                      (
+                        [path]
+                        ++ lib.fix
+                        (
+                          self: count: list:
+                            [(lib.take count list ++ ["enable"])]
+                            ++ (
+                              if count > 1
+                              then self (count - 1) list
+                              else []
+                            )
+                        )
+                        (builtins.length path - 1)
+                        path
+                      )
+                    )
+                  );
+
+                options =
+                  (nixosOptionsDoc.nixosOptionsDoc (
+                    parent:
+                      parent
+                      // {
+                        # Extract boolean options as their entire space ('false'
+                        # and 'true') can be trivially covered.
+                        #
+                        # Covering non-boolean options is non-trivial as they
+                        # may impose arbitrary constraints on themselves.
+                        transformOptions = option:
+                          option
+                          // nixosOptionsDoc.transformOptions.visible.bool
+                          option;
+                      }
+                  ))
+                  .optionsNix;
+              in
+                lib.concatMapAttrs
+                (
+                  name: _:
+                    (homeManagerConfiguration name false)
+                    // (homeManagerConfiguration name true)
+                )
+                options
+            )
           )
           // {
             inherit (inputs.self.packages.${system}) docs;
@@ -170,84 +348,162 @@
         in
           pkgs.stdenv.mkDerivation {
             buildPhase = let
-              options =
-                (pkgs.nixosOptionsDoc {
-                  # Any internal module options that are not contained in this
-                  # Home Manager configuration are not included in the generated
-                  # internal module options documentation.
-                  options =
-                    (
-                      let
-                        name = "docs";
-                      in
-                        (
-                          lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration
-                          name
-                          # The lacking 'config' attribute prevents evaluating
-                          # full-blown Home Manager derivations, which increases
-                          # performance.
-                          {
-                            imports = [
-                              home_configurations/private/integrated/full/imports.nix
-                            ];
-                          }
-                        )
-                        .${name}
-                    )
-                    .options
-                    .modules;
+              checkDerivations =
+                (
+                  nixosOptionsDoc.nixosOptionsDoc (
+                    parent:
+                      parent
+                      // {
+                        # Due to context loss and expansion restrictions, these
+                        # 'options' transformations cannot be done in the
+                        # 'transformOptions' function.
+                        options =
+                          lib.mapAttrsRecursiveCond
+                          # Leaves are determined under the assumption that
+                          # option attribute sets contain at least one attribute
+                          # that is not an attribute set.
+                          (
+                            value:
+                              builtins.all lib.isAttrs (lib.attrValues value)
+                          )
+                          (
+                            let
+                              extraConfig = path: value: bool: let
+                                boolString = lib.boolToString bool;
+                              in {
+                                description = builtins.concatStringsSep " " [
+                                  "Standalone Home Manager configuration,"
+                                  "setting the"
+                                  "`${builtins.concatStringsSep "." path}`"
+                                  "option and its parent `enable` options to"
+                                  "`${boolString}`."
+                                ];
 
-                  transformOptions = option:
-                    option
-                    // {
-                      declarations = let
-                        declarationPrefix = toString ./.;
-                      in
-                        map
-                        (
-                          declaration: let
-                            declarationString = toString declaration;
+                                loc =
+                                  ["standalone"]
+                                  ++ lib.drop 1 value.loc
+                                  ++ [boolString];
+                              };
+                            in
+                              path: value: {
+                                false = value // extraConfig path value false;
+                                true = value // extraConfig path value true;
+                              }
+                          )
+                          parent.options;
 
-                            declarationWithoutprefix =
-                              lib.removePrefix
-                              "${declarationPrefix}/"
-                              declarationString;
-                          in
-                            if lib.hasPrefix declarationPrefix declarationString
-                            then {
-                              name = "<dotfiles/${declarationWithoutprefix}/default.nix>";
-                              url = "https://github.com/trueNAHO/dotfiles/blob/master/${declarationWithoutprefix}/default.nix";
-                            }
-                            else
-                              throw
-                              "declaration not in ${declarationPrefix}: ${declarationString}"
-                        )
-                        option.declarations;
-                    };
-                })
+                        transformOptions = option:
+                          option
+                          // (
+                            nixosOptionsDoc.transformOptions.declarations.documentation
+                            option
+                          )
+                          # This attribute set should match the one used to
+                          # generate the
+                          # 'inputs.self.checks.<SYSTEM>.standalone-<OPTION>-<VALUE>'
+                          # Home Manager activation packages.
+                          // (
+                            nixosOptionsDoc.transformOptions.visible.bool
+                            option
+                          )
+                          // {
+                            default = {};
+                            example = {};
+                            type = {};
+                          };
+                      }
+                  )
+                )
+                .optionsAsciiDoc;
+
+              moduleOptions =
+                (
+                  nixosOptionsDoc.nixosOptionsDoc (
+                    parent:
+                      parent
+                      // {
+                        transformOptions = option:
+                          option
+                          // (
+                            nixosOptionsDoc.transformOptions.declarations.documentation
+                            option
+                          );
+                      }
+                  )
+                )
                 .optionsAsciiDoc;
 
               sed = let
-                header = header: ''^\/\/ -----${header} MODULE OPTIONS-----$'';
+                sed = let
+                  header = type: title: ''^\/\/ -----${type} ${title}-----$'';
+                in
+                  title: lines: "/${
+                    header "BEGIN" title
+                  }/,/${
+                    header "END" title
+                  }/c${
+                    lib.escape ["`"] (builtins.concatStringsSep ''\n'' lines)
+                  }";
               in {
-                begin = header "BEGIN";
-                end = header "END";
+                checkDerivations = sed "CHECK DERIVATIONS" [
+                  "The `checks.<SYSTEM>` attribute set contains the following"
+                  "derivations:"
+                  ""
+                  "include::$check_derivations[]"
+                ];
 
-                text = builtins.concatStringsSep ''\n'' [
+                moduleOptions = sed "MODULE OPTIONS" [
                   "=== Module Options"
                   ""
-                  "include::$options[]"
+                  "include::$module_options[]"
                 ];
               };
             in ''
-              options="$(mktemp)"
+              {
+                check_derivations="$(mktemp)"
 
-              sed 's/^==/====/' "${options}" >"$options" &
+                awk \
+                  '
+                    /^==/ {
+                      print \
+                        "==" \
+                        gensub( \
+                          "\\.",
+                          "${lib.dotfiles.homeManagerConfiguration.separator}",
+                          "g" \
+                        )
 
-              sed \
-                --in-place \
-                "/${sed.begin}/,/${sed.end}/c${sed.text}" \
-                user_documentation/index.adoc &
+                      next
+                    }
+
+                    1
+                  ' \
+                  "${checkDerivations}" \
+                  >"$check_derivations" &
+
+                sed \
+                  --in-place \
+                  "${sed.checkDerivations}" \
+                  user_documentation/checks/index.adoc &
+
+                wait
+              } &
+
+              {
+                module_options="$(mktemp)"
+
+                awk \
+                  '/^==/ { print "==" $0; next } 1' \
+                  "${moduleOptions}" \
+                  >"$module_options" &
+
+                sed \
+                  --in-place \
+                  "${sed.moduleOptions}" \
+                  user_documentation/index.adoc &
+
+                wait
+              } &
 
               wait
 

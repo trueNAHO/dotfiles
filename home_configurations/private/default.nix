@@ -1,5 +1,2 @@
 lib:
-lib.dotfiles.homeManagerConfiguration.prependPrefix "private" [
-  ./integrated
-  ./standalone
-]
+lib.dotfiles.homeManagerConfiguration.prependPrefix "private" [./full]

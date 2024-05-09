@@ -4,7 +4,7 @@
 :sed: sed 's@\.@/@g'
 
 This directory contains all modules used by
-`<<developer_documentation_architecture_code_map_home_configurations_accessibility_scope_prefix_name_default_nix>>`.
+`<<developer_documentation_architecture_code_map_home_configurations_accessibility_prefix_name_default_nix>>`.
 
 The `{directory-modules}/homeManager` directory is reserved for
 {home-manager}[Home Manager] modules, while other `{directory-modules}`

@@ -2,7 +2,7 @@
 ==== Naming Convention
 
 <<user_documentation_home_manager_configurations_overview, Home Manager
-configurations>> adhere to the `<SYSTEM>-<ACCESSIBILITY>-<SCOPE>-<NAME>` naming
+configurations>> adhere to the `<SYSTEM>-<ACCESSIBILITY>-<NAME>` naming
 convention:
 
 [cols="18,82"]
@@ -25,50 +25,7 @@ a! Does not require
 
 a| `<NAME>`
 | The values are provided by the keys within the attribute set in
-  <<developer_documentation_architecture_code_map_home_configurations_accessibility_scope_prefix_name_default_nix>>.
-
-a| `<SCOPE>`
-a|
-[cols="17,83"]
-!===
-! Value ! Description
-
-a! `integrated`
-a! Non-``standalone`` `<SCOPE>`.
-
-a! `standalone`
-a!
-{minimal-reproducible-example}[Minimal Working Example] for a single
-<<developer_documentation_architecture_code_map_modules_directory, module>>.
-
-[NOTE]
-====
-This value implies the `<NAME>` parameter corresponding to the output of the
-following command, where `$MODULE` represents the module attribute set:
-
-[,bash]
-----
-echo "$MODULE" \|
-  cut --delimiter . --fields 2- \|
-  sed 's/\./-/g'
-----
-
-:module-attribute-set: modules.camelCase.kebab-case.snake_case
-:module-name: camelCase-kebab-case-snake_case
-=====
-The `<NAME>` parameter for the `{module-attribute-set}` module would be
-`{module-name}`:
-
-[,bash,subs=attributes+]
-----
-$ echo {module-attribute-set} \|
-  cut --delimiter . --fields 2- \|
-  sed 's/\./-/g'
-{module-name}
-----
-=====
-====
-!===
+  <<developer_documentation_architecture_code_map_home_configurations_accessibility_prefix_name_default_nix>>.
 
 a| `<SYSTEM>`
 a| The values are provided by
