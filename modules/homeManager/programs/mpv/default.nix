@@ -30,16 +30,17 @@ in {
 
         uosc = let
           colors = config.lib.stylix.colors;
-        in {
-          background = colors.base00;
-          background_text = colors.base05;
-          curtain = colors.base0D;
-          error = colors.base0F;
-          foreground = colors.base05;
-          foreground_text = colors.base00;
-          success = colors.base0A;
-          top_bar_controls = "no";
-        };
+        in
+          lib.mkIf config.stylix.enable {
+            background = colors.base00;
+            background_text = colors.base05;
+            curtain = colors.base0D;
+            error = colors.base0F;
+            foreground = colors.base05;
+            foreground_text = colors.base00;
+            success = colors.base0A;
+            top_bar_controls = "no";
+          };
       };
 
       scripts = with pkgs.mpvScripts; [mpv-playlistmanager thumbfast uosc];
