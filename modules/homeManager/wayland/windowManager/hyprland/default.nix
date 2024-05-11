@@ -62,7 +62,7 @@ in {
         lib.dotfiles.lib.hm.dag.entryBefore.writeBoundary.systemRequirement
         module
         "programs.hyprland.enable = true;"
-        "https://nixos.wiki/wiki/Hyprland";
+        "https://wiki.nixos.org/wiki/Hyprland";
 
       wayland.windowManager.hyprland = {
         enable = true;

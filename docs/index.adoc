@@ -9,8 +9,8 @@
 :minimal-reproducible-example: link:https://stackoverflow.com/help/minimal-reproducible-example
 :multipage-level: 5
 :naho: link:https://github.com/trueNAHO
-:nix-flake: link:https://nixos.wiki/wiki/Flakes
-:nix: link:https://nixos.wiki/wiki/Nix_Installation_Guide
+:nix-flake: link:https://wiki.nixos.org/wiki/Flakes
+:nix: link:https://wiki.nixos.org/wiki/Nix_Installation_Guide
 :nixos: link:https://nixos.org
 :nofooter:
 :os: link:https://github.com/trueNAHO/os
