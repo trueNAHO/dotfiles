@@ -512,10 +512,41 @@
                 --destination-dir "${out}" \
                 --failure-level INFO \
                 index.adoc
+
+              ${pkgs.html-minifier.meta.mainProgram} \
+                --case-sensitive \
+                --collapse-boolean-attributes \
+                --collapse-inline-tag-whitespace \
+                --collapse-whitespace \
+                --conservative-collapse \
+                --decode-entities \
+                --input-dir "${out}" \
+                --minify-css true \
+                --minify-js true \
+                --minify-urls true \
+                --output-dir "${out}" \
+                --preserve-line-breaks \
+                --remove-attribute-quotes \
+                --remove-comments \
+                --remove-empty-attributes \
+                --remove-empty-elements \
+                --remove-optional-tags \
+                --remove-redundant-attributes \
+                --remove-script-type-attributes \
+                --remove-style-link-type-attributes \
+                --remove-tag-whitespace \
+                --sort-attributes \
+                --sort-class-name \
+                --trim-custom-fragments
             '';
 
             name = "docs";
-            nativeBuildInputs = [pkgs.asciidoctor-with-extensions];
+
+            nativeBuildInputs = with pkgs; [
+              asciidoctor-with-extensions
+              html-minifier
+            ];
+
             src = ./docs;
           };
       }
