@@ -18,35 +18,38 @@
     full = lib.mkEnableOption "modules.programs.nixvim.full";
   };
 
-  config = lib.mkIf config.modules.programs.nixvim.enable (lib.mkMerge [
-    {
-      modules.homeManager.home.sessionVariables = {
-        EDITOR.enable = true;
-        MANPAGER.enable = true;
-        enable = true;
-      };
-
-      home.shellAliases.n = lib.getExe config.programs.nixvim.finalPackage;
-
-      programs.nixvim = {
-        enable = true;
-
-        globals = let
-          leader = " ";
-        in {
-          mapleader = leader;
-          maplocalleader = leader;
+  config = let
+    cfg = config.modules.programs.nixvim;
+  in
+    lib.mkIf cfg.enable (lib.mkMerge [
+      {
+        modules.homeManager.home.sessionVariables = {
+          EDITOR.enable = true;
+          MANPAGER.enable = true;
+          enable = true;
         };
-      };
-    }
 
-    (lib.mkIf config.modules.programs.nixvim.full {
-      modules.programs.nixvim = {
-        autoCmd.enable = lib.mkDefault true;
-        keymaps.enable = lib.mkDefault true;
-        opts.enable = lib.mkDefault true;
-        plugins.full = lib.mkDefault true;
-      };
-    })
-  ]);
+        home.shellAliases.n = lib.getExe config.programs.nixvim.finalPackage;
+
+        programs.nixvim = {
+          enable = true;
+
+          globals = let
+            leader = " ";
+          in {
+            mapleader = leader;
+            maplocalleader = leader;
+          };
+        };
+      }
+
+      (lib.mkIf cfg.full {
+        modules.programs.nixvim = {
+          autoCmd.enable = lib.mkDefault true;
+          keymaps.enable = lib.mkDefault true;
+          opts.enable = lib.mkDefault true;
+          plugins.full = lib.mkDefault true;
+        };
+      })
+    ]);
 }
