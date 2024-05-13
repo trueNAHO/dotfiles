@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.home.packages.inkscape.enable =
-    lib.mkEnableOption "modules.homeManager.home.packages.inkscape";
+  options.dotfiles.homeManager.home.packages.inkscape.enable =
+    lib.mkEnableOption "dotfiles.homeManager.home.packages.inkscape";
 
-  config = lib.mkIf config.modules.homeManager.home.packages.inkscape.enable {
+  config = lib.mkIf config.dotfiles.homeManager.home.packages.inkscape.enable {
     home.packages = [pkgs.inkscape];
   };
 }

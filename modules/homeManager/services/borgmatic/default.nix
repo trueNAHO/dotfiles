@@ -5,11 +5,11 @@
 }: {
   imports = [../../programs/borgmatic];
 
-  options.modules.homeManager.services.borgmatic.enable =
-    lib.mkEnableOption "modules.homeManager.services.borgmatic";
+  options.dotfiles.homeManager.services.borgmatic.enable =
+    lib.mkEnableOption "dotfiles.homeManager.services.borgmatic";
 
-  config = lib.mkIf config.modules.homeManager.services.borgmatic.enable {
-    modules.homeManager.programs.borgmatic.enable = true;
+  config = lib.mkIf config.dotfiles.homeManager.services.borgmatic.enable {
+    dotfiles.homeManager.programs.borgmatic.enable = true;
     services.borgmatic.enable = true;
   };
 }

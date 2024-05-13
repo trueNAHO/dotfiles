@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.homeManager.programs.fzf.enable =
-    lib.mkEnableOption "modules.homeManager.programs.fzf";
+  options.dotfiles.homeManager.programs.fzf.enable =
+    lib.mkEnableOption "dotfiles.homeManager.programs.fzf";
 
-  config = lib.mkIf config.modules.homeManager.programs.fzf.enable {
+  config = lib.mkIf config.dotfiles.homeManager.programs.fzf.enable {
     programs.fzf.enable = true;
   };
 }

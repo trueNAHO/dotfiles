@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.home.packages.tree.enable =
-    lib.mkEnableOption "modules.homeManager.home.packages.tree";
+  options.dotfiles.homeManager.home.packages.tree.enable =
+    lib.mkEnableOption "dotfiles.homeManager.home.packages.tree";
 
-  config = lib.mkIf config.modules.homeManager.home.packages.tree.enable {
+  config = lib.mkIf config.dotfiles.homeManager.home.packages.tree.enable {
     home = {
       packages = [pkgs.tree];
 

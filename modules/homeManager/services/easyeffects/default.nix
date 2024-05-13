@@ -3,15 +3,15 @@
   lib,
   ...
 }: let
-  module = "modules.homeManager.services.easyeffects";
+  module = "dotfiles.homeManager.services.easyeffects";
 in {
-  options.modules.homeManager.services.easyeffects.enable =
+  options.dotfiles.homeManager.services.easyeffects.enable =
     lib.mkEnableOption module;
 
   config = let
     preset = "default";
   in
-    lib.mkIf config.modules.homeManager.services.easyeffects.enable {
+    lib.mkIf config.dotfiles.homeManager.services.easyeffects.enable {
       home.activation.${module} =
         lib.dotfiles.lib.hm.dag.entryBefore.writeBoundary.systemRequirement
         module

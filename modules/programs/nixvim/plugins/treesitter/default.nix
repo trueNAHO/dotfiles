@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.programs.nixvim.plugins.treesitter.enable =
-    lib.mkEnableOption "modules.programs.nixvim.plugins.treesitter";
+  options.dotfiles.programs.nixvim.plugins.treesitter.enable =
+    lib.mkEnableOption "dotfiles.programs.nixvim.plugins.treesitter";
 
-  config = lib.mkIf config.modules.programs.nixvim.plugins.treesitter.enable {
+  config = lib.mkIf config.dotfiles.programs.nixvim.plugins.treesitter.enable {
     programs.nixvim.plugins.treesitter.enable = true;
   };
 }

@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.home.packages.killall.enable =
-    lib.mkEnableOption "modules.homeManager.home.packages.killall";
+  options.dotfiles.homeManager.home.packages.killall.enable =
+    lib.mkEnableOption "dotfiles.homeManager.home.packages.killall";
 
-  config = lib.mkIf config.modules.homeManager.home.packages.killall.enable {
+  config = lib.mkIf config.dotfiles.homeManager.home.packages.killall.enable {
     home.packages = [pkgs.killall];
   };
 }

@@ -1,7 +1,7 @@
 [[developer_documentation_architecture_code_map_modules_directory]]
 ===== /modules/<DIRECTORY>/
 :directory-modules: /modules
-:sed: sed 's@\.@/@g'
+:sed: sed 's/^dotfiles/modules/; s@\.@/@g'
 
 This directory contains all modules used by
 `<<developer_documentation_architecture_code_map_home_configurations_accessibility_prefix_name_default_nix>>`.
@@ -18,7 +18,7 @@ structure:
 echo "$MODULE" | {sed}
 ----
 
-:module-attribute-set: modules.camelCase.kebab-case.snake_case
+:module-attribute-set: dotfiles.camelCase.kebab-case.snake_case
 :module-path: /modules/camelCase/kebab-case/snake_case/default.nix
 ====
 The `{module-attribute-set}` module attribute set would be declared at

@@ -6,11 +6,11 @@
 }: {
   imports = [../../services/swayidle];
 
-  options.modules.homeManager.programs.wlogout.enable =
-    lib.mkEnableOption "modules.homeManager.programs.wlogout";
+  options.dotfiles.homeManager.programs.wlogout.enable =
+    lib.mkEnableOption "dotfiles.homeManager.programs.wlogout";
 
-  config = lib.mkIf config.modules.homeManager.programs.wlogout.enable {
-    modules.homeManager.services.swayidle.enable = true;
+  config = lib.mkIf config.dotfiles.homeManager.programs.wlogout.enable {
+    dotfiles.homeManager.services.swayidle.enable = true;
 
     programs.wlogout = {
       enable = true;

@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.home.packages.fd.enable =
-    lib.mkEnableOption "modules.homeManager.home.packages.fd";
+  options.dotfiles.homeManager.home.packages.fd.enable =
+    lib.mkEnableOption "dotfiles.homeManager.home.packages.fd";
 
-  config = lib.mkIf config.modules.homeManager.home.packages.fd.enable {
+  config = lib.mkIf config.dotfiles.homeManager.home.packages.fd.enable {
     home.packages = [pkgs.fd];
   };
 }

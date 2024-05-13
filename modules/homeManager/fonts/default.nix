@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.fonts.enable =
-    lib.mkEnableOption "modules.homeManager.fonts";
+  options.dotfiles.homeManager.fonts.enable =
+    lib.mkEnableOption "dotfiles.homeManager.fonts";
 
-  config = lib.mkIf config.modules.homeManager.fonts.enable {
+  config = lib.mkIf config.dotfiles.homeManager.fonts.enable {
     fonts.fontconfig = {
       defaultFonts = {
         monospace = ["FiraCodeNerdFont"];

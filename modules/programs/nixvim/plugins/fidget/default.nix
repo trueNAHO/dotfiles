@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.programs.nixvim.plugins.fidget.enable =
-    lib.mkEnableOption "modules.programs.nixvim.plugins.fidget";
+  options.dotfiles.programs.nixvim.plugins.fidget.enable =
+    lib.mkEnableOption "dotfiles.programs.nixvim.plugins.fidget";
 
-  config = lib.mkIf config.modules.programs.nixvim.plugins.fidget.enable {
+  config = lib.mkIf config.dotfiles.programs.nixvim.plugins.fidget.enable {
     programs.nixvim.plugins.fidget.enable = true;
   };
 }

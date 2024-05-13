@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.home.packages.bandwhich.enable =
-    lib.mkEnableOption "modules.homeManager.home.packages.bandwhich";
+  options.dotfiles.homeManager.home.packages.bandwhich.enable =
+    lib.mkEnableOption "dotfiles.homeManager.home.packages.bandwhich";
 
-  config = lib.mkIf config.modules.homeManager.home.packages.bandwhich.enable {
+  config = lib.mkIf config.dotfiles.homeManager.home.packages.bandwhich.enable {
     home.packages = [pkgs.bandwhich];
   };
 }

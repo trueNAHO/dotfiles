@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.home.packages.ffmpeg.enable =
-    lib.mkEnableOption "modules.homeManager.home.packages.ffmpeg";
+  options.dotfiles.homeManager.home.packages.ffmpeg.enable =
+    lib.mkEnableOption "dotfiles.homeManager.home.packages.ffmpeg";
 
-  config = lib.mkIf config.modules.homeManager.home.packages.ffmpeg.enable {
+  config = lib.mkIf config.dotfiles.homeManager.home.packages.ffmpeg.enable {
     home.packages = [pkgs.ffmpeg];
   };
 }

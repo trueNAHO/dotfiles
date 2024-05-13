@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.homeManager.programs.feh.enable =
-    lib.mkEnableOption "modules.homeManager.programs.feh";
+  options.dotfiles.homeManager.programs.feh.enable =
+    lib.mkEnableOption "dotfiles.homeManager.programs.feh";
 
-  config = lib.mkIf config.modules.homeManager.programs.feh.enable {
+  config = lib.mkIf config.dotfiles.homeManager.programs.feh.enable {
     programs.feh.enable = true;
   };
 }

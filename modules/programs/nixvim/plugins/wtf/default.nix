@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.programs.nixvim.plugins.wtf.enable =
-    lib.mkEnableOption "modules.programs.nixvim.plugins.wtf";
+  options.dotfiles.programs.nixvim.plugins.wtf.enable =
+    lib.mkEnableOption "dotfiles.programs.nixvim.plugins.wtf";
 
-  config = lib.mkIf config.modules.programs.nixvim.plugins.wtf.enable {
+  config = lib.mkIf config.dotfiles.programs.nixvim.plugins.wtf.enable {
     programs.nixvim = {
       keymaps = [
         {

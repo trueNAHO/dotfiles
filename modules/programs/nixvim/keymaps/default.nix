@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.programs.nixvim.keymaps.enable =
-    lib.mkEnableOption "modules.programs.nixvim.keymaps";
+  options.dotfiles.programs.nixvim.keymaps.enable =
+    lib.mkEnableOption "dotfiles.programs.nixvim.keymaps";
 
-  config = lib.mkIf config.modules.programs.nixvim.keymaps.enable {
+  config = lib.mkIf config.dotfiles.programs.nixvim.keymaps.enable {
     programs.nixvim.keymaps =
       map (keymaps: {options.silent = true;} // keymaps)
       ((map (keymaps: {mode = "n";} // keymaps) ([

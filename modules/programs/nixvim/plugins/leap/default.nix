@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.programs.nixvim.plugins.leap.enable =
-    lib.mkEnableOption "modules.programs.nixvim.plugins.leap";
+  options.dotfiles.programs.nixvim.plugins.leap.enable =
+    lib.mkEnableOption "dotfiles.programs.nixvim.plugins.leap";
 
-  config = lib.mkIf config.modules.programs.nixvim.plugins.leap.enable {
+  config = lib.mkIf config.dotfiles.programs.nixvim.plugins.leap.enable {
     programs.nixvim = {
       keymaps = [
         {

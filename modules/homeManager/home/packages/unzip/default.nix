@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.home.packages.unzip.enable =
-    lib.mkEnableOption "modules.homeManager.home.packages.unzip";
+  options.dotfiles.homeManager.home.packages.unzip.enable =
+    lib.mkEnableOption "dotfiles.homeManager.home.packages.unzip";
 
-  config = lib.mkIf config.modules.homeManager.home.packages.unzip.enable {
+  config = lib.mkIf config.dotfiles.homeManager.home.packages.unzip.enable {
     home.packages = [pkgs.unzip];
   };
 }

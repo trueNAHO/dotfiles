@@ -12,16 +12,16 @@
     ../../wayland/windowManager/hyprland
   ];
 
-  options.modules.homeManager.programs.fish.enable =
-    lib.mkEnableOption "modules.homeManager.programs.fish";
+  options.dotfiles.homeManager.programs.fish.enable =
+    lib.mkEnableOption "dotfiles.homeManager.programs.fish";
 
   # TODO: Add missing fish plugin dependencies upstream.
   config =
     lib.mkIf
-    config.modules.homeManager.programs.fish.enable
+    config.dotfiles.homeManager.programs.fish.enable
     (lib.mkMerge [
       {
-        modules.homeManager = {
+        dotfiles.homeManager = {
           home = {
             packages.asciidoctor.enable = true;
 
@@ -314,7 +314,7 @@
       }
 
       {
-        modules.homeManager.home.packages.wl-clipboard.enable = true;
+        dotfiles.homeManager.home.packages.wl-clipboard.enable = true;
 
         home = {
           packages = [pkgs.fzf];
@@ -351,7 +351,7 @@
 
           git.aliases =
             lib.mkIf
-            config.modules.homeManager.programs.git.enable
+            config.dotfiles.homeManager.programs.git.enable
             (builtins.mapAttrs (_: value: "forgit ${value}") {
               a = "add";
               b = "checkout_branch";

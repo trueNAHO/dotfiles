@@ -6,11 +6,11 @@
 }: {
   imports = [../git];
 
-  options.modules.homeManager.programs.lazygit.enable =
-    lib.mkEnableOption "modules.homeManager.programs.lazygit";
+  options.dotfiles.homeManager.programs.lazygit.enable =
+    lib.mkEnableOption "dotfiles.homeManager.programs.lazygit";
 
-  config = lib.mkIf config.modules.homeManager.programs.lazygit.enable {
-    modules.homeManager.programs.git.enable = true;
+  config = lib.mkIf config.dotfiles.homeManager.programs.lazygit.enable {
+    dotfiles.homeManager.programs.git.enable = true;
 
     home.shellAliases.lg = lib.getExe config.programs.lazygit.package;
 

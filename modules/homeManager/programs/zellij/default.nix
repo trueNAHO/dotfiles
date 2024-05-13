@@ -6,15 +6,15 @@
 }: {
   imports = [../../home/sessionVariables];
 
-  options.modules.homeManager.programs.zellij.enable =
-    lib.mkEnableOption "modules.homeManager.programs.zellij";
+  options.dotfiles.homeManager.programs.zellij.enable =
+    lib.mkEnableOption "dotfiles.homeManager.programs.zellij";
 
   config =
     lib.mkIf
-    config.modules.homeManager.programs.zellij.enable
+    config.dotfiles.homeManager.programs.zellij.enable
     (lib.mkMerge [
       {
-        modules.homeManager.home.sessionVariables = {
+        dotfiles.homeManager.home.sessionVariables = {
           EDITOR.enable = true;
           enable = true;
         };

@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.home.packages.gping.enable =
-    lib.mkEnableOption "modules.homeManager.home.packages.gping";
+  options.dotfiles.homeManager.home.packages.gping.enable =
+    lib.mkEnableOption "dotfiles.homeManager.home.packages.gping";
 
-  config = lib.mkIf config.modules.homeManager.home.packages.gping.enable {
+  config = lib.mkIf config.dotfiles.homeManager.home.packages.gping.enable {
     home.packages = [pkgs.gping];
   };
 }

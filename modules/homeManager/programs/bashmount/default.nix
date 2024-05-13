@@ -3,12 +3,12 @@
   lib,
   ...
 }: let
-  module = "modules.homeManager.programs.bashmount";
+  module = "dotfiles.homeManager.programs.bashmount";
 in {
-  options.modules.homeManager.programs.bashmount.enable =
+  options.dotfiles.homeManager.programs.bashmount.enable =
     lib.mkEnableOption module;
 
-  config = lib.mkIf config.modules.homeManager.programs.bashmount.enable {
+  config = lib.mkIf config.dotfiles.homeManager.programs.bashmount.enable {
     home.activation = {
       ${module} =
         lib.dotfiles.lib.hm.dag.entryBefore.writeBoundary.systemRequirement

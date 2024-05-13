@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.programs.nixvim.plugins.surround.enable =
-    lib.mkEnableOption "modules.programs.nixvim.plugins.surround";
+  options.dotfiles.programs.nixvim.plugins.surround.enable =
+    lib.mkEnableOption "dotfiles.programs.nixvim.plugins.surround";
 
-  config = lib.mkIf config.modules.programs.nixvim.plugins.surround.enable {
+  config = lib.mkIf config.dotfiles.programs.nixvim.plugins.surround.enable {
     programs.nixvim.plugins.surround.enable = true;
   };
 }

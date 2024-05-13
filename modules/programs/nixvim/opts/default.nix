@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.programs.nixvim.opts.enable =
-    lib.mkEnableOption "modules.programs.nixvim.opts";
+  options.dotfiles.programs.nixvim.opts.enable =
+    lib.mkEnableOption "dotfiles.programs.nixvim.opts";
 
-  config = lib.mkIf config.modules.programs.nixvim.opts.enable {
+  config = lib.mkIf config.dotfiles.programs.nixvim.opts.enable {
     programs.nixvim = {
       extraConfigLua = ''
         vim.opt.matchpairs:append("<:>")

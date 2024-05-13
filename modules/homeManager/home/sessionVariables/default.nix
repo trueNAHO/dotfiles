@@ -9,8 +9,8 @@
   # declare any dependencies using 'imports'.
   imports = [];
 
-  options.modules.homeManager.home.sessionVariables = let
-    module = "modules.homeManager.home.sessionVariables";
+  options.dotfiles.homeManager.home.sessionVariables = let
+    module = "dotfiles.homeManager.home.sessionVariables";
   in {
     BROWSER.enable =
       lib.mkEnableOption "${module}.BROWSER";
@@ -38,7 +38,7 @@
   # packages are unavailable in 'config' due to the intentional lack of
   # unconditional 'imports'.
   config.home.sessionVariables = let
-    cfg = config.modules.homeManager.home.sessionVariables;
+    cfg = config.dotfiles.homeManager.home.sessionVariables;
     neovim = lib.getExe (config.programs.nixvim.finalPackage or pkgs.neovim);
   in
     # The 'lib.mkMerge [(lib.mkIf <BOOL> {<VARIABLE> = <VALUE>;})];' pattern is

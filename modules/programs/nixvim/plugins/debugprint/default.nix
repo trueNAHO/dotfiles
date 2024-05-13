@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.programs.nixvim.plugins.debugprint.enable =
-    lib.mkEnableOption "modules.programs.nixvim.plugins.debugprint";
+  options.dotfiles.programs.nixvim.plugins.debugprint.enable =
+    lib.mkEnableOption "dotfiles.programs.nixvim.plugins.debugprint";
 
-  config = lib.mkIf config.modules.programs.nixvim.plugins.debugprint.enable {
+  config = lib.mkIf config.dotfiles.programs.nixvim.plugins.debugprint.enable {
     programs.nixvim.plugins.debugprint = {
       enable = true;
 

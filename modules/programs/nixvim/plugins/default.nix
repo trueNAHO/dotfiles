@@ -31,11 +31,11 @@
     ./wtf
   ];
 
-  options.modules.programs.nixvim.plugins.full =
-    lib.mkEnableOption "modules.programs.nixvim.plugins.full";
+  options.dotfiles.programs.nixvim.plugins.full =
+    lib.mkEnableOption "dotfiles.programs.nixvim.plugins.full";
 
-  config = lib.mkIf config.modules.programs.nixvim.plugins.full {
-    modules.programs.nixvim.plugins = {
+  config = lib.mkIf config.dotfiles.programs.nixvim.plugins.full {
+    dotfiles.programs.nixvim.plugins = {
       cmp.enable = lib.mkDefault true;
       codeium-nvim.enable = lib.mkDefault true;
       codeium-vim.enable = lib.mkDefault true;

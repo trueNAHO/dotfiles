@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.home.packages.zip.enable =
-    lib.mkEnableOption "modules.homeManager.home.packages.zip";
+  options.dotfiles.homeManager.home.packages.zip.enable =
+    lib.mkEnableOption "dotfiles.homeManager.home.packages.zip";
 
-  config = lib.mkIf config.modules.homeManager.home.packages.zip.enable {
+  config = lib.mkIf config.dotfiles.homeManager.home.packages.zip.enable {
     home.packages = [pkgs.zip];
   };
 }

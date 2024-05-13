@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.programs.nixvim.autoCmd.enable =
-    lib.mkEnableOption "modules.programs.nixvim.autoCmd";
+  options.dotfiles.programs.nixvim.autoCmd.enable =
+    lib.mkEnableOption "dotfiles.programs.nixvim.autoCmd";
 
-  config = lib.mkIf config.modules.programs.nixvim.autoCmd.enable {
+  config = lib.mkIf config.dotfiles.programs.nixvim.autoCmd.enable {
     programs.nixvim.autoCmd = [
       {
         command = ''%s/\s\+$//e'';

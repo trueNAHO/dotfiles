@@ -9,11 +9,11 @@
     ../../../../homeManager/nixpkgs/config/allowUnfree
   ];
 
-  options.modules.programs.nixvim.plugins.codeium-vim.enable =
-    lib.mkEnableOption "modules.programs.nixvim.plugins.codeium-vim";
+  options.dotfiles.programs.nixvim.plugins.codeium-vim.enable =
+    lib.mkEnableOption "dotfiles.programs.nixvim.plugins.codeium-vim";
 
-  config = lib.mkIf config.modules.programs.nixvim.plugins.codeium-vim.enable {
-    modules = {
+  config = lib.mkIf config.dotfiles.programs.nixvim.plugins.codeium-vim.enable {
+    dotfiles = {
       agenix.homeManagerModules.default.enable = true;
       homeManager.nixpkgs.config.allowUnfree.enable = true;
     };
@@ -33,12 +33,12 @@
     # [1]: https://github.com/Exafunction/codeium.nvim
     # [2]: https://github.com/Exafunction/codeium.vim
     # [3]: https://github.com/Exafunction/codeium.vim/issues/303
-    home.activation."modules.programs.nixvim.plugins.codeium-vim" =
+    home.activation."dotfiles.programs.nixvim.plugins.codeium-vim" =
       lib.hm.dag.entryAfter
       ["writeBoundary"]
       (
         lib.getExe (pkgs.writeShellApplication {
-          name = "modules-programs-nixvim";
+          name = "dotfiles-programs-nixvim";
           runtimeInputs = [pkgs.coreutils];
 
           text = let

@@ -5,15 +5,15 @@
   pkgs,
   ...
 }: let
-  module = "modules.stylix";
+  module = "dotfiles.stylix";
 in {
   imports = [inputs.stylix.homeManagerModules.stylix];
-  options.modules.stylix.enable = lib.mkEnableOption module;
+  options.dotfiles.stylix.enable = lib.mkEnableOption module;
 
   config = lib.mkMerge [
     # TODO: Patch an upstream 'stylix.enable' option [1] to merge the
     # unconditional 'stylix.image' option with the conditional 'lib.mkIf
-    # config.modules.stylix.enable' attribute set.
+    # config.dotfiles.stylix.enable' attribute set.
     #
     # [1]: https://github.com/danth/stylix/issues/216
     {
@@ -24,7 +24,7 @@ in {
     }
 
     (
-      lib.mkIf config.modules.stylix.enable {
+      lib.mkIf config.dotfiles.stylix.enable {
         home.activation.${module} =
           lib.dotfiles.lib.hm.dag.entryBefore.writeBoundary.systemRequirement
           module

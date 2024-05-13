@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.home.packages.du-dust.enable =
-    lib.mkEnableOption "modules.homeManager.home.packages.du-dust";
+  options.dotfiles.homeManager.home.packages.du-dust.enable =
+    lib.mkEnableOption "dotfiles.homeManager.home.packages.du-dust";
 
-  config = lib.mkIf config.modules.homeManager.home.packages.du-dust.enable {
+  config = lib.mkIf config.dotfiles.homeManager.home.packages.du-dust.enable {
     home.packages = [pkgs.du-dust];
   };
 }

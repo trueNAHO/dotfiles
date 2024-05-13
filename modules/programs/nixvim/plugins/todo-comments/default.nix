@@ -3,12 +3,12 @@
   lib,
   ...
 }: {
-  options.modules.programs.nixvim.plugins.todo-comments.enable =
-    lib.mkEnableOption "modules.programs.nixvim.plugins.todo-comments";
+  options.dotfiles.programs.nixvim.plugins.todo-comments.enable =
+    lib.mkEnableOption "dotfiles.programs.nixvim.plugins.todo-comments";
 
   config =
     lib.mkIf
-    config.modules.programs.nixvim.plugins.todo-comments.enable {
+    config.dotfiles.programs.nixvim.plugins.todo-comments.enable {
       programs.nixvim = {
         keymaps = let
           requireTodocomments = "require('todo-comments')";

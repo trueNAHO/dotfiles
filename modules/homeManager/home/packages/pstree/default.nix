@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.home.packages.pstree.enable =
-    lib.mkEnableOption "modules.homeManager.home.packages.pstree";
+  options.dotfiles.homeManager.home.packages.pstree.enable =
+    lib.mkEnableOption "dotfiles.homeManager.home.packages.pstree";
 
-  config = lib.mkIf config.modules.homeManager.home.packages.pstree.enable {
+  config = lib.mkIf config.dotfiles.homeManager.home.packages.pstree.enable {
     home.packages = [pkgs.pstree];
   };
 }

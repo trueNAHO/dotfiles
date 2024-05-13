@@ -5,12 +5,12 @@
 }: {
   imports = [../../xdg];
 
-  options.modules.homeManager.programs.zathura.enable =
-    lib.mkEnableOption "modules.homeManager.programs.zathura";
+  options.dotfiles.homeManager.programs.zathura.enable =
+    lib.mkEnableOption "dotfiles.homeManager.programs.zathura";
 
   config =
     lib.mkIf
-    config.modules.homeManager.programs.zathura.enable
+    config.dotfiles.homeManager.programs.zathura.enable
     (lib.mkMerge [
       {
         programs.zathura = {
@@ -21,9 +21,9 @@
 
       (
         lib.mkIf
-        (config.modules.homeManager.home.packages.gimp.enable or false)
+        (config.dotfiles.homeManager.home.packages.gimp.enable or false)
         {
-          modules.homeManager.xdg.mimeApps.enable = true;
+          dotfiles.homeManager.xdg.mimeApps.enable = true;
 
           xdg.mimeApps.defaultApplications =
             lib.mapAttrs'

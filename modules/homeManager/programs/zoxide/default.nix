@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.homeManager.programs.zoxide.enable =
-    lib.mkEnableOption "modules.homeManager.programs.zoxide";
+  options.dotfiles.homeManager.programs.zoxide.enable =
+    lib.mkEnableOption "dotfiles.homeManager.programs.zoxide";
 
-  config = lib.mkIf config.modules.homeManager.programs.zoxide.enable {
+  config = lib.mkIf config.dotfiles.homeManager.programs.zoxide.enable {
     programs.zoxide.enable = true;
   };
 }

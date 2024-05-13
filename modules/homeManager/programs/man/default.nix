@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.homeManager.programs.man.enable =
-    lib.mkEnableOption "modules.homeManager.programs.man";
+  options.dotfiles.homeManager.programs.man.enable =
+    lib.mkEnableOption "dotfiles.homeManager.programs.man";
 
-  config = lib.mkIf config.modules.homeManager.programs.man.enable {
+  config = lib.mkIf config.dotfiles.homeManager.programs.man.enable {
     programs.man.enable = true;
   };
 }

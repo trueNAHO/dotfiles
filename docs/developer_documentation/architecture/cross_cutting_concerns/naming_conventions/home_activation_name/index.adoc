@@ -1,6 +1,6 @@
 [[developer_documentation_architecture_cross_cutting_concerns_naming_conventions_home_activation_name]]
 ====== home.activation.<NAME>
-:module: modules.camelCase.kebab-case.snake_case
+:module: dotfiles.camelCase.kebab-case.snake_case
 
 The `<NAME>` attribute in `home.activation.<NAME>` corresponds to the
 <<developer_documentation_architecture_code_map_modules_directory, module>>

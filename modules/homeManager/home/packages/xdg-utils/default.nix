@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.home.packages.xdg-utils.enable =
-    lib.mkEnableOption "modules.homeManager.home.packages.xdg-utils";
+  options.dotfiles.homeManager.home.packages.xdg-utils.enable =
+    lib.mkEnableOption "dotfiles.homeManager.home.packages.xdg-utils";
 
-  config = lib.mkIf config.modules.homeManager.home.packages.xdg-utils.enable {
+  config = lib.mkIf config.dotfiles.homeManager.home.packages.xdg-utils.enable {
     home.packages = [pkgs.xdg-utils];
   };
 }

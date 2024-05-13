@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.home.packages.glow.enable =
-    lib.mkEnableOption "modules.homeManager.home.packages.glow";
+  options.dotfiles.homeManager.home.packages.glow.enable =
+    lib.mkEnableOption "dotfiles.homeManager.home.packages.glow";
 
-  config = lib.mkIf config.modules.homeManager.home.packages.glow.enable {
+  config = lib.mkIf config.dotfiles.homeManager.home.packages.glow.enable {
     home.packages = [pkgs.glow];
   };
 }

@@ -13,17 +13,17 @@
     inputs.nixvim.homeManagerModules.nixvim
   ];
 
-  options.modules.programs.nixvim = {
-    enable = lib.mkEnableOption "modules.programs.nixvim";
-    full = lib.mkEnableOption "modules.programs.nixvim.full";
+  options.dotfiles.programs.nixvim = {
+    enable = lib.mkEnableOption "dotfiles.programs.nixvim";
+    full = lib.mkEnableOption "dotfiles.programs.nixvim.full";
   };
 
   config = let
-    cfg = config.modules.programs.nixvim;
+    cfg = config.dotfiles.programs.nixvim;
   in
     lib.mkIf cfg.enable (lib.mkMerge [
       {
-        modules.homeManager.home.sessionVariables = {
+        dotfiles.homeManager.home.sessionVariables = {
           EDITOR.enable = true;
           MANPAGER.enable = true;
           enable = true;
@@ -44,7 +44,7 @@
       }
 
       (lib.mkIf cfg.full {
-        modules.programs.nixvim = {
+        dotfiles.programs.nixvim = {
           autoCmd.enable = lib.mkDefault true;
           keymaps.enable = lib.mkDefault true;
           opts.enable = lib.mkDefault true;

@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.programs.nixvim.plugins.lsp.enable =
-    lib.mkEnableOption "modules.programs.nixvim.plugins.lsp";
+  options.dotfiles.programs.nixvim.plugins.lsp.enable =
+    lib.mkEnableOption "dotfiles.programs.nixvim.plugins.lsp";
 
-  config = lib.mkIf config.modules.programs.nixvim.plugins.lsp.enable {
+  config = lib.mkIf config.dotfiles.programs.nixvim.plugins.lsp.enable {
     programs.nixvim.plugins.lsp = {
       enable = true;
 

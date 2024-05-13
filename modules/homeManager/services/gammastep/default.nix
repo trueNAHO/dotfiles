@@ -4,8 +4,8 @@
   ...
 }: {
   # https://github.com/nix-community/home-manager/blob/release-23.11/modules/services/redshift-gammastep/lib/options.nix#L54-L72
-  options.modules.homeManager.services.gammastep = {
-    enable = lib.mkEnableOption "modules.homeManager.services.gammastep";
+  options.dotfiles.homeManager.services.gammastep = {
+    enable = lib.mkEnableOption "dotfiles.homeManager.services.gammastep";
 
     latitude = lib.mkOption {
       default = 48.0;
@@ -27,7 +27,7 @@
   };
 
   config = let
-    cfg = config.modules.homeManager.services.gammastep;
+    cfg = config.dotfiles.homeManager.services.gammastep;
   in
     lib.mkIf cfg.enable {
       services.gammastep = {

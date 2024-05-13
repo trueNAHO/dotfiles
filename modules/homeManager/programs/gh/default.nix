@@ -6,11 +6,11 @@
 }: {
   imports = [../../../agenix/homeManagerModules/default];
 
-  options.modules.homeManager.programs.gh.enable =
-    lib.mkEnableOption "modules.homeManager.programs.gh";
+  options.dotfiles.homeManager.programs.gh.enable =
+    lib.mkEnableOption "dotfiles.homeManager.programs.gh";
 
-  config = lib.mkIf config.modules.homeManager.programs.gh.enable {
-    modules.agenix.homeManagerModules.default.enable = true;
+  config = lib.mkIf config.dotfiles.homeManager.programs.gh.enable {
+    dotfiles.agenix.homeManagerModules.default.enable = true;
 
     age.secrets.modulesHomeManagerProgramsGhGhToken.file = ./gh_token.age;
 

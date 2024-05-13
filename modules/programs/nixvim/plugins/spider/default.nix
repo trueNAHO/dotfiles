@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.programs.nixvim.plugins.spider.enable =
-    lib.mkEnableOption "modules.programs.nixvim.plugins.spider";
+  options.dotfiles.programs.nixvim.plugins.spider.enable =
+    lib.mkEnableOption "dotfiles.programs.nixvim.plugins.spider";
 
-  config = lib.mkIf config.modules.programs.nixvim.plugins.spider.enable {
+  config = lib.mkIf config.dotfiles.programs.nixvim.plugins.spider.enable {
     programs.nixvim.plugins.spider = {
       enable = true;
 

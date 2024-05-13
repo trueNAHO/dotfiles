@@ -6,16 +6,16 @@
 }: {
   imports = [../password-store];
 
-  options.modules.homeManager.programs.rofi = {
-    enable = lib.mkEnableOption "modules.homeManager.programs.rofi";
-    pass.enable = lib.mkEnableOption "modules.homeManager.programs.rofi.pass";
+  options.dotfiles.homeManager.programs.rofi = {
+    enable = lib.mkEnableOption "dotfiles.homeManager.programs.rofi";
+    pass.enable = lib.mkEnableOption "dotfiles.homeManager.programs.rofi.pass";
   };
 
   config = let
-    cfg = config.modules.homeManager.programs.rofi;
+    cfg = config.dotfiles.homeManager.programs.rofi;
   in
     lib.mkIf (cfg.enable || cfg.pass.enable) {
-      modules.homeManager.programs.password-store.enable = true;
+      dotfiles.homeManager.programs.password-store.enable = true;
 
       programs.rofi = {
         enable = cfg.enable;

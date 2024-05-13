@@ -5,10 +5,10 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.programs.xplr.enable =
-    lib.mkEnableOption "modules.homeManager.programs.xplr";
+  options.dotfiles.homeManager.programs.xplr.enable =
+    lib.mkEnableOption "dotfiles.homeManager.programs.xplr";
 
-  config = lib.mkIf config.modules.homeManager.programs.xplr.enable {
+  config = lib.mkIf config.dotfiles.homeManager.programs.xplr.enable {
     home.packages = let
       # TODO: add missing dependencies upstream.
       dependencies.inputs.dragonXplr = with pkgs; [curl xdragon];

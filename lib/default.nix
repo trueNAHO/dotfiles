@@ -28,7 +28,7 @@
 
       ```nix
       homeManagerConfiguration "home-manager" {
-        config.modules.homeManager.programs.home-manager.enable = true;
+        config.dotfiles.homeManager.programs.home-manager.enable = true;
         imports = [modules/homeManager/programs/home-manager];
       }
       => { home-manager = { ... }; }
@@ -174,20 +174,20 @@
       ```nix
       documentation = "https://nixos.org/nixos/options.xhtml#opt-services.easyeffects.enable"
       literalExpression = "programs.dconf.enable = true;"
-      src = "modules.homeManager.services.easyeffects"
+      src = "dotfiles.homeManager.services.easyeffects"
 
       systemRequirement src literalExpression documentation
       => {
         after = [ ... ];
         before = [ ... ];
-        data = "printf 'trace: INFO: modules.homeManager.services.easyeffects: %s\\n' \"include 'programs.dconf.enable = true;' in the system configuration: https://nixos.org/nixos/options.xhtml#opt-services.easyeffects.enable\"\n";
+        data = "printf 'trace: INFO: dotfiles.homeManager.services.easyeffects: %s\\n' \"include 'programs.dconf.enable = true;' in the system configuration: https://nixos.org/nixos/options.xhtml#opt-services.easyeffects.enable\"\n";
       }
 
       systemRequirement src literalExpression ""
       => {
         after = [ ... ];
         before = [ ... ];
-        data = "printf 'trace: INFO: modules.homeManager.services.easyeffects: %s\\n' \"include 'programs.dconf.enable = true;' in the system configuration\"\n";
+        data = "printf 'trace: INFO: dotfiles.homeManager.services.easyeffects: %s\\n' \"include 'programs.dconf.enable = true;' in the system configuration\"\n";
       }
       ```
       */
@@ -229,12 +229,12 @@
         allowUnfree = toString config.nixpkgs.config.allowUnfree;
       in
         lib.dotfiles.lib.hm.dag.entryBefore.writeBoundary.printf
-        "modules.homeManager.nixpkgs.config.allowUnfree"
+        "dotfiles.homeManager.nixpkgs.config.allowUnfree"
         "'nixpkgs.config.allowUnfree = ${allowUnfree};'";
       => {
         after = [ ... ];
         before = [ ... ];
-        data = "printf 'trace: INFO: modules.homeManager.nixpkgs.config.allowUnfree: %s\\n' \"'nixpkgs.config.allowUnfree = 1;'\"\n";
+        data = "printf 'trace: INFO: dotfiles.homeManager.nixpkgs.config.allowUnfree: %s\\n' \"'nixpkgs.config.allowUnfree = 1;'\"\n";
       }
       */
       printf = src: message:

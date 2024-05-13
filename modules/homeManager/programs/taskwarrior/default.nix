@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.homeManager.programs.taskwarrior.enable =
-    lib.mkEnableOption "modules.homeManager.programs.taskwarrior";
+  options.dotfiles.homeManager.programs.taskwarrior.enable =
+    lib.mkEnableOption "dotfiles.homeManager.programs.taskwarrior";
 
-  config = lib.mkIf config.modules.homeManager.programs.taskwarrior.enable {
+  config = lib.mkIf config.dotfiles.homeManager.programs.taskwarrior.enable {
     home.shellAliases.tk = lib.getExe config.programs.taskwarrior.package;
 
     programs.taskwarrior = {

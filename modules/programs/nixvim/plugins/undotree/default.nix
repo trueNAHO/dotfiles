@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.programs.nixvim.plugins.undotree.enable =
-    lib.mkEnableOption "modules.programs.nixvim.plugins.undotree";
+  options.dotfiles.programs.nixvim.plugins.undotree.enable =
+    lib.mkEnableOption "dotfiles.programs.nixvim.plugins.undotree";
 
-  config = lib.mkIf config.modules.programs.nixvim.plugins.undotree.enable {
+  config = lib.mkIf config.dotfiles.programs.nixvim.plugins.undotree.enable {
     programs.nixvim = {
       keymaps = [
         {

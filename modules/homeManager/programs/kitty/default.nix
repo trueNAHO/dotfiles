@@ -5,11 +5,11 @@
 }: {
   imports = [../../home/sessionVariables];
 
-  options.modules.homeManager.programs.kitty.enable =
-    lib.mkEnableOption "modules.homeManager.programs.kitty";
+  options.dotfiles.homeManager.programs.kitty.enable =
+    lib.mkEnableOption "dotfiles.homeManager.programs.kitty";
 
-  config = lib.mkIf config.modules.homeManager.programs.kitty.enable {
-    modules.homeManager.home.sessionVariables = {
+  config = lib.mkIf config.dotfiles.homeManager.programs.kitty.enable {
+    dotfiles.homeManager.home.sessionVariables = {
       TERMINAL.enable = true;
       enable = true;
     };

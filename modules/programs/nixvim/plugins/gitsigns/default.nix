@@ -5,10 +5,10 @@
 }: {
   imports = [../trouble];
 
-  options.modules.programs.nixvim.plugins.gitsigns.enable =
-    lib.mkEnableOption "modules.programs.nixvim.plugins.gitsigns";
+  options.dotfiles.programs.nixvim.plugins.gitsigns.enable =
+    lib.mkEnableOption "dotfiles.programs.nixvim.plugins.gitsigns";
 
-  config = lib.mkIf config.modules.programs.nixvim.plugins.gitsigns.enable {
+  config = lib.mkIf config.dotfiles.programs.nixvim.plugins.gitsigns.enable {
     programs.nixvim.plugins.gitsigns = {
       enable = true;
 
@@ -57,7 +57,7 @@
 
         trouble =
           lib.mkIf
-          config.modules.programs.nixvim.plugins.trouble.enable
+          config.dotfiles.programs.nixvim.plugins.trouble.enable
           true;
       };
     };

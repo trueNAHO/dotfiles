@@ -7,12 +7,12 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.home.packages.thunderbird.enable =
-    lib.mkEnableOption "modules.homeManager.home.packages.thunderbird";
+  options.dotfiles.homeManager.home.packages.thunderbird.enable =
+    lib.mkEnableOption "dotfiles.homeManager.home.packages.thunderbird";
 
   config =
     lib.mkIf
-    config.modules.homeManager.home.packages.thunderbird.enable {
+    config.dotfiles.homeManager.home.packages.thunderbird.enable {
       home.packages = [pkgs.thunderbird];
     };
 }

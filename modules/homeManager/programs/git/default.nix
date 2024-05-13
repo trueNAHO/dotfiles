@@ -6,14 +6,14 @@
 }: {
   imports = [../gpg];
 
-  options.modules.homeManager.programs.git.enable =
-    lib.mkEnableOption "modules.homeManager.programs.git";
+  options.dotfiles.homeManager.programs.git.enable =
+    lib.mkEnableOption "dotfiles.homeManager.programs.git";
 
   config = let
     git = lib.getExe config.programs.git.package;
   in
-    lib.mkIf config.modules.homeManager.programs.git.enable {
-      modules.homeManager.programs.gpg.enable = true;
+    lib.mkIf config.dotfiles.homeManager.programs.git.enable {
+      dotfiles.homeManager.programs.gpg.enable = true;
 
       # The local 'home.shellAliases' variables are not replaced with the
       # arguably simpler

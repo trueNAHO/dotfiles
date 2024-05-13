@@ -1,5 +1,5 @@
 ====== lib.mkEnableOption "<DESCRIPTION>"
-:module: modules.camelCase.kebab-case.snake_case
+:module: dotfiles.camelCase.kebab-case.snake_case
 
 The `<DESCRIPTION>` in `lib.mkEnableOption "<DESCRIPTION>"` corresponds to the
 <<developer_documentation_architecture_code_map_modules_directory, module>>

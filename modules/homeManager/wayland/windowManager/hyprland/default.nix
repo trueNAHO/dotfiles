@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  module = "modules.homeManager.wayland.windowManager.hyprland";
+  module = "dotfiles.homeManager.wayland.windowManager.hyprland";
 in {
   imports = [
     ../../../../wayland
@@ -15,13 +15,13 @@ in {
     ../../../services/swayidle
   ];
 
-  options.modules.homeManager.wayland.windowManager.hyprland.enable =
+  options.dotfiles.homeManager.wayland.windowManager.hyprland.enable =
     lib.mkEnableOption module;
 
   config =
     lib.mkIf
-    config.modules.homeManager.wayland.windowManager.hyprland.enable {
-      modules = {
+    config.dotfiles.homeManager.wayland.windowManager.hyprland.enable {
+      dotfiles = {
         homeManager = {
           home.sessionVariables = {
             BROWSER.enable = true;

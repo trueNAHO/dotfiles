@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.programs.nixvim.plugins.nvim-tree.enable =
-    lib.mkEnableOption "modules.programs.nixvim.plugins.nvim-tree";
+  options.dotfiles.programs.nixvim.plugins.nvim-tree.enable =
+    lib.mkEnableOption "dotfiles.programs.nixvim.plugins.nvim-tree";
 
-  config = lib.mkIf config.modules.programs.nixvim.plugins.nvim-tree.enable {
+  config = lib.mkIf config.dotfiles.programs.nixvim.plugins.nvim-tree.enable {
     programs.nixvim = {
       keymaps = [
         {

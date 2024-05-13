@@ -4,14 +4,14 @@
   lib,
   ...
 }: let
-  module = "modules.agenix.homeManagerModules.default";
+  module = "dotfiles.agenix.homeManagerModules.default";
 in {
   imports = [inputs.agenix.homeManagerModules.default];
 
-  options.modules.agenix.homeManagerModules.default.enable =
+  options.dotfiles.agenix.homeManagerModules.default.enable =
     lib.mkEnableOption module;
 
-  config = lib.mkIf config.modules.agenix.homeManagerModules.default.enable {
+  config = lib.mkIf config.dotfiles.agenix.homeManagerModules.default.enable {
     age.identityPaths = ["${config.home.homeDirectory}/.ssh/age"];
 
     home.activation.${module} = let

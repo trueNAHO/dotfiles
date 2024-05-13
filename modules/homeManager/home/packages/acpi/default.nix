@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.home.packages.acpi.enable =
-    lib.mkEnableOption "modules.homeManager.home.packages.acpi";
+  options.dotfiles.homeManager.home.packages.acpi.enable =
+    lib.mkEnableOption "dotfiles.homeManager.home.packages.acpi";
 
-  config = lib.mkIf config.modules.homeManager.home.packages.acpi.enable {
+  config = lib.mkIf config.dotfiles.homeManager.home.packages.acpi.enable {
     home.packages = [pkgs.acpi];
   };
 }

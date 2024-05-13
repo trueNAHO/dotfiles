@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.home.packages.file.enable =
-    lib.mkEnableOption "modules.homeManager.home.packages.file";
+  options.dotfiles.homeManager.home.packages.file.enable =
+    lib.mkEnableOption "dotfiles.homeManager.home.packages.file";
 
-  config = lib.mkIf config.modules.homeManager.home.packages.file.enable {
+  config = lib.mkIf config.dotfiles.homeManager.home.packages.file.enable {
     home.packages = [pkgs.file];
   };
 }

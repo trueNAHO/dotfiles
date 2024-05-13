@@ -5,8 +5,8 @@
 }: {
   imports = [../home/sessionVariables];
 
-  options.modules.homeManager.xdg = let
-    module = "modules.homeManager.xdg";
+  options.dotfiles.homeManager.xdg = let
+    module = "dotfiles.homeManager.xdg";
   in {
     enable = lib.mkEnableOption module;
     mimeApps.enable = lib.mkEnableOption "${module}.mimeApps";
@@ -14,9 +14,9 @@
   };
 
   config = let
-    cfg = config.modules.homeManager.xdg;
+    cfg = config.dotfiles.homeManager.xdg;
   in {
-    modules.homeManager.home.sessionVariables = {
+    dotfiles.homeManager.home.sessionVariables = {
       TMPDIR.enable = true;
       enable = true;
     };

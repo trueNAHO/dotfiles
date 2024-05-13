@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.programs.nixvim.plugins.telescope.enable =
-    lib.mkEnableOption "modules.programs.nixvim.plugins.telescope";
+  options.dotfiles.programs.nixvim.plugins.telescope.enable =
+    lib.mkEnableOption "dotfiles.programs.nixvim.plugins.telescope";
 
-  config = lib.mkIf config.modules.programs.nixvim.plugins.telescope.enable {
+  config = lib.mkIf config.dotfiles.programs.nixvim.plugins.telescope.enable {
     programs.nixvim.plugins.telescope = {
       enable = true;
       settings.defaults.layout_strategy = "vertical";

@@ -5,11 +5,11 @@
 }: {
   imports = [../codeium-nvim ../lsp];
 
-  options.modules.programs.nixvim.plugins.cmp.enable =
-    lib.mkEnableOption "modules.programs.nixvim.plugins.cmp";
+  options.dotfiles.programs.nixvim.plugins.cmp.enable =
+    lib.mkEnableOption "dotfiles.programs.nixvim.plugins.cmp";
 
-  config = lib.mkIf config.modules.programs.nixvim.plugins.cmp.enable {
-    modules.programs.nixvim.plugins = {
+  config = lib.mkIf config.dotfiles.programs.nixvim.plugins.cmp.enable {
+    dotfiles.programs.nixvim.plugins = {
       codeium-nvim.enable = true;
       lsp.enable = true;
     };

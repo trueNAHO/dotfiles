@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.home.packages.neofetch.enable =
-    lib.mkEnableOption "modules.homeManager.home.packages.neofetch";
+  options.dotfiles.homeManager.home.packages.neofetch.enable =
+    lib.mkEnableOption "dotfiles.homeManager.home.packages.neofetch";
 
-  config = lib.mkIf config.modules.homeManager.home.packages.neofetch.enable {
+  config = lib.mkIf config.dotfiles.homeManager.home.packages.neofetch.enable {
     home.packages = [pkgs.neofetch];
   };
 }

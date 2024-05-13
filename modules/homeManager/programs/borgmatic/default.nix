@@ -6,11 +6,11 @@
 }: {
   imports = [../../../agenix/homeManagerModules/default];
 
-  options.modules.homeManager.programs.borgmatic.enable =
-    lib.mkEnableOption "modules.homeManager.programs.borgmatic";
+  options.dotfiles.homeManager.programs.borgmatic.enable =
+    lib.mkEnableOption "dotfiles.homeManager.programs.borgmatic";
 
-  config = lib.mkIf config.modules.homeManager.programs.borgmatic.enable {
-    modules.agenix.homeManagerModules.default.enable = true;
+  config = lib.mkIf config.dotfiles.homeManager.programs.borgmatic.enable {
+    dotfiles.agenix.homeManagerModules.default.enable = true;
 
     age.secrets.modulesHomeManagerProgramsBorgmaticEncryptionPasscommand = {
       file = ./encryption_passcommand.age;

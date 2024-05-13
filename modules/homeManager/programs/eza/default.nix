@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.homeManager.programs.eza.enable =
-    lib.mkEnableOption "modules.homeManager.programs.eza";
+  options.dotfiles.homeManager.programs.eza.enable =
+    lib.mkEnableOption "dotfiles.homeManager.programs.eza";
 
-  config = lib.mkIf config.modules.homeManager.programs.eza.enable {
+  config = lib.mkIf config.dotfiles.homeManager.programs.eza.enable {
     # The local 'home.shellAliases' variables are not replaced with the arguably
     # simpler
     #

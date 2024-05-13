@@ -5,11 +5,11 @@
   ...
 }: let
   maximumBatteryCapacity = 100;
-  module = "modules.services.battery";
+  module = "dotfiles.services.battery";
 in {
   imports = [../../homeManager/services/dunst];
 
-  options.modules.services.battery = let
+  options.dotfiles.services.battery = let
     onCalendar = "[`systemd.user.timers.battery.Timer.OnCalendar`](https://nix-community.github.io/home-manager/options.xhtml#opt-systemd.user.timers)";
   in {
     delta = lib.mkOption {
@@ -75,7 +75,7 @@ in {
   };
 
   config = let
-    cfg = config.modules.services.battery;
+    cfg = config.dotfiles.services.battery;
   in
     lib.mkIf cfg.enable {
       assertions = [
@@ -92,7 +92,7 @@ in {
         }
       ];
 
-      modules.homeManager.services.dunst.enable = true;
+      dotfiles.homeManager.services.dunst.enable = true;
 
       systemd.user = let
         description = "Battery notifier";

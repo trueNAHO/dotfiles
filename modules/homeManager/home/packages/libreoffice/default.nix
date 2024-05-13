@@ -4,12 +4,12 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.home.packages.libreoffice.enable =
-    lib.mkEnableOption "modules.homeManager.home.packages.libreoffice";
+  options.dotfiles.homeManager.home.packages.libreoffice.enable =
+    lib.mkEnableOption "dotfiles.homeManager.home.packages.libreoffice";
 
   config =
     lib.mkIf
-    config.modules.homeManager.home.packages.libreoffice.enable {
+    config.dotfiles.homeManager.home.packages.libreoffice.enable {
       home.packages = [pkgs.libreoffice];
     };
 }

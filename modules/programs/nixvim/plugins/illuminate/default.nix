@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.programs.nixvim.plugins.illuminate.enable =
-    lib.mkEnableOption "modules.programs.nixvim.plugins.illuminate";
+  options.dotfiles.programs.nixvim.plugins.illuminate.enable =
+    lib.mkEnableOption "dotfiles.programs.nixvim.plugins.illuminate";
 
-  config = lib.mkIf config.modules.programs.nixvim.plugins.illuminate.enable {
+  config = lib.mkIf config.dotfiles.programs.nixvim.plugins.illuminate.enable {
     programs.nixvim.plugins.illuminate.enable = true;
   };
 }

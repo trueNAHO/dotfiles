@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.homeManager.services.dunst.enable =
-    lib.mkEnableOption "modules.homeManager.services.dunst";
+  options.dotfiles.homeManager.services.dunst.enable =
+    lib.mkEnableOption "dotfiles.homeManager.services.dunst";
 
-  config = lib.mkIf config.modules.homeManager.services.dunst.enable {
+  config = lib.mkIf config.dotfiles.homeManager.services.dunst.enable {
     services.dunst.enable = true;
   };
 }

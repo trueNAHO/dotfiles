@@ -5,13 +5,13 @@
 }: {
   imports = [../../../../home/sessionVariables];
 
-  options.modules.homeManager.systemd.user.tmpfiles.rules.enable =
-    lib.mkEnableOption "modules.homeManager.systemd.user.tmpfiles.rules";
+  options.dotfiles.homeManager.systemd.user.tmpfiles.rules.enable =
+    lib.mkEnableOption "dotfiles.homeManager.systemd.user.tmpfiles.rules";
 
   config =
     lib.mkIf
-    config.modules.homeManager.systemd.user.tmpfiles.rules.enable {
-      modules.homeManager.home.sessionVariables = {
+    config.dotfiles.homeManager.systemd.user.tmpfiles.rules.enable {
+      dotfiles.homeManager.home.sessionVariables = {
         TMPDIR.enable = true;
         enable = true;
       };

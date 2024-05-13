@@ -4,14 +4,14 @@
   pkgs,
   ...
 }: let
-  module = "modules.homeManager.programs.mpv";
+  module = "dotfiles.homeManager.programs.mpv";
 in {
   imports = [../../../stylix];
 
-  options.modules.homeManager.programs.mpv.enable = lib.mkEnableOption module;
+  options.dotfiles.homeManager.programs.mpv.enable = lib.mkEnableOption module;
 
-  config = lib.mkIf config.modules.homeManager.programs.mpv.enable {
-    modules.stylix.enable = true;
+  config = lib.mkIf config.dotfiles.homeManager.programs.mpv.enable {
+    dotfiles.stylix.enable = true;
 
     home.activation = {
       ${module} =

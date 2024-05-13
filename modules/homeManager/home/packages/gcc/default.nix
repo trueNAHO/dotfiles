@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.home.packages.gcc.enable =
-    lib.mkEnableOption "modules.homeManager.home.packages.gcc";
+  options.dotfiles.homeManager.home.packages.gcc.enable =
+    lib.mkEnableOption "dotfiles.homeManager.home.packages.gcc";
 
-  config = lib.mkIf config.modules.homeManager.home.packages.gcc.enable {
+  config = lib.mkIf config.dotfiles.homeManager.home.packages.gcc.enable {
     home.packages = [pkgs.gcc];
   };
 }

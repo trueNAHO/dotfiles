@@ -3,12 +3,12 @@
   lib,
   ...
 }: let
-  module = "modules.homeManager.programs.swaylock";
+  module = "dotfiles.homeManager.programs.swaylock";
 in {
-  options.modules.homeManager.programs.swaylock.enable =
+  options.dotfiles.homeManager.programs.swaylock.enable =
     lib.mkEnableOption module;
 
-  config = lib.mkIf config.modules.homeManager.programs.swaylock.enable {
+  config = lib.mkIf config.dotfiles.homeManager.programs.swaylock.enable {
     home.activation.${module} =
       lib.dotfiles.lib.hm.dag.entryBefore.writeBoundary.systemRequirement
       module

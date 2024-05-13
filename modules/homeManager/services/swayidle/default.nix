@@ -6,11 +6,11 @@
 }: {
   imports = [../../programs/swaylock];
 
-  options.modules.homeManager.services.swayidle = {
+  options.dotfiles.homeManager.services.swayidle = {
     displayTimeout = {
       enable =
         lib.mkEnableOption
-        "modules.homeManager.services.swayidle.displayTimeout";
+        "dotfiles.homeManager.services.swayidle.displayTimeout";
 
       timeouts = {
         command = lib.mkOption {
@@ -33,14 +33,14 @@
       };
     };
 
-    enable = lib.mkEnableOption "modules.homeManager.services.swayidle";
+    enable = lib.mkEnableOption "dotfiles.homeManager.services.swayidle";
   };
 
   config = let
-    cfg = config.modules.homeManager.services.swayidle;
+    cfg = config.dotfiles.homeManager.services.swayidle;
   in
     lib.mkIf cfg.enable {
-      modules.homeManager.programs.swaylock.enable = true;
+      dotfiles.homeManager.programs.swaylock.enable = true;
 
       services.swayidle = let
         command = "${lib.getExe pkgs.swaylock} --daemonize";

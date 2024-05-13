@@ -5,10 +5,10 @@
 }: {
   imports = [../homeManager/services/dunst ../homeManager/services/swayidle];
 
-  options.modules.wayland.enable = lib.mkEnableOption "modules.wayland";
+  options.dotfiles.wayland.enable = lib.mkEnableOption "dotfiles.wayland";
 
-  config = lib.mkIf config.modules.wayland.enable {
-    modules.homeManager.services = {
+  config = lib.mkIf config.dotfiles.wayland.enable {
+    dotfiles.homeManager.services = {
       dunst.enable = true;
       swayidle.enable = true;
     };

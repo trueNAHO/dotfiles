@@ -135,7 +135,7 @@
                   .${name}
               )
               .options
-              .modules;
+              .dotfiles;
           in
             extraConfig:
               pkgs.nixosOptionsDoc (extraConfig {

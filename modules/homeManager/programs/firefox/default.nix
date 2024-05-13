@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  options.modules.homeManager.programs.firefox.enable =
-    lib.mkEnableOption "modules.homeManager.programs.firefox";
+  options.dotfiles.homeManager.programs.firefox.enable =
+    lib.mkEnableOption "dotfiles.homeManager.programs.firefox";
 
-  config = lib.mkIf config.modules.homeManager.programs.firefox.enable {
+  config = lib.mkIf config.dotfiles.homeManager.programs.firefox.enable {
     programs.firefox.enable = true;
   };
 }

@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.services.gpg-agent.enable =
-    lib.mkEnableOption "modules.homeManager.services.gpg-agent";
+  options.dotfiles.homeManager.services.gpg-agent.enable =
+    lib.mkEnableOption "dotfiles.homeManager.services.gpg-agent";
 
-  config = lib.mkIf config.modules.homeManager.services.gpg-agent.enable {
+  config = lib.mkIf config.dotfiles.homeManager.services.gpg-agent.enable {
     services.gpg-agent = {
       enable = true;
       enableSshSupport = true;

@@ -5,11 +5,11 @@
 }: {
   imports = [../lsp];
 
-  options.modules.programs.nixvim.plugins.lsp-format.enable =
-    lib.mkEnableOption "modules.programs.nixvim.plugins.lsp-format";
+  options.dotfiles.programs.nixvim.plugins.lsp-format.enable =
+    lib.mkEnableOption "dotfiles.programs.nixvim.plugins.lsp-format";
 
-  config = lib.mkIf config.modules.programs.nixvim.plugins.lsp-format.enable {
-    modules.programs.nixvim.plugins.lsp.enable = true;
+  config = lib.mkIf config.dotfiles.programs.nixvim.plugins.lsp-format.enable {
+    dotfiles.programs.nixvim.plugins.lsp.enable = true;
     programs.nixvim.plugins.lsp-format.enable = true;
   };
 }

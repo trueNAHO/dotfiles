@@ -3,13 +3,13 @@
   lib,
   ...
 }: let
-  module = "modules.homeManager.nixpkgs.config.allowUnfree";
+  module = "dotfiles.homeManager.nixpkgs.config.allowUnfree";
 in {
-  options.modules.homeManager.nixpkgs.config.allowUnfree.enable =
+  options.dotfiles.homeManager.nixpkgs.config.allowUnfree.enable =
     lib.mkEnableOption module;
 
   config = let
-    cfg = config.modules.homeManager.nixpkgs.config.allowUnfree;
+    cfg = config.dotfiles.homeManager.nixpkgs.config.allowUnfree;
     string = "'nixpkgs.config.allowUnfree = ${toString cfg.enable};'";
   in {
     home.activation.${module} =

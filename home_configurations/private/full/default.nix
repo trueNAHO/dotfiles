@@ -1,6 +1,6 @@
 lib:
 lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "full" {
-  config.modules = {
+  config.dotfiles = {
     agenix.homeManagerModules.default.enable = true;
 
     homeManager = {

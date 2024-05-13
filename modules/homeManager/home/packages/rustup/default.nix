@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: {
-  options.modules.homeManager.home.packages.rustup.enable =
-    lib.mkEnableOption "modules.homeManager.home.packages.rustup";
+  options.dotfiles.homeManager.home.packages.rustup.enable =
+    lib.mkEnableOption "dotfiles.homeManager.home.packages.rustup";
 
-  config = lib.mkIf config.modules.homeManager.home.packages.rustup.enable {
+  config = lib.mkIf config.dotfiles.homeManager.home.packages.rustup.enable {
     home.packages = [pkgs.rustup];
   };
 }

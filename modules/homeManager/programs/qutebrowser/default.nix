@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  module = "modules.homeManager.programs.qutebrowser";
+  module = "dotfiles.homeManager.programs.qutebrowser";
 in {
   imports = [
     ../../home/packages/wl-clipboard
@@ -15,15 +15,15 @@ in {
     ../xplr
   ];
 
-  options.modules.homeManager.programs.qutebrowser.enable =
+  options.dotfiles.homeManager.programs.qutebrowser.enable =
     lib.mkEnableOption module;
 
   config =
     lib.mkIf
-    config.modules.homeManager.programs.qutebrowser.enable
+    config.dotfiles.homeManager.programs.qutebrowser.enable
     (lib.mkMerge [
       {
-        modules.homeManager = {
+        dotfiles.homeManager = {
           home = {
             packages.wl-clipboard.enable = true;
 
@@ -221,8 +221,10 @@ in {
       }
 
       (
-        lib.mkIf (config.modules.homeManager.programs.firefox.enable or false) {
-          modules.homeManager.xdg.mimeApps.enable = true;
+        lib.mkIf
+        (config.dotfiles.homeManager.programs.firefox.enable or false)
+        {
+          dotfiles.homeManager.xdg.mimeApps.enable = true;
 
           xdg.mimeApps.defaultApplications = let
             qutebrowser = "org.qutebrowser.qutebrowser.desktop";
