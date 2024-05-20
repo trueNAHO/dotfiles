@@ -192,9 +192,9 @@
       ```
       */
       systemRequirement = src: literalExpression: documentation: let
-        string =
-          "include '${literalExpression}' in the system configuration"
-          + lib.optionalString (documentation != "") ": ${documentation}";
+        string = "include '${literalExpression}' in the system configuration${
+          lib.optionalString (documentation != "") ": ${documentation}"
+        }";
       in
         lib.dotfiles.lib.hm.dag.entryBefore.writeBoundary.printf src string;
 
