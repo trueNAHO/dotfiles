@@ -181,26 +181,10 @@
         pkgs = inputs.nixpkgs.legacyPackages.${system};
       in {
         checks =
-          lib.mapAttrs'
-          (
-            name: value:
-              lib.nameValuePair
-              (
-                lib.removePrefix
-                "${system}${lib.dotfiles.homeManagerConfiguration.separator}"
-                name
-              )
-              value.activationPackage
-          )
-          (
-            lib.filterAttrs
-            (name: _: lib.hasPrefix system name)
-            inputs.self.homeConfigurations
-          )
           # This set automatically generates
           # 'inputs.self.checks.<SYSTEM>.standalone-<OPTION>-<VALUE>' Home
           # Manager activation packages based on internal module options.
-          // (
+          (
             builtins.mapAttrs
             (_: value: value.activationPackage)
             (
@@ -308,6 +292,22 @@
                 )
                 options
             )
+          )
+          // lib.mapAttrs'
+          (
+            name: value:
+              lib.nameValuePair
+              (
+                lib.removePrefix
+                "${system}${lib.dotfiles.homeManagerConfiguration.separator}"
+                name
+              )
+              value.activationPackage
+          )
+          (
+            lib.filterAttrs
+            (name: _: lib.hasPrefix system name)
+            inputs.self.homeConfigurations
           )
           // {
             inherit (inputs.self.packages.${system}) docs;
