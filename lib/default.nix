@@ -194,11 +194,7 @@
       systemRequirement = src: literalExpression: documentation: let
         string =
           "include '${literalExpression}' in the system configuration"
-          + (
-            if documentation != ""
-            then ": ${documentation}"
-            else ""
-          );
+          + lib.optionalString (documentation != "") ": ${documentation}";
       in
         lib.dotfiles.lib.hm.dag.entryBefore.writeBoundary.printf src string;
 
