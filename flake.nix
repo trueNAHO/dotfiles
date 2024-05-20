@@ -293,6 +293,9 @@
                 options
             )
           )
+          # To maintain performance, this set should not contain composed or
+          # aliased packages.
+          // inputs.self.packages.${system}
           // lib.mapAttrs'
           (
             name: value:
@@ -310,8 +313,6 @@
             inputs.self.homeConfigurations
           )
           // {
-            inherit (inputs.self.packages.${system}) docs;
-
             preCommitHooks = inputs.preCommitHooks.lib.${system}.run {
               hooks = {
                 alejandra = {
