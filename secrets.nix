@@ -4,7 +4,7 @@ let
   };
 in {
   "modules/homeManager/programs/borgmatic/encryption_passcommand.age" = {
-    publicKeys = publicKeys;
+    inherit publicKeys;
   };
 
   "modules/homeManager/programs/gh/gh_token.age".publicKeys = publicKeys;
