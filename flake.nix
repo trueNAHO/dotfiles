@@ -448,8 +448,8 @@
                   }";
               in {
                 checkDerivations = sed "CHECK DERIVATIONS" [
-                  "The `checks.<SYSTEM>` attribute set contains the following"
-                  "derivations:"
+                  "The following `checks.<SYSTEM>.standalone-<OPTION>-<VALUE>`"
+                  "derivations are available:"
                   ""
                   "include::$check_derivations[]"
                 ];
