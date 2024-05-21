@@ -341,6 +341,7 @@
           packages = with inputs; [
             agenix.packages.${system}.default
             homeManager.packages.${system}.default
+            self.checks.${system}.preCommitHooks.enabledPackages
           ];
         };
 
