@@ -333,8 +333,8 @@
     }
 
     recursiveMerge [
-      {int = 0;}
-      {int = null;}
+      { int = 0; }
+      { int = null; }
     ]
     => error: Cannot merge different types: 'int' and 'null'
     ```
