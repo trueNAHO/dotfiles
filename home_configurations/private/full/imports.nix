@@ -21,6 +21,7 @@
     ../../../modules/homeManager/home/packages/glava
     ../../../modules/homeManager/home/packages/glow
     ../../../modules/homeManager/home/packages/gping
+    ../../../modules/homeManager/home/packages/gpt4all
     ../../../modules/homeManager/home/packages/inkscape
     ../../../modules/homeManager/home/packages/kdenlive
     ../../../modules/homeManager/home/packages/killall

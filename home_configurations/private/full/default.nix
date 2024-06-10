@@ -26,6 +26,7 @@ lib.dotfiles.homeManagerConfiguration.homeManagerConfiguration "full" {
           glava.enable = true;
           glow.enable = true;
           gping.enable = true;
+          gpt4all.enable = true;
           inkscape.enable = true;
           kdenlive.enable = true;
           killall.enable = true;
