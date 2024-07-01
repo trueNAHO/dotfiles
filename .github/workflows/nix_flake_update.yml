@@ -20,7 +20,7 @@ jobs:
       - uses: DeterminateSystems/nix-installer-action@v11
       - uses: DeterminateSystems/magic-nix-cache-action@v6
 
-      - uses: DeterminateSystems/update-flake-lock@v21
+      - uses: DeterminateSystems/update-flake-lock@v23
         with:
           pr-labels: dependencies
           pr-title: "feat(flake): update all inputs"
